@@ -87,7 +87,7 @@ export let useGeneralListRead = (props: ProcessPanelProps) => {
     let operList = toolHandler?.getOperations() || []
     let { crtDefaultOpera } = props;
     let crtToolCfg = props.crtToolCfg
-    let notifyTextChgFn = createGetNotifyTextFunction(props)
+    // let notifyTextChgFn = createGetNotifyTextFunction(props)
     let formattedArgObj = useFormattedArgsCheckLabelDotMappings()
     let generalList: FormGenItem[] = useMemo(() => {
         let generalList: FormGenItem[] = []
@@ -158,6 +158,25 @@ export let useGeneralListRead = (props: ProcessPanelProps) => {
                                 }
                             })
                         }
+                        break;
+                    case 'argSelector':
+                        let value = state_currentValue || _defaultValue[0]
+                        generalList.push({
+                            label: name,
+                            genEleConfig: {
+                                type: "select",
+                                value: value,
+                                selectList: _.map(_defaultValue, (eachValue) => {
+                                    return {
+                                        label: eachValue,
+                                        value: eachValue
+                                    }
+                                }),
+                                onChange(newVal) {
+                                    updateValueToState(newVal)
+                                },
+                            }
+                        })
                         break;
                     case 'option':
                         {
