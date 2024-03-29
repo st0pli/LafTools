@@ -30,7 +30,7 @@ import { store } from '@/app/[lang]/client/src/store'
 import '@/app/[lang]/client/src/initapp'
 import { useConstructedKeyAndInit } from '@/app/[lang]/client/src/initapp'
 import { VAL_CSS_MENU_TITLE_PANEL, border_clz, light_border_clz_all, tw } from '@/app/__CORE__/meta/styles'
-import { loadDOT } from '@/app/__CORE__/utils/i18n-types'
+import { loadDOT } from '@/app/__CORE__/utils/i18n-for-nonclient'
 import { Dot } from '@/app/__CORE__/utils/cTranslationUtils'
 import SmallScreenDetecter from '@/app/[lang]/client/src/SmallScreenDetecter'
 import { ClientPortalContext } from '@/app/[lang]/client/src/pages/WorkBench/FixedLayout/Main/Center/sub/center-view/Transformer/types';

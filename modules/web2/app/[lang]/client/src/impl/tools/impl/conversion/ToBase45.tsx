@@ -47,7 +47,7 @@ class ToBase45 extends Operation {
                 "manualBake": false,
                 "args": [
                     {
-                        "name": "Alphabet",
+                        "name": Dot("anosdk", "Alphabet"),
                         "type": "string",
                         "value": "0-9A-Z $%*+\\-./:"
                     }
@@ -78,7 +78,7 @@ class ToBase45 extends Operation {
         this.outputType = "string";
         this.args = [
             {
-                name: "Alphabet",
+                name: Dot("skq3i12", "Alphabet"),
                 type: "string",
                 value: ALPHABET
             }

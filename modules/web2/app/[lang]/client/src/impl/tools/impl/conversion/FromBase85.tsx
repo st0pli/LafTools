@@ -48,7 +48,7 @@ class FromBase85 extends Operation {
                 "manualBake": false,
                 "args": [
                     {
-                        "name": "Alphabet",
+                        "name": Dot("anosdk", "Alphabet"),
                         "type": "editableOption",
                         "value": [
                             {
@@ -66,7 +66,7 @@ class FromBase85 extends Operation {
                         ]
                     },
                     {
-                        "name": "Remove non-alphabet chars",
+                        "name": Dot("nskqw", "Remove non-alphabet chars"),
                         "type": "boolean",
                         "value": true
                     },
@@ -137,12 +137,12 @@ class FromBase85 extends Operation {
 
         this.args = [
             {
-                name: "Alphabet",
+                name: Dot("skq3i12", "Alphabet"),
                 type: "editableOption",
                 value: ALPHABET_OPTIONS
             },
             {
-                name: "Remove non-alphabet chars",
+                name: Dot("nskqw", "Remove non-alphabet chars"),
                 type: "boolean",
                 value: true
             },

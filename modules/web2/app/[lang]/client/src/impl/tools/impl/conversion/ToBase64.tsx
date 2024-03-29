@@ -46,7 +46,7 @@ class ToBase64 extends Operation {
         "manualBake": false,
         "args": [
           {
-            "name": "Alphabet",
+            "name": Dot("anosdk", "Alphabet"),
             "type": "editableOption",
             "value": [
               {
@@ -143,7 +143,7 @@ class ToBase64 extends Operation {
     this.outputType = "string";
     this.args = [
       {
-        name: "Alphabet",
+        name: Dot("skq3i12", "Alphabet"),
         type: "editableOption",
         value: ALPHABET_OPTIONS,
       },

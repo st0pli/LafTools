@@ -52,6 +52,7 @@ export let useTTT2 = function (ltID: string): (id: string, enText: string, ...ar
                 ...TranslationUtils.LangMap[crtLabelI18n],
                 ...v
             }
+            TranslationUtils.currentUpdateCount++
             onCtn(ctn + 1)
         })
     }, [ltID, crtLabelI18n])

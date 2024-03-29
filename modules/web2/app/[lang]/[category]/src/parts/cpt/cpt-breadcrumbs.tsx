@@ -23,7 +23,7 @@
 import React from "react";
 import { Breadcrumbs, BreadcrumbItem } from "@nextui-org/react";
 import { Dot } from "@/app/__CORE__/utils/cTranslationUtils";
-import { loadDOT } from "@/app/__CORE__/utils/i18n-types";
+import { loadDOT } from "@/app/__CORE__/utils/i18n-for-nonclient";
 import { NavigatorPassProp } from "..";
 import { fmtURL_Client } from "@/app/__CORE__/utils/cRouteUtils";
 import { URL_SUBCATEGORY_GO_PATH, URL_TOOL_CATEGORY } from "@/app/__CORE__/meta/url";

@@ -3,7 +3,7 @@
 @tailwind utilities;
 @tailwind variants;
 
-.item-all-sub-full > *{
+.item-all-sub-full button{
   width: 100%;
 }
 .white-anchor-text{

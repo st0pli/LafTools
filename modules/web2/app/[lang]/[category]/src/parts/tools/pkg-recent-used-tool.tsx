@@ -29,7 +29,7 @@ import ExtraListTool from './extra-list-tool';
 import { Dot } from '@/app/__CORE__/utils/cTranslationUtils';
 import _ from 'lodash';
 import gutils from '@/app/[lang]/client/src/utils/GlobalUtils';
-import { loadDOT } from '@/app/__CORE__/utils/i18n-types';
+import { loadDOT } from '@/app/__CORE__/utils/i18n-for-nonclient';
 export let getCardsProps = (): CardProps => {
     return {
         radius: "none", shadow: "none", className: light_border_clz_all

@@ -49,7 +49,7 @@ class CSSMinify extends Operation {
         "manualBake": false,
         "args": [
           {
-            "name": "Preserve comments",
+            "name": Dot("8uf3FVuZn", "Preserve comments"),
             "type": "boolean",
             "value": false
           }

@@ -21,7 +21,7 @@
 'use server'
 
 import { Dot } from "@/app/__CORE__/utils/TranslationUtils";
-import { ShareClienti18nKeys } from "./i18n-types";
+import { ShareClienti18nKeys } from "./i18n-for-nonclient";
 
 let fullDefinition: ShareClienti18nKeys = {
     smsCode: Dot("9YPgsPid2M", "SMS Code"),

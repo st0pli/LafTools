@@ -49,7 +49,6 @@ export default class JSONUnescape extends Operation {
         "EOdsCA",
         "Unescapes special characters in JSON code."
       ),
-
       exampleInput: "{ \"key\": \"value\" }",
       exampleOutput: '{ "key": "value" }',
     }

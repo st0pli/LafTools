@@ -57,7 +57,7 @@ class JSONBeautify extends Operation {
                         "value": "    "
                     },
                     {
-                        "name": "Sort Object Keys",
+                        "name": Dot("k12k3", "Sort Object Keys"),
                         "type": "boolean",
                         "value": false
                     },

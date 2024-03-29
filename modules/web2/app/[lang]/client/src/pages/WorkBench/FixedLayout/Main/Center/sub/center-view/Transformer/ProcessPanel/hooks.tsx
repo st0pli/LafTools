@@ -53,6 +53,8 @@ import { useShouldVerticalModeOrNot } from "../index.tsx";
 import EditableOptions from "@/app/[lang]/client/src/components/EditableOptions/index.tsx";
 import { ProcessPanelProps } from "./index.tsx";
 import ParamStateSlice, { ToolPipeline } from "@/app/[lang]/client/src/reducers/state/paramStateSlice.tsx";
+import { useFormattedArgsCheckLabelDotMappings } from "@/app/[lang]/client/src/impl/tools/r_process_dot.tsx";
+import TranslationUtils from "@/app/__CORE__/utils/cTranslationUtils.tsx";
 export let ifnil = (v1: any, v2: any) => {
     return v1 === undefined || v1 === null ? v2 : v1
 }
@@ -86,6 +88,7 @@ export let useGeneralListRead = (props: ProcessPanelProps) => {
     let { crtDefaultOpera } = props;
     let crtToolCfg = props.crtToolCfg
     let notifyTextChgFn = createGetNotifyTextFunction(props)
+    let formattedArgObj = useFormattedArgsCheckLabelDotMappings()
     let generalList: FormGenItem[] = useMemo(() => {
         let generalList: FormGenItem[] = []
         if (crtDefaultOpera) {
@@ -115,6 +118,13 @@ export let useGeneralListRead = (props: ProcessPanelProps) => {
                 _eachArgIdx++
                 let eachArgIdx = _eachArgIdx
                 let { type, name, value: _defaultValue } = eachArg;
+                if (formattedArgObj[name]) {
+                    console.log('formattedArgObj', formattedArgObj)
+                    name = formattedArgObj[name] + (
+                        !TranslationUtils.IsChinese() ? '' : `(${name})`
+                    )
+                    eachArg.name = name
+                }
                 let state_currentValue = state_crtPipeline.a[eachArgIdx]
                 let updateValueToState = (newVal) => {
                     let newA = [...state_crtPipeline.a]
@@ -253,6 +263,6 @@ export let useGeneralListRead = (props: ProcessPanelProps) => {
             ...generalList
         ]
         return generalList
-    }, [crtDefaultOpera, crtDefaultOpera, crtToolCfg, props.crtSideMenuOperaId, crtRuntimeStatus.autoRun])
+    }, [crtDefaultOpera, TranslationUtils.CurrentLanguage, formattedArgObj, crtDefaultOpera, crtToolCfg, props.crtSideMenuOperaId, crtRuntimeStatus.autoRun, TranslationUtils.getCurrentLang()])
     return generalList;
 }

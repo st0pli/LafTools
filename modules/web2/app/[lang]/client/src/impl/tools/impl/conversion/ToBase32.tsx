@@ -46,7 +46,7 @@ class ToBase32 extends Operation {
                 "manualBake": false,
                 "args": [
                     {
-                        "name": "Alphabet",
+                        "name": Dot("anosdk", "Alphabet"),
                         "type": "binaryString",
                         "value": "A-Z2-7="
                     }
@@ -77,7 +77,7 @@ class ToBase32 extends Operation {
         this.outputType = "string";
         this.args = [
             {
-                name: "Alphabet",
+                name: Dot("skq3i12", "Alphabet"),
                 type: "binaryString",
                 value: "A-Z2-7="
             }

@@ -23,7 +23,7 @@
 import React, { useEffect } from "react";
 import { Breadcrumbs, BreadcrumbItem } from "@nextui-org/react";
 import { Dot } from "@/app/__CORE__/utils/cTranslationUtils";
-import { loadDOT } from "@/app/__CORE__/utils/i18n-types";
+import { loadDOT } from "@/app/__CORE__/utils/i18n-for-nonclient";
 import { useInitFunctionOnceOnly } from "@/app/__CORE__/hooks/cache";
 
 let a = loadDOT("Eitx--UjueC")

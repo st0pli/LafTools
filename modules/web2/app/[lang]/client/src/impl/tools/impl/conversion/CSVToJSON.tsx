@@ -48,17 +48,17 @@ class CSVToJSON extends Operation {
         "manualBake": false,
         "args": [
           {
-            "name": "Cell delimiters",
+            "name": Dot("5IGyvG7nO", "Cell delimiters"),
             "type": "binaryShortString",
             "value": ","
           },
           {
-            "name": "Row delimiters",
+            "name": Dot("EbmQAicDD", "Row delimiters"),
             "type": "binaryShortString",
             "value": "\\r\\n"
           },
           {
-            "name": "Format",
+            "name": Dot("j7Ja3E8kT", "Format"),
             "type": "option",
             "value": [
               "Array of dictionaries",

@@ -26,6 +26,11 @@ import { GetUserActualClientLang } from "../i18n";
 
 const STR_DEV_MODE = "DEV_MODE";
 
+export let getTextStrFromHTML = (html: string): string => {
+  var doc = new DOMParser().parseFromString(html, "text/html");
+  return doc.body.textContent || "";
+}
+
 function uuid(str = "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx"): string {
   return str
     .replace(/[xy]/g, function (c) {

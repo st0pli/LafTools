@@ -1,0 +1,36 @@
+import { loadDOT } from "../../reducers/systemSlice.tsx";
+import { Dot } from "../../utils/cTranslationUtils.tsx";
+
+let d = loadDOT("kJH5NqVs0")
+
+export let useFormattedArgsCheckLabelDotMappings = () => {
+    return {
+        "Include comments": Dot("dqw312", "Include comments"),
+        "Semicolons before closing braces": Dot("sbcl", "Semicolons before closing braces"),
+        "Scheme": Dot("8dq312", "Scheme"),
+        "Formatted": Dot("8dq31231", "Formatted"),
+        "Quotes": Dot("QzQWQd", "Quotes"),
+        "Signed": Dot("Signed", "Signed"),
+        "Delimiter": Dot("CVaQSQSfm", "Delimiter"),
+        "Input format": Dot("qocvMVNTC", "Input format"),
+        "Strict mode": Dot("izQSRE3f2", "Strict mode"),
+        "Rounds": Dot("rnd1", "Rounds"),
+        "Standard": Dot("vLCRStTeS", "Standard"),
+        "Size": Dot("size", "Size"),
+        "Levels": Dot("levels", "Levels"),
+        "Number": Dot("number", "Number"),
+        "Key": Dot("key", "Key"),
+        "Preserve comments": Dot("preserveComments", "Preserve comments"),
+        "Include delimeter": Dot("includeDelimeter", "Include delimeter"),
+        "Spaces": Dot("Spaces", "Spaces"),
+        "Carriage returns (\\r)": Dot("Carriage retur", "Carriage returns (\\r)"),
+        "Bytes per line": Dot("Bytesspline", "Bytes per line"),
+        "Line feeds (\\n)": Dot("Line feeds", "Line feeds (\\n)"),
+        "Tabs": Dot("Tabs", "Tabs"),
+        "By": Dot("By", "By"),
+        "Form feeds (\\f)": Dot("Form feeds", "Form feeds (\\f)"),
+        "Full stops": Dot("Full stops", "Full stops"),
+        "Output format": Dot("Outputformat", "Output format"),
+        "All-zero group char": Dot("KzQWeHkgU", "All-zero group char")
+    }
+}

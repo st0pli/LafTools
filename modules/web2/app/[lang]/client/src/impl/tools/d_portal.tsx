@@ -431,18 +431,19 @@ export let fn_rightNav = (): LabelHrefType[] => {
     let rightNav: LabelHrefType[] = [
         {
             label: Dot("str.login", "Login"),
-            href: 'https://my.laftools.cn/v2/zh-hans/nav/form/sign-in'
+            href: fmtURL_Server(['user', 'sign-in'])
         },
         {
             label: Dot("str.register", "Register"),
-            href: 'https://my.laftools.cn/v2/zh-hans/nav/form/sign-up'
+            href: fmtURL_Server(['user', 'sign-up'])
         },
-        {
-            label: Dot("str.usercentre", "User Centre"),
-            href: 'https://my.laftools.cn'
-        },
+        // {
+        //     // label: Dot("str.usercentre", "User Centre"),
+        //     // href: 'https://my.laftools.cn'
+        //     label: Dot("lBOiJaOU1", "About {0}", 'LafTools'),
+        //     href: 'https://github.com/work7z/LafTools'
+        // },
     ].map(x => {
-        x.href = 'https://codegen.cc'
         return x
     })
     return rightNav

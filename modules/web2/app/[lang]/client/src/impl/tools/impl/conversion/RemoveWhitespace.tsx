@@ -49,12 +49,12 @@ class RemoveWhitespace extends Operation {
             "value": true
           },
           {
-            "name": "Carriage returns (\\r)",
+            "name": Dot('BS4lDEO5A', 'Carriage returns') + " (\\r)",
             "type": "boolean",
             "value": true
           },
           {
-            "name": "Line feeds (\\n)",
+            "name": Dot('DZecxBbgk', 'Line feeds') + " (\\n)",
             "type": "boolean",
             "value": true
           },
@@ -64,7 +64,7 @@ class RemoveWhitespace extends Operation {
             "value": true
           },
           {
-            "name": "Form feeds (\\f)",
+            "name": Dot('WBGdJVL93', 'Form feeds') + " (\\f)",
             "type": "boolean",
             "value": true
           },

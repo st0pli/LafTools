@@ -27,6 +27,7 @@ import Utils from "../core/Utils.mjs";
 import setupApp from "../setupApp.ts";
 import DishBigNumber from "../core/dishTypes/DishBigNumber.mjs";
 import Chef from "../core/Chef.mjs";
+import { Dot } from "../../utils/cTranslationUtils.tsx";
 // import ToBase64 from "./core/impl/ToBase64.js";
 setupApp();
 

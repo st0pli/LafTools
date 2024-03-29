@@ -46,19 +46,19 @@ class FromBase64 extends Operation {
         "manualBake": false,
         "args": [
           {
-            "name": "Alphabet",
+            "name": Dot("anosdk", "Alphabet"),
             "type": "editableOption",
             "value": [
               {
-                "name": "Standard (RFC 4648): A-Za-z0-9+/=",
+                "name": Dot("qyAroN_NT", "Standard") + " (RFC 4648): A-Za-z0-9+/=",
                 "value": "A-Za-z0-9+/="
               },
               {
-                "name": "URL safe (RFC 4648 §5): A-Za-z0-9-_",
+                "name": Dot("3HtA3k6Qs", 'URL safe') + " (RFC 4648 §5): A-Za-z0-9-_",
                 "value": "A-Za-z0-9-_"
               },
               {
-                "name": "Filename safe: A-Za-z0-9+-=",
+                "name": Dot("wkMPt-ZDk", 'Filename safe') + ": A-Za-z0-9+-=",
                 "value": "A-Za-z0-9+\\-="
               },
               {
@@ -120,7 +120,7 @@ class FromBase64 extends Operation {
             ]
           },
           {
-            "name": "Remove non-alphabet chars",
+            "name": Dot("nskqw", "Remove non-alphabet chars"),
             "type": "boolean",
             "value": true
           },
@@ -312,12 +312,12 @@ class FromBase64 extends Operation {
     this.outputType = "byteArray";
     this.args = [
       {
-        name: "Alphabet",
+        name: Dot("skq3i12", "Alphabet"),
         type: "editableOption",
         value: ALPHABET_OPTIONS,
       },
       {
-        name: "Remove non-alphabet chars",
+        name: Dot("nskqw", "Remove non-alphabet chars"),
         type: "boolean",
         value: true,
       },

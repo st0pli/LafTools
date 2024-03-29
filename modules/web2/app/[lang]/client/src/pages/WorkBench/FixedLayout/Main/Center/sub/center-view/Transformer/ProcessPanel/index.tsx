@@ -109,32 +109,6 @@ export default (props: ProcessPanelProps) => {
     }
 
 
-    // let loadingTextClz = "text-blue-500 dark:text-blue-300"
-    // let greenClz = "text-lime-700 dark:text-lime-500"
-    // let shouldHideLeftTextInBar = !shouldVert // when bottom is not hide, then hide left text
-    // let textIcon_f: Intent = loadingStatic ? "success" :
-    //     crtRuntimeStatus.processOK ? "success" :
-    //         crtRuntimeStatus.processError ? "warning" : crtRuntimeStatus.processing ? "primary" : "none"
-    // let icon_f: IconName = loadingStatic ? "changes" :
-    //     crtRuntimeStatus.processError ? "warning-sign" : crtRuntimeStatus.processing ? "refresh" :
-    //         crtRuntimeStatus.processText ? "tick" :
-    //             "export"
-    // let clz_f = (
-    //     loadingStatic ? "" + (
-    //         greenClz
-    //     ) :
-    //         crtRuntimeStatus.processOK ? greenClz :
-    //             crtRuntimeStatus.processError ? "text-yellow-600" : crtRuntimeStatus.processing ? loadingTextClz : "  "
-    // )
-    // let maintext_f = (
-    //     loadingStatic ? Dot("y_9YqM", "Loading static resources...") :
-    //         crtRuntimeStatus.processText ? crtRuntimeStatus.processText : Dot("z-o2dqssde", "Post-Process")
-    // )
-    // let iconJSX = <Icon intent={textIcon_f} icon={icon_f} iconSize={20} className={(
-    //     shouldHideLeftTextInBar ? " mr-1  " : " mr-2  "
-    // ) + (
-    //         crtRuntimeStatus.processing ? " animate-spin " : ""
-    //     )} />
     let jsx_left_setting_or_faq = (
         <div className='h-full p-[1px]'>
             <Navbar>

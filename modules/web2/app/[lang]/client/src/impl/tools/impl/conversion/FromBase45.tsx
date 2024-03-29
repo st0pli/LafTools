@@ -49,12 +49,12 @@ class FromBase45 extends Operation {
                 "manualBake": false,
                 "args": [
                     {
-                        "name": "Alphabet",
+                        "name": Dot("anosdk", "Alphabet"),
                         "type": "string",
                         "value": "0-9A-Z $%*+\\-./:"
                     },
                     {
-                        "name": "Remove non-alphabet chars",
+                        "name": Dot("nskqw", "Remove non-alphabet chars"),
                         "type": "boolean",
                         "value": true
                     }
@@ -89,12 +89,12 @@ class FromBase45 extends Operation {
         this.outputType = "byteArray";
         this.args = [
             {
-                name: "Alphabet",
+                name: Dot("skq3i12", "Alphabet"),
                 type: "string",
                 value: ALPHABET
             },
             {
-                name: "Remove non-alphabet chars",
+                name: Dot("nskqw", "Remove non-alphabet chars"),
                 type: "boolean",
                 value: true
             },

@@ -50,7 +50,7 @@ import { Allotment, AllotmentHandle } from "allotment";
 import ProcessPanel from "./ProcessPanel/index.tsx";
 import { ACTION_Transformer_Process_Text, ACTION_Transformer_Process_Text_Delay } from "../../../../../../../../actions/transformer_action";
 import Operation from "../../../../../../../../impl/core/Operation.tsx";
-import gutils from "../../../../../../../../utils/GlobalUtils";
+import gutils, { getTextStrFromHTML } from "../../../../../../../../utils/GlobalUtils";
 import appToolInfoObj, { AppInfoType, AppOpDetail, AppToolConversionIdCollectionSet, loadConversionTSXById } from "../../../../../../../../impl/tools/d_meta.tsx";
 import { getInitValueForRuntimeStatus } from './init.tsx'
 import { ToolHandler as ToolHandler, ToolHandlerClass } from "../../../../../../../../impl/tools/r_handler.tsx";
@@ -240,6 +240,7 @@ export default (props: CommonTransformerProps) => {
       affix = ` - ${commonPassProp.crtSideMenuOpera?.getOptDetail()?.optName}`
       desc = commonPassProp.crtSideMenuOpera?.getOptDetail().optDescription
     }
+
     let arr: TitleSubPair[] = [
       {
         title: Dot("wcl1K", "Usage") + affix,
@@ -247,7 +248,7 @@ export default (props: CommonTransformerProps) => {
       },
       {
         title: Dot("8eeL1Kk", "About", optDetail?.optName) + affix,
-        subTitle: desc?.replace(/\\n/g, '\n') + ""
+        subTitle: getTextStrFromHTML(desc?.replace(/\\n/g, '\n') + "")
       },
       {
         title: Dot("SYSq1", "Example"),
@@ -623,7 +624,11 @@ export default (props: CommonTransformerProps) => {
     toolTitle = Dot("3XstvdK", "Loading the selected quick operation...")
   } else {
     // if (commonPassProp.crtSideMenuOpera && commonPassProp.crtSideMenuOperaId) {
-    //   toolTitle = Dot("rcVSYDdBN0", "Quick Operation: {0}", commonPassProp.crtSideMenuOpera.getOptDetail()?.optName || 'N/A')
+    //   let optNameNow = commonPassProp.crtSideMenuOpera.getOptDetail()?.optName || 'N/A'
+    //   if (optNameNow != 'N/A' && toolTitle != optNameNow) {
+    //     toolTitle = `${toolTitle} - ${optNameNow}`
+    //   }
+    //   // toolTitle = Dot("rcVSYDdBN0", "Quick Operation: {0}", optNameNow)
     // }
   }
 

@@ -117,6 +117,7 @@ const TranslationUtils = {
     );
   },
   LangMap: crtNewLangMap,
+  currentUpdateCount: 0,
   ExtraMap: {},
   RealtimeObj: {},
   Dot(id: string, enText: string, ...args: any[]): string {
