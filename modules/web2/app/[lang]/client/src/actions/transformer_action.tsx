@@ -105,6 +105,7 @@ export let ACTION_Transformer_Process_Text = (obj: PassType): any => {
                     args: argsValueArr
                 })
             }
+            console.log('recipeConfigs', recipeConfigs)
             let processedNewValue = await LibProcessEntryPoint.process(originalValue, {
                 extVM,
                 extId,

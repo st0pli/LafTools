@@ -63,6 +63,9 @@ export let ifnil = (v1: any, v2: any) => {
 export let fn_defaultArgValues_fromConfig = (args) => {
     return args.map(x => {
         let xValue = x.value
+        if (x.type == 'argSelector') {
+            return x.value[0].name
+        }
         if (_.isObject(xValue)) {
             if (xValue['value'] !== undefined) {
                 return xValue['value']
@@ -170,8 +173,11 @@ export let useGeneralListRead = (props: ProcessPanelProps) => {
                         }
                         break;
                     case 'argSelector':
-                        let value = state_currentValue || _defaultValue[0].name
+                        let value = ifnil(state_currentValue, _defaultValue[0].name)
                         let currentItem = _defaultValue.find(x => x.name == value)
+                        if (!currentItem) {
+                            currentItem = _defaultValue[0]
+                        }
                         if (currentItem) {
                             onArr.push(...currentItem.on)
                             offArr.push(...currentItem.off)
