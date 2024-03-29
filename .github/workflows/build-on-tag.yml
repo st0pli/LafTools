@@ -3,7 +3,7 @@ name: Build on Tags for CN and US
 on:
   push:
     tags:
-      - "*"
+      - "v*.*.**"
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
