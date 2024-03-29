@@ -103,7 +103,7 @@ export let useGetNotifyTextFunction = (commonPassProps: CommonTransformerPassPro
                 }
             }
         } else {
-            AlertUtils.popError(new Error(Dot("6IHssvayw", "Unable to process with the error ID: {0}", "nkf1yJ6Gk")))
+            // AlertUtils.popError(new Error(Dot("6IHssvayw", "Unable to process with the error ID: {0}", "nkf1yJ6Gk")))
         }
     }
 }

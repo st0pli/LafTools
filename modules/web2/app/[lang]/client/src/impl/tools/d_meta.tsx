@@ -180,6 +180,19 @@ let appToolInfoObj = {
     JSONEscape: passInfo({
         LabelFn: (Dot: DotType) => Dot("l3k11X8qw", "JSON Escape")
     }),
+    SHA512: passInfo({
+        LabelFn: (Dot: DotType) => "SHA-512"
+    }),
+    SHA384: passInfo({
+        LabelFn: (Dot: DotType) => "SHA-384"
+    }),
+    SHA256: passInfo({
+        LabelFn: (Dot: DotType) => "SHA-256"
+    }),
+    SHA224: passInfo({
+        LabelFn: (Dot: DotType) => "SHA-224"
+    }),
+
     // JSONViewer: passInfo({
     //     LabelFn: (Dot: DotType) => Dot("1Xdsqwqw", "JSON Viewer")
     // }),
@@ -213,6 +226,7 @@ export const AppToolConversionIdCollectionSet = {
     base85: ['FromBase85', 'ToBase85', 'MD5'],
     md5: ['MD2', 'MD4', 'MD6', 'SHA3', 'MD5'],
     sha: ['SHA0', 'SHA1', 'SHA2', 'SHA3', 'MD5'],
+    sha3s: ['SHA512', 'SHA384', 'SHA256', 'SHA224'],
     nothing: [],
 } satisfies { [key: string]: AppOpFnMapTypeKeys[] }
 

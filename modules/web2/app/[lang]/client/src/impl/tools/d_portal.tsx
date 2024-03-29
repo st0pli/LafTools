@@ -188,7 +188,7 @@ export let getToolSubCategory = ((): PortalDefinitionType[] => {
                 {
                     id: 'base64',
                     toolId: 'edc_base64',
-                    label: Dot("2Y2Y2Y2Y2", "Base64"),
+                    label: Dot("sdfqw", "Base64"),
                 },
                 {
                     id: "urlencoder",
@@ -202,7 +202,7 @@ export let getToolSubCategory = ((): PortalDefinitionType[] => {
                 },
                 {
                     id: "sha224",
-                    toolId: "SHA2",
+                    toolId: "SHA224",
                     args: [
                         '224',
                         64,
@@ -212,7 +212,7 @@ export let getToolSubCategory = ((): PortalDefinitionType[] => {
                 },
                 {
                     id: "sha256",
-                    toolId: "SHA2",
+                    toolId: "SHA256",
                     args: [
                         '256',
                         64,
@@ -222,7 +222,7 @@ export let getToolSubCategory = ((): PortalDefinitionType[] => {
                 },
                 {
                     id: "sha384",
-                    toolId: "SHA2",
+                    toolId: "SHA384",
                     args: [
                         '384',
                         160,
@@ -232,7 +232,7 @@ export let getToolSubCategory = ((): PortalDefinitionType[] => {
                 },
                 {
                     id: "sha512",
-                    toolId: "SHA2",
+                    toolId: "SHA512",
                     args: [
                         '512',
                         160,
