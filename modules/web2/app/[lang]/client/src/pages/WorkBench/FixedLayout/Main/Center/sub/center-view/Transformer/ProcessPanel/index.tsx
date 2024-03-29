@@ -90,6 +90,7 @@ export default (props: ProcessPanelProps) => {
                     pipeMapKey: (props.fn_isSidebarMenuOpModeNow(props) ? props.crtSideMenuOperaId : props.crtDefaultOperaId + "") + "",
                     pipeMapValue: {
                         a: [],
+                        e: {}
                     },
                     sessionId
                 })

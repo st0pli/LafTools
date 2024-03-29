@@ -105,13 +105,16 @@ export let useGeneralListRead = (props: ProcessPanelProps) => {
             if (!state_crtPipeline) {
                 state_crtPipeline = {
                     a: fn_defaultArgValues_fromConfig(configArgs),
-                    d: 'f'
+                    d: 'f',
+                    e: {}
                 }
             }
 
             if (!state_crtPipeline.a && _.size(state_crtPipeline.a) != _.size(configArgs)) {
                 state_crtPipeline.a = fn_defaultArgValues_fromConfig(configArgs)
             }
+            let onArr: number[] = []
+            let offArr: number[] = []
 
             let _eachArgIdx: number = -1
             _.forEach(configArgs, (eachArg) => {
@@ -135,12 +138,19 @@ export let useGeneralListRead = (props: ProcessPanelProps) => {
                             pipeMapKey: crtOpId,
                             pipeMapValue: {
                                 a: newA,
-                                d: state_crtPipeline.d
+                                d: state_crtPipeline.d,
+                                e: state_currentValue.e
                             }
                         })
                     )
                     props.onProcess(true)
                 }
+
+                // check if current item is hidden
+                if (offArr.indexOf(eachArgIdx) > -1) {
+                    return
+                }
+
                 // TODO: add check
                 // let currentCheck = checks[eachArgIdx]
                 switch (type) {
@@ -160,7 +170,12 @@ export let useGeneralListRead = (props: ProcessPanelProps) => {
                         }
                         break;
                     case 'argSelector':
-                        let value = state_currentValue || _defaultValue[0]
+                        let value = state_currentValue || _defaultValue[0].name
+                        let currentItem = _defaultValue.find(x => x.name == value)
+                        if (currentItem) {
+                            onArr.push(...currentItem.on)
+                            offArr.push(...currentItem.off)
+                        }
                         generalList.push({
                             label: name,
                             genEleConfig: {
@@ -168,8 +183,8 @@ export let useGeneralListRead = (props: ProcessPanelProps) => {
                                 value: value,
                                 selectList: _.map(_defaultValue, (eachValue) => {
                                     return {
-                                        label: eachValue,
-                                        value: eachValue
+                                        label: eachValue.name,
+                                        value: eachValue.name
                                     }
                                 }),
                                 onChange(newVal) {

@@ -49,6 +49,7 @@ export type ToolConfigMap = {
 export type ToolPipeline = {
     a: any[], // args value
     d?: TrueFalseType, // disabled or not
+    e: any // map for extra value
 }
 export type ToolSideMenuTabIdType = "pipeline" | "favourites" | "allops"
 export type ParamStateState = {
