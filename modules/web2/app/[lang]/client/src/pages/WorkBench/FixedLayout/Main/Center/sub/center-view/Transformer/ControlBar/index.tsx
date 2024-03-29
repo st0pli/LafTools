@@ -37,9 +37,10 @@ import { URL_SUBCATEGORY_GO_PATH } from "@/app/__CORE__/meta/url";
 import { ActionListViewButton } from "../SideMenu/ActionListView";
 export let useHideBottomAndSettingHook = () => {
     return exportUtils.useSelector((x) => {
+        let hideSetting = x.paramState.hdstpt == 't'
         return {
-            hideBottomPanel: x.paramState.hdbtpl == 't',
-            hideSettingPanel: x.paramState.hdstpt == 't',
+            hideBottomPanel: hideSetting,
+            hideSettingPanel: hideSetting,
         };
     })
 

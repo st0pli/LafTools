@@ -557,6 +557,18 @@ export default (props: CommonTransformerProps) => {
     ...commonPassProp
   }
   let r_width_perc = !shouldVerticalMode ? 35 : 28
+  let jsx_ipt_output_panel = <Allotment
+    vertical={shouldVerticalMode}
+    key={shouldVerticalMode + "xxxs" + hideBottomPanel}
+  >
+    <Allotment.Pane>
+      {app_right_input_jsx}
+    </Allotment.Pane>
+    <Allotment.Pane>
+      {app_right_output_jsx}
+    </Allotment.Pane>
+  </Allotment>
+  console.log('hideBottomPanel', hideBottomPanel)
   let app_right_jsx = <>
     <ControlBar  {...controlBarProps}></ControlBar>
     {
@@ -573,35 +585,30 @@ export default (props: CommonTransformerProps) => {
             {app_right_input_jsx}
             {app_right_b_jsx}
           </div>
-        ) : (
-          <Allotment
-            key={shouldVerticalMode + 'x1'} vertical={!shouldVerticalMode}>
-            <Allotment.Pane
-              preferredSize={(
-
-                100 - r_width_perc) + '%'}
-
-            >
+        ) :
+          hideBottomPanel ? jsx_ipt_output_panel :
+            (
               <Allotment
-                vertical={shouldVerticalMode}
-                key={shouldVerticalMode + "xxxs"}
-              >
-                <Allotment.Pane>
-                  {app_right_input_jsx}
+                key={shouldVerticalMode + 'x1' + hideBottomPanel} vertical={!shouldVerticalMode}>
+                <Allotment.Pane
+                  key={shouldVerticalMode + 'x5' + hideBottomPanel}
+                  preferredSize={
+                    (
+                      100 - r_width_perc) + '%'}
+                >
+                  {jsx_ipt_output_panel}
                 </Allotment.Pane>
-                <Allotment.Pane>
-                  {app_right_output_jsx}
-                </Allotment.Pane>
+                {
+                  <Allotment.Pane
+                    key={shouldVerticalMode + 'x3' + hideBottomPanel}
+                    preferredSize={hideBottomPanel ? '0' : (
+                      r_width_perc) + '%'}
+                  >
+                    {jsx_process_settings_panel}
+                  </Allotment.Pane>
+                }
               </Allotment>
-            </Allotment.Pane>
-            <Allotment.Pane
-              preferredSize={(
-                r_width_perc) + '%'}
-            >
-              {jsx_process_settings_panel}
-            </Allotment.Pane>
-          </Allotment>
-        )
+            )
       }
     </div>
   </>
