@@ -23,12 +23,9 @@ export let useFormattedArgsCheckLabelDotMappings = () => {
         "Preserve comments": Dot("preserveComments", "Preserve comments"),
         "Include delimeter": Dot("includeDelimeter", "Include delimeter"),
         "Spaces": Dot("Spaces", "Spaces"),
-        "Carriage returns (\\r)": Dot("Carriage retur", "Carriage returns (\\r)"),
         "Bytes per line": Dot("Bytesspline", "Bytes per line"),
-        "Line feeds (\\n)": Dot("Line feeds", "Line feeds (\\n)"),
         "Tabs": Dot("Tabs", "Tabs"),
         "By": Dot("By", "By"),
-        "Form feeds (\\f)": Dot("Form feeds", "Form feeds (\\f)"),
         "Full stops": Dot("Full stops", "Full stops"),
         "Output format": Dot("Outputformat", "Output format"),
         "All-zero group char": Dot("KzQWeHkgU", "All-zero group char")

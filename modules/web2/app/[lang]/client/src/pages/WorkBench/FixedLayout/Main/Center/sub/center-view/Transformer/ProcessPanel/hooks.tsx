@@ -142,7 +142,7 @@ export let useGeneralListRead = (props: ProcessPanelProps) => {
                             pipeMapValue: {
                                 a: newA,
                                 d: state_crtPipeline.d,
-                                e: state_currentValue.e
+                                e: state_crtPipeline.e
                             }
                         })
                     )

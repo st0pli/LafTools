@@ -35,6 +35,7 @@ COMMON_FN_REF.Dot = Dot
 export type PortalDefinitionTbabGroup = {
     id: string, // sub tab id, will be used in the URL as path variable (:id)
     toolId?: AppToolKeyType, // it's coming from d_meta
+    args?: any[], // arguments for the tool
     label?: string // overwrite the label from tool definition if needed
 }
 export type SEOMetaData = {
@@ -200,20 +201,44 @@ export let getToolSubCategory = ((): PortalDefinitionType[] => {
                     label: Dot("eTJ2EDLfW", "MD5 Hash"),
                 },
                 {
-                    id: "sha1",
-                    toolId: "SHA1",
-                    label: Dot("8RYY_Y4sb", "SHA1 Hash"),
+                    id: "sha224",
+                    toolId: "SHA2",
+                    args: [
+                        '224',
+                        64,
+                        64
+                    ],
+                    label: Dot("dqwrq3w13", "{0} Hash", "SHA224"),
                 },
                 {
                     id: "sha256",
-                    toolId: "SHA2", // provide extra configuration
-                    label: Dot("HAdpbfboS", "SHA256 Hash"),
+                    toolId: "SHA2",
+                    args: [
+                        '256',
+                        64,
+                        64
+                    ],
+                    label: Dot("dqwrq3w13", "{0} Hash", "SHA256"),
+                },
+                {
+                    id: "sha384",
+                    toolId: "SHA2",
+                    args: [
+                        '384',
+                        160,
+                        160
+                    ],
+                    label: Dot("dqwrq3w13", "{0} Hash", "SHA384"),
                 },
                 {
                     id: "sha512",
-                    toolId: "SHA3",
-                    // toolId: 'sha3'
-                    label: Dot("fyA5IVtOU", "SHA512 Hash"),
+                    toolId: "SHA2",
+                    args: [
+                        '512',
+                        160,
+                        160
+                    ],
+                    label: Dot("dqwrq3w13", "{0} Hash", "SHA512"),
                 },
             ]
         },
