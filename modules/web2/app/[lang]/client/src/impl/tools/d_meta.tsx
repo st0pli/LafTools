@@ -192,6 +192,15 @@ let appToolInfoObj = {
     SHA224: passInfo({
         LabelFn: (Dot: DotType) => "SHA-224"
     }),
+    URLEncode: passInfo({
+        LabelFn: (Dot: DotType) => Dot("EPSPCHhsa", "URL Encode")
+    }),
+    URLToEncode: passInfo({
+        LabelFn: (Dot: DotType) => Dot("EPSPCHhsa", "URL Encode")
+    }),
+    URLToDecode: passInfo({
+        LabelFn: (Dot: DotType) => Dot("EPSdPCHhsa", "URL Decode")
+    }),
 
     // JSONViewer: passInfo({
     //     LabelFn: (Dot: DotType) => Dot("1Xdsqwqw", "JSON Viewer")
@@ -218,6 +227,8 @@ export const AppToolConversionIdCollectionSet = {
     xml: ['XMLBeautify', 'XMLMinify'],
     yaml: ['YAMLBeautify'],
     // typescript: ['TypeScriptBeautify', 'JavaScriptBeautify', 'JavaScriptMinify'],
+    // url: ['URLEncode', 'URLDecode', 'ToBase64', 'FromBase64'],
+    url: ['URLEncode', 'URLDecode'],
     base32: ['FromBase32', 'ToBase32', 'MD5'],
     base64: ['FromBase64', 'ToBase64', 'MD5'],
     base45: ['FromBase45', 'ToBase45', 'MD5'],

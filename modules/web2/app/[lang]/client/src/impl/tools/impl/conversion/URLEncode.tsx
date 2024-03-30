@@ -24,12 +24,44 @@
  * @license Apache-2.0
  */
 
-import Operation from "../Operation.tsx";
+import { Dot } from "../../../../utils/cTranslationUtils.tsx";
+import Operation, { OptDetail } from "../../../core/Operation.tsx";
 
 /**
  * URL Encode operation
  */
 class URLEncode extends Operation {
+
+  // impl getOptDetail
+  public getOptDetail(): OptDetail {
+    return {
+      // provide information
+      relatedID: 'url',
+      config: {
+        "module": "Default",
+        "description": "Encodes problematic characters into percent-encoding, a format supported by URIs/URLs.<br><br>e.g. <code>=</code> becomes <code>%3d</code>",
+        "infoURL": "https://wikipedia.org/wiki/Percent-encoding",
+        "inputType": "string",
+        "outputType": "string",
+        "flowControl": false,
+        "manualBake": false,
+        "args": [
+          {
+            "name": "Encode all special chars",
+            "type": "boolean",
+            "value": false,
+          },
+        ]
+      },
+      optName: Dot("btUdVQx8duc", "{0} Encode", 'URL'),
+      optDescription: Dot("btUVqx8uc", "Encodes problematic characters into percent-encoding, a format supported by URIs/URLs."),
+      exampleInput: "test 12345",
+      exampleOutput: "test%2012345",
+      infoURL: "https://wikipedia.org/wiki/Percent-encoding",
+      nousenouseID: "urlencode",
+    }
+  }
+
   /**
    * URLEncode constructor
    */
@@ -38,9 +70,9 @@ class URLEncode extends Operation {
 
     this.name = "URL Encode";
     this.module = "URL";
-    this.description =
-      "Encodes problematic characters into percent-encoding, a format supported by URIs/URLs.<br><br>e.g. <code>=</code> becomes <code>%3d</code>";
-    this.infoURL = "https://wikipedia.org/wiki/Percent-encoding";
+    // this.description =
+    //   "Encodes problematic characters into percent-encoding, a format supported by URIs/URLs.<br><br>e.g. <code>=</code> becomes <code>%3d</code>";
+    // this.infoURL = "https://wikipedia.org/wiki/Percent-encoding";
     this.inputType = "string";
     this.outputType = "string";
     this.args = [

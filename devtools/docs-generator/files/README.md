@@ -13,7 +13,7 @@
 
 NOTE_FOR_GEN
 
-# 🪄 ${Dot("\_6C-FTONT","Quick View")}
+# 🪄 ${Dot("d6C-FTONT","Quick View")}
 
 ${Dot("hDdqkdxkSd","To quickly use these functions, we've deployed stable online website in US and CN region for you to use. Most tools are available in our online websites except for some tools that rely on specific OS capablities.")}
 

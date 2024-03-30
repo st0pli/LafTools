@@ -192,7 +192,7 @@ export let getToolSubCategory = ((): PortalDefinitionType[] => {
                 },
                 {
                     id: "urlencoder",
-                    // toolId: "edc_urlencoder",
+                    toolId: "URLEncode",
                     label: Dot("mdhWk4dtid", "URL Encoder"),
                 },
                 {
@@ -287,18 +287,13 @@ export let getToolSubCategory = ((): PortalDefinitionType[] => {
                 // },
                 {
                     id: 'encodeuri',
-                    // toolId: 'encodeuri',
+                    toolId: 'URLToEncode',
                     label: Dot("2Y2eY2Y2Y2", "Encode URI"),
                 },
                 {
                     id: 'decodeuri',
-                    // toolId: 'decodeuri',
+                    toolId: 'URLToDecode',
                     label: Dot("2Y2Ye2Y2Y2", "Decode URI"),
-                },
-                {
-                    id: "urlencoder",
-                    // toolId: "urlencoder",
-                    label: Dot("mhWk4dtqid", "URL Encoder"),
                 },
                 {
                     id: 'base32',

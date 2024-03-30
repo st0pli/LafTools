@@ -46,6 +46,7 @@ export default (): ToolCategory[] => {
           Label: Dot("y_2Q1", "Encode and Decode"),
           Icon: "widget-button",
           ChildrenIdSet: [
+            "URLEncode",
             "edc_base32",
             "edc_base45",
             "edc_base58",
@@ -55,8 +56,6 @@ export default (): ToolCategory[] => {
             "hex",
             "bcd",
             "JSONEscape"
-            // "edc_url",
-            // "edc_hex",
             // "edc_unicode",
             // "edc_base64-hex",
             // "edc_querystring",
