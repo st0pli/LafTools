@@ -27,6 +27,7 @@ export let useFormattedArgsCheckLabelDotMappings = () => {
         "Preserve comments": Dot("preserveComments", "Preserve comments"),
         "Include delimeter": Dot("includeDelimeter", "Include delimeter"),
         "Spaces": Dot("Spaces", "Spaces"),
+        Packed: Dot("Packed", "Packed"),
         "Bytes per line": Dot("Bytesspline", "Bytes per line"),
         "Tabs": Dot("Tabs", "Tabs"),
         "By": Dot("By", "By"),

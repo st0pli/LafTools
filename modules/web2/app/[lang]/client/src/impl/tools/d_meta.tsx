@@ -226,7 +226,7 @@ export const AppToolConversionIdCollectionSet = {
     css: ['CSSBeautify', 'CSSMinify'],
     sql: ['SQLBeautify', 'SQLMinify'],
     bcd: ['ToBCD', 'FromBCD'],
-    hex: ['ToHex', 'FromHex', 'FromHexdump', 'ToHexdump'],
+    hex: ['FromHex', 'ToHex', 'FromHexdump', 'ToHexdump'],
     text: ['RemoveWhitespace', 'Tail', 'Reverse', 'RemoveLineNumbers'],
     beautify: ['JSONBeautify', 'JavaScriptBeautify', 'CSSBeautify', 'XMLBeautify', 'YAMLBeautify', 'SQLBeautify', 'HTMLBeautify'],
     xml: ['XMLBeautify', 'XMLMinify'],

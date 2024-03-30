@@ -240,6 +240,16 @@ export let getToolSubCategory = ((): PortalDefinitionType[] => {
                     ],
                     label: Dot("dqwrq3w13", "{0} Hash", "SHA512"),
                 },
+                {
+                    id: 'fromhexdump',
+                    toolId: 'FromHexdump',
+                    label: Dot("eYg7ZNBH6", "From Hexdump"),
+                },
+                {
+                    id: 'tohexdump',
+                    toolId: 'ToHexdump',
+                    label: Dot("z2FxMaOjF", "To Hexdump"),
+                }
             ]
         },
         {
@@ -268,12 +278,12 @@ export let getToolSubCategory = ((): PortalDefinitionType[] => {
                 {
                     id: 'JSONEscape',
                     toolId: 'JSONEscape',
-                    label: Dot("vlCxkKmI4", "JSON Escape"),
+                    label: Dot("vldqwI4", "{0} Escape", 'JSON'),
                 },
                 {
                     id: 'JSONUnescape',
                     toolId: 'JSONEscape',
-                    label: Dot("fdtdUdX-", "JSON Unescape"),
+                    label: Dot("fdtedX-", "{0} Unescape", 'JSON'),
                 },
                 // {
                 //     id: 'escape',
@@ -315,6 +325,16 @@ export let getToolSubCategory = ((): PortalDefinitionType[] => {
                     id: 'base85',
                     toolId: 'edc_base85',
                 },
+                {
+                    id: 'fromhexdump',
+                    toolId: 'FromHexdump',
+                    label: Dot("eYg7ZNBH6", "From Hexdump"),
+                },
+                {
+                    id: 'tohexdump',
+                    toolId: 'ToHexdump',
+                    label: Dot("z2FxMaOjF", "To Hexdump"),
+                }
 
             ]
         },
@@ -374,6 +394,16 @@ export let getToolSubCategory = ((): PortalDefinitionType[] => {
                     id: 'sqlparser',
                     label: Dot("2Yq2eqY2Y2", "SQL Parser"),
                 },
+                {
+                    id: 'fromhexdump',
+                    toolId: 'FromHexdump',
+                    label: Dot("eYg7ZNBH6", "From Hexdump"),
+                },
+                {
+                    id: 'tohexdump',
+                    toolId: 'ToHexdump',
+                    label: Dot("z2FxMaOjF", "To Hexdump"),
+                }
             ]
         },
         {

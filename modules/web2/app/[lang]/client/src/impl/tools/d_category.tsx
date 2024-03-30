@@ -53,9 +53,11 @@ export default (): ToolCategory[] => {
             "edc_base62",
             "edc_base64",
             "edc_base85",
-            "hex",
             "bcd",
             "JSONEscape",
+            "hex",
+            "FromHexdump",
+            "ToHexdump"
             // "edc_unicode",
             // "edc_base64-hex",
             // "edc_querystring",
@@ -126,6 +128,8 @@ export default (): ToolCategory[] => {
           ChildrenIdSet: [
             "URLEncode",
             "JSONEscape",
+            "FromHexdump",
+            "ToHexdump"
             // "esc_xml",
             // "esc_html",
             // "esc_csv",
@@ -154,7 +158,10 @@ export default (): ToolCategory[] => {
           Label: Dot("ui5pZ", "Common Formats"),
           Icon: "hat",
           ChildrenIdSet: [
+            "JSONEscape",
             "CSVToJSON",
+            "FromHexdump",
+            "ToHexdump"
             // "curl_to_pl",
             // "curl_to_api",
             //

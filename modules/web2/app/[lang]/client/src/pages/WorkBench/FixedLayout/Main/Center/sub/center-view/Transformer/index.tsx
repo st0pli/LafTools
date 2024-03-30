@@ -523,7 +523,7 @@ export default (props: CommonTransformerProps) => {
 
   let app_right_input_jsx = (
     <GenCodeMirror
-      lineWrap={currentOptDetail && currentOptDetail?.inputNoWrap}
+      lineWrap={currentOptDetail && currentOptDetail?.inputNoWrap ? false : true}
       icon='generate'
       title={Dot("XdOYpbSeG", "Input")}
       placeholder={desc || Dot("xPHqP", "The description is not yet defined.")}
@@ -541,7 +541,7 @@ export default (props: CommonTransformerProps) => {
         icon='export'
         readOnly
         title={Dot("XdOYpsdf", "Output")}
-        lineWrap={currentOptDetail && currentOptDetail?.outputNoWrap}
+        lineWrap={currentOptDetail && currentOptDetail?.outputNoWrap ? false : true}
         language={commonPassProp.crtDefaultOpera?.getInputOutputEditorLang()?.outputLang}
         placeholder={Dot("y_9YM", "Output will be displayed here.")}
         bigTextId={props.outputBigTextId}

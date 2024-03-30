@@ -739,6 +739,46 @@ export    type Tool2PageMap = {
             ]
         }
     ],
+    "FromHexdump": [
+        {
+            "pagePath": [
+                "codecs",
+                "fromhexdump"
+            ]
+        },
+        {
+            "pagePath": [
+                "encoding",
+                "fromhexdump"
+            ]
+        },
+        {
+            "pagePath": [
+                "parsers",
+                "fromhexdump"
+            ]
+        }
+    ],
+    "ToHexdump": [
+        {
+            "pagePath": [
+                "codecs",
+                "tohexdump"
+            ]
+        },
+        {
+            "pagePath": [
+                "encoding",
+                "tohexdump"
+            ]
+        },
+        {
+            "pagePath": [
+                "parsers",
+                "tohexdump"
+            ]
+        }
+    ],
     "JSONEscape": [
         {
             "pagePath": [
