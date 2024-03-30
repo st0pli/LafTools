@@ -5,6 +5,8 @@ let d = loadDOT("kJH5NqVs0")
 
 export let useFormattedArgsCheckLabelDotMappings = () => {
     return {
+        "Array of dictionaries": Dot("ysFYdz_ZQ", "Array of dictionaries"),
+        "Array of arrays": Dot("TasD5DyoC", "Array of arrays"),
         "Cell delimiters": Dot("WrUDbaJCs", "Cell delimiters"),
         "Row delimiters": Dot("VkSPUIvL-", "Row delimiters"),
         "Space": Dot("txt.Space", "Space"),
