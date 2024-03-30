@@ -75,7 +75,7 @@ export default (props: CommonTransformerPassProp & TransformerWithRuntimeProp) =
                 defaultTab === "allops" && <ActionListView {...props} opDetails={filteredOpDetails} />
             }
         </div>)
-    return <div className='w-full h-full'>
+    return <div className='w-full h-full flex flex-col'>
         <div className={CSS_BG_COLOR_WHITE + ` w-full font-mono text-xs justify-center flex flex-row items-center ` + light_border_clz_all}
             style={{ borderRight: 'none', borderTop: 'none', borderLeft: 'none', height: VAL_CSS_TAB_TITLE_PANEL }}>
             <span>
@@ -89,7 +89,9 @@ export default (props: CommonTransformerPassProp & TransformerWithRuntimeProp) =
                 }
             </span>
         </div>
-        <div className='flex-1'>
+        <div className='flex-1 overflow-auto scroll-auto scrollbar-hide' style={{
+
+        }}>
             {innerContent}
         </div>
     </div>

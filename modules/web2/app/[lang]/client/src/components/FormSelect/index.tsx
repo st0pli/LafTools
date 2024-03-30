@@ -75,6 +75,7 @@ import { Example, ExampleProps } from "@blueprintjs/docs-theme";
 import { TreeWrapInfo } from "../../types/constants";
 import "./index.scss";
 import Html_select from "../Html_select";
+import { useFormattedArgsCheckLabelDotMappings } from "../../impl/tools/r_process_dot";
 
 export default (props: {
   list: { label: string; value: string }[];

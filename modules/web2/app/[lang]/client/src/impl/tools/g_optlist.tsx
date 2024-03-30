@@ -749,7 +749,7 @@ export    type Tool2PageMap = {
         {
             "pagePath": [
                 "encoding",
-                "fromhexdump"
+                "FromHexdump"
             ]
         },
         {
@@ -769,7 +769,7 @@ export    type Tool2PageMap = {
         {
             "pagePath": [
                 "encoding",
-                "tohexdump"
+                "ToHexdump"
             ]
         },
         {

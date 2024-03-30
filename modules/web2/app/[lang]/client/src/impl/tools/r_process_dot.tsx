@@ -5,6 +5,17 @@ let d = loadDOT("kJH5NqVs0")
 
 export let useFormattedArgsCheckLabelDotMappings = () => {
     return {
+        "Space": Dot("txt.Space", "Space"),
+        "Percent": Dot("txt.Percent", "Percent"),
+        "Comma": Dot("txt.Comma", "Comma"),
+        "Semi-colon": Dot("txt.Semi-colon", "Semi-colon"),
+        "Colon": Dot("txt.Colon", "Colon"),
+        "Line feed": Dot("txt.Line feed", "Line feed"),
+        "CRLF": Dot("txt.CRLF", "CRLF"),
+        "0x": Dot("txt.0x", "0x"),
+        "0x with comma": Dot("txt.0x with comma", "0x with comma"),
+        "None": Dot("txt.None", "None"),
+
         "Width": Dot("wdit", "Width"),
         "Upper case hex": Dot("UppUNIsdfex", "Upper case hex"),
         "Include final length": Dot("InclUNIsdf", "Include final length"),

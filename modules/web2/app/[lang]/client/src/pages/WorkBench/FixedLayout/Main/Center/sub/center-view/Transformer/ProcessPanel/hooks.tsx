@@ -120,17 +120,20 @@ export let useGeneralListRead = (props: ProcessPanelProps) => {
             let offArr: number[] = []
 
             let _eachArgIdx: number = -1
-            _.forEach(configArgs, (eachArg) => {
-                _eachArgIdx++
-                let eachArgIdx = _eachArgIdx
-                let { type, name, value: _defaultValue } = eachArg;
+            let formatForName = (name) => {
                 if (formattedArgObj[name]) {
                     console.log('formattedArgObj', formattedArgObj)
                     name = formattedArgObj[name] + (
                         !TranslationUtils.IsChinese() ? '' : `(${name})`
                     )
-                    eachArg.name = name
                 }
+                return name;
+            }
+            _.forEach(configArgs, (eachArg) => {
+                _eachArgIdx++
+                let eachArgIdx = _eachArgIdx
+                let { type, name, value: _defaultValue } = eachArg;
+                eachArg.name = formatForName(name)
                 let state_currentValue = state_crtPipeline.a[eachArgIdx]
                 let updateValueToState = (newVal) => {
                     let newA = [...state_crtPipeline.a]
@@ -189,7 +192,7 @@ export let useGeneralListRead = (props: ProcessPanelProps) => {
                                 value: value,
                                 selectList: _.map(_defaultValue, (eachValue) => {
                                     return {
-                                        label: eachValue.name,
+                                        label: formatForName(eachValue.name),
                                         value: eachValue.name
                                     }
                                 }),
@@ -209,7 +212,7 @@ export let useGeneralListRead = (props: ProcessPanelProps) => {
                                     value: value,
                                     selectList: _.map(_defaultValue, (eachValue) => {
                                         return {
-                                            label: eachValue,
+                                            label: formatForName(eachValue),
                                             value: eachValue
                                         }
                                     }),

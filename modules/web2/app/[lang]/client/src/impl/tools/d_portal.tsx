@@ -325,17 +325,18 @@ export let getToolSubCategory = ((): PortalDefinitionType[] => {
                     id: 'base85',
                     toolId: 'edc_base85',
                 },
+
                 {
-                    id: 'fromhexdump',
+                    id: 'ToHexdump',
+                    toolId: 'ToHexdump',
+                    label: Dot("z2FxMaOjF", "To Hexdump"),
+                },
+
+                {
+                    id: 'FromHexdump',
                     toolId: 'FromHexdump',
                     label: Dot("eYg7ZNBH6", "From Hexdump"),
                 },
-                {
-                    id: 'tohexdump',
-                    toolId: 'ToHexdump',
-                    label: Dot("z2FxMaOjF", "To Hexdump"),
-                }
-
             ]
         },
         {

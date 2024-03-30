@@ -39,9 +39,7 @@ export default (props: CommonTransformerPassProp & TransformerWithRuntimeProp & 
         }))
     }, 200), [])
     return (
-        <div onClick={e => {
-            // eleRef.current.eleIpt && eleRef.current.eleIpt.focus()
-        }}>
+        <div>
             <div className='p-1 space-y-1 space-x-1'>
                 <div className='w-full my-1'>
                     <InputGroup autoFocus={false} ref={e => {
@@ -55,6 +53,10 @@ export default (props: CommonTransformerPassProp & TransformerWithRuntimeProp & 
                         <Callout intent='warning' title={Dot('ShgVLLtWo', "No Operations Found")}></Callout></div>
                 }
                 {
+                    _.map(filteredOpDetails, (x, d) => {
+                        return <ActionListViewButton animiateMode noHighlightMode {...props} x={x} />
+                    })
+                }   {
                     _.map(filteredOpDetails, (x, d) => {
                         return <ActionListViewButton animiateMode noHighlightMode {...props} x={x} />
                     })
