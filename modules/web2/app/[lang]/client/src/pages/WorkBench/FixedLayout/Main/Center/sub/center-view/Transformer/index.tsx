@@ -49,7 +49,7 @@ import LoadingText from "../../../../../../../../components/LoadingText";
 import { Allotment, AllotmentHandle } from "allotment";
 import ProcessPanel from "./ProcessPanel/index.tsx";
 import { ACTION_Transformer_Process_Text, ACTION_Transformer_Process_Text_Delay } from "../../../../../../../../actions/transformer_action";
-import Operation from "../../../../../../../../impl/core/Operation.tsx";
+import Operation, { OptDetail } from "../../../../../../../../impl/core/Operation.tsx";
 import gutils, { getTextStrFromHTML } from "../../../../../../../../utils/GlobalUtils";
 import appToolInfoObj, { AppInfoType, AppOpDetail, AppToolConversionIdCollectionSet, loadConversionTSXById } from "../../../../../../../../impl/tools/d_meta.tsx";
 import { getInitValueForRuntimeStatus } from './init.tsx'
@@ -519,9 +519,11 @@ export default (props: CommonTransformerProps) => {
     return <ShowErrorPanel loadError={loadError}></ShowErrorPanel>
   }
 
+  let currentOptDetail: OptDetail | null | undefined = commonPassProp && commonPassProp.crtDefaultOpera && commonPassProp.crtDefaultOpera.getOptDetail()
+
   let app_right_input_jsx = (
     <GenCodeMirror
-      lineWrap
+      lineWrap={currentOptDetail && currentOptDetail?.inputNoWrap}
       icon='generate'
       title={Dot("XdOYpbSeG", "Input")}
       placeholder={desc || Dot("xPHqP", "The description is not yet defined.")}
@@ -539,7 +541,7 @@ export default (props: CommonTransformerProps) => {
         icon='export'
         readOnly
         title={Dot("XdOYpsdf", "Output")}
-        lineWrap
+        lineWrap={currentOptDetail && currentOptDetail?.outputNoWrap}
         language={commonPassProp.crtDefaultOpera?.getInputOutputEditorLang()?.outputLang}
         placeholder={Dot("y_9YM", "Output will be displayed here.")}
         bigTextId={props.outputBigTextId}

@@ -47,7 +47,7 @@ class URLEncode extends Operation {
         "manualBake": false,
         "args": [
           {
-            "name": "Encode all special chars",
+            "name": Dot("e7Afj0xo2", "Encode all special chars"),
             "type": "boolean",
             "value": false,
           },
@@ -77,7 +77,7 @@ class URLEncode extends Operation {
     this.outputType = "string";
     this.args = [
       {
-        name: "Encode all special chars",
+        name: Dot("0NSerY3oe", "Encode all special chars"),
         type: "boolean",
         value: false,
       },

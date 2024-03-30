@@ -92,7 +92,7 @@ export default (props: NavigatorPassProp) => {
                         ></ClosableText>
                         <ClosableText
                             goText={Dot("Ezsn81tfc", "View")}
-                            goLink="https://sys.laftools.dev"
+                            goLink="https://github.com/work7z/LafTools/"
                             closeKey="XDp3Meed-"
                             text={"[3] " + Dot("BQs6go-dk", "Free Download LafTools for Windows, Linux, and macOS.")}
                         >

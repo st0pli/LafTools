@@ -44,7 +44,7 @@ export default class JSONUnescape extends Operation {
       },
       infoURL: 'https://www.json.org/',
       nousenouseID: 'json-unescape',
-      optName: Dot("sd.text.93kq", "Unescape {0}", "JSON"),
+      optName: Dot("sd.texdqw", "Unescape {0}", "JSON"),
       optDescription: Dot(
         "EOdsCA",
         "Unescapes special characters in JSON code."
@@ -59,7 +59,7 @@ export default class JSONUnescape extends Operation {
   constructor() {
     super();
 
-    this.name = Dot("N_9_M4KgI", "JSON Escape");
+    this.name = Dot("N_9_dM4KgI", "JSON Escape");
     this.module = "Code";
     this.inputType = "string";
     this.outputType = "string";

@@ -44,6 +44,8 @@ type ModuleConfig = {
   checks?: Check[];
 }
 export type OptDetail = {
+  inputNoWrap?: boolean,
+  outputNoWrap?: boolean,
   exampleInput: string;
   exampleOutput: string;
   infoURL: string;

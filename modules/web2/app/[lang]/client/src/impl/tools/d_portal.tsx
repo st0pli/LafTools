@@ -273,7 +273,7 @@ export let getToolSubCategory = ((): PortalDefinitionType[] => {
                 {
                     id: 'JSONUnescape',
                     toolId: 'JSONEscape',
-                    label: Dot("fdtdUX-", "JSON Unescape"),
+                    label: Dot("fdtdUdX-", "JSON Unescape"),
                 },
                 // {
                 //     id: 'escape',
@@ -288,12 +288,12 @@ export let getToolSubCategory = ((): PortalDefinitionType[] => {
                 {
                     id: 'encodeuri',
                     toolId: 'URLToEncode',
-                    label: Dot("2Y2eY2Y2Y2", "Encode URI"),
+                    label: Dot("2Y2eY2dfY2Y2", "Encode {0}", 'URL'),
                 },
                 {
                     id: 'decodeuri',
                     toolId: 'URLToDecode',
-                    label: Dot("2Y2Ye2Y2Y2", "Decode URI"),
+                    label: Dot("ddf2Y2Y2", "Decode {0}", 'URL'),
                 },
                 {
                     id: 'base32',
@@ -434,10 +434,10 @@ export let getCategoryList = ((): TopMainCategoryNavList[] => {
             label: Dot("AvsWiJHLZ", "Resources"),
             id: 'resources',
         },
-        {
-            label: Dot("ymyfghy1r", "Notes"),
-            id: ('notes')
-        },
+        // {
+        //     label: Dot("ymyfghy1r", "Notes"),
+        //     id: ('notes')
+        // },
         {
             label: Dot("bWQunyU10", "AI Laboratory"),
             id: ('ai-lab')

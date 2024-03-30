@@ -55,7 +55,7 @@ export default (): ToolCategory[] => {
             "edc_base85",
             "hex",
             "bcd",
-            "JSONEscape"
+            "JSONEscape",
             // "edc_unicode",
             // "edc_base64-hex",
             // "edc_querystring",
@@ -124,6 +124,8 @@ export default (): ToolCategory[] => {
           Label: Dot("z1oFn", "Escape and Unescape"),
           Icon: "vertical-inbetween",
           ChildrenIdSet: [
+            "URLEncode",
+            "JSONEscape",
             // "esc_xml",
             // "esc_html",
             // "esc_csv",
@@ -147,6 +149,17 @@ export default (): ToolCategory[] => {
       Id: "converter",
       Label: Dot("m0106", "Converter"),
       SubCategories: [
+        {
+          Id: "common_formats",
+          Label: Dot("ui5pZ", "Common Formats"),
+          Icon: "hat",
+          ChildrenIdSet: [
+            "CSVToJSON",
+            // "curl_to_pl",
+            // "curl_to_api",
+            //
+          ],
+        },
         {
           Id: "command_parser",
           Label: Dot("ui5pZ", "Command Parser"),

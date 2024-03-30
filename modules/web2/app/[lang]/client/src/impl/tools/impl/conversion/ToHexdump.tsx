@@ -24,14 +24,59 @@
  * @license Apache-2.0
  */
 
-import Operation from "../Operation.tsx";
-import Utils from "../Utils.mjs";
-import OperationError from "../errors/OperationError.mjs";
+import { Dot } from "../../../../utils/cTranslationUtils.tsx";
+import Operation, { OptDetail } from "../../../core/Operation.tsx";
+import Utils from "../../../core/Utils.mjs";
+import OperationError from "../../../core/errors/OperationError.mjs";
 
 /**
  * To Hexdump operation
  */
 class ToHexdump extends Operation {
+  public getOptDetail(): OptDetail {
+    return {
+      relatedID: 'hex',
+      outputNoWrap: true,
+      config: {
+        "module": "Default",
+        flowControl: false,
+        manualBake: false,
+        "description": "Creates a hexdump of the input data, displaying both the hexadecimal values of each byte and an ASCII representation alongside.<br><br>The 'UNIX format' argument defines which subset of printable characters are displayed in the preview column.",
+        "infoURL": "https://wikipedia.org/wiki/Hex_dump",
+        "inputType": "ArrayBuffer",
+        "outputType": "string",
+        "args": [
+          {
+            "name": "Width",
+            "type": "number",
+            "value": 16,
+            "min": 1,
+          },
+          {
+            "name": "Upper case hex",
+            "type": "boolean",
+            "value": false,
+          },
+          {
+            "name": "Include final length",
+            "type": "boolean",
+            "value": false,
+          },
+          {
+            "name": "UNIX format",
+            "type": "boolean",
+            "value": false,
+          },
+        ]
+      },
+      nousenouseID: 'tohexdump',
+      infoURL: 'https://wikipedia.org/wiki/Hex_dump',
+      optName: Dot("DBw_XZTr9", "To {0}", Dot("w1eV6tcKX", 'Hexdump')),
+      optDescription: Dot("ChQlUi-RC", "Creates a hexdump of the input data, displaying both the hexadecimal values of each byte and an ASCII representation alongside."),
+      exampleInput: "Hello, world!",
+      exampleOutput: "00000000  48 65 6C 6C 6F 2C 20 77  6F 72 6C 64 21           |Hello, world!|",
+    }
+  }
   /**
    * ToHexdump constructor
    */
@@ -40,9 +85,6 @@ class ToHexdump extends Operation {
 
     this.name = "To Hexdump";
     this.module = "Default";
-    this.description =
-      "Creates a hexdump of the input data, displaying both the hexadecimal values of each byte and an ASCII representation alongside.<br><br>The 'UNIX format' argument defines which subset of printable characters are displayed in the preview column.";
-    this.infoURL = "https://wikipedia.org/wiki/Hex_dump";
     this.inputType = "ArrayBuffer";
     this.outputType = "string";
     this.args = [
@@ -83,12 +125,12 @@ class ToHexdump extends Operation {
     if (length < 1 || Math.round(length) !== length)
       throw new OperationError("Width must be a positive integer");
 
-    const lines = [];
+    const lines: any[] = [];
     for (let i = 0; i < data.length; i += length) {
       let lineNo = Utils.hex(i, 8);
 
       const buff = data.slice(i, i + length);
-      const hex = [];
+      const hex: any[] = [];
       buff.forEach((b) => hex.push(Utils.hex(b, padding)));
       let hexStr = hex.join(" ").padEnd(length * (padding + 1), " ");
 

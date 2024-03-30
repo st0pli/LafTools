@@ -24,14 +24,47 @@
  * @license Apache-2.0
  */
 
-import Operation from "../Operation.tsx";
-import { fromHex } from "../lib/Hex.mjs";
-import { isWorkerEnvironment } from "../Utils.mjs";
+import Operation, { OptDetail } from "../../../core/Operation.tsx";
+import { fromHex } from "../../../core/lib/Hex.mjs";
+import { isWorkerEnvironment } from "../../../core/Utils.mjs";
+import { Dot } from "../../../../utils/cTranslationUtils.tsx";
 
 /**
  * From Hexdump operation
  */
 class FromHexdump extends Operation {
+  public getOptDetail(): OptDetail {
+    return {
+      relatedID: "hex",
+      inputNoWrap: true,
+      config: {
+        module: "Default",
+        flowControl: false,
+        manualBake: false,
+        description:
+          "Attempts to convert a hexdump back into raw data. This operation supports many different hexdump variations, but probably not all. Make sure you verify that the data it gives you is correct before continuing analysis.",
+        infoURL: "https://wikipedia.org/wiki/Hex_dump",
+        inputType: "string",
+        outputType: "byteArray",
+        args: [],
+        checks: [
+          {
+            pattern:
+              "^(?:(?:[\\dA-F]{4,16}h?:?)?[ \\t]*((?:[\\dA-F]{2} ){1,8}(?:[ \\t]|[\\dA-F]{2}-)(?:[\\dA-F]{2} ){1,8}|(?:[\\dA-F]{4} )*[\\dA-F]{4}|(?:[\\dA-F]{2} )*[\\dA-F]{2})[^\\n]*\\n?){2,}$",
+            flags: "i",
+            args: [],
+          },
+        ],
+      },
+      infoURL: "https://wikipedia.org/wiki/Hex_dump",
+      nousenouseID: "hexdump",
+      optName: Dot("6h0GPkCHT", "From {0}", Dot("uVF7T7TEt", 'Hexdump')),
+      optDescription: Dot("rWF_pLlje", "Attempts to convert a hexdump back into raw data."),
+      exampleInput:
+        "00000000  48 65 6C 6C 6F 2C 20 77  6F 72 6C 64 21 0A 00 00  |Hello, world!...|\n",
+      exampleOutput: 'Hello, world!',
+    };
+  }
   /**
    * FromHexdump constructor
    */
@@ -40,9 +73,6 @@ class FromHexdump extends Operation {
 
     this.name = "From Hexdump";
     this.module = "Default";
-    this.description =
-      "Attempts to convert a hexdump back into raw data. This operation supports many different hexdump variations, but probably not all. Make sure you verify that the data it gives you is correct before continuing analysis.";
-    this.infoURL = "https://wikipedia.org/wiki/Hex_dump";
     this.inputType = "string";
     this.outputType = "byteArray";
     this.args = [];
@@ -62,10 +92,10 @@ class FromHexdump extends Operation {
    * @returns {byteArray}
    */
   run(input, args) {
-    const output = [],
+    const output: any = [],
       regex =
         /^\s*(?:[\dA-F]{4,16}h?:?)?[ \t]+((?:[\dA-F]{2} ){1,8}(?:[ \t]|[\dA-F]{2}-)(?:[\dA-F]{2} ){1,8}|(?:[\dA-F]{4} )*[\dA-F]{4}|(?:[\dA-F]{2} )*[\dA-F]{2})/gim;
-    let block, line;
+    let block: any, line: any;
 
     while ((block = regex.exec(input))) {
       line = fromHex(block[1].replace(/-/g, " "));
@@ -82,7 +112,8 @@ class FromHexdump extends Operation {
       input.indexOf("\r") !== -1 ||
       output.indexOf(13) !== -1
     ) {
-      if (isWorkerEnvironment()) self.setOption("attemptHighlight", false);
+      // TODO: attemptHighlight in FromHexdump
+      // if (isWorkerEnvironment()) self.setOption("attemptHighlight", false);
     }
     return output;
   }

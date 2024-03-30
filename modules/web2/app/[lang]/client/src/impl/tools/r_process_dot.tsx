@@ -5,6 +5,10 @@ let d = loadDOT("kJH5NqVs0")
 
 export let useFormattedArgsCheckLabelDotMappings = () => {
     return {
+        "Width": Dot("wdit", "Width"),
+        "Upper case hex": Dot("UppUNIsdfex", "Upper case hex"),
+        "Include final length": Dot("InclUNIsdf", "Include final length"),
+        "UNIX format": Dot("UNIsdf", "UNIX format"),
         "Include comments": Dot("dqw312", "Include comments"),
         "Semicolons before closing braces": Dot("sbcl", "Semicolons before closing braces"),
         "Scheme": Dot("8dq312", "Scheme"),

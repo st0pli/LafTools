@@ -201,7 +201,12 @@ let appToolInfoObj = {
     URLToDecode: passInfo({
         LabelFn: (Dot: DotType) => Dot("EPSdPCHhsa", "URL Decode")
     }),
-
+    ToHexdump: passInfo({
+        LabelFn: (Dot: DotType) => Dot("dqwew", "To {0}", Dot("Hexdump", "Hexdump"))
+    }),
+    FromHexdump: passInfo({
+        LabelFn: (Dot: DotType) => Dot("d33qw", "From {0}", Dot("Hexdump", "Hexdump"))
+    }),
     // JSONViewer: passInfo({
     //     LabelFn: (Dot: DotType) => Dot("1Xdsqwqw", "JSON Viewer")
     // }),
@@ -221,7 +226,7 @@ export const AppToolConversionIdCollectionSet = {
     css: ['CSSBeautify', 'CSSMinify'],
     sql: ['SQLBeautify', 'SQLMinify'],
     bcd: ['ToBCD', 'FromBCD'],
-    hex: ['ToHex', 'FromHex'],
+    hex: ['ToHex', 'FromHex', 'FromHexdump', 'ToHexdump'],
     text: ['RemoveWhitespace', 'Tail', 'Reverse', 'RemoveLineNumbers'],
     beautify: ['JSONBeautify', 'JavaScriptBeautify', 'CSSBeautify', 'XMLBeautify', 'YAMLBeautify', 'SQLBeautify', 'HTMLBeautify'],
     xml: ['XMLBeautify', 'XMLMinify'],
