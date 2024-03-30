@@ -24,8 +24,9 @@
  * @license Apache-2.0
  */
 
-import Operation from "../Operation.tsx";
-import OperationError from "../errors/OperationError.mjs";
+import { Dot } from "../../../../utils/cTranslationUtils.tsx";
+import Operation, { OptDetail } from "../../../core/Operation.tsx";
+import OperationError from "../../../core/errors/OperationError.mjs";
 import * as flat from "flat";
 const flatten = flat.default ? flat.default.flatten : flat.flatten;
 
@@ -33,6 +34,37 @@ const flatten = flat.default ? flat.default.flatten : flat.flatten;
  * JSON to CSV operation
  */
 class JSONToCSV extends Operation {
+  public getOptDetail(): OptDetail {
+    return {
+      relatedID: "json",
+      config: {
+        module: "Default",
+        description: "Converts JSON data to a CSV based on the definition in RFC 4180.",
+        infoURL: "https://wikipedia.org/wiki/Comma-separated_values",
+        inputType: "JSON",
+        outputType: "string",
+        args: [
+          {
+            name: "Cell delimiter",
+            type: "binaryShortString",
+            value: ",",
+          },
+          {
+            name: "Row delimiter",
+            type: "binaryShortString",
+            value: "\\r\\n",
+          },
+        ],
+        flowControl: false,
+        manualBake: false
+      },
+      infoURL: "https://wikipedia.org/wiki/Comma-separated_values",
+      optName: Dot("opqdkqw", "JSON to CSV"),
+      optDescription: Dot("opddkqw", "Converts JSON data to a CSV based on the definition in RFC 4180."),
+      exampleInput: "{\"name\":\"John\",\"age\":30,\"city\":\"New York\"}",
+      exampleOutput: "name,age,city\r\nJohn,30,New York\r\n",
+    };
+  }
   /**
    * JSONToCSV constructor
    */
@@ -41,9 +73,6 @@ class JSONToCSV extends Operation {
 
     this.name = "JSON to CSV";
     this.module = "Default";
-    this.description =
-      "Converts JSON data to a CSV based on the definition in RFC 4180.";
-    this.infoURL = "https://wikipedia.org/wiki/Comma-separated_values";
     this.inputType = "JSON";
     this.outputType = "string";
     this.args = [
@@ -59,6 +88,9 @@ class JSONToCSV extends Operation {
       },
     ];
   }
+  flattened: any;
+  cellDelim: any;
+  rowDelim: any;
 
   /**
    * Converts JSON to a CSV equivalent.
@@ -125,7 +157,7 @@ class JSONToCSV extends Operation {
           this.flattened = [this.flattened];
         }
         return this.toCSV(true);
-      } catch (err) {
+      } catch (err: any) {
         throw new OperationError(
           "Unable to parse JSON to CSV: " + err.toString(),
         );

@@ -5,6 +5,8 @@ let d = loadDOT("kJH5NqVs0")
 
 export let useFormattedArgsCheckLabelDotMappings = () => {
     return {
+        "Cell delimiters": Dot("WrUDbaJCs", "Cell delimiters"),
+        "Row delimiters": Dot("VkSPUIvL-", "Row delimiters"),
         "Space": Dot("txt.Space", "Space"),
         "Percent": Dot("txt.Percent", "Percent"),
         "Comma": Dot("txt.Comma", "Comma"),
@@ -23,6 +25,7 @@ export let useFormattedArgsCheckLabelDotMappings = () => {
         "Include comments": Dot("dqw312", "Include comments"),
         "Semicolons before closing braces": Dot("sbcl", "Semicolons before closing braces"),
         "Scheme": Dot("8dq312", "Scheme"),
+        "Format": Dot("8dq31231", "Formatted"),
         "Formatted": Dot("8dq31231", "Formatted"),
         "Quotes": Dot("QzQWQd", "Quotes"),
         "Signed": Dot("Signed", "Signed"),

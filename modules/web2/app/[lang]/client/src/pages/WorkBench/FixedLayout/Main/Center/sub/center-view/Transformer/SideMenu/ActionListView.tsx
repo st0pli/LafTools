@@ -56,10 +56,6 @@ export default (props: CommonTransformerPassProp & TransformerWithRuntimeProp & 
                     _.map(filteredOpDetails, (x, d) => {
                         return <ActionListViewButton animiateMode noHighlightMode {...props} x={x} />
                     })
-                }   {
-                    _.map(filteredOpDetails, (x, d) => {
-                        return <ActionListViewButton animiateMode noHighlightMode {...props} x={x} />
-                    })
                 }
             </div>
         </div>

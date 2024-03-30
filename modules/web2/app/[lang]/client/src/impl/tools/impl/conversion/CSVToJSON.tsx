@@ -71,8 +71,14 @@ class CSVToJSON extends Operation {
       optName: Dot("tZINaUR4b", "CSV to JSON"),
       optDescription: Dot("raTAuBwBz", "Converts a CSV file to JSON format."),
       infoURL: "https://wikipedia.org/wiki/Comma-separated_values",
-      exampleInput: '"Name, Age\\nJohn, 25\\nJane, 24"',
-      exampleOutput: '[{"Name": "John", "Age": "25"}, {"Name": "Jane", "Age": "24"}]',
+      exampleInput: `name,age,remark\nlibai,30,remark`,
+      exampleOutput: `[
+    {
+        "name": "libai",
+        "age": "30",
+        "remark": "remark"
+    }
+]`,
     }
   }
   /**

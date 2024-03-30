@@ -209,6 +209,7 @@ export default (): ToolCategory[] => {
           Label: Dot("aSOpr", "Data Model Generater"),
           Icon: "array-boolean",
           ChildrenIdSet: [
+            "CSVToJSON",
             // "json_to_model",
             // "xml_to_model",
             // "sql_to_model",

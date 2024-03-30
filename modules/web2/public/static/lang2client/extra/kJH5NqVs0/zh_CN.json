@@ -15,6 +15,8 @@
     "Tabs": "选项卡组",
     "UNIsdf": "UNIX格式",
     "UppUNIsdfex": "大写十六进制",
+    "VkSPUIvL-": "行分隔符",
+    "WrUDbaJCs": "单元格分隔符",
     "dqw312": "包含评论",
     "includeDelimeter": "包括分隔符",
     "izQSRE3f2": "严格模式",
@@ -35,7 +37,7 @@
     "txt.None": "没有任何",
     "txt.Percent": "百分",
     "txt.Semi-colon": "分号",
-    "txt.Space": "空间",
+    "txt.Space": "空格",
     "vLCRStTeS": "标准",
     "wdit": "宽度"
 }
