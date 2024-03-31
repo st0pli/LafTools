@@ -173,6 +173,9 @@ let appToolInfoObj = {
     CSVToJSON: passInfo({
         LabelFn: (Dot: DotType) => Dot("1X8x7dqw", "CSV to JSON")
     }),
+    JSONToCSV: passInfo({
+        LabelFn: (Dot: DotType) => Dot("UaDAW3Puf", "JSON to CSV")
+    }),
     // Example
     "Example": passInfo({
         LabelFn: (Dot: DotType) => Dot("1X8x7", "Example")

@@ -18,6 +18,7 @@ export default class MeHandler extends ToolHandler {
     getOperationsByName(): AppOpFnMapTypeKeys[] {
         return (
             [
+                "JSONToCSV",
                 "CSVToJSON",
             ]
         )

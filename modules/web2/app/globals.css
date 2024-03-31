@@ -103,13 +103,13 @@
   font-size: 17px;
   font-family: unset;
 }
-body {
-  min-width: 1300px;
+body{
+  min-width: 1180px;
 }
 .app-minmax-size{
-  @apply md:max-w-[1280px];
-  @apply xl:max-w-[1280px];
-  @apply 2xl:max-w-[1530px];
+  /* min-width: 1180px; */
+  /* w-[550px] md: w-[688px] lg:w-[924px] */
+  @apply w-[1180px] xl:w-[1180px] 2xl:w-[1436px];
 }
 .bp5-toast-container{
   position: fixed!important;

@@ -856,11 +856,19 @@ export    type Tool2PageMap = {
             ]
         }
     ],
-    "CSVToJSON": [
+    "JSONToCSV": [
         {
             "pagePath": [
                 "converters",
                 "json2csv"
+            ]
+        }
+    ],
+    "CSVToJSON": [
+        {
+            "pagePath": [
+                "converters",
+                "csv2json"
             ]
         }
     ]

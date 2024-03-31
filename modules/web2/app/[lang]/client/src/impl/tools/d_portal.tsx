@@ -362,8 +362,8 @@ export let getToolSubCategory = ((): PortalDefinitionType[] => {
                 },
                 {
                     id: 'json2csv',
-                    toolId: 'CSVToJSON',
-                    label: Dot("json2csv.31", "CSV to JSON")
+                    toolId: 'JSONToCSV',
+                    label: Dot("json2csv.31", "JSON to CSV")
                 },
                 {
                     id: 'json2yaml',
@@ -372,6 +372,11 @@ export let getToolSubCategory = ((): PortalDefinitionType[] => {
                 {
                     id: 'xml2json',
                     label: Dot("xml2json.t", "XML to JSON")
+                },
+                {
+                    id: 'csv2json',
+                    toolId: 'CSVToJSON',
+                    label: Dot("json2csv.31", "CSV to JSON")
                 },
                 {
                     id: 'yaml2json',

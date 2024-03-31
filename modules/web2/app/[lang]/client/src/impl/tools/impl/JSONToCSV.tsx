@@ -19,7 +19,8 @@ export default class JSONToCSVHandler extends ToolHandler {
     getOperationsByName(): AppOpFnMapTypeKeys[] {
         return (
             [
-                "JSONToCSV"
+                "JSONToCSV",
+                "CSVToJSON"
             ]
         )
     }
