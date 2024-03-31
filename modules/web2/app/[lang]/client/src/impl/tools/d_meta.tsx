@@ -27,10 +27,14 @@ import { CodeImplMap } from "./code/types";
 import Operation from "../core/Operation.tsx";
 import { AppOpFnMapTypeKeys } from "./g_optlist.tsx";
 import { satisfies } from "semver";
+import { Dot } from "../../utils/cTranslationUtils.tsx";
 
-
+export type StrFnType = (Dot: DotType) => string
+export type StrArrFnType = (Dot: DotType) => string[]
 export type AppInfoType = {
-    LabelFn: (Dot: DotType) => string;
+    LabelFn: StrFnType;
+    FeaturesFns?: StrArrFnType[];
+
     ImportImpl?: () => Promise<{
         default: ToolHandlerClass
     }>
@@ -43,6 +47,16 @@ export type AppInfoType = {
 }
 let passInfo = (obj: AppInfoType): AppInfoType => {
     return obj;
+}
+
+let featuresObj: { [key: string]: StrArrFnType } = {
+    json: (Dot: DotType) => {
+        return [
+            Dot("wVApSGGdZ", "Emoji and Chinese characters support"),
+            Dot("wVApSGGdZ", "Supports comments and trailing commas"),
+            Dot("wVApSGGdZ", "Supports JSON5 and JSON with comments"),
+        ]
+    }
 }
 // NOTE: do not add typing for appToolInfoObj, it will be inferred from the object
 let appToolInfoObj = {
@@ -71,7 +85,10 @@ let appToolInfoObj = {
         LabelFn: (Dot: DotType) => Dot("1Xe8x7", "{0} Beautify", "CSS")
     }),
     "JSONBeautify": passInfo({
-        LabelFn: (Dot: DotType) => Dot("1Xe8x7", "{0} Beautify", "JSON")
+        LabelFn: (Dot: DotType) => Dot("1Xe8x7", "{0} Beautify", "JSON"),
+        FeaturesFns: [
+            featuresObj.json
+        ]
     }),
     "JavaScriptBeautify": passInfo({
         LabelFn: (Dot: DotType) => Dot("1Xe8x7", "{0} Beautify", "JavaScript")
@@ -129,7 +146,10 @@ let appToolInfoObj = {
         LabelFn: (Dot: DotType) => "MD6"
     }),
     "JSONMinify": passInfo({
-        LabelFn: (Dot: DotType) => Dot("1Xe82x7", "{0} Minify", "JSON")
+        LabelFn: (Dot: DotType) => Dot("1Xe82x7", "{0} Minify", "JSON"),
+        FeaturesFns: [
+            featuresObj.json
+        ]
     }),
     "XMLMinify": passInfo({
         LabelFn: (Dot: DotType) => Dot("1Xe82x7", "{0} Minify", "XML")
@@ -248,6 +268,7 @@ export const AppToolConversionIdCollectionSet = {
     sha3s: ['SHA512', 'SHA384', 'SHA256', 'SHA224'],
     nothing: [],
 } satisfies { [key: string]: AppOpFnMapTypeKeys[] }
+
 
 // using infer to get the type of the keys for AppToolConversionIdCollectionSet
 export type AppToolConversionIdCollectionSetType = keyof typeof AppToolConversionIdCollectionSet
