@@ -39,7 +39,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import AjaxUtils from "../../../../../../../../../utils/AjaxUtils";
 import AlertUtils from "../../../../../../../../../utils/AlertUtils";
 import { SysTabPane } from "../../../../../../../../../components/SysTabPane";
-import { CSS_NAV_BP_TAB_HEIGHT, CSS_TRANSITION_WIDTH_HEIGHT_ONLY, CSS_TW_LAYOUT_BORDER, LabelValuePair } from "../../../../../../../../../types/constants";
+import { CSS_NAV_BP_TAB_HEIGHT, CSS_TRANSITION_WIDTH_HEIGHT_ONLY, CSS_TW_LAYOUT_BORDER, LabelValuePair, tw } from "../../../../../../../../../types/constants";
 import exportUtils from "../../../../../../../../../utils/ExportUtils";
 import RuntimeStatusSlice from "../../../../../../../../../reducers/runtimeStatusSlice";
 
@@ -84,6 +84,8 @@ export default (props: ProcessPanelProps) => {
             <iframe src={toolHanlder?.getOperations()[0].getOptDetail()?.infoURL} className="w-full h-full border-none outline-none"></iframe>
         </div>
     } else if (toolTabIndex == "tools") {
+        pdValue = tw`  p-2 scrollbar-hide `
+
         finalShowContent_l = <FormGenPanel onReset={() => {
             FN_GetDispatch()(
                 ParamStateSlice.actions.updateCrtToolCfg({
