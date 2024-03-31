@@ -33,6 +33,7 @@ if (baseDIR == "") {
 
 // let webDIR = path.join(baseDIR, ...`modules/web`.split("/"));
 let web2DIR = path.join(baseDIR, ...`modules/web2`.split("/"));
+let server2DIR = path.join(baseDIR, ...`modules/server2`.split("/"));
 let docsGeneratorDIR = path.join(
   baseDIR,
   ...`devtools/docs-generator/`.split("/"),
@@ -87,6 +88,15 @@ let web2Item = {
   dir: `${web2DIR}/app`,
   exclude: ["[lang]/client"],
 };
+let server2Item = {
+  id: "srv2",
+  type: "ts",
+  prefix: "Dot(",
+  pattern: commonText,
+  target: `${server2DIR}/src/i18n/lang`,
+  dir: `${server2DIR}/src`,
+  exclude: ["[lang]/client"],
+};
 let docsGENItem = {
   id: "nlt3KDLEX",
   type: "ts",
@@ -115,6 +125,7 @@ let searchItems = [
   },
   docsGENItem,
   web2Item,
+  server2Item,
 
   // {
   //   type: "ts",
