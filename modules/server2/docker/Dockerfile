@@ -1,7 +1,7 @@
 # Start with a base image containing Java runtime
 FROM ubuntu:22.04
 
-# 国内源
+# mirrors for China mainland
 RUN sed -i 's/archive.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list
 
 # Install OpenJDK-8
