@@ -56,12 +56,12 @@ export type LabelHrefType = {
     href?: string
 }
 export type NavigatorPassProp = CategorySearchProps & {
-    children: JSX.Element
+    innerContent: JSX.Element
 }
 
 export default (props: NavigatorPassProp) => {
     let toolSearchDetail: ToolSearchDetail = getSearchDetailBySearchProps(props)
-    let { children } = props;
+    let { innerContent } = props;
     return (
         <div className={'  bg-slate-50 dark:bg-slate-800 pb-10'}>
             <div className={row_pad_clz}>
@@ -86,7 +86,7 @@ export default (props: NavigatorPassProp) => {
                         ]}></NavCategory>
                     </div>
                 </div>
-                {children}
+                {innerContent}
             </div>
         </div>
 

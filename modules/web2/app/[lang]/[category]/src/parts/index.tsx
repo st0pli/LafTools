@@ -57,7 +57,7 @@ export type LabelHrefType = {
     href?: string
 }
 export type NavigatorPassProp = CategorySearchProps & {
-    children: JSX.Element
+    innerContent: JSX.Element
 }
 
 export default (props: NavigatorPassProp) => {

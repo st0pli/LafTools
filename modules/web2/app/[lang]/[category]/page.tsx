@@ -49,10 +49,6 @@ export let sleep = (ms: number) => {
 
 
 export default async function Home(props: CategorySearchProps) {
-    let category = props.params.category
-    if (category !== 'tools') {
-        return <main>this is ok</main>
-    }
     return (
         <main>
             <EntryPage {...props} />

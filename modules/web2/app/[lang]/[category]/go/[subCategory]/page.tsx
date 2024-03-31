@@ -69,7 +69,7 @@ export default async function Home(props: CategorySearchProps) {
     }
     return (
         <main>
-            <NavigatorPage {...props} children={whatPartForChildren}></NavigatorPage>
+            <NavigatorPage {...props} innerContent={whatPartForChildren}></NavigatorPage>
         </main>
     )
 }

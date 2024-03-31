@@ -11,11 +11,16 @@ let i18njson = require("../../../resources/public/purejs/app-i18n.json");
 
 // get --langlist= from argv, and get it as value
 let argv = process.argv;
+let ragSkipLangList = null;
 let langlist = null;
 for (let i = 0; i < argv.length; i++) {
   let eachArg = argv[i];
   if (eachArg.startsWith("--langlist=")) {
     langlist = eachArg.replace("--langlist=", "").split(",");
+    break;
+  }
+  if (eachArg.startsWith("--skip-langlist=")) {
+    ragSkipLangList = eachArg.replace("--skip-langlist=", "").split(",");
     break;
   }
 }
@@ -75,6 +80,11 @@ i18njson.forEach((x) => {
   }
   if (langlist && langlist.length > 0) {
     if (langlist.indexOf(x.Value) == -1) {
+      return;
+    }
+  }
+  if (ragSkipLangList && ragSkipLangList.length > 0) {
+    if (ragSkipLangList.indexOf(x.Value) != -1) {
       return;
     }
   }
