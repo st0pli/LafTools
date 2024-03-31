@@ -19,7 +19,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import _ from 'lodash';
-import Page, { CombindSearchProps, generateMetadata } from './[lang]/page'
+import Page, { generateMetadata } from './[lang]/page'
 import getAuthInfo, { AuthInfo } from "@/app/__CORE__/containers/GrailLayoutWithUser/actions/handleAuthInfo";
 // import "purecss/build/pure.css";
 // import "purecss/build/grids-responsive-min.css";

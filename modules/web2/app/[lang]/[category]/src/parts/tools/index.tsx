@@ -29,7 +29,6 @@ import { useConstructedKeyAndInit } from '@/app/[lang]/client/src/initapp';
 import FundrasingPlanBtn from '../cpt/cpt-fundrasing-btn';
 import Sidebar from './main-sidebar';
 import Main from './main-part';
-import { CombindSearchProps } from '../../../page';
 import { NavigatorPassProp } from '../main';
 import { CategorySearchProps } from '@/app/[lang]/page';
 export let getCardsProps = (): CardProps => {

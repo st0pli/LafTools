@@ -33,7 +33,7 @@ import { Dot, getXLocaleStrInRSC } from "@/app/__CORE__/utils/TranslationUtils";
 import { isDevEnv } from "@/app/__CORE__/hooks/env";
 import PassClientValue from './pass'
 import PageLoadingEffect from "@/app/__CORE__/containers/PageLoadingEffect";
-import { CombindSearchProps } from "../[category]/page";
+import { CategorySearchProps } from "../page";
 const EntryWrapper = dynamic(() => import('./client'), { ssr: false, loading: () => <PageLoadingEffect /> })
 
 let cachedLangMap: { [key: string]: string } = {}
@@ -45,7 +45,7 @@ let getCachedValueIfNot = (key: string, fn: () => string) => {
     return cachedLangMap[key]
 }
 
-export default async function ClientPage(props: CombindSearchProps) {
+export default async function ClientPage(props: CategorySearchProps) {
     return (
         <main>
             <EntryWrapper />

@@ -121,4 +121,4 @@ export let isCensorShipForWebsiteMode = () => {
     // return true && isChineseByXLocal();
 }
 
-export type { CombindSearchProps, AuthInfoProps } from './[category]/page'
+export type { AuthInfoProps } from './[category]/page'
