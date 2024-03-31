@@ -29,6 +29,7 @@ jobs:
       - name: Run build script
         id: runbuildscript
         run: |
-          npm i -g typescript
           cd ./modules/server2
-          npm run build
+          mkdir ./docker/dist
+          cp -a * ./docker/dist
+          tar -czvf docker-dist.tar.gz ./docker
