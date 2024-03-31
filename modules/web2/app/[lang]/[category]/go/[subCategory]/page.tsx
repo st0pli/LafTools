@@ -37,7 +37,7 @@ import { Dot } from "../../../../__CORE__/utils/TranslationUtils";
 import Link from "next/link";
 import { NextUIProvider } from "@nextui-org/react";
 
-import { getAppIcon, getAppKeywords } from "../../../../__CORE__/config/imgconfig";
+import { getAppDevIcon, getAppKeywords } from "../../../../__CORE__/config/imgconfig";
 import Tools, { CategorySearchProps, generateMetadata as toolMetaDataFn } from '@/app/[lang]/page'
 import ToolPart from '../../src/parts/tools'
 import NavigatorPage from '../../src/parts/index'
@@ -57,9 +57,19 @@ export default async function Home(props: CategorySearchProps) {
             }
         }
     }
+    let whatPartForChildren = <span>it is undefined so far</span>
+    if (props.params.category == 'tools') {
+        whatPartForChildren = (
+            <ToolPart {...props} subCategory={subCategory} />
+        )
+    } else {
+        whatPartForChildren = (
+            <div>have no idea</div>
+        )
+    }
     return (
         <main>
-            <NavigatorPage {...props} children={<ToolPart {...props} subCategory={subCategory} />}></NavigatorPage>
+            <NavigatorPage {...props} children={whatPartForChildren}></NavigatorPage>
         </main>
     )
 }

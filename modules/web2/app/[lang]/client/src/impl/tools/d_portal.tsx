@@ -21,7 +21,7 @@
 'use server'
 
 import { LabelHrefType } from "@/app/[lang]/[category]/src/parts"
-import { getAppIcon, getAppKeywords } from "@/app/__CORE__/config/imgconfig"
+import { getAppDevIcon, getAppKeywords } from "@/app/__CORE__/config/imgconfig"
 import { Dot } from "@/app/__CORE__/utils/TranslationUtils"
 import { fmtURL_Server } from "@/app/__CORE__/utils/routeUtils"
 import { Metadata } from "next"
@@ -465,7 +465,7 @@ export let getCategoryList = ((): TopMainCategoryNavList[] => {
         },
         {
             label: Dot("n28g4di0L", "Manuals"),
-            id: 'manuals'
+            id: 'docs'
         },
         {
             label: Dot("AvsWiJHLZ", "Resources"),
@@ -477,7 +477,7 @@ export let getCategoryList = ((): TopMainCategoryNavList[] => {
         // },
         {
             label: Dot("bWQunyU10", "AI Laboratory"),
-            id: ('ai-lab')
+            id: ('ai')
         },
     ]
 

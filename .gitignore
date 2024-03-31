@@ -1,4 +1,5 @@
 var/log/
+~$*
 *-audit.json
 web-nouse
 *.log

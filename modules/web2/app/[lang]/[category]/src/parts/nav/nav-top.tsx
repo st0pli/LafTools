@@ -25,7 +25,7 @@ import React, { } from "react";
 import { Dot, getXHostname } from "@/app/__CORE__/utils/TranslationUtils";
 import Link from "next/link";
 import { NavCategory as NavCategory } from "../nav/nav-category";
-import { getAppIcon } from "@/app/__CORE__/config/imgconfig";
+import { getAppDevIcon } from "@/app/__CORE__/config/imgconfig";
 import { ClosableText } from "@/app/__CORE__/components/ClosableText";
 import RedirectToOtherBanner from "@/app/__CORE__/components/RedirectToOtherBanner/index";
 import { border_clz, border_clz_top, row_pad_clz } from "@/app/__CORE__/meta/styles";

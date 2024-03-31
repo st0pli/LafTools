@@ -25,7 +25,7 @@ import getAuthInfo, { AuthInfo } from "@/app/__CORE__/containers/GrailLayoutWith
 import { PageProps } from '@/app/__CORE__/meta/pages'
 // import Entry from "./client";
 import { Metadata } from "next/types";
-import { getAppIcon, getAppKeywords } from "@/app/__CORE__/config/imgconfig";
+import { getAppDevIcon, getAppKeywords } from "@/app/__CORE__/config/imgconfig";
 // import {  } from "./src/utils/TranslationUtils";
 import dynamic from "next/dynamic";
 import { fmtURL_Server } from "@/app/__CORE__/utils/routeUtils";
@@ -56,7 +56,7 @@ export let generateMetadata = async function (): Promise<Metadata> {
     let title = Dot("QkJ-TOduip6z_", "LafTools IDE")
     return {
         icons: [
-            getAppIcon()
+            getAppDevIcon()
         ],
         title: title,
         description: Dot("8OqB7hN1s", "This page provides an IDE UI style for LafTools, a higher level of abstraction for LafTools."),

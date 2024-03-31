@@ -36,7 +36,7 @@ import fs from 'fs'
 import PrelintInit from './__CORE__/script/preline-init'
 import { getWebsiteLocale } from "./__CORE__/utils/TranslationUtils";
 import ProgressBar from "./progressBar";
-import { getAppIcon } from "./__CORE__/config/imgconfig";
+import { getAppDevIcon } from "./__CORE__/config/imgconfig";
 import { NextUIProvider } from "@nextui-org/react";
 import { Providers } from "./nextui-provider";
 import Link from "next/link";
@@ -72,7 +72,7 @@ export async function generateMetadata(
     title: getWebsiteName(),
     description: getWebDesc(),
     icons: [
-      getAppIcon()
+      getAppDevIcon()
     ]
   };
 }

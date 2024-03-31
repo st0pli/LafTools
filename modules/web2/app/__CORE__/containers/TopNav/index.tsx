@@ -28,7 +28,7 @@ import HomeLink from "../../components/HomeLink";
 import SearchBar from "./SearchBar";
 import { useIsLoggedIn } from "../../hooks/user";
 import { fmtURL_Server as fmtURL_Server } from "../../utils/routeUtils";
-import { getAppIcon } from "../../config/imgconfig";
+import { getAppDevIcon } from "../../config/imgconfig";
 
 
 export let TopNav = (props: any) => {
@@ -43,7 +43,7 @@ export let TopNav = (props: any) => {
             <div className="flex items-center justify-between flex-wrap p-4 border-b-slate-300  mx-auto app-minmax-size pl-6  " style={{
             }}>
                 <div className="flex items-center flex-shrink-0 mr-8">
-                    <img src={`/${getAppIcon(true)}`} alt="logo" className="fill-current h-8 w-22 mr-2 rounded-sm border-zinc-100  shadow-sm " />
+                    <img src={`/${getAppDevIcon(true)}`} alt="logo" className="fill-current h-8 w-22 mr-2 rounded-sm border-zinc-100  shadow-sm " />
                     <HomeLink>
                         <span data-tooltip-id="my-tooltip-1" className="ml-1 font-semibold text-xl tracking-tight">{getPureWebsiteName()}</span>
                     </HomeLink>

@@ -38,7 +38,7 @@ import { Dot } from "../../../__CORE__/utils/TranslationUtils";
 import Link from "next/link";
 import { NextUIProvider } from "@nextui-org/react";
 
-import { getAppIcon, getAppKeywords } from "../../../__CORE__/config/imgconfig";
+import { getAppDevIcon, getAppKeywords } from "../../../__CORE__/config/imgconfig";
 import Tools, { generateMetadata as toolMetaDataFn } from '@/app/[lang]/page'
 
 

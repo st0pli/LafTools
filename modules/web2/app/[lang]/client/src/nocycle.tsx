@@ -107,5 +107,5 @@ export let IsDevMode = (): boolean =>
   location.href.indexOf("localhost:3000") != -1;
 
 export let getIconPngFile = (): string => {
-  return IsDevMode() ? "icon-dev.png" : "icon.png";
+  return "icon.png";
 };

@@ -25,7 +25,7 @@ export let formatStaticResource = (path: string): string => {
     return `/static/${path}`
 }
 
-export let getAppIcon = (htmlIconImg?: boolean): string => {
+export let getAppDevIcon = (htmlIconImg?: boolean): string => {
     return formatStaticResource((() => {
         if (htmlIconImg || isDevEnv()) {
             return '/icon-dev.png'

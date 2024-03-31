@@ -24,7 +24,7 @@ import React, { } from "react";
 import { Dot, getXHostname } from "@/app/__CORE__/utils/TranslationUtils";
 import Link from "next/link";
 import { NavCategory as NavCategory } from "../nav/nav-category";
-import { getAppIcon } from "@/app/__CORE__/config/imgconfig";
+import { getAppDevIcon } from "@/app/__CORE__/config/imgconfig";
 import { ClosableText } from "@/app/__CORE__/components/ClosableText";
 import RedirectToOtherBanner from "@/app/__CORE__/components/RedirectToOtherBanner/index";
 import { border_clz, border_clz_top, row_pad_clz } from "@/app/__CORE__/meta/styles";
@@ -58,7 +58,7 @@ export default (props: NavigatorPassProp) => {
     return <div className={border_clz + " py-3 p-4 relative bg-slate-50 dark:bg-slate-900"}>
         <div className={row_pad_clz + ' z-20 flex flex-row items-center relative'}>
             <div className="mx-2 mr-3">
-                <img src={getAppIcon(true)} width={40}></img>
+                <img src={getAppDevIcon(true)} width={40}></img>
             </div>
             <div>
                 <h1 className="text-lg m-0">{Dot("OyZLZokUQ", "Empower Development with LafTools!")}</h1>

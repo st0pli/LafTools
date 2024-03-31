@@ -18,19 +18,20 @@ import { Dot, getXSubPath, isChineseByXLocal } from "../__CORE__/utils/Translati
 import Link from "next/link";
 import { NextUIProvider } from "@nextui-org/react";
 
-import { getAppIcon, getAppKeywords } from "../__CORE__/config/imgconfig";
+import { getAppDevIcon, getAppKeywords } from "../__CORE__/config/imgconfig";
 
-import SubCategoryPage, { CombindSearchProps } from '@/app/[lang]/[category]/page'
+import SubCategoryPage from '@/app/[lang]/[category]/page'
 import { satisfies } from "semver";
 import { getCategoryList as getCategoryList, getToolSubCategory, PortalDefinitionTbabGroup } from "./[category]/types";
-export default async function Home(props: CombindSearchProps) {
-    return <SubCategoryPage {...props} />
-}
+
 export type CategorySearchProps = PageProps<{
     subCategory: string,
-    category: string,
+    category: "tools" | "resources" | "docs" | "ai",
     id: string
 }, {}>;
+export default async function Home(props: CategorySearchProps) {
+    return <SubCategoryPage {...props} />
+}
 
 export type ToolSearchDetail = {
     searchToolItem: PortalDefinitionTbabGroup,
@@ -85,7 +86,7 @@ export let generateMetadata = async function (props: CategorySearchProps): Promi
     let fn = (obj: Partial<Metadata>) => {
         return _.merge({
             icons: [
-                getAppIcon()
+                '/icon.png'
             ],
             title: Dot("title-laftools", "LafTools - The Leading All-In-One ToolBox for Programmers"),
             description: Dot("iZXig7E2JF", "LafTools offers a comprehensive suite of development utilities including codecs, formatters, image processing tools, and computer resource management solutions. Designed to streamline and enhance your development workflow, LafTools is your go-to resource for efficient, high-quality software development."),
