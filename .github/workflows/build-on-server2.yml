@@ -33,10 +33,7 @@ jobs:
       - name: Run build script
         id: runbuildscript
         run: |
-          cd $LAFTOOLS_ROOT/modules/server2
-          tar -czvf docker-dist.tar.gz .
-          ls -ahlrt
-          pwd
+          $LAFTOOLS_ROOT/pipeline/build-server2.sh
 
       - name: CNS Release 1
         uses: appleboy/ssh-action@master
