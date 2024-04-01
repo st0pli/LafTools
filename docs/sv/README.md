@@ -20,7 +20,7 @@ För att snabbt kunna använda dessa funktioner har vi distribuerat en stabil on
 - 🇺🇸 USA: [laftools.dev](https://laftools.dev)
 - 🇨🇳 Endast fastlandet i Kina: [laftools.cn](https://laftools.cn)
 
-# 🌱 Vad är det med namnet?
+# 🔋 Vad är det med namnet?
 
 - `L` -> Linked
 - `A` -> Asynchronous

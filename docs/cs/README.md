@@ -20,7 +20,7 @@ Pro rychlé použití těchto funkcí jsme pro vás nasadili stabilní online we
 - 🇺🇸 spojený stát: [laftools.dev](https://laftools.dev)
 - 🇨🇳 Pouze pevninská Čína: [laftools.cn](https://laftools.cn)
 
-# 🌱 Jak je to se jménem?
+# 🔋 Jak je to se jménem?
 
 - `L` -> Linked
 - `A` -> Asynchronous

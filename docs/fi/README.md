@@ -20,7 +20,7 @@ Jotta voit käyttää näitä toimintoja nopeasti, olemme ottaneet käyttöön v
 - 🇺🇸 Yhdysvallat: [laftools.dev](https://laftools.dev)
 - 🇨🇳 Vain Manner-Kiina: [laftools.cn](https://laftools.cn)
 
-# 🌱 Mitä nimeä vaivaa?
+# 🔋 Mitä nimeä vaivaa?
 
 - `L` -> Linked
 - `A` -> Asynchronous

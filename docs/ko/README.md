@@ -20,7 +20,7 @@
 - 🇺🇸 미국: [laftools.dev](https://laftools.dev)
 - 🇨🇳 중국 본토만 해당: [laftools.cn](https://laftools.cn)
 
-# 🌱 이름이 뭐예요?
+# 🔋 이름이 뭐예요?
 
 - `L` -> Linked
 - `A` -> Asynchronous

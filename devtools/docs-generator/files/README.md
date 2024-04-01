@@ -20,7 +20,7 @@ ${Dot("hDdqkdxkSd","To quickly use these functions, we've deployed stable online
 - 🇺🇸 ${Dot("usvss","United State")}: [laftools.dev](https://laftools.dev)
 - 🇨🇳 ${Dot("cnvss","China Mainland")}: [laftools.cn](https://laftools.cn)
 
-# 🌱 ${Dot("I-Zaii3HZ","What's with the name?")}
+# 🔋 ${Dot("I-Zaii3HZ","What's with the name?")}
 
 - `L` -> Linked
 - `A` -> Asynchronous

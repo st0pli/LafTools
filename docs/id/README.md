@@ -20,7 +20,7 @@ Untuk menggunakan fungsi-fungsi ini dengan cepat, kami telah menerapkan situs we
 - 🇺🇸 Amerika Serikat: [laftools.dev](https://laftools.dev)
 - 🇨🇳 Khusus Tiongkok Daratan: [laftools.cn](https://laftools.cn)
 
-# 🌱 Ada apa dengan namanya?
+# 🔋 Ada apa dengan namanya?
 
 - `L` -> Linked
 - `A` -> Asynchronous

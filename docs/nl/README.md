@@ -20,7 +20,7 @@ Om deze functies snel te kunnen gebruiken, hebben we een stabiele online website
 - 🇺🇸 Verenigde staat: [laftools.dev](https://laftools.dev)
 - 🇨🇳 Alleen het vasteland van China: [laftools.cn](https://laftools.cn)
 
-# 🌱 Wat is er met de naam?
+# 🔋 Wat is er met de naam?
 
 - `L` -> Linked
 - `A` -> Asynchronous

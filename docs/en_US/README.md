@@ -20,7 +20,7 @@ To quickly use these functions, we've deployed stable online website in US and C
 - 🇺🇸 United State: [laftools.dev](https://laftools.dev)
 - 🇨🇳 China Mainland: [laftools.cn](https://laftools.cn)
 
-# 🌱 What's with the name?
+# 🔋 What's with the name?
 
 - `L` -> Linked
 - `A` -> Asynchronous

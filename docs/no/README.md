@@ -20,7 +20,7 @@ For raskt å bruke disse funksjonene har vi distribuert en stabil nettside i USA
 - 🇺🇸 forent stat: [laftools.dev](https://laftools.dev)
 - 🇨🇳 Kun fastlandet i Kina: [laftools.cn](https://laftools.cn)
 
-# 🌱 Hva er det med navnet?
+# 🔋 Hva er det med navnet?
 
 - `L` -> Linked
 - `A` -> Asynchronous

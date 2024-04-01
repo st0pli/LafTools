@@ -20,7 +20,7 @@
 - 🇺🇸 海外版: [laftools.dev](https://laftools.dev)
 - 🇨🇳 國內版: [laftools.cn](https://laftools.cn)
 
-# 🌱 名字是怎麼回事？
+# 🔋 名字是怎麼回事？
 
 - `L` -> Linked
 - `A` -> Asynchronous

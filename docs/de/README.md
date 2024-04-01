@@ -20,7 +20,7 @@ Um diese Funktionen schnell nutzen zu können, haben wir in den USA und China ei
 - 🇺🇸 Vereinigter Staat: [laftools.dev](https://laftools.dev)
 - 🇨🇳 Nur auf dem chinesischen Festland: [laftools.cn](https://laftools.cn)
 
-# 🌱 Was ist mit dem Namen?
+# 🔋 Was ist mit dem Namen?
 
 - `L` -> Linked
 - `A` -> Asynchronous

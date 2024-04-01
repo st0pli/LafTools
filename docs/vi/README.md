@@ -20,7 +20,7 @@
 - 🇺🇸 cộng hòa Liên bang: [laftools.dev](https://laftools.dev)
 - 🇨🇳 Chỉ Trung Quốc đại lục: [laftools.cn](https://laftools.cn)
 
-# 🌱 Có chuyện gì với cái tên vậy?
+# 🔋 Có chuyện gì với cái tên vậy?
 
 - `L` -> Linked
 - `A` -> Asynchronous

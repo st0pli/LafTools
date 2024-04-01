@@ -20,7 +20,7 @@ A funkciók gyors használatához stabil online webhelyet állítottunk be az Eg
 - 🇺🇸 Egyesült Államok: [laftools.dev](https://laftools.dev)
 - 🇨🇳 Csak Kína szárazföldi része: [laftools.cn](https://laftools.cn)
 
-# 🌱 Mi van a névvel?
+# 🔋 Mi van a névvel?
 
 - `L` -> Linked
 - `A` -> Asynchronous

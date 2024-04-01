@@ -20,7 +20,7 @@ Bu işlevleri hızlı bir şekilde kullanabilmeniz için, ABD ve CN bölgesinde 
 - 🇺🇸 Birleşik Devlet: [laftools.dev](https://laftools.dev)
 - 🇨🇳 Yalnızca Çin Anakarası: [laftools.cn](https://laftools.cn)
 
-# 🌱 İsmin nesi var?
+# 🔋 İsmin nesi var?
 
 - `L` -> Linked
 - `A` -> Asynchronous

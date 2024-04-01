@@ -20,7 +20,7 @@ Per utilizzare rapidamente queste funzioni, abbiamo implementato un sito Web onl
 - 🇺🇸 stato unito: [laftools.dev](https://laftools.dev)
 - 🇨🇳 Solo Cina continentale: [laftools.cn](https://laftools.cn)
 
-# 🌱 Cosa significa il nome?
+# 🔋 Cosa significa il nome?
 
 - `L` -> Linked
 - `A` -> Asynchronous

@@ -20,7 +20,7 @@ Aby szybko korzystać z tych funkcji, wdrożyliśmy stabilną witrynę interneto
 - 🇺🇸 Zjednoczone państwo: [laftools.dev](https://laftools.dev)
 - 🇨🇳 Tylko Chiny kontynentalne: [laftools.cn](https://laftools.cn)
 
-# 🌱 O co chodzi z nazwą?
+# 🔋 O co chodzi z nazwą?
 
 - `L` -> Linked
 - `A` -> Asynchronous
