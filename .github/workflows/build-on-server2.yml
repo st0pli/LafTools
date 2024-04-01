@@ -45,7 +45,7 @@ jobs:
           key: ${{ secrets.MAIN_APP_SSH_KEY }}
           script: |
             echo 'Running some command'
-            ls -la 
+            ls -ahlrt
             mkdir -p /home/appuser/Server2App-dist
 
       - name: CNS Release 2
