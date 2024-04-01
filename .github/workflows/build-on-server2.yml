@@ -75,7 +75,7 @@ jobs:
             rm -rf test-build
             mkdir test-build
             cd ./test-build
-            tar -xzvf ../LafTools-${{steps.get_version.outputs.VERSION}}-dkout.tmp.gz -C .
+            tar -xzf ../LafTools-${{steps.get_version.outputs.VERSION}}-dkout.tmp.gz -C .
             ls -ahlrt
             docker build  --progress=plain -t localbuild/server2-linux-x64:devops -f ./Dockerfile .
             ./docker/run-docker.sh ${{steps.get_version.outputs.VERSION}} server2-inst
