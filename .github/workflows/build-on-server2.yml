@@ -34,9 +34,7 @@ jobs:
         id: runbuildscript
         run: |
           cd $LAFTOOLS_ROOT/modules/server2
-          mkdir -p ./docker/dist
-          cp -a * ./docker/dist
-          tar -czvf docker-dist.tar.gz ./docker/dist
+          tar -czvf docker-dist.tar.gz .
           ls -ahlrt
           pwd
 
