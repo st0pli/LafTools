@@ -34,6 +34,7 @@ import { isDevEnv } from "@/app/__CORE__/hooks/env";
 import PassClientValue from './pass'
 import PageLoadingEffect from "@/app/__CORE__/containers/PageLoadingEffect";
 import { CategorySearchProps } from "../page";
+import SetupPopPanel from "@/app/__CORE__/components/SetupPopPanel";
 const EntryWrapper = dynamic(() => import('./client'), { ssr: false, loading: () => <PageLoadingEffect /> })
 
 let cachedLangMap: { [key: string]: string } = {}

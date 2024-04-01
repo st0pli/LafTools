@@ -41,6 +41,7 @@ import { NextUIProvider } from "@nextui-org/react";
 import { getAppDevIcon, getAppKeywords } from "../../__CORE__/config/imgconfig";
 import { CategorySearchProps, generateMetadata as toolMetaDataFn } from "../page";
 import EntryPage from './go/[subCategory]/page'
+import SetupPopPanel from "@/app/__CORE__/components/SetupPopPanel";
 export type AuthInfoProps = { authInfo: AuthInfo }
 
 export let sleep = (ms: number) => {
@@ -52,6 +53,7 @@ export default async function Home(props: CategorySearchProps) {
     return (
         <main>
             <EntryPage {...props} />
+            <SetupPopPanel />
         </main>
     )
 }
