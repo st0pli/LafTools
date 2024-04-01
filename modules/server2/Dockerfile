@@ -14,7 +14,7 @@ RUN apt-get update && \
     apt-get clean;
 
 RUN mkdir -p /opt/app
-COPY ["./dist", "/opt/app"]
+COPY ["./", "/opt/app"]
 COPY ["./docker/bootstrap.sh","/opt/app"]
 WORKDIR "/opt/app"
 CMD ["/opt/app/bootstrap.sh"]

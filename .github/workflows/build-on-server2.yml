@@ -1,4 +1,4 @@
-name: Build on Tags for server
+name: Build on tag for server2
 
 on:
   push:
@@ -77,5 +77,5 @@ jobs:
             cd ./test-build
             tar -xzvf ../LafTools-${{steps.get_version.outputs.VERSION}}-dkout.tmp.gz -C .
             ls -ahlrt
-            docker build -t localbuild/server2-linux-x64:devops -f ./Dockerfile .
-            echo 'unzip pipeline server'
+            docker build  --progress=plain -t localbuild/server2-linux-x64:devops -f ./Dockerfile .
+            ./docker/run-docker.sh ${{steps.get_version.outputs.VERSION}} server2-inst
