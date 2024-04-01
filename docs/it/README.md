@@ -43,6 +43,16 @@ Se la risposta a una qualsiasi delle domande precedenti è sì, allora dovresti 
 - Immagini Docker disponibili ed edizione portatile
 - Supporti extra come appunti, manuali, ecc...
 
+# 🌱 Cosa significa il nome?
+
+- `L` -> Linked
+- `A` -> Asynchronous
+- `F` -> Fantastic
+
+In essence, LafTools is a suite that offers a series of linked, asynchronous, and fantastic toolsets.
+
+Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.
+
 # 🌠 Anteprima
 
 > LafTools è ancora in fase di sviluppo, la sua interfaccia utente, le dipendenze o i prerequisiti potrebbero essere modificati in base alle necessità.
@@ -97,16 +107,6 @@ npm run fe-web
 cd pipeline
 ./build-all.sh "v1.9.9-beta"
 ```
-
-# 🌱 Cosa significa il nome?
-
-- `L` -> Linked
-- `A` -> Asynchronous
-- `F` -> Fantastic
-
-In essence, LafTools is a suite that offers a series of linked, asynchronous, and fantastic toolsets.
-
-Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.
 
 # 📑 Altri materiali
 

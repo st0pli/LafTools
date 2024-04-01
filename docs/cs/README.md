@@ -43,6 +43,16 @@ Pokud je odpověď na kteroukoli z výše uvedených otázek ano, měli byste zv
 - Dostupné Docker Images a Portable Edition
 - Extra pomocníci jako poznámky, manuály atd...
 
+# 🌱 Jak je to se jménem?
+
+- `L` -> Linked
+- `A` -> Asynchronous
+- `F` -> Fantastic
+
+In essence, LafTools is a suite that offers a series of linked, asynchronous, and fantastic toolsets.
+
+Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.
+
 # 🌠 Náhled
 
 > LafTools je stále ve vývoji, jeho uživatelské rozhraní, závislosti nebo předpoklady se mohou podle potřeby měnit.
@@ -97,16 +107,6 @@ npm run fe-web
 cd pipeline
 ./build-all.sh "v1.9.9-beta"
 ```
-
-# 🌱 Jak je to se jménem?
-
-- `L` -> Linked
-- `A` -> Asynchronous
-- `F` -> Fantastic
-
-In essence, LafTools is a suite that offers a series of linked, asynchronous, and fantastic toolsets.
-
-Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.
 
 # 📑 Jiné materiály
 

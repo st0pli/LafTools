@@ -43,6 +43,16 @@
 - มี Docker Images และ Portable Edition
 - ตัวช่วยพิเศษ เช่น บันทึกย่อ คู่มือ ฯลฯ...
 
+# 🌱 ชื่ออะไรคะ?
+
+- `L` -> Linked
+- `A` -> Asynchronous
+- `F` -> Fantastic
+
+In essence, LafTools is a suite that offers a series of linked, asynchronous, and fantastic toolsets.
+
+Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.
+
 # 🌠 ดูตัวอย่าง
 
 > LafTools ยังอยู่ระหว่างการพัฒนา UI การขึ้นต่อกัน หรือข้อกำหนดเบื้องต้นอาจเปลี่ยนแปลงได้ตามความจำเป็น
@@ -97,16 +107,6 @@ npm run fe-web
 cd pipeline
 ./build-all.sh "v1.9.9-beta"
 ```
-
-# 🌱 ชื่ออะไรคะ?
-
-- `L` -> Linked
-- `A` -> Asynchronous
-- `F` -> Fantastic
-
-In essence, LafTools is a suite that offers a series of linked, asynchronous, and fantastic toolsets.
-
-Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.
 
 # 📑 วัสดุอื่นๆ
 

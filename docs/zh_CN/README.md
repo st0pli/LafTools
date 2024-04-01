@@ -43,6 +43,16 @@
 - 可用的 Docker 映像和便携式版本
 - 额外的帮助，如注释、手册等......
 
+# 🌱 名字是怎么回事？
+
+- `L` -> Linked
+- `A` -> Asynchronous
+- `F` -> Fantastic
+
+从本质上讲，LafTools工具箱是一个提供一系列基于互连(Linked)、可异步(Asynchronous)且令人惊讶(Fantastic)的编程向工具箱。
+
+请放心，随着时间的推移，这个项目将会以非凡而奇妙的方式发展。这个项目需要更多的时间，就像酒一样，越久越好。
+
 # 🌠 预览
 
 > LafTools工具箱仍在开发中，其 UI、依赖项或先决条件可能会根据需要进行更改。
@@ -97,16 +107,6 @@ npm run fe-web
 cd pipeline
 ./build-all.sh "v1.9.9-beta"
 ```
-
-# 🌱 名字是怎么回事？
-
-- `L` -> Linked
-- `A` -> Asynchronous
-- `F` -> Fantastic
-
-从本质上讲，LafTools工具箱是一个提供一系列基于互连(Linked)、可异步(Asynchronous)且令人惊讶(Fantastic)的编程向工具箱。
-
-请放心，随着时间的推移，这个项目将会以非凡而奇妙的方式发展。这个项目需要更多的时间，就像酒一样，越久越好。
 
 # 📑 其他材料
 

@@ -43,6 +43,16 @@ ${Dot("U6zkVUPTq","If the answer to any of the above is yes, then you should con
 - ${Dot("HIAvRJazO","Available Docker Images and Portable Edition")}
 - ${Dot("yVPMfvWhi","Extra helpers such as notes, manuals, etc...")}
 
+# 🌱 ${Dot("I-Zaii3HZ","What's with the name?")}
+
+- `L` -> Linked
+- `A` -> Asynchronous
+- `F` -> Fantastic
+
+${Dot("15fbRc2id","In essence, LafTools is a suite that offers a series of linked, asynchronous, and fantastic toolsets.")}
+
+${Dot("7p5-nXoUr","Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.")}
+
 # 🌠 ${Dot("OjKP47hFt","Preview")}
 
 > ${Dot("bIE-DVqmU","LafTools is still under development, its UI, dependencies or prerequisites may changed as needed.")}
@@ -97,16 +107,6 @@ npm run fe-web
 cd pipeline
 ./build-all.sh "v1.9.9-beta"
 ```
-
-# 🌱 ${Dot("I-Zaii3HZ","What's with the name?")}
-
-- `L` -> Linked
-- `A` -> Asynchronous
-- `F` -> Fantastic
-
-${Dot("15fbRc2id","In essence, LafTools is a suite that offers a series of linked, asynchronous, and fantastic toolsets.")}
-
-${Dot("7p5-nXoUr","Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.")}
 
 # 📑 ${Dot("wieewa7cq","Other Materials")}
 

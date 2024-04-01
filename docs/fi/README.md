@@ -43,6 +43,16 @@ Jos vastaus johonkin yllä olevista on kyllä, sinun kannattaa kokeilla työkalu
 - Saatavilla Docker-kuvat ja Portable Edition
 - Ylimääräisiä apuvälineitä, kuten muistiinpanoja, käsikirjoja jne...
 
+# 🌱 Mitä nimeä vaivaa?
+
+- `L` -> Linked
+- `A` -> Asynchronous
+- `F` -> Fantastic
+
+In essence, LafTools is a suite that offers a series of linked, asynchronous, and fantastic toolsets.
+
+Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.
+
 # 🌠 Esikatselu
 
 > LafTools on edelleen kehitteillä, sen käyttöliittymä, riippuvuudet tai edellytykset voivat muuttua tarpeen mukaan.
@@ -97,16 +107,6 @@ npm run fe-web
 cd pipeline
 ./build-all.sh "v1.9.9-beta"
 ```
-
-# 🌱 Mitä nimeä vaivaa?
-
-- `L` -> Linked
-- `A` -> Asynchronous
-- `F` -> Fantastic
-
-In essence, LafTools is a suite that offers a series of linked, asynchronous, and fantastic toolsets.
-
-Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.
 
 # 📑 Muut materiaalit
 

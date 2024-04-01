@@ -43,6 +43,16 @@ Nếu câu trả lời cho bất kỳ câu hỏi nào ở trên là có thì b�
 - Hình ảnh Docker có sẵn và phiên bản di động
 - Những trợ giúp bổ sung như ghi chú, hướng dẫn sử dụng, v.v...
 
+# 🌱 Có chuyện gì với cái tên vậy?
+
+- `L` -> Linked
+- `A` -> Asynchronous
+- `F` -> Fantastic
+
+In essence, LafTools is a suite that offers a series of linked, asynchronous, and fantastic toolsets.
+
+Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.
+
 # 🌠 Xem trước
 
 > LafTools vẫn đang được phát triển, giao diện người dùng, các phần phụ thuộc hoặc điều kiện tiên quyết của nó có thể thay đổi khi cần thiết.
@@ -97,16 +107,6 @@ npm run fe-web
 cd pipeline
 ./build-all.sh "v1.9.9-beta"
 ```
-
-# 🌱 Có chuyện gì với cái tên vậy?
-
-- `L` -> Linked
-- `A` -> Asynchronous
-- `F` -> Fantastic
-
-In essence, LafTools is a suite that offers a series of linked, asynchronous, and fantastic toolsets.
-
-Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.
 
 # 📑 Vật liệu khác
 

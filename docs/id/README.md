@@ -43,6 +43,16 @@ Jika jawaban di atas adalah ya, Anda harus mempertimbangkan untuk mencoba kotak 
 - Tersedia Gambar Docker dan Edisi Portabel
 - Pembantu tambahan seperti catatan, manual, dll...
 
+# 🌱 Ada apa dengan namanya?
+
+- `L` -> Linked
+- `A` -> Asynchronous
+- `F` -> Fantastic
+
+In essence, LafTools is a suite that offers a series of linked, asynchronous, and fantastic toolsets.
+
+Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.
+
 # 🌠 Pratinjau
 
 > LafTools masih dalam pengembangan, UI, dependensi, atau prasyaratnya dapat diubah sesuai kebutuhan.
@@ -97,16 +107,6 @@ npm run fe-web
 cd pipeline
 ./build-all.sh "v1.9.9-beta"
 ```
-
-# 🌱 Ada apa dengan namanya?
-
-- `L` -> Linked
-- `A` -> Asynchronous
-- `F` -> Fantastic
-
-In essence, LafTools is a suite that offers a series of linked, asynchronous, and fantastic toolsets.
-
-Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.
 
 # 📑 Bahan Lainnya
 
