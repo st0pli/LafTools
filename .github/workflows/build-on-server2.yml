@@ -33,6 +33,7 @@ jobs:
       - name: Run build script
         id: runbuildscript
         run: |
+          chmod +x $LAFTOOLS_ROOT/pipeline/build-server2.sh
           $LAFTOOLS_ROOT/pipeline/build-server2.sh
 
       - name: CNS Release 1
