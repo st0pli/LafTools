@@ -35,7 +35,6 @@ export let NavCategory = (props: NavigatorPassProp & {
             leftNav.map(x => {
                 return <Link href={x.href || fmtURL_Server([x.id || '']) || ''} className={
                     "  text-xs text-slate-600 dark:text-slate-400 dark:hover:text-slate-300 duration-100 " + (
-                        // props.activeId && props.activeId == x.id ? ' underline-offset-1 ' : ''
                         ''
                     )
                 }>{x.label}</Link>

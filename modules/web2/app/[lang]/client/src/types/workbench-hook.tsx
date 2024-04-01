@@ -155,7 +155,7 @@ export let useLeftTabsList = (): EachTabPanelProp[] => {
         // pathname: URL_WORKBENCH_MANUAL,
         icon: "manual",
         id: ID_MANUAL,
-        label: Dot("YrVqdd683", "Manuals"),
+        label: Dot("YrVqdd683", "Docs"),
       },
       {
         desc: Dot(

@@ -48,20 +48,47 @@ import { CategorySearchProps } from "@/app/[lang]/page";
 import { URL_SUBCATEGORY_GO_PATH } from "@/app/__CORE__/meta/url";
 import { fmtURL_ToolSubPage } from "@/app/__CORE__/meta/common";
 import { NavigatorPassProp } from "..";
+import { ifnil } from "@/app/__CORE__/meta/fn";
+import { notFound } from "next/navigation";
 
 export default (props: NavigatorPassProp) => {
-    let hostname = getXHostname()
-    let isLocalname = (hostname: string) => {
-        return hostname == "localhost" || hostname == "127.0.0.1" || hostname == '0.0.0.0'
+    // let hostname = getXHostname()
+    // let isLocalname = (hostname: string) => {
+    //     return hostname == "localhost" || hostname == "127.0.0.1" || hostname == '0.0.0.0'
+    // }
+    let crtTitleBanner = ''
+    let iconImg = ''
+    let { category } = props.params;
+    if (ifnil(category, 'tools') == 'tools') {
+        iconImg = 'icon-dev.png'
+        crtTitleBanner = (
+            Dot("OyZLZokUQ", "Empower Development with LafTools!")
+        )
+    } else if (category == 'ai') {
+        iconImg = 'icon-ailab.png'
+        crtTitleBanner = (
+            Dot("OP2Ogtd1O", "Experience AI Features with LafTools!")
+        )
+    } else if (category == 'docs') {
+        iconImg = 'icon-docs.png'
+        crtTitleBanner = (
+            Dot("Tj2A9ou2k", "Read Documentations with LafTools!")
+        )
+    } else if (category == 'resources') {
+        iconImg = 'icon-rsce.png'
+        crtTitleBanner = (
+            Dot("sr9eCEJ0b6M", "Get Resources with LafTools!")
+        )
+    } else {
+        notFound()
     }
-
     return <div className={border_clz + " py-3 p-4 relative bg-slate-50 dark:bg-slate-900"}>
         <div className={row_pad_clz + ' z-20 flex flex-row items-center relative'}>
             <div className="mx-2 mr-3">
-                <img src={getAppDevIcon(true)} width={40}></img>
+                <img src={'/static/' + iconImg} width={40} height={40}></img>
             </div>
             <div>
-                <h1 className="text-lg m-0">{Dot("OyZLZokUQ", "Empower Development with LafTools!")}</h1>
+                <h1 className="text-lg m-0">{crtTitleBanner}</h1>
                 <h2 className="text-xs pl-[2px] text-slate-600 dark:text-slate-300 mt-[-2px] mb-1 items-center m-0 space-x-1 flex flex-row ">
                     <div>
                         <PossiblePathname />

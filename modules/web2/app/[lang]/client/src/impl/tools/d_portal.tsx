@@ -464,7 +464,7 @@ export let getCategoryList = ((): TopMainCategoryNavList[] => {
             id: 'tools'
         },
         {
-            label: Dot("n28g4di0L", "Manuals"),
+            label: Dot("n28g4di0L", "Docs"),
             id: 'docs'
         },
         {

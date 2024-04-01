@@ -14,7 +14,7 @@ echo "[I] crtVersion: $crtVersion"
 
 docker ps -a | grep $containerName | awk '{print $1}' | xargs -I {} docker stop {}
 docker ps -a | grep $containerName | awk '{print $1}' | xargs -I {} docker rm {}
-docker run -e DB_USER=$DB_USER -e DB_PASSWORD=$DB_PASSWORD -e DB_HOST=$DB_HOST -e DB_PORT=$DB_PORT -e DB_DATABASE=$DB_DATABASE -e TYKEY=$TYKEY --name $containerName -d -p 0.0.0.0:2016:2016 codegentoolbox/laftools-linux-x64:devops 
+docker run -e DB_USER=$DB_USER -e DB_PASSWORD=$DB_PASSWORD -e DB_HOST=$DB_HOST -e DB_PORT=$DB_PORT -e DB_DATABASE=$DB_DATABASE -e TYKEY=$TYKEY --name $containerName -d -p 0.0.0.0:2016:2016 localbuild/server2-linux-x64:devops 
 timeout 60 docker logs -f $containerName
 
 exit 0
