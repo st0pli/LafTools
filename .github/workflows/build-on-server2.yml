@@ -26,10 +26,58 @@ jobs:
         with:
           node-version: "20"
 
+      - name: Get the version
+        id: get_version
+        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
+
       - name: Run build script
         id: runbuildscript
         run: |
           cd ./modules/server2
           mkdir ./docker/dist
           cp -a * ./docker/dist
-          tar -czvf docker-dist.tar.gz ./docker
+          tar -czvf docker-dist.tar.gz ./docker/dist
+
+      - name: CNS Release 1
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.MAIN_APP_SSH_HOST }}
+          port: ${{ secrets.MAIN_APP_SSH_PORT }}
+          username: ${{ secrets.MAIN_APP_SSH_USERNAME }}
+          key: ${{ secrets.MAIN_APP_SSH_KEY }}
+          script: |
+            echo 'Running some command'
+            ls -la 
+            mkdir -p /home/appuser/Server2App-dist
+
+      - name: CNS Release 2
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.MAIN_APP_SSH_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+
+      - name: CNS Release 3
+        run: |
+          sftp -o StrictHostKeyChecking=no -P ${{ secrets.MAIN_APP_SSH_PORT }} ${{ secrets.MAIN_APP_SSH_USERNAME }}@${{ secrets.MAIN_APP_SSH_HOST }} <<EOF
+            put $LAFTOOLS_ROOT/modules/server2/docker-dist.tar.gz /home/appuser/Server2App-dist/LafTools-${{steps.get_version.outputs.VERSION}}-dkout.tmp.gz
+          exit
+          EOF
+          rm ~/.ssh/id_rsa -rf
+
+      - name: CNS Release 4
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.MAIN_APP_SSH_HOST }}
+          port: ${{ secrets.MAIN_APP_SSH_PORT }}
+          username: ${{ secrets.MAIN_APP_SSH_USERNAME }}
+          key: ${{ secrets.MAIN_APP_SSH_KEY }}
+          command_timeout: 200m
+          script: |
+            cd /home/appuser/Server2App-dist
+            rm -rf test-build
+            mkdir test-build
+            cd ./test-build
+            tar -xzvf ../LafTools-${{steps.get_version.outputs.VERSION}}-dkout.tmp.gz -C .
+            ls -ahlrt
+            docker build -t localbuild/server2-linux-x64:devops -f ./Dockerfile .
+            echo 'unzip pipeline server'
