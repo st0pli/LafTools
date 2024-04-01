@@ -23,27 +23,25 @@ import { Autocomplete, AutocompleteItem, CardProps, Listbox, ListboxItem, Tab, T
 import { Card, Divider, CardHeader, CardBody, CardFooter } from "@nextui-org/react";
 import { border_clz, light_border_clz_all, tw } from '@/app/__CORE__/meta/styles';
 import { Dot } from '@/app/__CORE__/utils/TranslationUtils';
+import SubTabNav from '../nav/nav-sub-tab';
 import Link from 'next/link';
 import { fmtURL_Server } from '@/app/__CORE__/utils/routeUtils';
 import { useConstructedKeyAndInit } from '@/app/[lang]/client/src/initapp';
 import FundrasingPlanBtn from '../cpt/cpt-fundrasing-btn';
 import Sidebar from './main-sidebar';
-import Main from './main-part';
-import { NavigatorPassProp } from '../main';
-import { CategorySearchProps } from '@/app/[lang]/page';
+import { ToolProp } from '.';
+import { getSearchDetailBySearchProps } from '@/app/[lang]/page';
+import ClientWrapper from '../../common/clientWrapper';
 export let getCardsProps = (): CardProps => {
     return {
         radius: "none", shadow: "none", className: light_border_clz_all
     }
 }
 
-
-export type ToolProp = CategorySearchProps
-export default (props: CategorySearchProps) => {
-    return <div>
-        <div className='flex flex-row space-x-2'>
-            <Main {...props} />
-            <Sidebar {...props} />
-        </div>
+export type CrtToolProp = ToolProp
+export default (props: CrtToolProp) => {
+    let searchDetail = getSearchDetailBySearchProps(props)
+    return <div className='flex-1  space-y-2 '>
+        <div>this is resources part</div>
     </div>
 }

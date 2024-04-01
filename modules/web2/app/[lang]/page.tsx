@@ -26,7 +26,7 @@ import { getCategoryList as getCategoryList, getToolSubCategory, PortalDefinitio
 
 export type CategorySearchProps = PageProps<{
     subCategory: string,
-    category: "tools" | "resources" | "docs" | "ai",
+    category: "" | "tools" | "resources" | "docs" | "ai",
     id: string
 }, {}>;
 export default async function Home(props: CategorySearchProps) {

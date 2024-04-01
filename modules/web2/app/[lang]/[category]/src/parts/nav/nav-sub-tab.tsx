@@ -31,7 +31,7 @@ import { URL_SUBCATEGORY_GO_PATH } from "@/app/__CORE__/meta/url";
 import { CrtToolProp } from "../tools/main-part";
 
 export default function (props: CrtToolProp) {
-    let subCategory = props.subCategory
+    let subCategory = props.params.subCategory
     let sp = {
         id: props.params.id
     }
@@ -80,7 +80,7 @@ export default function (props: CrtToolProp) {
                             let isMore = x.id == 'more'
                             if (isMore) {
                                 extraProps = {
-                                    'data-navid': props.subCategory
+                                    'data-navid': props.params.subCategory
                                 }
                             }
                             let Ele = isMore ? Link : Link

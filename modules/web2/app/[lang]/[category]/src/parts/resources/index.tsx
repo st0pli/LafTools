@@ -39,7 +39,7 @@ export let getCardsProps = (): CardProps => {
 
 
 export type ToolProp = CategorySearchProps
-export default (props: CategorySearchProps) => {
+export default (props: ToolProp) => {
     return <div>
         <div className='flex flex-row space-x-2'>
             <Main {...props} />
