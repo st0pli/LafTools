@@ -6,20 +6,18 @@ import { AuthMiddleware } from '@middlewares/auth.middleware';
 import { ValidationMiddleware } from '@middlewares/validation.middleware';
 import { DotFn } from '@/i18n/TranslationUtils';
 
-export class MainRoute implements Routes {
+export class ReleaseRoute implements Routes {
   public router = Router();
-  public auth = new AuthController();
 
   constructor() {
     this.initializeRoutes();
   }
 
   private initializeRoutes() {
-    this.router.get('/', (req, res) => {
+    this.router.get('/release/latest-updates', async (req, res) => {
       let Dot = DotFn(req);
-      let str = Dot('HZEGO_YeW', 'This is a test string to say Hello World, is it ok?');
       res.send({
-        content: str,
+        content: Dot('BRLS-Lww5', 'this is a test for newer-release'),
       });
     });
   }

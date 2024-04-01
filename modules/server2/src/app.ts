@@ -45,7 +45,7 @@ export class App {
   }
 
   private async connectToDatabase() {
-    await DB.sequelize.sync({ force: false });
+    await DB.sequelize.sync({ force: false, alter: false });
   }
 
   private initializeMiddlewares() {
@@ -61,7 +61,7 @@ export class App {
 
   private initializeRoutes(routes: Routes[]) {
     routes.forEach(route => {
-      this.app.use('/', route.router);
+      this.app.use('/v3', route.router);
     });
   }
 

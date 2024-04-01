@@ -13,6 +13,7 @@
     "fe-scan-other": "(cd ./devtools/scripts/scan/ && node ./scan-entry.js --skip-langlist=zh_CN)",
     "fe-scan-zh": "(cd ./devtools/scripts/scan/ && node ./scan-entry.js --langlist=zh_CN )",
     "fe-scan-all": "(cd ./devtools/scripts/scan/ && node ./scan-entry.js)",
+    "be-server2": "(cd ./modules/server2 && npm run dev)",
     "build-all": "./pipeline/build-all.sh",
     "build-linux": "./pipeline/build-all.sh linux",
     "test-linux": "(cd $LAFTOOLS_ROOT/dist/os/linux-x64 && ./run.sh)",

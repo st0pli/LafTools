@@ -28,8 +28,6 @@ const sequelize = new Sequelize.Sequelize(DB_DATABASE, DB_USER, DB_PASSWORD, {
 
 sequelize.authenticate();
 
-sequelize.sync({ force: false, alter: false });
-
 export const DB = {
   Users2: UserModelGenerator(sequelize),
   TestFN: TestFnModelGenerator(sequelize),

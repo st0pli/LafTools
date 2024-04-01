@@ -19,14 +19,20 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // SKIP_DOT
-import _ from "lodash";
-import Qs from 'query-string'
-export const LANG_EN_US = "en_US";
+import { HEADER_X_LAF_LANG } from '@/constant';
+import { Request } from 'express';
+import path from 'path';
+import _ from 'lodash';
+import Qs from 'query-string';
+import i18nItems from './i18n-copy';
+import { existsSync, readFileSync } from 'fs';
+import { logger } from '@/utils/logger';
+export const LANG_EN_US = 'en_US';
 export type LangDefinition = { [key: string]: string };
 
-let VER_FORGE_FORM = '0.0.1'
-export const KEY_LANG_PACK_ZH_CN = "KEY_LANG_PACK_ZH_CN" + VER_FORGE_FORM;
-export const KEY_LANG_PACK_ZH_HK = "KEY_LANG_PACK_ZH_HK" + VER_FORGE_FORM;
+let VER_FORGE_FORM = '0.0.1';
+export const KEY_LANG_PACK_ZH_CN = 'KEY_LANG_PACK_ZH_CN' + VER_FORGE_FORM;
+export const KEY_LANG_PACK_ZH_HK = 'KEY_LANG_PACK_ZH_HK' + VER_FORGE_FORM;
 
 interface LangMap {
   zh_CN: LangDefinition;
@@ -43,15 +49,15 @@ let crtNewLangMap = newLangMap();
 
 export const LANG_INIT_BEFORE_MAP: { [key: string]: boolean } = {};
 
-function formatResultWithReplacer(val = "", ...args) {
+function formatResultWithReplacer(val = '', ...args) {
   if (_.isNil(args)) {
     args = [];
   }
   for (let index in args) {
     let tval = args[index];
     while (true) {
-      let p = "{" + index + "}";
-      val = (val + "").replace(p, tval);
+      let p = '{' + index + '}';
+      val = (val + '').replace(p, tval);
       if (val.indexOf(p) == -1) {
         break;
       }
@@ -60,17 +66,30 @@ function formatResultWithReplacer(val = "", ...args) {
   return val;
 }
 
-let getCurrentLang = () => {
-  return 'en_US'
-}
-export let DotFn = (currentLang) => {
+export let DotFn = (req: Request) => {
+  let xLafLang = req.headers[HEADER_X_LAF_LANG];
+  let currentLang = LANG_EN_US;
+  i18nItems.find(eachI18nItem => {
+    if (eachI18nItem.Value == xLafLang) {
+      currentLang = eachI18nItem.Value;
+      return true;
+    }
+  });
+  logger.info('xLafLang: ' + xLafLang);
+  logger.info('currentLang: ' + currentLang);
   return (id: string, enText: string, ...args: any[]): string => {
-    let language = TranslationUtils.disableLanguageCheck ? "en_US" : getCurrentLang()
+    let language = currentLang;
     if (language != 'en_US') {
-      let pmap = {}
-      // import("./lang/" + language + ".json")
-      TranslationUtils.LangMap[language] = {
-        ...pmap,
+      let jsonFilePath = path.join(__dirname, '/lang/' + language + '.json');
+      if (!LANG_INIT_BEFORE_MAP[language]) {
+        LANG_INIT_BEFORE_MAP[language] = true;
+        if (existsSync(jsonFilePath)) {
+          let jsonFile = readFileSync(jsonFilePath, 'utf8');
+          let pmap = JSON.parse(jsonFile);
+          TranslationUtils.LangMap[language] = {
+            ...pmap,
+          };
+        }
       }
     }
     if (language == LANG_EN_US) {
@@ -88,8 +107,8 @@ export let DotFn = (currentLang) => {
     }
     let finResult = formatResultWithReplacer(enText, ...args);
     return finResult;
-  }
-}
+  };
+};
 
 const TranslationUtils = {
   // ForcbilyLanguage: "",
