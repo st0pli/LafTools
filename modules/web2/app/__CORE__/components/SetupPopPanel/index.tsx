@@ -59,7 +59,7 @@ export default (props) => {
     if (confirmCloseStr != null && confirmCloseStr != '') {
         return ''
     }
-    return <div className={
+    return <ScrollShadow className={
         "fixed flex flex-col bottom-0 right-4 w-[300px] scrollbar-hide z-[100]   h-[500px] " + CSS_BG_COLOR_WHITE + " " + light_border_clz_all + ' rounded-md shadow-md '
     }>
         <Button className="absolute right-0 top-0" size='sm' variant="light" onClick={() => {
@@ -85,5 +85,5 @@ export default (props) => {
                 })
             }
         </div>
-    </div>
+    </ScrollShadow>
 }
