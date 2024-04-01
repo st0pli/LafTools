@@ -20,6 +20,16 @@
 - 🇺🇸 미국: [laftools.dev](https://laftools.dev)
 - 🇨🇳 중국 본토만 해당: [laftools.cn](https://laftools.cn)
 
+# 🌱 이름이 뭐예요?
+
+- `L` -> Linked
+- `A` -> Asynchronous
+- `F` -> Fantastic
+
+In essence, LafTools is a suite that offers a series of linked, asynchronous, and fantastic toolsets.
+
+Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.
+
 # 💡 소개
 
 인터넷에는 수많은 도구를 사용할 수 있는데 왜 우리가 이 도구 상자를 개발하기로 결정했는지 궁금할 것입니다. 실제로 우리가 제공하는 대부분의 도구는 코덱, 포맷터, 번역, QR 코드 등 인터넷에서 쉽게 찾을 수 있습니다. 그러나 이러한 도구를 사용하는 것이 가장 편안하고 효율적인 접근 방식은 아닙니다.
@@ -42,16 +52,6 @@
 - 생산적인 UI와 고도로 통합됨
 - 사용 가능한 Docker 이미지 및 Portable Edition
 - 메모, 매뉴얼 등과 같은 추가 도우미...
-
-# 🌱 이름이 뭐예요?
-
-- `L` -> Linked
-- `A` -> Asynchronous
-- `F` -> Fantastic
-
-In essence, LafTools is a suite that offers a series of linked, asynchronous, and fantastic toolsets.
-
-Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.
 
 # 🌠 시사
 

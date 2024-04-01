@@ -20,6 +20,16 @@ Jotta voit käyttää näitä toimintoja nopeasti, olemme ottaneet käyttöön v
 - 🇺🇸 Yhdysvallat: [laftools.dev](https://laftools.dev)
 - 🇨🇳 Vain Manner-Kiina: [laftools.cn](https://laftools.cn)
 
+# 🌱 Mitä nimeä vaivaa?
+
+- `L` -> Linked
+- `A` -> Asynchronous
+- `F` -> Fantastic
+
+In essence, LafTools is a suite that offers a series of linked, asynchronous, and fantastic toolsets.
+
+Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.
+
 # 💡 Johdanto
 
 Saatat ihmetellä, miksi olemme päättäneet kehittää tätä työkalupakkia, koska Internetissä voidaan käyttää lukuisia työkaluja. Useimmat tarjoamamme työkalut, kuten koodekki, muotoilija, käännös, QR-koodi jne., ovat todellakin helposti löydettävissä Internetistä... Se ei kuitenkaan ole mukavin ja tehokkain tapa käyttää näitä työkaluja.
@@ -42,16 +52,6 @@ Jos vastaus johonkin yllä olevista on kyllä, sinun kannattaa kokeilla työkalu
 - Erittäin integroitu tuottavaan käyttöliittymään
 - Saatavilla Docker-kuvat ja Portable Edition
 - Ylimääräisiä apuvälineitä, kuten muistiinpanoja, käsikirjoja jne...
-
-# 🌱 Mitä nimeä vaivaa?
-
-- `L` -> Linked
-- `A` -> Asynchronous
-- `F` -> Fantastic
-
-In essence, LafTools is a suite that offers a series of linked, asynchronous, and fantastic toolsets.
-
-Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.
 
 # 🌠 Esikatselu
 

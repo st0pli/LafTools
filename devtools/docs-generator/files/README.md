@@ -20,6 +20,16 @@ ${Dot("hDdqkdxkSd","To quickly use these functions, we've deployed stable online
 - 🇺🇸 ${Dot("usvss","United State")}: [laftools.dev](https://laftools.dev)
 - 🇨🇳 ${Dot("cnvss","China Mainland")}: [laftools.cn](https://laftools.cn)
 
+# 🌱 ${Dot("I-Zaii3HZ","What's with the name?")}
+
+- `L` -> Linked
+- `A` -> Asynchronous
+- `F` -> Fantastic
+
+${Dot("15fbRc2id","In essence, LafTools is a suite that offers a series of linked, asynchronous, and fantastic toolsets.")}
+
+${Dot("7p5-nXoUr","Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.")}
+
 # 💡 ${Dot("JjpQy-eIq","Introduction")}
 
 ${Dot("iIq02l4vX","You may wonder why we are determined to develop this toolbox as there are numerous tools can be used on the Internet.")} ${Dot("ciP9qXH1I","Indeed, most tools we have provided can be easily found on the Internet, such as codec, formatter, translation, QR Code, etc… However, it is not the most comfortable and efficient approach to use these tools.")}
@@ -42,16 +52,6 @@ ${Dot("U6zkVUPTq","If the answer to any of the above is yes, then you should con
 - ${Dot("iz4ROzL3","Highly integrated with productive UI")}
 - ${Dot("HIAvRJazO","Available Docker Images and Portable Edition")}
 - ${Dot("yVPMfvWhi","Extra helpers such as notes, manuals, etc...")}
-
-# 🌱 ${Dot("I-Zaii3HZ","What's with the name?")}
-
-- `L` -> Linked
-- `A` -> Asynchronous
-- `F` -> Fantastic
-
-${Dot("15fbRc2id","In essence, LafTools is a suite that offers a series of linked, asynchronous, and fantastic toolsets.")}
-
-${Dot("7p5-nXoUr","Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.")}
 
 # 🌠 ${Dot("OjKP47hFt","Preview")}
 

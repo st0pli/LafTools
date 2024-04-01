@@ -20,6 +20,16 @@
 - 🇺🇸 cộng hòa Liên bang: [laftools.dev](https://laftools.dev)
 - 🇨🇳 Chỉ Trung Quốc đại lục: [laftools.cn](https://laftools.cn)
 
+# 🌱 Có chuyện gì với cái tên vậy?
+
+- `L` -> Linked
+- `A` -> Asynchronous
+- `F` -> Fantastic
+
+In essence, LafTools is a suite that offers a series of linked, asynchronous, and fantastic toolsets.
+
+Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.
+
 # 💡 Giới thiệu
 
 Bạn có thể thắc mắc tại sao chúng tôi quyết tâm phát triển hộp công cụ này vì có rất nhiều công cụ có thể được sử dụng trên Internet. Thật vậy, hầu hết các công cụ chúng tôi cung cấp đều có thể dễ dàng tìm thấy trên Internet, chẳng hạn như codec, bộ định dạng, dịch thuật, Mã QR, v.v… Tuy nhiên, đây không phải là cách tiếp cận thoải mái và hiệu quả nhất để sử dụng những công cụ này.
@@ -42,16 +52,6 @@ Nếu câu trả lời cho bất kỳ câu hỏi nào ở trên là có thì b�
 - Tích hợp cao với giao diện người dùng hiệu quả
 - Hình ảnh Docker có sẵn và phiên bản di động
 - Những trợ giúp bổ sung như ghi chú, hướng dẫn sử dụng, v.v...
-
-# 🌱 Có chuyện gì với cái tên vậy?
-
-- `L` -> Linked
-- `A` -> Asynchronous
-- `F` -> Fantastic
-
-In essence, LafTools is a suite that offers a series of linked, asynchronous, and fantastic toolsets.
-
-Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.
 
 # 🌠 Xem trước
 

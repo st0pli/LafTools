@@ -20,6 +20,16 @@ Untuk menggunakan fungsi ini dengan pantas, kami telah menggunakan tapak web dal
 - 🇺🇸 Amerika Syarikat: [laftools.dev](https://laftools.dev)
 - 🇨🇳 Tanah Besar China Sahaja: [laftools.cn](https://laftools.cn)
 
+# 🌱 Ada apa dengan nama?
+
+- `L` -> Linked
+- `A` -> Asynchronous
+- `F` -> Fantastic
+
+In essence, LafTools is a suite that offers a series of linked, asynchronous, and fantastic toolsets.
+
+Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.
+
 # 💡 pengenalan
 
 Anda mungkin tertanya-tanya mengapa kami bertekad untuk membangunkan kotak alat ini kerana terdapat banyak alat yang boleh digunakan di Internet. Sememangnya, kebanyakan alatan yang kami sediakan boleh didapati dengan mudah di Internet, seperti codec, pemformat, terjemahan, Kod QR, dll... Walau bagaimanapun, ia bukanlah pendekatan yang paling selesa dan cekap untuk menggunakan alatan ini.
@@ -42,16 +52,6 @@ Jika jawapan kepada mana-mana di atas adalah ya, maka anda harus mempertimbangka
 - Sangat bersepadu dengan UI yang produktif
 - Imej Docker dan Edisi Mudah Alih Tersedia
 - Pembantu tambahan seperti nota, manual, dll...
-
-# 🌱 Ada apa dengan nama?
-
-- `L` -> Linked
-- `A` -> Asynchronous
-- `F` -> Fantastic
-
-In essence, LafTools is a suite that offers a series of linked, asynchronous, and fantastic toolsets.
-
-Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.
 
 # 🌠 Pratonton
 

@@ -20,6 +20,16 @@ Bu işlevleri hızlı bir şekilde kullanabilmeniz için, ABD ve CN bölgesinde 
 - 🇺🇸 Birleşik Devlet: [laftools.dev](https://laftools.dev)
 - 🇨🇳 Yalnızca Çin Anakarası: [laftools.cn](https://laftools.cn)
 
+# 🌱 İsmin nesi var?
+
+- `L` -> Linked
+- `A` -> Asynchronous
+- `F` -> Fantastic
+
+In essence, LafTools is a suite that offers a series of linked, asynchronous, and fantastic toolsets.
+
+Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.
+
 # 💡 giriiş
 
 İnternette kullanılabilecek çok sayıda araç varken neden bu araç kutusunu geliştirmeye kararlı olduğumuzu merak edebilirsiniz. Aslında sunduğumuz codec, formatlayıcı, çeviri, QR Code vb. gibi araçların çoğu internette kolaylıkla bulunabilir. Ancak bu araçları kullanmak en rahat ve verimli yaklaşım değildir.
@@ -42,16 +52,6 @@ Yukarıdakilerden herhangi birine cevabınız evet ise araç kutumuzu denemeyi d
 - Üretken kullanıcı arayüzüyle son derece entegre
 - Mevcut Docker Görüntüleri ve Taşınabilir Sürüm
 - Notlar, kılavuzlar vb. gibi ekstra yardımcılar...
-
-# 🌱 İsmin nesi var?
-
-- `L` -> Linked
-- `A` -> Asynchronous
-- `F` -> Fantastic
-
-In essence, LafTools is a suite that offers a series of linked, asynchronous, and fantastic toolsets.
-
-Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.
 
 # 🌠 Ön izleme
 

@@ -20,6 +20,16 @@
 - 🇺🇸 海外版: [laftools.dev](https://laftools.dev)
 - 🇨🇳 國內版: [laftools.cn](https://laftools.cn)
 
+# 🌱 名字是怎麼回事？
+
+- `L` -> Linked
+- `A` -> Asynchronous
+- `F` -> Fantastic
+
+In essence, LafTools is a suite that offers a series of linked, asynchronous, and fantastic toolsets.
+
+Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.
+
 # 💡 介紹
 
 您可能想知道為什麼我們決心開發這個工具箱，因為網路上有很多工具可以使用。 確實，我們提供的大多數工具都可以在互聯網上輕鬆找到，例如編解碼器、格式化程式、翻譯、二維碼等……但是，使用這些工具並不是最舒適和最有效的方法。
@@ -42,16 +52,6 @@
 - 與高效的 UI 高度集成
 - 可用的 Docker 映像和便攜式版本
 - 額外的幫助，如註釋、手冊等......
-
-# 🌱 名字是怎麼回事？
-
-- `L` -> Linked
-- `A` -> Asynchronous
-- `F` -> Fantastic
-
-In essence, LafTools is a suite that offers a series of linked, asynchronous, and fantastic toolsets.
-
-Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.
 
 # 🌠 預覽
 

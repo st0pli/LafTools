@@ -20,6 +20,16 @@ To quickly use these functions, we've deployed stable online website in US and C
 - 🇺🇸 United State: [laftools.dev](https://laftools.dev)
 - 🇨🇳 China Mainland: [laftools.cn](https://laftools.cn)
 
+# 🌱 What's with the name?
+
+- `L` -> Linked
+- `A` -> Asynchronous
+- `F` -> Fantastic
+
+In essence, LafTools is a suite that offers a series of linked, asynchronous, and fantastic toolsets.
+
+Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.
+
 # 💡 Introduction
 
 You may wonder why we are determined to develop this toolbox as there are numerous tools can be used on the Internet. Indeed, most tools we have provided can be easily found on the Internet, such as codec, formatter, translation, QR Code, etc… However, it is not the most comfortable and efficient approach to use these tools.
@@ -42,16 +52,6 @@ If the answer to any of the above is yes, then you should consider trying our to
 - Highly integrated with productive UI
 - Available Docker Images and Portable Edition
 - Extra helpers such as notes, manuals, etc...
-
-# 🌱 What's with the name?
-
-- `L` -> Linked
-- `A` -> Asynchronous
-- `F` -> Fantastic
-
-In essence, LafTools is a suite that offers a series of linked, asynchronous, and fantastic toolsets.
-
-Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.
 
 # 🌠 Preview
 

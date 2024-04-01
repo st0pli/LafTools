@@ -20,6 +20,16 @@ A funkciók gyors használatához stabil online webhelyet állítottunk be az Eg
 - 🇺🇸 Egyesült Államok: [laftools.dev](https://laftools.dev)
 - 🇨🇳 Csak Kína szárazföldi része: [laftools.cn](https://laftools.cn)
 
+# 🌱 Mi van a névvel?
+
+- `L` -> Linked
+- `A` -> Asynchronous
+- `F` -> Fantastic
+
+In essence, LafTools is a suite that offers a series of linked, asynchronous, and fantastic toolsets.
+
+Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.
+
 # 💡 Bevezetés
 
 Felmerülhet benned a kérdés, miért vagyunk eltökéltek ennek az eszköztárnak a fejlesztése mellett, mivel az interneten számos eszköz használható. Valójában a legtöbb általunk biztosított eszköz könnyen megtalálható az interneten, például kodek, formázó, fordítás, QR-kód stb. Ezeknek az eszközöknek azonban nem ez a legkényelmesebb és leghatékonyabb módja.
@@ -42,16 +52,6 @@ Ha a fentiek bármelyikére igen a válasz, akkor fontolja meg eszköztárunk ki
 - Erősen integrált a produktív felhasználói felülettel
 - Elérhető Docker képek és Portable Edition
 - Extra segítők, mint jegyzetek, kézikönyvek stb...
-
-# 🌱 Mi van a névvel?
-
-- `L` -> Linked
-- `A` -> Asynchronous
-- `F` -> Fantastic
-
-In essence, LafTools is a suite that offers a series of linked, asynchronous, and fantastic toolsets.
-
-Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.
 
 # 🌠 Előnézet
 

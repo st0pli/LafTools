@@ -20,6 +20,16 @@ Para usar essas funções rapidamente, implantamos um site on-line estável nas 
 - 🇺🇸 Estado unido: [laftools.dev](https://laftools.dev)
 - 🇨🇳 Apenas China Continental: [laftools.cn](https://laftools.cn)
 
+# 🌱 O que há com o nome?
+
+- `L` -> Linked
+- `A` -> Asynchronous
+- `F` -> Fantastic
+
+In essence, LafTools is a suite that offers a series of linked, asynchronous, and fantastic toolsets.
+
+Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.
+
 # 💡 Introdução
 
 Você pode se perguntar por que estamos determinados a desenvolver esta caixa de ferramentas, já que existem inúmeras ferramentas que podem ser usadas na Internet. Na verdade, a maioria das ferramentas que disponibilizamos podem ser facilmente encontradas na Internet, como codec, formatador, tradução, QR Code, etc… No entanto, não é a abordagem mais confortável e eficiente para utilizar estas ferramentas.
@@ -42,16 +52,6 @@ Se a resposta a alguma das perguntas acima for sim, você deve considerar experi
 - Altamente integrado com UI produtiva
 - Imagens Docker disponíveis e edição portátil
 - Ajudantes extras, como notas, manuais, etc.
-
-# 🌱 O que há com o nome?
-
-- `L` -> Linked
-- `A` -> Asynchronous
-- `F` -> Fantastic
-
-In essence, LafTools is a suite that offers a series of linked, asynchronous, and fantastic toolsets.
-
-Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.
 
 # 🌠 Visualização
 

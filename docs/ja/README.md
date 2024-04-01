@@ -20,6 +20,16 @@
 - 🇺🇸 合衆国: [laftools.dev](https://laftools.dev)
 - 🇨🇳 中国本土のみ: [laftools.cn](https://laftools.cn)
 
+# 🌱 名前は何ですか？
+
+- `L` -> Linked
+- `A` -> Asynchronous
+- `F` -> Fantastic
+
+In essence, LafTools is a suite that offers a series of linked, asynchronous, and fantastic toolsets.
+
+Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.
+
 # 💡 導入
 
 インターネット上には多数のツールが使用できるのに、なぜこのツールボックスを開発することにしたのか疑問に思われるかもしれません。 実際、コーデック、フォーマッタ、翻訳、QR コードなど、当社が提供するほとんどのツールはインターネット上で簡単に見つけることができます。しかし、これらのツールを使用することは、最も快適で効率的なアプローチではありません。
@@ -42,16 +52,6 @@
 - 生産性の高い UI と高度に統合
 - 利用可能な Docker イメージとポータブル エディション
 - メモやマニュアルなどの追加のヘルパー
-
-# 🌱 名前は何ですか？
-
-- `L` -> Linked
-- `A` -> Asynchronous
-- `F` -> Fantastic
-
-In essence, LafTools is a suite that offers a series of linked, asynchronous, and fantastic toolsets.
-
-Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.
 
 # 🌠 プレビュー
 

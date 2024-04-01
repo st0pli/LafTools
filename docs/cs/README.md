@@ -20,6 +20,16 @@ Pro rychlé použití těchto funkcí jsme pro vás nasadili stabilní online we
 - 🇺🇸 spojený stát: [laftools.dev](https://laftools.dev)
 - 🇨🇳 Pouze pevninská Čína: [laftools.cn](https://laftools.cn)
 
+# 🌱 Jak je to se jménem?
+
+- `L` -> Linked
+- `A` -> Asynchronous
+- `F` -> Fantastic
+
+In essence, LafTools is a suite that offers a series of linked, asynchronous, and fantastic toolsets.
+
+Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.
+
 # 💡 Úvod
 
 Možná se divíte, proč jsme se rozhodli vyvinout tuto sadu nástrojů, protože na internetu lze použít mnoho nástrojů. Většinu nástrojů, které poskytujeme, lze skutečně snadno najít na internetu, jako je kodek, formátovač, překlad, QR kód atd... Není to však nejpohodlnější a nejefektivnější přístup k používání těchto nástrojů.
@@ -42,16 +52,6 @@ Pokud je odpověď na kteroukoli z výše uvedených otázek ano, měli byste zv
 - Vysoce integrovaný s produktivním uživatelským rozhraním
 - Dostupné Docker Images a Portable Edition
 - Extra pomocníci jako poznámky, manuály atd...
-
-# 🌱 Jak je to se jménem?
-
-- `L` -> Linked
-- `A` -> Asynchronous
-- `F` -> Fantastic
-
-In essence, LafTools is a suite that offers a series of linked, asynchronous, and fantastic toolsets.
-
-Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.
 
 # 🌠 Náhled
 
