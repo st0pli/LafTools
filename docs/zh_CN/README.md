@@ -11,7 +11,7 @@
 <br><br>
 </p>
 
-<i>Note: 该页面是由LafTools工具箱内部生成的。</i> <br/> [English](/docs/en_US/README.md)  |  简体中文  |  [繁體中文](/docs/zh_HK/README.md)  |  [Deutsch](/docs/de/README.md)  |  [Español](/docs/es/README.md)  |  [Français](/docs/fr/README.md)  |  [日本語](/docs/ja/README.md)  |  [한국어](/docs/ko/README.md) | [More](/docs/) <br/>
+<i>Note: 该页面是由LafTools工具箱内部生成的。</i> <br/> [English](/docs/en_US/README.md) | 简体中文 | [繁體中文](/docs/zh_HK/README.md) | [Deutsch](/docs/de/README.md) | [Español](/docs/es/README.md) | [Français](/docs/fr/README.md) | [日本語](/docs/ja/README.md) | [한국어](/docs/ko/README.md) | [More](/docs/) <br/>
 
 # 🪄 功能总览
 
@@ -26,7 +26,7 @@
 - `A` -> Asynchronous
 - `F` -> Fantastic
 
-从本质上讲，LafTools工具箱是一个提供一系列基于互连(Linked)、可异步(Asynchronous)且令人惊讶(Fantastic)的编程向工具箱。
+从本质上讲，LafTools工具箱是一个提供一系列基于互连(Linked)、可异步(Asynchronous)且令人惊讶(Fantastic)的编程向工具集。
 
 请放心，随着时间的推移，这个项目将会以非凡而奇妙的方式发展。这个项目需要更多的时间，就像酒一样，越久越好。
 
@@ -67,7 +67,7 @@
 
 ## 1. 设置系统环境
 
-为了简单起见，假设您已将此仓库克隆到 Windows 上的 `C:\Usersjerry\project\laftools-repo` 或 Linux/MacOS 上的 `/Users/jerry/projects/laftools-repo`，那么您应该在文件 **~/.bashrc* 中声明 env 并在下面设置配置*，或者只是在运行任何命令之前执行它们。
+为了简单起见，假设您已将此仓库克隆到 Windows 上的 `C:\Usersjerry\project\laftools-repo` 或 Linux/MacOS 上的 `/Users/jerry/projects/laftools-repo`，那么您应该在文件 \*_~/.bashrc_ 中声明 env 并在下面设置配置\*，或者只是在运行任何命令之前执行它们。
 
 如果您使用的是 Windows 操作系统，请确保所有命令都在 git-bash 中执行，了解更多信息请参阅 [贡献](/docs/zh_CN/CONTRIBUTION.md)。除此之外，建议避免在该项目所在的文件路径中使用任何空格或非英文字符。
 
