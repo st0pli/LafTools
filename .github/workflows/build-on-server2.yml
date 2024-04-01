@@ -78,4 +78,5 @@ jobs:
             tar -xzf ../LafTools-${{steps.get_version.outputs.VERSION}}-dkout.tmp.gz -C .
             ls -ahlrt
             docker build  --progress=plain -t localbuild/server2-linux-x64:devops -f ./Dockerfile .
+            chmod +x ./docker/run-docker.sh
             ./docker/run-docker.sh ${{steps.get_version.outputs.VERSION}} server2-inst

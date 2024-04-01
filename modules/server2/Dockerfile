@@ -6,7 +6,6 @@ RUN sed -i 's/archive.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list
 
 # Install OpenJDK-8
 RUN apt-get update && \
-    apt-get install -y wget && \
     apt-get install -y curl && \
     apt-get install -y mysql-client && \
     apt-get install -y nodejs npm && \
