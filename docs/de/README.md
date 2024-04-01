@@ -13,7 +13,7 @@
 
 <i>Note: Diese Seite wird intern von LafTools generiert.</i> <br/> [English](/docs/en_US/README.md)  |  [简体中文](/docs/zh_CN/README.md)  |  [繁體中文](/docs/zh_HK/README.md)  |  Deutsch  |  [Español](/docs/es/README.md)  |  [Français](/docs/fr/README.md)  |  [日本語](/docs/ja/README.md)  |  [한국어](/docs/ko/README.md) | [More](/docs/) <br/>
 
-# 🪄 Quick View
+# 🪄 Schnellansicht
 
 Um diese Funktionen schnell nutzen zu können, haben wir in den USA und China eine stabile Online-Website für Sie bereitgestellt. Die meisten Tools sind auf unseren Online-Websites verfügbar, mit Ausnahme einiger Tools, die auf bestimmten Betriebssystemfunktionen basieren.
 
@@ -75,7 +75,7 @@ export PATH=$PATH:$LAFTOOLS_ROOT\dev\source\windows-bin
 export LAFTOOLS_ROOT=/users/jerry/projects/laftools-repo
 ```
 
-## 2. Compile and Run
+## 2. Kompilieren und ausführen
 
 ```bash
 # Installieren Sie die erforderliche globale Bibliothek
@@ -86,7 +86,7 @@ cd $LAFTOOLS_ROOT && npm install -S -D --force
 cd $LAFTOOLS_ROOT/modules/web2 && npm install -S -D --force
 cd $LAFTOOLS_ROOT/devtools/scripts/scan && npm install -S -D --force
 
-# run core service
+# Kerndienst ausführen
 npm run fe-web
 
 ```
@@ -100,11 +100,13 @@ cd pipeline
 
 # 🌱 Was ist mit dem Namen?
 
-#### _The Tools for Laffin' At Life_
+- `L` -> Linked
+- `A` -> Asynchronous
+- `F` -> Fantastic
 
-Der Name dieses Projekts ist von „Laffin' At Life“ inspiriert, einem klassischen Country-Song aus dem Jahr 1987 von Chet Atkins, der ebenfalls einen besonderen Platz im Herzen des Autors einnimmt.
+In essence, LafTools is a suite that offers a series of linked, asynchronous, and fantastic toolsets.
 
-Wir hoffen, dass LafTools Ihre täglichen Aufgaben erleichtert, Überstunden reduziert und Ihnen dabei hilft, eine gesunde Work-Life-Balance aufrechtzuerhalten. Lassen Sie uns einfach im Leben herumtollen!
+Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.
 
 # 📑 Andere Materialien
 

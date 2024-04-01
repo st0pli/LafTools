@@ -13,7 +13,7 @@
 
 <i>Note: 이 페이지는 LafTools에서 내부적으로 생성됩니다.</i> <br/> [English](/docs/en_US/README.md)  |  [简体中文](/docs/zh_CN/README.md)  |  [繁體中文](/docs/zh_HK/README.md)  |  [Deutsch](/docs/de/README.md)  |  [Español](/docs/es/README.md)  |  [Français](/docs/fr/README.md)  |  [日本語](/docs/ja/README.md)  |  한국어 | [More](/docs/) <br/>
 
-# 🪄 Quick View
+# 🪄 퀵뷰
 
 이러한 기능을 빠르게 사용할 수 있도록 미국과 CN 지역에 안정적인 온라인 웹사이트를 배포했습니다. 특정 OS 기능에 의존하는 일부 도구를 제외하고 대부분의 도구는 온라인 웹사이트에서 사용할 수 있습니다.
 
@@ -75,7 +75,7 @@ export PATH=$PATH:$LAFTOOLS_ROOT\dev\source\windows-bin
 export LAFTOOLS_ROOT=/users/jerry/projects/laftools-repo
 ```
 
-## 2. Compile and Run
+## 2. 컴파일 및 실행
 
 ```bash
 # 필요한 전역 라이브러리 설치
@@ -86,7 +86,7 @@ cd $LAFTOOLS_ROOT && npm install -S -D --force
 cd $LAFTOOLS_ROOT/modules/web2 && npm install -S -D --force
 cd $LAFTOOLS_ROOT/devtools/scripts/scan && npm install -S -D --force
 
-# run core service
+# 핵심 서비스 실행
 npm run fe-web
 
 ```
@@ -100,11 +100,13 @@ cd pipeline
 
 # 🌱 이름이 뭐예요?
 
-#### _The Tools for Laffin' At Life_
+- `L` -> Linked
+- `A` -> Asynchronous
+- `F` -> Fantastic
 
-이 프로젝트의 이름은 저자의 마음 속에 특별한 자리를 차지한 Chet Atkins의 1987년 클래식 컨트리 노래인 'Laffin' At Life'에서 영감을 받았습니다.
+In essence, LafTools is a suite that offers a series of linked, asynchronous, and fantastic toolsets.
 
-LafTools가 귀하의 일상 업무를 더 쉽게 만들고 초과 근무의 필요성을 줄이고 건강한 일과 삶의 균형을 유지하는 데 도움이 되기를 바랍니다. 인생을 즐겁게 보내세요!
+Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.
 
 # 📑 기타 재료
 

@@ -92,3 +92,11 @@ Thank you!
 
 Ryan Laf  
 Mar. 20th, 2021
+
+# 🌱 Mi van a névvel? (Old explanation)
+
+#### _The Tools for Laffin' At Life_
+
+A projekt nevét Chet Atkins 1987-es klasszikus countrydala, a „Laffin' At Life” ihlette, amely szintén különleges helyet foglal el a szerző szívében.
+
+Remélhetőleg a LafTools megkönnyíti mindennapi feladatait, csökkenti a túlórák szükségességét, és segít fenntartani a munka és a magánélet egészséges egyensúlyát, hadd lazuljunk az életen!

@@ -13,7 +13,7 @@
 
 <i>Note: Trang này được tạo từ nội bộ LafTools.</i> <br/> [English](/docs/en_US/README.md)  |  [简体中文](/docs/zh_CN/README.md)  |  [繁體中文](/docs/zh_HK/README.md)  |  [Deutsch](/docs/de/README.md)  |  [Español](/docs/es/README.md)  |  [Français](/docs/fr/README.md)  |  [日本語](/docs/ja/README.md)  |  [한국어](/docs/ko/README.md) | [More](/docs/) <br/>
 
-# 🪄 Quick View
+# 🪄 Xem lướt qua
 
 Để sử dụng nhanh các chức năng này, chúng tôi đã triển khai trang web trực tuyến ổn định tại khu vực US và CN để bạn sử dụng. Hầu hết các công cụ đều có sẵn trên các trang web trực tuyến của chúng tôi ngoại trừ một số công cụ dựa trên khả năng cụ thể của hệ điều hành.
 
@@ -75,7 +75,7 @@ export PATH=$PATH:$LAFTOOLS_ROOT\dev\source\windows-bin
 export LAFTOOLS_ROOT=/users/jerry/projects/laftools-repo
 ```
 
-## 2. Compile and Run
+## 2. Biên dịch và chạy
 
 ```bash
 # cài đặt thư viện toàn cầu cần thiết
@@ -86,7 +86,7 @@ cd $LAFTOOLS_ROOT && npm install -S -D --force
 cd $LAFTOOLS_ROOT/modules/web2 && npm install -S -D --force
 cd $LAFTOOLS_ROOT/devtools/scripts/scan && npm install -S -D --force
 
-# run core service
+# chạy dịch vụ cốt lõi
 npm run fe-web
 
 ```
@@ -100,11 +100,13 @@ cd pipeline
 
 # 🌱 Có chuyện gì với cái tên vậy?
 
-#### _The Tools for Laffin' At Life_
+- `L` -> Linked
+- `A` -> Asynchronous
+- `F` -> Fantastic
 
-Tên của dự án này được lấy cảm hứng từ Laffin' At Life, một bài hát đồng quê cổ điển từ năm 1987 của Chet Atkins cũng có một vị trí đặc biệt trong trái tim tác giả.
+In essence, LafTools is a suite that offers a series of linked, asynchronous, and fantastic toolsets.
 
-Hy vọng rằng LafTools sẽ giúp công việc hàng ngày của bạn trở nên dễ dàng hơn, giảm nhu cầu làm thêm giờ và giúp bạn duy trì sự cân bằng lành mạnh giữa công việc và cuộc sống, chúng ta hãy cùng tận hưởng cuộc sống!
+Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.
 
 # 📑 Vật liệu khác
 

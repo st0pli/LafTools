@@ -13,7 +13,7 @@
 
 <i>Note: Halaman ini dihasilkan daripada LafTools secara dalaman.</i> <br/> [English](/docs/en_US/README.md)  |  [简体中文](/docs/zh_CN/README.md)  |  [繁體中文](/docs/zh_HK/README.md)  |  [Deutsch](/docs/de/README.md)  |  [Español](/docs/es/README.md)  |  [Français](/docs/fr/README.md)  |  [日本語](/docs/ja/README.md)  |  [한국어](/docs/ko/README.md) | [More](/docs/) <br/>
 
-# 🪄 Quick View
+# 🪄 Pandangan Pantas
 
 Untuk menggunakan fungsi ini dengan pantas, kami telah menggunakan tapak web dalam talian yang stabil di rantau AS dan CN untuk anda gunakan. Kebanyakan alat tersedia di tapak web dalam talian kami kecuali beberapa alat yang bergantung pada keupayaan OS tertentu.
 
@@ -75,7 +75,7 @@ export PATH=$PATH:$LAFTOOLS_ROOT\dev\source\windows-bin
 export LAFTOOLS_ROOT=/users/jerry/projects/laftools-repo
 ```
 
-## 2. Compile and Run
+## 2. Susun dan Jalankan
 
 ```bash
 # pasang perpustakaan global yang diperlukan
@@ -86,7 +86,7 @@ cd $LAFTOOLS_ROOT && npm install -S -D --force
 cd $LAFTOOLS_ROOT/modules/web2 && npm install -S -D --force
 cd $LAFTOOLS_ROOT/devtools/scripts/scan && npm install -S -D --force
 
-# run core service
+# menjalankan perkhidmatan teras
 npm run fe-web
 
 ```
@@ -100,11 +100,13 @@ cd pipeline
 
 # 🌱 Ada apa dengan nama?
 
-#### _The Tools for Laffin' At Life_
+- `L` -> Linked
+- `A` -> Asynchronous
+- `F` -> Fantastic
 
-Nama projek ini diilhamkan oleh Laffin' At Life, lagu desa klasik dari tahun 1987 oleh Chet Atkins yang turut mendapat tempat istimewa di hati pengarang.
+In essence, LafTools is a suite that offers a series of linked, asynchronous, and fantastic toolsets.
 
-Mudah-mudahan LafTools akan memudahkan tugas harian anda, mengurangkan keperluan untuk kerja lebih masa dan membantu anda mengekalkan keseimbangan kerja-kehidupan yang sihat, biarlah kami berdiam diri sahaja!
+Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.
 
 # 📑 Bahan Lain
 

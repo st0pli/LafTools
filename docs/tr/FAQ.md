@@ -92,3 +92,11 @@ Thank you!
 
 Ryan Laf  
 Mar. 20th, 2021
+
+# 🌱 İsmin nesi var? (Old explanation)
+
+#### _The Tools for Laffin' At Life_
+
+Bu projenin adı, Chet Atkins'in 1987 tarihli, yazarın kalbinde de özel bir yere sahip olan klasik country şarkısı 'Laffin' At Life'dan esinlenilmiştir.
+
+LafTools'un günlük görevlerinizi kolaylaştıracağını, fazla mesai ihtiyacını azaltacağını ve sağlıklı bir iş-yaşam dengesini korumanıza yardımcı olacağını umuyoruz, bırakın hayatta biraz sohbet edelim!

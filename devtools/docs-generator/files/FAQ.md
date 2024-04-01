@@ -90,3 +90,11 @@ Thank you!
 
 Ryan Laf  
 Mar. 20th, 2021
+
+# 🌱 ${Dot("I-Zaii3HZ","What's with the name?")} (Old explanation)
+
+#### _The Tools for Laffin' At Life_
+
+${Dot("3cXzYtfK","The name of this project is inspired by {0}, a classic country song from 1987 by Chet Atkins that also has a special place in the author's heart.","Laffin' At Life")}
+
+${Dot("b3c7e3r77","Hopefully LafTools will make your daily tasks easier, reducing the need for overtime and helping you maintain a healthy work-life balance, let us just laffin' at life!")}

@@ -13,7 +13,7 @@
 
 <i>Note: このページは LafTools から内部的に生成されます。</i> <br/> [English](/docs/en_US/README.md)  |  [简体中文](/docs/zh_CN/README.md)  |  [繁體中文](/docs/zh_HK/README.md)  |  [Deutsch](/docs/de/README.md)  |  [Español](/docs/es/README.md)  |  [Français](/docs/fr/README.md)  |  日本語  |  [한국어](/docs/ko/README.md) | [More](/docs/) <br/>
 
-# 🪄 Quick View
+# 🪄 クイックビュー
 
 これらの機能をすぐに使用できるように、安定したオンライン Web サイトを米国および中国地域に展開しました。特定の OS 機能に依存する一部のツールを除き、ほとんどのツールはオンライン Web サイトで入手できます。
 
@@ -75,7 +75,7 @@ export PATH=$PATH:$LAFTOOLS_ROOT\dev\source\windows-bin
 export LAFTOOLS_ROOT=/users/jerry/projects/laftools-repo
 ```
 
-## 2. Compile and Run
+## 2. コンパイルと実行
 
 ```bash
 # 必要なグローバル ライブラリをインストールする
@@ -86,7 +86,7 @@ cd $LAFTOOLS_ROOT && npm install -S -D --force
 cd $LAFTOOLS_ROOT/modules/web2 && npm install -S -D --force
 cd $LAFTOOLS_ROOT/devtools/scripts/scan && npm install -S -D --force
 
-# run core service
+# コアサービスを実行する
 npm run fe-web
 
 ```
@@ -100,11 +100,13 @@ cd pipeline
 
 # 🌱 名前は何ですか？
 
-#### _The Tools for Laffin' At Life_
+- `L` -> Linked
+- `A` -> Asynchronous
+- `F` -> Fantastic
 
-このプロジェクトの名前は、チェット アトキンスによる 1987 年の古典的なカントリー ソング「Laffin' At Life」からインスピレーションを受けており、作者の心の中で特別な場所を占めています。
+In essence, LafTools is a suite that offers a series of linked, asynchronous, and fantastic toolsets.
 
-LafTools があなたの日常業務を簡素化し、残業の必要性を減らし、健康的なワークライフバランスの維持に役立つことを願っています。ただ、人生をのんびり過ごしましょう!
+Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.
 
 # 📑 その他の素材
 

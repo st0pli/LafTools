@@ -92,3 +92,11 @@ Thank you!
 
 Ryan Laf  
 Mar. 20th, 2021
+
+# 🌱 名字是怎麼回事？ (Old explanation)
+
+#### _The Tools for Laffin' At Life_
+
+這個項目的名稱靈感來自於 Chet Atkins 於 1987 年創作的一首經典鄉村歌曲《Laffin' At Life》，這首歌曲在作者心中也佔有特殊的地位。
+
+希望LafTools工具箱能讓您的日常工作變得更輕鬆，減少加班的需要，幫助您保持健康的工作與生活平衡，讓我們盡情享受生活吧！

@@ -13,7 +13,7 @@
 
 <i>Note: Cette page est générée à partir de LafTools en interne.</i> <br/> [English](/docs/en_US/README.md)  |  [简体中文](/docs/zh_CN/README.md)  |  [繁體中文](/docs/zh_HK/README.md)  |  [Deutsch](/docs/de/README.md)  |  [Español](/docs/es/README.md)  |  Français  |  [日本語](/docs/ja/README.md)  |  [한국어](/docs/ko/README.md) | [More](/docs/) <br/>
 
-# 🪄 Quick View
+# 🪄 Aperçu rapide
 
 Pour utiliser rapidement ces fonctions, nous avons déployé un site Web en ligne stable dans la région des États-Unis et du CN pour que vous puissiez l'utiliser. La plupart des outils sont disponibles sur nos sites Web en ligne, à l'exception de certains outils qui reposent sur des capacités spécifiques du système d'exploitation.
 
@@ -75,7 +75,7 @@ export PATH=$PATH:$LAFTOOLS_ROOT\dev\source\windows-bin
 export LAFTOOLS_ROOT=/users/jerry/projects/laftools-repo
 ```
 
-## 2. Compile and Run
+## 2. Compiler et exécuter
 
 ```bash
 # installer la bibliothèque globale requise
@@ -86,7 +86,7 @@ cd $LAFTOOLS_ROOT && npm install -S -D --force
 cd $LAFTOOLS_ROOT/modules/web2 && npm install -S -D --force
 cd $LAFTOOLS_ROOT/devtools/scripts/scan && npm install -S -D --force
 
-# run core service
+# exécuter le service de base
 npm run fe-web
 
 ```
@@ -100,11 +100,13 @@ cd pipeline
 
 # 🌱 C'est quoi ce nom ?
 
-#### _The Tools for Laffin' At Life_
+- `L` -> Linked
+- `A` -> Asynchronous
+- `F` -> Fantastic
 
-Le nom de ce projet est inspiré de « Laffin' At Life », une chanson country classique de 1987 de Chet Atkins qui occupe également une place particulière dans le cœur de l'auteur.
+In essence, LafTools is a suite that offers a series of linked, asynchronous, and fantastic toolsets.
 
-Espérons que LafTools facilitera vos tâches quotidiennes, en réduisant le besoin d'heures supplémentaires et en vous aidant à maintenir un équilibre sain entre vie professionnelle et vie privée. Laissez-nous simplement profiter de la vie !
+Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.
 
 # 📑 Autres matériaux
 

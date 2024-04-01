@@ -13,7 +13,7 @@
 
 <i>Note: 該頁面是由LafTools工具箱內部產生的。</i> <br/> [English](/docs/en_US/README.md)  |  [简体中文](/docs/zh_CN/README.md)  |  繁體中文  |  [Deutsch](/docs/de/README.md)  |  [Español](/docs/es/README.md)  |  [Français](/docs/fr/README.md)  |  [日本語](/docs/ja/README.md)  |  [한국어](/docs/ko/README.md) | [More](/docs/) <br/>
 
-# 🪄 Quick View
+# 🪄 功能總覽
 
 為了快速使用這些功能，我們在美國和中國地區部署了穩定的線上網站供您使用。除了一些依賴特定作業系統功能的工具外，大多數工具都可以在我們的線上網站上找到。
 
@@ -75,7 +75,7 @@ export PATH=$PATH:$LAFTOOLS_ROOT\dev\source\windows-bin
 export LAFTOOLS_ROOT=/users/jerry/projects/laftools-repo
 ```
 
-## 2. Compile and Run
+## 2. 編譯並運行
 
 ```bash
 # 安裝所需的全域庫
@@ -86,7 +86,7 @@ cd $LAFTOOLS_ROOT && npm install -S -D --force
 cd $LAFTOOLS_ROOT/modules/web2 && npm install -S -D --force
 cd $LAFTOOLS_ROOT/devtools/scripts/scan && npm install -S -D --force
 
-# run core service
+# 運作核心服​​務
 npm run fe-web
 
 ```
@@ -100,11 +100,13 @@ cd pipeline
 
 # 🌱 名字是怎麼回事？
 
-#### _The Tools for Laffin' At Life_
+- `L` -> Linked
+- `A` -> Asynchronous
+- `F` -> Fantastic
 
-這個項目的名稱靈感來自於 Chet Atkins 於 1987 年創作的一首經典鄉村歌曲《Laffin' At Life》，這首歌曲在作者心中也佔有特殊的地位。
+In essence, LafTools is a suite that offers a series of linked, asynchronous, and fantastic toolsets.
 
-希望LafTools工具箱能讓您的日常工作變得更輕鬆，減少加班的需要，幫助您保持健康的工作與生活平衡，讓我們盡情享受生活吧！
+Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.
 
 # 📑 其他材料
 

@@ -92,3 +92,11 @@ Thank you!
 
 Ryan Laf  
 Mar. 20th, 2021
+
+# 🌱 名字是怎么回事？ (Old explanation)
+
+#### _The Tools for Laffin' At Life_
+
+该项目的名称灵感来自于切特·阿特金斯 (Chet Atkins) 于 1987 年创作的一首经典乡村歌曲《Laffin' At Life》，这首歌曲在作者心中也占有特殊的地位。
+
+希望LafTools工具箱能让您的日常工作变得更加轻松，减少加班的需要，帮助您保持健康的工作与生活平衡，让我们尽情享受生活吧！

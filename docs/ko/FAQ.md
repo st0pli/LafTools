@@ -92,3 +92,11 @@ Thank you!
 
 Ryan Laf  
 Mar. 20th, 2021
+
+# 🌱 이름이 뭐예요? (Old explanation)
+
+#### _The Tools for Laffin' At Life_
+
+이 프로젝트의 이름은 저자의 마음 속에 특별한 자리를 차지한 Chet Atkins의 1987년 클래식 컨트리 노래인 'Laffin' At Life'에서 영감을 받았습니다.
+
+LafTools가 귀하의 일상 업무를 더 쉽게 만들고 초과 근무의 필요성을 줄이고 건강한 일과 삶의 균형을 유지하는 데 도움이 되기를 바랍니다. 인생을 즐겁게 보내세요!

@@ -92,3 +92,11 @@ Thank you!
 
 Ryan Laf  
 Mar. 20th, 2021
+
+# 🌱 Ada apa dengan nama? (Old explanation)
+
+#### _The Tools for Laffin' At Life_
+
+Nama projek ini diilhamkan oleh Laffin' At Life, lagu desa klasik dari tahun 1987 oleh Chet Atkins yang turut mendapat tempat istimewa di hati pengarang.
+
+Mudah-mudahan LafTools akan memudahkan tugas harian anda, mengurangkan keperluan untuk kerja lebih masa dan membantu anda mengekalkan keseimbangan kerja-kehidupan yang sihat, biarlah kami berdiam diri sahaja!

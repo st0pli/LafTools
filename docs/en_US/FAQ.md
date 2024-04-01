@@ -92,3 +92,11 @@ Thank you!
 
 Ryan Laf  
 Mar. 20th, 2021
+
+# 🌱 What's with the name? (Old explanation)
+
+#### _The Tools for Laffin' At Life_
+
+The name of this project is inspired by Laffin' At Life, a classic country song from 1987 by Chet Atkins that also has a special place in the author's heart.
+
+Hopefully LafTools will make your daily tasks easier, reducing the need for overtime and helping you maintain a healthy work-life balance, let us just laffin' at life!

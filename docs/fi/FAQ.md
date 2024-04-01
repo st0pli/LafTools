@@ -92,3 +92,11 @@ Thank you!
 
 Ryan Laf  
 Mar. 20th, 2021
+
+# 🌱 Mitä nimeä vaivaa? (Old explanation)
+
+#### _The Tools for Laffin' At Life_
+
+Tämän projektin nimi on saanut inspiraationsa Chet Atkinsin klassisesta kantrilaulusta 'Laffin' At Life' vuodelta 1987, jolla on myös erityinen paikka kirjoittajan sydämessä.
+
+Toivottavasti LafTools tekee päivittäisistä tehtävistäsi helpompaa, vähentää ylitöiden tarvetta ja auttaa sinua ylläpitämään tervettä työ- ja perhe-elämän tasapainoa, anna meidän vain levätä elämässä!

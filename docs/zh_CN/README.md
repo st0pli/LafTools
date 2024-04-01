@@ -13,7 +13,7 @@
 
 <i>Note: 该页面是由LafTools工具箱内部生成的。</i> <br/> [English](/docs/en_US/README.md)  |  简体中文  |  [繁體中文](/docs/zh_HK/README.md)  |  [Deutsch](/docs/de/README.md)  |  [Español](/docs/es/README.md)  |  [Français](/docs/fr/README.md)  |  [日本語](/docs/ja/README.md)  |  [한국어](/docs/ko/README.md) | [More](/docs/) <br/>
 
-# 🪄 Quick View
+# 🪄 功能总览
 
 为了快速使用这些功能，我们在美国和中国地区部署了稳定的在线网站供您使用。除了一些依赖特定操作系统功能的工具外，大多数工具都可以在我们的在线网站上找到。
 
@@ -100,11 +100,13 @@ cd pipeline
 
 # 🌱 名字是怎么回事？
 
-#### _The Tools for Laffin' At Life_
+- `L` -> Linked
+- `A` -> Asynchronous
+- `F` -> Fantastic
 
-该项目的名称灵感来自于切特·阿特金斯 (Chet Atkins) 于 1987 年创作的一首经典乡村歌曲《Laffin' At Life》，这首歌曲在作者心中也占有特殊的地位。
+从本质上讲，LafTools工具箱是一个提供一系列基于互连(Linked)、可异步(Asynchronous)且令人惊讶(Fantastic)的编程向工具箱。
 
-希望LafTools工具箱能让您的日常工作变得更加轻松，减少加班的需要，帮助您保持健康的工作与生活平衡，让我们尽情享受生活吧！
+请放心，随着时间的推移，这个项目将会以非凡而奇妙的方式发展。这个项目需要更多的时间，就像酒一样，越久越好。
 
 # 📑 其他材料
 
