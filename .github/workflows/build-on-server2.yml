@@ -33,10 +33,12 @@ jobs:
       - name: Run build script
         id: runbuildscript
         run: |
-          cd ./modules/server2
-          mkdir ./docker/dist
+          cd $LAFTOOLS_ROOT/modules/server2
+          mkdir -p ./docker/dist
           cp -a * ./docker/dist
           tar -czvf docker-dist.tar.gz ./docker/dist
+          ls -ahlrt
+          pwd
 
       - name: CNS Release 1
         uses: appleboy/ssh-action@master
