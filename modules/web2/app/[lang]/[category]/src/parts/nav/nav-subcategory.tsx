@@ -61,7 +61,7 @@ export default (props: NavigatorPassProp) => {
     let parentClz = tw` dark:bg-sky-900 bg-sky-600 `
     let category = props.params.category
     if (category == 'ai') {
-        parentClz = tw` dark:bg-violet-900 bg-violet-800 `
+        parentClz = tw` dark:bg-violet-900 bg-violet-900 `
     } else if (category == 'docs') {
         parentClz = tw` dark:bg-teal-900 bg-teal-700 `
     } else if (category == 'resources') {
