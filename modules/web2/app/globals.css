@@ -51,12 +51,12 @@
 }
 
 .category-resources .anchor-text-in-category.active {
-  @apply bg-yellow-700 dark:bg-yellow-700;
+  @apply bg-yellow-600 dark:bg-yellow-700;
 }
 
 .category-ai .anchor-text-in-category:hover,
 .category-ai .anchor-text-in-category.hover {
-  @apply bg-violet-900 dark:bg-violet-800;
+  @apply bg-violet-700 dark:bg-violet-800;
 }
 
 .category-ai .anchor-text-in-category.active {

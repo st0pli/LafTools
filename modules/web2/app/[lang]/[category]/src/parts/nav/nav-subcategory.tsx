@@ -51,6 +51,7 @@ import { URL_SUBCATEGORY_GO_PATH } from "@/app/__CORE__/meta/url";
 import { fmtURL_ToolSubPage } from "@/app/__CORE__/meta/common";
 import { NavigatorPassProp } from "..";
 import PreinitNavbind from "../js/preinit-navbind";
+import { ifnil } from "@/app/__CORE__/meta/fn";
 
 export default (props: NavigatorPassProp) => {
     let leftCategoryArr = getSubCategoryList()
@@ -60,11 +61,17 @@ export default (props: NavigatorPassProp) => {
     let parentClz = tw` dark:bg-sky-900 bg-sky-600 `
     let category = props.params.category
     if (category == 'ai') {
-        parentClz = tw` dark:bg-violet-900 bg-violet-900 `
+        parentClz = tw` dark:bg-violet-900 bg-violet-800 `
     } else if (category == 'docs') {
         parentClz = tw` dark:bg-teal-900 bg-teal-700 `
     } else if (category == 'resources') {
-        parentClz = tw` dark:bg-yellow-900 bg-yellow-800 `
+        parentClz = tw` dark:bg-yellow-900 bg-yellow-700 `
+    }
+    if (ifnil(category, '') != '' && category != 'tools') {
+        leftCategoryArr = leftCategoryArr.map((x, d) => {
+            x.label = Dot("xg7ujhS2S", "Test Item {0}", (d + 1))
+            return x;
+        })
     }
     return (
         <div className={border_clz + parentClz}>
