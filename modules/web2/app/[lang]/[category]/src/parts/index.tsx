@@ -61,7 +61,8 @@ export type NavigatorPassProp = CategorySearchProps & {
 }
 
 export default (props: NavigatorPassProp) => {
-    return <div className="">
+    let category = props.params.category || 'tools'
+    return <div className={'category-' + category}>
         <NavTop {...props} />
         <RedirectToOtherBanner></RedirectToOtherBanner>
         <NavBanner {...props} />

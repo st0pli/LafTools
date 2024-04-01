@@ -28,7 +28,7 @@ import { NavCategory as NavCategory } from "../nav/nav-category";
 import { getAppDevIcon } from "@/app/__CORE__/config/imgconfig";
 import { ClosableText } from "@/app/__CORE__/components/ClosableText";
 import RedirectToOtherBanner from "@/app/__CORE__/components/RedirectToOtherBanner/index";
-import { CSS_BG_COLOR_WHITE, border_clz, border_clz_top, light_border_clz_all, row_pad_clz } from "@/app/__CORE__/meta/styles";
+import { CSS_BG_COLOR_WHITE, border_clz, border_clz_top, light_border_clz_all, row_pad_clz, tw } from "@/app/__CORE__/meta/styles";
 import LightDarkButton from "@/app/__CORE__/components/LightDarkButton";
 import GitHubButton from "@/app/__CORE__/components/GitHubButton";
 import SysBreadCrumbs from '../cpt/cpt-breadcrumbs'
@@ -57,14 +57,23 @@ export default (props: NavigatorPassProp) => {
     let rightCategoryArr = fn_rightCategoryArr()
     let subCategory = props.params.subCategory
     let currentSubTabId = props.params.id
+    let parentClz = tw` dark:bg-sky-900 bg-sky-600 `
+    let category = props.params.category
+    if (category == 'ai') {
+        parentClz = tw` dark:bg-violet-900 bg-violet-900 `
+    } else if (category == 'docs') {
+        parentClz = tw` dark:bg-teal-900 bg-teal-700 `
+    } else if (category == 'resources') {
+        parentClz = tw` dark:bg-yellow-900 bg-yellow-800 `
+    }
     return (
-        <div className={border_clz + "   dark:bg-sky-900 bg-sky-600 "}>
+        <div className={border_clz + parentClz}>
             <div className={row_pad_clz + ' flex-justify-between '}>
                 <div>
                     {
                         leftCategoryArr.map(x => {
                             return <Link data-navid={x.id} href={fmtURL_ToolSubPage([URL_SUBCATEGORY_GO_PATH, x.id])} className={
-                                " white-anchor-text anchor-text-for-blue cursor-pointer   " + (
+                                " white-anchor-text anchor-text-in-category cursor-pointer   " + (
                                     x.id == subCategory ? ' active ' : ''
                                 )
                             }>{x.label}</Link>
@@ -74,7 +83,7 @@ export default (props: NavigatorPassProp) => {
                 <div className="flex flex-row items-center">
                     {
                         rightCategoryArr.map(x => {
-                            return <Link href={x.href + ""} className={" white-anchor-text anchor-text-for-blue cursor-pointer "}>{x.label}</Link>
+                            return <Link href={x.href + ""} className={" white-anchor-text anchor-text-in-category cursor-pointer "}>{x.label}</Link>
                         })
                     }
                 </div>
