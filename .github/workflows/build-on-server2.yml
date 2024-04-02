@@ -71,12 +71,13 @@ jobs:
           key: ${{ secrets.MAIN_APP_SSH_KEY }}
           command_timeout: 200m
           script: |
+            ver=${{steps.get_version.outputs.VERSION}}
             cd /home/appuser/Server2App-dist
             rm -rf test-build
             mkdir test-build
             cd ./test-build
-            tar -xzf ../LafTools-${{steps.get_version.outputs.VERSION}}-dkout.tmp.gz -C .
+            tar -xzf ../LafTools-$ver-dkout.tmp.gz -C .
             ls -ahlrt
-            docker build  --progress=plain -t localbuild/server2-linux-x64:devops -f ./Dockerfile .
+            docker build  --progress=plain -t localbuild/server2-linux-x64:$ver -f ./Dockerfile .
             chmod +x ./docker/run-docker.sh
-            ./docker/run-docker.sh ${{steps.get_version.outputs.VERSION}} server2-inst
+            ./docker/run-docker.sh server2-inst $ver
