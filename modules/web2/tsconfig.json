@@ -13,11 +13,11 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    
+
     /* Linting */
     "noUnusedLocals": false,
-    
-    "allowImportingTsExtensions":true,
+
+    "allowImportingTsExtensions": true,
     "noUncheckedIndexedAccess": false,
     "noUnusedParameters": false,
     "allowSyntheticDefaultImports": true,
@@ -37,6 +37,13 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "next.config.mjs"],
-  "exclude": ["app/node_modules","vite.config.ts","vite.config.tsx"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "next.config.mjs",
+    "../server2/**/*.ts"
+  ],
+  "exclude": ["app/node_modules", "vite.config.ts", "vite.config.tsx"]
 }

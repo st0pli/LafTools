@@ -1,8 +1,8 @@
 {
   "name": "desktop2",
-  "productName": "desktop2",
+  "productName": "LafTools",
   "version": "1.0.0",
-  "description": "My Electron application description",
+  "description": "LafTools",
   "main": ".vite/build/main.js",
   "scripts": {
     "start": "electron-forge start",

@@ -24,7 +24,8 @@ import NoSsr2 from '@/app/__CORE__/components/NoSsr2'
 import { FinalRootApp } from './src/main'
 import TranslationUtils from '@/app/__CORE__/utils/cTranslationUtils'
 import { useEffect } from 'react'
-import SetupPopPanel from '@/app/__CORE__/components/SetupPopPanel'
+import SetupPopPanel from '@/app/__CORE__/containers/SetupPopPanel'
+import VersionCheck from '@/app/__CORE__/containers/VersionCheck'
 
 
 export default () => {
@@ -37,6 +38,7 @@ export default () => {
     let innerChild = <div className="w-full h-full">
         <FinalRootApp />
         <SetupPopPanel />
+        <VersionCheck />
     </div>
     return innerChild
 }

@@ -20,7 +20,8 @@
 
 /** @type {import('next').NextConfig} */
 
-let API_URL = "https://laftools.dev";
+let isDev = process.env.NODE_ENV === "development";
+let API_URL = isDev ? "http://127.0.0.1:2016" : "https://api.laftools.cn";
 
 const nextConfig = {
   experimental: {
@@ -30,8 +31,8 @@ const nextConfig = {
   rewrites: async () => {
     return [
       {
-        source: "/x-v2-api/:path*",
-        destination: `${API_URL}/x-v2-api/:path*`,
+        source: "/v3/:path*",
+        destination: `${API_URL}/v3/:path*`,
       },
     ];
   },

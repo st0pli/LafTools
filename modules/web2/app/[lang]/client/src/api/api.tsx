@@ -1,0 +1,1 @@
+export const URL_API_HELLO_WORLD = '/hello-world'

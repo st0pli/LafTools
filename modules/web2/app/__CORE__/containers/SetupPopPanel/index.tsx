@@ -48,6 +48,7 @@ let goToNextURL = (lang: string) => {
 export default (props) => {
     let pathname = location.hostname
     let i18nList = useGetI18nLangList()
+    let [forceclose, setForceClose] = useState(false)
     let crtLang = getCurrentLang()
     let confirmCloseStr = localStorage.getItem(confrim_close_key)
     let user_lang_value = localStorage.getItem(user_crt_lang_key)
@@ -55,6 +56,9 @@ export default (props) => {
         setTimeout(() => {
             goToNextURL(user_lang_value + '')
         })
+    }
+    if (forceclose) {
+        return ''
     }
     if (confirmCloseStr != null && confirmCloseStr != '') {
         return ''
@@ -64,7 +68,7 @@ export default (props) => {
     }>
         <Button className="absolute right-0 top-0" size='sm' variant="light" onClick={() => {
             localStorage.setItem(confrim_close_key, '1')
-            location.reload()
+            setForceClose(true)
         }}>{Dot("hgmxsP7bY", 'Close')}</Button>
         <div className="p-2">
             <div className="text-lg font-bold">Select Language</div>

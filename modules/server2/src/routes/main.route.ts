@@ -15,7 +15,7 @@ export class MainRoute implements Routes {
   }
 
   private initializeRoutes() {
-    this.router.get('/', (req, res) => {
+    this.router.get('/hello-world', (req, res) => {
       let Dot = DotFn(req);
       let str = Dot('HZEGO_YeW', 'This is a test string to say Hello World, is it ok?');
       res.send({
