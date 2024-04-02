@@ -25,4 +25,5 @@ RUN npm install --legacy-peer-deps
 ENV PORT 2016
 ENV LOG_DIR /opt/logs
 ENV NODE_ENV production
+RUN chmod +x /opt/app/bootstrap.sh
 CMD ["/opt/app/bootstrap.sh"]

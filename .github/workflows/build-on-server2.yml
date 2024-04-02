@@ -78,6 +78,6 @@ jobs:
             cd ./test-build
             tar -xzf ../LafTools-$ver-dkout.tmp.gz -C .
             ls -ahlrt
-            docker build  --progress=plain -t localbuild/server2-linux-x64:$ver -f ./Dockerfile .
+            docker build  -t localbuild/server2-linux-x64:$ver -f ./Dockerfile .
             chmod +x ./docker/run-docker.sh
             ./docker/run-docker.sh server2-inst $ver
