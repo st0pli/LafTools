@@ -24,11 +24,11 @@
 
 - `L` -> Linked
 - `A` -> Asynchronous
-- `F` -> Fantastic
+- `F` -> Functional
 
-In essence, LafTools is a suite that offers a series of linked, asynchronous, and fantastic toolsets.
+從本質上講，LafTools工具箱是一個提供一系列基於互連(Linked)、可異步(Asynchronous)且令人驚訝(Fantastic)的編程向工具集。
 
-Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.
+請放心，隨著時間的推移，這個計畫將會以非凡而奇妙的方式發展。這個項目需要更多的時間，就像酒一樣，越久越好。
 
 # 💡 介紹
 

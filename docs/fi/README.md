@@ -24,11 +24,11 @@ Jotta voit käyttää näitä toimintoja nopeasti, olemme ottaneet käyttöön v
 
 - `L` -> Linked
 - `A` -> Asynchronous
-- `F` -> Fantastic
+- `F` -> Functional
 
-In essence, LafTools is a suite that offers a series of linked, asynchronous, and fantastic toolsets.
+Pohjimmiltaan LafTools on sarja, joka tarjoaa joukon linkitettyjä, asynkronisia ja upeita työkalusarjoja.
 
-Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.
+Voit olla varma, että tämä projekti kehittyy merkittävillä ja fantastisilla tavoilla ajan myötä. Tämä projekti vaatii enemmän aikaa, kuten viini, paranee ajan myötä.
 
 # 💡 Johdanto
 

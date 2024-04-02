@@ -24,9 +24,9 @@ ${Dot("hDdqkdxkSd","To quickly use these functions, we've deployed stable online
 
 - `L` -> Linked
 - `A` -> Asynchronous
-- `F` -> Fantastic
+- `F` -> Functional
 
-${Dot("15fbRc2id","In essence, LafTools is a suite that offers a series of linked, asynchronous, and fantastic toolsets.")}
+${Dot("15fbRc2id","In short, LafTools is a suite that offers a series of linked, asynchronous, and functional toolsets.")}
 
 ${Dot("7p5-nXoUr","Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.")}
 

@@ -24,11 +24,11 @@
 
 - `L` -> Linked
 - `A` -> Asynchronous
-- `F` -> Fantastic
+- `F` -> Functional
 
-In essence, LafTools is a suite that offers a series of linked, asynchronous, and fantastic toolsets.
+Về bản chất, LafTools là một bộ công cụ cung cấp một loạt các bộ công cụ được liên kết, không đồng bộ và tuyệt vời.
 
-Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.
+Hãy yên tâm, dự án này sẽ phát triển theo những cách đáng chú ý và tuyệt vời theo thời gian. Dự án này cần nhiều thời gian hơn, giống như rượu vang, sẽ ngon hơn theo thời gian.
 
 # 💡 Giới thiệu
 

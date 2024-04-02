@@ -24,11 +24,11 @@ A funkciók gyors használatához stabil online webhelyet állítottunk be az Eg
 
 - `L` -> Linked
 - `A` -> Asynchronous
-- `F` -> Fantastic
+- `F` -> Functional
 
-In essence, LafTools is a suite that offers a series of linked, asynchronous, and fantastic toolsets.
+Lényegében a LafTools egy olyan programcsomag, amely összekapcsolt, aszinkron és fantasztikus eszközkészleteket kínál.
 
-Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.
+Biztos lehet benne, hogy ez a projekt az idő múlásával figyelemre méltó és fantasztikus módon fog fejlődni. Ez a projekt több időt igényel, akárcsak a bor, idővel jobb lesz.
 
 # 💡 Bevezetés
 

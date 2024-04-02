@@ -24,11 +24,11 @@ Para usar essas funções rapidamente, implantamos um site on-line estável nas 
 
 - `L` -> Linked
 - `A` -> Asynchronous
-- `F` -> Fantastic
+- `F` -> Functional
 
-In essence, LafTools is a suite that offers a series of linked, asynchronous, and fantastic toolsets.
+Em essência, LafTools é um pacote que oferece uma série de conjuntos de ferramentas vinculados, assíncronos e fantásticos.
 
-Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.
+Fique tranquilo, este projeto evoluirá de maneiras notáveis ​​e fantásticas ao longo do tempo. Este projeto precisa de mais tempo, assim como o vinho, fica melhor com o tempo.
 
 # 💡 Introdução
 
