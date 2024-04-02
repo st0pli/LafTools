@@ -2,10 +2,15 @@ import { existsSync, mkdirSync } from 'fs';
 import { join } from 'path';
 import winston from 'winston';
 import winstonDaily from 'winston-daily-rotate-file';
-import { LOG_DIR } from '@config';
+import { LOG_DIR as tmp } from '@config';
+import { Console } from 'winston/lib/winston/transports';
+let LOG_DIR = tmp;
 
+if (!LOG_DIR) {
+  LOG_DIR = join(__dirname, 'logs');
+}
 // logs dir
-const logDir: string = join(__dirname, LOG_DIR);
+const logDir: string = LOG_DIR;
 
 if (!existsSync(logDir)) {
   mkdirSync(logDir);
@@ -26,6 +31,7 @@ const logger = winston.createLogger({
     logFormat,
   ),
   transports: [
+    new Console(),
     // debug log setting
     new winstonDaily({
       level: 'debug',
