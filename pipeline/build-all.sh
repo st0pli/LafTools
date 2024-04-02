@@ -1,6 +1,7 @@
 #!/bin/bash 
 # this script is created for building the project as an executable file.  
 
+chmod +x $LAFTOOLS_ROOT/pipeline/tools/get-web2-version.sh
 crtVersion=`$LAFTOOLS_ROOT/pipeline/tools/get-web2-version.sh`
 
 if [ -z $crtVersion ]; then
