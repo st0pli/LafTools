@@ -106,16 +106,32 @@ export let fn: FnInternalConverter = (content: string, lang: string) => {
     if (eachLastObj.lines.length == 0) {
       throw new Error("Empty release found in CHANGELOG.md");
     }
-    let latestVersionJSONFile = join(
+    let eachVersionJSONFile = join(
       LAFTOOLS_ROOT + "",
       "modules",
       "meta",
       eachLastObj.version + ".json",
     );
-    if (!fs.existsSync(latestVersionJSONFile)) {
+    if (!fs.existsSync(eachVersionJSONFile)) {
       throw new Error(
         "each version JSON file not found -> " + eachLastObj.version,
       );
+    }
+    let eachVersionJSON = JSON.parse(
+      fs.readFileSync(eachVersionJSONFile, "utf-8"),
+    );
+    let validateFields = [
+      "currentDesktopVersion",
+      "currentTerminalVersion",
+      "currentDockerVersion",
+    ];
+    _.forEach(validateFields, (eachField) => {
+      if (!eachVersionJSON[eachField]) {
+        throw new Error(eachField + " not found in " + eachVersionJSONFile);
+      }
+    });
+    if (_.size(validateFields) != _.size(eachVersionJSON)) {
+      throw new Error("Extra fields found in " + eachVersionJSONFile);
     }
 
     console.log(
