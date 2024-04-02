@@ -19,6 +19,7 @@ export class MainRoute implements Routes {
       let Dot = DotFn(req);
       let str = Dot('HZEGO_YeW', 'This is a test string to say Hello World, is it ok?');
       res.send({
+        version: '2024/04/02',
         content: str,
       });
     });
