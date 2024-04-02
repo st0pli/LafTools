@@ -1,12 +1,14 @@
 #!/bin/bash 
 # this script is created for building the project as an executable file.  
 
-crtVersion=$1
+crtVersion=`$LAFTOOLS_ROOT/pipeline/tools/get-web2-version.sh`
 
 if [ -z $crtVersion ]; then
     echo "[E] crtVersion is required."
     exit 1
 fi
+
+echo "[I] crtVersion: $crtVersion"
 
 if [ "$TAG_MODE" = "true" ]; then
     export LAFTOOLS_ROOT=/home/runner/work/LafTools/LafTools-tag
