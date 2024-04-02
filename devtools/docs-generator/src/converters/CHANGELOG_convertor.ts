@@ -51,7 +51,39 @@ export let fn: FnInternalConverter = (content: string, lang: string) => {
   if (!LAFTOOLS_ROOT) {
     throw new Error("LAFTOOLS_ROOT is not defined");
   }
-  let subDir = join(LAFTOOLS_ROOT, "docs", "release-meta");
+  LAFTOOLS_ROOT = "" + LAFTOOLS_ROOT;
+  let subDir = join(LAFTOOLS_ROOT, "modules", "meta", "versions");
+  let releaseJSONFile = join(LAFTOOLS_ROOT, "modules", "meta", "release.json");
+  if (!fs.existsSync(releaseJSONFile)) {
+    throw new Error("release.json not found in meta folder");
+  }
+  let releaseJSON = JSON.parse(fs.readFileSync(releaseJSONFile, "utf-8"));
+  let latestVersionJSONFile = join(
+    LAFTOOLS_ROOT,
+    "modules",
+    "meta",
+    releaseJSON.latestVersion + ".json",
+  );
+  if (!fs.existsSync(latestVersionJSONFile)) {
+    throw new Error(
+      "latest version JSON file not found! " + releaseJSON.latestVersion,
+    );
+  }
+
+  let p = _.find(allLastObj, (eachLastObj) => {
+    if (eachLastObj.version == releaseJSON.latestVersion) {
+      return true;
+    }
+    return false;
+  });
+  if (!p) {
+    throw new Error(
+      "latest version " +
+        releaseJSON.latestVersion +
+        " not found in CHANGELOG.md",
+    );
+  }
+
   console.log("subDir", subDir);
   if (!fs.existsSync(subDir)) {
     fs.mkdirSync(subDir);
@@ -74,6 +106,18 @@ export let fn: FnInternalConverter = (content: string, lang: string) => {
     if (eachLastObj.lines.length == 0) {
       throw new Error("Empty release found in CHANGELOG.md");
     }
+    let latestVersionJSONFile = join(
+      LAFTOOLS_ROOT + "",
+      "modules",
+      "meta",
+      eachLastObj.version + ".json",
+    );
+    if (!fs.existsSync(latestVersionJSONFile)) {
+      throw new Error(
+        "each version JSON file not found -> " + eachLastObj.version,
+      );
+    }
+
     console.log(
       "Release",
       eachLastObj.version,
