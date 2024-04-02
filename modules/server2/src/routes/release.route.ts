@@ -25,9 +25,10 @@ export class ReleaseRoute implements Routes {
         content: 'just test',
       } satisfies SysResponse<any>);
     });
-    this.router.get(`${URL_RELEASE}/new-updates`, async (req, res) => {
+    this.router.get(`${URL_RELEASE}/get-new-versions`, async (req, res) => {
       let Dot = DotFn(req);
       let info = InfoFn(req);
+
       return res.send({
         content: Dot('df-Lww5', 'new release'),
       } satisfies SysResponse<any>);

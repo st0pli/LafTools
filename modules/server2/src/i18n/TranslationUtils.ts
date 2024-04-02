@@ -65,8 +65,8 @@ function formatResultWithReplacer(val = '', ...args) {
   }
   return val;
 }
-
-export let DotFn = (req: Request) => {
+export type DotType = (id: string, enText: string, ...args: any[]) => string;
+export let DotFn = (req: Request): DotType => {
   let xLafLang = req.headers[HEADER_X_LAF_LANG];
   let currentLang = LANG_EN_US;
   i18nItems.find(eachI18nItem => {

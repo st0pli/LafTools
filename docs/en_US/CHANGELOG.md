@@ -1,3 +1,12 @@
-<i>Note: This page is generated from LafTools internally.</i> <br/> English  |  [简体中文](/docs/zh_CN/CHANGELOG.md)  |  [繁體中文](/docs/zh_HK/CHANGELOG.md)  |  [Deutsch](/docs/de/CHANGELOG.md)  |  [Español](/docs/es/CHANGELOG.md)  |  [Français](/docs/fr/CHANGELOG.md)  |  [日本語](/docs/ja/CHANGELOG.md)  |  [한국어](/docs/ko/CHANGELOG.md) | [More](/docs/) <br/>
+## Release v2.1.82-beta (2024-04-02)
 
-Please see /devtools/changelogs/*.log for further details.
+### New Features
+
+- Added Feature A, allowing users to do something
+- Introduced Feature B, now supporting...
+
+## Release v2.1.81-beta (2024-04-01)
+
+### Enhancement
+
+- Fixed some logic issue

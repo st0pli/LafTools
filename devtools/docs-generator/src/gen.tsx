@@ -42,6 +42,7 @@ _.forEach(i18nItems, eachI18nItem => {
         }
         return val;
     }
+    // DO NOT REMOVE DOT FUNCTION
     let Dot = function (id: string, enText: string, ...args: any[]): string {
         if (language == 'en_US') {
             return formatResultWithReplacer(enText, ...args);
@@ -59,8 +60,12 @@ _.forEach(i18nItems, eachI18nItem => {
         let finResult = formatResultWithReplacer(enText, ...args);
         return finResult;
     }
+    console.log(typeof Dot)
+    // DO NOT REMOVE DOT FUNCTION
+
 
     _.forEach(markdownFiles, (eachMarkdownFiles) => {
+        let interalConvertor = eachMarkdownFiles.interalConvertor
         console.log("handling... " + eachMarkdownFiles.fileName);
         let filePath = path.join(filesDir, eachMarkdownFiles.fileName);
         let fileContent = fs.readFileSync(filePath, 'utf8');
@@ -74,7 +79,7 @@ _.forEach(i18nItems, eachI18nItem => {
         let previewURL = eachI18nItem.Value != 'zh_CN' ? 'laftools.dev' : 'laftools.cn'
 
         let noteForGenKey = "NOTE_FOR_GEN"
-        if (fileContent.indexOf(noteForGenKey) == -1) {
+        if (fileContent.indexOf(noteForGenKey) == -1 && !eachMarkdownFiles.noGenerateText) {
             fileContent = noteForGenKey + '\n\n' + fileContent
         }
 
@@ -95,6 +100,10 @@ _.forEach(i18nItems, eachI18nItem => {
             finalContent = finalContent.replace(new RegExp(value, 'g'), key)
         })
         finalContent = finalContent.replace(/\$\{lang\}/g, lang)
+
+        if (interalConvertor) {
+            finalContent = interalConvertor(finalContent, lang)
+        }
 
         let rootDir = process.env.LAFTOOLS_ROOT || '';
         eachMarkdownFiles.destinations.forEach((eachDestination) => {

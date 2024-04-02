@@ -1,11 +1,14 @@
 import fs from "fs";
 import path from "path";
-
+import { fn as CHANGELOG_Converter } from "./converters/CHANGELOG_convertor";
+export type FnInternalConverter = (content: string, lang: string) => string;
 export type FileInfo = {
   root: boolean;
   fileName: string;
+  noGenerateText?: boolean;
   comments: string;
   destinations: string[];
+  interalConvertor?: FnInternalConverter;
 };
 
 let markdownFiles: FileInfo[] = [
@@ -35,9 +38,11 @@ let markdownFiles: FileInfo[] = [
   },
   {
     root: false,
+    noGenerateText: true,
     fileName: "CHANGELOG.md",
     comments: "This is the CHANGELOG file",
     destinations: ["/docs"],
+    interalConvertor: CHANGELOG_Converter,
   },
 ];
 
