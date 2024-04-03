@@ -1,19 +1,19 @@
 ## Release v2.1.83-beta (2024-04-03)
 
-### New Features
+### Nové vlastnosti
 
-- Added Feature A, allowing users to do something
-- Introduced Feature B, now supporting...
+- Přidána funkce A, která uživatelům umožňuje něco dělat
+- Představena funkce B, která nyní podporuje...
 
 ## Release v2.1.82-beta (2024-04-02)
 
-### New Features
+### Nové vlastnosti
 
-- Added Feature A, allowing users to do something
-- Introduced Feature B, now supporting...
+- Přidána funkce A, která uživatelům umožňuje něco dělat
+- Představena funkce B, která nyní podporuje...
 
 ## Release v2.1.81-beta (2024-04-01)
 
-### Enhancement
+### Zvýšení
 
-- Fixed some logic issue
+- Opraven nějaký logický problém

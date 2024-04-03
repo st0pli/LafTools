@@ -1,19 +1,19 @@
 ## Release v2.1.83-beta (2024-04-03)
 
-### New Features
+### Nowe funkcje
 
-- Added Feature A, allowing users to do something
-- Introduced Feature B, now supporting...
+- Dodano funkcję A, pozwalającą użytkownikom coś zrobić
+- Wprowadzono funkcję B, teraz obsługującą...
 
 ## Release v2.1.82-beta (2024-04-02)
 
-### New Features
+### Nowe funkcje
 
-- Added Feature A, allowing users to do something
-- Introduced Feature B, now supporting...
+- Dodano funkcję A, pozwalającą użytkownikom coś zrobić
+- Wprowadzono funkcję B, teraz obsługującą...
 
 ## Release v2.1.81-beta (2024-04-01)
 
-### Enhancement
+### Wzmocnienie
 
-- Fixed some logic issue
+- Naprawiono pewien problem logiczny

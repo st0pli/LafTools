@@ -1,19 +1,19 @@
 ## Release v2.1.83-beta (2024-04-03)
 
-### New Features
+### Nye funksjoner
 
-- Added Feature A, allowing users to do something
-- Introduced Feature B, now supporting...
+- Lagt til funksjon A, slik at brukerne kan gjøre noe
+- Introdusert funksjon B, støtter nå...
 
 ## Release v2.1.82-beta (2024-04-02)
 
-### New Features
+### Nye funksjoner
 
-- Added Feature A, allowing users to do something
-- Introduced Feature B, now supporting...
+- Lagt til funksjon A, slik at brukerne kan gjøre noe
+- Introdusert funksjon B, støtter nå...
 
 ## Release v2.1.81-beta (2024-04-01)
 
-### Enhancement
+### Forbedring
 
-- Fixed some logic issue
+- Rettet et logikkproblem

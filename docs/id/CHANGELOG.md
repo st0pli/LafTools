@@ -1,19 +1,19 @@
 ## Release v2.1.83-beta (2024-04-03)
 
-### New Features
+### Fitur baru
 
-- Added Feature A, allowing users to do something
-- Introduced Feature B, now supporting...
+- Menambahkan Fitur A, memungkinkan pengguna melakukan sesuatu
+- Memperkenalkan Fitur B, sekarang mendukung...
 
 ## Release v2.1.82-beta (2024-04-02)
 
-### New Features
+### Fitur baru
 
-- Added Feature A, allowing users to do something
-- Introduced Feature B, now supporting...
+- Menambahkan Fitur A, memungkinkan pengguna melakukan sesuatu
+- Memperkenalkan Fitur B, sekarang mendukung...
 
 ## Release v2.1.81-beta (2024-04-01)
 
-### Enhancement
+### Peningkatan
 
-- Fixed some logic issue
+- Memperbaiki beberapa masalah logika

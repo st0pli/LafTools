@@ -1,19 +1,19 @@
 ## Release v2.1.83-beta (2024-04-03)
 
-### New Features
+### Uudet ominaisuudet
 
-- Added Feature A, allowing users to do something
-- Introduced Feature B, now supporting...
+- Lisätty ominaisuus A, jonka avulla käyttäjät voivat tehdä jotain
+- Ominaisuus B esitelty, nyt tuetaan...
 
 ## Release v2.1.82-beta (2024-04-02)
 
-### New Features
+### Uudet ominaisuudet
 
-- Added Feature A, allowing users to do something
-- Introduced Feature B, now supporting...
+- Lisätty ominaisuus A, jonka avulla käyttäjät voivat tehdä jotain
+- Ominaisuus B esitelty, nyt tuetaan...
 
 ## Release v2.1.81-beta (2024-04-01)
 
-### Enhancement
+### Tehostaminen
 
-- Fixed some logic issue
+- Korjattu jokin logiikkaongelma

@@ -1,19 +1,19 @@
 ## Release v2.1.83-beta (2024-04-03)
 
-### New Features
+### Nya egenskaper
 
-- Added Feature A, allowing users to do something
-- Introduced Feature B, now supporting...
+- Lade till funktion A, så att användare kan göra något
+- Introducerad funktion B, stöder nu...
 
 ## Release v2.1.82-beta (2024-04-02)
 
-### New Features
+### Nya egenskaper
 
-- Added Feature A, allowing users to do something
-- Introduced Feature B, now supporting...
+- Lade till funktion A, så att användare kan göra något
+- Introducerad funktion B, stöder nu...
 
 ## Release v2.1.81-beta (2024-04-01)
 
-### Enhancement
+### Förbättring
 
-- Fixed some logic issue
+- Fixat ett logiskt problem

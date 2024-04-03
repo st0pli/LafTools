@@ -1,19 +1,19 @@
 ## Release v2.1.83-beta (2024-04-03)
 
-### New Features
+### Yeni özellikler
 
-- Added Feature A, allowing users to do something
-- Introduced Feature B, now supporting...
+- Kullanıcıların bir şeyler yapmasına olanak tanıyan A Özelliği eklendi
+- Tanıtılan Özellik B, artık destekleniyor...
 
 ## Release v2.1.82-beta (2024-04-02)
 
-### New Features
+### Yeni özellikler
 
-- Added Feature A, allowing users to do something
-- Introduced Feature B, now supporting...
+- Kullanıcıların bir şeyler yapmasına olanak tanıyan A Özelliği eklendi
+- Tanıtılan Özellik B, artık destekleniyor...
 
 ## Release v2.1.81-beta (2024-04-01)
 
-### Enhancement
+### Artırma
 
-- Fixed some logic issue
+- Bazı mantık sorunları düzeltildi

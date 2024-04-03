@@ -1,19 +1,19 @@
 ## Release v2.1.83-beta (2024-04-03)
 
-### New Features
+### 新功能
 
-- Added Feature A, allowing users to do something
-- Introduced Feature B, now supporting...
+- 新增了功能A，允許用戶做某事
+- 引入了功能 B，現在支援...
 
 ## Release v2.1.82-beta (2024-04-02)
 
-### New Features
+### 新功能
 
-- Added Feature A, allowing users to do something
-- Introduced Feature B, now supporting...
+- 新增了功能A，允許用戶做某事
+- 引入了功能 B，現在支援...
 
 ## Release v2.1.81-beta (2024-04-01)
 
-### Enhancement
+### 強化
 
-- Fixed some logic issue
+- 修復了一些邏輯問題

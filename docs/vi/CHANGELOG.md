@@ -1,19 +1,19 @@
 ## Release v2.1.83-beta (2024-04-03)
 
-### New Features
+### Các tính năng mới
 
-- Added Feature A, allowing users to do something
-- Introduced Feature B, now supporting...
+- Đã thêm Tính năng A, cho phép người dùng làm điều gì đó
+- Đã giới thiệu Tính năng B, hiện đang hỗ trợ...
 
 ## Release v2.1.82-beta (2024-04-02)
 
-### New Features
+### Các tính năng mới
 
-- Added Feature A, allowing users to do something
-- Introduced Feature B, now supporting...
+- Đã thêm Tính năng A, cho phép người dùng làm điều gì đó
+- Đã giới thiệu Tính năng B, hiện đang hỗ trợ...
 
 ## Release v2.1.81-beta (2024-04-01)
 
-### Enhancement
+### Sự nâng cao
 
-- Fixed some logic issue
+- Đã sửa một số vấn đề logic

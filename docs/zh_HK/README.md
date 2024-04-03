@@ -26,7 +26,7 @@
 - `A` -> Asynchronous
 - `F` -> Functional
 
-從本質上講，LafTools工具箱是一個提供一系列基於互連(Linked)、可異步(Asynchronous)且令人驚訝(Fantastic)的編程向工具集。
+從本質上講，LafTools工具箱是一個提供一系列基於互連(Linked)、可異步(Asynchronous)且功能化(Functional)的編程向工具集。
 
 請放心，隨著時間的推移，這個計畫將會以非凡而奇妙的方式發展。這個項目需要更多的時間，就像酒一樣，越久越好。
 

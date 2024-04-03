@@ -1,19 +1,19 @@
 ## Release v2.1.83-beta (2024-04-03)
 
-### New Features
+### คุณสมบัติใหม่
 
-- Added Feature A, allowing users to do something
-- Introduced Feature B, now supporting...
+- เพิ่มคุณสมบัติ A เพื่อให้ผู้ใช้สามารถทำอะไรบางอย่างได้
+- เปิดตัวฟีเจอร์ B ซึ่งขณะนี้รองรับ...
 
 ## Release v2.1.82-beta (2024-04-02)
 
-### New Features
+### คุณสมบัติใหม่
 
-- Added Feature A, allowing users to do something
-- Introduced Feature B, now supporting...
+- เพิ่มคุณสมบัติ A เพื่อให้ผู้ใช้สามารถทำอะไรบางอย่างได้
+- เปิดตัวฟีเจอร์ B ซึ่งขณะนี้รองรับ...
 
 ## Release v2.1.81-beta (2024-04-01)
 
-### Enhancement
+### การเพิ่มประสิทธิภาพ
 
-- Fixed some logic issue
+- แก้ไขปัญหาตรรกะบางอย่าง

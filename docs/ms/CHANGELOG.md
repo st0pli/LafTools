@@ -1,19 +1,19 @@
 ## Release v2.1.83-beta (2024-04-03)
 
-### New Features
+### Ciri Baharu
 
-- Added Feature A, allowing users to do something
-- Introduced Feature B, now supporting...
+- Menambahkan Ciri A, membenarkan pengguna melakukan sesuatu
+- Memperkenalkan Ciri B, kini menyokong...
 
 ## Release v2.1.82-beta (2024-04-02)
 
-### New Features
+### Ciri Baharu
 
-- Added Feature A, allowing users to do something
-- Introduced Feature B, now supporting...
+- Menambahkan Ciri A, membenarkan pengguna melakukan sesuatu
+- Memperkenalkan Ciri B, kini menyokong...
 
 ## Release v2.1.81-beta (2024-04-01)
 
-### Enhancement
+### Penambahbaikan
 
-- Fixed some logic issue
+- Membetulkan beberapa isu logik
