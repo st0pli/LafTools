@@ -1,5 +1,11 @@
 #!/bin/bash 
-# this script is created for building the project as an executable file.  
+# this script is designated for building this whole project.  
+# version will be retrieved from the file package.json
+
+if [ "$TAG_MODE" = "true" ]; then
+    export LAFTOOLS_ROOT=/home/runner/work/LafTools/LafTools-tag
+    cp -a /home/runner/work/LafTools/LafTools /home/runner/work/LafTools/LafTools-tag
+fi
 
 chmod +x $LAFTOOLS_ROOT/pipeline/tools/get-web2-version.sh
 crtVersion=`$LAFTOOLS_ROOT/pipeline/tools/get-web2-version.sh`
@@ -11,10 +17,6 @@ fi
 
 echo "[I] crtVersion: $crtVersion"
 
-if [ "$TAG_MODE" = "true" ]; then
-    export LAFTOOLS_ROOT=/home/runner/work/LafTools/LafTools-tag
-    cp -a /home/runner/work/LafTools/LafTools /home/runner/work/LafTools/LafTools-tag
-fi
 
 echo "[I] LafTools is located at $LAFTOOLS_ROOT"
 cd $LAFTOOLS_ROOT
