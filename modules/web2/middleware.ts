@@ -8,6 +8,7 @@ import { I18nItem } from "./app/__CORE__/config/i18n";
 import { fn_Geti18n } from "./app/[lang]/client/src/i18n-pure";
 
 let DFTLOCALE = process.env.DFTLOCALE;
+let LAFREGION = process.env.LAFREGION; // CN or US
 if (!DFTLOCALE) {
   DFTLOCALE = "en_US";
 }

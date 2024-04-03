@@ -87,4 +87,4 @@ jobs:
             echo 'unzip pipeline server'
             unzip /home/appuser/LafTools-pre-dist/pipeline-server-v1.9.9-beta.zip -d /home/appuser/LafTools-pre-dist/pipeline-server-v1.9.9-beta &> /dev/null
             chmod +x /home/appuser/LafTools-pre-dist/pipeline-server-v1.9.9-beta/home/runner/work/LafTools/LafTools/pipeline/server/run.sh
-            /home/appuser/LafTools-pre-dist/pipeline-server-v1.9.9-beta/home/runner/work/LafTools/LafTools/pipeline/server/run.sh v1.9.9-beta en_US 9000 LafTools-pre-dist laft-pre-inst
+            /home/appuser/LafTools-pre-dist/pipeline-server-v1.9.9-beta/home/runner/work/LafTools/LafTools/pipeline/server/run.sh v1.9.9-beta en_US 9000 LafTools-pre-dist laft-pre-inst US
