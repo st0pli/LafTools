@@ -43,7 +43,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "next.config.mjs",
-    "../server2/src/constant.ts"
+    "../server2/src/constant.ts",
+    "../server2/src/url.ts"
   ],
   "exclude": ["app/node_modules", "vite.config.ts", "vite.config.tsx"]
 }
