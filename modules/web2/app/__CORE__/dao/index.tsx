@@ -74,9 +74,11 @@ let loadDAO = async (): Promise<DaoRef> => {
         let setKey = "sys-db-version"
         // check db version
         let currentVersion = await kvUtils.getKey(setKey)
-        if (currentVersion !== DB_VERSION) {
+        if (currentVersion && (
+            currentVersion < DB_VERSION
+        )) {
             console.log('db version not match, reset the db')
-            await sequelize.sync({ force: true })
+            await sequelize.sync({ force: true, alter: true })
             await kvUtils.setKey(setKey, DB_VERSION)
         }
 

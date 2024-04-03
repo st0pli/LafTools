@@ -61,7 +61,7 @@ gunzip ./m.tmp.gz
 docker load -i ./m.tmp
 docker ps -a | grep $containerName | awk '{print $1}' | xargs -I {} docker stop {}
 docker ps -a | grep $containerName | awk '{print $1}' | xargs -I {} docker rm {}
-docker run -e LAFREGION=$LAFREGION -e DFTLOCALE=$defaultLocale --name $containerName -d -p 0.0.0.0:$portMapTo:39899 codegentoolbox/laftools-linux-x64:devops 
+docker run -e ONLINEMODE=true -e LAFREGION=$LAFREGION -e DFTLOCALE=$defaultLocale --name $containerName -d -p 0.0.0.0:$portMapTo:39899 codegentoolbox/laftools-linux-x64:devops 
 timeout 60 docker logs -f $containerName
 
 exit 0

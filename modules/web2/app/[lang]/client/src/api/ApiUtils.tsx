@@ -3,6 +3,7 @@
 import axios, { AxiosResponse } from "axios"
 import { HEADER_X_LAF_LANG, HEADER_X_LAF_OS, HEADER_X_LAF_REGION, HEADER_X_LAF_VERSION } from "../../../../../../server2/src/constant";
 import { APPINFOJSON } from "../nocycle";
+import { IsCurrentServerMode as IsCurrentServerMode } from "@/app/__CORE__/utils/systemUtils";
 
 export type APITypeInfo = {
     lang: string
@@ -15,7 +16,7 @@ export let sendAPIRequestInBE = async (info: APITypeInfo, url: string, request: 
     }
     let currentLang = info.lang
     let region = currentLang == 'zh_CN' ? "CN" : 'US'
-    if (LAFREGION) {
+    if (LAFREGION) { // if the region is set in the env, use it
         region = LAFREGION
     }
     let res = await axios({

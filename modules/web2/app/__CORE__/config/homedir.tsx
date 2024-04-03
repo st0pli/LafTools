@@ -31,6 +31,6 @@ export let getUserHomeDir: () => string = () => {
 }
 
 export let getLafToolsDataDir = (): string => {
-    let n = path.join(userHome, isDevEnv() ? 'LafTools-DEV' : 'LafTools')
+    let n = path.join(userHome, isDevEnv() ? '.laftools-dev' : '.laftools')
     return fsutils.mkdir(n)
 }

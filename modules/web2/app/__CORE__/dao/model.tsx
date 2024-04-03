@@ -38,7 +38,6 @@ export class LocalUser extends Model<InferAttributes<LocalUser>, InferCreationAt
 }
 
 
-
 export default async (daoRef: DaoRef) => {
     let sequelize = daoRef.db
 
