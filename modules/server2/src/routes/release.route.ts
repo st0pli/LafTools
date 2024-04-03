@@ -8,6 +8,10 @@ import { DotFn } from '@/i18n/TranslationUtils';
 import { SysResponse } from './_types';
 import { InfoFn } from '@/system/info';
 
+// for host, example like "https://download.laftools.cn"
+let usHost = process.env.PKG_DOWNLOAD_US_HOST;
+let cnHost = process.env.PKG_DOWNLOAD_CN_HOST;
+
 export class ReleaseRoute implements Routes {
   public router = Router();
 
@@ -16,7 +20,6 @@ export class ReleaseRoute implements Routes {
   }
 
   private initializeRoutes() {
-    // https://github.com/work7z/LafTools/releases/download/v2.1.47-beta/LafTools-v2.1.47-beta-darwin-x64.tar.gz
     let URL_RELEASE = '/release';
     this.router.get(`${URL_RELEASE}/test`, async (req, res) => {
       let Dot = DotFn(req);

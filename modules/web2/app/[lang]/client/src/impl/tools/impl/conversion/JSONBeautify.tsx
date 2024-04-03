@@ -62,7 +62,7 @@ class JSONBeautify extends Operation {
                         "value": false
                     },
                     {
-                        "name": "Formatted",
+                        "name": Dot("gRm8pxMSS", "Formatted"),
                         "type": "boolean",
                         "value": true
                     }
@@ -97,12 +97,12 @@ class JSONBeautify extends Operation {
                 value: "    "
             },
             {
-                name: "Sort Object Keys",
+                name: Dot("NLXUGv5gF", "Sort Object Keys"),
                 type: "boolean",
                 value: false
             },
             {
-                name: "Formatted",
+                name: Dot("7n9nxrgrr", "Formatted"),
                 type: "boolean",
                 value: true
             }

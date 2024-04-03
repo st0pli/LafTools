@@ -27,9 +27,6 @@ jobs:
         with:
           go-version: ^1.21
 
-      - name: Get dependencies
-        run: go mod download
-
       - name: Get the version
         id: get_version
         run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
@@ -38,7 +35,7 @@ jobs:
         id: runlaftoolscopy
         run: |
           cp -a /home/runner/work/LafTools/LafTools /home/runner/work/LafTools/LafTools-M-pre
-          chmod +x $LAFTOOLS_ROOT/pipeline/tools/get-web2-version.sh
+          chmod +x /home/runner/work/LafTools/LafTools-M-pre/pipeline/tools/get-web2-version.sh
 
       - name: Run build script
         id: runbuildscript
@@ -61,8 +58,8 @@ jobs:
             set +e
             echo 'Running some command'
             ls -la 
-            chmod +x $LAFTOOLS_ROOT/pipeline/tools/get-web2-version.sh
-            crtVersion=`$LAFTOOLS_ROOT/pipeline/tools/get-web2-version.sh`
+            chmod +x /home/runner/work/LafTools/LafTools-M-pre/pipeline/tools/get-web2-version.sh
+            crtVersion=`/home/runner/work/LafTools/LafTools-M-pre/pipeline/tools/get-web2-version.sh`
             mkdir -p /home/appuser/PkgRelease-dist
             mkdir -p /home/appuser/PkgRelease-dist/${crtVersion}
 
@@ -75,7 +72,7 @@ jobs:
       - name: US Pkg Release 3
         run: |
           set +e
-          crtVersion=`$LAFTOOLS_ROOT/pipeline/tools/get-web2-version.sh`
+          crtVersion=`/home/runner/work/LafTools/LafTools-M-pre/pipeline/tools/get-web2-version.sh`
           sftp -o StrictHostKeyChecking=no -P ${{ secrets.US_APP_SSH_PORT }} ${{ secrets.US_APP_SSH_USERNAME }}@${{ secrets.US_APP_SSH_HOST }} <<EOF
             put /home/runner/work/LafTools/LafTools-M-pre/dist/pkg/linux-x64.tar.gz /home/appuser/PkgRelease-dist/${crtVersion}/LafTools-${crtVersion}-linux-x64.tar.gz
             put /home/runner/work/LafTools/LafTools-M-pre/dist/pkg/linux-arm64.tar.gz /home/appuser/PkgRelease-dist/${crtVersion}/LafTools-${crtVersion}-linux-arm64.tar.gz
