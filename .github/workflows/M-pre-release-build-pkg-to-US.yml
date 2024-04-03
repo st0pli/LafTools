@@ -36,6 +36,7 @@ jobs:
         run: |
           cp -a /home/runner/work/LafTools/LafTools /home/runner/work/LafTools/LafTools-M-pre
           chmod +x /home/runner/work/LafTools/LafTools-M-pre/pipeline/tools/get-web2-version.sh
+          export crtVersion=`$LAFTOOLS_ROOT/pipeline/tools/get-web2-version.sh`
 
       - name: Run build script
         id: runbuildscript
@@ -55,11 +56,8 @@ jobs:
           username: ${{ secrets.US_APP_SSH_USERNAME }}
           key: ${{ secrets.US_APP_SSH_KEY }}
           script: |
-            set +e
             echo 'Running some command'
             ls -la 
-            chmod +x /home/runner/work/LafTools/LafTools-M-pre/pipeline/tools/get-web2-version.sh
-            crtVersion=`/home/runner/work/LafTools/LafTools-M-pre/pipeline/tools/get-web2-version.sh`
             mkdir -p /home/appuser/PkgRelease-dist
             mkdir -p /home/appuser/PkgRelease-dist/${crtVersion}
 
