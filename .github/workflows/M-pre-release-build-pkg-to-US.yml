@@ -60,15 +60,13 @@ jobs:
             echo 'Running some command'
             ls -la 
             mkdir -p /home/appuser/PkgRelease-dist
-            mkdir -p /home/appuser/PkgRelease-dist/${crtVersion}
 
       - name: US Pkg Release 2
         run: |
           mkdir -p ~/.ssh
           echo "${{ secrets.US_APP_SSH_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ls -ahlrt /home/runner/work/LafTools/LafTools-M-pre/dist/pkg/
-          ls -ahlrt /home/runner/work/LafTools/LafTools/dist/pkg/
+          ssh ${{ secrets.US_APP_SSH_PORT }} ${{ secrets.US_APP_SSH_USERNAME }}@${{ secrets.US_APP_SSH_HOST }} "mkdir -p /home/appuser/PkgRelease-dist/${crtVersion}"
 
       - name: US Pkg Release 3
         run: |
