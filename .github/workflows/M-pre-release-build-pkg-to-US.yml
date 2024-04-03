@@ -58,6 +58,7 @@ jobs:
           username: ${{ secrets.US_APP_SSH_USERNAME }}
           key: ${{ secrets.US_APP_SSH_KEY }}
           script: |
+            set +e
             echo 'Running some command'
             ls -la 
             chmod +x $LAFTOOLS_ROOT/pipeline/tools/get-web2-version.sh
@@ -73,6 +74,7 @@ jobs:
 
       - name: US Pkg Release 3
         run: |
+          set +e
           crtVersion=`$LAFTOOLS_ROOT/pipeline/tools/get-web2-version.sh`
           sftp -o StrictHostKeyChecking=no -P ${{ secrets.US_APP_SSH_PORT }} ${{ secrets.US_APP_SSH_USERNAME }}@${{ secrets.US_APP_SSH_HOST }} <<EOF
             put /home/runner/work/LafTools/LafTools-M-pre/dist/pkg/linux-x64.tar.gz /home/appuser/PkgRelease-dist/${crtVersion}/LafTools-${crtVersion}-linux-x64.tar.gz
@@ -83,4 +85,8 @@ jobs:
             put /home/runner/work/LafTools/LafTools-M-pre/dist/pkg/windows-arm64.zip /home/appuser/PkgRelease-dist/${crtVersion}/LafTools-${crtVersion}-windows-arm64.zip
           exit
           EOF
+          if [ $? -ne 0 ]; then
+            echo "Failed to upload files to US"
+            exit 1
+          fi
           rm ~/.ssh/id_rsa -rf
