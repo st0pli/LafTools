@@ -11,8 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      LAFTOOLS_ROOT: /home/runner/work/LafTools/LafTools-tag
-      TAG_MODE: true
+      LAFTOOLS_ROOT: /home/runner/work/LafTools/LafTools-M-pre
 
     steps:
       - name: Checkout code
@@ -34,6 +33,12 @@ jobs:
       - name: Get the version
         id: get_version
         run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
+
+      - name: Run LafTools Copy
+        id: runlaftoolscopy
+        run: |
+          cp -a /home/runner/work/LafTools/LafTools /home/runner/work/LafTools/LafTools-M-pre
+          chmod +x $LAFTOOLS_ROOT/pipeline/tools/get-web2-version.sh
 
       - name: Run build script
         id: runbuildscript
