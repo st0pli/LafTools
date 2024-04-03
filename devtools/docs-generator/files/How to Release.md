@@ -24,6 +24,8 @@
 
 TODO: will do it later, shall provide 1) manual job 2) steps 3) Go Live 4) LV check
 
+1. Switch to the folder `/devtools/release`, which is a TS project for handling COS files
+
 # Note
 
 why you put installation files to COS for CN rather than just putting them in server? coz the bandwidth in China is too expensive... I dont' have enough money la.

@@ -55,8 +55,10 @@ jobs:
           script: |
             echo 'Running some command'
             ls -la 
+            chmod +x $LAFTOOLS_ROOT/pipeline/tools/get-web2-version.sh
+            crtVersion=`$LAFTOOLS_ROOT/pipeline/tools/get-web2-version.sh`
             mkdir -p /home/appuser/PkgRelease-dist
-            mkdir -p /home/appuser/PkgRelease-dist/${{steps.get_version.outputs.VERSION}}
+            mkdir -p /home/appuser/PkgRelease-dist/${crtVersion}
 
       - name: US Pkg Release 2
         run: |
@@ -66,13 +68,14 @@ jobs:
 
       - name: US Pkg Release 3
         run: |
+          crtVersion=`$LAFTOOLS_ROOT/pipeline/tools/get-web2-version.sh`
           sftp -o StrictHostKeyChecking=no -P ${{ secrets.US_APP_SSH_PORT }} ${{ secrets.US_APP_SSH_USERNAME }}@${{ secrets.US_APP_SSH_HOST }} <<EOF
-            put /home/runner/work/LafTools/LafTools-tag/dist/pkg/linux-x64.tar.gz /home/appuser/PkgRelease-dist/${{steps.get_version.outputs.VERSION}}/LafTools-${{steps.get_version.outputs.VERSION}}-linux-x64.tar.gz
-            put /home/runner/work/LafTools/LafTools-tag/dist/pkg/linux-arm64.tar.gz /home/appuser/PkgRelease-dist/${{steps.get_version.outputs.VERSION}}/LafTools-${{steps.get_version.outputs.VERSION}}-linux-arm64.tar.gz
-            put /home/runner/work/LafTools/LafTools-tag/dist/pkg/darwin-x64.tar.gz /home/appuser/PkgRelease-dist/${{steps.get_version.outputs.VERSION}}/LafTools-${{steps.get_version.outputs.VERSION}}-darwin-x64.tar.gz
-            put /home/runner/work/LafTools/LafTools-tag/dist/pkg/darwin-arm64.tar.gz /home/appuser/PkgRelease-dist/${{steps.get_version.outputs.VERSION}}/LafTools-${{steps.get_version.outputs.VERSION}}-darwin-arm64.tar.gz
-            put /home/runner/work/LafTools/LafTools-tag/dist/pkg/windows-x64.zip /home/appuser/PkgRelease-dist/${{steps.get_version.outputs.VERSION}}/LafTools-${{steps.get_version.outputs.VERSION}}-windows-x64.zip
-            put /home/runner/work/LafTools/LafTools-tag/dist/pkg/windows-arm64.zip /home/appuser/PkgRelease-dist/${{steps.get_version.outputs.VERSION}}/LafTools-${{steps.get_version.outputs.VERSION}}-windows-arm64.zip
+            put /home/runner/work/LafTools/LafTools-tag/dist/pkg/linux-x64.tar.gz /home/appuser/PkgRelease-dist/${crtVersion}/LafTools-${crtVersion}-linux-x64.tar.gz
+            put /home/runner/work/LafTools/LafTools-tag/dist/pkg/linux-arm64.tar.gz /home/appuser/PkgRelease-dist/${crtVersion}/LafTools-${crtVersion}-linux-arm64.tar.gz
+            put /home/runner/work/LafTools/LafTools-tag/dist/pkg/darwin-x64.tar.gz /home/appuser/PkgRelease-dist/${crtVersion}/LafTools-${crtVersion}-darwin-x64.tar.gz
+            put /home/runner/work/LafTools/LafTools-tag/dist/pkg/darwin-arm64.tar.gz /home/appuser/PkgRelease-dist/${crtVersion}/LafTools-${crtVersion}-darwin-arm64.tar.gz
+            put /home/runner/work/LafTools/LafTools-tag/dist/pkg/windows-x64.zip /home/appuser/PkgRelease-dist/${crtVersion}/LafTools-${crtVersion}-windows-x64.zip
+            put /home/runner/work/LafTools/LafTools-tag/dist/pkg/windows-arm64.zip /home/appuser/PkgRelease-dist/${crtVersion}/LafTools-${crtVersion}-windows-arm64.zip
           exit
           EOF
           rm ~/.ssh/id_rsa -rf
