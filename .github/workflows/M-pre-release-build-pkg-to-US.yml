@@ -12,6 +12,7 @@ jobs:
 
     env:
       LAFTOOLS_ROOT: /home/runner/work/LafTools/LafTools-M-pre
+      TAG_MODE: false
 
     steps:
       - name: Checkout code
@@ -66,6 +67,8 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.US_APP_SSH_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
+          ls -ahlrt /home/runner/work/LafTools/LafTools-M-pre/dist/pkg/
+          ls -ahlrt /home/runner/work/LafTools/LafTools/dist/pkg/
 
       - name: US Pkg Release 3
         run: |
