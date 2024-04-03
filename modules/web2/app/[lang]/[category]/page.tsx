@@ -43,6 +43,7 @@ import { CategorySearchProps, generateMetadata as toolMetaDataFn } from "../page
 import EntryPage from './go/[subCategory]/page'
 import SetupPopPanel from "@/app/__CORE__/containers/SetupPopPanel";
 import VersionCheck from "@/app/__CORE__/containers/VersionCheck";
+import ClientWrapper from "./src/common/clientWrapper";
 export type AuthInfoProps = { authInfo: AuthInfo }
 
 export let sleep = (ms: number) => {
@@ -54,8 +55,10 @@ export default async function Home(props: CategorySearchProps) {
     return (
         <main>
             <EntryPage {...props} />
-            <SetupPopPanel />
-            <VersionCheck />
+            <ClientWrapper>
+                <SetupPopPanel />
+                <VersionCheck />
+            </ClientWrapper>
         </main>
     )
 }

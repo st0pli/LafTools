@@ -66,7 +66,7 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.US_APP_SSH_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh ${{ secrets.US_APP_SSH_PORT }} ${{ secrets.US_APP_SSH_USERNAME }}@${{ secrets.US_APP_SSH_HOST }} -p ${{ secrets.US_APP_SSH_PORT }} "mkdir -p /home/appuser/PkgRelease-dist/${crtVersion}"
+          ssh -p ${{ secrets.US_APP_SSH_PORT }}  ${{ secrets.US_APP_SSH_USERNAME }}@${{ secrets.US_APP_SSH_HOST }} "mkdir -p /home/appuser/PkgRelease-dist/${crtVersion}"
 
       - name: US Pkg Release 3
         run: |

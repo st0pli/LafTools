@@ -31,6 +31,9 @@ import { useGetI18nLangList } from "@/app/[lang]/client/src/containers/UserAskMu
 import { Button } from "@nextui-org/react";
 import _ from "lodash";
 import { getFormattedLang } from "@/app/[lang]/client/src/i18n";
+import exportUtils from "@/app/[lang]/client/src/utils/ExportUtils";
+import { FN_GetDispatch } from "@/app/[lang]/client/src/nocycle";
+import LocalStateSlice from "@/app/[lang]/client/src/reducers/state/localStateSlice";
 type ReturnType = [string, (value: string) => void]
 let user_crt_lang_key = 'NnJxl572v'
 let confrim_close_key = '9c1ASSbTb'
@@ -50,8 +53,12 @@ export default (props) => {
     let i18nList = useGetI18nLangList()
     let [forceclose, setForceClose] = useState(false)
     let crtLang = getCurrentLang()
-    let confirmCloseStr = localStorage.getItem(confrim_close_key)
-    let user_lang_value = localStorage.getItem(user_crt_lang_key)
+    let { confirmCloseStr, user_lang_value } = exportUtils.useSelector((v) => {
+        return {
+            confirmCloseStr: v.localState.setup_confirm_lang,
+            user_lang_value: v.localState.setup_user_lang
+        }
+    })
     if (user_lang_value && !_.isEmpty(user_lang_value) && user_lang_value != crtLang) {
         setTimeout(() => {
             goToNextURL(user_lang_value + '')
@@ -67,7 +74,11 @@ export default (props) => {
         "fixed flex flex-col bottom-0 right-4 w-[300px] scrollbar-hide z-[100]   h-[500px] " + CSS_BG_COLOR_WHITE + " " + light_border_clz_all + ' rounded-md shadow-md '
     }>
         <Button className="absolute right-0 top-0" size='sm' variant="light" onClick={() => {
-            localStorage.setItem(confrim_close_key, '1')
+            FN_GetDispatch()(
+                LocalStateSlice.actions.updateOneOfLocalState({
+                    setup_confirm_lang: '1'
+                })
+            )
             setForceClose(true)
         }}>{Dot("hgmxsP7bY", 'Close')}</Button>
         <div className="p-2">
