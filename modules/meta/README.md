@@ -4,11 +4,16 @@ If there is any dependencies or break changes that need to be fully reinstalled,
 
 # current.json
 
-if any dependency or project sturcutred are changed, please increase the version to notify user thtat this version need to be reinstalled rather than dynamic update
+if any dependency or project sturcutred is changed, please increase the version to notify user thtat this version need to be reinstalled rather than dynamic update
 
 # release.json
 
 to specific current version, the release.json will be used to ...
+
+# where to run 
+
+npm run fe-release-docs
+
 
 # how to upload
 
