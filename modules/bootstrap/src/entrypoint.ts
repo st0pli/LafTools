@@ -2,6 +2,9 @@ import fs from "fs";
 import path from "path";
 import { getAppBootstrapInternalDir } from "./share-copy/appdir";
 
+// argument:
+// 1. --module=web2|desktop2
+
 // export type ModuleType = "web2" | "desktop2";
 
 // export const LafToolsHomePath = ".laftools";
