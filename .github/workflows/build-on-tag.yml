@@ -111,7 +111,7 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: /home/runner/work/LafTools/LafTools-tag/dist/pkg/linux-x64.tar.gz
-          asset_name: LafTools-${{steps.get_version.outputs.VERSION}}-linux-x64.tar.gz
+          asset_name: LafTools-${{steps.get_version.outputs.VERSION}}-linux-x64-minimal.tar.gz
           asset_content_type: application/tar+gzip
 
       - name: Upload Release Asset for linux-arm64
@@ -122,7 +122,7 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: /home/runner/work/LafTools/LafTools-tag/dist/pkg/linux-arm64.tar.gz
-          asset_name: LafTools-${{steps.get_version.outputs.VERSION}}-linux-arm64.tar.gz
+          asset_name: LafTools-${{steps.get_version.outputs.VERSION}}-linux-arm64-minimal.tar.gz
           asset_content_type: application/tar+gzip
 
       - name: Upload Release Asset for darwin-x64
@@ -133,7 +133,7 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: /home/runner/work/LafTools/LafTools-tag/dist/pkg/darwin-x64.tar.gz
-          asset_name: LafTools-${{steps.get_version.outputs.VERSION}}-darwin-x64.tar.gz
+          asset_name: LafTools-${{steps.get_version.outputs.VERSION}}-darwin-x64-minimal.tar.gz
           asset_content_type: application/tar+gzip
 
       - name: Upload Release Asset for darwin-arm64
@@ -144,7 +144,7 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: /home/runner/work/LafTools/LafTools-tag/dist/pkg/darwin-arm64.tar.gz
-          asset_name: LafTools-${{steps.get_version.outputs.VERSION}}-darwin-arm64.tar.gz
+          asset_name: LafTools-${{steps.get_version.outputs.VERSION}}-darwin-arm64-minimal.tar.gz
           asset_content_type: application/tar+gzip
 
       - name: Upload Release Asset for windows-x64
@@ -155,7 +155,7 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: /home/runner/work/LafTools/LafTools-tag/dist/pkg/windows-x64.zip
-          asset_name: LafTools-${{steps.get_version.outputs.VERSION}}-windows-x64.zip
+          asset_name: LafTools-${{steps.get_version.outputs.VERSION}}-windows-x64-minimal.zip
           asset_content_type: application/zip
 
       - name: Upload Release Asset for window-arm64
@@ -166,7 +166,7 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: /home/runner/work/LafTools/LafTools-tag/dist/pkg/windows-arm64.zip
-          asset_name: LafTools-${{steps.get_version.outputs.VERSION}}-windows-arm64.zip
+          asset_name: LafTools-${{steps.get_version.outputs.VERSION}}-windows-arm64-minimal.zip
           asset_content_type: application/zip
 
       - name: CN Release 1

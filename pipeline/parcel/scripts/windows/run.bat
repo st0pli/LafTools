@@ -8,7 +8,7 @@ REM Check if node binary exists
 if not exist .\bin\node\bin\node (
     node .\core\server.js
 ) else (
-    .\bin\node\bin\node .\core\server.js
+    echo "Node binary not found, Node.js v20.0+ is required."
 )
 
 pause
