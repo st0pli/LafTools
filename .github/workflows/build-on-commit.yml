@@ -13,6 +13,7 @@ jobs:
 
     env:
       LAFTOOLS_ROOT: /home/runner/work/LafTools/LafTools
+      OVERRIDED_VERSION: v1.9.9-beta
 
     steps:
       - name: Checkout code
