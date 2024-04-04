@@ -286,6 +286,11 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
                 echo "[E] docker build failed for $platformName"
                 exit 1
             fi
+            docker login -u $DOCKER_USER -p $DOCKER_PASS
+            if [ $? -ne 0 ]; then
+                echo "[E] docker login failed for $platformName"
+                exit 1
+            fi
             docker push codegentoolbox/laftools-$platformName:$crtVersion
             if [ $? -ne 0 ]; then
                 echo "[E] docker push failed for $platformName"
