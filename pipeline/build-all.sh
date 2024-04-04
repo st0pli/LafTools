@@ -177,6 +177,10 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
         fi
     }
 
+    build-extra(){
+        echo "[I] building extra"
+    }
+
     refining(){
         echo "[I] refining resources.."
         find ./pipeline -iname "*.bin" -exec chmod 755 {} \;
@@ -281,6 +285,7 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
     build-res
     build-fe 
     build-be
+    build-extra
     # refine resources
     refining
     # package as zip and tar.gz

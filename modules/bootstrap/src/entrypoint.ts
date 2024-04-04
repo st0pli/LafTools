@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { getAppBootstrapInternalDir } from "web2share/appdir";
+import { getAppBootstrapInternalDir } from "./share-copy/appdir";
 
 // export type ModuleType = "web2" | "desktop2";
 

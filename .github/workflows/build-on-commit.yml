@@ -45,6 +45,8 @@ jobs:
           cd ./pipeline
           chmod +x ./build-all.sh
           ./build-all.sh "v1.9.9-beta"
+          chmod +x ./test-all.sh
+          ./test-all.sh
 
       - name: US Pre Release 1
         uses: appleboy/ssh-action@master
