@@ -218,8 +218,6 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
                 tar -ztvf $fileName &> /dev/null
             fi
             echo "[I] file size: $(du -sh $fileName | awk '{print $1}')"
-            # calculate sha256 and append to sha256sum.txt
-            echo "[I] calculating sha256 for $fileName"
         )
     }
     package-all(){
@@ -237,6 +235,7 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
         fi
         (
             cd $LAFTOOLS_ROOT/dist/pkg
+            echo "[I] calculating sha256 for $fileName"
             sha256sum * > ./SHA256SUM.txt
         )
         echo "[I] packaged all platforms"
