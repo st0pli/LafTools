@@ -209,12 +209,16 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
         (
             cd $platformDistDir
             fileName=
-            subDir=LafTools-${crtVersion}
+            subDir=LafTools-${crtVersion}-$platformName-minimal
             if [ -d $subDir ]; then
                 rm -rf $subDir
             fi
             mkdir -p $subDir
             cp -a ./* $subDir
+            mkdir -p $subDir/info
+            echo "$platformName" > $subDir/info/platform.txt
+            echo "$crtVersion" > $subDir/info/version.txt
+            echo "$(date +%Y-%m-%d)" > $subDir/info/releaseDate.txt
             if [ $packageType == "zip" ]; then
                 fileName=LafTools-${crtVersion}-$platformName-minimal.zip
                 zip -r $fileName $subDir/* &> /dev/null
