@@ -123,12 +123,11 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
         cp -a ./dist/web2 $platformDistDir/core
 
         echo "[I] copying bootstrap and scripts..."
-        (
-            cd $LAFTOOLS_ROOT/modules/bootstrap
-            npm run build 
-            mkdir -p $platformDistDir/boot
-            cp -a ./dist/* $platformDistDir/boot/
-        )
+        cd $LAFTOOLS_ROOT/modules/bootstrap
+        npm run build 
+        mkdir -p $platformDistDir/boot
+        echo 'console.log("Hello, LafTools!")' > $platformDistDir/boot/test.js
+        cp -a ./dist/* $platformDistDir/boot/
 
         cp -a ./pipeline/parcel/scripts/$osScriptFile/* $platformDistDir
 
@@ -215,6 +214,7 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
             fi
             mkdir -p $subDir
             cp -a ./* $subDir
+            rm $subDir/$subDir
             mkdir -p $subDir/info
             echo "$platformName" > $subDir/info/platform.txt
             echo "$crtVersion" > $subDir/info/version.txt
