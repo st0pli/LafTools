@@ -122,12 +122,15 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
         # cp -a ./dist/resources $platformDistDir
         cp -a ./dist/web2 $platformDistDir/core
 
-        echo "[I] copying bootstrap and scripts..."
-        cd $LAFTOOLS_ROOT/modules/bootstrap
-        npm run build 
-        mkdir -p $platformDistDir/boot
-        echo 'console.log("Hello, LafTools!")' > $platformDistDir/boot/test.js
-        cp -a ./dist/* $platformDistDir/boot/
+        (
+            echo "[I] copying bootstrap and scripts..."
+            cd $LAFTOOLS_ROOT/modules/bootstrap
+            npm i -S -D --verbose --force
+            npm run build 
+            mkdir -p $platformDistDir/boot
+            echo 'console.log("Hello, LafTools!")' > $platformDistDir/boot/test.js
+            cp -a ./dist/* $platformDistDir/boot/
+        )
 
         cp -a ./pipeline/parcel/scripts/$osScriptFile/* $platformDistDir
 
@@ -267,7 +270,7 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
         mkdir -p $subDockerDir
         (
             cd $subDockerDir
-            cp ../../pkg/*$platformName.tar.gz ./linux.tar.gz
+            cp ../../pkg/*$platformName-minimal.tar.gz ./linux.tar.gz
             cp $LAFTOOLS_ROOT/pipeline/parcel/docker/* ./
             find . -iname "*.sh" -exec chmod 755 {} \;
             ls -ahlrt
