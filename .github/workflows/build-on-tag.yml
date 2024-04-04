@@ -31,6 +31,12 @@ jobs:
         with:
           go-version: ^1.21
 
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
       - name: Get dependencies
         run: go mod download
 
@@ -49,6 +55,15 @@ jobs:
           ./build-all.sh "${{steps.get_version.outputs.VERSION}}"
           chmod +x ./test-all.sh
           ./test-all.sh
+
+      - name: Build and push Docker images
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          platforms: linux/amd64
+          push: true
+          tags: codegentoolbox/laftools-linux-x64:${{steps.get_version.outputs.VERSION}}
+          labels: laftools.version=${{steps.get_version.outputs.VERSION}}
 
       - name: US Release 1
         uses: appleboy/ssh-action@master
