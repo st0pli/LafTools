@@ -224,7 +224,7 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
                 zip -r $fileName $subDir/* &> /dev/null
             else
                 fileName=LafTools-${crtVersion}-$platformName-minimal.tar.gz
-                tar -zcvf $fileName $subDir/* &> /dev/null
+                tar -zcvf $fileName $subDir &> /dev/null
             fi
             rm -rf $subDir
             mv $fileName ../../pkg
