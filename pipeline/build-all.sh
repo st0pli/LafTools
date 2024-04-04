@@ -44,7 +44,6 @@ clean-bundle(){
 build-bundle(){
     bundleMode=$1
 
-
     targetFile=./modules/web2/app/[lang]/[category]/info.tsx
     if [ ! -f $targetFile ]; then
         echo "[E] $targetFile is not found."
@@ -125,10 +124,10 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
 
         cp -a ./pipeline/parcel/scripts/$osScriptFile/* $platformDistDir
 
-        if [ $bundleMode != "no-nodejs" ]; then
-            echo "[I] copying nodejs service..."
-            cp -a ./cross-platform/$platformName/node-dir $platformDistDir/bin/node
-        fi
+        # if [ $bundleMode != "no-nodejs" ]; then
+        #     echo "[I] copying nodejs service..."
+        #     cp -a ./cross-platform/$platformName/node-dir $platformDistDir/bin/node
+        # fi
         echo "[I] built"
     }
 

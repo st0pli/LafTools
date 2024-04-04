@@ -69,7 +69,7 @@ jobs:
 
       - name: US Pkg Release 3
         run: |
-          set +e
+          set -e
           crtVersion=`/home/runner/work/LafTools/LafTools-M-pre/pipeline/tools/get-web2-version.sh`
           sftp -o StrictHostKeyChecking=no -P ${{ secrets.US_APP_SSH_PORT }} ${{ secrets.US_APP_SSH_USERNAME }}@${{ secrets.US_APP_SSH_HOST }} <<EOF
             mkdir /home/appuser/PkgRelease-dist/${crtVersion}
