@@ -8,3 +8,9 @@ import { getAppBootstrapInternalDir } from "./share-copy/appdir";
 
 let bootstrapInternalDir = getAppBootstrapInternalDir();
 console.log("entrypoint", bootstrapInternalDir);
+
+let currentDIRName = __dirname;
+let defaultServerEntry = path.join(currentDIRName, "..", "core", "server.js");
+
+// start launching the server
+require(defaultServerEntry);
