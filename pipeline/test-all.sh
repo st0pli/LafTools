@@ -17,7 +17,7 @@ echo "[I] crtVersion: $crtVersion"
 
 cp -a $LAFTOOLS_ROOT/dist/pkg/LafTools-$crtVersion-linux-x64-minimal.tar.gz LafTools-pkg.tar.gz
 tar -xzf LafTools-pkg.tar.gz 
-cd `ls | grep LafTools`
+cd `ls | grep LafTools | grep minimal`
 echo "start running, PWD is `pwd`"
 ./run.sh & 
 sleep 10 # it should be running in 10s
@@ -25,5 +25,8 @@ curl 127.0.0.1:39899 -I | grep "200 OK"
 if [ $? -ne 0 ]; then
     echo "[E] $(date) Test failed, unable to launch the service"
     exit 1
+else 
+    echo "[I] $(date) Test passed, service is running"
+    exit 0
 fi
 
