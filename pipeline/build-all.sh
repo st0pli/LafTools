@@ -224,10 +224,10 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
             echo "$(date +%Y-%m-%d)" > $subDir/info/releaseDate.txt
             if [ $packageType == "zip" ]; then
                 fileName=LafTools-${crtVersion}-$platformName-minimal.zip
-                zip -r $fileName $subDir/* &> /dev/null
+                zip -q -r $fileName $subDir/* &> /dev/null
             else
                 fileName=LafTools-${crtVersion}-$platformName-minimal.tar.gz
-                tar -zcvf $fileName $subDir &> /dev/null
+                tar -zcf $fileName $subDir &> /dev/null
             fi
             rm -rf $subDir
             mv $fileName ../../pkg
@@ -237,7 +237,7 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
             if [ $packageType == "zip" ]; then
                 unzip -l $fileName &> /dev/null
             else
-                tar -ztvf $fileName &> /dev/null
+                tar -ztf $fileName &> /dev/null
             fi
             echo "[I] file size: $(du -sh $fileName | awk '{print $1}')"
         )
