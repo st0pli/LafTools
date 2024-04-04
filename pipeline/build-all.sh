@@ -22,7 +22,6 @@ echo "[I] LafTools is located at $LAFTOOLS_ROOT"
 cd $LAFTOOLS_ROOT
 echo "[I] PWD: $(pwd)"
 distDir=./dist
-sha256sumFile=$distDir/pkg/SHASUMS256.txt
 
 clean-bundle(){
     echo "[I] $(date) Working..."
@@ -36,7 +35,6 @@ clean-bundle(){
     pkgDir=$distDir/pkg
     [ -d $pkgDir ] && rm -rf $pkgDir
     mkdir -p $pkgDir
-    echo "" >> $sha256sumFile
     # docker
     dockerDir=$distDir/docker
     [ -d $dockerDir ] && rm -rf $dockerDir
@@ -222,7 +220,6 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
             echo "[I] file size: $(du -sh $fileName | awk '{print $1}')"
             # calculate sha256 and append to sha256sum.txt
             echo "[I] calculating sha256 for $fileName"
-            sha256sum $fileName >> $sha256sumFile
         )
     }
     package-all(){
@@ -238,6 +235,10 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
             package-for darwin-x64
             package-for darwin-arm64
         fi
+        (
+            cd $LAFTOOLS_ROOT/dist/pkg
+            sha256sum * > ./SHA256SUM.txt
+        )
         echo "[I] packaged all platforms"
     }
 

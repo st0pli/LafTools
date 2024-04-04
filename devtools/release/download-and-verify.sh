@@ -13,7 +13,15 @@ curl $PKG_DOWNLOAD_US_HOST/$crtVersion/SHA256SUM.txt -O
 # US: PKG_DOWNLOAD_US_HOST
 downloadToBinaryAndVerify(){
     platformName=$1
-    curl $PKG_DOWNLOAD_US_HOST/$crtVersion/LafTools-$crtVersion-$platformName-minimal.tar.gz -O    
+    fileName=LafTools-$crtVersion-$platformName-minimal.tar.gz
+    curl $PKG_DOWNLOAD_US_HOST/$crtVersion/$fileName -O    
+    cat SHA256SUM.txt | grep $fileName | sha256sum -c
+    if [ $? -ne 0 ]; then
+        echo "Downloaded file $fileName is corrupted"
+        exit 1
+    else 
+        echo "Downloaded file $fileName is verified"
+    fi
 }
 
 downloadToBinaryAndVerify darwin-x64
@@ -22,6 +30,5 @@ downloadToBinaryAndVerify linux-x64
 downloadToBinaryAndVerify linux-arm64
 downloadToBinaryAndVerify windows-x64
 downloadToBinaryAndVerify windows-arm64
-
 
 # ./coscli.exe ls cos://$TXCOSBUCKET
