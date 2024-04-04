@@ -1,3 +1,14 @@
+# flow
+
+1. download files from $PKG_DOWNLOAD_US_HOST
+2. process the files
+3. upload post-processed files to both $PKG_DOWNLOAD_US_HOST and $PKG_DOWNLOAD_CN_HOST(Tencent COS)
+4. Done
+
+# what did you do to these files?
+
+well, we just code signing the files locally, nothing else. The code signing services we use is mandatory to be running on local ONLY, so sad.
+
 # where to download cos-cli?
 
 Mac：wget https://cosbrowser.cloud.tencent.com/software/coscli/coscli-mac
