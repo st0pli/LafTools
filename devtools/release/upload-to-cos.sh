@@ -1,5 +1,6 @@
 #!/bin/bash
 cd $(dirname $0)
+crtDIR=$(pwd)
 set -e
 cd dist
 crtVersion=`cat $LAFTOOLS_ROOT/package.json | jq -r '.version'`
@@ -11,7 +12,7 @@ uploadToCos(){
     platformName=$1
     fileName=LafTools-$crtVersion-$platformName-minimal.tar.gz
     echo "Uploading $fileName to COS"
-    ./coscli.exe upload $fileName cos://$TXCOSBUCKET/$crtVersion/$fileName
+    $crtDIR/coscli.exe cp $fileName cos://$TXCOSBUCKET/$crtVersion/$fileName
     echo "Uploaded $fileName to COS"
 }
 

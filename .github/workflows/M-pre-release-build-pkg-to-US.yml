@@ -73,13 +73,7 @@ jobs:
           crtVersion=`/home/runner/work/LafTools/LafTools-M-pre/pipeline/tools/get-web2-version.sh`
           sftp -o StrictHostKeyChecking=no -P ${{ secrets.US_APP_SSH_PORT }} ${{ secrets.US_APP_SSH_USERNAME }}@${{ secrets.US_APP_SSH_HOST }} <<EOF
             mkdir /home/appuser/PkgRelease-dist/${crtVersion}
-            put /home/runner/work/LafTools/LafTools-M-pre/dist/pkg/linux-x64.tar.gz /home/appuser/PkgRelease-dist/${crtVersion}/LafTools-${crtVersion}-linux-x64-minimal.tar.gz
-            put /home/runner/work/LafTools/LafTools-M-pre/dist/pkg/linux-arm64.tar.gz /home/appuser/PkgRelease-dist/${crtVersion}/LafTools-${crtVersion}-linux-arm64-minimal.tar.gz
-            put /home/runner/work/LafTools/LafTools-M-pre/dist/pkg/darwin-x64.tar.gz /home/appuser/PkgRelease-dist/${crtVersion}/LafTools-${crtVersion}-darwin-x64-minimal.tar.gz
-            put /home/runner/work/LafTools/LafTools-M-pre/dist/pkg/darwin-arm64.tar.gz /home/appuser/PkgRelease-dist/${crtVersion}/LafTools-${crtVersion}-darwin-arm64-minimal.tar.gz
-            put /home/runner/work/LafTools/LafTools-M-pre/dist/pkg/windows-x64.zip /home/appuser/PkgRelease-dist/${crtVersion}/LafTools-${crtVersion}-windows-x64-minimal.zip
-            put /home/runner/work/LafTools/LafTools-M-pre/dist/pkg/windows-arm64.zip /home/appuser/PkgRelease-dist/${crtVersion}/LafTools-${crtVersion}-windows-arm64-minimal.zip
-            put /home/runner/work/LafTools/LafTools-M-pre/dist/pkg/SHA256SUM.txt /home/appuser/PkgRelease-dist/${crtVersion}/SHA256SUM.txt
+            put /home/runner/work/LafTools/LafTools-M-pre/dist/pkg/* /home/appuser/PkgRelease-dist/${crtVersion}/
           exit
           EOF
           if [ $? -ne 0 ]; then

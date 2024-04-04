@@ -197,15 +197,11 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
         (
             cd $platformDistDir
             fileName=
-            affix=
-            if [ "$bundleMode" = "no-nodejs" ]; then
-                affix="-NO-RUNTIME-PACK"
-            fi
             if [ $packageType == "zip" ]; then
-                fileName=$platformName$affix.zip
+                fileName=LafTools-${crtVersion}-$platformName-minimal.zip
                 zip -r $fileName ./* &> /dev/null
             else
-                fileName=$platformName$affix.tar.gz
+                fileName=LafTools-${crtVersion}-$platformName-minimal.tar.gz
                 tar -zcvf $fileName ./* &> /dev/null
             fi
             mv $fileName ../../pkg
