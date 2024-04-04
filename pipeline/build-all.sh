@@ -128,8 +128,7 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
             npm i -S -D --verbose --force
             npm run build 
             mkdir -p $platformDistDir/boot
-            echo 'console.log("Hello, LafTools!")' > $platformDistDir/boot/test.js
-            cp -a ./dist/* $platformDistDir/boot/
+            cp -a $LAFTOOLS_ROOT/modules/bootstrap/dist/* $platformDistDir/boot/
         )
 
         cp -a ./pipeline/parcel/scripts/$osScriptFile/* $platformDistDir
@@ -211,13 +210,14 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
         (
             cd $platformDistDir
             fileName=
-            subDir=LafTools-${crtVersion}-$platformName-minimal
+            subDirName=LafTools-${crtVersion}-$platformName-minimal
+            subDir=./$subDirName
             if [ -d $subDir ]; then
                 rm -rf $subDir
             fi
             mkdir -p $subDir
             cp -a ./* $subDir
-            rm $subDir/$subDir
+            rm -rf $subDir/$subDirName 
             mkdir -p $subDir/info
             echo "$platformName" > $subDir/info/platform.txt
             echo "$crtVersion" > $subDir/info/version.txt
