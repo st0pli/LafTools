@@ -79,7 +79,7 @@ jobs:
             put /home/runner/work/LafTools/LafTools-M-pre/dist/pkg/darwin-arm64.tar.gz /home/appuser/PkgRelease-dist/${crtVersion}/LafTools-${crtVersion}-darwin-arm64-minimal.tar.gz
             put /home/runner/work/LafTools/LafTools-M-pre/dist/pkg/windows-x64.zip /home/appuser/PkgRelease-dist/${crtVersion}/LafTools-${crtVersion}-windows-x64-minimal.zip
             put /home/runner/work/LafTools/LafTools-M-pre/dist/pkg/windows-arm64.zip /home/appuser/PkgRelease-dist/${crtVersion}/LafTools-${crtVersion}-windows-arm64-minimal.zip
-            put /home/runner/work/LafTools/LafTools-M-pre/dist/pkg/pkg/SHASUMS256.txt /home/appuser/PkgRelease-dist/${crtVersion}/pkg/SHASUMS256.txt
+            put /home/runner/work/LafTools/LafTools-M-pre/dist/pkg/pkg/SHASUMS256.txt /home/appuser/PkgRelease-dist/${crtVersion}/SHASUMS256.txt
           exit
           EOF
           if [ $? -ne 0 ]; then
