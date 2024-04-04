@@ -9,5 +9,5 @@ echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
     # git push origin $tagName
-    echo "push now"
+    echo "not yet supported"
 fi
