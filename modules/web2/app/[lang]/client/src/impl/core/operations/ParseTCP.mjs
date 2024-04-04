@@ -164,8 +164,9 @@ class ParseTCP extends Operation {
     const trueWndSize = BigNumber(TCPPacket["Window size"]).multipliedBy(
       BigNumber(2).pow(BigNumber(windowScaleShift)),
     );
-    TCPPacket["Window size"] =
-      `${TCPPacket["Window size"]} (Scaled: ${trueWndSize})`;
+    TCPPacket[
+      "Window size"
+    ] = `${TCPPacket["Window size"]} (Scaled: ${trueWndSize})`;
 
     return TCPPacket;
   }

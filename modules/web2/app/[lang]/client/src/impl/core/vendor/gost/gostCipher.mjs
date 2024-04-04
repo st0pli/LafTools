@@ -2043,35 +2043,35 @@ function GostCipher(algorithm) {
       (algorithm.version === 1
         ? "RC2"
         : algorithm.version === 1989
-          ? "GOST 28147"
-          : "GOST R 34.12")) +
+        ? "GOST 28147"
+        : "GOST R 34.12")) +
     (algorithm.version > 4 ? "-" + ((algorithm.version || 1989) % 100) : "") +
     "-" +
     (this.blockLength === 64 ? "" : this.blockLength + "-") +
     (algorithm.mode === "MAC"
       ? "MAC-" + (algorithm.macLength || this.blockLength >> 1)
       : algorithm.mode === "KW" || algorithm.keyWrapping
-        ? ((algorithm.keyWrapping || "NO") !== "NO"
-            ? algorithm.keyWrapping
-            : "") + "KW"
-        : (algorithm.block || "ECB") +
-          ((algorithm.block === "CFB" ||
-            algorithm.block === "OFB" ||
-            (algorithm.block === "CTR" && algorithm.version === 2015)) &&
-          algorithm?.shiftBits !== this.blockLength
-            ? "-" + algorithm.shiftBits
-            : "") +
-          (algorithm.padding
-            ? "-" +
-              (algorithm.padding ||
-                (algorithm.block === "CTR" ||
-                algorithm.block === "CFB" ||
-                algorithm.block === "OFB"
-                  ? "NO"
-                  : "ZERO")) +
-              "PADDING"
-            : "") +
-          ((algorithm.keyMeshing || "NO") !== "NO" ? "-CPKEYMESHING" : "")) +
+      ? ((algorithm.keyWrapping || "NO") !== "NO"
+          ? algorithm.keyWrapping
+          : "") + "KW"
+      : (algorithm.block || "ECB") +
+        ((algorithm.block === "CFB" ||
+          algorithm.block === "OFB" ||
+          (algorithm.block === "CTR" && algorithm.version === 2015)) &&
+        algorithm?.shiftBits !== this.blockLength
+          ? "-" + algorithm.shiftBits
+          : "") +
+        (algorithm.padding
+          ? "-" +
+            (algorithm.padding ||
+              (algorithm.block === "CTR" ||
+              algorithm.block === "CFB" ||
+              algorithm.block === "OFB"
+                ? "NO"
+                : "ZERO")) +
+            "PADDING"
+          : "") +
+        ((algorithm.keyMeshing || "NO") !== "NO" ? "-CPKEYMESHING" : "")) +
     (algorithm.procreator ? "/" + algorithm.procreator : "") +
     (typeof algorithm.sBox === "string" ? "/" + algorithm.sBox : "");
 
@@ -2226,8 +2226,8 @@ function GostCipher(algorithm) {
       this.version === 2015
         ? sBoxes["E-Z"]
         : this.procreator === "SC"
-          ? sBoxes["E-SC"]
-          : sBoxes["E-A"];
+        ? sBoxes["E-SC"]
+        : sBoxes["E-A"];
   else if (typeof sBox === "string") {
     sBoxName = sBox.toUpperCase();
     sBox = sBoxes[sBoxName];

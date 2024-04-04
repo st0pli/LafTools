@@ -36,6 +36,7 @@ clean-bundle(){
     pkgDir=$distDir/pkg
     [ -d $pkgDir ] && rm -rf $pkgDir
     mkdir -p $pkgDir
+    echo "" >> $sha256sumFile
     # docker
     dockerDir=$distDir/docker
     [ -d $dockerDir ] && rm -rf $dockerDir
@@ -220,6 +221,7 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
             fi
             echo "[I] file size: $(du -sh $fileName | awk '{print $1}')"
             # calculate sha256 and append to sha256sum.txt
+            echo "[I] calculating sha256 for $fileName"
             sha256sum $fileName >> $sha256sumFile
         )
     }

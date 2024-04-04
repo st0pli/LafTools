@@ -97,8 +97,8 @@ function normalize(algorithm, method) {
         (method === "sign" || method === "verify"
           ? "MAC"
           : method === "wrapKey" || method === "unwrapKey"
-            ? "KW"
-            : "ES")
+          ? "KW"
+          : "ES")
       ).toUpperCase(),
       length: algorithm.length || 64,
     };
@@ -111,8 +111,8 @@ function normalize(algorithm, method) {
         (method === "sign" || method === "verify"
           ? "MAC"
           : method === "wrapKey" || method === "unwrapKey"
-            ? "KW"
-            : "ES")
+          ? "KW"
+          : "ES")
       ).toUpperCase(),
       length: algorithm.length || 64, // 128
     };
@@ -125,8 +125,8 @@ function normalize(algorithm, method) {
         (method === "deriveKey" || method === "deriveBits"
           ? "KDF"
           : method === "sign" || method === "verify"
-            ? "HMAC"
-            : "HASH")
+          ? "HMAC"
+          : "HASH")
       ).toUpperCase(),
       length: algorithm.length || 256, // 512
     };
@@ -149,8 +149,8 @@ function normalize(algorithm, method) {
         (method === "deriveKey" || method === "deriveBits"
           ? "KDF"
           : method === "sign" || method === "verify"
-            ? "HMAC"
-            : "HASH")
+          ? "HMAC"
+          : "HASH")
       ).toUpperCase(),
       length: algorithm.length || 160,
     };
@@ -163,8 +163,8 @@ function normalize(algorithm, method) {
         (method === "sign" || method === "verify"
           ? "MAC"
           : method === "wrapKey" || method === "unwrapKey"
-            ? "KW"
-            : "ES")
+          ? "KW"
+          : "ES")
       ).toUpperCase(),
       length: algorithm.length || 32, // 1 - 1024
     };
@@ -420,8 +420,8 @@ function normalize(algorithm, method) {
           ? na.procreator === "SC"
             ? "P-256"
             : na.mode === "DH"
-              ? "X-256-A"
-              : "S-256-A" // 'S-256-B', 'S-256-C', 'X-256-B', 'T-256-A', 'T-256-B', 'T-256-C', 'P-256'
+            ? "X-256-A"
+            : "S-256-A" // 'S-256-B', 'S-256-C', 'X-256-B', 'T-256-A', 'T-256-B', 'T-256-C', 'P-256'
           : na.mode === "T-512-A"); // 'T-512-B', 'T-512-C'
     } else if (na.name === "GOST R 34.10" && na.version === 2012) {
       na.namedCurve =
@@ -430,8 +430,8 @@ function normalize(algorithm, method) {
           ? na.procreator === "SC"
             ? "P-256"
             : na.mode === "DH"
-              ? "X-256-A"
-              : "S-256-A" // 'S-256-B', 'S-256-C', 'X-256-B', 'T-256-A', 'T-256-B', 'T-256-C', 'P-256'
+            ? "X-256-A"
+            : "S-256-A" // 'S-256-B', 'S-256-C', 'X-256-B', 'T-256-A', 'T-256-B', 'T-256-C', 'P-256'
           : na.mode === "T-512-A"); // 'T-512-B', 'T-512-C'
     }
   }

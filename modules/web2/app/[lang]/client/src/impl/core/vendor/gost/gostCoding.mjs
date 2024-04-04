@@ -104,14 +104,14 @@ var Base64 = {
         c > 64 && c < 91
           ? c - 65
           : c > 96 && c < 123
-            ? c - 71
-            : c > 47 && c < 58
-              ? c + 4
-              : c === 43
-                ? 62
-                : c === 47
-                  ? 63
-                  : 0;
+          ? c - 71
+          : c > 47 && c < 58
+          ? c + 4
+          : c === 43
+          ? 62
+          : c === 47
+          ? 63
+          : 0;
 
       u24 |= c << (18 - 6 * m4);
       if (m4 === 3 || n - i === 1) {
@@ -146,14 +146,14 @@ var Base64 = {
             c < 26
               ? c + 65
               : c < 52
-                ? c + 71
-                : c < 62
-                  ? c - 4
-                  : c === 62
-                    ? 43
-                    : c === 63
-                      ? 47
-                      : 65;
+              ? c + 71
+              : c < 62
+              ? c - 4
+              : c === 62
+              ? 43
+              : c === 63
+              ? 47
+              : 65;
           s += String.fromCharCode(c);
         }
         u24 = 0;
@@ -356,26 +356,23 @@ var Chars = (function () {
                 d[++i] -
                 0x80
               : c >> 0xf8 && c < 0xfc && i + 4 < n // five bytes
-                ? ((c - 0xf8) << 24) +
-                  ((d[++i] - 0x80) << 18) +
-                  ((d[++i] - 0x80) << 12) +
-                  ((d[++i] - 0x80) << 6) +
-                  d[++i] -
-                  0x80
-                : c >> 0xf0 && c < 0xf8 && i + 3 < n // four bytes
-                  ? ((c - 0xf0) << 18) +
-                    ((d[++i] - 0x80) << 12) +
-                    ((d[++i] - 0x80) << 6) +
-                    d[++i] -
-                    0x80
-                  : c >= 0xe0 && c < 0xf0 && i + 2 < n // three bytes
-                    ? ((c - 0xe0) << 12) +
-                      ((d[++i] - 0x80) << 6) +
-                      d[++i] -
-                      0x80
-                    : c >= 0xc0 && c < 0xe0 && i + 1 < n // two bytes
-                      ? ((c - 0xc0) << 6) + d[++i] - 0x80
-                      : c; // one byte
+              ? ((c - 0xf8) << 24) +
+                ((d[++i] - 0x80) << 18) +
+                ((d[++i] - 0x80) << 12) +
+                ((d[++i] - 0x80) << 6) +
+                d[++i] -
+                0x80
+              : c >> 0xf0 && c < 0xf8 && i + 3 < n // four bytes
+              ? ((c - 0xf0) << 18) +
+                ((d[++i] - 0x80) << 12) +
+                ((d[++i] - 0x80) << 6) +
+                d[++i] -
+                0x80
+              : c >= 0xe0 && c < 0xf0 && i + 2 < n // three bytes
+              ? ((c - 0xe0) << 12) + ((d[++i] - 0x80) << 6) + d[++i] - 0x80
+              : c >= 0xc0 && c < 0xe0 && i + 1 < n // two bytes
+              ? ((c - 0xc0) << 6) + d[++i] - 0x80
+              : c; // one byte
         } else if (
           charset === "unicode" ||
           charset === "ucs2" ||
@@ -857,10 +854,10 @@ var BER = (function () {
         tagClass === 3
           ? 0xc0
           : tagClass === 2
-            ? 0x80
-            : tagClass === 1
-              ? 0x40
-              : 0x00;
+          ? 0x80
+          : tagClass === 1
+          ? 0x40
+          : 0x00;
     if (tagConstructed) first |= 0x20;
     if (tagNumber < 0x1f) {
       first |= tagNumber & 0x1f;

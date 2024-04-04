@@ -232,16 +232,16 @@ class ParseUNIXFilePermissions extends Operation {
  |         | User  | Group | Other |
  +---------+-------+-------+-------+
  |    Read |   ${perms.ru ? "X" : " "}   |   ${perms.rg ? "X" : " "}   |   ${
-   perms.ro ? "X" : " "
- }   |
+      perms.ro ? "X" : " "
+    }   |
  +---------+-------+-------+-------+
  |   Write |   ${perms.wu ? "X" : " "}   |   ${perms.wg ? "X" : " "}   |   ${
-   perms.wo ? "X" : " "
- }   |
+      perms.wo ? "X" : " "
+    }   |
  +---------+-------+-------+-------+
  | Execute |   ${perms.eu ? "X" : " "}   |   ${perms.eg ? "X" : " "}   |   ${
-   perms.eo ? "X" : " "
- }   |
+      perms.eo ? "X" : " "
+    }   |
  +---------+-------+-------+-------+`;
 
     return output;

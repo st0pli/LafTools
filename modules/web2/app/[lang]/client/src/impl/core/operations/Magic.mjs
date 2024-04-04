@@ -192,9 +192,9 @@ class Magic extends Operation {
 
       output += `<tr>
                 <td><a href="#${recipeURL}">${Utils.generatePrettyRecipe(
-                  option.recipe,
-                  true,
-                )}</a></td>
+        option.recipe,
+        true,
+      )}</a></td>
                 <td>${Utils.escapeHtml(
                   Utils.escapeWhitespace(Utils.truncate(option.data, 99)),
                 )}</td>

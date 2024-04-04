@@ -157,8 +157,8 @@ class YARARules extends Operation {
             matches.size() === 0
               ? ""
               : showCounts
-                ? ` (${matches.size()} time${matches.size() > 1 ? "s" : ""})`
-                : "";
+              ? ` (${matches.size()} time${matches.size() > 1 ? "s" : ""})`
+              : "";
           if (matches.size() === 0 || !(showStrings || showLengths)) {
             matchString += `Input matches rule "${rule.ruleName}"${meta}${
               countString.length > 0 ? ` ${countString}` : ""

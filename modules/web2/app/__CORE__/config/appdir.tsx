@@ -27,6 +27,10 @@ export let getAppDataInternalDir = (): string => {
     return fsutils.mkdir(path.join(getLafToolsDataDir(), 'data'))
 }
 
+export let getAppLogInternalDir = (): string => {
+    return fsutils.mkdir(path.join(getLafToolsDataDir(), 'logs'))
+}
+
 export let getAppDatabaseMainFile = () => {
     return path.join(getAppDataInternalDir(), 'app.db')
 }

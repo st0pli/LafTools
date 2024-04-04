@@ -2,6 +2,7 @@ var/log/
 coscli-windows.exe
 coscli.exe
 coscli
+coscli.log
 ~$*
 *-audit.json
 web-nouse
