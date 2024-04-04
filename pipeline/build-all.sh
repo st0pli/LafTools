@@ -274,9 +274,10 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
             cp $LAFTOOLS_ROOT/pipeline/parcel/docker/* ./
             find . -iname "*.sh" -exec chmod 755 {} \;
             ls -ahlrt
+            set -e
             echo "[I] push images to docker"
             docker build -t codegentoolbox/laftools-$platformName:$crtVersion -f ./Dockerfile .
-            if [ $TAG_MODE == "true" ]; then
+            if [ "$TAG_MODE" == "true" ]; then
                 docker push codegentoolbox/laftools-$platformName:$crtVersion
             fi
             if [ $platformName == "linux-x64" ]; then
