@@ -169,6 +169,17 @@ jobs:
           asset_name: LafTools-${{steps.get_version.outputs.VERSION}}-windows-arm64-minimal.zip
           asset_content_type: application/zip
 
+      - name: Upload Release SHAM256 SUM File
+        uses: actions/upload-release-asset@v1
+        if: ${{ !contains(github.ref, 'alpha') && !contains(github.ref, 'beta') && !contains(github.ref, 'rc') }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: /home/runner/work/LafTools/LafTools-tag/dist/pkg/pkg/SHASUMS256.txt
+          asset_name: SHASUMS256.txt
+          asset_content_type: application/text
+
       - name: CN Release 1
         uses: appleboy/ssh-action@master
         with:
