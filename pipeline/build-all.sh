@@ -122,6 +122,7 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
         # cp -a ./dist/resources $platformDistDir
         cp -a ./dist/web2 $platformDistDir/core
 
+        echo "[I] copying bootstrap and scripts..."
         (
             cd $LAFTOOLS_ROOT/modules/bootstrap
             npm run build 
@@ -208,13 +209,20 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
         (
             cd $platformDistDir
             fileName=
+            subDir=LafTools-${crtVersion}
+            if [ -d $subDir ]; then
+                rm -rf $subDir
+            fi
+            mkdir -p $subDir
+            cp -a ./* $subDir
             if [ $packageType == "zip" ]; then
                 fileName=LafTools-${crtVersion}-$platformName-minimal.zip
-                zip -r $fileName ./* &> /dev/null
+                zip -r $fileName $subDir/* &> /dev/null
             else
                 fileName=LafTools-${crtVersion}-$platformName-minimal.tar.gz
-                tar -zcvf $fileName ./* &> /dev/null
+                tar -zcvf $fileName $subDir/* &> /dev/null
             fi
+            rm -rf $subDir
             mv $fileName ../../pkg
             # do verify 
             cd ../../pkg
