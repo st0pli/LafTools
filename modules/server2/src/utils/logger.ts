@@ -31,7 +31,9 @@ const logger = winston.createLogger({
     logFormat,
   ),
   transports: [
-    new Console(),
+    new Console({
+      level: 'debug',
+    }),
     // debug log setting
     new winstonDaily({
       level: 'debug',
