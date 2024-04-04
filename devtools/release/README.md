@@ -5,6 +5,12 @@
 3. upload post-processed files to both $PKG_DOWNLOAD_US_HOST and $PKG_DOWNLOAD_CN_HOST(Tencent COS)
 4. Done
 
+# scripts
+
+1. download-and-verify.sh
+2. [CODE SIGNING]
+3. upload-to-cos.sh
+
 # what did you do to these files?
 
 well, we just code signing the files locally, nothing else. The code signing services we use is mandatory to be running on local ONLY, so sad.

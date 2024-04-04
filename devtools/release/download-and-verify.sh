@@ -13,7 +13,8 @@ curl $PKG_DOWNLOAD_US_HOST/$crtVersion/SHA256SUM.txt -O
 # US: PKG_DOWNLOAD_US_HOST
 downloadToBinaryAndVerify(){
     platformName=$1
-    fileName=LafTools-$crtVersion-$platformName-minimal.tar.gz
+    fileName=LafTools-$crtVersion-$platformName-minimal.$2
+    echo "Downloading $fileName"
     curl $PKG_DOWNLOAD_US_HOST/$crtVersion/$fileName -O    
     cat SHA256SUM.txt | grep $fileName | sha256sum -c
     if [ $? -ne 0 ]; then
@@ -24,11 +25,11 @@ downloadToBinaryAndVerify(){
     fi
 }
 
-downloadToBinaryAndVerify darwin-x64
-downloadToBinaryAndVerify darwin-arm64
-downloadToBinaryAndVerify linux-x64
-downloadToBinaryAndVerify linux-arm64
-downloadToBinaryAndVerify windows-x64
-downloadToBinaryAndVerify windows-arm64
+downloadToBinaryAndVerify darwin-x64 tar.gz
+downloadToBinaryAndVerify darwin-arm64 tar.gz
+downloadToBinaryAndVerify linux-x64 tar.gz
+downloadToBinaryAndVerify linux-arm64 tar.gz
+downloadToBinaryAndVerify windows-x64 zip
+downloadToBinaryAndVerify windows-arm64 zip
 
-# ./coscli.exe ls cos://$TXCOSBUCKET
+echo "[I] All files are downloaded and verified"
