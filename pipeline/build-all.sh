@@ -122,6 +122,13 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
         # cp -a ./dist/resources $platformDistDir
         cp -a ./dist/web2 $platformDistDir/core
 
+        (
+            cd $LAFTOOLS_ROOT/modules/bootstrap
+            npm run build 
+            mkdir -p $platformDistDir/boot
+            cp -a ./dist/* $platformDistDir/boot/
+        )
+
         cp -a ./pipeline/parcel/scripts/$osScriptFile/* $platformDistDir
 
         # if [ $bundleMode != "no-nodejs" ]; then
