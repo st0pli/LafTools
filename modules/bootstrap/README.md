@@ -1,6 +1,6 @@
 # what is bootstrap?
 
-To launch any version dynamically, LafTools provide a bootstrap script to achieve this goal.
+Bootstrap is an enhancement that we provide a script to launch any version of LafTools module dynamically.
 
 # supported modules
 
