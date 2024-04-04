@@ -24,11 +24,11 @@ import fs from 'fs'
 import path from 'path'
 import { log } from 'console';
 import { RedisClientType, createClient } from 'redis';
-import { SystemEnvFlag, getELB3Root, getSysEnv, isDevEnv, isTestEnv } from '../hooks/env';
+import { SystemEnvFlag, getLafELB3Root, getSysEnv, isDevEnv, isTestEnv } from '../share/env';
 import model, { DB_VERSION, } from './model';
 import refMap from './ref';
 import kvUtils from '../utils/kvUtils';
-import { getAppDatabaseMainFile } from '../config/appdir';
+import { getAppDatabaseMainFile } from '../share/appdir';
 
 export type DaoRef = {
     db: Sequelize,

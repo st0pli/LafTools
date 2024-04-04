@@ -30,7 +30,7 @@ import { getAppDevIcon, getAppKeywords } from "@/app/__CORE__/config/imgconfig";
 import dynamic from "next/dynamic";
 import { fmtURL_Server } from "@/app/__CORE__/utils/routeUtils";
 import { Dot, getXLocaleStrInRSC } from "@/app/__CORE__/utils/TranslationUtils";
-import { isDevEnv } from "@/app/__CORE__/hooks/env";
+import { isDevEnv } from "@/app/__CORE__/share/env";
 import PassClientValue from './pass'
 import PageLoadingEffect from "@/app/__CORE__/containers/PageLoadingEffect";
 import { CategorySearchProps } from "../page";

@@ -22,7 +22,7 @@ import {
     Sequelize, DataTypes, Model, InferCreationAttributes, InferAttributes, CreationOptional
 } from 'sequelize';
 import { DaoRef } from './index'
-import { isDevEnv } from '../hooks/env';
+import { isDevEnv } from '../share/env';
 
 export const DB_VERSION = "v4"
 

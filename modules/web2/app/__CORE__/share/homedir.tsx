@@ -18,30 +18,19 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import path from "path"
-import { getLafToolsDataDir } from "./homedir"
-import { isDevEnv } from "../hooks/env"
-import fsutils from "../utils/FileUtils"
+import fs from 'fs'
+import path from 'path'
+import os from 'os'
+import fsutils from './FileUtils'
+import { isDevEnv } from './env'
 
-export let getAppDataInternalDir = (): string => {
-    return fsutils.mkdir(path.join(getLafToolsDataDir(), 'data'))
+let userHome = os.homedir()
+
+export let getUserHomeDir: () => string = () => {
+    return userHome
 }
 
-export let getAppLogInternalDir = (): string => {
-    return fsutils.mkdir(path.join(getLafToolsDataDir(), 'logs'))
-}
-
-export let getAppDatabaseMainFile = () => {
-    return path.join(getAppDataInternalDir(), 'app.db')
-}
-
-export let getAppDatabaseVerFile = () => {
-    return fsutils.mkdir(path.join(getAppDataInternalDir(), 'app.ver'))
-}
-
-export let getAppDataTestKVDir = () => {
-    if (!isDevEnv()) {
-        // throw new Error('[ERROR:dyLeCZv0g]')
-    }
-    return fsutils.mkdir(path.join(getAppDataInternalDir(), '_kv'))
+export let getLafToolsDataDir = (): string => {
+    let n = path.join(userHome, isDevEnv() ? '.dev-laftools' : '.laftools')
+    return fsutils.mkdir(n)
 }

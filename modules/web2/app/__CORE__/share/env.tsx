@@ -22,7 +22,7 @@ import path from "path";
 export type SystemEnvFlag = "development" | "production" | "test"
 
 let envObj: { env: SystemEnvFlag } = {
-    env: process.env.NODE_ENV
+    env: process.env.NODE_ENV as any
 }
 
 export let markEnvAsDevForcibly = () => {
@@ -45,12 +45,12 @@ export let isProductionEnv = () => {
     return envObj.env === 'test';
 }
 
-export let getELB3Root = (): string => {
+export let getLafELB3Root = (): string => {
     return process.env['ELB3_ROOT'] || 'unknowndir'
 }
 
 
 export let getPreCompiledDir = (): string => {
-    let file = path.join(getELB3Root(), 'precompiled', isDevEnv() ? 'dev' : 'prod')
+    let file = path.join(getLafELB3Root(), 'precompiled', isDevEnv() ? 'dev' : 'prod')
     return file;
 }

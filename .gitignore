@@ -1,4 +1,6 @@
 var/log/
+dist-web2
+dist-desktop
 coscli-windows.exe
 coscli.exe
 coscli

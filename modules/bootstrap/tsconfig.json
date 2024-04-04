@@ -9,8 +9,8 @@
     "emitDecoratorMetadata": true,
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "node",
-    "module": "commonjs",
     "pretty": true,
+    "module": "CommonJS",
     "sourceMap": true,
     "allowUnusedLabels": true,
     "noUnusedLocals": false,
@@ -20,9 +20,11 @@
     "noEmit": false,
     "esModuleInterop": true,
     "resolveJsonModule": true,
+    "jsx": "preserve",
     "importHelpers": true,
     "baseUrl": "src",
     "paths": {
+      "web2share/*": ["../../web2/app/__CORE__/share/*"],
       "@/*": ["*"],
       "@config": ["config"],
       "@controllers/*": ["controllers/*"],
@@ -37,6 +39,12 @@
       "@utils/*": ["utils/*"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.json", ".env"],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.json",
+    ".env",
+    "../web2/app/__CORE__/share/*.tsx"
+  ],
   "exclude": ["node_modules", "src/http", "src/logs"]
 }

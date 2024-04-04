@@ -18,8 +18,8 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import { getAppDataTestKVDir } from "../config/appdir"
-import { isDevEnv } from "../hooks/env"
+import { getAppDataTestKVDir } from "../share/appdir"
+import { isDevEnv } from "../share/env"
 import fs from 'fs'
 import path from 'path'
 let globalKV: { [key: string]: string } = {}

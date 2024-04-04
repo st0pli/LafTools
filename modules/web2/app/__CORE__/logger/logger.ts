@@ -3,7 +3,7 @@ import { join } from "path";
 import winston from "winston";
 import winstonDaily from "winston-daily-rotate-file";
 import { Console } from "winston/lib/winston/transports";
-import { getAppLogInternalDir } from "../config/appdir";
+import { getAppLogInternalDir } from "../share/appdir";
 
 // logs dir
 const logDir: string = getAppLogInternalDir();
