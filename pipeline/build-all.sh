@@ -312,6 +312,9 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
         fi
         dockerize-laftools linux-x64
         dockerize-laftools linux-arm64
+
+        echo "[D] Docker Details"
+        docker images
     }
 
 
