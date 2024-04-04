@@ -22,6 +22,7 @@ echo "[I] LafTools is located at $LAFTOOLS_ROOT"
 cd $LAFTOOLS_ROOT
 echo "[I] PWD: $(pwd)"
 distDir=./dist
+sha256sumFile=$distDir/pkg/SHASUMS256.txt
 
 clean-bundle(){
     echo "[I] $(date) Working..."
@@ -218,6 +219,8 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
                 tar -ztvf $fileName &> /dev/null
             fi
             echo "[I] file size: $(du -sh $fileName | awk '{print $1}')"
+            # calculate sha256 and append to sha256sum.txt
+            sha256sum $fileName >> $sha256sumFile
         )
     }
     package-all(){
