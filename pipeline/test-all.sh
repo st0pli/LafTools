@@ -16,7 +16,7 @@ crtVersion=`$LAFTOOLS_ROOT/pipeline/tools/get-web2-version.sh`
 echo "[I] crtVersion: $crtVersion"
 
 cp -a $LAFTOOLS_ROOT/dist/pkg/LafTools-$crtVersion-linux-x64-minimal.tar.gz LafTools-pkg.tar.gz
-tar -xzvf LafTools-pkg.tar.gz -C $testPkgDir
+tar -xzf LafTools-pkg.tar.gz -C $testPkgDir
 
 pwd 
 ls

@@ -272,6 +272,9 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
             cd $subDockerDir
             cp ../../pkg/*$platformName-minimal.tar.gz ./linux.tar.gz
             cp $LAFTOOLS_ROOT/pipeline/parcel/docker/* ./
+            rm -rf ./node-v20.12.0-linux-x64
+            curl https://cdn.npmmirror.com/binaries/node/v20.12.0/node-v20.12.0-linux-x64.tar.gz -O
+            tar -xzf node-v20.12.0-linux-x64.tar.gz
             find . -iname "*.sh" -exec chmod 755 {} \;
             ls -ahlrt
             set -e
