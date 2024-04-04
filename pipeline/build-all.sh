@@ -21,7 +21,7 @@ echo "[I] crtVersion: $crtVersion"
 echo "[I] LafTools is located at $LAFTOOLS_ROOT"
 cd $LAFTOOLS_ROOT
 echo "[I] PWD: $(pwd)"
-distDir=./dist
+distDir=$LAFTOOLS_ROOT/dist
 
 clean-bundle(){
     echo "[I] $(date) Working..."
@@ -93,8 +93,8 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
         platformGoFile=$3
         platformExt=bin
         argGOOS=$4
-        osPatchDir=./os-patch/$platformName
-        platformDistDir=./dist/os/$platformName/
+        osPatchDir=$LAFTOOLS_ROOT/os-patch/$platformName
+        platformDistDir=$LAFTOOLS_ROOT/dist/os/$platformName/
         echo "--------- CORE $platformName BEGIN ---------"
         echo "[I] building be core"
         osScriptFile=$argGOOS
@@ -202,7 +202,7 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
     package-for(){
         platformName=$1
         packageType=$2
-        platformDistDir=./dist/os/$platformName/
+        platformDistDir=$LAFTOOLS_ROOT/dist/os/$platformName/
         if [ -z $packageType ]; then
             packageType=tar.gz
         fi
@@ -278,10 +278,18 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
             find . -iname "*.sh" -exec chmod 755 {} \;
             ls -ahlrt
             set -e
-            echo "[I] push images to docker"
+            echo "[I] build docker image for $platformName"
             docker build -t codegentoolbox/laftools-$platformName:$crtVersion -f ./Dockerfile .
+            if [ $? -ne 0 ]; then
+                echo "[E] docker build failed for $platformName"
+                exit 1
+            fi
             if [ "$TAG_MODE" == "true" ]; then
                 docker push codegentoolbox/laftools-$platformName:$crtVersion
+                if [ $? -ne 0 ]; then
+                    echo "[E] docker push failed for $platformName"
+                    exit 1
+                fi
             fi
             if [ $platformName == "linux-x64" ]; then
                 echo "[I] building other tag"
