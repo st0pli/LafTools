@@ -88,6 +88,8 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
     }
 
     build-core(){
+        cd $LAFTOOLS_ROOT
+
         platformName=$1
         platformArch=$2
         platformGoFile=$3
@@ -122,6 +124,8 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
         # cp -a ./dist/resources $platformDistDir
         cp -a ./dist/web2 $platformDistDir/core
 
+        cp -a ./pipeline/parcel/scripts/$osScriptFile/* $platformDistDir
+
         (
             echo "[I] copying bootstrap and scripts..."
             cd $LAFTOOLS_ROOT/modules/bootstrap
@@ -130,8 +134,6 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
             mkdir -p $platformDistDir/boot
             cp -a $LAFTOOLS_ROOT/modules/bootstrap/dist/* $platformDistDir/boot/
         )
-
-        cp -a ./pipeline/parcel/scripts/$osScriptFile/* $platformDistDir
 
         # if [ $bundleMode != "no-nodejs" ]; then
         #     echo "[I] copying nodejs service..."
