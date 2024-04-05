@@ -66,19 +66,18 @@ export class App {
   }
 
   private initializeSwagger() {
-    const options = {
-      swaggerDefinition: {
-        info: {
-          title: 'REST API',
-          version: '1.0.0',
-          description: 'Example docs',
-        },
-      },
-      apis: ['swagger.yaml'],
-    };
-
-    const specs = swaggerJSDoc(options);
-    this.app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
+    // const options = {
+    //   swaggerDefinition: {
+    //     info: {
+    //       title: 'REST API',
+    //       version: '1.0.0',
+    //       description: 'Example docs',
+    //     },
+    //   },
+    //   apis: ['swagger.yaml'],
+    // };
+    // const specs = swaggerJSDoc(options);
+    // this.app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
   }
 
   private initializeErrorHandling() {
