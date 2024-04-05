@@ -295,16 +295,15 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
                 exit 1
             fi
 
+            set -e
+            echo "testing docker container for $platformName"
+            cd $LAFTOOLS_ROOT/pipeline 
+            chmod +x ./test-docker.sh codegentoolbox/laftools-$platformName:$crtVersion
+            ./test-docker.sh 
+            set +e
+
             if [ "$TAG_MODE" = "true" ]; then
                 echo "[I] will test and push docker container for $platformName"
-                (
-                    set -e
-                    echo "testing docker container for $platformName"
-                    cd $LAFTOOLS_ROOT/pipeline 
-                    chmod +x ./test-docker.sh codegentoolbox/laftools-$platformName:$crtVersion
-                    ./test-docker.sh 
-                    set +e
-                )
                 echo "[I] pushing docker image for $platformName"
                 docker push codegentoolbox/laftools-$platformName:$crtVersion
                 docker push codegentoolbox/laftools-$platformName:latest
@@ -321,17 +320,18 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
     }
 
     do-test-all(){
-        (
-            set -e
-            cd $LAFTOOLS_ROOT/pipeline
-            chmod +x ./test-all.sh
-            ./test-all.sh
-            if [ $? -ne 0 ]; then
-                echo "[E] test failed."
-                exit 1
-            fi
-            set +e
-        )
+        set -e
+        cd $LAFTOOLS_ROOT/pipeline
+        chmod +x ./test-all.sh
+        ./test-all.sh
+        if [ $? -ne 0 ]; then
+            echo "[E] test failed."
+            exit 1
+        else 
+            echo "[I] $(date) do-test-all PASSED"
+            exit 0
+        fi
+        set +e
     }
 
     docker-all(){
@@ -360,6 +360,12 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
     # package as zip and tar.gz
     package-all
     do-test-all
+    if [ $? -ne 0 ]; then
+        echo "[E] do-test-all failed."
+        exit 1
+    else 
+        echo "[I] $(date) do-test-all PASSED"
+    fi
     # build docker images
     docker-all
     

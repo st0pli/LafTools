@@ -64,36 +64,7 @@ export class ReleaseRoute implements Routes {
 
       let crtHost = info.fromCNRegion ? cnHost : usHost;
       let fileNameInURL = getResourceNameByVersion(latestVer, info.platform);
-      let infoLangVerListFile = path.join(META_DIR, 'versions', `${info.lang}.json`);
-      if (!fs.existsSync(infoLangVerListFile)) {
-        logger.error('infoLangVerListFile not found');
-        fn_returnEmpty();
-        return;
-      }
-      // let infoLangArr: {
-      //   version: string;
-      //   date: string;
-      // }[] = require(infoLangVerListFile);
 
-      // let recentReleaseNotesArr: TypeRecentReleaseNotes[] = [];
-      // for (let i = 0; i < infoLangArr.length; i++) {
-      //   let eachLoopVer = infoLangArr[i].version;
-      //   if (eachLoopVer <= crtVersion) {
-      //     break;
-      //   } else {
-      //     let releaseNotesFile = path.join(META_DIR, 'versions', info.lang, `${eachLoopVer}.md`);
-      //     if (!fs.existsSync(releaseNotesFile)) {
-      //       logger.error('release notes not found');
-      //       fn_returnEmpty();
-      //       return;
-      //     }
-      //     let eachLoopReleaseNotes = fs.readFileSync(releaseNotesFile, 'utf8');
-      //     recentReleaseNotesArr.push({
-      //       version: eachLoopVer,
-      //       content: eachLoopReleaseNotes,
-      //     });
-      //   }
-      // }
       res.send({
         content: {
           anyUpdate: true,
@@ -119,6 +90,36 @@ export class ReleaseRoute implements Routes {
     this.router.get(URL_RELEASE_GET_INFO, async (req, res) => {
       let Dot = DotFn(req);
       let info = InfoFn(req);
+      // let infoLangVerListFile = path.join(META_DIR, 'versions', `${info.lang}.json`);
+      // if (!fs.existsSync(infoLangVerListFile)) {
+      //   logger.error('infoLangVerListFile not found');
+      //   fn_returnEmpty();
+      //   return;
+      // }
+      // let infoLangArr: {
+      //   version: string;
+      //   date: string;
+      // }[] = require(infoLangVerListFile);
+
+      // let recentReleaseNotesArr: TypeRecentReleaseNotes[] = [];
+      // for (let i = 0; i < infoLangArr.length; i++) {
+      //   let eachLoopVer = infoLangArr[i].version;
+      //   if (eachLoopVer <= crtVersion) {
+      //     break;
+      //   } else {
+      //     let releaseNotesFile = path.join(META_DIR, 'versions', info.lang, `${eachLoopVer}.md`);
+      //     if (!fs.existsSync(releaseNotesFile)) {
+      //       logger.error('release notes not found');
+      //       fn_returnEmpty();
+      //       return;
+      //     }
+      //     let eachLoopReleaseNotes = fs.readFileSync(releaseNotesFile, 'utf8');
+      //     recentReleaseNotesArr.push({
+      //       version: eachLoopVer,
+      //       content: eachLoopReleaseNotes,
+      //     });
+      //   }
+      // }
       res.send({
         content: 'this is URL_RELEASE_GET_INFO',
       } satisfies SysResponse<any>);
