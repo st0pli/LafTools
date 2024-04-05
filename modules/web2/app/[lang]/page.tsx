@@ -11,6 +11,7 @@ import _, { random } from "lodash";
 import { notFound, useParams, useSearchParams } from "next/navigation";
 import InnerHome from '../home'
 import { usePathname } from 'next/navigation';
+import '../job'
 import React, { } from "react";
 import { PageProps, PortalDefinitionType, TopMainCategoryNavList } from '@/app/__CORE__/meta/pages'
 import getAuthInfo, { AuthInfo } from "@/app/__CORE__/containers/GrailLayoutWithUser/actions/handleAuthInfo";

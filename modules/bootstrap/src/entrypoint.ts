@@ -1,19 +1,34 @@
+/**
+ * Usages:
+ *  node ./entrypoint.ts --type=web2|desktop2
+ */
+
 import fs from "fs";
 import path from "path";
 import { getAppBootstrapInternalDir } from "./share-copy/appdir";
+import { ModuleType } from "./constant";
+import web2 from "./items/web2";
+import desktop2 from "./items/desktop2";
 
-// argument:
-// 1. --module=web2|desktop2
+let runType: ModuleType | null = null;
+process.argv.forEach((val, index) => {
+  if (val.startsWith("--type=")) {
+    runType = val.substr(7).trim() as any;
+  }
+});
+export type TypeRunItem = { load: () => any; versionCheck: () => any };
+let runItems: {
+  [key: string]: TypeRunItem;
+} = {
+  web2: web2,
+  desktop2: desktop2,
+};
 
-// export type ModuleType = "web2" | "desktop2";
+let runItem = runItems[runType];
+if (!runItem) {
+  console.error("Invalid runType", runType);
+  process.exit(1);
+}
 
-// export const LafToolsHomePath = ".laftools";
-
-let bootstrapInternalDir = getAppBootstrapInternalDir();
-console.log("entrypoint", bootstrapInternalDir);
-
-let currentDIRName = __dirname;
-let defaultServerEntry = path.join(currentDIRName, "..", "core", "server.js");
-
-// start launching the server
-require(defaultServerEntry);
+runItem.load();
+runItem.versionCheck();

@@ -300,6 +300,14 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
         )
     }
 
+    do-test-all(){
+        (
+            cd $LAFTOOLS_ROOT/pipeline
+            chmod +x ./test-all.sh
+            ./test-all.sh
+        )
+    }
+
     docker-all(){
         # check if docker command is available
         if [ -z $(which docker) ]; then
@@ -325,6 +333,7 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
     refining
     # package as zip and tar.gz
     package-all
+    do-test-all
     # build docker images
     docker-all
     

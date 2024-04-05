@@ -14,4 +14,4 @@ else
     # PATH=./bin/node/bin:$PATH
 fi
 
-node ./boot/entrypoint.js
+node ./boot/entrypoint.js --type=web2
