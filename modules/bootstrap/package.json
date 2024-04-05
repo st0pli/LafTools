@@ -11,11 +11,18 @@
   "devDependencies": {
     "@swc/cli": "^0.1.57",
     "@swc/core": "^1.2.220",
+    "@vitejs/plugin-react": "^4.2.1",
     "ts-jest": "^28.0.7",
     "ts-node": "^10.9.1",
     "tsc-alias": "^1.7.0",
     "tsconfig-paths": "^4.0.0",
-    "typescript": "^4.7.4"
+    "tslib": "^2.6.2",
+    "typescript": "^4.7.4",
+    "vite": "^5.1.6",
+    "vite-bundle-visualizer": "^1.0.0",
+    "vite-plugin-top-level-await": "^1.4.1",
+    "vite-plugin-wasm": "^3.3.0",
+    "vitest": "^1.2.2"
   },
   "keywords": [],
   "author": "",
