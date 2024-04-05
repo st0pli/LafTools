@@ -8,6 +8,5 @@ read -p "Do you want to push the tag $tagName to the remote repository? (y/n)" -
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-    # git push origin $tagName
-    echo "not yet supported"
+    git push origin $tagName
 fi

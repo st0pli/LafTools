@@ -51,6 +51,22 @@ jobs:
           chmod +x ./test-all.sh
           ./test-all.sh
 
+      - name: Build and push Docker images
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          platforms: linux/amd64
+          push: true
+          tags: codegentoolbox/laftools-linux-x64:v1.9.9-beta
+
+      - name: Build and push Docker images
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          platforms: linux/arm64
+          push: true
+          tags: codegentoolbox/laftools-linux-arm64:v1.9.9-beta
+
       - name: US Pre Release 1
         uses: appleboy/ssh-action@master
         with:
