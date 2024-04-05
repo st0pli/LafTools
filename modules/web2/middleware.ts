@@ -7,10 +7,10 @@ import queryString from "query-string";
 import { I18nItem } from "./app/__CORE__/config/i18n";
 import { fn_Geti18n } from "./app/[lang]/client/src/i18n-pure";
 
-let DFTLOCALE = process.env.DFTLOCALE;
+let dftLocaleStr = process.env.DFTLOCALE;
 let LAFREGION = process.env.LAFREGION; // CN or US
-if (!DFTLOCALE) {
-  DFTLOCALE = "en_US";
+if (!dftLocaleStr) {
+  dftLocaleStr = "en_US";
 }
 let _ = {
   every: (a: any, b: any) => {
@@ -33,7 +33,7 @@ export type LocaleType = {
 let i18nItems = fn_Geti18n((a, b) => b[1]);
 let zhCNI18nItem = i18nItems.find((x) => x.Value === "zh_CN");
 let enUSI18nItem = i18nItems.find((x) => x.Value === "en_US");
-let dftI18nItem = i18nItems.find((x) => x.Value === DFTLOCALE);
+let dftI18nItem = i18nItems.find((x) => x.Value === dftLocaleStr + "");
 if (!zhCNI18nItem || !enUSI18nItem) {
   throw new Error("regular item not found, please check " + "");
 }
@@ -104,7 +104,7 @@ export function middleware(request: NextRequest) {
   requestHeaders.set("x-path", request.nextUrl.pathname);
   const thatHostname = req.headers["x-forwarded-host"] || req.nextUrl.hostname;
   requestHeaders.set("x-hostname", thatHostname);
-  let finalLocaleObject: LocaleType = DFTLOCALE;
+  let finalLocaleObject: LocaleType = dftLocale;
   let a = request.nextUrl.search;
   requestHeaders.set("x-search", a);
 
