@@ -70,30 +70,30 @@ export class ReleaseRoute implements Routes {
         fn_returnEmpty();
         return;
       }
-      let infoLangArr: {
-        version: string;
-        date: string;
-      }[] = require(infoLangVerListFile);
+      // let infoLangArr: {
+      //   version: string;
+      //   date: string;
+      // }[] = require(infoLangVerListFile);
 
-      let recentReleaseNotesArr: TypeRecentReleaseNotes[] = [];
-      for (let i = 0; i < infoLangArr.length; i++) {
-        let eachLoopVer = infoLangArr[i].version;
-        if (eachLoopVer <= crtVersion) {
-          break;
-        } else {
-          let releaseNotesFile = path.join(META_DIR, 'versions', info.lang, `${eachLoopVer}.md`);
-          if (!fs.existsSync(releaseNotesFile)) {
-            logger.error('release notes not found');
-            fn_returnEmpty();
-            return;
-          }
-          let eachLoopReleaseNotes = fs.readFileSync(releaseNotesFile, 'utf8');
-          recentReleaseNotesArr.push({
-            version: eachLoopVer,
-            content: eachLoopReleaseNotes,
-          });
-        }
-      }
+      // let recentReleaseNotesArr: TypeRecentReleaseNotes[] = [];
+      // for (let i = 0; i < infoLangArr.length; i++) {
+      //   let eachLoopVer = infoLangArr[i].version;
+      //   if (eachLoopVer <= crtVersion) {
+      //     break;
+      //   } else {
+      //     let releaseNotesFile = path.join(META_DIR, 'versions', info.lang, `${eachLoopVer}.md`);
+      //     if (!fs.existsSync(releaseNotesFile)) {
+      //       logger.error('release notes not found');
+      //       fn_returnEmpty();
+      //       return;
+      //     }
+      //     let eachLoopReleaseNotes = fs.readFileSync(releaseNotesFile, 'utf8');
+      //     recentReleaseNotesArr.push({
+      //       version: eachLoopVer,
+      //       content: eachLoopReleaseNotes,
+      //     });
+      //   }
+      // }
       res.send({
         content: {
           anyUpdate: true,
@@ -104,7 +104,7 @@ export class ReleaseRoute implements Routes {
               pkgURL: `${crtHost}/${latestVer}/${fileNameInURL}`,
               fileName: fileNameInURL,
             },
-            recentReleaseNotes: recentReleaseNotesArr,
+            // recentReleaseNotes: recentReleaseNotesArr,
           },
         },
       } satisfies SysResponse<ReleaseLatestResponse>);
