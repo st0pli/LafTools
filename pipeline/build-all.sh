@@ -18,11 +18,10 @@ fi
 echo "[I] crtVersion: $crtVersion"
 
 echo "[I] preparing for dev copy files"
-(
-    cd $LAFTOOLS_ROOT/pipeline
-    chmod +x ./dev-sync-copy-files.sh
-    ./dev-sync-copy-files.sh
-)
+
+cd $LAFTOOLS_ROOT/pipeline
+chmod +x ./dev-sync-copy-files.sh
+./dev-sync-copy-files.sh
 
 echo "[I] LafTools is located at $LAFTOOLS_ROOT"
 cd $LAFTOOLS_ROOT

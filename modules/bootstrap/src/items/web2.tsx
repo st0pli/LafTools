@@ -1,11 +1,11 @@
-import { TypeRunItem } from "@/items";
+import { TypeRunItem } from "../items";
 import path from 'path'
-import { API_SERVER_URL, core_sendAPIRequestInBE, getLAFRegion } from "@/web2share-copy/api";
-import { isDevEnv, isTestEnv } from "@/web2share-copy/env";
-import { getAppBootstrapInternalDir } from "@/web2share-copy/appdir";
-import { readPkgInfoFromDir } from "@/web2share-copy/pkginfo";
-import { URL_RELEASE_GET_ALL, URL_RELEASE_GET_LATEST } from "@/web2share-copy/server_urls";
-import { ReleaseLatestResponse, SysResponse } from "@/web2share-copy/server_constants";
+import { API_SERVER_URL, core_sendAPIRequestInBE, getLAFRegion } from "../web2share-copy/api";
+import { isDevEnv, isTestEnv } from "../web2share-copy/env";
+import { getAppBootstrapInternalDir } from "../web2share-copy/appdir";
+import { readPkgInfoFromDir } from "../web2share-copy/pkginfo";
+import { URL_RELEASE_GET_ALL, URL_RELEASE_GET_LATEST } from "../web2share-copy/server_urls";
+import { ReleaseLatestResponse, SysResponse } from "../web2share-copy/server_constants";
 
 let currentDIRName = __dirname;
 let minimalDIRPath = isDevEnv() || isTestEnv() ? path.join(
