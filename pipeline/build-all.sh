@@ -279,14 +279,14 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
             tar -xzf node-v20.12.0-linux-x64.tar.gz
             find . -iname "*.sh" -exec chmod 755 {} \;
             ls -ahlrt
-            set -e
+
             echo "[I] build docker image for $platformName"
             docker build -t codegentoolbox/laftools-$platformName:$crtVersion -f ./Dockerfile .
             if [ $? -ne 0 ]; then
                 echo "[E] docker build failed for $platformName"
                 exit 1
             fi
-            docker login -u $DOCKER_USER -p $DOCKER_PASS
+
             docker push codegentoolbox/laftools-$platformName:$crtVersion
 
             if [ $platformName == "linux-x64" ]; then

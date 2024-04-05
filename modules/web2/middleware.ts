@@ -104,7 +104,7 @@ export function middleware(request: NextRequest) {
   requestHeaders.set("x-path", request.nextUrl.pathname);
   const thatHostname = req.headers["x-forwarded-host"] || req.nextUrl.hostname;
   requestHeaders.set("x-hostname", thatHostname);
-  let finalLocaleObject: LocaleType = dftLocale;
+  let finalLocaleObject: LocaleType = DFTLOCALE;
   let a = request.nextUrl.search;
   requestHeaders.set("x-search", a);
 
