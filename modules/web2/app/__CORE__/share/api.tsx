@@ -23,7 +23,9 @@ export let core_sendAPIRequestInBE = async (info: APITypeInfo, url: string, requ
     if (!url.startsWith('/')) {
         url = '/' + url;
     }
-    let res = await fetch(API_SERVER_URL + '/v3' + url, {
+    const finURL = API_SERVER_URL + '/v3' + url
+    console.log('core_sendAPIRequestInBE: ', finURL)
+    let res = await fetch(finURL, {
         headers: {
             [HEADER_X_LAF_REGION]: info.region,
             [HEADER_X_LAF_LANG]: info.lang,

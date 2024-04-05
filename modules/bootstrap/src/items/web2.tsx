@@ -4,7 +4,7 @@ import { API_SERVER_URL, core_sendAPIRequestInBE, getLAFRegion } from "@/web2sha
 import { isDevEnv, isTestEnv } from "@/web2share-copy/env";
 import { getAppBootstrapInternalDir } from "@/web2share-copy/appdir";
 import { readPkgInfoFromDir } from "@/web2share-copy/pkginfo";
-import { URL_RELEASE_GET_ALL } from "@/web2share-copy/server_urls";
+import { URL_RELEASE_GET_ALL, URL_RELEASE_GET_LATEST } from "@/web2share-copy/server_urls";
 
 let currentDIRName = __dirname;
 let minimalDIRPath = isDevEnv() || isTestEnv() ? path.join(
@@ -22,12 +22,13 @@ let pkgInfo = readPkgInfoFromDir(minimalDIRPath);
 export let getLatestVersionResponse = async () => {
     let lang = process.env.APPLANG || 'en_US';
     // TODO: actually, lang is not required in backstaged jobs. If users wanna check release notes, the lang can be selected in the page rather than this job
-    await core_sendAPIRequestInBE({
+    let r = await core_sendAPIRequestInBE({
         lang: lang,
         version: pkgInfo.version,
         platform: pkgInfo.platform,
         region: getLAFRegion(lang),
-    }, URL_RELEASE_GET_ALL, {})
+    }, URL_RELEASE_GET_LATEST, {})
+    return await r.json()
 }
 
 export let job_runVersionCheck = async () => {
