@@ -59,40 +59,6 @@ LafTools Team
 
 しかし、LafTools の作者として、私は今のところその話をしたくないのです (笑)。
 
-# 🎷 インスピレーション
-
-このプロジェクトは主に次のミュージシャンからインスピレーションを受けています。
-
-- Joe Pass
-- The Manhattan Transfer
-- Laura Shigihara
-- Asleep at the Wheel
-- Khalil Fong
-- Li Rong Hao
-- Chet Atkins
-- Les Paul
-- Tommy Emmanuel
-- Martin Taylor
-- Frédéric Chopin
-- Claude Debussy
-- Oscar Peterson
-- Hugo Strasser
-- Jay Chou
-- Stefanie Sun
-- David Tao
-- Jacky Cheung
-- Teresa Teng
-- Jack Johnson
-- Harry Styles(As It Was)
-- Lovebugs
-
-特に、「ジョー・パスとの夕べ」（1994年）での名手**ジョー・パス**による**サテン・ドール**のパフォーマンスは、私にとって強さと自信の源であり、人生のどんなジレンマにも立ち向かう力を与えてくれました。 。
-
-Thank you!
-
-Ryan Laf  
-Mar. 20th, 2021
-
 # 🌱 名前は何ですか？ (Old explanation)
 
 #### _The Tools for Laffin' At Life_

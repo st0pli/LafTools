@@ -57,40 +57,6 @@ ${Dot("vn8G5weVs","It's a magic number which is comprised of 3 + 98 + 99.")}
 
 ${Dot("JseUpWpV6","But as LafTools's author, I prefer not to tell the story for now, haha.")}
 
-# 🎷 ${Dot("m3wnIDvAF","Inspiration")}
-
-${Dot("t5DDvnfna","This project is primarily inspired by the following musicians:")}
-
-- Joe Pass
-- The Manhattan Transfer
-- Laura Shigihara
-- Asleep at the Wheel
-- Khalil Fong
-- Li Rong Hao
-- Chet Atkins
-- Les Paul
-- Tommy Emmanuel
-- Martin Taylor
-- Frédéric Chopin
-- Claude Debussy
-- Oscar Peterson
-- Hugo Strasser
-- Jay Chou
-- Stefanie Sun
-- David Tao
-- Jacky Cheung
-- Teresa Teng
-- Jack Johnson
-- Harry Styles(As It Was)
-- Lovebugs
-
-${Dot("ZdiIi8j","Specifically, the performance of **Satin Doll** by the virtuoso **Joe Pass** in 'An Evening With Joe Pass' (1994) has been a source of strength and confidence for me, empowering me to face any dilemma in life.")}
-
-Thank you!
-
-Ryan Laf  
-Mar. 20th, 2021
-
 # 🌱 ${Dot("I-Zaii3HZ","What's with the name?")} (Old explanation)
 
 #### _The Tools for Laffin' At Life_

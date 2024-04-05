@@ -138,10 +138,35 @@ cd pipeline
 
 當然，還有其他開源項目受益並促進了這個項目，我無法在這一部分中詳細介紹；如果沒有這些專案和這些人才開發人員的努力，LafTools工具箱就不可能實現。
 
-Thank you!
+# 🎷 靈感
 
-Ryan Laf  
-2023年2月2日
+這個項目主要受到以下音樂家的啟發：
+
+- Joe Pass
+- The Manhattan Transfer
+- Laura Shigihara
+- Asleep at the Wheel
+- Khalil Fong
+- Li Rong Hao
+- Chet Atkins
+- Les Paul
+- Tommy Emmanuel
+- Martin Taylor
+- Frank Vignola
+- Frédéric Chopin
+- Claude Debussy
+- Oscar Peterson
+- Hugo Strasser
+- Jay Chou
+- Stefanie Sun
+- David Tao
+- Jacky Cheung
+- Teresa Teng
+- Jack Johnson
+- Harry Styles(As It Was)
+- Lovebugs
+
+具體來說，演奏家**喬·帕斯**在《與喬·帕斯的夜晚》（1994）中演奏的**緞子娃娃**給了我力量和信心的源泉，讓我能夠面對生活中的任何困境。 。
 
 # 🪪 License
 

@@ -138,10 +138,35 @@ cd pipeline
 
 確かに、このプロジェクトに利益をもたらし、促進した他のオープンソース プロジェクトもありますが、このパートでは詳しく説明しませんでした。これらのプロジェクトと人材開発者の努力がなければ、LafTools は不可能でした。
 
-Thank you!
+# 🎷 インスピレーション
 
-Ryan Laf  
-2023 年 2 月 2 日
+このプロジェクトは主に次のミュージシャンからインスピレーションを受けています。
+
+- Joe Pass
+- The Manhattan Transfer
+- Laura Shigihara
+- Asleep at the Wheel
+- Khalil Fong
+- Li Rong Hao
+- Chet Atkins
+- Les Paul
+- Tommy Emmanuel
+- Martin Taylor
+- Frank Vignola
+- Frédéric Chopin
+- Claude Debussy
+- Oscar Peterson
+- Hugo Strasser
+- Jay Chou
+- Stefanie Sun
+- David Tao
+- Jacky Cheung
+- Teresa Teng
+- Jack Johnson
+- Harry Styles(As It Was)
+- Lovebugs
+
+特に、「ジョー・パスとの夕べ」（1994年）での名手**ジョー・パス**による**サテン・ドール**のパフォーマンスは、私にとって強さと自信の源であり、人生のどんなジレンマにも立ち向かう力を与えてくれました。 。
 
 # 🪪 License
 

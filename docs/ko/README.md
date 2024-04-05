@@ -138,10 +138,35 @@ cd pipeline
 
 확실히 이 프로젝트에 도움이 되고 촉진된 다른 오픈 소스 프로젝트가 있지만 이 부분에서는 자세히 설명할 수 없습니다. 이러한 프로젝트와 인재 개발자들의 노력이 없었다면 LafTools는 불가능했을 것입니다.
 
-Thank you!
+# 🎷 영감
 
-Ryan Laf  
-2023년 2월 2일
+이 프로젝트는 주로 다음 음악가들로부터 영감을 받았습니다.
+
+- Joe Pass
+- The Manhattan Transfer
+- Laura Shigihara
+- Asleep at the Wheel
+- Khalil Fong
+- Li Rong Hao
+- Chet Atkins
+- Les Paul
+- Tommy Emmanuel
+- Martin Taylor
+- Frank Vignola
+- Frédéric Chopin
+- Claude Debussy
+- Oscar Peterson
+- Hugo Strasser
+- Jay Chou
+- Stefanie Sun
+- David Tao
+- Jacky Cheung
+- Teresa Teng
+- Jack Johnson
+- Harry Styles(As It Was)
+- Lovebugs
+
+특히 'An Evening With Joe Pass'(1994)에서 거장 **Joe Pass**의 **Satin Doll** 연주는 나에게 힘과 자신감의 원천이 되었으며, 인생의 어떤 딜레마에도 직면할 수 있는 힘을 주었습니다. .
 
 # 🪪 License
 

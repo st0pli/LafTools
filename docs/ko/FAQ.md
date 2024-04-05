@@ -59,40 +59,6 @@ LafTools Team
 
 하지만 LafTools의 작가로서 저는 지금은 그 이야기를 하고 싶지 않습니다. 하하.
 
-# 🎷 영감
-
-이 프로젝트는 주로 다음 음악가들로부터 영감을 받았습니다.
-
-- Joe Pass
-- The Manhattan Transfer
-- Laura Shigihara
-- Asleep at the Wheel
-- Khalil Fong
-- Li Rong Hao
-- Chet Atkins
-- Les Paul
-- Tommy Emmanuel
-- Martin Taylor
-- Frédéric Chopin
-- Claude Debussy
-- Oscar Peterson
-- Hugo Strasser
-- Jay Chou
-- Stefanie Sun
-- David Tao
-- Jacky Cheung
-- Teresa Teng
-- Jack Johnson
-- Harry Styles(As It Was)
-- Lovebugs
-
-특히 'An Evening With Joe Pass'(1994)에서 거장 **Joe Pass**의 **Satin Doll** 연주는 나에게 힘과 자신감의 원천이 되었으며, 인생의 어떤 딜레마에도 직면할 수 있는 힘을 주었습니다. .
-
-Thank you!
-
-Ryan Laf  
-Mar. 20th, 2021
-
 # 🌱 이름이 뭐예요? (Old explanation)
 
 #### _The Tools for Laffin' At Life_

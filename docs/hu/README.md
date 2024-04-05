@@ -138,10 +138,35 @@ Ez a projekt nem jöhetett volna létre fantasztikus nyílt forráskódú projek
 
 Az biztos, hogy vannak más nyílt forráskódú projektek is, amelyek hasznot húztak ennek a projektnek, és ezeket ebben a részben nem tudtam részletezni; E projektek és a tehetségfejlesztők erőfeszítései nélkül a LafTools nem jöhetett volna létre.
 
-Thank you!
+# 🎷 Ihlet
 
-Ryan Laf  
-2023. február 2
+Ezt a projektet elsősorban a következő zenészek inspirálták:
+
+- Joe Pass
+- The Manhattan Transfer
+- Laura Shigihara
+- Asleep at the Wheel
+- Khalil Fong
+- Li Rong Hao
+- Chet Atkins
+- Les Paul
+- Tommy Emmanuel
+- Martin Taylor
+- Frank Vignola
+- Frédéric Chopin
+- Claude Debussy
+- Oscar Peterson
+- Hugo Strasser
+- Jay Chou
+- Stefanie Sun
+- David Tao
+- Jacky Cheung
+- Teresa Teng
+- Jack Johnson
+- Harry Styles(As It Was)
+- Lovebugs
+
+Pontosabban, a virtuóz **Joe Pass** **Satin Doll** előadása az „An Evening With Joe Pass”-ban (1994) erő és magabiztosság forrása volt számomra, és képessé tett arra, hogy az élet bármely dilemmájával szembenézzek. .
 
 # 🪪 License
 

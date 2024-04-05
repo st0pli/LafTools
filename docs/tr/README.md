@@ -138,10 +138,35 @@ Bu proje, kişisel olarak en derin minnettarlığımı ifade etmek istediğim mu
 
 Elbette bu projeye fayda sağlayan ve kolaylaştıran, bu bölümde detaylandıramayacağım başka açık kaynaklı projeler de var; Bu projeler ve yetenek geliştiricilerin çabaları olmasaydı LafTools mümkün olmazdı.
 
-Thank you!
+# 🎷 Esin
 
-Ryan Laf  
-2 Şubat 2023
+Bu proje öncelikle aşağıdaki müzisyenlerden esinlenmiştir:
+
+- Joe Pass
+- The Manhattan Transfer
+- Laura Shigihara
+- Asleep at the Wheel
+- Khalil Fong
+- Li Rong Hao
+- Chet Atkins
+- Les Paul
+- Tommy Emmanuel
+- Martin Taylor
+- Frank Vignola
+- Frédéric Chopin
+- Claude Debussy
+- Oscar Peterson
+- Hugo Strasser
+- Jay Chou
+- Stefanie Sun
+- David Tao
+- Jacky Cheung
+- Teresa Teng
+- Jack Johnson
+- Harry Styles(As It Was)
+- Lovebugs
+
+Özellikle, usta **Joe Pass**'in 'An Evening With Joe Pass' (1994) filmindeki **Satin Doll** performansı benim için bir güç ve güven kaynağı oldu ve hayattaki her türlü ikilemle yüzleşmemde bana güç verdi. .
 
 # 🪪 License
 

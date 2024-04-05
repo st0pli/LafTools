@@ -59,40 +59,6 @@ LafTools Team
 
 Ma come autore di LafTools, preferisco non raccontare la storia per ora, ahah.
 
-# 🎷 Ispirazione
-
-Questo progetto è ispirato principalmente dai seguenti musicisti:
-
-- Joe Pass
-- The Manhattan Transfer
-- Laura Shigihara
-- Asleep at the Wheel
-- Khalil Fong
-- Li Rong Hao
-- Chet Atkins
-- Les Paul
-- Tommy Emmanuel
-- Martin Taylor
-- Frédéric Chopin
-- Claude Debussy
-- Oscar Peterson
-- Hugo Strasser
-- Jay Chou
-- Stefanie Sun
-- David Tao
-- Jacky Cheung
-- Teresa Teng
-- Jack Johnson
-- Harry Styles(As It Was)
-- Lovebugs
-
-Nello specifico, l'esecuzione di **Satin Doll** del virtuoso **Joe Pass** in 'An Evening With Joe Pass' (1994) è stata per me fonte di forza e fiducia, permettendomi di affrontare qualsiasi dilemma della vita. .
-
-Thank you!
-
-Ryan Laf  
-Mar. 20th, 2021
-
 # 🌱 Cosa significa il nome? (Old explanation)
 
 #### _The Tools for Laffin' At Life_

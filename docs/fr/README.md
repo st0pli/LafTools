@@ -138,10 +138,35 @@ Ce projet n'aurait pas été possible sans de superbes projets open source auxqu
 
 Bien sûr, il existe d'autres projets open source qui ont bénéficié et facilité ce projet, que je n'ai pas pu détailler dans cette partie ; Sans ces projets et les efforts de ces développeurs de talents, LafTools n'aurait pas été possible.
 
-Thank you!
+# 🎷 Inspiration
 
-Ryan Laf  
-2 février 2023
+Ce projet s'inspire principalement des musiciens suivants :
+
+- Joe Pass
+- The Manhattan Transfer
+- Laura Shigihara
+- Asleep at the Wheel
+- Khalil Fong
+- Li Rong Hao
+- Chet Atkins
+- Les Paul
+- Tommy Emmanuel
+- Martin Taylor
+- Frank Vignola
+- Frédéric Chopin
+- Claude Debussy
+- Oscar Peterson
+- Hugo Strasser
+- Jay Chou
+- Stefanie Sun
+- David Tao
+- Jacky Cheung
+- Teresa Teng
+- Jack Johnson
+- Harry Styles(As It Was)
+- Lovebugs
+
+Plus précisément, la performance de **Satin Doll** du virtuose **Joe Pass** dans « An Evening With Joe Pass » (1994) a été pour moi une source de force et de confiance, me permettant de faire face à tous les dilemmes de la vie. .
 
 # 🪪 License
 

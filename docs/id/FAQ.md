@@ -59,40 +59,6 @@ Itu adalah angka ajaib yang terdiri dari 3 + 98 + 99.
 
 Tapi sebagai penulis LafTools, saya memilih untuk tidak menceritakan kisahnya dulu, haha.
 
-# 🎷 Inspirasi
-
-Proyek ini terutama terinspirasi oleh musisi berikut:
-
-- Joe Pass
-- The Manhattan Transfer
-- Laura Shigihara
-- Asleep at the Wheel
-- Khalil Fong
-- Li Rong Hao
-- Chet Atkins
-- Les Paul
-- Tommy Emmanuel
-- Martin Taylor
-- Frédéric Chopin
-- Claude Debussy
-- Oscar Peterson
-- Hugo Strasser
-- Jay Chou
-- Stefanie Sun
-- David Tao
-- Jacky Cheung
-- Teresa Teng
-- Jack Johnson
-- Harry Styles(As It Was)
-- Lovebugs
-
-Secara khusus, penampilan **Satin Doll** oleh virtuoso **Joe Pass** dalam 'An Evening With Joe Pass' (1994) telah menjadi sumber kekuatan dan kepercayaan diri bagi saya, memberdayakan saya untuk menghadapi dilema apa pun dalam hidup. .
-
-Thank you!
-
-Ryan Laf  
-Mar. 20th, 2021
-
 # 🌱 Ada apa dengan namanya? (Old explanation)
 
 #### _The Tools for Laffin' At Life_

@@ -59,40 +59,6 @@ Ez egy varázslatos szám, amely 3 + 98 + 99-ből áll.
 
 De mint a LafTools szerzője, most inkább nem mesélem el a történetet, haha.
 
-# 🎷 Ihlet
-
-Ezt a projektet elsősorban a következő zenészek inspirálták:
-
-- Joe Pass
-- The Manhattan Transfer
-- Laura Shigihara
-- Asleep at the Wheel
-- Khalil Fong
-- Li Rong Hao
-- Chet Atkins
-- Les Paul
-- Tommy Emmanuel
-- Martin Taylor
-- Frédéric Chopin
-- Claude Debussy
-- Oscar Peterson
-- Hugo Strasser
-- Jay Chou
-- Stefanie Sun
-- David Tao
-- Jacky Cheung
-- Teresa Teng
-- Jack Johnson
-- Harry Styles(As It Was)
-- Lovebugs
-
-Pontosabban, a virtuóz **Joe Pass** **Satin Doll** előadása az „An Evening With Joe Pass”-ban (1994) erő és magabiztosság forrása volt számomra, és képessé tett arra, hogy az élet bármely dilemmájával szembenézzek. .
-
-Thank you!
-
-Ryan Laf  
-Mar. 20th, 2021
-
 # 🌱 Mi van a névvel? (Old explanation)
 
 #### _The Tools for Laffin' At Life_

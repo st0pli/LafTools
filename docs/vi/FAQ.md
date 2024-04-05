@@ -59,40 +59,6 @@ LafTools Team
 
 Nhưng với tư cách là tác giả của LafTools, tôi không muốn kể câu chuyện vào lúc này, haha.
 
-# 🎷 Cảm hứng
-
-Dự án này chủ yếu được lấy cảm hứng từ các nhạc sĩ sau:
-
-- Joe Pass
-- The Manhattan Transfer
-- Laura Shigihara
-- Asleep at the Wheel
-- Khalil Fong
-- Li Rong Hao
-- Chet Atkins
-- Les Paul
-- Tommy Emmanuel
-- Martin Taylor
-- Frédéric Chopin
-- Claude Debussy
-- Oscar Peterson
-- Hugo Strasser
-- Jay Chou
-- Stefanie Sun
-- David Tao
-- Jacky Cheung
-- Teresa Teng
-- Jack Johnson
-- Harry Styles(As It Was)
-- Lovebugs
-
-Cụ thể, màn trình diễn **Satin Doll** của nghệ sĩ điêu luyện **Joe Pass** trong phim 'An Evening With Joe Pass' (1994) đã tiếp thêm sức mạnh và sự tự tin cho tôi, tiếp thêm sức mạnh cho tôi để đối mặt với mọi tình huống khó xử trong cuộc sống. .
-
-Thank you!
-
-Ryan Laf  
-Mar. 20th, 2021
-
 # 🌱 Có chuyện gì với cái tên vậy? (Old explanation)
 
 #### _The Tools for Laffin' At Life_

@@ -59,40 +59,6 @@ Het is een magisch getal dat bestaat uit 3 + 98 + 99.
 
 Maar als auteur van LafTools vertel ik het verhaal voorlopig liever niet, haha.
 
-# 🎷 Inspiratie
-
-Dit project is voornamelijk geïnspireerd door de volgende muzikanten:
-
-- Joe Pass
-- The Manhattan Transfer
-- Laura Shigihara
-- Asleep at the Wheel
-- Khalil Fong
-- Li Rong Hao
-- Chet Atkins
-- Les Paul
-- Tommy Emmanuel
-- Martin Taylor
-- Frédéric Chopin
-- Claude Debussy
-- Oscar Peterson
-- Hugo Strasser
-- Jay Chou
-- Stefanie Sun
-- David Tao
-- Jacky Cheung
-- Teresa Teng
-- Jack Johnson
-- Harry Styles(As It Was)
-- Lovebugs
-
-Vooral de uitvoering van **Satin Doll** door de virtuoos **Joe Pass** in 'An Evening With Joe Pass' (1994) is voor mij een bron van kracht en vertrouwen geweest, waardoor ik elk dilemma in het leven het hoofd kan bieden. .
-
-Thank you!
-
-Ryan Laf  
-Mar. 20th, 2021
-
 # 🌱 Wat is er met de naam? (Old explanation)
 
 #### _The Tools for Laffin' At Life_

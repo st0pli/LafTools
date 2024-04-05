@@ -59,40 +59,6 @@ LafTools Team
 
 但身為LafTools工具箱的作者，我暫時不想講這個故事，哈哈。
 
-# 🎷 靈感
-
-這個項目主要受到以下音樂家的啟發：
-
-- Joe Pass
-- The Manhattan Transfer
-- Laura Shigihara
-- Asleep at the Wheel
-- Khalil Fong
-- Li Rong Hao
-- Chet Atkins
-- Les Paul
-- Tommy Emmanuel
-- Martin Taylor
-- Frédéric Chopin
-- Claude Debussy
-- Oscar Peterson
-- Hugo Strasser
-- Jay Chou
-- Stefanie Sun
-- David Tao
-- Jacky Cheung
-- Teresa Teng
-- Jack Johnson
-- Harry Styles(As It Was)
-- Lovebugs
-
-具體來說，演奏家**喬·帕斯**在《與喬·帕斯的夜晚》（1994）中演奏的**緞子娃娃**給了我力量和信心的源泉，讓我能夠面對生活中的任何困境。 。
-
-Thank you!
-
-Ryan Laf  
-Mar. 20th, 2021
-
 # 🌱 名字是怎麼回事？ (Old explanation)
 
 #### _The Tools for Laffin' At Life_
