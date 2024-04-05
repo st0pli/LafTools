@@ -1,4 +1,4 @@
-import { TypeRunItem } from "@/entrypoint";
+import { TypeRunItem } from "@/items";
 import { getAppBootstrapInternalDir } from "../share-copy/appdir";
 import path from 'path'
 

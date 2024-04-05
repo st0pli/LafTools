@@ -58,19 +58,3 @@ jobs:
           cd ./pipeline
           chmod +x ./build-all.sh
           ./build-all.sh "${{steps.get_version.outputs.VERSION}}"
-
-      - name: Build and push Docker images
-        uses: docker/build-push-action@v3
-        with:
-          context: .
-          platforms: linux/amd64
-          push: true
-          tags: codegentoolbox/laftools-linux-x64:${{steps.get_version.outputs.VERSION}}
-
-      - name: Build and push Docker images
-        uses: docker/build-push-action@v3
-        with:
-          context: .
-          platforms: linux/arm64
-          push: true
-          tags: codegentoolbox/laftools-linux-arm64:${{steps.get_version.outputs.VERSION}}
