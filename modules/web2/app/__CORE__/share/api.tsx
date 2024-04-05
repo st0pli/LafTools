@@ -1,7 +1,8 @@
+import { isDevEnv, isTestEnv } from "./env";
 import { HEADER_X_LAF_LANG, HEADER_X_LAF_PLATFORM, HEADER_X_LAF_REGION, HEADER_X_LAF_VERSION } from "./server_constants";
 
 let isDev = process.env.NODE_ENV === "development";
-export const API_SERVER_URL = isDev ? "http://127.0.0.1:2016" : "https://api.laftools.cn";
+export const API_SERVER_URL = isDevEnv() || isTestEnv() ? "http://127.0.0.1:2016" : "https://api.laftools.cn";
 
 export type APITypeInfo = {
     lang: string,
@@ -9,8 +10,16 @@ export type APITypeInfo = {
     version: string,
     region: string
 }
+export let getLAFRegion = (currentLang: string) => {
+    const LAFREGION = process.env.LAFREGION
+    let region = currentLang == 'zh_CN' ? "CN" : 'US'
+    if (LAFREGION) { // if the region is set in the env, use it
+        region = LAFREGION
+    }
+    return region
+}
 
-export let core_sendAPIRequestInBE = async (info: APITypeInfo, url: string, request: any): Promise<Response> => {
+export let core_sendAPIRequestInBE = async (info: APITypeInfo, url: string, request: Partial<Request>): Promise<Response> => {
     if (!url.startsWith('/')) {
         url = '/' + url;
     }
@@ -21,7 +30,8 @@ export let core_sendAPIRequestInBE = async (info: APITypeInfo, url: string, requ
             [HEADER_X_LAF_PLATFORM]: info.platform,
             [HEADER_X_LAF_VERSION]: info.version
         },
-        body: JSON.stringify(request),
+        ...request,
     })
     return res;
 }
+

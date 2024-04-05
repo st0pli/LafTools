@@ -7,7 +7,7 @@ import queryString from "query-string";
 import { I18nItem } from "./app/__CORE__/config/i18n";
 import { fn_Geti18n } from "./app/[lang]/client/src/i18n-pure";
 
-let dftLocaleStr = process.env.DFTLOCALE;
+let dftLocaleStr = process.env.APPLANG;
 let LAFREGION = process.env.LAFREGION; // CN or US
 if (!dftLocaleStr) {
   dftLocaleStr = "en_US";
