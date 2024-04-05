@@ -16,6 +16,8 @@ jobs:
     env:
       LAFTOOLS_ROOT: /home/runner/work/LafTools/LafTools-tag
       TAG_MODE: true
+      DOCKERUSER: ${{ secrets.DOCKERHUB_USERNAME }}
+      DOCKERTOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
 
     steps:
       - name: Checkout code
