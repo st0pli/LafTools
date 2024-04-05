@@ -1,1 +1,1 @@
-export * from '../constant';
+export * from '../web2share-copy/server_constants';

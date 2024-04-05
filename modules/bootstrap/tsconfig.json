@@ -9,7 +9,7 @@
     "emitDecoratorMetadata": true,
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "node",
-    "pretty": true,
+    "pretty": false,
     "module": "CommonJS",
     "sourceMap": true,
     "allowUnusedLabels": true,

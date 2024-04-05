@@ -5,7 +5,7 @@
 
 import fs from "fs";
 import path from "path";
-import { getAppBootstrapInternalDir } from "./share-copy/appdir";
+import { getAppBootstrapInternalDir } from "web2share/appdir";
 import { ModuleType } from "./constant";
 import web2 from "./items/web2";
 import desktop2 from "./items/desktop2";
@@ -16,7 +16,9 @@ process.argv.forEach((val, index) => {
     runType = val.substr(7).trim() as any;
   }
 });
-export type TypeRunItem = { load: () => any; versionCheck: () => any };
+export type TypeRunItem = {
+  load: (dynamicMode: boolean) => any;
+};
 export let runItems: {
   [key: string]: TypeRunItem;
 } = {

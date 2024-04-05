@@ -5,10 +5,10 @@ RUN apt-get update && \
     apt-get install -y curl 
 RUN mkdir -p /opt/app
 
-ENV PATH "/opt/app/node-v20.12.0-linux-x64/bin:${PATH}"
+ENV PATH "/opt/app/node/bin:${PATH}"
 ENV NODE_ENV production
 
-COPY ["./node-v20.12.0-linux-x64","/opt/app/node-v20.12.0-linux-x64"]
+COPY ["./node","/opt/app/node"]
 COPY ["./linux.tar.gz", "/opt/app"]
 COPY ["./bootstrap.sh","/opt/app"]
 WORKDIR "/opt/app"

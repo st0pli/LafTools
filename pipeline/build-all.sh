@@ -17,6 +17,12 @@ fi
 
 echo "[I] crtVersion: $crtVersion"
 
+echo "[I] preparing for dev copy files"
+(
+    cd $LAFTOOLS_ROOT/pipeline
+    chmod +x ./dev-sync-copy-files.sh
+    ./dev-sync-copy-files.sh
+)
 
 echo "[I] LafTools is located at $LAFTOOLS_ROOT"
 cd $LAFTOOLS_ROOT
@@ -274,22 +280,34 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
             cd $subDockerDir
             cp ../../pkg/*$platformName-minimal.tar.gz ./linux.tar.gz
             cp $LAFTOOLS_ROOT/pipeline/parcel/docker/* ./
-            rm -rf ./node-v20.12.0-linux-x64
-            curl https://cdn.npmmirror.com/binaries/node/v20.12.0/node-v20.12.0-linux-x64.tar.gz -O
-            tar -xzf node-v20.12.0-linux-x64.tar.gz
+            rm -rf ./node-v20.12.0-$platformName
+            curl https://cdn.npmmirror.com/binaries/node/v20.12.0/node-v20.12.0-$platformName.tar.gz -O
+            tar -xzf node-v20.12.0-$platformName.tar.gz
             find . -iname "*.sh" -exec chmod 755 {} \;
             ls -ahlrt
+            mv node-v20.12.0-$platformName node
 
             echo "[I] build docker image for $platformName"
             docker build -t codegentoolbox/laftools-$platformName:$crtVersion -f ./Dockerfile .
+            docker build -t codegentoolbox/laftools-$platformName:latest -f ./Dockerfile .
             if [ $? -ne 0 ]; then
                 echo "[E] docker build failed for $platformName"
                 exit 1
             fi
 
             if [ "$TAG_MODE" = "true" ]; then
+                echo "[I] will test and push docker container for $platformName"
+                (
+                    set -e
+                    echo "testing docker container for $platformName"
+                    cd $LAFTOOLS_ROOT/pipeline 
+                    chmod +x ./test-docker.sh codegentoolbox/laftools-$platformName:$crtVersion
+                    ./test-docker.sh 
+                    set +e
+                )
                 echo "[I] pushing docker image for $platformName"
                 docker push codegentoolbox/laftools-$platformName:$crtVersion
+                docker push codegentoolbox/laftools-$platformName:latest
             fi
             if [ $platformName == "linux-x64" ]; then
                 echo "[I] building other tag"
@@ -304,9 +322,15 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
 
     do-test-all(){
         (
+            set -e
             cd $LAFTOOLS_ROOT/pipeline
             chmod +x ./test-all.sh
             ./test-all.sh
+            if [ $? -ne 0 ]; then
+                echo "[E] test failed."
+                exit 1
+            fi
+            set +e
         )
     }
 

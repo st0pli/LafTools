@@ -20,9 +20,6 @@
 
 /** @type {import('next').NextConfig} */
 
-let isDev = process.env.NODE_ENV === "development";
-let API_URL = isDev ? "http://127.0.0.1:2016" : "https://api.laftools.cn";
-
 const nextConfig = {
   experimental: {
     serverComponentsExternalPackages: ["sequelize", "sequelize-typescript"],
@@ -30,10 +27,10 @@ const nextConfig = {
   output: "standalone",
   rewrites: async () => {
     return [
-      {
-        source: "/v3/:path*",
-        destination: `${API_URL}/v3/:path*`,
-      },
+      // {
+      //   source: "/v3/:path*",
+      //   destination: `${API_URL}/v3/:path*`,
+      // },
     ];
   },
   // typescript: {

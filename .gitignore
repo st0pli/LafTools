@@ -1,4 +1,6 @@
 var/log/
+share-copy2
+web2share-copy
 dist-web2
 dist-desktop
 coscli-windows.exe

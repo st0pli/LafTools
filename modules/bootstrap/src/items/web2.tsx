@@ -1,9 +1,22 @@
 import { TypeRunItem } from "@/items";
-import { getAppBootstrapInternalDir } from "../share-copy/appdir";
 import path from 'path'
+import { API_SERVER_URL } from "@/web2share-copy/api";
+import { isDevEnv } from "@/web2share-copy/env";
+import { getAppBootstrapInternalDir } from "@/web2share-copy/appdir";
 
-export default {
-    load: () => {
+export let getLatestVersionResponse = async () => {
+    await fetch(API_SERVER_URL + '/v3/release/latest', {
+
+    })
+}
+
+export let job_runVersionCheck = async () => {
+    // check version
+}
+
+let isDev = isDevEnv()
+let item: TypeRunItem = {
+    load: (dynamicMode: boolean) => {
         let bootstrapInternalDir = getAppBootstrapInternalDir();
         console.log("entrypoint", bootstrapInternalDir);
 
@@ -18,8 +31,8 @@ export default {
 
         // start launching the server
         require(defaultServerEntry);
+
+        job_runVersionCheck()
     },
-    versionCheck() {
-        //
-    },
-} satisfies TypeRunItem
+}
+export default item

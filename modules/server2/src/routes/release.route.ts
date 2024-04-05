@@ -7,7 +7,7 @@ import { ValidationMiddleware } from '@middlewares/validation.middleware';
 import { DotFn } from '@/i18n/TranslationUtils';
 import { ReleaseLatestResponse, SysResponse, TypeRecentReleaseNotes } from './_types';
 import { InfoFn } from '@/system/info';
-import { URL_RELEASE_GET_ALL, URL_RELEASE_GET_INFO, URL_RELEASE_GET_LATEST } from '@/url';
+import { URL_RELEASE_GET_ALL, URL_RELEASE_GET_INFO, URL_RELEASE_GET_LATEST } from '@/web2share-copy/server_urls';
 import path from 'path';
 import fs from 'fs';
 import { logger } from '@/utils/logger';

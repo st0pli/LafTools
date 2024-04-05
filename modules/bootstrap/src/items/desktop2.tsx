@@ -1,12 +1,11 @@
 import { TypeRunItem } from "@/items";
-import { getAppBootstrapInternalDir } from "../share-copy/appdir";
+import { getAppBootstrapInternalDir } from "@/web2share-copy/appdir";
 import path from 'path'
 
-export default {
+let item = {
     load: () => {
         //
     },
-    versionCheck() {
-        //
-    },
 } satisfies TypeRunItem
+
+export default item

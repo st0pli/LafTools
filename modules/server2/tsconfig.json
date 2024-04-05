@@ -12,6 +12,7 @@
     "module": "commonjs",
     "pretty": true,
     "sourceMap": true,
+    "jsx": "react",
     "declaration": true,
     "outDir": "dist",
     "allowJs": true,
@@ -35,6 +36,6 @@
       "@utils/*": ["utils/*"]
     }
   },
-  "include": ["src/**/*.ts","src/**/*.tsx", "src/**/*.json", ".env"],
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.json", ".env"],
   "exclude": ["node_modules", "src/http", "src/logs"]
 }
