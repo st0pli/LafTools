@@ -287,17 +287,8 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
                 exit 1
             fi
             docker login -u $DOCKER_USER -p $DOCKER_PASS
-            if [ $? -ne 0 ]; then
-                echo "[E] docker login failed for $platformName"
-                exit 1
-            fi
             docker push codegentoolbox/laftools-$platformName:$crtVersion
-            if [ $? -ne 0 ]; then
-                echo "[E] docker push failed for $platformName"
-                exit 1
-            fi
-            # if [ "$TAG_MODE" == "true" ]; then
-            # fi
+
             if [ $platformName == "linux-x64" ]; then
                 echo "[I] building other tag"
                 docker build -t codegentoolbox/laftools-$platformName:devops -f ./Dockerfile .

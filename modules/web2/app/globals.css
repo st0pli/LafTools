@@ -135,11 +135,9 @@
   font-family: unset;
 }
 body{
-  min-width: 1180px;
+  min-width: 1280px;
 }
 .app-minmax-size{
-  /* min-width: 1180px; */
-  /* w-[550px] md: w-[688px] lg:w-[924px] */
   @apply w-[1180px] xl:w-[1180px] 2xl:w-[1436px];
 }
 .bp5-toast-container{

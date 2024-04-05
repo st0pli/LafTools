@@ -40,7 +40,7 @@ export default (props: ToolProp) => {
     let subCategory = props.params.subCategory
     let secondaryPanelClzHeader = tw('bg-slate-50 g-card-header dark:bg-slate-700')
 
-    return <div className='w-64  space-y-2'>
+    return <div className='w-0 xl:w-64  space-y-2 '>
         <Card {...getCardsProps()}>
             <CardHeader className={secondaryPanelClzHeader}>{Dot("ob1q-I7s-", "About LafTools")}</CardHeader>
             <CardBody>

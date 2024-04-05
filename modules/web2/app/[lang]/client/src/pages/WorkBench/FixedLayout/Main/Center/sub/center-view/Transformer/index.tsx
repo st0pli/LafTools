@@ -563,10 +563,10 @@ export default (props: CommonTransformerProps) => {
     vertical={shouldVerticalMode}
     key={shouldVerticalMode + "xxxs" + hideBottomPanel}
   >
-    <Allotment.Pane>
+    <Allotment.Pane preferredSize={'40%'}>
       {app_right_input_jsx}
     </Allotment.Pane>
-    <Allotment.Pane>
+    <Allotment.Pane preferredSize={'60%'}>
       {app_right_output_jsx}
     </Allotment.Pane>
   </Allotment>
