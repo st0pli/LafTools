@@ -11,6 +11,7 @@ export default {
         let defaultServerEntry = path.join(
             currentDIRName,
             "..",
+            '..',
             "core",
             "server.js",
         );
