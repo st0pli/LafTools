@@ -4,11 +4,11 @@ import FileUtils from "../web2share-copy/FileUtils";
 import winston from "winston";
 import winstonDaily from "winston-daily-rotate-file";
 import { Console } from "winston/lib/winston/transports";
-import { getLafToolsDataDir } from "web2share-copy/homedir";
+import { getLafToolsDataDir } from "../web2share-copy/homedir";
 import {
   getAppBootstrapInternalDir,
   getAppLogInternalDir,
-} from "web2share-copy/appdir";
+} from "../web2share-copy/appdir";
 
 // logs dir
 const logDir: string = FileUtils.mkdir(
