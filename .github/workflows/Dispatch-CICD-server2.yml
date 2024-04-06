@@ -25,7 +25,7 @@ jobs:
 
       - name: Get the version
         id: get_version
-        run: echo v3.5.$(date +%Y%m%d%H%M%S)
+        run: echo "v3.5.$(date +%Y%m%d%H%M%S)"
 
       - name: Run build script
         id: runbuildscript
@@ -68,7 +68,8 @@ jobs:
           key: ${{ secrets.MAIN_APP_SSH_KEY }}
           command_timeout: 200m
           script: |
-            ver=${{steps.get_version.outputs.VERSION}}
+            ver="${{steps.get_version.outputs.VERSION}}"
+            echo "version: $ver"
             cd /home/appuser/Server2App-dist
             rm -rf test-build
             mkdir test-build
