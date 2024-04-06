@@ -1,6 +1,6 @@
 /**
  * Usages:
- *  node ./entrypoint.ts --type=web2|desktop2|bootstrap2
+ *  node ./entrypoint.ts --type=web2|desktop2|bootstrap
  */
 
 import fs from "fs";
