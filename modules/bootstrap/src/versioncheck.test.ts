@@ -47,6 +47,6 @@ test("test-compute-hash", async () => {
   let hash = await computeHash(exampleFile);
   logger.info("hash:" + hash);
   expect(hash).toBe(
-    "498f042e6cfc2a1f5182762819357c9a62324522685bfdaa7686d9cf990439b0",
+    "62b1e32515d1aca692b27f55e26cc8cb0f5e81441b2d15e2e24022d5b05c6bc0",
   );
 });

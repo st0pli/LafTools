@@ -1,3 +1,1 @@
 this is hello, world
-这个是你好世界
-测试ABC12345678@@2016
