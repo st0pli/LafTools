@@ -31,3 +31,6 @@ jobs:
           cd ../..
           cd modules/server2
           npm i -S -D --force
+          cd ../..
+          cd modules/bootstrap2
+          npm i -S -D --force

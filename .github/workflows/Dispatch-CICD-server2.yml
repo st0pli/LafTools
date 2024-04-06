@@ -1,9 +1,6 @@
 name: Build on tag for server2
 
-on:
-  push:
-    tags:
-      - "srv-v*.*.**"
+on: workflow_dispatch
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
