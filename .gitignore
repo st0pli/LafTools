@@ -1,6 +1,5 @@
 var/log/
 share-copy2
-web2share-copy
 temp
 dist-web2
 dist-desktop
