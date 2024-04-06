@@ -13,7 +13,6 @@ jobs:
     env:
       LAFTOOLS_ROOT: /home/runner/work/LafTools/LafTools-tag
       TAG_MODE: true
-      CRT_TAG_VER: v2.5.$(date +%y%m%d%H%M%S)
 
     steps:
       - name: Checkout code
@@ -40,7 +39,7 @@ jobs:
 
       - name: Get the version
         id: get_version
-        run: echo ${CRT_TAG_VER}
+        run: echo v2.5.$(date +%Y%m%d%H%M%S)
 
       - name: Run build script
         id: runbuildscript
