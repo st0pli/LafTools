@@ -8,11 +8,16 @@ import { PkgInfo, readPkgInfoFromDir } from "../web2share-copy/pkginfo";
 import { URL_RELEASE_GET_ALL, URL_RELEASE_GET_LATEST } from "../web2share-copy/server_urls";
 import { PkgDownloadInfo, ReleaseLatestResponse, SysResponse } from "../web2share-copy/server_constants";
 import { IsCurrentServerMode } from "../types";
+import crypto from 'crypto';
 import { logger } from "../utils/logger";
+import fs from 'fs'
+import stream from 'stream'
+import { computeHash } from "utils/hash";
 
 let bootstrapInternalDir = getAppBootstrapInternalDir();
 let bootStrapImplWeb2Dir = getAppBootstrapImplWeb2Dir()
 let tempDir = getAppBootstrapTempDir()
+
 
 let currentDIRName = __dirname;
 let minimalDIRPath = isDevEnv() || isTestEnv() ? path.join(
@@ -41,39 +46,63 @@ export let getLatestVersionResponse = async (): Promise<SysResponse<ReleaseLates
 }
 
 export let downloadByPkgInfo = async (latestInfo: PkgDownloadInfo) => {
+    logger.debug("downloadByPkgInfo: " + JSON.stringify(latestInfo))
     let currentPlatform = pkgInfo.platform
     let l_fileName = latestInfo.fileName
     let l_pkgURL = latestInfo.pkgURL
     let l_version = latestInfo.version
     let sha256SumURL = latestInfo.sha256SumURL
     let currentTempFile = path.join(tempDir, Date.now() + '-' + l_fileName)
+    logger.debug("currentTempFile", currentTempFile)
     // download l_pkgURL to currentTempFile by using fetch and fs
     let sha256Res = await fetch(sha256SumURL)
     let sha256Text = await sha256Res.text()
     logger.debug('sha256Text', sha256Text)
     // exact sha256 from sha256Text
-    let findSHA256Value: string | null = null;
+    let expect_findSHA256Value: string | null = null;
     sha256Text.split('\n').every(line => {
         logger.debug('line: ', line)
+        if (line.trim() == '') {
+            return true;
+        }
         let [sha256, fileName] = line.split('  ')
         sha256 = sha256.trim()
         fileName = fileName.trim()
         logger.debug(`sha256: ${sha256}, fileName: ${fileName}`)
         if (fileName == l_fileName) {
             // check sha256
-            logger.debug('sha256', sha256)
-            findSHA256Value = sha256
+            logger.debug('sha256:' + sha256)
+            expect_findSHA256Value = sha256
             return false;
         }
         return true;
     })
-    if (!findSHA256Value) {
+    if (!expect_findSHA256Value) {
         throw new Error('sha256 not found')
+    } else {
+        logger.debug('expect sha256:' + expect_findSHA256Value)
+    }
+    let fetchRes = await fetch(l_pkgURL)
+    logger.info(`fetch URL: ${fetchRes.url}, status: ${fetchRes.status}`)
+    logger.info(`download to ${currentTempFile}`)
+    if (!fetchRes.ok) {
+        throw new Error('fetch failed')
+    }
+    let buffer = await fetchRes.arrayBuffer()
+    writeFileSync(currentTempFile, Buffer.from(buffer))
+
+    // do sha256 sum check for currentTempFile
+    let actual_sha256Value = await computeHash(currentTempFile)
+    logger.debug('actual sha256', actual_sha256Value)
+
+    if (actual_sha256Value != expect_findSHA256Value) {
+        logger.error('sha256 not match, expect: ' + expect_findSHA256Value + ', actual: ' + actual_sha256Value)
+        throw new Error('sha256 not match')
+    } else {
+        logger.info('sha256 match')
     }
 
-
-    let fetchRes = await fetch(l_pkgURL)
-
+    return currentTempFile
 }
 
 export let job_runVersionCheck = async () => {
@@ -95,7 +124,7 @@ export let job_runVersionCheck = async () => {
             await new Promise(resolve => setTimeout(resolve, 10 * 60 * 1000));
         }
         // sleep 5 minutes
-        await new Promise(resolve => setTimeout(resolve, 5 * 60 * 1000));
+        await new Promise(resolve => setTimeout(resolve, 10 * 60 * 1000));
     }
     // check version
 }

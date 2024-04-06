@@ -1,8 +1,10 @@
+'use server'
 import { isDevEnv, isTestEnv } from "./env";
 import { HEADER_X_LAF_LANG, HEADER_X_LAF_PLATFORM, HEADER_X_LAF_REGION, HEADER_X_LAF_VERSION } from "./server_constants";
 
 let isDev = process.env.NODE_ENV === "development";
-export const API_SERVER_URL = isDevEnv() || isTestEnv() ? "http://127.0.0.1:2016" : "https://api.laftools.cn";
+// for test env, it's still using the local server
+export const API_SERVER_URL = isTestEnv() ? "https://api.laftools.cn" : isDevEnv() ? "http://127.0.0.1:2016" : "https://api.laftools.cn";
 
 export type APITypeInfo = {
     lang: string,
