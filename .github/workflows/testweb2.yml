@@ -38,6 +38,7 @@ jobs:
           cd $LAFTOOLS_ROOT/modules/bootstrap
           npm i -g pnpm
           npm i -S -D --force
+          npm run build
 
       - name: run vite test for bootstrap
         run: |

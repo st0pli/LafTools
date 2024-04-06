@@ -1,4 +1,4 @@
-name: Build on tag for server2
+name: Dispatch-CICD-server2
 
 on: workflow_dispatch
 

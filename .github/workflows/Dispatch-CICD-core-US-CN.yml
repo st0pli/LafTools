@@ -1,4 +1,4 @@
-name: Build on Tags for CN and US
+name: Dispatch-CICD-core-US-CN
 
 on: workflow_dispatch
 
