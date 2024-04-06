@@ -75,8 +75,7 @@ jobs:
           crtVersion=`/home/runner/work/LafTools/LafTools-M-pre/pipeline/tools/get-web2-version.sh`
           sftp -o StrictHostKeyChecking=no -P ${{ secrets.US_APP_SSH_PORT }} ${{ secrets.US_APP_SSH_USERNAME }}@${{ secrets.US_APP_SSH_HOST }} <<EOF
             mkdir /home/appuser/PkgRelease-dist/${crtVersion}
-            put /home/runner/work/LafTools/LafTools-M-pre/dist/pkg/Laf* /home/appuser/PkgRelease-dist/${crtVersion}/
-            put /home/runner/work/LafTools/LafTools-M-pre/dist/pkg/SHA* /home/appuser/PkgRelease-dist/${crtVersion}/
+            put /home/runner/work/LafTools/LafTools-M-pre/dist/pkg/* /home/appuser/PkgRelease-dist/${crtVersion}/
           exit
           EOF
           if [ $? -ne 0 ]; then

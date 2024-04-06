@@ -7,6 +7,7 @@ export type PkgDownloadInfo = {
   version: string;
   pkgURL: string;
   fileName: string;
+  sha256SumURL: string;
 };
 export type TypeRecentReleaseNotes = {
   version: string;

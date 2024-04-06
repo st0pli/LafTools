@@ -8,6 +8,10 @@
     "dev": "cross-env NODE_ENV=development nodemon",
     "build": "swc src -d dist --copy-files"
   },
+  "dependencies": {
+    "winston": "^3.8.1",
+    "winston-daily-rotate-file": "^4.7.1"
+  },
   "devDependencies": {
     "@swc/cli": "^0.1.57",
     "@swc/core": "^1.2.220",

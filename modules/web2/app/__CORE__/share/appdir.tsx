@@ -31,6 +31,21 @@ export let getAppBootstrapInternalDir = (): string => {
     return fsutils.mkdir(path.join(getLafToolsDataDir(), 'bootstrap'))
 }
 
+export let getAppBootstrapImplDir = (): string => {
+    return fsutils.mkdir(path.join(getAppBootstrapInternalDir(), 'impl'))
+}
+
+export let getAppBootstrapTempDir = (): string => {
+    return fsutils.mkdir(path.join(getAppBootstrapInternalDir(), 'temp'))
+}
+
+export let getAppBootstrapImplWeb2Dir = (): string => {
+    return fsutils.mkdir(path.join(getAppBootstrapImplDir(), 'web2'))
+}
+export let getAppBootstrapImplDesktop2Dir = (): string => {
+    return fsutils.mkdir(path.join(getAppBootstrapImplDir(), 'desktop'))
+}
+
 export let getAppLogInternalDir = (): string => {
     return fsutils.mkdir(path.join(getLafToolsDataDir(), 'logs'))
 }

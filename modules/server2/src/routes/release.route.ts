@@ -73,6 +73,7 @@ export class ReleaseRoute implements Routes {
             latest: {
               version: latestVer,
               pkgURL: `${crtHost}/${latestVer}/${fileNameInURL}`,
+              sha256SumURL: `${crtHost}/${latestVer}/SHA256SUM.txt`,
               fileName: fileNameInURL,
             },
             // recentReleaseNotes: recentReleaseNotesArr,

@@ -10,23 +10,19 @@ import { ModuleType } from "./constant";
 import web2 from "./items/web2";
 import desktop2 from "./items/desktop2";
 import { runItems } from "./items";
+import { DLinkType, IsCurrentServerMode } from "types";
+import { logger } from "./utils/logger";
 
-export let IsCurrentServerMode = () => {
-  return process.env.ONLINEMODE == "true";
-};
-export type DLinkType = {
-  loadPath: string;
-};
 let runType: ModuleType | null = null;
 process.argv.forEach((val, index) => {
   if (val.startsWith("--type=")) {
     runType = val.substr(7).trim() as any;
   }
 });
-console.log(`runType: ${runType}`);
+logger.info(`runType: ${runType}`);
 let runItem = runItems[runType];
 if (!runItem) {
-  console.error("Invalid runType", runType);
+  logger.error("Invalid runType", runType);
   process.exit(1);
 }
 let bootStrapInternalDir = getAppBootstrapInternalDir();
@@ -34,15 +30,9 @@ let bootStrapInternalDir = getAppBootstrapInternalDir();
 if (!fs.existsSync(bootStrapInternalDir)) {
   fs.mkdirSync(bootStrapInternalDir, { recursive: true });
 }
-let errorLogFile = path.join(bootStrapInternalDir, "error.log");
-let accessLogFile = path.join(bootStrapInternalDir, "access.log");
-// clean file first
-fs.writeFileSync(errorLogFile, "");
-fs.writeFileSync(accessLogFile, "");
-let errorlog = fs.createWriteStream(errorLogFile, { flags: "a" });
-let accesslog = fs.createWriteStream(accessLogFile, { flags: "a" });
+
 // write timestamp to log
-accesslog.write(new Date().toString() + "\n");
+logger.info("start entrypoint");
 // if it's current server mode, then load the item
 let hasAckAnyDynamic = false;
 if (!IsCurrentServerMode()) {
@@ -57,18 +47,18 @@ if (!IsCurrentServerMode()) {
         if (runType == "web2") {
           let newRunItems = newLoadModule.runItems;
           newRunItems[runType](true);
-          accesslog.write("[LOADED] web2Path: " + dlink.loadPath + "\n");
+          logger.info("[LOADED] web2Path: " + dlink.loadPath);
           hasAckAnyDynamic = true;
         } else if (runType == "desktop2") {
           // TODO: not implemented yet
         }
       }
     } else {
-      console.error("no available dlink.json");
+      logger.error("no available dlink.json");
     }
   } catch (e) {
     console.error(e);
-    errorlog.write(e + "\n");
+    logger.error(e);
   }
 }
 

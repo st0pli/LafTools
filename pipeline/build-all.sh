@@ -93,6 +93,7 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
     }
 
     build-core(){
+
         cd $LAFTOOLS_ROOT
 
         platformName=$1
@@ -131,14 +132,32 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
 
         cp -a ./pipeline/parcel/scripts/$osScriptFile/* $platformDistDir
 
-        (
-            echo "[I] copying bootstrap and scripts..."
-            cd $LAFTOOLS_ROOT/modules/bootstrap
-            npm i -S -D --force
-            npm run build 
-            mkdir -p $platformDistDir/boot
-            cp -a $LAFTOOLS_ROOT/modules/bootstrap/dist/* $platformDistDir/boot/
-        )
+        preDIR=$(pwd)
+        echo "[I] copying bootstrap and scripts..."
+        cd $LAFTOOLS_ROOT/modules/bootstrap
+        npm i -S -D --force
+        if [ $? -ne 0 ]; then
+            echo "[E] bootstrap install failed."
+            exit 1
+        fi
+        npm run build 
+        if [ $? -ne 0 ]; then
+            echo "[E] bootstrap build failed."
+            exit 1
+        fi
+        mkdir -p $platformDistDir/boot
+        cp -a $LAFTOOLS_ROOT/modules/bootstrap/dist/* $platformDistDir/boot/
+        mkdir temp
+        cd temp
+        cp ../package.json .
+        npm install --omit=dev --force 
+        if [ $? -ne 0 ]; then
+            echo "[E] bootstrap install failed."
+            exit 1
+        fi
+        cp -a ./node_modules $platformDistDir/boot/
+        cd $preDIR
+
 
         # if [ $bundleMode != "no-nodejs" ]; then
         #     echo "[I] copying nodejs service..."

@@ -2,10 +2,17 @@ import { TypeRunItem } from "../items";
 import path from 'path'
 import { API_SERVER_URL, core_sendAPIRequestInBE, getLAFRegion } from "../web2share-copy/api";
 import { isDevEnv, isTestEnv } from "../web2share-copy/env";
-import { getAppBootstrapInternalDir } from "../web2share-copy/appdir";
-import { readPkgInfoFromDir } from "../web2share-copy/pkginfo";
+import { getAppBootstrapImplDir, getAppBootstrapImplWeb2Dir, getAppBootstrapInternalDir, getAppBootstrapTempDir } from "../web2share-copy/appdir";
+import { writeFileSync } from 'fs'
+import { PkgInfo, readPkgInfoFromDir } from "../web2share-copy/pkginfo";
 import { URL_RELEASE_GET_ALL, URL_RELEASE_GET_LATEST } from "../web2share-copy/server_urls";
-import { ReleaseLatestResponse, SysResponse } from "../web2share-copy/server_constants";
+import { PkgDownloadInfo, ReleaseLatestResponse, SysResponse } from "../web2share-copy/server_constants";
+import { IsCurrentServerMode } from "../types";
+import { logger } from "../utils/logger";
+
+let bootstrapInternalDir = getAppBootstrapInternalDir();
+let bootStrapImplWeb2Dir = getAppBootstrapImplWeb2Dir()
+let tempDir = getAppBootstrapTempDir()
 
 let currentDIRName = __dirname;
 let minimalDIRPath = isDevEnv() || isTestEnv() ? path.join(
@@ -18,7 +25,7 @@ let minimalDIRPath = isDevEnv() || isTestEnv() ? path.join(
     '..',
     '..',
 )
-console.log("minimalDIRPath", minimalDIRPath)
+logger.debug("minimalDIRPath", minimalDIRPath)
 let pkgInfo = readPkgInfoFromDir(minimalDIRPath);
 export let getLatestVersionResponse = async (): Promise<SysResponse<ReleaseLatestResponse>> => {
     let lang = process.env.APPLANG || 'en_US';
@@ -33,15 +40,70 @@ export let getLatestVersionResponse = async (): Promise<SysResponse<ReleaseLates
     return json as SysResponse<ReleaseLatestResponse>
 }
 
+export let downloadByPkgInfo = async (latestInfo: PkgDownloadInfo) => {
+    let currentPlatform = pkgInfo.platform
+    let l_fileName = latestInfo.fileName
+    let l_pkgURL = latestInfo.pkgURL
+    let l_version = latestInfo.version
+    let sha256SumURL = latestInfo.sha256SumURL
+    let currentTempFile = path.join(tempDir, Date.now() + '-' + l_fileName)
+    // download l_pkgURL to currentTempFile by using fetch and fs
+    let sha256Res = await fetch(sha256SumURL)
+    let sha256Text = await sha256Res.text()
+    logger.debug('sha256Text', sha256Text)
+    // exact sha256 from sha256Text
+    let findSHA256Value: string | null = null;
+    sha256Text.split('\n').every(line => {
+        logger.debug('line: ', line)
+        let [sha256, fileName] = line.split('  ')
+        sha256 = sha256.trim()
+        fileName = fileName.trim()
+        logger.debug(`sha256: ${sha256}, fileName: ${fileName}`)
+        if (fileName == l_fileName) {
+            // check sha256
+            logger.debug('sha256', sha256)
+            findSHA256Value = sha256
+            return false;
+        }
+        return true;
+    })
+    if (!findSHA256Value) {
+        throw new Error('sha256 not found')
+    }
+
+
+    let fetchRes = await fetch(l_pkgURL)
+
+}
+
 export let job_runVersionCheck = async () => {
+    if (IsCurrentServerMode()) {
+        logger.debug('skip checking in online mode')
+        return;
+    }
+    while (true) {
+        logger.debug('job_runVersionCheck')
+        try {
+            let latestVerRes = await getLatestVersionResponse()
+            if (latestVerRes && latestVerRes.content.anyUpdate) {
+                let latestInfo = latestVerRes.content.updateInfo.latest
+                let finalFile = await downloadByPkgInfo(latestInfo)
+            }
+        } catch (e) {
+            console.error('contain version check error', e)
+            // sleep 10 minutes since it's not a critical error
+            await new Promise(resolve => setTimeout(resolve, 10 * 60 * 1000));
+        }
+        // sleep 5 minutes
+        await new Promise(resolve => setTimeout(resolve, 5 * 60 * 1000));
+    }
     // check version
 }
 
 let isDev = isDevEnv()
 let item: TypeRunItem = {
     load: (dynamicMode: boolean) => {
-        let bootstrapInternalDir = getAppBootstrapInternalDir();
-        console.log("entrypoint", bootstrapInternalDir);
+        logger.debug("entrypoint", bootstrapInternalDir);
 
         let defaultServerEntry = path.join(
             minimalDIRPath,

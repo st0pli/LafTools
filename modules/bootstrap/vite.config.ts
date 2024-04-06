@@ -6,11 +6,11 @@ import tsconfigPaths from "vite-tsconfig-paths";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), tsconfigPaths()],
-  resolve: {
-    extensions: [".mjs", ".js", ".ts", ".jsx", ".tsx", ".json", ".vue"],
-    // alias: {
-    //   // This SHOULD resolve my imports, but it seems to have a problem
-    //   "@": fileURLToPath(new URL(".", import.meta.url)),
-    // },
-  },
+  // resolve: {
+  //   extensions: [".mjs", ".js", ".ts", ".jsx", ".tsx", ".json", ".vue"],
+  //   // alias: {
+  //   //   // This SHOULD resolve my imports, but it seems to have a problem
+  //   //   "@": fileURLToPath(new URL(".", import.meta.url)),
+  //   // },
+  // },
 });
