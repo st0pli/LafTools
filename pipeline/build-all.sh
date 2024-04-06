@@ -134,7 +134,7 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
         (
             echo "[I] copying bootstrap and scripts..."
             cd $LAFTOOLS_ROOT/modules/bootstrap
-            npm i -S -D --verbose --force
+            npm i -S -D --force
             npm run build 
             mkdir -p $platformDistDir/boot
             cp -a $LAFTOOLS_ROOT/modules/bootstrap/dist/* $platformDistDir/boot/
@@ -156,7 +156,7 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
         set -e
         echo "[I] building fe"
         (
-            cd ./modules/web2
+            cd $LAFTOOLS_ROOT/modules/web2
             # [ ! -d node_modules ] && npm install --production --verbose --force 
             # [ ! -d node_modules ] && npm install -S -D --force 
             [ -d node_modules ] && rm -rf node_modules
