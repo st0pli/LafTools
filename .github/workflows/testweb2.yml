@@ -22,15 +22,26 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Install pnpm and dependencies
+      - name: Install pnpm and dependencies for web2
         run: |
           cd $LAFTOOLS_ROOT/modules/web2
           npm i -g pnpm
           npm i -S -D --force
 
-      - name: run vite test
+      - name: run vite test for web2
         run: |
           cd $LAFTOOLS_ROOT/modules/web2
+          npx vitest run
+
+      - name: Install Deps for bootstrap
+        run: |
+          cd $LAFTOOLS_ROOT/modules/bootstrap
+          npm i -g pnpm
+          npm i -S -D --force
+
+      - name: run vite test for bootstrap
+        run: |
+          cd $LAFTOOLS_ROOT/modules/bootstrap
           npx vitest run
 
       - name: server2 install

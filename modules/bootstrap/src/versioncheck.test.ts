@@ -31,7 +31,6 @@ test(
     console.log(r);
   },
   {
-    only: true,
     timeout: 500000,
   },
 );
