@@ -39,7 +39,7 @@ jobs:
 
       - name: Get the version
         id: get_version
-        run: echo v2.5.$(date +%Y%m%d%H%M%S)
+        run: echo ::set-output name=VERSION::v2.5.$(date +%Y%m%d%H%M%S)
 
       - name: Run build script
         id: runbuildscript
