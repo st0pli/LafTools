@@ -35,6 +35,27 @@ test(
   },
 );
 
+test(
+  "test-web2-download-and-install-new-version",
+  async () => {
+    let ver = "v2.1.89-beta";
+    let r = await downloadByPkgInfo({
+      version: ver,
+      pkgURL:
+        TEST_PKG_SERVER_LINK +
+        "/latest/LafTools-" +
+        ver +
+        "-linux-x64-minimal.tar.gz",
+      fileName: "LafTools-" + ver + "-linux-x64-minimal.tar.gz",
+      sha256SumURL: TEST_PKG_SERVER_LINK + "/latest/SHA256SUM.txt",
+    });
+    console.log(r);
+  },
+  {
+    timeout: 500000,
+  },
+);
+
 test("test-compute-hash", async () => {
   let exampleFile = path.join(
     __dirname,

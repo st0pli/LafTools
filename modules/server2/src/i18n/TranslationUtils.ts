@@ -19,7 +19,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // SKIP_DOT
-import { HEADER_X_LAF_LANG } from '@/constant';
+import { HEADER_X_LAF_LANG } from '../web2share-copy/server_constants';
 import { Request } from 'express';
 import path from 'path';
 import _ from 'lodash';

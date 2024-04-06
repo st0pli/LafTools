@@ -3,4 +3,7 @@ export let IsCurrentServerMode = () => {
 };
 export type DLinkType = {
     loadPath: string;
+    fromVersion: string;
+    toVersion: string;
+    dateTime: string
 };

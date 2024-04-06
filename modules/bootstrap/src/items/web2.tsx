@@ -45,6 +45,10 @@ export let getLatestVersionResponse = async (): Promise<SysResponse<ReleaseLates
     return json as SysResponse<ReleaseLatestResponse>
 }
 
+export let confirmAndExtractVersionFile = async (currentTempFile: string, latestInfo: PkgDownloadInfo) => {
+    return ''
+}
+
 export let downloadByPkgInfo = async (latestInfo: PkgDownloadInfo) => {
     logger.debug("downloadByPkgInfo: " + JSON.stringify(latestInfo))
     let currentPlatform = pkgInfo.platform
