@@ -7,7 +7,7 @@ if [ -d $testPkgDir ]; then
     rm -rf $testPkgDir
 fi
 mkdir $testPkgDir
-
+echo "[TEST-ALL]"
 echo "[I] $(date) Testing at $testPkgDir..."
 
 # /home/runner/work/LafTools/LafTools-M-pre/dist/pkg/
@@ -19,8 +19,13 @@ cp -a $LAFTOOLS_ROOT/dist/pkg/LafTools-$crtVersion-linux-x64-minimal.tar.gz LafT
 tar -xzf LafTools-pkg.tar.gz 
 cd `ls | grep LafTools | grep minimal`
 echo "start running, PWD is `pwd`"
+if [ ! -f run.sh ]; then
+    echo "[E] $(date) Test failed, run.sh not found"
+    exit 1
+fi
 ./run.sh & 
-sleep 10 # it should be running in 10s
+sleep 10 
+# it should be running in 10s
 curl 127.0.0.1:39899 -I | grep "200 OK"
 if [ $? -ne 0 ]; then
     echo "[E] $(date) Test failed, unable to launch the service"
