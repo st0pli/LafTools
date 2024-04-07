@@ -75,10 +75,6 @@ export let extractTempFileAndConfirmIt = async (currentTempFile: string, latestI
     await compressUtils.decompress(currentTempFile, saveToWhere)
     let releaseDateFile: string | null = null;
     // iterate all files in saveToWhere until got the runScript
-    let runScriptFile: string | null = null;
-    if (!runScriptFile) {
-        throw new Error('runScriptFile not found')
-    }
     let releaseDateTxtFileList = getReleaseDateTxtInFolder(saveToWhere)
     if (releaseDateTxtFileList.length == 0) {
         throw new Error('releaseDate.txt not found')
