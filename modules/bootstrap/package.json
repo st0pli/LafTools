@@ -13,6 +13,7 @@
     "decompress": "^4.2.1",
     "decompress-targz": "^4.1.1",
     "decompress-zip": "^0.3.3",
+    "extract-zip": "^2.0.1",
     "sha256-file": "^1.0.0",
     "winston": "^3.8.1",
     "winston-daily-rotate-file": "^4.7.1"

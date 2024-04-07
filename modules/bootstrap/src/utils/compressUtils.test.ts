@@ -25,6 +25,23 @@ test(
     timeout: 500000,
   },
 );
+
+test(
+  "test-unexact-zip",
+  async () => {
+    let inputPath = join(examplesDIR, "testdata.zip");
+    let outputDIR4targz = join(distDIR, "d-zip");
+    await compressUtils.decompress(inputPath, outputDIR4targz);
+    expect(fs.existsSync(join(outputDIR4targz, "testdata"))).toBe(true);
+    expect(
+      fs.existsSync(join(outputDIR4targz, "testdata", "version.txt")),
+    ).toBe(true);
+  },
+  {
+    timeout: 500000,
+  },
+);
+
 // , "corruptedTestData.tar.gz"
 test(
   "test-unexact-targz-should-fall-not-found",
