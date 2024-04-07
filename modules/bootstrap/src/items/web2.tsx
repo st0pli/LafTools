@@ -13,6 +13,7 @@ import { logger } from "../utils/logger";
 import fs from 'fs'
 import stream from 'stream'
 import { computeHash } from "utils/hash";
+import compressUtils from "utils/compressUtils";
 
 let bootstrapInternalDir = getAppBootstrapInternalDir();
 let bootStrapImplWeb2Dir = getAppBootstrapImplWeb2Dir()
@@ -20,16 +21,19 @@ let tempDir = getAppBootstrapTempDir()
 
 
 let currentDIRName = __dirname;
-let minimalDIRPath = isDevEnv() || isTestEnv() ? path.join(
-    currentDIRName,
-    '..',
-    '..',
-    'testdata'
-) : path.join(
-    currentDIRName,
-    '..',
-    '..',
-)
+export let getMinimalDIrPath = () => {
+    return isDevEnv() || isTestEnv() ? path.join(
+        currentDIRName,
+        '..',
+        '..',
+        'testdata'
+    ) : path.join(
+        currentDIRName,
+        '..',
+        '..',
+    )
+}
+let minimalDIRPath = getMinimalDIrPath()
 logger.debug("minimalDIRPath", minimalDIRPath)
 let pkgInfo = readPkgInfoFromDir(minimalDIRPath);
 export let getLatestVersionResponse = async (): Promise<SysResponse<ReleaseLatestResponse>> => {
@@ -47,6 +51,12 @@ export let getLatestVersionResponse = async (): Promise<SysResponse<ReleaseLates
 }
 
 export let extractTempFileAndConfirmIt = async (currentTempFile: string, latestInfo: PkgDownloadInfo) => {
+    let version = latestInfo.version
+    let currentPlatform = pkgInfo.platform
+    let currentImplDir = bootStrapImplWeb2Dir
+    let saveToWhere = path.join(bootStrapImplWeb2Dir, version)
+    await compressUtils.compress(currentTempFile, saveToWhere)
+    // find the file releaseDate.txt
 
     return ''
 }
@@ -123,7 +133,12 @@ export let job_runVersionCheck = async () => {
             let latestVerRes = await getLatestVersionResponse()
             if (latestVerRes && latestVerRes.content.anyUpdate) {
                 let latestInfo = latestVerRes.content.updateInfo.latest
+                // STEP-1: download the latest version
                 let finalFile = await downloadByPkgInfo(latestInfo)
+                // STEP-2: extract the file and confirm it
+                await extractTempFileAndConfirmIt(finalFile, latestInfo)
+                // STEP-3: update the dlink
+
             }
         } catch (e) {
             console.error('contain version check error', e)
