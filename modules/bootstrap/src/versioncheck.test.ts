@@ -6,12 +6,18 @@ import path from "path";
 import { logger } from "utils/logger";
 // NOTE: move this test part to build-all.sh
 
-test("test-web2-version-check", async () => {
-  console.log("hello, test version check");
-  let latestVer = await getLatestVersionResponse();
-  console.log(latestVer);
-  expect(JSON.stringify(latestVer)).contain("anyUpdate");
-});
+test(
+  "test-web2-version-check",
+  async () => {
+    console.log("hello, test version check");
+    let latestVer = await getLatestVersionResponse();
+    console.log(latestVer);
+    expect(JSON.stringify(latestVer)).contain("anyUpdate");
+  },
+  {
+    timeout: 500000,
+  },
+);
 export const TEST_PKG_SERVER_LINK = "http://betalaftools.codegen.cc:8080";
 
 test(
