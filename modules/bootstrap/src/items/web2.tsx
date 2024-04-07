@@ -34,6 +34,7 @@ logger.debug("minimalDIRPath", minimalDIRPath)
 let pkgInfo = readPkgInfoFromDir(minimalDIRPath);
 export let getLatestVersionResponse = async (): Promise<SysResponse<ReleaseLatestResponse>> => {
     let lang = process.env.APPLANG || 'en_US';
+    // go to check
     // TODO: actually, lang is not required in backstaged jobs. If users wanna check release notes, the lang can be selected in the page rather than this job
     let r = await core_sendAPIRequestInBE({
         lang: lang,
@@ -47,6 +48,10 @@ export let getLatestVersionResponse = async (): Promise<SysResponse<ReleaseLates
 
 export let confirmAndExtractVersionFile = async (currentTempFile: string, latestInfo: PkgDownloadInfo) => {
     return ''
+}
+
+export let updateBootStrapFile = async (finalFile: string, latestInfo: PkgDownloadInfo) => {
+    // TODO:
 }
 
 export let downloadByPkgInfo = async (latestInfo: PkgDownloadInfo) => {
