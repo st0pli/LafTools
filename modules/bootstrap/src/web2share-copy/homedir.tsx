@@ -22,7 +22,7 @@ import fs from 'fs'
 import path from 'path'
 import os from 'os'
 import fsutils from './FileUtils'
-import { isDevEnv } from './env'
+import { isDevEnv, isTestEnv } from './env'
 
 let userHome = os.homedir()
 
@@ -31,6 +31,6 @@ export let getUserHomeDir: () => string = () => {
 }
 
 export let getLafToolsDataDir = (): string => {
-    let n = path.join(userHome, isDevEnv() ? '.dev-laftools' : '.laftools')
+    let n = path.join(userHome, isTestEnv() ? '.test-laftools' : isDevEnv() ? '.dev-laftools' : '.laftools')
     return fsutils.mkdir(n)
 }
