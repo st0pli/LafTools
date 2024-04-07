@@ -10,12 +10,12 @@ import decompressTargz from "decompress-targz";
 const extract = require("extract-zip");
 
 let compressUtils = {
-  compress: async (inputPath: string, outputPath: string) => {
-    // compress inputPath to outputPath
-    // using 3rd library
-    // TODO:
-    throw new Error("not implemented");
-  },
+  // compress: async (inputPath: string, outputPath: string) => {
+  //   // compress inputPath to outputPath
+  //   // using 3rd library
+  //   // TODO:
+  //   throw new Error("not implemented");
+  // },
   decompress: async (inputPath: string, outputDIR: string) => {
     // delete directory
     if (fs.existsSync(outputDIR)) {

@@ -72,7 +72,7 @@ export let extractTempFileAndConfirmIt = async (currentTempFile: string, latestI
     let currentPlatform = pkgInfo.platform
     let currentImplDir = bootStrapImplWeb2Dir
     let saveToWhere = path.join(bootStrapImplWeb2Dir, version)
-    await compressUtils.compress(currentTempFile, saveToWhere)
+    await compressUtils.decompress(currentTempFile, saveToWhere)
     let releaseDateFile: string | null = null;
     // iterate all files in saveToWhere until got the runScript
     let runScriptFile: string | null = null;
