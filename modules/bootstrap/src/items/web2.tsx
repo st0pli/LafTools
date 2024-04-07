@@ -189,7 +189,6 @@ export let job_runVersionCheck = async () => {
     // check version
 }
 
-let isDev = isDevEnv()
 let item: TypeRunItem = {
     load: (dynamicMode: boolean) => {
         logger.debug("entrypoint", bootstrapInternalDir);
