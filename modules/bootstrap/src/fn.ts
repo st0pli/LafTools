@@ -1,10 +1,10 @@
-import { DLinkType } from "types";
+import { DLinkType } from "./types";
 import { getAppBootstrapInternalDir } from "./web2share-copy/appdir";
 import path from "path";
 import fs from "fs";
 import { logger } from "./utils/logger";
-import { getMinimalDIrPath } from "items/web2";
-import { readPkgInfoFromDir } from "web2share-copy/pkginfo";
+import { getMinimalDIrPath } from "./items/web2";
+import { readPkgInfoFromDir } from "./web2share-copy/pkginfo";
 
 export let getCurrentBootConfigFileWithCurrentVer = () => {
   let bootStrapInternalDir = getAppBootstrapInternalDir();

@@ -1,7 +1,7 @@
 {
   "name": "desktop2",
   "productName": "LafTools",
-  "version": "1.0.0",
+  "version": "3.0.0",
   "description": "LafTools",
   "main": ".vite/build/main.js",
   "scripts": {

@@ -53,7 +53,7 @@ if (!IsCurrentServerMode()) {
       }
     }
   } catch (e) {
-    console.error(e);
+    console.log(e);
     logger.error(e);
   }
 }
