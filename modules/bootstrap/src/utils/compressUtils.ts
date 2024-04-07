@@ -7,6 +7,7 @@ import { createReadStream, createWriteStream } from "fs";
 import { writeFileSync } from "fs";
 import decompress from "decompress";
 import decompressTargz from "decompress-targz";
+import _ from "lodash";
 const extract = require("extract-zip");
 
 let compressUtils = {
@@ -35,7 +36,7 @@ let compressUtils = {
       let result = await decompress(inputPath, outputDIR, {
         plugins: [decompressTargz()],
       });
-      logger.debug("decompress result:" + result);
+      logger.debug("decompress result:" + _.size(result));
     } else if (inputPath.endsWith(".zip")) {
       await extract(inputPath, { dir: outputDIR });
       // var unzipper = new DecompressZip(inputPath);

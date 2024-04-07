@@ -10,9 +10,11 @@
     "build": "swc src -d dist --copy-files"
   },
   "dependencies": {
+    "@types/lodash": "^4.17.0",
     "decompress": "^4.2.1",
     "decompress-targz": "^4.1.1",
     "extract-zip": "^2.0.1",
+    "lodash": "^4.17.21",
     "sha256-file": "^1.0.0",
     "shelljs": "^0.8.5",
     "winston": "^3.8.1",
