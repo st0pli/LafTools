@@ -1,9 +1,7 @@
 import { expect, test } from "vitest";
-import { computeHash } from "utils/hash";
 import path from "path";
-import { logger } from "utils/logger";
-import { PkgDownloadInfo } from "web2share-copy/server_constants";
-import { deleteDLinkConfig, getDLinkConfig } from "fn";
+import { logger } from "../utils/logger";
+import { deleteDLinkConfig, getDLinkConfig } from "../fn";
 import { join } from "path";
 import compressUtils from "./compressUtils";
 let examplesDIR = join(__dirname, "examples");

@@ -6,7 +6,6 @@ import { createReadStream, createWriteStream } from "fs";
 // unzip/zip
 import { writeFileSync } from "fs";
 import decompress from "decompress";
-import DecompressZip from "decompress-zip";
 import decompressTargz from "decompress-targz";
 const extract = require("extract-zip");
 

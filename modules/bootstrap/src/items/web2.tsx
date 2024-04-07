@@ -12,8 +12,8 @@ import crypto from 'crypto';
 import { logger } from "../utils/logger";
 import fs from 'fs'
 import stream from 'stream'
-import { computeHash } from "utils/hash";
-import compressUtils from "utils/compressUtils";
+import { computeHash } from "../utils/hash";
+import compressUtils from "../utils/compressUtils";
 import shelljs from 'shelljs'
 import { getCurrentBootConfigFileWithCurrentVer, getDLinkConfig } from "../fn";
 let bootstrapInternalDir = getAppBootstrapInternalDir();
@@ -60,7 +60,10 @@ export let getReleaseDateTxtInFolder = (folder: string): string[] => {
     if (!mFolder) {
         return []
     }
-    return mFolder.filter(x => {
+    if (!mFolder.filter) {
+        return []
+    }
+    return mFolder && mFolder.filter(x => {
         return x.indexOf('releaseDate.txt') !== -1
     })
 }

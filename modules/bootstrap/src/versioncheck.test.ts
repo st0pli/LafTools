@@ -6,16 +6,16 @@ import {
   getLatestVersionResponse,
   getReleaseDateTxtInFolder,
 } from "./items/web2";
-import { computeHash } from "utils/hash";
+import { computeHash } from "./utils/hash";
 import path from "path";
-import { logger } from "utils/logger";
-import { PkgDownloadInfo } from "web2share-copy/server_constants";
-import { deleteDLinkConfig, getDLinkConfig } from "fn";
+import { logger } from "./utils/logger";
+import { PkgDownloadInfo } from "./web2share-copy/server_constants";
+import { deleteDLinkConfig, getDLinkConfig } from "./fn";
 // NOTE: move this test part to build-all.sh
 
 // write test cases for getReleaseDateTxtInFolder
 test("test-web2-getReleaseDateTxtInFolder", async () => {
-  let folder = path.join(__dirname, "..", "testdasa");
+  let folder = path.join(__dirname, "..", "testdata");
   let r = getReleaseDateTxtInFolder(folder);
   logger.debug("releaseDateFindResults:" + r);
   expect(r[0].indexOf("/") != -1 || r[0].indexOf("\\") != -1).toBe(true);

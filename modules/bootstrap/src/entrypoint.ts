@@ -10,7 +10,7 @@ import { ModuleType } from "./constant";
 import web2 from "./items/web2";
 import desktop2 from "./items/desktop2";
 import { runItems } from "./items";
-import { DLinkType, IsCurrentServerMode } from "types";
+import { DLinkType, IsCurrentServerMode } from "./types";
 import { logger } from "./utils/logger";
 import { getDLinkConfig } from "./fn";
 

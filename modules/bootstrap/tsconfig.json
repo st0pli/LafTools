@@ -22,7 +22,6 @@
     "resolveJsonModule": true,
     "jsx": "preserve",
     "importHelpers": true,
-    "baseUrl": "src",
     "paths": {}
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.json", ".env"],
