@@ -56,7 +56,11 @@ export let getRunScriptNameByPlatform = (platform: string) => {
     return pkgInfo.platform == 'windows-x64' || pkgInfo.platform == 'windows-arm64' ? 'run.bat' : 'run.sh'
 }
 export let getReleaseDateTxtInFolder = (folder: string): string[] => {
-    return shelljs.find(folder).filter(x => {
+    let mFolder = shelljs.find(folder)
+    if (!mFolder) {
+        return []
+    }
+    return mFolder.filter(x => {
         return x.indexOf('releaseDate.txt') !== -1
     })
 }

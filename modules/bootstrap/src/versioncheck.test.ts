@@ -15,7 +15,7 @@ import { deleteDLinkConfig, getDLinkConfig } from "fn";
 
 // write test cases for getReleaseDateTxtInFolder
 test("test-web2-getReleaseDateTxtInFolder", async () => {
-  let folder = path.join(__dirname, "..", "testdata");
+  let folder = path.join(__dirname, "..", "testdasa");
   let r = getReleaseDateTxtInFolder(folder);
   logger.debug("releaseDateFindResults:" + r);
   expect(r[0].indexOf("/") != -1 || r[0].indexOf("\\") != -1).toBe(true);
