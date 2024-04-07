@@ -46,12 +46,9 @@ export let getLatestVersionResponse = async (): Promise<SysResponse<ReleaseLates
     return json as SysResponse<ReleaseLatestResponse>
 }
 
-export let confirmAndExtractVersionFile = async (currentTempFile: string, latestInfo: PkgDownloadInfo) => {
-    return ''
-}
+export let extractTempFileAndConfirmIt = async (currentTempFile: string, latestInfo: PkgDownloadInfo) => {
 
-export let updateBootStrapFile = async (finalFile: string, latestInfo: PkgDownloadInfo) => {
-    // TODO:
+    return ''
 }
 
 export let downloadByPkgInfo = async (latestInfo: PkgDownloadInfo) => {
@@ -59,9 +56,10 @@ export let downloadByPkgInfo = async (latestInfo: PkgDownloadInfo) => {
     let currentPlatform = pkgInfo.platform
     let l_fileName = latestInfo.fileName
     let l_pkgURL = latestInfo.pkgURL
+    let randomSTR = parseInt((Math.random() * 1000) + "")
     let l_version = latestInfo.version
     let sha256SumURL = latestInfo.sha256SumURL
-    let currentTempFile = path.join(tempDir, Date.now() + '-' + l_fileName)
+    let currentTempFile = path.join(tempDir, Date.now() + "-" + randomSTR + '-' + l_fileName)
     logger.debug("currentTempFile", currentTempFile)
     // download l_pkgURL to currentTempFile by using fetch and fs
     let sha256Res = await fetch(sha256SumURL)

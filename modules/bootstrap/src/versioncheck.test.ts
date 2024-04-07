@@ -1,9 +1,15 @@
 import { expect, test } from "vitest";
 import { runItems } from "./items";
-import { downloadByPkgInfo, getLatestVersionResponse } from "./items/web2";
+import {
+  extractTempFileAndConfirmIt,
+  downloadByPkgInfo,
+  getLatestVersionResponse,
+} from "./items/web2";
 import { computeHash } from "utils/hash";
 import path from "path";
 import { logger } from "utils/logger";
+import { PkgDownloadInfo } from "web2share-copy/server_constants";
+import { deleteDLinkConfig, getDLinkConfig } from "fn";
 // NOTE: move this test part to build-all.sh
 
 test(
@@ -42,10 +48,13 @@ test(
 );
 
 test(
-  "test-web2-download-and-install-new-version",
+  "test-web2-install-new-version",
   async () => {
     let ver = "v2.1.89-beta";
-    let r = await downloadByPkgInfo({
+    deleteDLinkConfig();
+    let dlinkConfig = getDLinkConfig();
+    expect(dlinkConfig).toBe(null);
+    let p_downloadPkgInfo: PkgDownloadInfo = {
       version: ver,
       pkgURL:
         TEST_PKG_SERVER_LINK +
@@ -54,10 +63,15 @@ test(
         "-linux-x64-minimal.tar.gz",
       fileName: "LafTools-" + ver + "-linux-x64-minimal.tar.gz",
       sha256SumURL: TEST_PKG_SERVER_LINK + "/latest/SHA256SUM.txt",
-    });
+    };
+    let r = await downloadByPkgInfo(p_downloadPkgInfo);
     console.log(r);
+    let a = await extractTempFileAndConfirmIt(r, {
+      ...p_downloadPkgInfo,
+    });
   },
   {
+    concurrent: true,
     timeout: 500000,
   },
 );

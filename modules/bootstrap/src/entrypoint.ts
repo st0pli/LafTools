@@ -12,6 +12,7 @@ import desktop2 from "./items/desktop2";
 import { runItems } from "./items";
 import { DLinkType, IsCurrentServerMode } from "types";
 import { logger } from "./utils/logger";
+import { getDLinkConfig } from "./fn";
 
 let runType: ModuleType | null = null;
 process.argv.forEach((val, index) => {
@@ -37,11 +38,8 @@ logger.info("start entrypoint");
 let hasAckAnyDynamic = false;
 if (!IsCurrentServerMode()) {
   try {
-    let currentBootConfig = path.join(bootStrapInternalDir, "dlink.json");
-    if (fs.existsSync(currentBootConfig)) {
-      let dlink: DLinkType = JSON.parse(
-        fs.readFileSync(currentBootConfig, "utf-8"),
-      );
+    let dlink = getDLinkConfig();
+    if (dlink) {
       if (dlink.loadPath) {
         let newLoadModule = require(dlink.loadPath);
         if (runType == "web2") {
@@ -53,8 +51,6 @@ if (!IsCurrentServerMode()) {
           // TODO: not implemented yet
         }
       }
-    } else {
-      logger.error("no available dlink.json");
     }
   } catch (e) {
     console.error(e);
