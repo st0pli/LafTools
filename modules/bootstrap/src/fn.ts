@@ -13,7 +13,6 @@ export let getCurrentBootConfigFileWithCurrentVer = () => {
     bootStrapInternalDir,
     `dlink-${pkgInfo.version}.json`,
   );
-
   return currentBootConfig;
 };
 export let deleteDLinkConfig = () => {

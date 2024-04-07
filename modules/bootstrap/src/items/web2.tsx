@@ -7,14 +7,15 @@ import { writeFileSync } from 'fs'
 import { PkgInfo, readPkgInfoFromDir } from "../web2share-copy/pkginfo";
 import { URL_RELEASE_GET_ALL, URL_RELEASE_GET_LATEST } from "../web2share-copy/server_urls";
 import { PkgDownloadInfo, ReleaseLatestResponse, SysResponse } from "../web2share-copy/server_constants";
-import { IsCurrentServerMode } from "../types";
+import { DLinkType, IsCurrentServerMode } from "../types";
 import crypto from 'crypto';
 import { logger } from "../utils/logger";
 import fs from 'fs'
 import stream from 'stream'
 import { computeHash } from "utils/hash";
 import compressUtils from "utils/compressUtils";
-
+import shelljs from 'shelljs'
+import { getCurrentBootConfigFileWithCurrentVer, getDLinkConfig } from "../fn";
 let bootstrapInternalDir = getAppBootstrapInternalDir();
 let bootStrapImplWeb2Dir = getAppBootstrapImplWeb2Dir()
 let tempDir = getAppBootstrapTempDir()
@@ -50,15 +51,45 @@ export let getLatestVersionResponse = async (): Promise<SysResponse<ReleaseLates
     return json as SysResponse<ReleaseLatestResponse>
 }
 
+export let getRunScriptNameByPlatform = (platform: string) => {
+    let pkgInfo = { platform }
+    return pkgInfo.platform == 'windows-x64' || pkgInfo.platform == 'windows-arm64' ? 'run.bat' : 'run.sh'
+}
+export let getReleaseDateTxtInFolder = (folder: string): string[] => {
+    return shelljs.find(folder).filter(x => {
+        return x.indexOf('releaseDate.txt') !== -1
+    })
+}
 export let extractTempFileAndConfirmIt = async (currentTempFile: string, latestInfo: PkgDownloadInfo) => {
     let version = latestInfo.version
     let currentPlatform = pkgInfo.platform
     let currentImplDir = bootStrapImplWeb2Dir
     let saveToWhere = path.join(bootStrapImplWeb2Dir, version)
     await compressUtils.compress(currentTempFile, saveToWhere)
-    // find the file releaseDate.txt
-
-    return ''
+    let releaseDateFile: string | null = null;
+    // iterate all files in saveToWhere until got the runScript
+    let runScriptFile: string | null = null;
+    if (!runScriptFile) {
+        throw new Error('runScriptFile not found')
+    }
+    let releaseDateTxtFileList = getReleaseDateTxtInFolder(saveToWhere)
+    if (releaseDateTxtFileList.length == 0) {
+        throw new Error('releaseDate.txt not found')
+    }
+    let finalLoadFilePath = path.join(
+        releaseDateTxtFileList[0],
+        '..',
+        'boot',
+        'items.js'
+    )
+    let currentBootConfig = getCurrentBootConfigFileWithCurrentVer();
+    let newValDLink: DLinkType = {
+        fromVersion: pkgInfo.version,
+        toVersion: latestInfo.version,
+        dateTime: new Date().getTime() + "",
+        loadPath: finalLoadFilePath,
+    }
+    writeFileSync(currentBootConfig, JSON.stringify(newValDLink, null, 4))
 }
 
 export let downloadByPkgInfo = async (latestInfo: PkgDownloadInfo) => {
@@ -137,11 +168,11 @@ export let job_runVersionCheck = async () => {
                 let finalFile = await downloadByPkgInfo(latestInfo)
                 // STEP-2: extract the file and confirm it
                 await extractTempFileAndConfirmIt(finalFile, latestInfo)
-                // STEP-3: update the dlink
-
+                // everything is ok, nice!
+                logger.info('update done')
             }
         } catch (e) {
-            console.error('contain version check error', e)
+            logger.error('contain version check error:' + e)
             // sleep 10 minutes since it's not a critical error
             await new Promise(resolve => setTimeout(resolve, 10 * 60 * 1000));
         }
