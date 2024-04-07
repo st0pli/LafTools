@@ -6,7 +6,7 @@ import { logger } from "./utils/logger";
 import { getMinimalDIrPath } from "items/web2";
 import { readPkgInfoFromDir } from "web2share-copy/pkginfo";
 
-export let getCurrentBootConfigFile = () => {
+export let getCurrentBootConfigFileWithCurrentVer = () => {
   let bootStrapInternalDir = getAppBootstrapInternalDir();
   let pkgInfo = readPkgInfoFromDir(getMinimalDIrPath());
   let currentBootConfig = path.join(
@@ -17,13 +17,13 @@ export let getCurrentBootConfigFile = () => {
   return currentBootConfig;
 };
 export let deleteDLinkConfig = () => {
-  let currentBootConfig = getCurrentBootConfigFile();
+  let currentBootConfig = getCurrentBootConfigFileWithCurrentVer();
   if (fs.existsSync(currentBootConfig)) {
     fs.unlinkSync(currentBootConfig);
   }
 };
 export let getDLinkConfig = (): DLinkType | null => {
-  let currentBootConfig = getCurrentBootConfigFile();
+  let currentBootConfig = getCurrentBootConfigFileWithCurrentVer();
   if (fs.existsSync(currentBootConfig)) {
     let dlink: DLinkType = JSON.parse(
       fs.readFileSync(currentBootConfig, "utf-8"),

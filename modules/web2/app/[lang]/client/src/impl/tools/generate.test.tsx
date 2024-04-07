@@ -11,7 +11,7 @@ import FromBase64 from './impl/conversion/FromBase64'
 import _ from 'lodash'
 import path from 'path'
 import { getSubCategoryList } from './d_portal'
-import TranslationUtils from '@/app/__CORE__/utils/TranslationUtils'
+import TranslationUtils from '../../../../../__CORE__/utils/TranslationUtils'
 import Operation from '../core/Operation'
 
 test('generate-app-op-detail-list', async () => {
