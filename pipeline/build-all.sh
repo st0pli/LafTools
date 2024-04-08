@@ -157,11 +157,6 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
         cp -a ./node_modules $platformDistDir/boot/
         cd $preDIR
 
-
-        # if [ $bundleMode != "no-nodejs" ]; then
-        #     echo "[I] copying nodejs service..."
-        #     cp -a ./cross-platform/$platformName/node-dir $platformDistDir/bin/node
-        # fi
         echo "[I] built"
     }
 
@@ -234,12 +229,19 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
             cd $platformDistDir
             fileName=
             subDirName=LafTools-${crtVersion}-$platformName-minimal
+            tempDIR=$LAFTOOLS_ROOT/temp-dir
+            if [ -d $tempDIR ]; then
+                rm -rf $tempDIR
+            fi
+            mkdir -p $tempDIR
+            cp -a ./* $tempDIR
+
             subDir=./$subDirName
             if [ -d $subDir ]; then
                 rm -rf $subDir
             fi
+            cp -a $tempDIR/* $subDir
             mkdir -p $subDir
-            cp -a ./* $subDir
             rm -rf $subDir/$subDirName 
             mkdir -p $subDir/info
             echo "$platformName" > $subDir/info/platform.txt
