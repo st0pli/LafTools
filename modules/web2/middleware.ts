@@ -3,7 +3,6 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { match } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
-import queryString from "query-string";
 import { I18nItem } from "./app/__CORE__/config/i18n";
 import { fn_Geti18n } from "./app/[lang]/client/src/i18n-pure";
 

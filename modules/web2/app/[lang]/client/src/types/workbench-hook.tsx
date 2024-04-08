@@ -111,7 +111,7 @@ import { ToolCategory, ToolSubCategory } from "./purejs-types-READ_ONLY";
 
 
 import { useHistory, useLocation } from "react-router";
-import qs from "querystring";
+import qs from "query-string";
 import _ from "lodash";
 import { URL_WORKBENCH_WORKSPACE } from "../types/constants";
 import { useParams } from "react-router-dom";

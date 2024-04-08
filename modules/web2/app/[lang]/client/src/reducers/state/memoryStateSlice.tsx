@@ -21,7 +21,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { startListening } from "../../listenerMiddleware";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
-import queryString from "query-string";
 import _ from "lodash";
 import { TrueFalseType } from './paramStateSlice'
 

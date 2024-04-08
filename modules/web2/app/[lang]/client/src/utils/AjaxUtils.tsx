@@ -21,7 +21,7 @@
 import { logutils } from "./LogUtils";
 import _ from "lodash";
 import TranslationUtils, { Dot } from "./cTranslationUtils";
-import QS from "querystring";
+import QS from "query-string";
 import axios, { AxiosError, AxiosResponse } from "axios";
 import gutils from "./GlobalUtils";
 import { URL_PREFIX_LOCAL, URL_PREFIX_STATIC } from "../types/constants";
