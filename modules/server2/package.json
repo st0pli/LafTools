@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "TypeScript + Sequelize + MySQL + Express API Server",
   "author": "",
-  "license": "ISC",
+  "license": "AGPLv3",
   "scripts": {
     "start": "npm run build && cross-env NODE_ENV=production node dist/server.js",
     "dev": "npm run build && cross-env NODE_ENV=development node dist/server.js",

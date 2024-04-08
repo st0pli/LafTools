@@ -9,11 +9,12 @@ import morgan from 'morgan';
 import swaggerJSDoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
 import { NODE_ENV, PORT, LOG_FORMAT, ORIGIN, CREDENTIALS } from '@config';
+import moment from 'moment';
 import { DB } from '@database';
 import { Routes } from '@interfaces/routes.interface';
 import { ErrorMiddleware } from '@middlewares/error.middleware';
 import { logger, stream } from '@utils/logger';
-
+const launchTime = new Date();
 export class App {
   public app: express.Application;
   public env: string;
@@ -60,6 +61,13 @@ export class App {
   }
 
   private initializeRoutes(routes: Routes[]) {
+    this.app.use('/', (req, res) => {
+      res.send({
+        version: process.env.APP_VERSION,
+        launchAt: launchTime,
+        launchFromNow: moment(launchTime).fromNow(),
+      });
+    });
     routes.forEach(route => {
       this.app.use('/v3', route.router);
     });

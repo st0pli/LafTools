@@ -41,7 +41,7 @@
     "data analysis"
   ],
   "author": "",
-  "license": "ISC",
+  "license": "AGPLv3",
   "devDependencies": {
     "husky": "^8.0.3",
     "import-sort-cli": "^6.0.0",

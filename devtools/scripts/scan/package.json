@@ -9,7 +9,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "AGPLv3",
   "dependencies": {
     "chokidar": "^3.5.3",
     "cn-chars": "^0.1.1",
