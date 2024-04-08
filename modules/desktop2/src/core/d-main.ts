@@ -11,14 +11,9 @@ export default (props: DMainPassProps) => {
   }
 
   const createWindow = () => {
-    let iconImg = path.join(
-      __dirname,
-      "..",
-      "..",
-      "assets",
-      "images",
-      "icon.png",
-    );
+    let rootFolder = path.join(__dirname, "..", "..");
+    let iconImg = path.join(rootFolder, "assets", "images", "icon.png");
+    let webappFolder = path.join(rootFolder, "webapp");
 
     // Create the browser window.
     const mainWindow = new BrowserWindow({
@@ -27,27 +22,30 @@ export default (props: DMainPassProps) => {
       autoHideMenuBar: true,
       icon: iconImg,
       webPreferences: {
+        nodeIntegration: true, // is default value after Electron v5
+        contextIsolation: false,
         preload: path.join(__dirname, "d-preload.js"),
       },
     });
 
     // and load the index.html of the app.
-    if (MAIN_WINDOW_VITE_DEV_SERVER_URL) {
-      mainWindow.loadURL(MAIN_WINDOW_VITE_DEV_SERVER_URL);
-    } else {
+    if (process.env.NODE_ENV === "development") {
+      // mainWindow.loadURL("http://localhost:5173/");
       mainWindow.loadFile(
-        path.join(__dirname, `../renderer/${MAIN_WINDOW_VITE_NAME}/index.html`),
+        path.join(rootFolder, "webapp", "dist", "index.html"),
       );
+    } else {
+      mainWindow.loadFile(path.join(webappFolder, `index.html`));
     }
-    mainWindow.loadURL("https://www.baidu.com");
+    mainWindow.loadFile(path.join(rootFolder, "webapp", "dist", "index.html"));
 
     // Open the DevTools.
-    // if (process.env.NODE_ENV === "development") {
-    //   mainWindow.webContents.openDevTools({ mode: "detach" });
-    //   mainWindow.webContents.executeJavaScript(
-    //     'document.getElementsByClassName("long-click-glyph")[0].click()',
-    //   );
-    // }
+    if (process.env.NODE_ENV === "development") {
+      mainWindow.webContents.openDevTools({ mode: "detach" });
+      mainWindow.webContents.executeJavaScript(
+        'document.getElementsByClassName("long-click-glyph")[0].click()',
+      );
+    }
   };
 
   // This method will be called when Electron has finished
