@@ -43,7 +43,7 @@ test(
       version: ver,
       pkgURL:
         TEST_PKG_SERVER_LINK +
-        "/latest/LafTools-" +
+        "/test/LafTools-" +
         ver +
         "-linux-x64-minimal.tar.gz",
       fileName: "LafTools-" + ver + "-linux-x64-minimal.tar.gz",
