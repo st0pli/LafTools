@@ -3,8 +3,6 @@ import path from "path";
 import { DMainPassProps } from "./d-types";
 
 export default (props: DMainPassProps) => {
-  let { MAIN_WINDOW_VITE_DEV_SERVER_URL } = props;
-  let MAIN_WINDOW_VITE_NAME = "unknown";
   // Handle creating/removing shortcuts on Windows when installing/uninstalling.
   if (require("electron-squirrel-startup")) {
     app.quit();

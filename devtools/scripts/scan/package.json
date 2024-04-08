@@ -9,7 +9,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "AGPLv3",
+  "license": "AGPL-3.0-only",
   "dependencies": {
     "chokidar": "^3.5.3",
     "cn-chars": "^0.1.1",

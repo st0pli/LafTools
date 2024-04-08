@@ -81,7 +81,7 @@ const AjaxUtils = {
   },
   getQSStr(obj: CommonRequest): string {
     let querystring = obj.querystring;
-    return !_.isEmpty(querystring) ? "?" + QS.stringify(querystring) : "";
+    return !_.isEmpty(querystring) && querystring ? "?" + QS.stringify(querystring) : "";
   },
   DoLocalRequestWithNoThrow: async function <T3>(
     obj: CommonRequest
