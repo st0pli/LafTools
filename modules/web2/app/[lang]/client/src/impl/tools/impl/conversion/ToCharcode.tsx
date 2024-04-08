@@ -18,6 +18,7 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+import { Dot } from "@/app/__CORE__/utils/cTranslationUtils";
 import Operation, { OptDetail } from "../../../core/Operation";
 import Utils from "../../../core/Utils.mjs";
 import OperationError from "../../../core/errors/OperationError.mjs";
@@ -43,8 +44,8 @@ class ToCharcode extends Operation {
     return {
       relatedID: "fromto",
       infoURL: "https://wikipedia.org/wiki/Plane_(Unicode)",
-      optName: "To Charcode",
-      optDescription: "Converts text to its unicode character code equivalent",
+      optName: Dot("hQX9jlm9F", "To Charcode"),
+      optDescription: Dot("zrovzToIM", "Converts text to its unicode character code equivalent"),
       exampleInput: "Γειά σου",
       exampleOutput: "0393 03b5 03b9 03ac 20 03c3 03bf 03c5",
       config: {

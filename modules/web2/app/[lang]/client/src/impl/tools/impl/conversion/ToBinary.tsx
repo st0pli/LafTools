@@ -18,6 +18,7 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+import { Dot } from "../../../../utils/cTranslationUtils";
 import Operation, { OptDetail } from "../../../core/Operation";
 import Utils from "../../../core/Utils.mjs";
 import { toBinary } from "../../../core/lib/Binary.mjs";
@@ -38,8 +39,8 @@ class ToBinary extends Operation {
     return {
       relatedID: "fromto",
       infoURL: "https://wikipedia.org/wiki/Binary_code",
-      optName: "To Binary",
-      optDescription: "Converts input data to binary",
+      optName: Dot("x_XQ5afPY", "To Binary"),
+      optDescription: Dot("0kAE9UfwP", "Converts input data to binary"),
       exampleInput: "Hi",
       exampleOutput: "01001000 01101001",
       config: {

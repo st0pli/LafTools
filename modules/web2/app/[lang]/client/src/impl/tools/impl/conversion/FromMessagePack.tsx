@@ -24,6 +24,7 @@
  * @license Apache-2.0
  */
 
+import { Dot } from "../../../../utils/cTranslationUtils.tsx";
 import Operation, { OptDetail } from "../../../core/Operation.tsx";
 import OperationError from "../../../core/errors/OperationError.mjs";
 import notepack from "notepack.io";
@@ -35,8 +36,8 @@ class FromMessagePack extends Operation {
   public getOptDetail(): OptDetail {
     return {
       infoURL: "https://wikipedia.org/wiki/MessagePack",
-      optName: "From MessagePack",
-      optDescription: "Converts MessagePack encoded data to JSON. MessagePack is a computer data interchange format. It is a binary form for representing simple data structures like arrays and associative arrays.",
+      optName: Dot("SzyCqp3Gu", "From MessagePack"),
+      optDescription: Dot("8mxv4e6pz", "Converts MessagePack encoded data to JSON. MessagePack is a computer data interchange format. It is a binary form for representing simple data structures like arrays and associative arrays."),
       exampleInput: "8b2a",
       exampleOutput: "{\n  \"a\": 42\n}",
       relatedID: "fromto",

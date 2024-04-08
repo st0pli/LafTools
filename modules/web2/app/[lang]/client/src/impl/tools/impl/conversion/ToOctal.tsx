@@ -24,6 +24,7 @@
  * @license Apache-2.0
  */
 
+import { Dot } from "@/app/__CORE__/utils/cTranslationUtils.tsx";
 import Operation, { OptDetail } from "../../../core/Operation.tsx";
 import Utils from "../../../core/Utils.mjs";
 import { DELIM_OPTIONS } from "../../../core/lib/Delim.mjs";
@@ -35,8 +36,8 @@ class ToOctal extends Operation {
   public getOptDetail(): OptDetail {
     return {
       infoURL: "https://wikipedia.org/wiki/Octal",
-      optName: "To Octal",
-      optDescription: "Converts the input string to octal bytes separated by the specified delimiter.<br><br>e.g. The UTF-8 encoded string <code>Γειά σου</code> becomes <code>316 223 316 265 316 271 316 254 40 317 203 316 277 317 205</code>",
+      optName: Dot("DX1ypOyRJ", "To Octal"),
+      optDescription: Dot("GqolnOrbq", "Converts the input string to octal bytes separated by the specified delimiter.<br><br>e.g. The UTF-8 encoded string <code>Γειά σου</code> becomes <code>316 223 316 265 316 271 316 254 40 317 203 316 277 317 205</code>"),
       exampleInput: "Γειά σου",
       exampleOutput: "316 223 316 265 316 271 316 254 40 317 203 316 277 317 205",
       relatedID: "fromto",

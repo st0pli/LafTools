@@ -24,6 +24,7 @@
  * @license Apache-2.0
  */
 
+import { Dot } from "../../../../utils/cTranslationUtils.tsx";
 import Operation, { OptDetail } from "../../../core/Operation.tsx";
 import Utils from "../../../core/Utils.mjs";
 import {
@@ -38,8 +39,8 @@ class ToMorseCode extends Operation {
   public getOptDetail(): OptDetail {
     return {
       infoURL: "https://wikipedia.org/wiki/Morse_code",
-      optName: "To Morse Code",
-      optDescription: "Translates alphanumeric characters into International Morse Code.<br><br>Ignores non-Morse characters.<br><br>e.g. <code>SOS</code> becomes <code>... --- ...</code>",
+      optName: Dot("ACTG_e6y2", "To {0}", Dot("MYqdPW071", "To Morse Code")),
+      optDescription: Dot("y91lqtJbW", "Translates alphanumeric characters into International Morse Code.<br><br>Ignores non-Morse characters.<br><br>e.g. <code>SOS</code> becomes <code>... --- ...</code>"),
       exampleInput: "SOS",
       exampleOutput: "... --- ...",
       relatedID: "fromto",
