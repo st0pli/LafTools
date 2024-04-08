@@ -24,14 +24,45 @@
  * @license Apache-2.0
  */
 
-import Operation from "../Operation.tsx";
-import Utils from "../Utils.mjs";
-import { DELIM_OPTIONS } from "../lib/Delim.mjs";
+import { Dot } from "@/app/__CORE__/utils/cTranslationUtils.tsx";
+import Operation, { OptDetail } from "../../../core/Operation.tsx";
+import Utils from "../../../core/Utils.mjs";
+import { DELIM_OPTIONS } from "../../../core/lib/Delim.mjs";
 
 /**
  * To Decimal operation
  */
 class ToDecimal extends Operation {
+  public getOptDetail(): OptDetail {
+    return {
+      infoURL: "https://wikipedia.org/wiki/Decimal",
+      optName: Dot("3g_qIW2dZ", "To Decimal"),
+      optDescription: Dot("oINAgNij0", "Converts the input data to an ordinal integer array.<br><br>e.g. <code>Hello</code> becomes <code>72 101 108 108 111</code>"),
+      exampleInput: "Hello",
+      exampleOutput: "72 101 108 108 111",
+      relatedID: "fromto",
+      config: {
+        flowControl: false,
+        manualBake: false,
+        module: "Default",
+        description: "Converts the input data to an ordinal integer array.<br><br>e.g. <code>Hello</code> becomes <code>72 101 108 108 111</code>",
+        infoURL: "https://wikipedia.org/wiki/Decimal",
+        inputType: "ArrayBuffer",
+        outputType: "string",
+        args: [
+          {
+            name: "Delimiter",
+            type: "option",
+            value: DELIM_OPTIONS,
+          },
+          {
+            name: "Support signed values",
+            type: "boolean",
+          },
+        ],
+      },
+    }
+  }
   /**
    * ToDecimal constructor
    */
@@ -40,8 +71,8 @@ class ToDecimal extends Operation {
 
     this.name = "To Decimal";
     this.module = "Default";
-    this.description =
-      "Converts the input data to an ordinal integer array.<br><br>e.g. <code>Hello</code> becomes <code>72 101 108 108 111</code>";
+    // this.description =
+    //   "Converts the input data to an ordinal integer array.<br><br>e.g. <code>Hello</code> becomes <code>72 101 108 108 111</code>";
     this.inputType = "ArrayBuffer";
     this.outputType = "string";
     this.args = [

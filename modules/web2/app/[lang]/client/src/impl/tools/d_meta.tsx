@@ -230,9 +230,50 @@ let appToolInfoObj = {
     FromHexdump: passInfo({
         LabelFn: (Dot: DotType) => Dot("d33qw", "From {0}", Dot("Hexdump", "Hexdump"))
     }),
+    HTMLMinify: passInfo({
+        LabelFn: (Dot: DotType) => Dot("N6-IVLWRV", "{0} Minify", "HTML")
+    }),
     // JSONViewer: passInfo({
     //     LabelFn: (Dot: DotType) => Dot("1Xdsqwqw", "JSON Viewer")
     // }),
+    // new items on 2024-04-08
+
+    SnakeCase: passInfo({
+        LabelFn: (Dot: DotType) => Dot("snakecasecon", "Snake Case Converter")
+    }),
+    MorseCode: passInfo({
+        LabelFn: (Dot: DotType) => Dot("to.morsecode.conve", "Morse Code Converter")
+    }),
+    MessagePack: passInfo({
+        LabelFn: (Dot: DotType) => Dot("to.Jdzc-Fj9e", "MessagePack Converter")
+    }),
+    ToLowerCase: passInfo({
+        LabelFn: (Dot: DotType) => Dot("to.lowercase", "To Lower Case")
+    }),
+    KebabCase: passInfo({
+        LabelFn: (Dot: DotType) => Dot("to.kebabcasconvee", "Kebab Case Converter")
+    }),
+    HTMLEntity: passInfo({
+        LabelFn: (Dot: DotType) => Dot("to.OIPWU3egZ", "HTML Entity Formats")
+    }),
+    CharCode: passInfo({
+        LabelFn: (Dot: DotType) => Dot("to.ch314mU8VGl", "Char Code")
+    }),
+    CamelCase: passInfo({
+        LabelFn: (Dot: DotType) => Dot("to.camelcase.conv", "Camel Case Converter")
+    }),
+    Binary: passInfo({
+        LabelFn: (Dot: DotType) => Dot("tmutZD17dx", "Binary Formats")
+    }),
+    Octal: passInfo({
+        LabelFn: (Dot: DotType) => Dot("from.022s5i1Yn", "Octal Formats")
+    }),
+    LowerCase: passInfo({
+        LabelFn: (Dot: DotType) => Dot("from.02YEuozhq16", "Upper Lower Cases")
+    }),
+    Decimal: passInfo({
+        LabelFn: (Dot: DotType) => Dot("from.0s5i1Yn", "Decimal Formats")
+    }),
 } satisfies Record<string, AppInfoType>
 
 _.forEach(appToolInfoObj, (x, d, n) => {
@@ -253,6 +294,7 @@ export const AppToolConversionIdCollectionSet = {
     text: ['RemoveWhitespace', 'Tail', 'Reverse', 'RemoveLineNumbers'],
     beautify: ['JSONBeautify', 'JavaScriptBeautify', 'CSSBeautify', 'XMLBeautify', 'YAMLBeautify', 'SQLBeautify', 'HTMLBeautify'],
     xml: ['XMLBeautify', 'XMLMinify'],
+    html: ['HTMLBeautify', 'HTMLMinify', 'ToHTMLEntity', 'FromHTMLEntity'],
     yaml: ['YAMLBeautify'],
     // typescript: ['TypeScriptBeautify', 'JavaScriptBeautify', 'JavaScriptMinify'],
     // url: ['URLEncode', 'URLDecode', 'ToBase64', 'FromBase64'],
@@ -267,6 +309,7 @@ export const AppToolConversionIdCollectionSet = {
     sha: ['SHA0', 'SHA1', 'SHA2', 'SHA3', 'MD5'],
     sha3s: ['SHA512', 'SHA384', 'SHA256', 'SHA224'],
     nothing: [],
+    fromto: [],
 } satisfies { [key: string]: AppOpFnMapTypeKeys[] }
 
 

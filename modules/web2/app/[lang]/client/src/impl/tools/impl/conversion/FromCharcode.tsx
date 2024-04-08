@@ -18,22 +18,59 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+import { Dot } from "../../../../utils/cTranslationUtils";
+import Operation, { OptDetail } from "../../../core/Operation";
+import Utils, { isWorkerEnvironment } from "../../../core/Utils.mjs";
+import OperationError from "../../../core/errors/OperationError.mjs";
+import { DELIM_OPTIONS } from "../../../core/lib/Delim.mjs";
+
 /**
  * @author n1474335 [n1474335@gmail.com]
  * @copyright Crown Copyright 2016
  * @license Apache-2.0
  */
 
-import Operation from "../Operation.tsx";
-import Utils from "../Utils.mjs";
-import { DELIM_OPTIONS } from "../lib/Delim.mjs";
-import { isWorkerEnvironment } from "../Utils.mjs";
-import OperationError from "../errors/OperationError.mjs";
 
 /**
  * From Charcode operation
  */
 class FromCharcode extends Operation {
+  public getOptDetail(): OptDetail {
+    return {
+      relatedID: "fromto",
+      config: {
+        flowControl: false,
+        manualBake: false,
+        "module": "Default",
+        "description": "Converts unicode character codes back into text.<br><br>e.g. <code>0393 03b5 03b9 03ac 20 03c3 03bf 03c5</code> becomes <code>Γειά σου</code>",
+        "infoURL": "https://wikipedia.org/wiki/Plane_(Unicode)",
+        "inputType": "string",
+        "outputType": "ArrayBuffer",
+        "args": [
+          {
+            "name": "Delimiter",
+            "type": "option",
+            "value": [
+              "Space",
+              "Comma",
+              "None"
+            ]
+          },
+          {
+            "name": "Base",
+            "type": "number",
+            "value": 16
+          }
+        ]
+      },
+      infoURL: 'https://wikipedia.org/wiki/Plane_(Unicode)',
+      nousenouseID: 'fromcharcode',
+      optName: Dot("Ec-O2fmpc", "From Charcode"),
+      optDescription: Dot("VivVgJcwO", "Converts unicode character codes back into text."),
+      exampleInput: '0393 03b5 03b9 03ac 20 03c3 03bf 03c5',
+      exampleOutput: 'Γειά σου',
+    }
+  }
   /**
    * FromCharcode constructor
    */
@@ -42,9 +79,6 @@ class FromCharcode extends Operation {
 
     this.name = "From Charcode";
     this.module = "Default";
-    this.description =
-      "Converts unicode character codes back into text.<br><br>e.g. <code>0393 03b5 03b9 03ac 20 03c3 03bf 03c5</code> becomes <code>Γειά σου</code>";
-    this.infoURL = "https://wikipedia.org/wiki/Plane_(Unicode)";
     this.inputType = "string";
     this.outputType = "ArrayBuffer";
     this.args = [
@@ -79,11 +113,11 @@ class FromCharcode extends Operation {
     }
 
     if (input.length === 0) {
-      return new ArrayBuffer();
+      return new ArrayBuffer(0);
     }
 
-    if (base !== 16 && isWorkerEnvironment())
-      self.setOption("attemptHighlight", false);
+    // if (base !== 16 && isWorkerEnvironment())
+    //   self.setOption("attemptHighlight", false);
 
     // Split into groups of 2 if the whole string is concatenated and
     // too long to be a single character

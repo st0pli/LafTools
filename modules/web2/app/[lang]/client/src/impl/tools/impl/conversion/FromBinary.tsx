@@ -24,15 +24,65 @@
  * @license Apache-2.0
  */
 
-import Operation from "../Operation.tsx";
-import Utils from "../Utils.mjs";
-import { BIN_DELIM_OPTIONS } from "../lib/Delim.mjs";
-import { fromBinary } from "../lib/Binary.mjs";
+import { Dot } from "@/app/[lang]/client/src/utils/cTranslationUtils.tsx";
+import OperationError from "../../../core/errors/OperationError.mjs";
+import {
+  ENCODING_SCHEME,
+  ENCODING_LOOKUP,
+  FORMAT,
+} from "../../../core/lib/BCD.mjs";
+import BigNumber from "bignumber.js";
+import Operation, { OptDetail } from "../../../core/Operation";
+import { fromBinary } from "../../../core/lib/Binary.mjs";
+import Utils from "../../../core/Utils.mjs";
+import { BIN_DELIM_OPTIONS } from "../../../core/lib/Delim.mjs";
+
 
 /**
  * From Binary operation
  */
 class FromBinary extends Operation {
+  public getOptDetail(): OptDetail {
+    return {
+      relatedID: "fromto",
+      config: {
+        flowControl: false,
+        manualBake: false,
+        "module": "Default",
+        "description": "Converts a binary string back into its raw form.<br><br>e.g. <code>01001000 01101001</code> becomes <code>Hi</code>",
+        "infoURL": "https://wikipedia.org/wiki/Binary_code",
+        "inputType": "string",
+        "outputType": "byteArray",
+        "args": [
+          {
+            "name": "Delimiter",
+            "type": "option",
+            "value": [
+              "None",
+              "Space",
+              "Comma",
+              "Semi-colon",
+              "Colon",
+              "Line feed",
+              "CRLF"
+            ]
+          },
+          {
+            "name": "Byte Length",
+            "type": "number",
+            "value": 8,
+            "min": 1
+          }
+        ]
+      },
+      infoURL: "https://en.wikipedia.org/wiki/Binary_code",
+      nousenouseID: "fromBinary",
+      optName: Dot("fromBinary.text.1b6c3", "From Binary"),
+      optDescription: Dot("fromBinary.text.1b6c3", "Converts a binary string back into its raw form."),
+      exampleInput: "01001000 01101001",
+      exampleOutput: "Hi",
+    }
+  }
   /**
    * FromBinary constructor
    */
@@ -41,9 +91,6 @@ class FromBinary extends Operation {
 
     this.name = "From Binary";
     this.module = "Default";
-    this.description =
-      "Converts a binary string back into its raw form.<br><br>e.g. <code>01001000 01101001</code> becomes <code>Hi</code>";
-    this.infoURL = "https://wikipedia.org/wiki/Binary_code";
     this.inputType = "string";
     this.outputType = "byteArray";
     this.args = [

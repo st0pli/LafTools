@@ -24,14 +24,84 @@
  * @license Apache-2.0
  */
 
-import Operation from "../Operation.tsx";
-import { DELIM_OPTIONS } from "../lib/Delim.mjs";
-import { fromDecimal } from "../lib/Decimal.mjs";
+import Operation, { OptDetail } from "../../../core/Operation.tsx";
+import { DELIM_OPTIONS } from "../../../core/lib/Delim.mjs";
+import { fromDecimal } from "../../../core/lib/Decimal.mjs";
+import { Dot } from "../../../../utils/cTranslationUtils.tsx";
 
 /**
  * From Decimal operation
  */
 class FromDecimal extends Operation {
+  public getOptDetail(): OptDetail {
+    return {
+      infoURL: "https://wikipedia.org/wiki/Decimal",
+      optName: Dot("yEZk8Ll0k", "From Decimal"),
+      optDescription: Dot("K0ATr9EhO", "Converts the data from an ordinal integer array back into its raw form.<br><br>e.g. <code>72 101 108 108 111</code> becomes <code>Hello</code>"),
+      exampleInput: "72 101 108 108 111",
+      exampleOutput: "Hello",
+      relatedID: "fromto",
+      config: {
+        flowControl: false,
+        manualBake: false,
+        "module": "Default",
+        "description": "Converts the data from an ordinal integer array back into its raw form.<br><br>e.g. <code>72 101 108 108 111</code> becomes <code>Hello</code>",
+        "infoURL": "https://wikipedia.org/wiki/Plane_(Unicode)",
+        "inputType": "string",
+        "outputType": "byteArray",
+        "args": [
+          {
+            "name": "Delimiter",
+            "type": "option",
+            "value": DELIM_OPTIONS,
+          },
+          {
+            "name": "Support signed values",
+            "type": "boolean",
+            "value": false,
+          },
+        ],
+        "checks": [
+          {
+            pattern:
+              "^(?:\\d{1,2}|1\\d{2}|2[0-4]\\d|25[0-5])(?: (?:\\d{1,2}|1\\d{2}|2[0-4]\\d|25[0-5]))*$",
+            flags: "",
+            args: ["Space", false],
+          },
+          {
+            pattern:
+              "^(?:\\d{1,2}|1\\d{2}|2[0-4]\\d|25[0-5])(?:,(?:\\d{1,2}|1\\d{2}|2[0-4]\\d|25[0-5]))*$",
+            flags: "",
+            args: ["Comma", false],
+          },
+          {
+            pattern:
+              "^(?:\\d{1,2}|1\\d{2}|2[0-4]\\d|25[0-5])(?:;(?:\\d{1,2}|1\\d{2}|2[0-4]\\d|25[0-5]))*$",
+            flags: "",
+            args: ["Semi-colon", false],
+          },
+          {
+            pattern:
+              "^(?:\\d{1,2}|1\\d{2}|2[0-4]\\d|25[0-5])(?::(?:\\d{1,2}|1\\d{2}|2[0-4]\\d|25[0-5]))*$",
+            flags: "",
+            args: ["Colon", false],
+          },
+          {
+            pattern:
+              "^(?:\\d{1,2}|1\\d{2}|2[0-4]\\d|25[0-5])(?:\\n(?:\\d{1,2}|1\\d{2}|2[0-4]\\d|25[0-5]))*$",
+            flags: "",
+            args: ["Line feed", false],
+          },
+          {
+            pattern:
+              "^(?:\\d{1,2}|1\\d{2}|2[0-4]\\d|25[0-5])(?:\\r\\n(?:\\d{1,2}|1\\d{2}|2[0-4]\\d|25[0-5]))*$",
+            flags: "",
+            args: ["CRLF", false],
+          },
+        ]
+      }
+    }
+  }
   /**
    * FromDecimal constructor
    */
@@ -40,8 +110,8 @@ class FromDecimal extends Operation {
 
     this.name = "From Decimal";
     this.module = "Default";
-    this.description =
-      "Converts the data from an ordinal integer array back into its raw form.<br><br>e.g. <code>72 101 108 108 111</code> becomes <code>Hello</code>";
+    // this.description =
+    //   "Converts the data from an ordinal integer array back into its raw form.<br><br>e.g. <code>72 101 108 108 111</code> becomes <code>Hello</code>";
     this.inputType = "string";
     this.outputType = "byteArray";
     this.args = [

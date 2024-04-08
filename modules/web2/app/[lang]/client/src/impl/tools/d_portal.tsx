@@ -121,13 +121,8 @@ export let getToolSubCategory = ((): PortalDefinitionType[] => {
                 },
                 {
                     id: 'htmlminify',
-                    // toolId: 'HTMLMinify',
+                    toolId: 'HTMLMinify',
                     label: Dot("2Y2eq2", "HTML Minifier"),
-                },
-                {
-                    id: 'yamlminify',
-                    // toolId: 'YAMLMinify',
-                    label: Dot("h2Y2Y2Yeqdqw2Y", "YAML Minifier"),
                 },
                 {
                     id: 'cssminify',
@@ -165,6 +160,11 @@ export let getToolSubCategory = ((): PortalDefinitionType[] => {
                     toolId: "LessBeautify",
                     label: Dot("2Ye2Yqw2qY2Y2", "{0} Formatter", "Less"),
                 },
+                {
+                    id: "htmlentity",
+                    toolId: 'HTMLEntity',
+                    label: Dot("gGpTg5Wn_", "HTML Entity Formats")
+                }
             ]
         },
         {
@@ -285,16 +285,6 @@ export let getToolSubCategory = ((): PortalDefinitionType[] => {
                     toolId: 'JSONEscape',
                     label: Dot("fdtedX-", "{0} Unescape", 'JSON'),
                 },
-                // {
-                //     id: 'escape',
-                //     // toolId: 'escape',
-                //     label: Dot("2Y2Y2qY2Y2", "Escape"),
-                // },
-                // {
-                //     id: 'unescape',
-                //     // toolId: 'unescape',
-                //     label: Dot("2Y2Y2wY2Y2", "Unescape"),
-                // },
                 {
                     id: 'encodeuri',
                     toolId: 'URLToEncode',
@@ -382,6 +372,53 @@ export let getToolSubCategory = ((): PortalDefinitionType[] => {
                     id: 'yaml2json',
                     label: Dot("yaml2json.t", "YAML to JSON")
                 },
+                {
+                    id: 'snakecase',
+                    toolId: 'SnakeCase',
+                    label: Dot("convert.snakecase", "Snake Case Conversion")
+                },
+                {
+                    id: 'camelcase',
+                    toolId: 'CamelCase',
+                    label: Dot("convert.camelcase", "Camel Case Conversion")
+                },
+                {
+                    id: 'kebabcase',
+                    toolId: 'KebabCase',
+                    label: Dot("convert.kebabcase", "Kebab Case Conversion")
+                },
+                {
+                    id: 'uplowcase',
+                    toolId: 'LowerCase',
+                    label: Dot("fw-66JBSB", "Upper/Lower Case")
+                },
+                {
+                    id: 'messagepack',
+                    toolId: 'MessagePack',
+                    label: Dot("LQQt5fQ3Q", "MessagePack Converter")
+                },
+                {
+                    id: "charcode",
+                    toolId: 'CharCode',
+                    label: Dot("LmmJOduQpV", "Charcode Converter")
+                },
+                {
+                    // binary
+                    id: 'binary',
+                    toolId: 'Binary',
+                    label: Dot("dqw3312", "Binary Converter")
+                },
+                {
+                    // octal
+                    id: 'octal',
+                    toolId: 'Octal',
+                    label: Dot("dmqwm312", "Octal Converter")
+                },
+                {
+                    id: 'decimal',
+                    toolId: 'Decimal',
+                    label: Dot("uX0qFUazR", "Decimal Converter")
+                }
             ]
         },
         {

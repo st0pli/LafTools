@@ -18,19 +18,55 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+import { Dot } from "../../../../utils/cTranslationUtils";
+import Operation, { OptDetail } from "../../../core/Operation";
+import Utils from "../../../core/Utils.mjs";
+
 /**
  * @author n1474335 [n1474335@gmail.com]
  * @copyright Crown Copyright 2016
  * @license Apache-2.0
  */
 
-import Operation from "../Operation.tsx";
-import Utils from "../Utils.mjs";
+// import Operation from "../Operation.tsx";
+// import Utils from "../Utils.mjs";
 
 /**
  * To HTML Entity operation
  */
 class ToHTMLEntity extends Operation {
+  public getOptDetail(): OptDetail {
+    return {
+      relatedID: "fromto",
+      infoURL: "https://wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references",
+      optName: Dot("dXHovRa7X", "To HTML Entity"),
+      optDescription: Dot("_B_gk42VH", "Converts characters to HTML entities"),
+      exampleInput: "&",
+      exampleOutput: "&amp;<span>amp;</span>",
+      config: {
+        flowControl: false,
+        manualBake: false,
+        module: "Encodings",
+        description: "Converts characters to HTML entities<br><br>e.g. <code>&amp;</code> becomes <code>&amp;<span>amp;</span></code>",
+        infoURL: "https://wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references",
+        inputType: "string",
+        outputType: "string",
+        args: [
+          {
+            name: Dot("eubZz3MEq", "Convert all characters"),
+            type: "boolean",
+            value: false,
+          },
+          {
+            name: Dot("7dyN6HliY", "Convert to"),
+            type: "option",
+            value: ["Named entities", "Numeric entities", "Hex entities"],
+          },
+        ],
+      },
+    }
+  }
+
   /**
    * ToHTMLEntity constructor
    */
@@ -39,20 +75,20 @@ class ToHTMLEntity extends Operation {
 
     this.name = "To HTML Entity";
     this.module = "Encodings";
-    this.description =
-      "Converts characters to HTML entities<br><br>e.g. <code>&amp;</code> becomes <code>&amp;<span>amp;</span></code>";
-    this.infoURL =
-      "https://wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references";
+    // this.description =
+    //   "Converts characters to HTML entities<br><br>e.g. <code>&amp;</code> becomes <code>&amp;<span>amp;</span></code>";
+    // this.infoURL =
+    //   "https://wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references";
     this.inputType = "string";
     this.outputType = "string";
     this.args = [
       {
-        name: "Convert all characters",
+        name: Dot("tpjs2gJDt", "Convert all characters"),
         type: "boolean",
         value: false,
       },
       {
-        name: "Convert to",
+        name: Dot("Kd4QkQG2F", "Convert to"),
         type: "option",
         value: ["Named entities", "Numeric entities", "Hex entities"],
       },

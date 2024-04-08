@@ -18,19 +18,41 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+import { Dot } from "../../../../utils/cTranslationUtils";
+import Operation, { OptDetail } from "../../../core/Operation";
+import Utils from "../../../core/Utils.mjs";
+
 /**
  * @author n1474335 [n1474335@gmail.com]
  * @copyright Crown Copyright 2016
  * @license Apache-2.0
  */
 
-import Operation from "../Operation.tsx";
-import Utils from "../Utils.mjs";
-
 /**
  * From HTML Entity operation
  */
 class FromHTMLEntity extends Operation {
+  public getOptDetail(): OptDetail {
+    return {
+      relatedID: "fromto",
+      config: {
+        flowControl: false,
+        manualBake: false,
+        "module": "Encodings",
+        "description": "Converts HTML entities back to characters<br><br>e.g. <code>&amp;<span>amp;</span></code> becomes <code>&amp;</code>",
+        "infoURL": "https://wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references",
+        "inputType": "string",
+        "outputType": "string",
+        "args": []
+      },
+      infoURL: 'https://wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references',
+      nousenouseID: 'html-entity',
+      optName: Dot("BzA-pnK2Q", "From HTML Entity"),
+      optDescription: Dot("QzVvoxTOo", "Converts HTML entities back to characters"),
+      exampleInput: '&amp;',
+      exampleOutput: '&',
+    }
+  }
   /**
    * FromHTMLEntity constructor
    */
@@ -39,10 +61,6 @@ class FromHTMLEntity extends Operation {
 
     this.name = "From HTML Entity";
     this.module = "Encodings";
-    this.description =
-      "Converts HTML entities back to characters<br><br>e.g. <code>&amp;<span>amp;</span></code> becomes <code>&amp;</code>";
-    this.infoURL =
-      "https://wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references";
     this.inputType = "string";
     this.outputType = "string";
     this.args = [];
@@ -68,7 +86,7 @@ class FromHTMLEntity extends Operation {
 
     while ((m = regex.exec(input))) {
       // Add up to match
-      for (; i < m.index; ) output += input[i++];
+      for (; i < m.index;) output += input[i++];
 
       // Add match
       const bite = entityToByte[m[1]];
@@ -94,13 +112,13 @@ class FromHTMLEntity extends Operation {
         output += Utils.chr(parseInt(hex, 16));
       } else {
         // Not a valid entity, print as normal
-        for (; i < regex.lastIndex; ) output += input[i++];
+        for (; i < regex.lastIndex;) output += input[i++];
       }
 
       i = regex.lastIndex;
     }
     // Add all after final match
-    for (; i < input.length; ) output += input[i++];
+    for (; i < input.length;) output += input[i++];
 
     return output;
   }

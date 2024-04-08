@@ -24,14 +24,42 @@
  * @license Apache-2.0
  */
 
-import Operation from "../Operation.tsx";
-import Utils from "../Utils.mjs";
-import { DELIM_OPTIONS } from "../lib/Delim.mjs";
+import { Dot } from "@/app/__CORE__/utils/cTranslationUtils.tsx";
+import Operation, { OptDetail } from "../../../core/Operation.tsx";
+import Utils from "../../../core/Utils.mjs";
+import { DELIM_OPTIONS } from "../../../core/lib/Delim.mjs";
 
 /**
  * From Octal operation
  */
 class FromOctal extends Operation {
+  public getOptDetail(): OptDetail {
+    return {
+      infoURL: "https://wikipedia.org/wiki/Octal",
+      optName: Dot("8vqMEqrl6", "From Octal"),
+      optDescription: Dot("vStNBMZ5t", "Converts an octal byte string back into its raw value.<br><br>e.g. <code>316 223 316 265 316 271 316 254 40 317 203 316 277 317 205</code> becomes the UTF-8 encoded string <code>Γειά σου</code>"),
+      exampleInput: "316 223 316 265 316 271 316 254 40 317 203 316 277 317 205",
+      exampleOutput: "Γειά σου",
+      relatedID: "fromto",
+      config: {
+        flowControl: false,
+        manualBake: false,
+        module: "Default",
+        description: "Converts an octal byte string back into its raw value.<br><br>e.g. <code>316 223 316 265 316 271 316 254 40 317 203 316 277 317 205</code> becomes the UTF-8 encoded string <code>Γειά σου</code>",
+        infoURL: "https://wikipedia.org/wiki/Octal",
+        inputType: "string",
+        outputType: "byteArray",
+        args: [
+          {
+            name: "Delimiter",
+            type: "option",
+            value: DELIM_OPTIONS,
+          },
+        ],
+      },
+
+    }
+  }
   /**
    * FromOctal constructor
    */
@@ -40,9 +68,9 @@ class FromOctal extends Operation {
 
     this.name = "From Octal";
     this.module = "Default";
-    this.description =
-      "Converts an octal byte string back into its raw value.<br><br>e.g. <code>316 223 316 265 316 271 316 254 40 317 203 316 277 317 205</code> becomes the UTF-8 encoded string <code>Γειά σου</code>";
-    this.infoURL = "https://wikipedia.org/wiki/Octal";
+    // this.description =
+    //   "Converts an octal byte string back into its raw value.<br><br>e.g. <code>316 223 316 265 316 271 316 254 40 317 203 316 277 317 205</code> becomes the UTF-8 encoded string <code>Γειά σου</code>";
+    // this.infoURL = "https://wikipedia.org/wiki/Octal";
     this.inputType = "string";
     this.outputType = "byteArray";
     this.args = [

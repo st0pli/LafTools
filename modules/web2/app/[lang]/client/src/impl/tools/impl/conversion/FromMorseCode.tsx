@@ -24,33 +24,51 @@
  * @license Apache-2.0
  */
 
-import Operation from "../Operation.tsx";
-import Utils from "../Utils.mjs";
-import { LETTER_DELIM_OPTIONS, WORD_DELIM_OPTIONS } from "../lib/Delim.mjs";
+import { Dot } from "../../../../utils/cTranslationUtils.tsx";
+import Operation, { OptDetail } from "../../../core/Operation.tsx";
+import Utils from "../../../core/Utils.mjs";
+import {
+  LETTER_DELIM_OPTIONS,
+  WORD_DELIM_OPTIONS,
+} from "../../../core/lib/Delim.mjs";
 
 /**
- * To Morse Code operation
+ * From Morse Code operation
  */
-class ToMorseCode extends Operation {
+class FromMorseCode extends Operation {
+  public getOptDetail(): OptDetail {
+    return {
+      infoURL: "https://wikipedia.org/wiki/Morse_code",
+      optName: Dot("FJwkT9Tzu", "From Morse Code"),
+      optDescription: Dot("1QDzaLKp0", "Translates Morse Code into (upper case) alphanumeric characters."),
+      exampleInput: "... --- ...",
+      exampleOutput: "SOS",
+      relatedID: "fromto",
+      config: {
+        flowControl: false,
+        manualBake: false,
+        module: "Default",
+        description: "Translates Morse Code into (upper case) alphanumeric characters.",
+        infoURL: "https://wikipedia.org/wiki/Morse_code",
+        inputType: "string",
+        outputType: "string",
+      }
+    }
+  }
   /**
-   * ToMorseCode constructor
+   * FromMorseCode constructor
    */
   constructor() {
     super();
 
-    this.name = "To Morse Code";
+    this.name = "From Morse Code";
     this.module = "Default";
-    this.description =
-      "Translates alphanumeric characters into International Morse Code.<br><br>Ignores non-Morse characters.<br><br>e.g. <code>SOS</code> becomes <code>... --- ...</code>";
-    this.infoURL = "https://wikipedia.org/wiki/Morse_code";
+    // this.description =
+    //   "Translates Morse Code into (upper case) alphanumeric characters.";
+    // this.infoURL = "https://wikipedia.org/wiki/Morse_code";
     this.inputType = "string";
     this.outputType = "string";
     this.args = [
-      {
-        name: "Format options",
-        type: "option",
-        value: ["-/.", "_/.", "Dash/Dot", "DASH/DOT", "dash/dot"],
-      },
       {
         name: "Letter delimiter",
         type: "option",
@@ -62,55 +80,60 @@ class ToMorseCode extends Operation {
         value: WORD_DELIM_OPTIONS,
       },
     ];
+    this.checks = [
+      {
+        pattern: "(?:^[-. \\n]{5,}$|^[_. \\n]{5,}$|^(?:dash|dot| |\\n){5,}$)",
+        flags: "i",
+        args: ["Space", "Line feed"],
+      },
+    ];
   }
-
+  reversedTable: any = null
   /**
    * @param {string} input
    * @param {Object[]} args
    * @returns {string}
    */
   run(input, args) {
-    const format = args[0].split("/");
-    const dash = format[0];
-    const dot = format[1];
+    if (!this.reversedTable) {
+      this.reverseTable();
+    }
+    if (!this.reversedTable) {
+      return "Error: reversedTable is not defined"
+    }
 
-    const letterDelim = Utils.charRep(args[1]);
-    const wordDelim = Utils.charRep(args[2]);
+    const letterDelim = Utils.charRep(args[0]);
+    const wordDelim = Utils.charRep(args[1]);
 
-    input = input.split(/\r?\n/);
-    input = Array.prototype.map.call(input, function (line) {
-      let words = line.split(/ +/);
-      words = Array.prototype.map.call(words, function (word) {
-        const letters = Array.prototype.map.call(word, function (character) {
-          const letter = character.toUpperCase();
-          if (typeof MORSE_TABLE[letter] == "undefined") {
-            return "";
-          }
+    input = input.replace(/-|‐|−|_|–|—|dash/gi, "<dash>"); // hyphen-minus|hyphen|minus-sign|undersore|en-dash|em-dash
+    input = input.replace(/\.|·|dot/gi, "<dot>");
 
-          return MORSE_TABLE[letter];
-        });
+    let words = input.split(wordDelim);
+    const self = this;
+    words = Array.prototype.map.call(words, function (word) {
+      const signals = word.split(letterDelim);
 
-        return letters.join("<ld>");
+      const letters = signals.map(function (signal) {
+        return self.reversedTable && self.reversedTable[signal];
       });
-      line = words.join("<wd>");
-      return line;
-    });
-    input = input.join("\n");
 
-    input = input.replace(/<dash>|<dot>|<ld>|<wd>/g, function (match) {
-      switch (match) {
-        case "<dash>":
-          return dash;
-        case "<dot>":
-          return dot;
-        case "<ld>":
-          return letterDelim;
-        case "<wd>":
-          return wordDelim;
-      }
+      return letters.join("");
     });
+    words = words.join(" ");
 
-    return input;
+    return words;
+  }
+
+  /**
+   * Reverses the Morse Code lookup table
+   */
+  reverseTable() {
+    this.reversedTable = {};
+
+    for (const letter in MORSE_TABLE) {
+      const signal = MORSE_TABLE[letter];
+      this.reversedTable[signal] = letter;
+    }
   }
 }
 
@@ -172,4 +195,4 @@ const MORSE_TABLE = {
   " ": "<dot><dot><dot><dot><dot><dot><dot>",
 };
 
-export default ToMorseCode;
+export default FromMorseCode;

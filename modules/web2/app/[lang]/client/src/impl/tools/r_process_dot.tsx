@@ -5,7 +5,14 @@ let d = loadDOT("kJH5NqVs0")
 
 export let useFormattedArgsCheckLabelDotMappings = () => {
     return {
+        "Format options": Dot("Format options", "Format options"),
+        "Support signed values": Dot("S values", "Support signed values"),
+        "Letter delimiter": Dot("Letter delimiter", "Letter delimiter"),
+        "Word delimiter": Dot("Word delimiter", "Word delimiter"),
+        "Attempt to be context aware": Dot("Attempt to be context aware", "Attempt to be context aware"),
+        "Byte Length": Dot("Bydqw3", "Byte Length"),
         "Array of dictionaries": Dot("ysFYdz_ZQ", "Array of dictionaries"),
+        "Base": Dot("Base", "Base"),
         "Array of arrays": Dot("TasD5DyoC", "Array of arrays"),
         "Cell delimiters": Dot("WrUDbaJCs", "Cell delimiters"),
         "Row delimiters": Dot("VkSPUIvL-", "Row delimiters"),

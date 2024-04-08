@@ -24,13 +24,42 @@
  * @license Apache-2.0
  */
 
-import Operation from "../Operation.tsx";
-import OperationError from "../errors/OperationError.mjs";
+import { Dot } from "../../../../utils/cTranslationUtils.tsx";
+import Operation, { OptDetail } from "../../../core/Operation.tsx";
+import OperationError from "../../../core/errors/OperationError.mjs";
 
 /**
  * To Upper case operation
  */
 class ToUpperCase extends Operation {
+  public getOptDetail(): OptDetail {
+    return {
+      relatedID: "fromto",
+      config: {
+        module: "Default",
+        description:
+          "Converts the input string to upper case, optionally limiting scope to only the first character in each word, sentence or paragraph.",
+        infoURL: "https://en.wikipedia.org/wiki/Letter_case#Case_styles",
+        inputType: "string",
+        outputType: "string",
+        args: [
+          {
+            name: "Scope",
+            type: "option",
+            value: ["All", "Word", "Sentence", "Paragraph"],
+          },
+        ],
+        flowControl: false,
+        manualBake: false,
+      },
+      optName: Dot("qMhNfAmTL", "To Upper case"),
+      optDescription:
+        Dot("H1ARNsz-l", "Converts the input string to upper case, optionally limiting scope to only the first character in each word, sentence or paragraph."),
+      exampleInput: "hello world",
+      exampleOutput: "HELLO WORLD",
+      infoURL: "https://en.wikipedia.org/wiki/Letter_case#Case_styles",
+    };
+  }
   /**
    * ToUpperCase constructor
    */
@@ -39,8 +68,8 @@ class ToUpperCase extends Operation {
 
     this.name = "To Upper case";
     this.module = "Default";
-    this.description =
-      "Converts the input string to upper case, optionally limiting scope to only the first character in each word, sentence or paragraph.";
+    // this.description =
+    //   "Converts the input string to upper case, optionally limiting scope to only the first character in each word, sentence or paragraph.";
     this.inputType = "string";
     this.outputType = "string";
     this.args = [

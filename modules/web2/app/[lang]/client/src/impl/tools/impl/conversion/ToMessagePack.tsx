@@ -24,15 +24,36 @@
  * @license Apache-2.0
  */
 
-import Operation from "../Operation.tsx";
-import OperationError from "../errors/OperationError.mjs";
+import Operation, { OptDetail } from "../../../core/Operation.tsx";
+import OperationError from "../../../core/errors/OperationError.mjs";
 import notepack from "notepack.io";
-import { isWorkerEnvironment } from "../Utils.mjs";
+import { isWorkerEnvironment } from "../../../core/Utils.mjs";
+import { Dot } from "@/app/__CORE__/utils/cTranslationUtils.tsx";
 
 /**
  * To MessagePack operation
  */
 class ToMessagePack extends Operation {
+  public getOptDetail(): OptDetail {
+    return {
+      infoURL: "https://wikipedia.org/wiki/MessagePack",
+      optName: Dot("XAJIZiKtp", "To MessagePack"),
+      optDescription: Dot("FsrRIxrjL", "Converts JSON to MessagePack encoded byte buffer. MessagePack is a computer data interchange format. It is a binary form for representing simple data structures like arrays and associative arrays."),
+      exampleInput: "{\n  \"a\": 42\n}",
+      exampleOutput: "8b2a",
+      relatedID: "fromto",
+      config: {
+        flowControl: false,
+        manualBake: false,
+        module: "Code",
+        description: "Converts JSON to MessagePack encoded byte buffer. MessagePack is a computer data interchange format. It is a binary form for representing simple data structures like arrays and associative arrays.",
+        infoURL: "https://wikipedia.org/wiki/MessagePack",
+        inputType: "JSON",
+        outputType: "ArrayBuffer",
+        args: [],
+      },
+    }
+  }
   /**
    * ToMessagePack constructor
    */
@@ -41,9 +62,9 @@ class ToMessagePack extends Operation {
 
     this.name = "To MessagePack";
     this.module = "Code";
-    this.description =
-      "Converts JSON to MessagePack encoded byte buffer. MessagePack is a computer data interchange format. It is a binary form for representing simple data structures like arrays and associative arrays.";
-    this.infoURL = "https://wikipedia.org/wiki/MessagePack";
+    // this.description =
+    //   "Converts JSON to MessagePack encoded byte buffer. MessagePack is a computer data interchange format. It is a binary form for representing simple data structures like arrays and associative arrays.";
+    // this.infoURL = "https://wikipedia.org/wiki/MessagePack";
     this.inputType = "JSON";
     this.outputType = "ArrayBuffer";
     this.args = [];
