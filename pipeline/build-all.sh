@@ -308,10 +308,13 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
                 exit 1
             fi
 
-            echo "testing docker container for $platformName"
-            cd $LAFTOOLS_ROOT/pipeline 
-            chmod +x ./test-docker.sh codegentoolbox/laftools-$platformName:$crtVersion
-            ./test-docker.sh 
+            if [ $platformName == "linux-x64" ]; then
+                testImgName=codegentoolbox/laftools-$platformName:$crtVersion
+                echo "testing docker container for $platformName, docker image: $testImgName"
+                cd $LAFTOOLS_ROOT/pipeline 
+                chmod +x ./test-docker.sh $testImgName
+                ./test-docker.sh 
+            fi
 
             if [ "$TAG_MODE" = "true" ]; then
                 echo "[I] will test and push docker container for $platformName"
