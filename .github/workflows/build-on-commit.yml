@@ -77,6 +77,10 @@ jobs:
             put /home/runner/work/LafTools/LafTools/pipeline-server.zip /home/appuser/LafTools-pre-dist/pipeline-server-v1.9.9-beta.zip
           exit
           EOF
+          if [ $? -ne 0 ]; then
+            echo "Failed to upload files"
+            exit 1
+          fi
           rm ~/.ssh/id_rsa -rf
 
       - name: US Pre Release 4

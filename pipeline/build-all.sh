@@ -173,8 +173,6 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
         echo "[I] building fe"
         (
             cd $LAFTOOLS_ROOT/modules/web2
-            # [ ! -d node_modules ] && npm install --production --verbose --force 
-            # [ ! -d node_modules ] && npm install -S -D --force 
             [ -d node_modules ] && rm -rf node_modules
             rm -f *lock*
             [ ! -d node_modules ] && npm install --omit=dev --force 
@@ -336,19 +334,19 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
         )
     }
 
-    do-test-all(){
+    run-test-all(){
         set -e
         cd $LAFTOOLS_ROOT/pipeline
         chmod +x ./test-all.sh
         ./test-all.sh
         if [ $? -ne 0 ]; then
             echo "[E] test failed."
+            set +e
             exit 1
         else 
-            echo "[I] $(date) do-test-all PASSED"
-            exit 0
+            echo "[I] $(date) run-test-all PASSED"
+            set +e
         fi
-        set +e
     }
 
     docker-all(){
@@ -376,13 +374,14 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
     refining
     # package as zip and tar.gz
     package-all
-    do-test-all
+    run-test-all
     if [ $? -ne 0 ]; then
-        echo "[E] do-test-all failed."
+        echo "[E] run-test-all failed."
         exit 1
     else 
-        echo "[I] $(date) do-test-all PASSED"
+        echo "[I] $(date) run-test-all PASSED"
     fi
+
     # build docker images
     docker-all
     
@@ -393,7 +392,6 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
 }
 
 clean-bundle
-build-bundle "with-nodejs"
-# build-bundle "no-nodejs"
+build-bundle
 
 echo "[I] $(date) Done."
