@@ -1,7 +1,7 @@
 #!/bin/bash 
 # this script is designated for building this whole project.  
 # version will be retrieved from the file package.json
-
+set -e
 if [ "$TAG_MODE" = "true" ]; then
     export LAFTOOLS_ROOT=/home/runner/work/LafTools/LafTools-tag
     cp -a /home/runner/work/LafTools/LafTools /home/runner/work/LafTools/LafTools-tag
@@ -69,7 +69,6 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
         exit 1
     fi
 
-    set +e
     source ./pipeline/env.sh
     mode=$1
 
@@ -169,7 +168,6 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
     }
 
     build-fe(){
-        set -e
         echo "[I] building fe"
         (
             cd $LAFTOOLS_ROOT/modules/web2
@@ -192,7 +190,6 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
             echo "[I] fe bundle size: $(du -sh $LAFTOOLS_ROOT/dist/web2)"
         )
         echo "[I] built fe"
-        set +e
     }
 
     build-be(){
@@ -310,12 +307,10 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
                 exit 1
             fi
 
-            set -e
             echo "testing docker container for $platformName"
             cd $LAFTOOLS_ROOT/pipeline 
             chmod +x ./test-docker.sh codegentoolbox/laftools-$platformName:$crtVersion
             ./test-docker.sh 
-            set +e
 
             if [ "$TAG_MODE" = "true" ]; then
                 echo "[I] will test and push docker container for $platformName"
@@ -335,17 +330,14 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
     }
 
     run-test-all(){
-        set -e
         cd $LAFTOOLS_ROOT/pipeline
         chmod +x ./test-all.sh
         ./test-all.sh
         if [ $? -ne 0 ]; then
             echo "[E] test failed."
-            set +e
             exit 1
         else 
             echo "[I] $(date) run-test-all PASSED"
-            set +e
         fi
     }
 

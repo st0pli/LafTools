@@ -67,6 +67,14 @@ jobs:
           echo "${{ secrets.US_APP_SSH_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
 
+      - name: US Pre Release Chk 3
+        run: |
+          pkgFile=/home/runner/work/LafTools/LafTools/dkout.tmp.gz
+          if [ ! -f "$pkgFile" ]; then
+            echo "File $pkgFile does not exist."
+            exit 1
+          fi
+
       - name: US Pre Release 3
         run: |
           sftp -o StrictHostKeyChecking=no -P ${{ secrets.US_APP_SSH_PORT }} ${{ secrets.US_APP_SSH_USERNAME }}@${{ secrets.US_APP_SSH_HOST }} <<EOF
