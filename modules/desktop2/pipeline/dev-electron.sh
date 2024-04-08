@@ -13,14 +13,12 @@ echo "Current version: $crtVersion"
 cd $(dirname $0)/..
 
 echo "[I] cleaning up..."
-rm -rf node_modules
 rm -rf dist
 rm -rf build
 rm -rf src-dist
-echo "[I] installing dependencies..."
-npm i -S -D --force --omit=dev
 
 echo "[I] compiling tsc files..."
 npm run compileTS
 
-echo "[I] building electron app..."
+echo "[I] run electron app..."
+npx electron .

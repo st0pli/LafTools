@@ -1,4 +1,5 @@
 var/log/
+src-dist
 share-copy2
 temp
 dist-web2

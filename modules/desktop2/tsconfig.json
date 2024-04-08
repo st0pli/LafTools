@@ -9,7 +9,7 @@
     "sourceMap": true,
     "jsx": "preserve",
     "baseUrl": ".",
-    "outDir": "dist",
+    "outDir": "src-dist",
     "moduleResolution": "node",
     "resolveJsonModule": true
   }

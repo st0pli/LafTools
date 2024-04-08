@@ -1,11 +1,12 @@
 {
   "name": "laftools",
-  "version": "1.8.7",
+  "version": "2016.2017.2018",
   "description": "The Next-Gen High Efficiency ToolBox for Developers",
   "author": "LafTools team",
-  "main": "src/entry.js",
+  "main": "src-dist/main.js",
   "scripts": {
-    "web2": "electron .",
+    "dev": "sh ./pipeline/dev-electron.sh",
+    "compileTS": "npx tsc",
     "build": "sh ./pipeline/build-electron.sh"
   },
   "nsis": {
