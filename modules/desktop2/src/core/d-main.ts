@@ -9,12 +9,16 @@ export default (props: DMainPassProps) => {
   }
 
   const createWindow = () => {
+    let iconImg = path.join(__dirname, "..", "..", "images", "icon.png");
+
     // Create the browser window.
     const mainWindow = new BrowserWindow({
       width: 800,
       height: 600,
+      autoHideMenuBar: true,
+      icon: iconImg,
       webPreferences: {
-        preload: path.join(__dirname, "preload.js"),
+        preload: path.join(__dirname, "d-preload.js"),
       },
     });
 
@@ -26,15 +30,14 @@ export default (props: DMainPassProps) => {
         path.join(__dirname, `../renderer/${MAIN_WINDOW_VITE_NAME}/index.html`),
       );
     }
-    mainWindow.loadURL("https://www.qq.com");
 
     // Open the DevTools.
-    if (process.env.NODE_ENV === "development") {
-      mainWindow.webContents.openDevTools({ mode: "detach" });
-      mainWindow.webContents.executeJavaScript(
-        'document.getElementsByClassName("long-click-glyph")[0].click()',
-      );
-    }
+    // if (process.env.NODE_ENV === "development") {
+    //   mainWindow.webContents.openDevTools({ mode: "detach" });
+    //   mainWindow.webContents.executeJavaScript(
+    //     'document.getElementsByClassName("long-click-glyph")[0].click()',
+    //   );
+    // }
   };
 
   // This method will be called when Electron has finished

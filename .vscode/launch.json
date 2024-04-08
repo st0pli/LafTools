@@ -12,6 +12,13 @@
       "command": "npm run dev"
     },
     {
+      "type": "node-terminal",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/modules/desktop2",
+      "name": "Dev desktop2",
+      "command": "npm run dev"
+    },
+    {
       "name": "Scan all",
       "type": "node",
       "request": "launch",
