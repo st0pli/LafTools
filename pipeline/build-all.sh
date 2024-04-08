@@ -303,13 +303,15 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
             docker build -t codegentoolbox/laftools-$platformName:$crtVersion -f ./Dockerfile .
             docker build -t codegentoolbox/laftools-$platformName:latest -f ./Dockerfile .
             docker build -t codegentoolbox/laftools-$platformName:devops -f ./Dockerfile .
+
+            docker images
             if [ $? -ne 0 ]; then
                 echo "[E] docker build failed for $platformName"
                 exit 1
             fi
 
             if [ $platformName == "linux-x64" ]; then
-                testImgName=codegentoolbox/laftools-$platformName:$crtVersion
+                testImgName=codegentoolbox/laftools-$platformName:devops
                 echo "testing docker container for $platformName, docker image: $testImgName"
                 cd $LAFTOOLS_ROOT/pipeline 
                 chmod +x ./test-docker.sh $testImgName
