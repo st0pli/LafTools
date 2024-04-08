@@ -61,15 +61,19 @@ export class App {
   }
 
   private initializeRoutes(routes: Routes[]) {
-    this.app.use('/', (req, res) => {
-      res.send({
-        version: process.env.APP_VERSION,
-        launchAt: launchTime,
-        launchFromNow: moment(launchTime).fromNow(),
-      });
-    });
     routes.forEach(route => {
       this.app.use('/v3', route.router);
+    });
+    this.app.use('/', (req, res) => {
+      if (req.url == '/') {
+        res.send({
+          version: process.env.APP_VERSION || 'UnknownVersion',
+          launchAt: launchTime,
+          launchFromNow: moment(launchTime).fromNow(),
+        });
+      } else {
+        req.next();
+      }
     });
   }
 
