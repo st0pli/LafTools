@@ -302,6 +302,7 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
             echo "[I] build docker image for $platformName"
             docker build -t codegentoolbox/laftools-$platformName:$crtVersion -f ./Dockerfile .
             docker build -t codegentoolbox/laftools-$platformName:latest -f ./Dockerfile .
+            docker build -t codegentoolbox/laftools-$platformName:devops -f ./Dockerfile .
             if [ $? -ne 0 ]; then
                 echo "[E] docker build failed for $platformName"
                 exit 1
