@@ -18,6 +18,7 @@
     "productName": "LafTools",
     "asar": false,
     "files": [
+      "src-dist",
       "package.json",
       "assets",
       "build",
