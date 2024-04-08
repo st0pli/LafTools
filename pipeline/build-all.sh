@@ -230,21 +230,14 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
             cd $platformDistDir
             fileName=
             subDirName=LafTools-${crtVersion}-$platformName-minimal
-            tempDIR=$LAFTOOLS_ROOT/temp-dir
-            if [ -d $tempDIR ]; then
-                rm -rf $tempDIR
-            fi
-            mkdir -p $tempDIR
-            cp -a ./* $tempDIR
-
             subDir=./$subDirName
             if [ -d $subDir ]; then
                 rm -rf $subDir
             fi
-            cp -a $tempDIR/* $subDir
             mkdir -p $subDir
-            rm -rf $subDir/$subDirName 
             mkdir -p $subDir/info
+            cp -a * $subDir
+            rm -rf $subDir/$subDirName 
             echo "$platformName" > $subDir/info/platform.txt
             echo "$crtVersion" > $subDir/info/version.txt
             echo "$(date +%Y-%m-%d)" > $subDir/info/releaseDate.txt
