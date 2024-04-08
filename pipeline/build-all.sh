@@ -143,6 +143,9 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
         fi
         mkdir -p $platformDistDir/boot
         cp -a $LAFTOOLS_ROOT/modules/bootstrap/dist/* $platformDistDir/boot/
+        if [ -d temp ];then 
+            rm -rf temp
+        fi
         mkdir temp
         cd temp
         cp ../package.json .
