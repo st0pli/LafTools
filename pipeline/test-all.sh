@@ -18,6 +18,10 @@ echo "[I] crtVersion: $crtVersion"
 cp -a $LAFTOOLS_ROOT/dist/pkg/LafTools-$crtVersion-linux-x64-minimal.tar.gz LafTools-pkg.tar.gz
 tar -xzf LafTools-pkg.tar.gz 
 cd `ls | grep LafTools | grep minimal`
+echo "find results"
+find . -iname 'run.sh'
+echo "ls results"
+ls
 echo "start running, PWD is `pwd`"
 if [ ! -f run.sh ]; then
     echo "[E] $(date) Test failed, run.sh not found"

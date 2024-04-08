@@ -1,7 +1,7 @@
 #!/bin/bash 
 # this script is designated for building this whole project.  
 # version will be retrieved from the file package.json
-# set -e
+set -e
 if [ "$TAG_MODE" = "true" ]; then
     export LAFTOOLS_ROOT=/home/runner/work/LafTools/LafTools-tag
     cp -a /home/runner/work/LafTools/LafTools /home/runner/work/LafTools/LafTools-tag
@@ -226,6 +226,7 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
         fi
         echo "[I] packaging for $platformName"
         (
+            set +e
             cd $platformDistDir
             fileName=
             subDirName=LafTools-${crtVersion}-$platformName-minimal
@@ -265,6 +266,7 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
                 tar -ztf $fileName &> /dev/null
             fi
             echo "[I] file size: $(du -sh $fileName | awk '{print $1}')"
+            set -e
         )
     }
     package-all(){
