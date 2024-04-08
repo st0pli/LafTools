@@ -1,7 +1,7 @@
 #!/bin/bash 
 # this script is designated for building this whole project.  
 # version will be retrieved from the file package.json
-set -e
+# set -e
 if [ "$TAG_MODE" = "true" ]; then
     export LAFTOOLS_ROOT=/home/runner/work/LafTools/LafTools-tag
     cp -a /home/runner/work/LafTools/LafTools /home/runner/work/LafTools/LafTools-tag
