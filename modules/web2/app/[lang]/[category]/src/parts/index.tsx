@@ -52,6 +52,7 @@ import NavSubCategory from './nav/nav-subcategory'
 import NavBanner from "./nav/nav-banner";
 import Main from "./main";
 export type LabelHrefType = {
+    refId?: string;
     label: string | JSX.Element,
     id?: string,
     href?: string

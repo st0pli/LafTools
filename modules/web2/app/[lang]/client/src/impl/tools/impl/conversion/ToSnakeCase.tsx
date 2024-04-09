@@ -36,7 +36,7 @@ class ToSnakeCase extends Operation {
   public getOptDetail(): OptDetail {
     return {
       infoURL: "https://wikipedia.org/wiki/Snake_case",
-      optName: Dot("jFdaRPHE6", "To {0}", Dot("SL7RJN-v6", "To Snake case")),
+      optName: Dot("jFdaRPHE6", "To {0}", Dot("SL7RJN-sdv6", "Snake case")),
       optDescription: Dot("D10ddoJDo", "Converts the input string to snake case.\n<br><br>\nSnake case is all lower case with underscores as word boundaries.\n<br><br>\ne.g. this_is_snake_case\n<br><br>\n'Attempt to be context aware' will make the operation attempt to nicely transform variable and function names."),
       exampleInput: "this is snake case",
       exampleOutput: "this_is_snake_case",

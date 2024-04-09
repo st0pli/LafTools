@@ -77,7 +77,7 @@ class FromBinary extends Operation {
       },
       infoURL: "https://en.wikipedia.org/wiki/Binary_code",
       nousenouseID: "fromBinary",
-      optName: Dot("fromBinary.text.1b6c3", "From Binary"),
+      optName: Dot("fromBinarKezpBENwt3", "From {0}", Dot("QB9HtMaFb", 'Binary')),
       optDescription: Dot("fromBinary.text.1b6c3", "Converts a binary string back into its raw form."),
       exampleInput: "01001000 01101001",
       exampleOutput: "Hi",

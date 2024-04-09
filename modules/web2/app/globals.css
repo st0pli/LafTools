@@ -140,6 +140,12 @@ body{
 .app-minmax-size{
   @apply w-[1180px] xl:w-[1180px] 2xl:w-[1436px];
 }
+.wide-page .app-minmax-size{
+  @apply !w-[auto] xl:!w-[auto] 2xl:!w-[auto] mx-12;
+}
+.wide-page{
+  @apply scrollbar-hide;
+}
 .bp5-toast-container{
   position: fixed!important;
   z-index: 9999!important;

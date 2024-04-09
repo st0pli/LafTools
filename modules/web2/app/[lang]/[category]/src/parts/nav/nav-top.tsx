@@ -49,6 +49,7 @@ import { CategorySearchProps } from "@/app/[lang]/page";
 import { URL_SUBCATEGORY_GO_PATH } from "@/app/__CORE__/meta/url";
 import { fmtURL_ToolSubPage } from "@/app/__CORE__/meta/common";
 import { NavigatorPassProp } from "..";
+import CptWidePageToggle from "../cpt/cpt-wide-page-toggle";
 
 export default (props: NavigatorPassProp) => {
     let rightNav = fn_rightNav()
@@ -65,7 +66,11 @@ export default (props: NavigatorPassProp) => {
                     <LightDarkButton />
                     <GitHubButton></GitHubButton>
                 </div>
-            } nav={rightNav}></NavCategory>
+            } nav={rightNav} extraRight={
+                <div className="flex items-center">
+                    <CptWidePageToggle />
+                </div>
+            }></NavCategory>
         </div>
     </div>
 }

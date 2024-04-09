@@ -53,6 +53,7 @@ export type ToolPipeline = {
 }
 export type ToolSideMenuTabIdType = "pipeline" | "favourites" | "allops"
 export type ParamStateState = {
+    fapsz: TrueFalseType, // full window app size or not
     nqop: TrueFalseType, // no quick operation. will process and flag it as false if it's true
     tlcfg: ToolConfigMap, // tool config, recipes...
     tsdrsipt: string, // side menu search input 
@@ -73,6 +74,7 @@ export type ParamStateState = {
     tid?: string; // tool tab id
 };
 const initialState: ParamStateState = {
+    fapsz: 'f',
     hrts: 't',
     nqop: 'f',
     tsdmid: 'allops',

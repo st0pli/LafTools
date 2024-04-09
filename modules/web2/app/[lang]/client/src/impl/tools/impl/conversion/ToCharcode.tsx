@@ -44,7 +44,7 @@ class ToCharcode extends Operation {
     return {
       relatedID: "fromto",
       infoURL: "https://wikipedia.org/wiki/Plane_(Unicode)",
-      optName: Dot("hQX9jlm9F", "To Charcode"),
+      optName: Dot("hQX9jlm9F", "To {0}", Dot("EMxvJXE9u", 'Charcode')),
       optDescription: Dot("zrovzToIM", "Converts text to its unicode character code equivalent"),
       exampleInput: "Γειά σου",
       exampleOutput: "0393 03b5 03b9 03ac 20 03c3 03bf 03c5",

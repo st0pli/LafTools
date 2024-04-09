@@ -50,6 +50,8 @@ import { fmtURL_ToolSubPage } from "@/app/__CORE__/meta/common";
 import NavTop from "./nav/nav-top";
 import NavSubCategory from './nav/nav-subcategory'
 import NavBanner from "./nav/nav-banner";
+import AlertUtils from "@/app/[lang]/client/src/utils/AlertUtils";
+import { FN_REF_ID_SHARE_THIS_PAGE } from "../fnref";
 export type LabelHrefType = {
     label: string | JSX.Element,
     id?: string,
@@ -76,9 +78,14 @@ export default (props: NavigatorPassProp) => {
                                 label: Dot("be-Favourite-it", "Add to Favourites")
                             },
                             {
+                                refId: FN_REF_ID_SHARE_THIS_PAGE,
                                 href: fmtURL_ToolSubPage(['opt?action=share-this-page']),
-                                label: Dot("share-this-page", "Share this Page")
+                                label: Dot("share-this-page", "Share this Page"),
                             },
+                            // {
+                            //     href: '',
+                            //     label: ,
+                            // },
                             {
                                 href: GitHubRepoIssueLink,
                                 label: Dot("BJbgR", "Report a Problem")

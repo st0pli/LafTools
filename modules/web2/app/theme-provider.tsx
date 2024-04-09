@@ -36,7 +36,7 @@ export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
         setMounted(true)
     }, [])
     if (!mounted) return ''
-    return <NextThemesProvider  {...props}>
+    return <NextThemesProvider enableSystem={false}  {...props}>
         <CustomerInner>{children}</CustomerInner>
     </NextThemesProvider>
 }

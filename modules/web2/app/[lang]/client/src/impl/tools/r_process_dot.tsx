@@ -35,7 +35,7 @@ export let useFormattedArgsCheckLabelDotMappings = () => {
         "Semicolons before closing braces": Dot("sbcl", "Semicolons before closing braces"),
         "Scheme": Dot("8dq312", "Scheme"),
         "Format": Dot("8dq31231", "Formatted"),
-        "Formatted": Dot("8dq31231", "Formatted"),
+        "Formatted": Dot("0tAfJ_TBI", "Formatted"),
         "Quotes": Dot("QzQWQd", "Quotes"),
         "Signed": Dot("Signed", "Signed"),
         "Delimiter": Dot("CVaQSQSfm", "Delimiter"),

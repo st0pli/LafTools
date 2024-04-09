@@ -36,7 +36,7 @@ class ToOctal extends Operation {
   public getOptDetail(): OptDetail {
     return {
       infoURL: "https://wikipedia.org/wiki/Octal",
-      optName: Dot("DX1ypOyRJ", "To Octal"),
+      optName: Dot("-AaO4jF3Q", "To {0}", Dot("hAK6Q4uV0", 'Octal')),
       optDescription: Dot("GqolnOrbq", "Converts the input string to octal bytes separated by the specified delimiter.<br><br>e.g. The UTF-8 encoded string <code>Γειά σου</code> becomes <code>316 223 316 265 316 271 316 254 40 317 203 316 277 317 205</code>"),
       exampleInput: "Γειά σου",
       exampleOutput: "316 223 316 265 316 271 316 254 40 317 203 316 277 317 205",

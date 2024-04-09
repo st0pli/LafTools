@@ -36,14 +36,14 @@ let rootInst = Toaster.create({
 });
 const AlertUtils = {
   // copyWithAlertCopied
-  copyWithAlertCopied(ctn?: string) {
+  copyWithAlertCopied(ctn?: string, msg?: string) {
     if (!ctn) {
       ctn = ""
     }
     copy(ctn);
     AlertUtils.popMsg(Intent.SUCCESS, {
       icon: "endorsed",
-      message: Dot("1Tuab", "Copied"),
+      message: msg || Dot("1Tuab", "Copied"),
     });
   },
   // for addMsg, provide other functions with different default Intent value
