@@ -1,6 +1,6 @@
 {
   "name": "laftools-go",
-  "version": "v2.1.98-beta",
+  "version": "v2.2.10-beta",
   "scripts": {
     "fe-job": "sh ./pipeline/dev-run-scan-and-generate.sh",
     "fe-release-docs-full": "npm run fe-scan-all && npm run fe-release-docs",

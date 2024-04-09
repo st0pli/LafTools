@@ -22,6 +22,12 @@ let bootstrapInternalDir = getAppBootstrapInternalDir();
 let bootStrapImplWeb2Dir = getAppBootstrapImplWeb2Dir()
 let tempDir = getAppBootstrapTempDir()
 
+let debugMode = process.env.DEBUG_MODE == 'yes' //  fs.existsSync(debugFile) // TODO: just mark it as debug for now
+if (debugMode) {
+    logger.debug('debug mode is enabled')
+} else {
+    logger.debug('debug mode is disabled')
+}
 
 let currentDIRName = __dirname;
 export let getMinimalDIrPath = () => {
@@ -172,7 +178,6 @@ export let job_runVersionCheck = async () => {
                 let latestInfo = latestVerRes.content.updateInfo.latest
                 let ver = latestInfo.version
                 let debugFile = join(getLafToolsDataDir(), 'debug-flag.txt')
-                let debugMode = true //  fs.existsSync(debugFile) // TODO: just mark it as debug for now
                 if (ver.indexOf("-") === -1 || debugMode) { // ignore beta or other version
                     logger.debug("latest version: " + ver)
                     // STEP-1: download the latest version
@@ -188,10 +193,10 @@ export let job_runVersionCheck = async () => {
         } catch (e) {
             logger.error('contain version check error:' + e)
             // sleep 10 minutes since it's not a critical error
-            await new Promise(resolve => setTimeout(resolve, 10 * 60 * 1000));
+            await new Promise(resolve => setTimeout(resolve, debugMode ? 10000 : 10 * 60 * 1000));
         }
         // sleep 10 minutes
-        await new Promise(resolve => setTimeout(resolve, 10 * 60 * 1000));
+        await new Promise(resolve => setTimeout(resolve, debugMode ? 10000 : 10 * 60 * 1000));
     }
     // check version
 }
