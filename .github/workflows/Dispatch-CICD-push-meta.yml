@@ -1,4 +1,4 @@
-name: Dispatch-CICD-server2
+name: Dispatch-CICD-push-meta
 
 on: workflow_dispatch
 
