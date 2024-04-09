@@ -25,7 +25,7 @@ prePort=2019
 killCP $preContainerName $prePort
 runCP $preContainerName $prePort
 sleep 15
-curl 127.0.0.1:2016/v3/hello-world -I | grep "200 OK"
+curl 127.0.0.1:$prePort/v3/hello-world -I | grep "200 OK"
 if [ $? -ne 0 ]; then
     echo "[PREINST FAILED] Failed to start container $preContainerName"
     exit 1
