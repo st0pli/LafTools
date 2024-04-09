@@ -8,6 +8,8 @@ RUN sed -i 's/archive.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list
 RUN apt-get update && \
     apt-get install -y curl && \
     apt-get install -y mysql-client && \
+    apt-get install -y nodejs npm && \
+    npm install -g pm2 && \
     apt-get clean;
 
 RUN mkdir -p /opt/app
