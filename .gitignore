@@ -1,4 +1,5 @@
 var/log/
+package-lock.json
 src-dist
 share-copy2
 temp

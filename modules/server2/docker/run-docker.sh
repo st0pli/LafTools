@@ -27,6 +27,7 @@ runCP $preContainerName $prePort
 sleep 15
 curl 127.0.0.1:$prePort/v3/hello-world -I | grep "200 OK"
 if [ $? -ne 0 ]; then
+    docker logs $preContainerName
     echo "[PREINST FAILED] Failed to start container $preContainerName"
     exit 1
 else 

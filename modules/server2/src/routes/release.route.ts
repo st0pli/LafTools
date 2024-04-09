@@ -40,7 +40,7 @@ export class ReleaseRoute implements Routes {
       logger.debug('META_DIR:' + META_DIR);
       let releaseJSON = path.join(META_DIR, 'release.json');
       let release = require(releaseJSON);
-      let latestVer = release.latestVersion;
+      let latestVer = release.latestVersion as string;
       let fn_returnEmpty = () => {
         let emptyResponse: SysResponse<ReleaseLatestResponse> = {
           content: {

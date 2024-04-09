@@ -21,7 +21,7 @@ RUN curl https://cdn.npmmirror.com/binaries/node/v20.12.0/node-v20.12.0-linux-x6
 RUN tar -xf node-v20.12.0-linux-x64.tar.gz
 ENV PATH "/opt/app/node-v20.12.0-linux-x64/bin:${PATH}"
 RUN npm config set registry https://registry.npmmirror.com
-RUN npm install --legacy-peer-deps
+RUN rm -rf node_modules package-lock.json && npm install --legacy-peer-deps
 ENV PORT 2016
 ENV LOG_DIR /opt/logs
 ENV NODE_ENV production
