@@ -1,7 +1,7 @@
-export const HEADER_X_LAF_LANG = "x-laf-lang";
-export const HEADER_X_LAF_REGION = "x-laf-region"; // CN or US
-export const HEADER_X_LAF_PLATFORM = "x-laf-platform";
-export const HEADER_X_LAF_VERSION = "x-laf-version";
+export const HEADER_X_LAF_LANG = 'x-laf-lang';
+export const HEADER_X_LAF_REGION = 'x-laf-region'; // CN or US
+export const HEADER_X_LAF_PLATFORM = 'x-laf-platform';
+export const HEADER_X_LAF_VERSION = 'x-laf-version';
 
 export type PkgDownloadInfo = {
   version: string;
@@ -15,6 +15,7 @@ export type TypeRecentReleaseNotes = {
 };
 export type ReleaseLatestResponse = {
   anyUpdate: boolean;
+  latestVersion: string;
   updateInfo: {
     autoUpdated: boolean;
     latest: PkgDownloadInfo;
@@ -28,12 +29,7 @@ export type SysResponse<T> = {
   warnings?: string[];
 };
 
-export type PkgType =
-  | "windows-x64"
-  | "windows-arm64"
-  | "linux-x64"
-  | "darwin-x64"
-  | "darwin-arm64";
+export type PkgType = 'windows-x64' | 'windows-arm64' | 'linux-x64' | 'darwin-x64' | 'darwin-arm64';
 export type PkgDownloadURLItem = {
   type: PkgType;
   url: string;

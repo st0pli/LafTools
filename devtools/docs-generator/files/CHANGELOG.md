@@ -1,3 +1,9 @@
+<!-- @PEN@v2.1.99-beta@2024-04-09@enable -->
+
+### ${Dot("2p4BOTd0f",'New Features')}
+
+- ${Dot('G35jYYVqi','Test some logic')}
+
 <!-- @PEN@v2.1.83-beta@2024-04-03@enable -->
 
 ### ${Dot("2p4BOTd0f",'New Features')}

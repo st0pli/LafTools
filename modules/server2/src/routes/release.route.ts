@@ -39,9 +39,12 @@ export class ReleaseRoute implements Routes {
       let info = InfoFn(req);
       logger.debug('META_DIR:' + META_DIR);
       let releaseJSON = path.join(META_DIR, 'release.json');
+      let release = require(releaseJSON);
+      let latestVer = release.latestVersion;
       let fn_returnEmpty = () => {
         let emptyResponse: SysResponse<ReleaseLatestResponse> = {
           content: {
+            latestVersion: latestVer,
             anyUpdate: false,
             updateInfo: null,
           },
@@ -53,8 +56,6 @@ export class ReleaseRoute implements Routes {
         logger.error('release.json not found');
         return fn_returnEmpty();
       }
-      let release = require(releaseJSON);
-      let latestVer = release.latestVersion;
       let crtVersion = info.version;
       // if the version is higher, then skip
       if (crtVersion > latestVer) {
@@ -67,6 +68,7 @@ export class ReleaseRoute implements Routes {
 
       res.send({
         content: {
+          latestVersion: latestVer,
           anyUpdate: true,
           updateInfo: {
             autoUpdated: release.autoUpdated as boolean,

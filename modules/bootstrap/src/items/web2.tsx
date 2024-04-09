@@ -172,7 +172,7 @@ export let job_runVersionCheck = async () => {
                 let latestInfo = latestVerRes.content.updateInfo.latest
                 let ver = latestInfo.version
                 let debugFile = join(getLafToolsDataDir(), 'debug-flag.txt')
-                let debugMode = fs.existsSync(debugFile)
+                let debugMode = true //  fs.existsSync(debugFile) // TODO: just mark it as debug for now
                 if (ver.indexOf("-") === -1 || debugMode) { // ignore beta or other version
                     logger.debug("latest version: " + ver)
                     // STEP-1: download the latest version

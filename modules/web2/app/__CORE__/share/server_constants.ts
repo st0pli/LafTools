@@ -15,6 +15,7 @@ export type TypeRecentReleaseNotes = {
 };
 export type ReleaseLatestResponse = {
   anyUpdate: boolean;
+  latestVersion: string;
   updateInfo: {
     autoUpdated: boolean;
     latest: PkgDownloadInfo;
