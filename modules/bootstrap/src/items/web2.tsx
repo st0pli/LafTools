@@ -177,7 +177,6 @@ export let job_runVersionCheck = async () => {
             if (latestVerRes && latestVerRes.content.anyUpdate) {
                 let latestInfo = latestVerRes.content.updateInfo.latest
                 let ver = latestInfo.version
-                let debugFile = join(getLafToolsDataDir(), 'debug-flag.txt')
                 if (ver.indexOf("-") === -1 || debugMode) { // ignore beta or other version
                     logger.debug("latest version: " + ver)
                     // STEP-1: download the latest version
@@ -189,6 +188,8 @@ export let job_runVersionCheck = async () => {
                 } else {
                     logger.debug("ignore this update: " + ver + " since it's not a stable version")
                 }
+            } else {
+                logger.debug("has no update")
             }
         } catch (e) {
             logger.error('contain version check error:' + e)

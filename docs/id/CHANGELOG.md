@@ -1,3 +1,9 @@
+## Release v2.2.11-beta (2024-04-09)
+
+### Fitur baru
+
+- Test update mafx_oyrD
+
 ## Release v2.2.10-beta (2024-04-09)
 
 ### Fitur baru
