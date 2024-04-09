@@ -29,6 +29,8 @@ curl 127.0.0.1:2016/v3/hello-world -I | grep "200 OK"
 if [ $? -ne 0 ]; then
     echo "[PREINST FAILED] Failed to start container $preContainerName"
     exit 1
+else 
+    echo "[PREINST SUCCESS] Container $preContainerName is running"
 fi
 
 # run current
