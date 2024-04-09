@@ -1,4 +1,4 @@
-name: Dispatch-CICD-push-meta
+name: Dispatch-CICD-server2-push-meta-ONLY
 
 on: workflow_dispatch
 
@@ -31,7 +31,6 @@ jobs:
         id: runbuildscript
         run: |
           chmod +x $LAFTOOLS_ROOT/pipeline/build-server2.sh
-          $LAFTOOLS_ROOT/pipeline/build-server2.sh
 
       - name: CNS Release 1
         uses: appleboy/ssh-action@master
@@ -54,7 +53,8 @@ jobs:
       - name: CNS Release 3
         run: |
           sftp -o StrictHostKeyChecking=no -P ${{ secrets.MAIN_APP_SSH_PORT }} ${{ secrets.MAIN_APP_SSH_USERNAME }}@${{ secrets.MAIN_APP_SSH_HOST }} <<EOF
-            put $LAFTOOLS_ROOT/modules/server2/docker-dist.tar.gz /home/appuser/Server2App-dist/LafTools-${{steps.get_version.outputs.VERSION}}-dkout.tmp.gz
+            mkdir /home/appuser/Server2App-meta
+            put -r $LAFTOOLS_ROOT/modules/meta/* /home/appuser/Server2App-meta/
           exit
           EOF
           rm ~/.ssh/id_rsa -rf
