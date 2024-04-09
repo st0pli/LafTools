@@ -38,6 +38,7 @@ fi
 port=2016
 killCP $containerName $port
 runCP $containerName $port
+sleep 15
 curl 127.0.0.1:$port/v3/release/latest -I | grep "200 OK"
 if [ $? -ne 0 ]; then
     echo "Failed to start container $containerName"
