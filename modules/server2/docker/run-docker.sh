@@ -44,4 +44,6 @@ if [ $? -ne 0 ]; then
 fi
 timeout 60 docker logs -f $containerName
 
+docker stop $preContainerName
+
 exit 0
