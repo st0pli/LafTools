@@ -39,8 +39,21 @@ export class ReleaseRoute implements Routes {
       let info = InfoFn(req);
       logger.debug('META_DIR:' + META_DIR);
       let releaseJSON = path.join(META_DIR, 'release.json');
-      let release = require(releaseJSON);
-      let latestVer = release.latestVersion as string;
+      let latestVer = null;
+      let release: any = null;
+      try {
+        release = JSON.parse(fs.readFileSync(releaseJSON, 'utf8').toString());
+        latestVer = release.latestVersion as string;
+      } catch (e) {
+        logger.error('release.json not found or unavailable');
+        return res.send({
+          content: {
+            latestVersion: latestVer,
+            anyUpdate: false,
+            updateInfo: null,
+          },
+        } satisfies SysResponse<ReleaseLatestResponse>);
+      }
       let fn_returnEmpty = () => {
         let emptyResponse: SysResponse<ReleaseLatestResponse> = {
           content: {
