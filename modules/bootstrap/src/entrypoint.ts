@@ -13,14 +13,10 @@ import { runItems } from "./items";
 import { DLinkType, IsCurrentServerMode } from "./types";
 import { logger } from "./utils/logger";
 import { getDLinkConfig } from "./fn";
+import child_process from "child_process";
 
-let runType: ModuleType | null = null;
-process.argv.forEach((val, index) => {
-  if (val.startsWith("--type=")) {
-    runType = val.substr(7).trim() as any;
-  }
-});
-logger.info(`runType: ${runType}`);
+let runType: ModuleType | null = "web2";
+
 let runItem = runItems[runType];
 if (!runItem) {
   logger.error("Invalid runType", runType);

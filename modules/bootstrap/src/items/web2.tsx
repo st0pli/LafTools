@@ -16,6 +16,8 @@ import { computeHash } from "../utils/hash";
 import compressUtils from "../utils/compressUtils";
 import shelljs from 'shelljs'
 import { getCurrentBootConfigFileWithCurrentVer, getDLinkConfig } from "../fn";
+import { getLafToolsDataDir } from "../web2share-copy/homedir";
+import { join } from "lodash";
 let bootstrapInternalDir = getAppBootstrapInternalDir();
 let bootStrapImplWeb2Dir = getAppBootstrapImplWeb2Dir()
 let tempDir = getAppBootstrapTempDir()
@@ -162,24 +164,33 @@ export let job_runVersionCheck = async () => {
         return;
     }
     while (true) {
-        logger.debug('job_runVersionCheck')
+        logger.debug('checking version...')
         try {
             let latestVerRes = await getLatestVersionResponse()
+            logger.debug('checking version result: ' + JSON.stringify(latestVerRes))
             if (latestVerRes && latestVerRes.content.anyUpdate) {
                 let latestInfo = latestVerRes.content.updateInfo.latest
-                // STEP-1: download the latest version
-                let finalFile = await downloadByPkgInfo(latestInfo)
-                // STEP-2: extract the file and confirm it
-                await extractTempFileAndConfirmIt(finalFile, latestInfo)
-                // everything is ok, nice!
-                logger.info('update done')
+                let ver = latestInfo.version
+                let debugFile = join(getLafToolsDataDir(), 'debug-flag.txt')
+                let debugMode = fs.existsSync(debugFile)
+                if (ver.indexOf("-") === -1 || debugMode) { // ignore beta or other version
+                    logger.debug("latest version: " + ver)
+                    // STEP-1: download the latest version
+                    let finalFile = await downloadByPkgInfo(latestInfo)
+                    // STEP-2: extract the file and confirm it
+                    await extractTempFileAndConfirmIt(finalFile, latestInfo)
+                    // everything is ok, nice!
+                    logger.info('update done')
+                } else {
+                    logger.debug("ignore this update: " + ver + " since it's not a stable version")
+                }
             }
         } catch (e) {
             logger.error('contain version check error:' + e)
             // sleep 10 minutes since it's not a critical error
             await new Promise(resolve => setTimeout(resolve, 10 * 60 * 1000));
         }
-        // sleep 5 minutes
+        // sleep 10 minutes
         await new Promise(resolve => setTimeout(resolve, 10 * 60 * 1000));
     }
     // check version

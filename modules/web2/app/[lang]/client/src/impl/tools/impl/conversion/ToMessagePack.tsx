@@ -37,7 +37,7 @@ class ToMessagePack extends Operation {
   public getOptDetail(): OptDetail {
     return {
       infoURL: "https://wikipedia.org/wiki/MessagePack",
-      optName: Dot("XAJIZiKtp", "To MessagePack"),
+      optName: Dot("XAJIZiKtp", "To {0}", Dot("uIuU_n418", 'MessagePack')),
       optDescription: Dot("FsrRIxrjL", "Converts JSON to MessagePack encoded byte buffer. MessagePack is a computer data interchange format. It is a binary form for representing simple data structures like arrays and associative arrays."),
       exampleInput: "{\n  \"a\": 42\n}",
       exampleOutput: "8b2a",

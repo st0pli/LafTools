@@ -3,6 +3,7 @@
   "Wide Page": "宽页模式",
   "Fixed Width": "固宽模式",
   "Space": "空格",
+  "MessagePack": "消息包",
   "URL Encoder": "URL编解码",
   "Packed": "是否打包",
   "To {0}": "生成{0}",

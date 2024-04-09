@@ -10,4 +10,4 @@ else
     echo "[I] ERROR: runtime nodejs not found, please download it first! (Node.js v20+)"
 fi
 
-node ./boot/entrypoint.js --type=web2
+node ./boot/pre-entrypoint.js --type=web2

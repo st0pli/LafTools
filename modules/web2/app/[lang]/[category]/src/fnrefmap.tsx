@@ -20,20 +20,20 @@ export const fnrefmap = {
         )
     }
 }
-
-export let RegisterSlot = () => {
-    useEffect(() => {
-        console.log('fnrefmap', fnrefmap)
-        window.addEventListener('load', () => {
-            _.forEach(fnrefmap, (fn, fn_name) => {
-                let keyval = `[data-refid='${fn_name}']`
-                console.log('keyval', keyval)
-                $(keyval).click(e => {
-                    e.preventDefault()
-                    fn()
-                })
+let initJustOnce = _.once(() => {
+    console.log('fnrefmap', fnrefmap)
+    window.addEventListener('load', () => {
+        _.forEach(fnrefmap, (fn, fn_name) => {
+            let keyval = `[data-refid='${fn_name}']`
+            console.log('keyval', keyval)
+            $(keyval).click(e => {
+                e.preventDefault()
+                fn()
             })
         })
-    }, [])
+    })
+})
+export let RegisterSlot = () => {
+    useEffect(initJustOnce, [])
     return "ok, just check"
 }

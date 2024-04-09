@@ -2,20 +2,22 @@
 
 import { Dot } from "@/app/__CORE__/utils/cTranslationUtils"
 import { nav_text_clz } from "../nav/constants"
-import { isFullScreen, setFullScreen } from "../../fullscreen"
+import { isWidePage, setWidePage } from "../../widepage"
+import { loadDOT } from "@/app/__CORE__/utils/i18n-for-nonclient"
 import { useEffect } from "react"
 
+let a = loadDOT("MNR-D93dP")
+
 export default () => {
-    let isFull = isFullScreen()
+    let val_isWidePage = isWidePage()
     useEffect(() => {
-        if (isFull) {
+        if (val_isWidePage) {
             document.body.classList.add('wide-page')
         }
     }, [])
     return <span className={nav_text_clz + ' hover:cursor-pointer  hover:underline'} onClick={() => {
-        setFullScreen(!isFull)
-        location.reload()
+        setWidePage(!val_isWidePage)
     }}>
-        {isFull ? Dot("no.wide.page", "Fixed Width") : Dot("wide.page", "Wide Page")}
+        {val_isWidePage ? Dot("no.wide.page", "Fixed Width") : Dot("wide.page", "Wide Page")}
     </span>
 }
