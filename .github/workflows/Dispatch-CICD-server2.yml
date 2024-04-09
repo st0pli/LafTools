@@ -55,6 +55,7 @@ jobs:
         run: |
           sftp -o StrictHostKeyChecking=no -P ${{ secrets.MAIN_APP_SSH_PORT }} ${{ secrets.MAIN_APP_SSH_USERNAME }}@${{ secrets.MAIN_APP_SSH_HOST }} <<EOF
             put $LAFTOOLS_ROOT/modules/server2/docker-dist.tar.gz /home/appuser/Server2App-dist/LafTools-${{steps.get_version.outputs.VERSION}}-dkout.tmp.gz
+            mkdir -p /home/appuser/Server2App-meta
             put -r $LAFTOOLS_ROOT/modules/meta/ /home/appuser/Server2App-meta/
           exit
           EOF
