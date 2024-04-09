@@ -666,7 +666,7 @@ export default (props: CommonTransformerProps) => {
           }
           <Allotment.Pane>
             <div className="w-full h-full flex flex-col">
-              <ToolTitlebar title={toolTitle} />
+              {/* <ToolTitlebar title={toolTitle} /> */}
               <div style={{
                 flex: '1',
               }}>

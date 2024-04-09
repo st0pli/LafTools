@@ -76,7 +76,7 @@ export default (props: CommonTransformerPassProp & TransformerWithRuntimeProp) =
             }
         </div>)
     return <div className='w-full h-full flex flex-col'>
-        <div className={CSS_BG_COLOR_WHITE + ` w-full font-mono text-xs justify-center flex flex-row items-center ` + light_border_clz_all}
+        {/* <div className={CSS_BG_COLOR_WHITE + ` w-full font-mono text-xs justify-center flex flex-row items-center ` + light_border_clz_all}
             style={{ borderRight: 'none', borderTop: 'none', borderLeft: 'none', height: VAL_CSS_TAB_TITLE_PANEL }}>
             <span>
                 {
@@ -88,7 +88,7 @@ export default (props: CommonTransformerPassProp & TransformerWithRuntimeProp) =
                             Dot("XfKkqZuFU", "{0} Favourites", _.size(favourites))
                 }
             </span>
-        </div>
+        </div> */}
         <div className='flex-1 overflow-auto scroll-auto scrollbar-hide' style={{
 
         }}>
