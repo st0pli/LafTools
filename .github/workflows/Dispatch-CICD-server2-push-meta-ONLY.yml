@@ -70,12 +70,3 @@ jobs:
           script: |
             export ver="${{steps.get_version.outputs.VERSION}}"
             echo "version: $ver"
-            cd /home/appuser/Server2App-dist
-            rm -rf test-build
-            mkdir test-build
-            cd ./test-build
-            tar -xzf ../LafTools-$ver-dkout.tmp.gz -C .
-            ls -ahlrt
-            docker build  -t localbuild/server2-linux-x64:$ver -f ./Dockerfile .
-            chmod +x ./docker/run-docker.sh
-            ./docker/run-docker.sh server2-inst $ver
