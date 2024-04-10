@@ -11,7 +11,7 @@ import path from "path";
 import { logger } from "./utils/logger";
 import { PkgDownloadInfo } from "./web2share-copy/server_constants";
 import { deleteDLinkConfig, getDLinkConfig } from "./fn";
-// NOTE: move this test part to build-all.sh
+// NOTE: should also add this test part to build-all.sh
 
 // write test cases for getReleaseDateTxtInFolder
 test("test-web2-getReleaseDateTxtInFolder", async () => {
@@ -60,8 +60,8 @@ test(
   "test-web2-install-new-version",
   async () => {
     let ver = "v2.1.89-beta";
-    deleteDLinkConfig();
-    let dlinkConfig = getDLinkConfig();
+    deleteDLinkConfig("web2");
+    let dlinkConfig = getDLinkConfig("web2");
     expect(dlinkConfig).toBe(null);
     let p_downloadPkgInfo: PkgDownloadInfo = {
       version: ver,

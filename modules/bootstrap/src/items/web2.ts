@@ -15,7 +15,7 @@ import stream from 'stream'
 import { computeHash } from "../utils/hash";
 import compressUtils from "../utils/compressUtils";
 import shelljs from 'shelljs'
-import { getCurrentBootConfigFileWithCurrentVer, getDLinkConfig } from "../fn";
+import { confirmDLinkConfig, getCurrentBootConfigFileWithCurrentVer, getDLinkConfig } from "../fn";
 import { getLafToolsDataDir } from "../web2share-copy/homedir";
 import { join } from "lodash";
 let bootstrapInternalDir = getAppBootstrapInternalDir();
@@ -90,17 +90,16 @@ export let extractTempFileAndConfirmIt = async (currentTempFile: string, latestI
     let finalLoadFilePath = path.join(
         releaseDateTxtFileList[0],
         '..',
-        'boot',
-        'items.js'
+        'items',
+        'web2.js'
     )
-    let currentBootConfig = getCurrentBootConfigFileWithCurrentVer();
     let newValDLink: DLinkType = {
         fromVersion: pkgInfo.version,
         toVersion: latestInfo.version,
         dateTime: new Date().getTime() + "",
         loadPath: finalLoadFilePath,
     }
-    writeFileSync(currentBootConfig, JSON.stringify(newValDLink, null, 4))
+    confirmDLinkConfig("web2", newValDLink);
 }
 
 export let downloadByPkgInfo = async (latestInfo: PkgDownloadInfo) => {

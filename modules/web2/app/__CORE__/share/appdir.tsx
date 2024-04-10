@@ -22,6 +22,11 @@ import path from "path"
 import { getLafToolsDataDir } from "./homedir"
 import { isDevEnv } from "./env"
 import fsutils from "./FileUtils"
+import { join } from 'path'
+
+export let getBootstrapUpdateReloadFile = () => {
+    return join(getAppBootstrapInternalDir(), 'reload-flag.txt')
+}
 
 export let getAppDataInternalDir = (): string => {
     return fsutils.mkdir(path.join(getLafToolsDataDir(), 'data'))

@@ -14,46 +14,7 @@ import { DLinkType, IsCurrentServerMode } from "./types";
 import { logger } from "./utils/logger";
 import { getDLinkConfig } from "./fn";
 import child_process from "child_process";
+import { internalRun } from "./internal-run";
 
 let runType: ModuleType | null = "web2";
-
-let runItem = runItems[runType];
-if (!runItem) {
-  logger.error("Invalid runType", runType);
-  process.exit(1);
-}
-let bootStrapInternalDir = getAppBootstrapInternalDir();
-// mkdir if not exist
-if (!fs.existsSync(bootStrapInternalDir)) {
-  fs.mkdirSync(bootStrapInternalDir, { recursive: true });
-}
-
-// write timestamp to log
-logger.info("start entrypoint");
-// if it's current server mode, then load the item
-let hasAckAnyDynamic = false;
-if (!IsCurrentServerMode()) {
-  try {
-    let dlink = getDLinkConfig();
-    if (dlink) {
-      if (dlink.loadPath) {
-        let newLoadModule = require(dlink.loadPath);
-        if (runType == "web2") {
-          let newRunItems = newLoadModule.runItems;
-          newRunItems[runType](true);
-          logger.info("[LOADED] web2Path: " + dlink.loadPath);
-          hasAckAnyDynamic = true;
-        } else if (runType == "desktop2") {
-          // TODO: not implemented yet
-        }
-      }
-    }
-  } catch (e) {
-    console.log(e);
-    logger.error(e);
-  }
-}
-
-if (!hasAckAnyDynamic) {
-  runItem.load(false);
-}
+internalRun(runType);

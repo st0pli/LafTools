@@ -3,6 +3,7 @@
   "version": "v2.2.12-beta",
   "scripts": {
     "fe-job": "sh ./pipeline/dev-run-scan-and-generate.sh",
+    "fe-sync-web2share": "sh ./pipeline/dev-sync-copy-files.sh",
     "gen-release-full": "npm run fe-scan-all && npm run fe-release-docs",
     "gen-release": "sh ./devtools/docs-generator/pipeline/build.sh",
     "win-clean": "taskkill /F /IM bash.exe",
