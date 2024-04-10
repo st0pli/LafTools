@@ -1,10 +1,10 @@
 {
   "name": "laftools-go",
-  "version": "v2.2.11-beta",
+  "version": "v2.2.12-beta",
   "scripts": {
     "fe-job": "sh ./pipeline/dev-run-scan-and-generate.sh",
-    "fe-release-docs-full": "npm run fe-scan-all && npm run fe-release-docs",
-    "fe-release-docs": "sh ./devtools/docs-generator/pipeline/build.sh",
+    "gen-release-full": "npm run fe-scan-all && npm run fe-release-docs",
+    "gen-release": "sh ./devtools/docs-generator/pipeline/build.sh",
     "win-clean": "taskkill /F /IM bash.exe",
     "fe-web": "(cd ./modules/web2 && npm run dev)",
     "fe-css": "(cd ./modules/web && sh ./job-tailwind.sh)",

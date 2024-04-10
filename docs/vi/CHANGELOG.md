@@ -1,3 +1,9 @@
+## Release v2.2.12-beta (2024-04-10)
+
+### Các tính năng mới
+
+- Test update 8oW_Reebm
+
 ## Release v2.2.11-beta (2024-04-09)
 
 ### Các tính năng mới

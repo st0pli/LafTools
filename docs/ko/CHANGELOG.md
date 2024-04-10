@@ -1,3 +1,9 @@
+## Release v2.2.12-beta (2024-04-10)
+
+### 새로운 기능
+
+- Test update 8oW_Reebm
+
 ## Release v2.2.11-beta (2024-04-09)
 
 ### 새로운 기능
