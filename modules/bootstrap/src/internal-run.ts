@@ -29,31 +29,6 @@ export let internalRun = (runType: ModuleType | null) => {
 
   // write timestamp to log
   logger.info("start entrypoint");
-  // if it's current server mode, then load the item
-  let hasAckAnyDynamic = false;
-  if (!IsCurrentServerMode()) {
-    try {
-      let dlink = getDLinkConfig(runType);
-      if (dlink) {
-        if (dlink.loadPath) {
-          // let newLoadModule: any = import(dlink.loadPath);
-          let newLoadModule = require(dlink.loadPath);
-          if (runType == "web2") {
-            newLoadModule.load(true);
-            logger.info("[LOADED] web2Path: " + dlink.loadPath);
-            hasAckAnyDynamic = true;
-          } else if (runType == "desktop2") {
-            // TODO: not implemented yet
-          }
-        }
-      }
-    } catch (e) {
-      console.log(e);
-      logger.error(e);
-    }
-  }
 
-  if (!hasAckAnyDynamic) {
-    runItem.load(false);
-  }
+  runItem.load(false);
 };

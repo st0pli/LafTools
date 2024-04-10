@@ -20,7 +20,6 @@
     "noEmit": false,
     "esModuleInterop": true,
     "resolveJsonModule": true,
-    "jsx": "preserve",
     "importHelpers": true,
     "paths": {}
   },

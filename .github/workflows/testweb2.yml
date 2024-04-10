@@ -43,6 +43,7 @@ jobs:
       - name: run vite test for bootstrap
         run: |
           cd $LAFTOOLS_ROOT/modules/bootstrap
+          npx tsc
           npx vitest run
 
       - name: server2 install
