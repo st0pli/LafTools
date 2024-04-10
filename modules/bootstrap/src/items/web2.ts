@@ -56,7 +56,7 @@ export let getMinimalDIrPath = () => {
     : path.join(currentDIRName, "..", "..");
 };
 let minimalDIRPath = getMinimalDIrPath();
-logger.debug("minimalDIRPath", minimalDIRPath);
+logger.debug("minimalDIRPath: " + minimalDIRPath);
 let pkgInfo = readPkgInfoFromDir(minimalDIRPath);
 export let getLatestVersionResponse = async (): Promise<
   SysResponse<ReleaseLatestResponse>

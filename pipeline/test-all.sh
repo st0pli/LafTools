@@ -19,6 +19,7 @@ cp -a $LAFTOOLS_ROOT/dist/pkg/LafTools-$crtVersion-linux-x64-minimal.tar.gz LafT
 tar -xzf LafTools-pkg.tar.gz 
 cd `ls | grep LafTools | grep minimal`
 echo "find results"
+find .
 find . -iname 'run.sh'
 echo "ls results"
 ls
