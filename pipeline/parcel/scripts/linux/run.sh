@@ -8,5 +8,6 @@ if [ ! -f ./bin/node/bin/node ]; then
 else
     echo "[I] ERROR: runtime nodejs not found, please download it first! (Node.js v20+)"
 fi
-
+# set as prod
+export NODE_ENV=production
 node ./boot/pre-entrypoint.js --type=web2
