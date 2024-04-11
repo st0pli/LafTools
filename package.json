@@ -1,6 +1,6 @@
 {
   "name": "laftools-go",
-  "version": "v2.2.13-beta",
+  "version": "v2.2.14-beta",
   "scripts": {
     "fe-job": "sh ./pipeline/dev-run-scan-and-generate.sh",
     "fe-sync-web2share": "sh ./pipeline/dev-sync-copy-files.sh",

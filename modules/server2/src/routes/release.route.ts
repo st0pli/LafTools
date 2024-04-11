@@ -112,7 +112,6 @@ export class ReleaseRoute implements Routes {
               sha256SumURL: `${crtHost}/${latestVer}/SHA256SUM.txt`,
               fileName: fileNameInURL,
             },
-            // recentReleaseNotes: recentReleaseNotesArr,
           },
         },
       } satisfies SysResponse<ReleaseLatestResponse>);

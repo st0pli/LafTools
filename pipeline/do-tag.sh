@@ -1,5 +1,12 @@
 #!/bin/bash
 set -e
+
+git status|grep modified
+if [ $? -eq 0 ]; then
+    echo "Please commit your changes before tagging"
+    exit 1
+fi
+
 version=`jq '.version' $LAFTOOLS_ROOT/package.json -r` 
 tagName=$version
 git tag $tagName
