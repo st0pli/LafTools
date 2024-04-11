@@ -2,7 +2,8 @@
 
 import axios, { AxiosResponse } from "axios"
 import { APPINFOJSON } from "../nocycle";
-import { APITypeInfo, API_SERVER_URL, core_sendAPIRequestInBE, getLAFRegion } from "@/app/__CORE__/share/api";
+import { core_sendAPIRequestInBE, } from "@/app/__CORE__/share/api";
+import { getLAFRegion } from "@/app/__CORE__/share/api_constants";
 
 
 export let sendAPIRequestInBE = async (partialInfo: {

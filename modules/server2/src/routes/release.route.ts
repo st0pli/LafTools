@@ -5,9 +5,9 @@ import { Routes } from '@interfaces/routes.interface';
 import { AuthMiddleware } from '@middlewares/auth.middleware';
 import { ValidationMiddleware } from '@middlewares/validation.middleware';
 import { DotFn } from '@/i18n/TranslationUtils';
-import { ReleaseLatestResponse, SysResponse, TypeRecentReleaseNotes } from './_types';
+import { ReleaseLatestResponse, ReleaseStatusResponse, SysResponse, TypeRecentReleaseNotes } from './_types';
 import { InfoFn } from '@/system/info';
-import { URL_RELEASE_GET_ALL, URL_RELEASE_GET_INFO, URL_RELEASE_GET_LATEST } from '@/web2share-copy/server_urls';
+import { URL_RELEASE_GET_ALL, URL_RELEASE_GET_INFO, URL_RELEASE_GET_LATEST, URL_RELEASE_GET_STATUS } from '@/web2share-copy/server_urls';
 import path from 'path';
 import fs from 'fs';
 import { logger } from '@/utils/logger';
@@ -26,6 +26,14 @@ let getResourceNameByVersion = (crtVersion: string, platform: string) => {
   return `LafTools-${crtVersion}-${platform}-minimal.${ext}`;
 };
 
+let getJSONFromFile = (filePath: string): any | null => {
+  if (!fs.existsSync(filePath)) {
+    logger.error('file not found: ' + filePath);
+    return null;
+  }
+  return JSON.parse(fs.readFileSync(filePath, 'utf8').toString());
+};
+
 export class ReleaseRoute implements Routes {
   public router = Router();
 
@@ -34,6 +42,19 @@ export class ReleaseRoute implements Routes {
   }
 
   private initializeRoutes() {
+    this.router.get(URL_RELEASE_GET_STATUS, async (req, res) => {
+      let statusJSON = path.join(META_DIR, 'status.json');
+      let status = getJSONFromFile(statusJSON);
+      if (!status) {
+        return res.send({
+          content: null,
+        } satisfies SysResponse<ReleaseStatusResponse>);
+      } else {
+        return res.send({
+          content: status as ReleaseStatusResponse,
+        } satisfies SysResponse<ReleaseStatusResponse>);
+      }
+    });
     this.router.get(URL_RELEASE_GET_LATEST, async (req, res) => {
       let Dot = DotFn(req);
       let info = InfoFn(req);
