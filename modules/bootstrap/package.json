@@ -9,7 +9,6 @@
     "build": "swc src -d dist --copy-files"
   },
   "dependencies": {
-    "@types/lodash": "^4.17.0",
     "decompress": "^4.2.1",
     "decompress-targz": "^4.1.1",
     "extract-zip": "^2.0.1",
@@ -20,9 +19,11 @@
     "winston-daily-rotate-file": "^4.7.1"
   },
   "devDependencies": {
+    "@types/lodash": "^4.17.0",
+    "@types/node": "20.8.3",
+    "@types/shelljs": "^0.8.15",
     "@swc/cli": "^0.1.57",
     "@swc/core": "^1.2.220",
-    "@types/shelljs": "^0.8.15",
     "@vitejs/plugin-react": "^4.2.1",
     "ts-jest": "^28.0.7",
     "ts-node": "^10.9.1",
