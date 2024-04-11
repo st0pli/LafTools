@@ -8,7 +8,7 @@ import { getLAFRegion } from "@/app/__CORE__/share/api_constants";
 
 export let sendAPIRequestInBE = async (partialInfo: {
     lang: string
-}, url: string, request: any): Promise<Response> => {
+}, url: string): Promise<string> => {
     if (!url.startsWith('/')) {
         url = '/' + url;
     }
@@ -19,6 +19,6 @@ export let sendAPIRequestInBE = async (partialInfo: {
         platform: '', // TODO: unknown for now
         version: APPINFOJSON.version,
         region: region
-    }, url, request)
-    return res;
+    }, url, {})
+    return await res.text();
 }

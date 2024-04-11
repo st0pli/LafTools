@@ -1,4 +1,3 @@
-"use server";
 import { APITypeInfo, API_SERVER_URL } from "./api_constants";
 import { isDevEnv, isTestEnv } from "./env";
 import {
