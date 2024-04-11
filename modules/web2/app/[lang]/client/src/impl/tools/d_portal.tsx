@@ -434,10 +434,10 @@ export let getToolSubCategory = ((): PortalDefinitionType[] => {
             ],
             seoDescription: Dot("seo.description.parsers", "Use our free online SQL parser to parse your SQL queries and improve your database performance."),
             subTabs: [
-                {
-                    id: 'sqlparser',
-                    label: Dot("2Yq2eqY2Y2", "SQL Parser"),
-                },
+                // {
+                //     id: 'sqlparser',
+                //     label: Dot("2Yq2eqY2Y2", "SQL Parser"),
+                // },
                 {
                     id: 'fromhexdump',
                     toolId: 'FromHexdump',

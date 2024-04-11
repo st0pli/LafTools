@@ -43,7 +43,8 @@ jobs:
       - name: run vite test for bootstrap
         run: |
           cd $LAFTOOLS_ROOT/modules/bootstrap
-          npx tsc --noEmitOnError
+          chmod +x ./pipeline/build-tsc.sh
+          ./pipeline/build-tsc.sh
           npx vitest run
 
       - name: server2 install

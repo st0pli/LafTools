@@ -139,6 +139,19 @@ export default (): ToolCategory[] => {
           ],
         },
         {
+          Id: "codec.NamingRules",
+          Label: Dot("n8vUMLVSV", "Naming Rules"),
+          Icon: "vertical-inbetween",
+          ChildrenIdSet: [
+            "KebabCase",
+            "ToLowerCase",
+            "SnakeCase",
+            "CharCode",
+            "MorseCode",
+          ],
+        },
+
+        {
           Id: "codec.Web_Auth",
           Label: Dot("y_2Q5", "Web Auth"),
           Icon: "shield",
