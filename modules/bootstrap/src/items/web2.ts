@@ -228,7 +228,8 @@ export let job_runVersionCheck = async () => {
           // STEP-2: extract the file and confirm it
           await extractTempFileAndConfirmIt(finalFile, latestInfo);
           // everything is ok, nice!
-          logger.info("update done");
+          logger.info("update done, will restart this process now");
+          await quitAndRestart();
         } else {
           logger.debug(
             "ignore this update: " + ver + " since it's not a stable version",
