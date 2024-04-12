@@ -113,8 +113,19 @@ export let fn: FnInternalConverter = (content: string, lang: string) => {
       eachLastObj.version + ".json",
     );
     if (!fs.existsSync(eachVersionJSONFile)) {
-      throw new Error(
-        "each version JSON file not found -> " + eachLastObj.version,
+      console.log("each version JSON file not found -> " + eachLastObj.version);
+      // fs write
+      writeFileSync(
+        eachVersionJSONFile,
+        JSON.stringify(
+          {
+            currentDesktopVersion: "1",
+            currentTerminalVersion: "1",
+            currentDockerVersion: "1",
+          },
+          null,
+          2,
+        ),
       );
     }
     let eachVersionJSON = JSON.parse(

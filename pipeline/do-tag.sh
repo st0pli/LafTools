@@ -1,5 +1,4 @@
 #!/bin/bash
-set -e
 
 git status|grep modified
 if [ $? -eq 0 ]; then
@@ -7,6 +6,7 @@ if [ $? -eq 0 ]; then
     exit 1
 fi
 
+set -e
 version=`jq '.version' $LAFTOOLS_ROOT/package.json -r` 
 tagName=$version
 git tag $tagName

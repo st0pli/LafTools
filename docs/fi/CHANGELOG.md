@@ -1,3 +1,15 @@
+## Release v2.2.15-beta (2024-04-10)
+
+### Uudet ominaisuudet
+
+- Test update JZDhNwhhW
+
+## Release v2.2.14-beta (2024-04-10)
+
+### Uudet ominaisuudet
+
+- Test update JZDhNwhhW
+
 ## Release v2.2.12-beta (2024-04-10)
 
 ### Uudet ominaisuudet
