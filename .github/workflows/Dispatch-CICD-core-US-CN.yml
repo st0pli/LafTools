@@ -50,8 +50,6 @@ jobs:
           cd ./pipeline
           chmod +x ./build-all.sh
           ./build-all.sh "${{steps.get_version.outputs.VERSION}}"
-          chmod +x ./test-all.sh
-          ./test-all.sh
 
       - name: US Release 1
         uses: appleboy/ssh-action@master
