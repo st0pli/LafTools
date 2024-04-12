@@ -13,6 +13,7 @@ jobs:
     env:
       LAFTOOLS_ROOT: /home/runner/work/LafTools/LafTools-M-pre
       TAG_MODE: true
+      DOCKER_PKG_BUILD_MODE: true
 
     steps:
       - name: Checkout code

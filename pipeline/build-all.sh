@@ -317,7 +317,7 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
             #     ./test-docker.sh 
             # fi
 
-            if [ "$TAG_MODE" = "true" ]; then
+            if [ "$DOCKER_PKG_BUILD_MODE" = "true" ]; then
                 echo "[I] will test and push docker container for $platformName"
                 echo "[I] pushing docker image for $platformName"
                 docker push codegentoolbox/laftools-$platformName:$crtVersion
