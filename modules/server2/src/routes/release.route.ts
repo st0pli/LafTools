@@ -14,8 +14,8 @@ import { logger } from '@/utils/logger';
 import i18nItems from '@/i18n/i18n-copy';
 
 // example for host: "https://download.laftools.cn"
-let usHost = process.env.PKG_DOWNLOAD_US_HOST;
-let cnHost = process.env.PKG_DOWNLOAD_CN_HOST;
+let usHost = 'http://betalaftools.codegen.cc:8080';
+let cnHost = 'https://s.laftools.cn';
 
 let isDev = process.env.NODE_ENV === 'development';
 

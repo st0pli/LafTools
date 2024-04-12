@@ -35,5 +35,5 @@ let initJustOnce = _.once(() => {
 })
 export let RegisterSlot = () => {
     useEffect(initJustOnce, [])
-    return "ok, just check"
+    return ""
 }
