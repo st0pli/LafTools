@@ -1,3 +1,5 @@
+## Release v2.2.16-beta (2024-04-10)
+
 ## Release v2.2.15-beta (2024-04-10)
 
 ### Nye funktioner

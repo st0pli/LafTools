@@ -50,7 +50,7 @@ if (debugMode) {
 } else {
   logger.debug("debug mode is disabled");
 }
-
+let waitTime = debugMode ? 10000 : 10 * 60 * 1000;
 let currentDIRName = __dirname;
 export let getMinimalDIrPath = () => {
   return isDevEnv() || isTestEnv()
@@ -166,11 +166,10 @@ export let downloadByPkgInfo = async (latestInfo: PkgDownloadInfo) => {
     let [sha256, fileName] = line.split("  ");
     sha256 = sha256.trim();
     fileName = fileName.trim();
-    logger.debug(`sha256: ${sha256}, fileName: ${fileName}`);
+    logger.debug(`read sha256: ${sha256}, fileName: ${fileName}`);
     if (fileName == l_fileName) {
-      // check sha256
-      logger.debug("sha256:" + sha256);
       expect_findSHA256Value = sha256;
+      logger.debug("detected l_fileName: " + l_fileName);
       return false;
     }
     return true;
@@ -182,16 +181,26 @@ export let downloadByPkgInfo = async (latestInfo: PkgDownloadInfo) => {
   }
   let fetchRes = await fetch(l_pkgURL);
   logger.info(`fetch URL: ${fetchRes.url}, status: ${fetchRes.status}`);
-  logger.info(`download to ${currentTempFile}`);
+  logger.info(`will download to ${currentTempFile}`);
   if (!fetchRes.ok) {
+    logger.error("failed to fetch: " + fetchRes.url);
     throw new Error("fetch failed");
+  } else {
+    logger.info("fetch basic info success");
   }
+  logger.debug("reading arrayBuffer...");
   let buffer = await fetchRes.arrayBuffer();
   writeFileSync(currentTempFile, Buffer.from(buffer));
 
+  logger.debug("OK, downloaded to " + currentTempFile);
   // do sha256 sum check for currentTempFile
   let actual_sha256Value = await computeHash(currentTempFile);
-  logger.debug("actual sha256", actual_sha256Value);
+  logger.debug(
+    "computed SHA256, expect: " +
+      expect_findSHA256Value +
+      " actual: " +
+      actual_sha256Value,
+  );
 
   if (actual_sha256Value != expect_findSHA256Value) {
     logger.error(
@@ -251,18 +260,14 @@ export let job_runVersionCheck = async () => {
         logger.debug("has no update");
       }
     } catch (e) {
+      logger.error("an error occurred in job_runVersionCheck");
       logger.error("contain version check error:" + e);
       // sleep 10 minutes since it's not a critical error
-      await new Promise((resolve) =>
-        setTimeout(resolve, debugMode ? 10000 : 10 * 60 * 1000),
-      );
+      await new Promise((resolve) => setTimeout(resolve, waitTime));
     }
     // sleep 10 minutes
-    await new Promise((resolve) =>
-      setTimeout(resolve, debugMode ? 10000 : 10 * 60 * 1000),
-    );
+    await new Promise((resolve) => setTimeout(resolve, waitTime));
   }
-  // check version
 };
 
 let item: TypeRunItem = {
