@@ -11,6 +11,7 @@ import {
   getAppBootstrapImplWeb2Dir,
   getAppBootstrapInternalDir,
   getAppBootstrapTempDir,
+  getBootstrapUpdateReloadFile,
 } from "../web2share-copy/appdir";
 import { writeFileSync } from "fs";
 import { PkgInfo, readPkgInfoFromDir } from "../web2share-copy/pkginfo";
@@ -100,6 +101,14 @@ export let getReleaseDateTxtInFolder = (folder: string): string[] => {
     })
   );
 };
+
+export let quitAndRestart = () => {
+  logger.info("quit and restart");
+  let reloadFile = getBootstrapUpdateReloadFile("web2");
+  fs.writeFileSync(reloadFile, "1");
+  process.exit(0);
+};
+
 export let extractTempFileAndConfirmIt = async (
   currentTempFile: string,
   latestInfo: PkgDownloadInfo,

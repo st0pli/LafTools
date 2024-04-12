@@ -2,15 +2,13 @@ import child_process from "child_process";
 import { join } from "path";
 import fs from "fs";
 import { logger } from "./utils/logger";
-import {
-  getAppBootstrapInternalDir,
-  getBootstrapUpdateReloadFile,
-} from "./web2share-copy/appdir";
+import { getAppBootstrapInternalDir } from "./web2share-copy/appdir";
 import { ModuleType } from "./constant";
 import _ from "lodash";
 import { IsCurrentServerMode } from "./types";
 import { getDLinkConfig } from "./fn";
 import { isProductionEnv } from "./web2share-copy/env";
+import { getBootstrapUpdateReloadFile } from "./common";
 
 let nodeBIN = process.execPath;
 export let getFileDistDir = () => {
@@ -67,13 +65,21 @@ export let fn_runtype_dynamic_load = (runType: ModuleType) => {
 
   spawnFN.on("close", (code) => {
     console.log(`child process exited with code ${code}`);
-    let reloadFile = getBootstrapUpdateReloadFile();
+    let reloadFile = getBootstrapUpdateReloadFile(runType);
     if (fs.existsSync(reloadFile)) {
       logger.info(`Reloading entrypoint: ${loadFile}`);
       fs.unlinkSync(reloadFile);
       fn_runtype_dynamic_load(runType);
     } else {
-      logger.info(`No reload file found: ${reloadFile}, will end the process.`);
+      if (code != 0) {
+        logger.warn(
+          `child process exited with code ${code}, need to check it why it failed.`,
+        );
+      } else {
+        logger.info(
+          `No reload file found: ${reloadFile}, will end the process.`,
+        );
+      }
     }
   });
 };

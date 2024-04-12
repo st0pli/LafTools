@@ -19,12 +19,12 @@ cp -a $LAFTOOLS_ROOT/dist/pkg/LafTools-$crtVersion-linux-x64-minimal.tar.gz LafT
 tar -xzf LafTools-pkg.tar.gz 
 cd `ls | grep LafTools | grep minimal`
 echo "find results"
-find .
 find . -iname 'run.sh'
 echo "ls results"
 ls
 echo "start running, PWD is `pwd`"
 if [ ! -f run.sh ]; then
+    find .
     echo "[E] $(date) Test failed, run.sh not found"
     exit 1
 fi

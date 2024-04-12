@@ -1,4 +1,6 @@
 var/log/
+*.zip
+LafTools*
 package-lock.json
 src-dist
 share-copy2

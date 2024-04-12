@@ -172,10 +172,9 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
             [ -d node_modules ] && rm -rf node_modules
             rm -f *lock*
             [ ! -d node_modules ] && npm install --omit=dev --force 
-            # [ ! -d node_modules ] && npm install -S -D --force 
-            if [ -e ./vite.config.ts ]; then
-                rm ./vite.config.ts
-            fi
+            # if [ -e ./vite.config.ts ]; then
+            #     rm ./vite.config.ts
+            # fi
             rm -rf .next
             npm run build
             cd .next
