@@ -299,9 +299,9 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ctypes\"
             mv node-v20.12.0-$platformName node
 
             echo "[I] build docker image for $platformName"
-            docker buildx -t codegentoolbox/laftools-$platformName:$crtVersion -f ./Dockerfile .
-            docker buildx -t codegentoolbox/laftools-$platformName:latest -f ./Dockerfile .
-            docker buildx -t codegentoolbox/laftools-$platformName:devops -f ./Dockerfile .
+            docker build -t codegentoolbox/laftools-$platformName:$crtVersion -f ./Dockerfile .
+            docker build -t codegentoolbox/laftools-$platformName:latest -f ./Dockerfile .
+            docker build -t codegentoolbox/laftools-$platformName:devops -f ./Dockerfile .
 
             docker images
             if [ $? -ne 0 ]; then
