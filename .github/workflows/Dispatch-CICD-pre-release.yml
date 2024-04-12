@@ -12,7 +12,7 @@ jobs:
 
     env:
       LAFTOOLS_ROOT: /home/runner/work/LafTools/LafTools-M-pre
-      TAG_MODE: true
+      TAG_MODE: false
       DOCKER_PKG_BUILD_MODE: true
 
     steps:
