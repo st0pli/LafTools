@@ -11,7 +11,6 @@ import {
   getAppBootstrapImplWeb2Dir,
   getAppBootstrapInternalDir,
   getAppBootstrapTempDir,
-  getBootstrapUpdateReloadFile,
 } from "../web2share-copy/appdir";
 import { writeFileSync } from "fs";
 import { PkgInfo, readPkgInfoFromDir } from "../web2share-copy/pkginfo";
@@ -39,6 +38,7 @@ import {
 } from "../fn";
 import { getLafToolsDataDir } from "../web2share-copy/homedir";
 import { join } from "lodash";
+import { getBootstrapUpdateReloadFile } from "../common";
 let bootstrapInternalDir = getAppBootstrapInternalDir();
 let bootStrapImplWeb2Dir = getAppBootstrapImplWeb2Dir();
 let tempDir = getAppBootstrapTempDir();

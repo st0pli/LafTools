@@ -7,6 +7,8 @@ import { getMinimalDIrPath } from "./items/web2";
 import { readPkgInfoFromDir } from "./web2share-copy/pkginfo";
 import { writeFileSync } from "fs";
 import { ModuleType } from "./constant";
+import fsutils from "./web2share-copy/FileUtils";
+import { join } from "path";
 
 export let confirmDLinkConfig = (
   moduleType: ModuleType,

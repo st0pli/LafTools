@@ -44,7 +44,16 @@ export let fn_runtype_dynamic_load = (runType: ModuleType) => {
       let dlink = getDLinkConfig(runType);
       if (dlink) {
         if (dlink.loadPath) {
-          loadFile = dlink.loadPath;
+          if (fs.existsSync(dlink.loadPath)) {
+            logger.info(`Found dlink.loadPath: ${dlink.loadPath}`);
+            loadFile = dlink.loadPath;
+          } else {
+            logger.warn(
+              "dlink.loadPath not found: " +
+                dlink.loadPath +
+                ", hence it will be skipped",
+            );
+          }
         }
       }
     } catch (e) {
