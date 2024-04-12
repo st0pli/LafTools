@@ -12,7 +12,7 @@ jobs:
 
     env:
       LAFTOOLS_ROOT: /home/runner/work/LafTools/LafTools-tag
-      TAG_MODE: true
+      TAG_MODE: false
 
     steps:
       - name: Checkout code
