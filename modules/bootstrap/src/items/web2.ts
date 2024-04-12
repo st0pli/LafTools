@@ -39,6 +39,7 @@ import {
 import { getLafToolsDataDir } from "../web2share-copy/homedir";
 import { join } from "lodash";
 import { getBootstrapUpdateReloadFile } from "../common";
+import { getCurrentBootCheckedVersionFile } from "../fndir/vercheck";
 let bootstrapInternalDir = getAppBootstrapInternalDir();
 let bootStrapImplWeb2Dir = getAppBootstrapImplWeb2Dir();
 let tempDir = getAppBootstrapTempDir();
@@ -58,7 +59,7 @@ export let getMinimalDIrPath = () => {
 };
 let minimalDIRPath = getMinimalDIrPath();
 logger.debug("minimalDIRPath: " + minimalDIRPath);
-let pkgInfo = readPkgInfoFromDir(minimalDIRPath);
+let currentPkgInfo = readPkgInfoFromDir(minimalDIRPath);
 export let getLatestVersionResponse = async (): Promise<
   SysResponse<ReleaseLatestResponse>
 > => {
@@ -68,8 +69,8 @@ export let getLatestVersionResponse = async (): Promise<
   let r = await core_sendAPIRequestInBE(
     {
       lang: lang,
-      version: pkgInfo.version,
-      platform: pkgInfo.platform,
+      version: currentPkgInfo.version,
+      platform: currentPkgInfo.platform,
       region: getLAFRegion(lang),
     },
     URL_RELEASE_GET_LATEST,
@@ -114,7 +115,7 @@ export let extractTempFileAndConfirmIt = async (
   latestInfo: PkgDownloadInfo,
 ) => {
   let version = latestInfo.version;
-  let currentPlatform = pkgInfo.platform;
+  let currentPlatform = currentPkgInfo.platform;
   let currentImplDir = bootStrapImplWeb2Dir;
   let saveToWhere = path.join(bootStrapImplWeb2Dir, version);
   await compressUtils.decompress(currentTempFile, saveToWhere);
@@ -130,7 +131,7 @@ export let extractTempFileAndConfirmIt = async (
     "entrypoint.js",
   );
   let newValDLink: DLinkType = {
-    fromVersion: pkgInfo.version,
+    fromVersion: currentPkgInfo.version,
     toVersion: latestInfo.version,
     dateTime: new Date().getTime() + "",
     loadPath: finalLoadFilePath,
@@ -140,7 +141,7 @@ export let extractTempFileAndConfirmIt = async (
 
 export let downloadByPkgInfo = async (latestInfo: PkgDownloadInfo) => {
   logger.debug("downloadByPkgInfo: " + JSON.stringify(latestInfo));
-  let currentPlatform = pkgInfo.platform;
+  let currentPlatform = currentPkgInfo.platform;
   let l_fileName = latestInfo.fileName;
   let l_pkgURL = latestInfo.pkgURL;
   let randomSTR = parseInt(Math.random() * 1000 + "");
@@ -213,26 +214,37 @@ export let job_runVersionCheck = async () => {
     return;
   }
   while (true) {
-    logger.debug("checking version...");
+    logger.debug(
+      "checking version... btw, current pkgInfo info: " +
+        JSON.stringify(currentPkgInfo),
+    );
     try {
       let latestVerRes = await getLatestVersionResponse();
       logger.debug("checking version result: " + JSON.stringify(latestVerRes));
       if (latestVerRes && latestVerRes.content.anyUpdate) {
         let latestInfo = latestVerRes.content.updateInfo.latest;
-        let ver = latestInfo.version;
-        if (ver.indexOf("-") === -1 || debugMode) {
-          // ignore beta or other version
-          logger.debug("latest version: " + ver);
-          // STEP-1: download the latest version
-          let finalFile = await downloadByPkgInfo(latestInfo);
-          // STEP-2: extract the file and confirm it
-          await extractTempFileAndConfirmIt(finalFile, latestInfo);
-          // everything is ok, nice!
-          logger.info("update done, will restart this process now");
-          await quitAndRestart();
+        let newVer = latestInfo.version;
+        if (newVer.indexOf("-") === -1 || debugMode) {
+          let f = getCurrentBootCheckedVersionFile("web2", newVer);
+          if (fs.existsSync(f)) {
+            logger.debug("already updated, ignore this update. file: " + f);
+          } else {
+            // ignore beta or other version
+            logger.debug("latest version: " + newVer);
+            // STEP-1: download the latest version
+            let finalFile = await downloadByPkgInfo(latestInfo);
+            // STEP-2: extract the file and confirm it
+            await extractTempFileAndConfirmIt(finalFile, latestInfo);
+            fs.writeFileSync(f, "1");
+            // everything is ok, nice!
+            logger.info("update done, will restart this process now");
+            await quitAndRestart();
+          }
         } else {
           logger.debug(
-            "ignore this update: " + ver + " since it's not a stable version",
+            "ignore this update: " +
+              newVer +
+              " since it's not a stable version",
           );
         }
       } else {
