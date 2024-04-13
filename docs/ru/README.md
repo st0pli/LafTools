@@ -62,7 +62,6 @@ Docker Images:
 # 🌠 Предварительный просмотр
 
 ![](https://github.com/work7z/LafTools/blob/dev/devtools/images/portal-1.png?raw=true)
-![](https://github.com/work7z/LafTools/blob/dev/devtools/images/preview.png?raw=true)
 ![](https://github.com/work7z/LafTools/blob/dev/devtools/images/preview-dark.png?raw=true)
 
 # 📡 About LAF

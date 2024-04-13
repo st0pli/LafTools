@@ -62,7 +62,6 @@ To quickly use these functions, we've deployed stable online website in US and C
 # 🌠 Preview
 
 ![](https://github.com/work7z/LafTools/blob/dev/devtools/images/portal-1.png?raw=true)
-![](https://github.com/work7z/LafTools/blob/dev/devtools/images/preview.png?raw=true)
 ![](https://github.com/work7z/LafTools/blob/dev/devtools/images/preview-dark.png?raw=true)
 
 # 📡 About LAF

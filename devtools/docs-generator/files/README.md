@@ -62,7 +62,6 @@ ${Dot("hDdqkdxkSd","To quickly use these functions, we've deployed stable online
 # 🌠 ${Dot("OjKP47hFt","Preview")}
 
 ![](https://github.com/work7z/LafTools/blob/dev/devtools/images/portal-1.png?raw=true)
-![](https://github.com/work7z/LafTools/blob/dev/devtools/images/preview${extraLang}.png?raw=true)
 ![](https://github.com/work7z/LafTools/blob/dev/devtools/images/preview-dark${extraLang}.png?raw=true)
 
 # 📡 ${Dot("5fxv7a7sF","About {0}",'LAF')}

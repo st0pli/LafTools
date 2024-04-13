@@ -62,7 +62,6 @@ Para usar essas funções rapidamente, implantamos um site on-line estável nas 
 # 🌠 Visualização
 
 ![](https://github.com/work7z/LafTools/blob/dev/devtools/images/portal-1.png?raw=true)
-![](https://github.com/work7z/LafTools/blob/dev/devtools/images/preview.png?raw=true)
 ![](https://github.com/work7z/LafTools/blob/dev/devtools/images/preview-dark.png?raw=true)
 
 # 📡 About LAF
