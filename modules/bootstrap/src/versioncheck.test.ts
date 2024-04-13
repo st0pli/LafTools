@@ -7,7 +7,7 @@ import {
   getReleaseDateTxtInFolder,
 } from "./items/web2";
 import { computeHash } from "./utils/hash";
-import path from "path";
+import path, { join } from "path";
 import { logger } from "./utils/logger";
 import { PkgDownloadInfo } from "./web2share-copy/server_constants";
 import { deleteDLinkConfig, getDLinkConfig } from "./fn";
@@ -99,4 +99,10 @@ test("test-compute-hash", async () => {
   expect(hash).toBe(
     "62b1e32515d1aca692b27f55e26cc8cb0f5e81441b2d15e2e24022d5b05c6bc0",
   );
+});
+
+test("test-parent", async () => {
+  let f =
+    "/root/.laftools/bootstrap/impl/web2/v2.2.18-beta/LafTools-v2.2.18-beta-linux-x64-minimal/info/releaseDate.txt";
+  console.log(join(f, "..", "..", "boot", "entrypoint.js"));
 });
