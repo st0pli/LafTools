@@ -37,8 +37,6 @@ export default () => {
     }, [])
     let innerChild = <div className="w-full h-full">
         <FinalRootApp />
-        <SetupPopPanel />
-        <VersionCheck />
     </div>
     return innerChild
 }

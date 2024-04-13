@@ -42,6 +42,8 @@ import SystemLoadingBar from "./containers/SystemLoadingBar";
 import { fmtURL_Client } from "@/app/__CORE__/utils/cRouteUtils";
 import { useTheme } from "next-themes";
 import SmallScreenDetecter from "./SmallScreenDetecter";
+import SetupPopPanel from "@/app/__CORE__/containers/SetupPopPanel";
+import VersionCheck from "@/app/__CORE__/containers/VersionCheck";
 
 function App() {
   let forgeObj = exportUtils.useSelector((val) => ({
@@ -132,6 +134,8 @@ function App() {
             );
           }}
         </HotkeysTarget2>
+        <SetupPopPanel />
+        <VersionCheck />
       </Router>
     </HotkeysProvider >
 
