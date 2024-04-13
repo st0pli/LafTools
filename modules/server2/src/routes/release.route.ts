@@ -15,7 +15,8 @@ import i18nItems from '@/i18n/i18n-copy';
 
 // example for host: "https://download.laftools.cn"
 let usHost = 'http://betalaftools.codegen.cc:8080';
-let cnHost = 'https://s.laftools.cn';
+let cnHost = usHost; // 'https://s.laftools.cn';
+// TODO: for now, we just use usHost for all users
 
 let isDev = process.env.NODE_ENV === 'development';
 
