@@ -1,3 +1,5 @@
+## Release v2.2.23-beta (2024-04-10)
+
 ## Release v2.2.22-beta (2024-04-10)
 
 ## Release v2.2.21-beta (2024-04-10)
