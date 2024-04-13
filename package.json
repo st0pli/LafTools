@@ -1,6 +1,6 @@
 {
   "name": "laftools-go",
-  "version": "v2.2.23-beta",
+  "version": "v2.2.24-beta",
   "scripts": {
     "fe-handle-CN-pre-release": "sh ./devtools/release/download-and-verify.sh",
     "fe-job": "sh ./pipeline/dev-run-scan-and-generate.sh",
