@@ -122,12 +122,15 @@ export let extractTempFileAndConfirmIt = async (
   let releaseDateFile: string | null = null;
   // iterate all files in saveToWhere until got the runScript
   let releaseDateTxtFileList = getReleaseDateTxtInFolder(saveToWhere);
+  logger.info("get releasedate txt file:" + releaseDateTxtFileList);
   if (releaseDateTxtFileList.length == 0) {
     throw new Error("releaseDate.txt not found");
   }
   let finalLoadFilePath = path.join(
     releaseDateTxtFileList[0],
     "..",
+    "..",
+    "boot",
     "entrypoint.js",
   );
   let newValDLink: DLinkType = {
