@@ -17,15 +17,39 @@ export let confirmDLinkConfig = (
   let currentBootConfig = getCurrentBootConfigFileWithCurrentVer(moduleType);
   writeFileSync(currentBootConfig, JSON.stringify(newValDLink, null, 4));
 };
-
+export let getOriginalLaunchVersion = () => {
+  let originalLafVersion = process.env.ORIGIN_LAF_VERSION;
+  logger.debug("originalLafVersion: " + originalLafVersion);
+  return originalLafVersion;
+};
+export let getParentRootVersion = (): string | null => {
+  // get arg value from --root-version=xxx
+  let rootVersion = process.argv.find((arg) =>
+    arg.startsWith("--root-version="),
+  );
+  if (rootVersion) {
+    rootVersion = rootVersion.split("=")[1];
+    logger.debug("rootVersion: " + rootVersion);
+    return rootVersion;
+  } else {
+    logger.debug("no rootVersion found");
+    return null;
+  }
+};
 export let getCurrentBootConfigFileWithCurrentVer = (
   moduleType: ModuleType,
 ) => {
   let bootStrapInternalDir = getAppBootstrapInternalDir();
   let pkgInfo = readPkgInfoFromDir(getMinimalDIrPath());
+  let finalVersion = pkgInfo.version;
+  let rootVer = getParentRootVersion();
+  if (rootVer) {
+    finalVersion = rootVer;
+  }
+  logger.debug("finalVersion: " + finalVersion);
   let currentBootConfig = path.join(
     bootStrapInternalDir,
-    `dlink-${moduleType}-${pkgInfo.version}.json`,
+    `dlink-${moduleType}-${finalVersion}.json`,
   );
   return currentBootConfig;
 };

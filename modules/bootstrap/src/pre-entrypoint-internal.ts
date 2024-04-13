@@ -9,6 +9,8 @@ import { IsCurrentServerMode } from "./types";
 import { getDLinkConfig } from "./fn";
 import { isProductionEnv } from "./web2share-copy/env";
 import { getBootstrapUpdateReloadFile } from "./common";
+import { readPkgInfoFromDir } from "./web2share-copy/pkginfo";
+import { getMinimalDIrPath } from "./items/web2";
 
 let nodeBIN = process.execPath;
 export let getFileDistDir = () => {
@@ -61,7 +63,12 @@ export let fn_runtype_dynamic_load = (runType: ModuleType) => {
     }
   }
 
-  const spawnFN = spawn(nodeBIN, [loadFile]);
+  let pkgInfo = readPkgInfoFromDir(getMinimalDIrPath());
+
+  const spawnFN = spawn(nodeBIN, [
+    loadFile,
+    "--root-version=" + pkgInfo.version,
+  ]);
   logger.info(`Running entrypoint: ${loadFile}, path: ${nodeBIN}`);
 
   spawnFN.stdout.on("data", (data) => {
