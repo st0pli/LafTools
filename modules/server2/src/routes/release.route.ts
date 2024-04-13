@@ -92,7 +92,7 @@ export class ReleaseRoute implements Routes {
       }
       let crtVersion = info.version;
       // if the version is higher, then skip
-      if (crtVersion > latestVer) {
+      if (crtVersion >= latestVer) {
         fn_returnEmpty();
         return;
       }

@@ -7,6 +7,15 @@ export type ReleasePreInfoType = {
   date: string;
   lines: string[];
 };
+let example_crtVer = JSON.stringify(
+  {
+    currentDesktopVersion: "1",
+    currentTerminalVersion: "1",
+    currentDockerVersion: "1",
+  },
+  null,
+  2,
+);
 export let fn: FnInternalConverter = (content: string, lang: string) => {
   let identifier = "@PEN@";
   let lines = content.split("\n");
@@ -65,7 +74,8 @@ export let fn: FnInternalConverter = (content: string, lang: string) => {
     releaseJSON.latestVersion + ".json",
   );
   if (!fs.existsSync(latestVersionJSONFile)) {
-    throw new Error(
+    fs.writeFileSync(latestVersionJSONFile, example_crtVer);
+    console.log(
       "latest version JSON file not found! " + releaseJSON.latestVersion,
     );
   }
@@ -115,18 +125,7 @@ export let fn: FnInternalConverter = (content: string, lang: string) => {
     if (!fs.existsSync(eachVersionJSONFile)) {
       console.log("each version JSON file not found -> " + eachLastObj.version);
       // fs write
-      writeFileSync(
-        eachVersionJSONFile,
-        JSON.stringify(
-          {
-            currentDesktopVersion: "1",
-            currentTerminalVersion: "1",
-            currentDockerVersion: "1",
-          },
-          null,
-          2,
-        ),
-      );
+      writeFileSync(eachVersionJSONFile, example_crtVer);
     }
     let eachVersionJSON = JSON.parse(
       fs.readFileSync(eachVersionJSONFile, "utf-8"),
