@@ -30,13 +30,13 @@ LafTools工具箱是一个专为程序员设计的隐私第一、自托管、完
 
 # 🚀 在 Docker 上运行
 
-For GLOBAL users:
+**For GLOBAL users:**
 
 ```
 docker run -e LAFREGION=US -e APPLANG=en_US --name mylaftools -d -p 0.0.0.0:39899:39899 codegentoolbox/laftools-linux-x64:latest
 ```
 
-For CHINESE users(国内用户):
+**For CHINESE users(国内用户):**
 
 ```
 docker run -e LAFREGION=CN -e APPLANG=zh_CN --name mylaftools -d -p 0.0.0.0:39899:39899 codegentoolbox/laftools-linux-x64:latest
@@ -47,7 +47,7 @@ docker run -e LAFREGION=CN -e APPLANG=zh_CN --name mylaftools -d -p 0.0.0.0:3989
 1. 默认端口设置为39899，您可以根据需要进行调整。
 2. LafTools工具箱将始终自动升级到最新版本，让您可以享受最新的功能和错误修复。
 
-Docker Images:
+**Docker Images:**
 
 - [Docker Hub - laftools-linux-x64](https://hub.docker.com/r/codegentoolbox/laftools-linux-x64)
 - [Docker Hub - laftools-arm64-x64](https://hub.docker.com/r/codegentoolbox/laftools-arm64-x64)

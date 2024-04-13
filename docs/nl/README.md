@@ -30,13 +30,13 @@ LafTools is a privacy-first, self-hosted, fully open source toolbox designed for
 
 # 🚀 Run it on Docker
 
-For GLOBAL users:
+**For GLOBAL users:**
 
 ```
 docker run -e LAFREGION=US -e APPLANG=en_US --name mylaftools -d -p 0.0.0.0:39899:39899 codegentoolbox/laftools-linux-x64:latest
 ```
 
-For CHINESE users(国内用户):
+**For CHINESE users(国内用户):**
 
 ```
 docker run -e LAFREGION=CN -e APPLANG=zh_CN --name mylaftools -d -p 0.0.0.0:39899:39899 codegentoolbox/laftools-linux-x64:latest
@@ -47,7 +47,7 @@ docker run -e LAFREGION=CN -e APPLANG=zh_CN --name mylaftools -d -p 0.0.0.0:3989
 1. Default port is set to 39899, you can adjust it if needed.
 2. LafTools will always be upgraded to latest version automatically to let you can enjoy latest functions and bugfixs.
 
-Docker Images:
+**Docker Images:**
 
 - [Docker Hub - laftools-linux-x64](https://hub.docker.com/r/codegentoolbox/laftools-linux-x64)
 - [Docker Hub - laftools-arm64-x64](https://hub.docker.com/r/codegentoolbox/laftools-arm64-x64)
