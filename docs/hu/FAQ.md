@@ -1,5 +1,58 @@
 <i>Note: Ezt az oldalt a LafTools belsőleg hozta létre.</i> <br/> [English](/docs/en_US/FAQ.md)  |  [简体中文](/docs/zh_CN/FAQ.md)  |  [繁體中文](/docs/zh_HK/FAQ.md)  |  [Deutsch](/docs/de/FAQ.md)  |  [Español](/docs/es/FAQ.md)  |  [Français](/docs/fr/FAQ.md)  |  [日本語](/docs/ja/FAQ.md)  |  [한국어](/docs/ko/FAQ.md) | [More](/docs/) <br/>
 
+# 💡 Why LafTools?
+
+Felmerülhet benned a kérdés, miért vagyunk eltökéltek ennek az eszköztárnak a fejlesztése mellett, mivel az interneten számos eszköz használható. Valójában a legtöbb általunk biztosított eszköz könnyen megtalálható az interneten, például kodek, formázó, fordítás, QR-kód stb. Ezeknek az eszközöknek azonban nem ez a legkényelmesebb és leghatékonyabb módja.
+
+Találkozott már az alábbi problémákkal az online eszközök használata közben?
+
+- Nincs offline kisegítő lehetőség.
+- Nincs globális sötét téma.
+- Nincs produktív felhasználói felület stílus.
+- Gyenge hálózati teljesítmény.
+- Felkavaró reklámok.
+- Adatszivárgási probléma.
+
+Ha a fentiek bármelyikére igen a válasz, akkor fontolja meg eszköztárunk kipróbálását. A következő funkciókat kínálja:
+
+- FOSS Forever
+- Könnyű futásidő
+- Teljes platform támogatás (beleértve az ARMv8-at is)
+- Teljes GPT-szerű támogatás
+- Erősen integrált a produktív felhasználói felülettel
+- Elérhető Docker képek és Portable Edition
+- Extra segítők, mint jegyzetek, kézikönyvek stb...
+
+# 🎷 Ihlet
+
+Ezt a projektet elsősorban a következő zenészek inspirálták:
+
+- Joe Pass
+- The Manhattan Transfer
+- Laura Shigihara
+- Asleep at the Wheel
+- Khalil Fong
+- Li Rong Hao
+- Chet Atkins
+- Les Paul
+- Tommy Emmanuel
+- Martin Taylor
+- Frank Vignola
+- Frédéric Chopin
+- Claude Debussy
+- Oscar Peterson
+- Hugo Strasser
+- Jay Chou
+- Stefanie Sun
+- David Tao
+- Jacky Cheung
+- Teresa Teng
+- Jack Johnson
+- Harry Styles(As It Was)
+- Lovebugs
+
+Pontosabban, a virtuóz **Joe Pass** **Satin Doll** előadása az „An Evening With Joe Pass”-ban (1994) erő és magabiztosság forrása volt számomra, és képessé tett arra, hogy az élet bármely dilemmájával szembenézzek. .
+
 # 🙋 Is it a free software?
 
 Yes, it is open-source software, and you can use it following the terms of the license. However, please note that being open-source does not necessarily mean it's entirely free of charge. While most tools can be used for free, some may incur charges related to API usage and server costs.

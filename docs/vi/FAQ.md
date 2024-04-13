@@ -1,5 +1,58 @@
 <i>Note: Trang này được tạo từ nội bộ LafTools.</i> <br/> [English](/docs/en_US/FAQ.md)  |  [简体中文](/docs/zh_CN/FAQ.md)  |  [繁體中文](/docs/zh_HK/FAQ.md)  |  [Deutsch](/docs/de/FAQ.md)  |  [Español](/docs/es/FAQ.md)  |  [Français](/docs/fr/FAQ.md)  |  [日本語](/docs/ja/FAQ.md)  |  [한국어](/docs/ko/FAQ.md) | [More](/docs/) <br/>
 
+# 💡 Why LafTools?
+
+Bạn có thể thắc mắc tại sao chúng tôi quyết tâm phát triển hộp công cụ này vì có rất nhiều công cụ có thể được sử dụng trên Internet. Thật vậy, hầu hết các công cụ chúng tôi cung cấp đều có thể dễ dàng tìm thấy trên Internet, chẳng hạn như codec, bộ định dạng, dịch thuật, Mã QR, v.v… Tuy nhiên, đây không phải là cách tiếp cận thoải mái và hiệu quả nhất để sử dụng những công cụ này.
+
+Bạn đã bao giờ gặp phải những vấn đề dưới đây khi sử dụng những công cụ trực tuyến đó chưa?
+
+- Không có khả năng truy cập ngoại tuyến.
+- Không có chủ đề tối toàn cầu.
+- Không có phong cách giao diện người dùng hiệu quả.
+- Hiệu suất mạng kém.
+- Quảng cáo gây khó chịu.
+- Vấn đề rò rỉ dữ liệu.
+
+Nếu câu trả lời cho bất kỳ câu hỏi nào ở trên là có thì bạn nên cân nhắc dùng thử hộp công cụ của chúng tôi. Nó cung cấp các tính năng sau:
+
+- FOSS mãi mãi
+- Thời gian chạy nhẹ
+- Hỗ trợ nền tảng đầy đủ (bao gồm ARMv8)
+- Hỗ trợ đầy đủ tương tự GPT
+- Tích hợp cao với giao diện người dùng hiệu quả
+- Hình ảnh Docker có sẵn và phiên bản di động
+- Những trợ giúp bổ sung như ghi chú, hướng dẫn sử dụng, v.v...
+
+# 🎷 Cảm hứng
+
+Dự án này chủ yếu được lấy cảm hứng từ các nhạc sĩ sau:
+
+- Joe Pass
+- The Manhattan Transfer
+- Laura Shigihara
+- Asleep at the Wheel
+- Khalil Fong
+- Li Rong Hao
+- Chet Atkins
+- Les Paul
+- Tommy Emmanuel
+- Martin Taylor
+- Frank Vignola
+- Frédéric Chopin
+- Claude Debussy
+- Oscar Peterson
+- Hugo Strasser
+- Jay Chou
+- Stefanie Sun
+- David Tao
+- Jacky Cheung
+- Teresa Teng
+- Jack Johnson
+- Harry Styles(As It Was)
+- Lovebugs
+
+Cụ thể, màn trình diễn **Satin Doll** của nghệ sĩ điêu luyện **Joe Pass** trong phim 'An Evening With Joe Pass' (1994) đã tiếp thêm sức mạnh và sự tự tin cho tôi, tiếp thêm sức mạnh cho tôi để đối mặt với mọi tình huống khó xử trong cuộc sống. .
+
 # 🙋 Is it a free software?
 
 Yes, it is open-source software, and you can use it following the terms of the license. However, please note that being open-source does not necessarily mean it's entirely free of charge. While most tools can be used for free, some may incur charges related to API usage and server costs.

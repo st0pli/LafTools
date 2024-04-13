@@ -13,14 +13,59 @@
 
 <i>Note: Ezt az oldalt a LafTools belsőleg hozta létre.</i> <br/> [English](/docs/en_US/README.md)  |  [简体中文](/docs/zh_CN/README.md)  |  [繁體中文](/docs/zh_HK/README.md)  |  [Deutsch](/docs/de/README.md)  |  [Español](/docs/es/README.md)  |  [Français](/docs/fr/README.md)  |  [日本語](/docs/ja/README.md)  |  [한국어](/docs/ko/README.md) | [More](/docs/) <br/>
 
-# 🪄 Gyors nézet
+# 🔮 Vision
+
+LafTools is a privacy-first, self-hosted, fully open source toolbox designed for programmers, you can find plentful toolsets on this website.
+
+# 💌 Features
+
+- FOSS Forever
+- Könnyű futásidő
+- Teljes platform támogatás (beleértve az ARMv8-at is)
+- Teljes GPT-szerű támogatás
+- Erősen integrált a produktív felhasználói felülettel
+- Elérhető Docker képek és Portable Edition
+- Desktop edition support(Planning)
+- ...
+
+# 🚀 Run it on Docker
+
+For GLOBAL users:
+
+```
+docker run -e LAFREGION=US -e APPLANG=en_US --name mylaftools -d -p 0.0.0.0:39899:39899 codegentoolbox/laftools-linux-x64:latest
+```
+
+For CHINESE users(国内用户):
+
+```
+docker run -e LAFREGION=CN -e APPLANG=zh_CN --name mylaftools -d -p 0.0.0.0:39899:39899 codegentoolbox/laftools-linux-x64:latest
+```
+
+**NOTE**:
+
+1. Default port is set to 39899, you can adjust it if needed.
+2. LafTools will always be upgraded to latest version automatically to let you can enjoy latest functions and bugfixs.
+
+Docker Images:
+
+- [Docker Hub - laftools-linux-x64](https://hub.docker.com/r/codegentoolbox/laftools-linux-x64)
+- [Docker Hub - laftools-arm64-x64](https://hub.docker.com/r/codegentoolbox/laftools-arm64-x64)
+
+# 🔋 Official Websites
 
 A funkciók gyors használatához stabil online webhelyet állítottunk be az Egyesült Államokban és a CN régióban. A legtöbb eszköz elérhető online webhelyeinken, kivéve néhány olyan eszközt, amelyek az operációs rendszer adott képességeire támaszkodnak.
 
 - 🇺🇸 Egyesült Államok: [laftools.dev](https://laftools.dev)
 - 🇨🇳 Csak Kína szárazföldi része: [laftools.cn](https://laftools.cn)
 
-# 🔋 Mi van a névvel?
+# 🌠 Előnézet
+
+![](https://github.com/work7z/LafTools/blob/dev/devtools/images/portal-1.png?raw=true)
+![](https://github.com/work7z/LafTools/blob/dev/devtools/images/preview.png?raw=true)
+![](https://github.com/work7z/LafTools/blob/dev/devtools/images/preview-dark.png?raw=true)
+
+# 📡 About LAF
 
 - `L` -> Linked
 - `A` -> Asynchronous
@@ -30,40 +75,7 @@ Lényegében a LafTools egy olyan programcsomag, amely összekapcsolt, aszinkron
 
 Biztos lehet benne, hogy ez a projekt az idő múlásával figyelemre méltó és fantasztikus módon fog fejlődni. Ez a projekt több időt igényel, akárcsak a bor, idővel jobb lesz.
 
-# 💡 Bevezetés
-
-Felmerülhet benned a kérdés, miért vagyunk eltökéltek ennek az eszköztárnak a fejlesztése mellett, mivel az interneten számos eszköz használható. Valójában a legtöbb általunk biztosított eszköz könnyen megtalálható az interneten, például kodek, formázó, fordítás, QR-kód stb. Ezeknek az eszközöknek azonban nem ez a legkényelmesebb és leghatékonyabb módja.
-
-Találkozott már az alábbi problémákkal az online eszközök használata közben?
-
-- Nincs offline kisegítő lehetőség.
-- Nincs globális sötét téma.
-- Nincs produktív felhasználói felület stílus.
-- Gyenge hálózati teljesítmény.
-- Felkavaró reklámok.
-- Adatszivárgási probléma.
-
-Ha a fentiek bármelyikére igen a válasz, akkor fontolja meg eszköztárunk kipróbálását. A következő funkciókat kínálja:
-
-- FOSS Forever
-- Könnyű futásidő
-- Teljes platform támogatás (beleértve az ARMv8-at is)
-- Teljes GPT-szerű támogatás
-- Erősen integrált a produktív felhasználói felülettel
-- Elérhető Docker képek és Portable Edition
-- Extra segítők, mint jegyzetek, kézikönyvek stb...
-
-# 🌠 Előnézet
-
-> A LafTools még fejlesztés alatt áll, felhasználói felülete, függőségei vagy előfeltételei szükség szerint módosulhatnak.
-
-### Előnézet:
-
-[Online Preview](http://laftools.dev)
-![](https://github.com/work7z/LafTools/blob/dev/devtools/images/preview.png?raw=true)
-![](https://github.com/work7z/LafTools/blob/dev/devtools/images/preview-dark.png?raw=true)
-
-# 🚀 Elkezdeni
+# 🌠 Contribution
 
 ## 1. Rendszerkörnyezet beállítása
 
@@ -85,7 +97,7 @@ export PATH=$PATH:$LAFTOOLS_ROOT\dev\source\windows-bin
 export LAFTOOLS_ROOT=/users/jerry/projects/laftools-repo
 ```
 
-## 2. Fordítás és futtatás
+## 2. Compile and Run
 
 ```bash
 # telepítse a szükséges globális könyvtárat
@@ -105,7 +117,7 @@ npm run fe-web
 
 ```bash
 cd pipeline
-./build-all.sh "v1.9.9-beta"
+./build-all.sh
 ```
 
 # 📑 Más anyagok
@@ -137,36 +149,6 @@ Ez a projekt nem jöhetett volna létre fantasztikus nyílt forráskódú projek
 1. [one-api](https://github.com/songquanpeng/one-api) - an OpenAI key management & redistribution system.
 
 Az biztos, hogy vannak más nyílt forráskódú projektek is, amelyek hasznot húztak ennek a projektnek, és ezeket ebben a részben nem tudtam részletezni; E projektek és a tehetségfejlesztők erőfeszítései nélkül a LafTools nem jöhetett volna létre.
-
-# 🎷 Ihlet
-
-Ezt a projektet elsősorban a következő zenészek inspirálták:
-
-- Joe Pass
-- The Manhattan Transfer
-- Laura Shigihara
-- Asleep at the Wheel
-- Khalil Fong
-- Li Rong Hao
-- Chet Atkins
-- Les Paul
-- Tommy Emmanuel
-- Martin Taylor
-- Frank Vignola
-- Frédéric Chopin
-- Claude Debussy
-- Oscar Peterson
-- Hugo Strasser
-- Jay Chou
-- Stefanie Sun
-- David Tao
-- Jacky Cheung
-- Teresa Teng
-- Jack Johnson
-- Harry Styles(As It Was)
-- Lovebugs
-
-Pontosabban, a virtuóz **Joe Pass** **Satin Doll** előadása az „An Evening With Joe Pass”-ban (1994) erő és magabiztosság forrása volt számomra, és képessé tett arra, hogy az élet bármely dilemmájával szembenézzek. .
 
 # 🪪 License
 

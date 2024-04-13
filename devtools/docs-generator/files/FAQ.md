@@ -1,3 +1,56 @@
+# 💡 ${Dot("e0Ivg_cqd","Why LafTools?")}
+
+${Dot("iIq02l4vX","You may wonder why we are determined to develop this toolbox as there are numerous tools can be used on the Internet.")} ${Dot("ciP9qXH1I","Indeed, most tools we have provided can be easily found on the Internet, such as codec, formatter, translation, QR Code, etc… However, it is not the most comfortable and efficient approach to use these tools.")}
+
+${Dot("YqgCZdzaS","Have you ever met the below issues while using those online tools?")}
+
+- ${Dot("AKCG4Sy8U","No Offline Accessibility.")}
+- ${Dot("iQxHIHZIL","No Global Dark Theme.")}
+- ${Dot("LM-o4Yk6h","No Productive UI style.")}
+- ${Dot("w5PSqC7jG","Poor Network Performance.")}
+- ${Dot("mpQMZfbv6","Upsetting Advertisements.")}
+- ${Dot("rR22PTMZc","Data Leakage Issue.")}
+
+${Dot("U6zkVUPTq","If the answer to any of the above is yes, then you should consider trying our toolbox. It offers the following features:")}
+
+- ${Dot("Ed4z058Cr","FOSS Forever")}
+- ${Dot("Jh-LM4MG","Lightweight Runtime")}
+- ${Dot("RXAzQfM2L","Full platform support(including ARMv8)")}
+- ${Dot("4hth-woPf","Full GPT-alike support")}
+- ${Dot("iz4ROzL3","Highly integrated with productive UI")}
+- ${Dot("HIAvRJazO","Available Docker Images and Portable Edition")}
+- ${Dot("yVPMfvWhi","Extra helpers such as notes, manuals, etc...")}
+
+# 🎷 ${Dot("m3wnIDvAF","Inspiration")}
+
+${Dot("t5DDvnfna","This project is primarily inspired by the following musicians:")}
+
+- Joe Pass
+- The Manhattan Transfer
+- Laura Shigihara
+- Asleep at the Wheel
+- Khalil Fong
+- Li Rong Hao
+- Chet Atkins
+- Les Paul
+- Tommy Emmanuel
+- Martin Taylor
+- Frank Vignola
+- Frédéric Chopin
+- Claude Debussy
+- Oscar Peterson
+- Hugo Strasser
+- Jay Chou
+- Stefanie Sun
+- David Tao
+- Jacky Cheung
+- Teresa Teng
+- Jack Johnson
+- Harry Styles(As It Was)
+- Lovebugs
+
+${Dot("ZdiIi8j","Specifically, the performance of **Satin Doll** by the virtuoso **Joe Pass** in 'An Evening With Joe Pass' (1994) has been a source of strength and confidence for me, empowering me to face any dilemma in life.")}
+
 # 🙋 Is it a free software?
 
 ${Dot("-n\_-_sIlP","Yes, it is open-source software, and you can use it following the terms of the license. However, please note that being open-source does not necessarily mean it's entirely free of charge. While most tools can be used for free, some may incur charges related to API usage and server costs.")}

@@ -13,14 +13,59 @@
 
 <i>Note: 이 페이지는 LafTools에서 내부적으로 생성됩니다.</i> <br/> [English](/docs/en_US/README.md)  |  [简体中文](/docs/zh_CN/README.md)  |  [繁體中文](/docs/zh_HK/README.md)  |  [Deutsch](/docs/de/README.md)  |  [Español](/docs/es/README.md)  |  [Français](/docs/fr/README.md)  |  [日本語](/docs/ja/README.md)  |  한국어 | [More](/docs/) <br/>
 
-# 🪄 퀵뷰
+# 🔮 Vision
+
+LafTools is a privacy-first, self-hosted, fully open source toolbox designed for programmers, you can find plentful toolsets on this website.
+
+# 💌 Features
+
+- 포스 포에버
+- 경량 런타임
+- 전체 플랫폼 지원(ARMv8 포함)
+- 완전한 GPT 유사 지원
+- 생산적인 UI와 고도로 통합됨
+- 사용 가능한 Docker 이미지 및 Portable Edition
+- Desktop edition support(Planning)
+- ...
+
+# 🚀 Run it on Docker
+
+For GLOBAL users:
+
+```
+docker run -e LAFREGION=US -e APPLANG=en_US --name mylaftools -d -p 0.0.0.0:39899:39899 codegentoolbox/laftools-linux-x64:latest
+```
+
+For CHINESE users(国内用户):
+
+```
+docker run -e LAFREGION=CN -e APPLANG=zh_CN --name mylaftools -d -p 0.0.0.0:39899:39899 codegentoolbox/laftools-linux-x64:latest
+```
+
+**NOTE**:
+
+1. Default port is set to 39899, you can adjust it if needed.
+2. LafTools will always be upgraded to latest version automatically to let you can enjoy latest functions and bugfixs.
+
+Docker Images:
+
+- [Docker Hub - laftools-linux-x64](https://hub.docker.com/r/codegentoolbox/laftools-linux-x64)
+- [Docker Hub - laftools-arm64-x64](https://hub.docker.com/r/codegentoolbox/laftools-arm64-x64)
+
+# 🔋 Official Websites
 
 이러한 기능을 빠르게 사용할 수 있도록 미국과 CN 지역에 안정적인 온라인 웹사이트를 배포했습니다. 특정 OS 기능에 의존하는 일부 도구를 제외하고 대부분의 도구는 온라인 웹사이트에서 사용할 수 있습니다.
 
 - 🇺🇸 미국: [laftools.dev](https://laftools.dev)
 - 🇨🇳 중국 본토만 해당: [laftools.cn](https://laftools.cn)
 
-# 🔋 이름이 뭐예요?
+# 🌠 시사
+
+![](https://github.com/work7z/LafTools/blob/dev/devtools/images/portal-1.png?raw=true)
+![](https://github.com/work7z/LafTools/blob/dev/devtools/images/preview.png?raw=true)
+![](https://github.com/work7z/LafTools/blob/dev/devtools/images/preview-dark.png?raw=true)
+
+# 📡 About LAF
 
 - `L` -> Linked
 - `A` -> Asynchronous
@@ -30,40 +75,7 @@
 
 안심하십시오. 이 프로젝트는 시간이 지남에 따라 놀랍고 환상적인 방식으로 발전할 것입니다. 이 프로젝트는 와인처럼 시간이 지날수록 더 좋아지듯이 더 많은 시간이 필요합니다.
 
-# 💡 소개
-
-인터넷에는 수많은 도구를 사용할 수 있는데 왜 우리가 이 도구 상자를 개발하기로 결정했는지 궁금할 것입니다. 실제로 우리가 제공하는 대부분의 도구는 코덱, 포맷터, 번역, QR 코드 등 인터넷에서 쉽게 찾을 수 있습니다. 그러나 이러한 도구를 사용하는 것이 가장 편안하고 효율적인 접근 방식은 아닙니다.
-
-해당 온라인 도구를 사용하는 동안 아래 문제를 만난 적이 있습니까?
-
-- 오프라인 접근성이 없습니다.
-- 글로벌 다크 테마가 없습니다.
-- 생산적인 UI 스타일이 없습니다.
-- 네트워크 성능이 좋지 않습니다.
-- 혼란스러운 광고.
-- 데이터 유출 문제.
-
-위 항목 중 하나라도 '예'라고 답했다면 당사의 도구 상자를 사용해 보시기 바랍니다. 다음과 같은 기능을 제공합니다.
-
-- 포스 포에버
-- 경량 런타임
-- 전체 플랫폼 지원(ARMv8 포함)
-- 완전한 GPT 유사 지원
-- 생산적인 UI와 고도로 통합됨
-- 사용 가능한 Docker 이미지 및 Portable Edition
-- 메모, 매뉴얼 등과 같은 추가 도우미...
-
-# 🌠 시사
-
-> LafTools는 아직 개발 중이므로 필요에 따라 UI, 종속성 또는 전제 조건이 변경될 수 있습니다.
-
-### 시사:
-
-[Online Preview](http://laftools.dev)
-![](https://github.com/work7z/LafTools/blob/dev/devtools/images/preview.png?raw=true)
-![](https://github.com/work7z/LafTools/blob/dev/devtools/images/preview-dark.png?raw=true)
-
-# 🚀 시작하기
+# 🌠 Contribution
 
 ## 1. 시스템 환경 설정
 
@@ -85,7 +97,7 @@ export PATH=$PATH:$LAFTOOLS_ROOT\dev\source\windows-bin
 export LAFTOOLS_ROOT=/users/jerry/projects/laftools-repo
 ```
 
-## 2. 컴파일 및 실행
+## 2. Compile and Run
 
 ```bash
 # 필요한 전역 라이브러리 설치
@@ -105,7 +117,7 @@ npm run fe-web
 
 ```bash
 cd pipeline
-./build-all.sh "v1.9.9-beta"
+./build-all.sh
 ```
 
 # 📑 기타 재료
@@ -137,36 +149,6 @@ cd pipeline
 1. [one-api](https://github.com/songquanpeng/one-api) - an OpenAI key management & redistribution system.
 
 확실히 이 프로젝트에 도움이 되고 촉진된 다른 오픈 소스 프로젝트가 있지만 이 부분에서는 자세히 설명할 수 없습니다. 이러한 프로젝트와 인재 개발자들의 노력이 없었다면 LafTools는 불가능했을 것입니다.
-
-# 🎷 영감
-
-이 프로젝트는 주로 다음 음악가들로부터 영감을 받았습니다.
-
-- Joe Pass
-- The Manhattan Transfer
-- Laura Shigihara
-- Asleep at the Wheel
-- Khalil Fong
-- Li Rong Hao
-- Chet Atkins
-- Les Paul
-- Tommy Emmanuel
-- Martin Taylor
-- Frank Vignola
-- Frédéric Chopin
-- Claude Debussy
-- Oscar Peterson
-- Hugo Strasser
-- Jay Chou
-- Stefanie Sun
-- David Tao
-- Jacky Cheung
-- Teresa Teng
-- Jack Johnson
-- Harry Styles(As It Was)
-- Lovebugs
-
-특히 'An Evening With Joe Pass'(1994)에서 거장 **Joe Pass**의 **Satin Doll** 연주는 나에게 힘과 자신감의 원천이 되었으며, 인생의 어떤 딜레마에도 직면할 수 있는 힘을 주었습니다. .
 
 # 🪪 License
 

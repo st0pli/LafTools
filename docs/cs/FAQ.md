@@ -1,5 +1,58 @@
 <i>Note: Tato stránka je generována interně z LafTools.</i> <br/> [English](/docs/en_US/FAQ.md)  |  [简体中文](/docs/zh_CN/FAQ.md)  |  [繁體中文](/docs/zh_HK/FAQ.md)  |  [Deutsch](/docs/de/FAQ.md)  |  [Español](/docs/es/FAQ.md)  |  [Français](/docs/fr/FAQ.md)  |  [日本語](/docs/ja/FAQ.md)  |  [한국어](/docs/ko/FAQ.md) | [More](/docs/) <br/>
 
+# 💡 Why LafTools?
+
+Možná se divíte, proč jsme se rozhodli vyvinout tuto sadu nástrojů, protože na internetu lze použít mnoho nástrojů. Většinu nástrojů, které poskytujeme, lze skutečně snadno najít na internetu, jako je kodek, formátovač, překlad, QR kód atd... Není to však nejpohodlnější a nejefektivnější přístup k používání těchto nástrojů.
+
+Setkali jste se někdy při používání těchto online nástrojů s níže uvedenými problémy?
+
+- Žádná přístupnost offline.
+- Žádné globální temné téma.
+- Žádný produktivní styl uživatelského rozhraní.
+- Špatný výkon sítě.
+- Rozčilující reklamy.
+- Problém s únikem dat.
+
+Pokud je odpověď na kteroukoli z výše uvedených otázek ano, měli byste zvážit vyzkoušení naší sady nástrojů. Nabízí následující funkce:
+
+- FOSS navždy
+- Lehký běhový čas
+- Plná podpora platformy (včetně ARMv8)
+- Plná podpora GPT
+- Vysoce integrovaný s produktivním uživatelským rozhraním
+- Dostupné Docker Images a Portable Edition
+- Extra pomocníci jako poznámky, manuály atd...
+
+# 🎷 Inspirace
+
+Tento projekt je primárně inspirován následujícími hudebníky:
+
+- Joe Pass
+- The Manhattan Transfer
+- Laura Shigihara
+- Asleep at the Wheel
+- Khalil Fong
+- Li Rong Hao
+- Chet Atkins
+- Les Paul
+- Tommy Emmanuel
+- Martin Taylor
+- Frank Vignola
+- Frédéric Chopin
+- Claude Debussy
+- Oscar Peterson
+- Hugo Strasser
+- Jay Chou
+- Stefanie Sun
+- David Tao
+- Jacky Cheung
+- Teresa Teng
+- Jack Johnson
+- Harry Styles(As It Was)
+- Lovebugs
+
+Konkrétně výkon **Satin Doll** od virtuosa **Joe Pass** ve filmu „Večer s Joem Passem“ (1994) pro mě byl zdrojem síly a sebevědomí, který mi umožnil čelit jakémukoli životnímu dilematu. .
+
 # 🙋 Is it a free software?
 
 Yes, it is open-source software, and you can use it following the terms of the license. However, please note that being open-source does not necessarily mean it's entirely free of charge. While most tools can be used for free, some may incur charges related to API usage and server costs.

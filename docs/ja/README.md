@@ -13,14 +13,59 @@
 
 <i>Note: このページは LafTools から内部的に生成されます。</i> <br/> [English](/docs/en_US/README.md)  |  [简体中文](/docs/zh_CN/README.md)  |  [繁體中文](/docs/zh_HK/README.md)  |  [Deutsch](/docs/de/README.md)  |  [Español](/docs/es/README.md)  |  [Français](/docs/fr/README.md)  |  日本語  |  [한국어](/docs/ko/README.md) | [More](/docs/) <br/>
 
-# 🪄 クイックビュー
+# 🔮 Vision
+
+LafTools is a privacy-first, self-hosted, fully open source toolbox designed for programmers, you can find plentful toolsets on this website.
+
+# 💌 Features
+
+- フォスフォーエバー
+- 軽量ランタイム
+- 完全なプラットフォームのサポート (ARMv8 を含む)
+- GPT と同様の完全なサポート
+- 生産性の高い UI と高度に統合
+- 利用可能な Docker イメージとポータブル エディション
+- Desktop edition support(Planning)
+- ...
+
+# 🚀 Run it on Docker
+
+For GLOBAL users:
+
+```
+docker run -e LAFREGION=US -e APPLANG=en_US --name mylaftools -d -p 0.0.0.0:39899:39899 codegentoolbox/laftools-linux-x64:latest
+```
+
+For CHINESE users(国内用户):
+
+```
+docker run -e LAFREGION=CN -e APPLANG=zh_CN --name mylaftools -d -p 0.0.0.0:39899:39899 codegentoolbox/laftools-linux-x64:latest
+```
+
+**NOTE**:
+
+1. Default port is set to 39899, you can adjust it if needed.
+2. LafTools will always be upgraded to latest version automatically to let you can enjoy latest functions and bugfixs.
+
+Docker Images:
+
+- [Docker Hub - laftools-linux-x64](https://hub.docker.com/r/codegentoolbox/laftools-linux-x64)
+- [Docker Hub - laftools-arm64-x64](https://hub.docker.com/r/codegentoolbox/laftools-arm64-x64)
+
+# 🔋 Official Websites
 
 これらの機能をすぐに使用できるように、安定したオンライン Web サイトを米国および中国地域に展開しました。特定の OS 機能に依存する一部のツールを除き、ほとんどのツールはオンライン Web サイトで入手できます。
 
 - 🇺🇸 合衆国: [laftools.dev](https://laftools.dev)
 - 🇨🇳 中国本土のみ: [laftools.cn](https://laftools.cn)
 
-# 🔋 名前は何ですか？
+# 🌠 プレビュー
+
+![](https://github.com/work7z/LafTools/blob/dev/devtools/images/portal-1.png?raw=true)
+![](https://github.com/work7z/LafTools/blob/dev/devtools/images/preview.png?raw=true)
+![](https://github.com/work7z/LafTools/blob/dev/devtools/images/preview-dark.png?raw=true)
+
+# 📡 About LAF
 
 - `L` -> Linked
 - `A` -> Asynchronous
@@ -30,40 +75,7 @@
 
 ご安心ください。このプロジェクトは時間の経過とともに驚くべき素晴らしい方法で進化していきます。ワインと同じように、時間が経てば経つほど味が良くなるのと同じように、このプロジェクトにはさらに時間がかかります。
 
-# 💡 導入
-
-インターネット上には多数のツールが使用できるのに、なぜこのツールボックスを開発することにしたのか疑問に思われるかもしれません。 実際、コーデック、フォーマッタ、翻訳、QR コードなど、当社が提供するほとんどのツールはインターネット上で簡単に見つけることができます。しかし、これらのツールを使用することは、最も快適で効率的なアプローチではありません。
-
-これらのオンライン ツールを使用しているときに、以下の問題に遭遇したことはありますか?
-
-- オフラインでのアクセシビリティはありません。
-- グローバルダークテーマはありません。
-- 生産的な UI スタイルがありません。
-- ネットワークパフォーマンスが低い。
-- 不快な広告。
-- データ漏洩問題。
-
-上記のいずれかの答えが「はい」の場合は、当社のツールボックスを試してみることを検討してください。次の機能を提供します。
-
-- フォスフォーエバー
-- 軽量ランタイム
-- 完全なプラットフォームのサポート (ARMv8 を含む)
-- GPT と同様の完全なサポート
-- 生産性の高い UI と高度に統合
-- 利用可能な Docker イメージとポータブル エディション
-- メモやマニュアルなどの追加のヘルパー
-
-# 🌠 プレビュー
-
-> LafTools はまだ開発中であるため、その UI、依存関係、または前提条件は必要に応じて変更される可能性があります。
-
-### プレビュー:
-
-[Online Preview](http://laftools.dev)
-![](https://github.com/work7z/LafTools/blob/dev/devtools/images/preview.png?raw=true)
-![](https://github.com/work7z/LafTools/blob/dev/devtools/images/preview-dark.png?raw=true)
-
-# 🚀 はじめる
+# 🌠 Contribution
 
 ## 1. システム環境のセットアップ
 
@@ -85,7 +97,7 @@ export PATH=$PATH:$LAFTOOLS_ROOT\dev\source\windows-bin
 export LAFTOOLS_ROOT=/users/jerry/projects/laftools-repo
 ```
 
-## 2. コンパイルと実行
+## 2. Compile and Run
 
 ```bash
 # 必要なグローバル ライブラリをインストールする
@@ -105,7 +117,7 @@ npm run fe-web
 
 ```bash
 cd pipeline
-./build-all.sh "v1.9.9-beta"
+./build-all.sh
 ```
 
 # 📑 その他の素材
@@ -137,36 +149,6 @@ cd pipeline
 1. [one-api](https://github.com/songquanpeng/one-api) - an OpenAI key management & redistribution system.
 
 確かに、このプロジェクトに利益をもたらし、促進した他のオープンソース プロジェクトもありますが、このパートでは詳しく説明しませんでした。これらのプロジェクトと人材開発者の努力がなければ、LafTools は不可能でした。
-
-# 🎷 インスピレーション
-
-このプロジェクトは主に次のミュージシャンからインスピレーションを受けています。
-
-- Joe Pass
-- The Manhattan Transfer
-- Laura Shigihara
-- Asleep at the Wheel
-- Khalil Fong
-- Li Rong Hao
-- Chet Atkins
-- Les Paul
-- Tommy Emmanuel
-- Martin Taylor
-- Frank Vignola
-- Frédéric Chopin
-- Claude Debussy
-- Oscar Peterson
-- Hugo Strasser
-- Jay Chou
-- Stefanie Sun
-- David Tao
-- Jacky Cheung
-- Teresa Teng
-- Jack Johnson
-- Harry Styles(As It Was)
-- Lovebugs
-
-特に、「ジョー・パスとの夕べ」（1994年）での名手**ジョー・パス**による**サテン・ドール**のパフォーマンスは、私にとって強さと自信の源であり、人生のどんなジレンマにも立ち向かう力を与えてくれました。 。
 
 # 🪪 License
 

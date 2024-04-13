@@ -1,5 +1,58 @@
 <i>Note: Den här sidan är genererad från LafTools internt.</i> <br/> [English](/docs/en_US/FAQ.md)  |  [简体中文](/docs/zh_CN/FAQ.md)  |  [繁體中文](/docs/zh_HK/FAQ.md)  |  [Deutsch](/docs/de/FAQ.md)  |  [Español](/docs/es/FAQ.md)  |  [Français](/docs/fr/FAQ.md)  |  [日本語](/docs/ja/FAQ.md)  |  [한국어](/docs/ko/FAQ.md) | [More](/docs/) <br/>
 
+# 💡 Why LafTools?
+
+Du kanske undrar varför vi är fast beslutna att utveckla denna verktygslåda eftersom det finns många verktyg som kan användas på Internet. De flesta verktyg vi har tillhandahållit kan faktiskt lätt hittas på Internet, såsom codec, formatterare, översättning, QR-kod, etc... Det är dock inte det mest bekväma och effektiva sättet att använda dessa verktyg.
+
+Har du någonsin stött på problemen nedan när du använde dessa onlineverktyg?
+
+- Ingen offlinetillgänglighet.
+- Inget globalt mörkt tema.
+- Ingen produktiv UI-stil.
+- Dålig nätverksprestanda.
+- Upprörande reklam.
+- Problem med dataläckage.
+
+Om svaret på något av ovanstående är ja, bör du överväga att prova vår verktygslåda. Den erbjuder följande funktioner:
+
+- FOSS för alltid
+- Lättvikts körtid
+- Fullständigt plattformsstöd (inklusive ARMv8)
+- Fullständigt GPT-liknande stöd
+- Mycket integrerad med produktivt användargränssnitt
+- Tillgängliga Docker-bilder och Portable Edition
+- Extra hjälpmedel såsom anteckningar, manualer, etc...
+
+# 🎷 Inspiration
+
+Detta projekt är främst inspirerat av följande musiker:
+
+- Joe Pass
+- The Manhattan Transfer
+- Laura Shigihara
+- Asleep at the Wheel
+- Khalil Fong
+- Li Rong Hao
+- Chet Atkins
+- Les Paul
+- Tommy Emmanuel
+- Martin Taylor
+- Frank Vignola
+- Frédéric Chopin
+- Claude Debussy
+- Oscar Peterson
+- Hugo Strasser
+- Jay Chou
+- Stefanie Sun
+- David Tao
+- Jacky Cheung
+- Teresa Teng
+- Jack Johnson
+- Harry Styles(As It Was)
+- Lovebugs
+
+Specifikt har framförandet av **Satin Doll** av virtuosen **Joe Pass** i 'An Evening With Joe Pass' (1994) varit en källa till styrka och självförtroende för mig, vilket gett mig möjlighet att möta alla dilemma i livet .
+
 # 🙋 Is it a free software?
 
 Yes, it is open-source software, and you can use it following the terms of the license. However, please note that being open-source does not necessarily mean it's entirely free of charge. While most tools can be used for free, some may incur charges related to API usage and server costs.

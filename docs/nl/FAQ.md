@@ -1,5 +1,58 @@
 <i>Note: Deze pagina wordt intern gegenereerd vanuit LafTools.</i> <br/> [English](/docs/en_US/FAQ.md)  |  [简体中文](/docs/zh_CN/FAQ.md)  |  [繁體中文](/docs/zh_HK/FAQ.md)  |  [Deutsch](/docs/de/FAQ.md)  |  [Español](/docs/es/FAQ.md)  |  [Français](/docs/fr/FAQ.md)  |  [日本語](/docs/ja/FAQ.md)  |  [한국어](/docs/ko/FAQ.md) | [More](/docs/) <br/>
 
+# 💡 Why LafTools?
+
+U vraagt ​​zich misschien af ​​waarom we vastbesloten zijn deze toolbox te ontwikkelen, aangezien er op internet talloze tools kunnen worden gebruikt. De meeste door ons geleverde tools zijn inderdaad gemakkelijk te vinden op internet, zoals codec, formatter, vertaling, QR-code, enz. Het is echter niet de meest comfortabele en efficiënte manier om deze tools te gebruiken.
+
+Bent u ooit de onderstaande problemen tegengekomen tijdens het gebruik van deze online tools?
+
+- Geen offline toegankelijkheid.
+- Geen mondiaal donker thema.
+- Geen productieve UI-stijl.
+- Slechte netwerkprestaties.
+- Verontrustende advertenties.
+- Probleem met gegevenslekken.
+
+Als het antwoord op een van de bovenstaande vragen ja is, kunt u overwegen onze toolbox te proberen. Het biedt de volgende functies:
+
+- FOSS voor altijd
+- Lichtgewicht looptijd
+- Volledige platformondersteuning (inclusief ARMv8)
+- Volledige GPT-achtige ondersteuning
+- Sterk geïntegreerd met productieve gebruikersinterface
+- Beschikbare Docker-images en Portable Edition
+- Extra hulpmiddelen zoals notities, handleidingen, enz...
+
+# 🎷 Inspiratie
+
+Dit project is voornamelijk geïnspireerd door de volgende muzikanten:
+
+- Joe Pass
+- The Manhattan Transfer
+- Laura Shigihara
+- Asleep at the Wheel
+- Khalil Fong
+- Li Rong Hao
+- Chet Atkins
+- Les Paul
+- Tommy Emmanuel
+- Martin Taylor
+- Frank Vignola
+- Frédéric Chopin
+- Claude Debussy
+- Oscar Peterson
+- Hugo Strasser
+- Jay Chou
+- Stefanie Sun
+- David Tao
+- Jacky Cheung
+- Teresa Teng
+- Jack Johnson
+- Harry Styles(As It Was)
+- Lovebugs
+
+Vooral de uitvoering van **Satin Doll** door de virtuoos **Joe Pass** in 'An Evening With Joe Pass' (1994) is voor mij een bron van kracht en vertrouwen geweest, waardoor ik elk dilemma in het leven het hoofd kan bieden. .
+
 # 🙋 Is it a free software?
 
 Yes, it is open-source software, and you can use it following the terms of the license. However, please note that being open-source does not necessarily mean it's entirely free of charge. While most tools can be used for free, some may incur charges related to API usage and server costs.

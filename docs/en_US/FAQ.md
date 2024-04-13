@@ -1,5 +1,58 @@
 <i>Note: This page is generated from LafTools internally.</i> <br/> English  |  [简体中文](/docs/zh_CN/FAQ.md)  |  [繁體中文](/docs/zh_HK/FAQ.md)  |  [Deutsch](/docs/de/FAQ.md)  |  [Español](/docs/es/FAQ.md)  |  [Français](/docs/fr/FAQ.md)  |  [日本語](/docs/ja/FAQ.md)  |  [한국어](/docs/ko/FAQ.md) | [More](/docs/) <br/>
 
+# 💡 Why LafTools?
+
+You may wonder why we are determined to develop this toolbox as there are numerous tools can be used on the Internet. Indeed, most tools we have provided can be easily found on the Internet, such as codec, formatter, translation, QR Code, etc… However, it is not the most comfortable and efficient approach to use these tools.
+
+Have you ever met the below issues while using those online tools?
+
+- No Offline Accessibility.
+- No Global Dark Theme.
+- No Productive UI style.
+- Poor Network Performance.
+- Upsetting Advertisements.
+- Data Leakage Issue.
+
+If the answer to any of the above is yes, then you should consider trying our toolbox. It offers the following features:
+
+- FOSS Forever
+- Lightweight Runtime
+- Full platform support(including ARMv8)
+- Full GPT-alike support
+- Highly integrated with productive UI
+- Available Docker Images and Portable Edition
+- Extra helpers such as notes, manuals, etc...
+
+# 🎷 Inspiration
+
+This project is primarily inspired by the following musicians:
+
+- Joe Pass
+- The Manhattan Transfer
+- Laura Shigihara
+- Asleep at the Wheel
+- Khalil Fong
+- Li Rong Hao
+- Chet Atkins
+- Les Paul
+- Tommy Emmanuel
+- Martin Taylor
+- Frank Vignola
+- Frédéric Chopin
+- Claude Debussy
+- Oscar Peterson
+- Hugo Strasser
+- Jay Chou
+- Stefanie Sun
+- David Tao
+- Jacky Cheung
+- Teresa Teng
+- Jack Johnson
+- Harry Styles(As It Was)
+- Lovebugs
+
+Specifically, the performance of **Satin Doll** by the virtuoso **Joe Pass** in 'An Evening With Joe Pass' (1994) has been a source of strength and confidence for me, empowering me to face any dilemma in life.
+
 # 🙋 Is it a free software?
 
 Yes, it is open-source software, and you can use it following the terms of the license. However, please note that being open-source does not necessarily mean it's entirely free of charge. While most tools can be used for free, some may incur charges related to API usage and server costs.

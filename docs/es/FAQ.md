@@ -1,5 +1,58 @@
 <i>Note: Esta página se genera internamente desde LafTools.</i> <br/> [English](/docs/en_US/FAQ.md)  |  [简体中文](/docs/zh_CN/FAQ.md)  |  [繁體中文](/docs/zh_HK/FAQ.md)  |  [Deutsch](/docs/de/FAQ.md)  |  Español  |  [Français](/docs/fr/FAQ.md)  |  [日本語](/docs/ja/FAQ.md)  |  [한국어](/docs/ko/FAQ.md) | [More](/docs/) <br/>
 
+# 💡 Why LafTools?
+
+Quizás se pregunte por qué estamos decididos a desarrollar esta caja de herramientas, ya que existen numerosas herramientas que se pueden utilizar en Internet. De hecho, la mayoría de las herramientas que hemos proporcionado se pueden encontrar fácilmente en Internet, como códec, formateador, traducción, código QR, etc. Sin embargo, no es el método más cómodo y eficiente para utilizar estas herramientas.
+
+¿Alguna vez se ha encontrado con los siguientes problemas al utilizar esas herramientas en línea?
+
+- Sin accesibilidad sin conexión.
+- Sin tema oscuro global.
+- Sin estilo de interfaz de usuario productivo.
+- Mal rendimiento de la red.
+- Anuncios perturbadores.
+- Problema de fuga de datos.
+
+Si la respuesta a cualquiera de las preguntas anteriores es sí, entonces debería considerar probar nuestra caja de herramientas. Ofrece las siguientes características:
+
+- FOSS para siempre
+- Tiempo de ejecución ligero
+- Soporte completo de plataforma (incluido ARMv8)
+- Soporte completo similar a GPT
+- Altamente integrado con una interfaz de usuario productiva
+- Imágenes Docker disponibles y edición portátil
+- Ayudas adicionales como notas, manuales, etc...
+
+# 🎷 Inspiración
+
+Este proyecto está inspirado principalmente en los siguientes músicos:
+
+- Joe Pass
+- The Manhattan Transfer
+- Laura Shigihara
+- Asleep at the Wheel
+- Khalil Fong
+- Li Rong Hao
+- Chet Atkins
+- Les Paul
+- Tommy Emmanuel
+- Martin Taylor
+- Frank Vignola
+- Frédéric Chopin
+- Claude Debussy
+- Oscar Peterson
+- Hugo Strasser
+- Jay Chou
+- Stefanie Sun
+- David Tao
+- Jacky Cheung
+- Teresa Teng
+- Jack Johnson
+- Harry Styles(As It Was)
+- Lovebugs
+
+En concreto, la interpretación de **Satin Doll** del virtuoso **Joe Pass** en 'An Evening With Joe Pass' (1994) ha sido una fuente de fortaleza y confianza para mí, capacitándome para afrontar cualquier dilema de la vida. .
+
 # 🙋 Is it a free software?
 
 Yes, it is open-source software, and you can use it following the terms of the license. However, please note that being open-source does not necessarily mean it's entirely free of charge. While most tools can be used for free, some may incur charges related to API usage and server costs.

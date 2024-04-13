@@ -1,5 +1,58 @@
 <i>Note: Tämä sivu on luotu sisäisesti LafToolsista.</i> <br/> [English](/docs/en_US/FAQ.md)  |  [简体中文](/docs/zh_CN/FAQ.md)  |  [繁體中文](/docs/zh_HK/FAQ.md)  |  [Deutsch](/docs/de/FAQ.md)  |  [Español](/docs/es/FAQ.md)  |  [Français](/docs/fr/FAQ.md)  |  [日本語](/docs/ja/FAQ.md)  |  [한국어](/docs/ko/FAQ.md) | [More](/docs/) <br/>
 
+# 💡 Why LafTools?
+
+Saatat ihmetellä, miksi olemme päättäneet kehittää tätä työkalupakkia, koska Internetissä voidaan käyttää lukuisia työkaluja. Useimmat tarjoamamme työkalut, kuten koodekki, muotoilija, käännös, QR-koodi jne., ovat todellakin helposti löydettävissä Internetistä... Se ei kuitenkaan ole mukavin ja tehokkain tapa käyttää näitä työkaluja.
+
+Oletko koskaan törmännyt alla oleviin ongelmiin käyttäessäsi näitä verkkotyökaluja?
+
+- Ei offline-käyttöä.
+- Ei globaalia tummaa teemaa.
+- Ei tuottavaa käyttöliittymätyyliä.
+- Huono verkon suorituskyky.
+- Järkyttävät mainokset.
+- Tietovuotoongelma.
+
+Jos vastaus johonkin yllä olevista on kyllä, sinun kannattaa kokeilla työkalupakkiamme. Se tarjoaa seuraavat ominaisuudet:
+
+- FOSS Ikuisesti
+- Kevyt käyttöaika
+- Täysi alustatuki (mukaan lukien ARMv8)
+- Täysi GPT-kuten tuki
+- Erittäin integroitu tuottavaan käyttöliittymään
+- Saatavilla Docker-kuvat ja Portable Edition
+- Ylimääräisiä apuvälineitä, kuten muistiinpanoja, käsikirjoja jne...
+
+# 🎷 Inspiraatiota
+
+Tämä projekti on saanut inspiraationsa pääasiassa seuraavista muusikoista:
+
+- Joe Pass
+- The Manhattan Transfer
+- Laura Shigihara
+- Asleep at the Wheel
+- Khalil Fong
+- Li Rong Hao
+- Chet Atkins
+- Les Paul
+- Tommy Emmanuel
+- Martin Taylor
+- Frank Vignola
+- Frédéric Chopin
+- Claude Debussy
+- Oscar Peterson
+- Hugo Strasser
+- Jay Chou
+- Stefanie Sun
+- David Tao
+- Jacky Cheung
+- Teresa Teng
+- Jack Johnson
+- Harry Styles(As It Was)
+- Lovebugs
+
+Erityisesti virtuoosin **Joe Passin** **Satin Doll** -esitys elokuvassa "An Evening With Joe Pass" (1994) on ollut minulle voiman ja itseluottamuksen lähde, joka on antanut minulle mahdollisuuden kohdata kaikki elämän ongelmat. .
+
 # 🙋 Is it a free software?
 
 Yes, it is open-source software, and you can use it following the terms of the license. However, please note that being open-source does not necessarily mean it's entirely free of charge. While most tools can be used for free, some may incur charges related to API usage and server costs.

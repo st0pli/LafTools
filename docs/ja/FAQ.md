@@ -1,5 +1,58 @@
 <i>Note: このページは LafTools から内部的に生成されます。</i> <br/> [English](/docs/en_US/FAQ.md)  |  [简体中文](/docs/zh_CN/FAQ.md)  |  [繁體中文](/docs/zh_HK/FAQ.md)  |  [Deutsch](/docs/de/FAQ.md)  |  [Español](/docs/es/FAQ.md)  |  [Français](/docs/fr/FAQ.md)  |  日本語  |  [한국어](/docs/ko/FAQ.md) | [More](/docs/) <br/>
 
+# 💡 Why LafTools?
+
+インターネット上には多数のツールが使用できるのに、なぜこのツールボックスを開発することにしたのか疑問に思われるかもしれません。 実際、コーデック、フォーマッタ、翻訳、QR コードなど、当社が提供するほとんどのツールはインターネット上で簡単に見つけることができます。しかし、これらのツールを使用することは、最も快適で効率的なアプローチではありません。
+
+これらのオンライン ツールを使用しているときに、以下の問題に遭遇したことはありますか?
+
+- オフラインでのアクセシビリティはありません。
+- グローバルダークテーマはありません。
+- 生産的な UI スタイルがありません。
+- ネットワークパフォーマンスが低い。
+- 不快な広告。
+- データ漏洩問題。
+
+上記のいずれかの答えが「はい」の場合は、当社のツールボックスを試してみることを検討してください。次の機能を提供します。
+
+- フォスフォーエバー
+- 軽量ランタイム
+- 完全なプラットフォームのサポート (ARMv8 を含む)
+- GPT と同様の完全なサポート
+- 生産性の高い UI と高度に統合
+- 利用可能な Docker イメージとポータブル エディション
+- メモやマニュアルなどの追加のヘルパー
+
+# 🎷 インスピレーション
+
+このプロジェクトは主に次のミュージシャンからインスピレーションを受けています。
+
+- Joe Pass
+- The Manhattan Transfer
+- Laura Shigihara
+- Asleep at the Wheel
+- Khalil Fong
+- Li Rong Hao
+- Chet Atkins
+- Les Paul
+- Tommy Emmanuel
+- Martin Taylor
+- Frank Vignola
+- Frédéric Chopin
+- Claude Debussy
+- Oscar Peterson
+- Hugo Strasser
+- Jay Chou
+- Stefanie Sun
+- David Tao
+- Jacky Cheung
+- Teresa Teng
+- Jack Johnson
+- Harry Styles(As It Was)
+- Lovebugs
+
+特に、「ジョー・パスとの夕べ」（1994年）での名手**ジョー・パス**による**サテン・ドール**のパフォーマンスは、私にとって強さと自信の源であり、人生のどんなジレンマにも立ち向かう力を与えてくれました。 。
+
 # 🙋 Is it a free software?
 
 Yes, it is open-source software, and you can use it following the terms of the license. However, please note that being open-source does not necessarily mean it's entirely free of charge. While most tools can be used for free, some may incur charges related to API usage and server costs.

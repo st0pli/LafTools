@@ -13,14 +13,59 @@
 
 <i>Note: 該頁面是由LafTools工具箱內部產生的。</i> <br/> [English](/docs/en_US/README.md)  |  [简体中文](/docs/zh_CN/README.md)  |  繁體中文  |  [Deutsch](/docs/de/README.md)  |  [Español](/docs/es/README.md)  |  [Français](/docs/fr/README.md)  |  [日本語](/docs/ja/README.md)  |  [한국어](/docs/ko/README.md) | [More](/docs/) <br/>
 
-# 🪄 功能總覽
+# 🔮 Vision
+
+LafTools is a privacy-first, self-hosted, fully open source toolbox designed for programmers, you can find plentful toolsets on this website.
+
+# 💌 Features
+
+- 永遠的自由軟體
+- 輕量級運轉時
+- 全平台支援（包括ARMv8）
+- 完全類似 GPT 的支持
+- 與高效的 UI 高度集成
+- 可用的 Docker 映像和便攜式版本
+- Desktop edition support(Planning)
+- ...
+
+# 🚀 Run it on Docker
+
+For GLOBAL users:
+
+```
+docker run -e LAFREGION=US -e APPLANG=en_US --name mylaftools -d -p 0.0.0.0:39899:39899 codegentoolbox/laftools-linux-x64:latest
+```
+
+For CHINESE users(国内用户):
+
+```
+docker run -e LAFREGION=CN -e APPLANG=zh_CN --name mylaftools -d -p 0.0.0.0:39899:39899 codegentoolbox/laftools-linux-x64:latest
+```
+
+**NOTE**:
+
+1. Default port is set to 39899, you can adjust it if needed.
+2. LafTools will always be upgraded to latest version automatically to let you can enjoy latest functions and bugfixs.
+
+Docker Images:
+
+- [Docker Hub - laftools-linux-x64](https://hub.docker.com/r/codegentoolbox/laftools-linux-x64)
+- [Docker Hub - laftools-arm64-x64](https://hub.docker.com/r/codegentoolbox/laftools-arm64-x64)
+
+# 🔋 Official Websites
 
 為了快速使用這些功能，我們在美國和中國地區部署了穩定的線上網站供您使用。除了一些依賴特定作業系統功能的工具外，大多數工具都可以在我們的線上網站上找到。
 
 - 🇺🇸 海外版: [laftools.dev](https://laftools.dev)
 - 🇨🇳 國內版: [laftools.cn](https://laftools.cn)
 
-# 🔋 名字是怎麼回事？
+# 🌠 預覽
+
+![](https://github.com/work7z/LafTools/blob/dev/devtools/images/portal-1.png?raw=true)
+![](https://github.com/work7z/LafTools/blob/dev/devtools/images/preview.png?raw=true)
+![](https://github.com/work7z/LafTools/blob/dev/devtools/images/preview-dark.png?raw=true)
+
+# 📡 About LAF
 
 - `L` -> Linked
 - `A` -> Asynchronous
@@ -30,40 +75,7 @@
 
 請放心，隨著時間的推移，這個計畫將會以非凡而奇妙的方式發展。這個項目需要更多的時間，就像酒一樣，越久越好。
 
-# 💡 介紹
-
-您可能想知道為什麼我們決心開發這個工具箱，因為網路上有很多工具可以使用。 確實，我們提供的大多數工具都可以在互聯網上輕鬆找到，例如編解碼器、格式化程式、翻譯、二維碼等……但是，使用這些工具並不是最舒適和最有效的方法。
-
-您在使用這些線上工具時是否遇到以下問題？
-
-- 無法離線存取。
-- 沒有全域黑暗主題。
-- 沒有高效率的 UI 風格。
-- 網路效能差。
-- 令人不安的廣告。
-- 資料外洩問題。
-
-如果以上任一問題的答案是肯定的，那麼您應該考慮嘗試我們的工具箱。它具有以下功能：
-
-- 永遠的自由軟體
-- 輕量級運轉時
-- 全平台支援（包括ARMv8）
-- 完全類似 GPT 的支持
-- 與高效的 UI 高度集成
-- 可用的 Docker 映像和便攜式版本
-- 額外的幫助，如註釋、手冊等......
-
-# 🌠 預覽
-
-> LafTools工具箱仍在開發中，其 UI、相依性或先決條件可能會根據需要進行變更。
-
-### 預覽:
-
-[Online Preview](http://laftools.dev)
-![](https://github.com/work7z/LafTools/blob/dev/devtools/images/preview.png?raw=true)
-![](https://github.com/work7z/LafTools/blob/dev/devtools/images/preview-dark.png?raw=true)
-
-# 🚀 入門
+# 🌠 Contribution
 
 ## 1. 設定係統環境
 
@@ -85,7 +97,7 @@ export PATH=$PATH:$LAFTOOLS_ROOT\dev\source\windows-bin
 export LAFTOOLS_ROOT=/users/jerry/projects/laftools-repo
 ```
 
-## 2. 編譯並運行
+## 2. Compile and Run
 
 ```bash
 # 安裝所需的全域庫
@@ -105,7 +117,7 @@ npm run fe-web
 
 ```bash
 cd pipeline
-./build-all.sh "v1.9.9-beta"
+./build-all.sh
 ```
 
 # 📑 其他材料
@@ -137,36 +149,6 @@ cd pipeline
 1. [one-api](https://github.com/songquanpeng/one-api) - an OpenAI key management & redistribution system.
 
 當然，還有其他開源項目受益並促進了這個項目，我無法在這一部分中詳細介紹；如果沒有這些專案和這些人才開發人員的努力，LafTools工具箱就不可能實現。
-
-# 🎷 靈感
-
-這個項目主要受到以下音樂家的啟發：
-
-- Joe Pass
-- The Manhattan Transfer
-- Laura Shigihara
-- Asleep at the Wheel
-- Khalil Fong
-- Li Rong Hao
-- Chet Atkins
-- Les Paul
-- Tommy Emmanuel
-- Martin Taylor
-- Frank Vignola
-- Frédéric Chopin
-- Claude Debussy
-- Oscar Peterson
-- Hugo Strasser
-- Jay Chou
-- Stefanie Sun
-- David Tao
-- Jacky Cheung
-- Teresa Teng
-- Jack Johnson
-- Harry Styles(As It Was)
-- Lovebugs
-
-具體來說，演奏家**喬·帕斯**在《與喬·帕斯的夜晚》（1994）中演奏的**緞子娃娃**給了我力量和信心的源泉，讓我能夠面對生活中的任何困境。 。
 
 # 🪪 License
 

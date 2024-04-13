@@ -1,5 +1,58 @@
 <i>Note: Diese Seite wird intern von LafTools generiert.</i> <br/> [English](/docs/en_US/FAQ.md)  |  [简体中文](/docs/zh_CN/FAQ.md)  |  [繁體中文](/docs/zh_HK/FAQ.md)  |  Deutsch  |  [Español](/docs/es/FAQ.md)  |  [Français](/docs/fr/FAQ.md)  |  [日本語](/docs/ja/FAQ.md)  |  [한국어](/docs/ko/FAQ.md) | [More](/docs/) <br/>
 
+# 💡 Why LafTools?
+
+Sie fragen sich vielleicht, warum wir entschlossen sind, diese Toolbox zu entwickeln, da es im Internet zahlreiche Tools gibt, die verwendet werden können. Tatsächlich sind die meisten von uns bereitgestellten Tools wie Codec, Formatierer, Übersetzung, QR-Code usw. leicht im Internet zu finden. Allerdings ist die Verwendung dieser Tools nicht die bequemste und effizienteste.
+
+Sind Ihnen bei der Verwendung dieser Online-Tools schon einmal die folgenden Probleme begegnet?
+
+- Keine Offline-Zugänglichkeit.
+- Kein globales dunkles Thema.
+- Kein produktiver UI-Stil.
+- Schlechte Netzwerkleistung.
+- Verstörende Werbung.
+- Problem mit Datenlecks.
+
+Wenn die Antwort auf eine der oben genannten Fragen „Ja“ lautet, sollten Sie unsere Toolbox ausprobieren. Es bietet folgende Funktionen:
+
+- FOSS für immer
+- Leichte Laufzeit
+- Vollständige Plattformunterstützung (einschließlich ARMv8)
+- Vollständige GPT-ähnliche Unterstützung
+- Hochintegriert mit produktiver Benutzeroberfläche
+- Verfügbare Docker-Images und Portable Edition
+- Zusätzliche Hilfsmittel wie Notizen, Handbücher usw.
+
+# 🎷 Inspiration
+
+Dieses Projekt ist in erster Linie von folgenden Musikern inspiriert:
+
+- Joe Pass
+- The Manhattan Transfer
+- Laura Shigihara
+- Asleep at the Wheel
+- Khalil Fong
+- Li Rong Hao
+- Chet Atkins
+- Les Paul
+- Tommy Emmanuel
+- Martin Taylor
+- Frank Vignola
+- Frédéric Chopin
+- Claude Debussy
+- Oscar Peterson
+- Hugo Strasser
+- Jay Chou
+- Stefanie Sun
+- David Tao
+- Jacky Cheung
+- Teresa Teng
+- Jack Johnson
+- Harry Styles(As It Was)
+- Lovebugs
+
+Insbesondere die Aufführung von „Satin Doll“ durch den Virtuosen „Joe Pass“ in „Ein Abend mit Joe Pass“ (1994) war für mich eine Quelle der Kraft und des Selbstvertrauens und gab mir die Kraft, jedes Dilemma im Leben zu meistern .
+
 # 🙋 Is it a free software?
 
 Yes, it is open-source software, and you can use it following the terms of the license. However, please note that being open-source does not necessarily mean it's entirely free of charge. While most tools can be used for free, some may incur charges related to API usage and server costs.

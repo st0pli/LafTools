@@ -20,37 +20,37 @@
 
 ### 新功能
 
-- Test update JZDhNwhhW
+- 测试一些逻辑 JZDhNwhhW
 
 ## Release v2.2.14-beta (2024-04-10)
 
 ### 新功能
 
-- Test update JZDhNwhhW
+- 测试一些逻辑 JZDhNwhhW
 
 ## Release v2.2.12-beta (2024-04-10)
 
 ### 新功能
 
-- Test update 8oW_Reebm
+- 测试一些逻辑 8oW_Reebm
 
 ## Release v2.2.11-beta (2024-04-09)
 
 ### 新功能
 
-- Test update mafx_oyrD
+- 测试一些逻辑 mafx_oyrD
 
 ## Release v2.2.10-beta (2024-04-09)
 
 ### 新功能
 
-- Test update mafx_oyrD
+- 测试一些逻辑 mafx_oyrD
 
 ## Release v2.1.99-beta (2024-04-09)
 
 ### 新功能
 
-- Test some logic
+- 测试一些逻辑
 
 ## Release v2.1.83-beta (2024-04-03)
 

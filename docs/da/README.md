@@ -13,14 +13,59 @@
 
 <i>Note: Denne side er genereret fra LafTools internt.</i> <br/> [English](/docs/en_US/README.md)  |  [简体中文](/docs/zh_CN/README.md)  |  [繁體中文](/docs/zh_HK/README.md)  |  [Deutsch](/docs/de/README.md)  |  [Español](/docs/es/README.md)  |  [Français](/docs/fr/README.md)  |  [日本語](/docs/ja/README.md)  |  [한국어](/docs/ko/README.md) | [More](/docs/) <br/>
 
-# 🪄 Hurtigt kig
+# 🔮 Vision
+
+LafTools is a privacy-first, self-hosted, fully open source toolbox designed for programmers, you can find plentful toolsets on this website.
+
+# 💌 Features
+
+- FOSS for evigt
+- Letvægts Runtime
+- Fuld platformunderstøttelse (inklusive ARMv8)
+- Fuld GPT-lignende support
+- Meget integreret med produktiv brugergrænseflade
+- Tilgængelige Docker-billeder og Portable Edition
+- Desktop edition support(Planning)
+- ...
+
+# 🚀 Run it on Docker
+
+For GLOBAL users:
+
+```
+docker run -e LAFREGION=US -e APPLANG=en_US --name mylaftools -d -p 0.0.0.0:39899:39899 codegentoolbox/laftools-linux-x64:latest
+```
+
+For CHINESE users(国内用户):
+
+```
+docker run -e LAFREGION=CN -e APPLANG=zh_CN --name mylaftools -d -p 0.0.0.0:39899:39899 codegentoolbox/laftools-linux-x64:latest
+```
+
+**NOTE**:
+
+1. Default port is set to 39899, you can adjust it if needed.
+2. LafTools will always be upgraded to latest version automatically to let you can enjoy latest functions and bugfixs.
+
+Docker Images:
+
+- [Docker Hub - laftools-linux-x64](https://hub.docker.com/r/codegentoolbox/laftools-linux-x64)
+- [Docker Hub - laftools-arm64-x64](https://hub.docker.com/r/codegentoolbox/laftools-arm64-x64)
+
+# 🔋 Official Websites
 
 For hurtigt at bruge disse funktioner har vi implementeret en stabil online hjemmeside i USA og CN-regionen, som du kan bruge. De fleste værktøjer er tilgængelige på vores online-websteder med undtagelse af nogle værktøjer, der er afhængige af specifikke OS-funktioner.
 
 - 🇺🇸 forenet stat: [laftools.dev](https://laftools.dev)
 - 🇨🇳 Kun Kinas fastland: [laftools.cn](https://laftools.cn)
 
-# 🔋 Hvad er der med navnet?
+# 🌠 Forhåndsvisning
+
+![](https://github.com/work7z/LafTools/blob/dev/devtools/images/portal-1.png?raw=true)
+![](https://github.com/work7z/LafTools/blob/dev/devtools/images/preview.png?raw=true)
+![](https://github.com/work7z/LafTools/blob/dev/devtools/images/preview-dark.png?raw=true)
+
+# 📡 About LAF
 
 - `L` -> Linked
 - `A` -> Asynchronous
@@ -30,40 +75,7 @@ I det væsentlige er LafTools en suite, der tilbyder en række forbundne, asynkr
 
 Vær sikker på, dette projekt vil udvikle sig på bemærkelsesværdige og fantastiske måder over tid. Dette projekt har brug for mere tid, ligesom vin, bliver bedre med tiden.
 
-# 💡 Introduktion
-
-Du undrer dig måske over, hvorfor vi er fast besluttet på at udvikle denne værktøjskasse, da der er mange værktøjer, der kan bruges på internettet. Faktisk kan de fleste værktøjer, vi har leveret, nemt findes på internettet, såsom codec, formatering, oversættelse, QR-kode osv... Det er dog ikke den mest komfortable og effektive tilgang til at bruge disse værktøjer.
-
-Har du nogensinde mødt nedenstående problemer, mens du brugte disse onlineværktøjer?
-
-- Ingen offline tilgængelighed.
-- Intet globalt mørkt tema.
-- Ingen produktiv UI-stil.
-- Dårlig netværksydelse.
-- Foruroligende reklamer.
-- Problem med datalækage.
-
-Hvis svaret på noget af ovenstående er ja, så bør du overveje at prøve vores værktøjskasse. Det tilbyder følgende funktioner:
-
-- FOSS for evigt
-- Letvægts Runtime
-- Fuld platformunderstøttelse (inklusive ARMv8)
-- Fuld GPT-lignende support
-- Meget integreret med produktiv brugergrænseflade
-- Tilgængelige Docker-billeder og Portable Edition
-- Ekstra hjælpere såsom noter, manualer osv...
-
-# 🌠 Forhåndsvisning
-
-> LafTools er stadig under udvikling, dets brugergrænseflade, afhængigheder eller forudsætninger kan ændres efter behov.
-
-### Forhåndsvisning:
-
-[Online Preview](http://laftools.dev)
-![](https://github.com/work7z/LafTools/blob/dev/devtools/images/preview.png?raw=true)
-![](https://github.com/work7z/LafTools/blob/dev/devtools/images/preview-dark.png?raw=true)
-
-# 🚀 Kom godt i gang
+# 🌠 Contribution
 
 ## 1. Opsæt systemmiljø
 
@@ -85,7 +97,7 @@ export PATH=$PATH:$LAFTOOLS_ROOT\dev\source\windows-bin
 export LAFTOOLS_ROOT=/users/jerry/projects/laftools-repo
 ```
 
-## 2. Kompiler og kør
+## 2. Compile and Run
 
 ```bash
 # installere det nødvendige globale bibliotek
@@ -105,7 +117,7 @@ npm run fe-web
 
 ```bash
 cd pipeline
-./build-all.sh "v1.9.9-beta"
+./build-all.sh
 ```
 
 # 📑 Andre materialer
@@ -137,36 +149,6 @@ Dette projekt ville ikke have været muligt uden fantastiske open source-projekt
 1. [one-api](https://github.com/songquanpeng/one-api) - an OpenAI key management & redistribution system.
 
 Der er helt sikkert andre open source-projekter, der har gavnet og faciliteret dette projekt, som jeg ikke kunne beskrive i denne del; Uden disse projekter og disse talentudvikleres indsats havde LafTools ikke været mulig.
-
-# 🎷 Inspiration
-
-Dette projekt er primært inspireret af følgende musikere:
-
-- Joe Pass
-- The Manhattan Transfer
-- Laura Shigihara
-- Asleep at the Wheel
-- Khalil Fong
-- Li Rong Hao
-- Chet Atkins
-- Les Paul
-- Tommy Emmanuel
-- Martin Taylor
-- Frank Vignola
-- Frédéric Chopin
-- Claude Debussy
-- Oscar Peterson
-- Hugo Strasser
-- Jay Chou
-- Stefanie Sun
-- David Tao
-- Jacky Cheung
-- Teresa Teng
-- Jack Johnson
-- Harry Styles(As It Was)
-- Lovebugs
-
-Specifikt har opførelsen af ​​**Satin Doll** af den virtuose **Joe Pass** i 'An Evening With Joe Pass' (1994) været en kilde til styrke og selvtillid for mig, som har givet mig mulighed for at møde ethvert dilemma i livet .
 
 # 🪪 License
 

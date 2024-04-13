@@ -1,5 +1,58 @@
 <i>Note: Halaman ini dihasilkan dari LafTools secara internal.</i> <br/> [English](/docs/en_US/FAQ.md)  |  [简体中文](/docs/zh_CN/FAQ.md)  |  [繁體中文](/docs/zh_HK/FAQ.md)  |  [Deutsch](/docs/de/FAQ.md)  |  [Español](/docs/es/FAQ.md)  |  [Français](/docs/fr/FAQ.md)  |  [日本語](/docs/ja/FAQ.md)  |  [한국어](/docs/ko/FAQ.md) | [More](/docs/) <br/>
 
+# 💡 Why LafTools?
+
+Anda mungkin bertanya-tanya mengapa kami bertekad untuk mengembangkan kotak peralatan ini karena ada banyak alat yang dapat digunakan di Internet. Memang benar, sebagian besar alat yang kami sediakan dapat dengan mudah ditemukan di Internet, seperti codec, pemformat, terjemahan, Kode QR, dll… Namun, penggunaan alat-alat ini bukanlah pendekatan yang paling nyaman dan efisien.
+
+Pernahkah Anda menemui masalah di bawah ini saat menggunakan alat online tersebut?
+
+- Tidak Ada Aksesibilitas Offline.
+- Tidak Ada Tema Gelap Global.
+- Tidak ada gaya UI Produktif.
+- Kinerja Jaringan Buruk.
+- Iklan yang Mengecewakan.
+- Masalah Kebocoran Data.
+
+Jika jawaban di atas adalah ya, Anda harus mempertimbangkan untuk mencoba kotak peralatan kami. Ini menawarkan fitur-fitur berikut:
+
+- FOSS Selamanya
+- Waktu Proses Ringan
+- Dukungan platform penuh (termasuk ARMv8)
+- Dukungan penuh mirip GPT
+- Sangat terintegrasi dengan UI produktif
+- Tersedia Gambar Docker dan Edisi Portabel
+- Pembantu tambahan seperti catatan, manual, dll...
+
+# 🎷 Inspirasi
+
+Proyek ini terutama terinspirasi oleh musisi berikut:
+
+- Joe Pass
+- The Manhattan Transfer
+- Laura Shigihara
+- Asleep at the Wheel
+- Khalil Fong
+- Li Rong Hao
+- Chet Atkins
+- Les Paul
+- Tommy Emmanuel
+- Martin Taylor
+- Frank Vignola
+- Frédéric Chopin
+- Claude Debussy
+- Oscar Peterson
+- Hugo Strasser
+- Jay Chou
+- Stefanie Sun
+- David Tao
+- Jacky Cheung
+- Teresa Teng
+- Jack Johnson
+- Harry Styles(As It Was)
+- Lovebugs
+
+Secara khusus, penampilan **Satin Doll** oleh virtuoso **Joe Pass** dalam 'An Evening With Joe Pass' (1994) telah menjadi sumber kekuatan dan kepercayaan diri bagi saya, memberdayakan saya untuk menghadapi dilema apa pun dalam hidup. .
+
 # 🙋 Is it a free software?
 
 Yes, it is open-source software, and you can use it following the terms of the license. However, please note that being open-source does not necessarily mean it's entirely free of charge. While most tools can be used for free, some may incur charges related to API usage and server costs.

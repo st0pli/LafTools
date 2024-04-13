@@ -13,14 +13,59 @@
 
 NOTE_FOR_GEN
 
-# 🪄 ${Dot("d6C-FTONT","Quick View")}
+# 🔮 ${Dot('rpv2VknDH','Vision')}
+
+${Dot('hOKTq1t-J',"LafTools is a privacy-first, self-hosted, fully open source toolbox designed for programmers, you can find plentful toolsets on this website.")}
+
+# 💌 ${Dot('mVgJ1NxjT','Features')}
+
+- ${Dot("Ed4z058Cr","FOSS Forever")}
+- ${Dot("Jh-LM4MG","Lightweight Runtime")}
+- ${Dot("RXAzQfM2L","Full platform support(including ARMv8)")}
+- ${Dot("4hth-woPf","Full GPT-alike support")}
+- ${Dot("iz4ROzL3","Highly integrated with productive UI")}
+- ${Dot("HIAvRJazO","Available Docker Images and Portable Edition")}
+- ${Dot("4ECM-GgIn","Desktop edition support")}(Planning)
+- ...
+
+# 🚀 ${Dot('PPI2qy173M','Run it on {0}','Docker')}
+
+For GLOBAL users:
+
+```
+docker run -e LAFREGION=US -e APPLANG=en_US --name mylaftools -d -p 0.0.0.0:39899:39899 codegentoolbox/laftools-linux-x64:latest
+```
+
+For CHINESE users(国内用户):
+
+```
+docker run -e LAFREGION=CN -e APPLANG=zh_CN --name mylaftools -d -p 0.0.0.0:39899:39899 codegentoolbox/laftools-linux-x64:latest
+```
+
+**NOTE**:
+
+1. ${Dot('t9ql09Wnx','Default port is set to 39899, you can adjust it if needed.')}
+2. ${Dot('kQOiEpza3','LafTools will always be upgraded to latest version automatically to let you can enjoy latest functions and bugfixs.')}
+
+Docker Images:
+
+- [Docker Hub - laftools-linux-x64](https://hub.docker.com/r/codegentoolbox/laftools-linux-x64)
+- [Docker Hub - laftools-arm64-x64](https://hub.docker.com/r/codegentoolbox/laftools-arm64-x64)
+
+# 🔋 ${Dot('1ZKES7JRM','Official Websites')}
 
 ${Dot("hDdqkdxkSd","To quickly use these functions, we've deployed stable online website in US and CN region for you to use. Most tools are available in our online websites except for some tools that rely on specific OS capablities.")}
 
 - 🇺🇸 ${Dot("usvss","United State")}: [laftools.dev](https://laftools.dev)
 - 🇨🇳 ${Dot("cnvss","China Mainland")}: [laftools.cn](https://laftools.cn)
 
-# 🔋 ${Dot("I-Zaii3HZ","What's with the name?")}
+# 🌠 ${Dot("OjKP47hFt","Preview")}
+
+![](https://github.com/work7z/LafTools/blob/dev/devtools/images/portal-1.png?raw=true)
+![](https://github.com/work7z/LafTools/blob/dev/devtools/images/preview${extraLang}.png?raw=true)
+![](https://github.com/work7z/LafTools/blob/dev/devtools/images/preview-dark${extraLang}.png?raw=true)
+
+# 📡 ${Dot("5fxv7a7sF","About {0}",'LAF')}
 
 - `L` -> Linked
 - `A` -> Asynchronous
@@ -30,40 +75,7 @@ ${Dot("15fbRc2id","In short, LafTools is a suite that offers a series of linked,
 
 ${Dot("7p5-nXoUr","Rest assured, this project will evolve in remarkable and fantastic ways over time. This project needs more time, just like wine, gets better with time.")}
 
-# 💡 ${Dot("JjpQy-eIq","Introduction")}
-
-${Dot("iIq02l4vX","You may wonder why we are determined to develop this toolbox as there are numerous tools can be used on the Internet.")} ${Dot("ciP9qXH1I","Indeed, most tools we have provided can be easily found on the Internet, such as codec, formatter, translation, QR Code, etc… However, it is not the most comfortable and efficient approach to use these tools.")}
-
-${Dot("YqgCZdzaS","Have you ever met the below issues while using those online tools?")}
-
-- ${Dot("AKCG4Sy8U","No Offline Accessibility.")}
-- ${Dot("iQxHIHZIL","No Global Dark Theme.")}
-- ${Dot("LM-o4Yk6h","No Productive UI style.")}
-- ${Dot("w5PSqC7jG","Poor Network Performance.")}
-- ${Dot("mpQMZfbv6","Upsetting Advertisements.")}
-- ${Dot("rR22PTMZc","Data Leakage Issue.")}
-
-${Dot("U6zkVUPTq","If the answer to any of the above is yes, then you should consider trying our toolbox. It offers the following features:")}
-
-- ${Dot("Ed4z058Cr","FOSS Forever")}
-- ${Dot("Jh-LM4MG","Lightweight Runtime")}
-- ${Dot("RXAzQfM2L","Full platform support(including ARMv8)")}
-- ${Dot("4hth-woPf","Full GPT-alike support")}
-- ${Dot("iz4ROzL3","Highly integrated with productive UI")}
-- ${Dot("HIAvRJazO","Available Docker Images and Portable Edition")}
-- ${Dot("yVPMfvWhi","Extra helpers such as notes, manuals, etc...")}
-
-# 🌠 ${Dot("OjKP47hFt","Preview")}
-
-> ${Dot("bIE-DVqmU","LafTools is still under development, its UI, dependencies or prerequisites may changed as needed.")}
-
-### ${Dot("Gez25D19n","Preview")}:
-
-[Online Preview](http://${previewURL})
-![](https://github.com/work7z/LafTools/blob/dev/devtools/images/preview${extraLang}.png?raw=true)
-![](https://github.com/work7z/LafTools/blob/dev/devtools/images/preview-dark${extraLang}.png?raw=true)
-
-# 🚀 ${Dot("AOKa_f9CC","Getting Started")}
+# 🌠 ${Dot("Id8EbBiWX","Contribution")}
 
 ## 1. ${Dot("lmVW9z9oh","Setup System Environment")}
 
@@ -85,7 +97,7 @@ export PATH=$PATH:$LAFTOOLS_ROOT\\dev\\source\\windows-bin
 export LAFTOOLS_ROOT=/users/jerry/projects/laftools-repo
 ```
 
-## 2. ${Dot("Fuacdtn","Compile and Run")}
+## 2. ${Dot("gfW2RheHJ-","Compile and Run")}
 
 ```bash
 # ${Dot("uh8JUYWzH","install required global library")}
@@ -105,7 +117,7 @@ npm run fe-web
 
 ```bash
 cd pipeline
-./build-all.sh "v1.9.9-beta"
+./build-all.sh
 ```
 
 # 📑 ${Dot("wieewa7cq","Other Materials")}
@@ -137,36 +149,6 @@ ${Dot("oM2NCFSQ1","This project would not have been possible without awesome ope
 1. [one-api](https://github.com/songquanpeng/one-api) - an OpenAI key management & redistribution system.
 
 ${Dot("vWi9Y_HJ6","For sure, there are other open source projects that have benefited and facilitated this project, which I couldn't detail in this part; Without these projects and these talent developers' efforts, LafTools would not have been possible.")}
-
-# 🎷 ${Dot("m3wnIDvAF","Inspiration")}
-
-${Dot("t5DDvnfna","This project is primarily inspired by the following musicians:")}
-
-- Joe Pass
-- The Manhattan Transfer
-- Laura Shigihara
-- Asleep at the Wheel
-- Khalil Fong
-- Li Rong Hao
-- Chet Atkins
-- Les Paul
-- Tommy Emmanuel
-- Martin Taylor
-- Frank Vignola
-- Frédéric Chopin
-- Claude Debussy
-- Oscar Peterson
-- Hugo Strasser
-- Jay Chou
-- Stefanie Sun
-- David Tao
-- Jacky Cheung
-- Teresa Teng
-- Jack Johnson
-- Harry Styles(As It Was)
-- Lovebugs
-
-${Dot("ZdiIi8j","Specifically, the performance of **Satin Doll** by the virtuoso **Joe Pass** in 'An Evening With Joe Pass' (1994) has been a source of strength and confidence for me, empowering me to face any dilemma in life.")}
 
 # 🪪 License
 

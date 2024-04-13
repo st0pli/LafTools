@@ -13,14 +13,59 @@
 
 <i>Note: 该页面是由LafTools工具箱内部生成的。</i> <br/> [English](/docs/en_US/README.md)  |  简体中文  |  [繁體中文](/docs/zh_HK/README.md)  |  [Deutsch](/docs/de/README.md)  |  [Español](/docs/es/README.md)  |  [Français](/docs/fr/README.md)  |  [日本語](/docs/ja/README.md)  |  [한국어](/docs/ko/README.md) | [More](/docs/) <br/>
 
-# 🪄 功能总览
+# 🔮 想象
+
+LafTools工具箱是一个专为程序员设计的隐私第一、自托管、完全开源的工具箱，您可以在该网站上找到丰富的工具集。
+
+# 💌 特征
+
+- 永远的自由软件
+- 轻量级运行时
+- 全平台支持（包括ARMv8）
+- 完全类似 GPT 的支持
+- 与高效的 UI 高度集成
+- 可用的 Docker 映像和便携式版本
+- 桌面版支持(Planning)
+- ...
+
+# 🚀 在 Docker 上运行
+
+For GLOBAL users:
+
+```
+docker run -e LAFREGION=US -e APPLANG=en_US --name mylaftools -d -p 0.0.0.0:39899:39899 codegentoolbox/laftools-linux-x64:latest
+```
+
+For CHINESE users(国内用户):
+
+```
+docker run -e LAFREGION=CN -e APPLANG=zh_CN --name mylaftools -d -p 0.0.0.0:39899:39899 codegentoolbox/laftools-linux-x64:latest
+```
+
+**NOTE**:
+
+1. 默认端口设置为39899，您可以根据需要进行调整。
+2. LafTools工具箱将始终自动升级到最新版本，让您可以享受最新的功能和错误修复。
+
+Docker Images:
+
+- [Docker Hub - laftools-linux-x64](https://hub.docker.com/r/codegentoolbox/laftools-linux-x64)
+- [Docker Hub - laftools-arm64-x64](https://hub.docker.com/r/codegentoolbox/laftools-arm64-x64)
+
+# 🔋 官方网站
 
 为了快速使用这些功能，我们在美国和中国地区部署了稳定的在线网站供您使用。除了一些依赖特定操作系统功能的工具外，大多数工具都可以在我们的在线网站上找到。
 
 - 🇺🇸 海外版: [laftools.dev](https://laftools.dev)
 - 🇨🇳 国内版: [laftools.cn](https://laftools.cn)
 
-# 🔋 名字是怎么回事？
+# 🌠 预览
+
+![](https://github.com/work7z/LafTools/blob/dev/devtools/images/portal-1.png?raw=true)
+![](https://github.com/work7z/LafTools/blob/dev/devtools/images/preview-zh_CN.png?raw=true)
+![](https://github.com/work7z/LafTools/blob/dev/devtools/images/preview-dark-zh_CN.png?raw=true)
+
+# 📡 关于LAF
 
 - `L` -> Linked
 - `A` -> Asynchronous
@@ -30,40 +75,7 @@
 
 请放心，随着时间的推移，这个项目将会以非凡而奇妙的方式发展。这个项目需要更多的时间，就像酒一样，越久越好。
 
-# 💡 介绍
-
-您可能想知道为什么我们决心开发这个工具箱，因为互联网上有很多工具可以使用。 确实，我们提供的大多数工具都可以在互联网上轻松找到，例如编解码器、格式化、翻译、二维码等……但是，使用这些工具并不是最舒适和最有效的方法。
-
-您在使用这些在线工具时是否遇到过以下问题？
-
-- 无法离线访问。
-- 没有全局黑暗主题。
-- 没有高效的 UI 风格。
-- 网络性能差。
-- 令人不安的广告。
-- 数据泄露问题。
-
-如果以上任一问题的答案是肯定的，那么您应该考虑尝试我们的工具箱。它具有以下功能：
-
-- 永远的自由软件
-- 轻量级运行时
-- 全平台支持（包括ARMv8）
-- 完全类似 GPT 的支持
-- 与高效的 UI 高度集成
-- 可用的 Docker 映像和便携式版本
-- 额外的帮助，如注释、手册等......
-
-# 🌠 预览
-
-> LafTools工具箱仍在开发中，其 UI、依赖项或先决条件可能会根据需要进行更改。
-
-### 预览:
-
-[Online Preview](http://laftools.cn)
-![](https://github.com/work7z/LafTools/blob/dev/devtools/images/preview-zh_CN.png?raw=true)
-![](https://github.com/work7z/LafTools/blob/dev/devtools/images/preview-dark-zh_CN.png?raw=true)
-
-# 🚀 入门
+# 🌠 贡献
 
 ## 1. 设置系统环境
 
@@ -105,7 +117,7 @@ npm run fe-web
 
 ```bash
 cd pipeline
-./build-all.sh "v1.9.9-beta"
+./build-all.sh
 ```
 
 # 📑 其他材料
@@ -137,36 +149,6 @@ cd pipeline
 1. [one-api](https://github.com/songquanpeng/one-api) - an OpenAI key management & redistribution system.
 
 当然，还有其他开源项目受益并促进了这个项目，我无法在这一部分中详细介绍；如果没有这些项目和这些人才开发人员的努力，LafTools工具箱就不可能实现。
-
-# 🎷 灵感
-
-该项目主要受到以下音乐家的启发：
-
-- Joe Pass
-- The Manhattan Transfer
-- Laura Shigihara
-- Asleep at the Wheel
-- Khalil Fong
-- Li Rong Hao
-- Chet Atkins
-- Les Paul
-- Tommy Emmanuel
-- Martin Taylor
-- Frank Vignola
-- Frédéric Chopin
-- Claude Debussy
-- Oscar Peterson
-- Hugo Strasser
-- Jay Chou
-- Stefanie Sun
-- David Tao
-- Jacky Cheung
-- Teresa Teng
-- Jack Johnson
-- Harry Styles(As It Was)
-- Lovebugs
-
-具体来说，演奏家**乔·帕斯**在《与乔·帕斯的夜晚》（1994）中演奏的**缎子娃娃**给了我力量和信心的源泉，让我能够面对生活中的任何困境。 。
 
 # 🪪 License
 

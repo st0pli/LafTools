@@ -1,5 +1,58 @@
 <i>Note: 该页面是由LafTools工具箱内部生成的。</i> <br/> [English](/docs/en_US/FAQ.md)  |  简体中文  |  [繁體中文](/docs/zh_HK/FAQ.md)  |  [Deutsch](/docs/de/FAQ.md)  |  [Español](/docs/es/FAQ.md)  |  [Français](/docs/fr/FAQ.md)  |  [日本語](/docs/ja/FAQ.md)  |  [한국어](/docs/ko/FAQ.md) | [More](/docs/) <br/>
 
+# 💡 为什么选择 LafTools工具箱？
+
+您可能想知道为什么我们决心开发这个工具箱，因为互联网上有很多工具可以使用。 确实，我们提供的大多数工具都可以在互联网上轻松找到，例如编解码器、格式化、翻译、二维码等……但是，使用这些工具并不是最舒适和最有效的方法。
+
+您在使用这些在线工具时是否遇到过以下问题？
+
+- 无法离线访问。
+- 没有全局黑暗主题。
+- 没有高效的 UI 风格。
+- 网络性能差。
+- 令人不安的广告。
+- 数据泄露问题。
+
+如果以上任一问题的答案是肯定的，那么您应该考虑尝试我们的工具箱。它具有以下功能：
+
+- 永远的自由软件
+- 轻量级运行时
+- 全平台支持（包括ARMv8）
+- 完全类似 GPT 的支持
+- 与高效的 UI 高度集成
+- 可用的 Docker 映像和便携式版本
+- 额外的帮助，如注释、手册等......
+
+# 🎷 灵感
+
+该项目主要受到以下音乐家的启发：
+
+- Joe Pass
+- The Manhattan Transfer
+- Laura Shigihara
+- Asleep at the Wheel
+- Khalil Fong
+- Li Rong Hao
+- Chet Atkins
+- Les Paul
+- Tommy Emmanuel
+- Martin Taylor
+- Frank Vignola
+- Frédéric Chopin
+- Claude Debussy
+- Oscar Peterson
+- Hugo Strasser
+- Jay Chou
+- Stefanie Sun
+- David Tao
+- Jacky Cheung
+- Teresa Teng
+- Jack Johnson
+- Harry Styles(As It Was)
+- Lovebugs
+
+具体来说，演奏家**乔·帕斯**在《与乔·帕斯的夜晚》（1994）中演奏的**缎子娃娃**给了我力量和信心的源泉，让我能够面对生活中的任何困境。 。
+
 # 🙋 Is it a free software?
 
 Yes, it is open-source software, and you can use it following the terms of the license. However, please note that being open-source does not necessarily mean it's entirely free of charge. While most tools can be used for free, some may incur charges related to API usage and server costs.

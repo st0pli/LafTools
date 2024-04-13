@@ -1,5 +1,58 @@
 <i>Note: Esta página é gerada internamente pelo LafTools.</i> <br/> [English](/docs/en_US/FAQ.md)  |  [简体中文](/docs/zh_CN/FAQ.md)  |  [繁體中文](/docs/zh_HK/FAQ.md)  |  [Deutsch](/docs/de/FAQ.md)  |  [Español](/docs/es/FAQ.md)  |  [Français](/docs/fr/FAQ.md)  |  [日本語](/docs/ja/FAQ.md)  |  [한국어](/docs/ko/FAQ.md) | [More](/docs/) <br/>
 
+# 💡 Why LafTools?
+
+Você pode se perguntar por que estamos determinados a desenvolver esta caixa de ferramentas, já que existem inúmeras ferramentas que podem ser usadas na Internet. Na verdade, a maioria das ferramentas que disponibilizamos podem ser facilmente encontradas na Internet, como codec, formatador, tradução, QR Code, etc… No entanto, não é a abordagem mais confortável e eficiente para utilizar estas ferramentas.
+
+Você já encontrou os problemas abaixo ao usar essas ferramentas online?
+
+- Sem acessibilidade off-line.
+- Nenhum tema escuro global.
+- Nenhum estilo de UI produtiva.
+- Mau desempenho da rede.
+- Anúncios perturbadores.
+- Problema de vazamento de dados.
+
+Se a resposta a alguma das perguntas acima for sim, você deve considerar experimentar nossa caixa de ferramentas. Ele oferece os seguintes recursos:
+
+- Software Livre para Sempre
+- Tempo de execução leve
+- Suporte completo à plataforma (incluindo ARMv8)
+- Suporte completo semelhante ao GPT
+- Altamente integrado com UI produtiva
+- Imagens Docker disponíveis e edição portátil
+- Ajudantes extras, como notas, manuais, etc.
+
+# 🎷 Inspiração
+
+Este projeto é inspirado principalmente nos seguintes músicos:
+
+- Joe Pass
+- The Manhattan Transfer
+- Laura Shigihara
+- Asleep at the Wheel
+- Khalil Fong
+- Li Rong Hao
+- Chet Atkins
+- Les Paul
+- Tommy Emmanuel
+- Martin Taylor
+- Frank Vignola
+- Frédéric Chopin
+- Claude Debussy
+- Oscar Peterson
+- Hugo Strasser
+- Jay Chou
+- Stefanie Sun
+- David Tao
+- Jacky Cheung
+- Teresa Teng
+- Jack Johnson
+- Harry Styles(As It Was)
+- Lovebugs
+
+Especificamente, a performance de **Satin Doll** do virtuoso **Joe Pass** em 'An Evening With Joe Pass' (1994) tem sido uma fonte de força e confiança para mim, capacitando-me para enfrentar qualquer dilema na vida. .
+
 # 🙋 Is it a free software?
 
 Yes, it is open-source software, and you can use it following the terms of the license. However, please note that being open-source does not necessarily mean it's entirely free of charge. While most tools can be used for free, some may incur charges related to API usage and server costs.

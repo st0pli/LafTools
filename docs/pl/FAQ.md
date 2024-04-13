@@ -1,5 +1,58 @@
 <i>Note: Ta strona jest generowana wewnętrznie przez LafTools.</i> <br/> [English](/docs/en_US/FAQ.md)  |  [简体中文](/docs/zh_CN/FAQ.md)  |  [繁體中文](/docs/zh_HK/FAQ.md)  |  [Deutsch](/docs/de/FAQ.md)  |  [Español](/docs/es/FAQ.md)  |  [Français](/docs/fr/FAQ.md)  |  [日本語](/docs/ja/FAQ.md)  |  [한국어](/docs/ko/FAQ.md) | [More](/docs/) <br/>
 
+# 💡 Why LafTools?
+
+Możesz się zastanawiać, dlaczego jesteśmy zdeterminowani opracować ten zestaw narzędzi, skoro w Internecie można korzystać z wielu narzędzi. Rzeczywiście, większość narzędzi, które udostępniliśmy, można łatwo znaleźć w Internecie, takich jak kodek, formater, tłumaczenie, kod QR itp. Jednak korzystanie z tych narzędzi nie jest najwygodniejszym i najskuteczniejszym podejściem.
+
+Czy kiedykolwiek spotkałeś się z poniższymi problemami podczas korzystania z tych narzędzi online?
+
+- Brak dostępności offline.
+- Brak globalnego ciemnego motywu.
+- Brak produktywnego stylu interfejsu użytkownika.
+- Słaba wydajność sieci.
+- Denerwujące reklamy.
+- Problem wycieku danych.
+
+Jeśli odpowiedź na którekolwiek z powyższych pytań brzmi „tak”, powinieneś rozważyć wypróbowanie naszego zestawu narzędzi. Oferuje następujące funkcje:
+
+- FOSS na zawsze
+- Lekki czas działania
+- Pełna obsługa platformy (w tym ARMv8)
+- Pełna obsługa podobna do GPT
+- Wysoce zintegrowany z produktywnym interfejsem użytkownika
+- Dostępne obrazy platformy Docker i wersja przenośna
+- Dodatkowe pomoce, takie jak notatki, podręczniki itp.
+
+# 🎷 Inspiracja
+
+Projekt ten inspirowany jest przede wszystkim następującymi muzykami:
+
+- Joe Pass
+- The Manhattan Transfer
+- Laura Shigihara
+- Asleep at the Wheel
+- Khalil Fong
+- Li Rong Hao
+- Chet Atkins
+- Les Paul
+- Tommy Emmanuel
+- Martin Taylor
+- Frank Vignola
+- Frédéric Chopin
+- Claude Debussy
+- Oscar Peterson
+- Hugo Strasser
+- Jay Chou
+- Stefanie Sun
+- David Tao
+- Jacky Cheung
+- Teresa Teng
+- Jack Johnson
+- Harry Styles(As It Was)
+- Lovebugs
+
+W szczególności wykonanie **Satin Doll** wirtuoza **Joe Passa** w „An Evening With Joe Pass” (1994) było dla mnie źródłem siły i pewności siebie, dzięki czemu mogłem stawić czoła każdemu dylematowi życiowemu .
+
 # 🙋 Is it a free software?
 
 Yes, it is open-source software, and you can use it following the terms of the license. However, please note that being open-source does not necessarily mean it's entirely free of charge. While most tools can be used for free, some may incur charges related to API usage and server costs.

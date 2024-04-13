@@ -1,5 +1,58 @@
 <i>Note: 이 페이지는 LafTools에서 내부적으로 생성됩니다.</i> <br/> [English](/docs/en_US/FAQ.md)  |  [简体中文](/docs/zh_CN/FAQ.md)  |  [繁體中文](/docs/zh_HK/FAQ.md)  |  [Deutsch](/docs/de/FAQ.md)  |  [Español](/docs/es/FAQ.md)  |  [Français](/docs/fr/FAQ.md)  |  [日本語](/docs/ja/FAQ.md)  |  한국어 | [More](/docs/) <br/>
 
+# 💡 Why LafTools?
+
+인터넷에는 수많은 도구를 사용할 수 있는데 왜 우리가 이 도구 상자를 개발하기로 결정했는지 궁금할 것입니다. 실제로 우리가 제공하는 대부분의 도구는 코덱, 포맷터, 번역, QR 코드 등 인터넷에서 쉽게 찾을 수 있습니다. 그러나 이러한 도구를 사용하는 것이 가장 편안하고 효율적인 접근 방식은 아닙니다.
+
+해당 온라인 도구를 사용하는 동안 아래 문제를 만난 적이 있습니까?
+
+- 오프라인 접근성이 없습니다.
+- 글로벌 다크 테마가 없습니다.
+- 생산적인 UI 스타일이 없습니다.
+- 네트워크 성능이 좋지 않습니다.
+- 혼란스러운 광고.
+- 데이터 유출 문제.
+
+위 항목 중 하나라도 '예'라고 답했다면 당사의 도구 상자를 사용해 보시기 바랍니다. 다음과 같은 기능을 제공합니다.
+
+- 포스 포에버
+- 경량 런타임
+- 전체 플랫폼 지원(ARMv8 포함)
+- 완전한 GPT 유사 지원
+- 생산적인 UI와 고도로 통합됨
+- 사용 가능한 Docker 이미지 및 Portable Edition
+- 메모, 매뉴얼 등과 같은 추가 도우미...
+
+# 🎷 영감
+
+이 프로젝트는 주로 다음 음악가들로부터 영감을 받았습니다.
+
+- Joe Pass
+- The Manhattan Transfer
+- Laura Shigihara
+- Asleep at the Wheel
+- Khalil Fong
+- Li Rong Hao
+- Chet Atkins
+- Les Paul
+- Tommy Emmanuel
+- Martin Taylor
+- Frank Vignola
+- Frédéric Chopin
+- Claude Debussy
+- Oscar Peterson
+- Hugo Strasser
+- Jay Chou
+- Stefanie Sun
+- David Tao
+- Jacky Cheung
+- Teresa Teng
+- Jack Johnson
+- Harry Styles(As It Was)
+- Lovebugs
+
+특히 'An Evening With Joe Pass'(1994)에서 거장 **Joe Pass**의 **Satin Doll** 연주는 나에게 힘과 자신감의 원천이 되었으며, 인생의 어떤 딜레마에도 직면할 수 있는 힘을 주었습니다. .
+
 # 🙋 Is it a free software?
 
 Yes, it is open-source software, and you can use it following the terms of the license. However, please note that being open-source does not necessarily mean it's entirely free of charge. While most tools can be used for free, some may incur charges related to API usage and server costs.
