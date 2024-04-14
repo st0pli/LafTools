@@ -11,7 +11,8 @@ import { GithubRepoLink } from "@/app/__CORE__/meta/constants"
 import { PortalDefinitionType } from "./d_portal"
 import { CategorySearchProps } from "@/app/[lang]/page"
 import { tw } from "../../types/styles"
-import { ifnil } from "../../pages/WorkBench/FixedLayout/Main/Center/sub/center-view/Transformer/ProcessPanel/hooks"
+import { ifnil } from "@/app/__CORE__/meta/fn"
+// import { ifnil } from "../../pages/WorkBench/FixedLayout/Main/Center/sub/center-view/Transformer/ProcessPanel/hooks"
 
 export type CategoryType = "" | "tools" | "resources" | "docs" | "ai" | "user"
 
@@ -46,7 +47,6 @@ export let getCategoryParentTwClz = (category: CategoryType): string => {
     }
     return parentClz
 }
-
 export let getIconImgAndBannerTextByCategory = (category: CategoryType, props: NavigatorPassProp): { iconImg: string, crtTitleBanner: string } => {
     let iconImg = ''
     let crtTitleBanner = ''
@@ -662,44 +662,330 @@ export let getAISubCategory = ((): PortalDefinitionType[] => {
 
 export let getDocsSubCategory = ((): PortalDefinitionType[] => {
     return [
-        // provide several examples for the docs
+        // Frontend docs 
         {
-            id: 'docs',
-            label: Dot("Documentation", "Documentation"),
-            longLabel: Dot("Documentation", "Documentation"),
-            seoTitle: Dot("Documentation", "Documentation"),
+            id: 'frontend',
+            label: Dot("Frontend", "Frontend"),
+            longLabel: Dot("Frontend", "Frontend"),
+            seoTitle: Dot("Frontend", "Frontend"),
             seoKeywords: [
-                "documentation",
-                "docs",
-                "api",
-                "guides",
-                "tutorials",
-                "reference",
-                "manuals"
+                "frontend",
+                "frontend docs",
+                "frontend guide",
+                "frontend tutorials",
+                "frontend resources",
+                "frontend tools"
             ],
-            seoDescription: Dot("Documentation", "Documentation"),
+            seoDescription: Dot("Frontend", "Frontend"),
             subTabs: [
                 {
-                    id: 'api',
-                    label: Dot("API", "API"),
+                    id: 'html',
+                    label: Dot("HTML", "HTML"),
                 },
                 {
-                    id: 'guides',
-                    label: Dot("Guides", "Guides"),
+                    id: 'css',
+                    label: Dot("CSS", "CSS"),
                 },
                 {
-                    id: 'tutorials',
-                    label: Dot("Tutorials", "Tutorials"),
+                    id: 'javascript',
+                    label: Dot("JavaScript", "JavaScript"),
                 },
                 {
-                    id: 'reference',
-                    label: Dot("Reference", "Reference"),
+                    id: 'typescript',
+                    label: Dot("TypeScript", "TypeScript"),
                 },
                 {
-                    id: 'manuals',
-                    label: Dot("Manuals", "Manuals"),
+                    id: 'react',
+                    label: 'React',
+                },
+                {
+                    id: 'vue',
+                    label: 'Vue',
+                },
+                {
+                    id: 'angular',
+                    label: 'Angular',
+                },
+                {
+                    id: 'svelte',
+                    label: 'Svelte',
+                },
+                {
+                    id: 'web-components',
+                    label: Dot("Web Components", "Web Components"),
+                },
+                {
+                    id: 'pwa',
+                    label: Dot("PWA", "PWA"),
+                },
+                {
+                    id: 'web-assembly',
+                    label: Dot("Web Assembly", "Web Assembly"),
+                },
+                {
+                    id: 'webgl',
+                    label: Dot("WebGL", "WebGL"),
+                },
+                {
+                    id: 'webvr',
+                    label: Dot("WebVR", "WebVR"),
+                },
+                {
+                    id: 'webxr',
+                    label: Dot("WebXR", "WebXR"),
+                },
+                {
+                    id: 'websockets',
+                    label: Dot("WebSockets", "WebSockets"),
+                },
+                {
+                    id: 'web-audio',
+                    label: Dot("Web Audio", "Web Audio"),
+                },
+                {
+                    id: 'web-rtc',
+                    label: Dot("WebRTC", "WebRTC"),
+                },
+                {
+                    id: 'web-storage',
+                    label: Dot("Web Storage", "Web Storage"),
+                }
+            ]
+        },
+        // backend docs
+        {
+            id: 'backend',
+            label: Dot("Backend", "Backend"),
+            longLabel: Dot("Backend", "Backend"),
+            seoTitle: Dot("Backend", "Backend"),
+            seoKeywords: [
+                "backend",
+                "backend docs",
+                "backend guide",
+                "backend tutorials",
+                "backend resources",
+                "backend tools"
+            ],
+            seoDescription: Dot("Backend", "Backend"),
+            subTabs: [
+                {
+                    id: 'nodejs',
+                    label: "Node.js",
+                },
+                {
+                    id: 'express',
+                    label: "Express",
+                },
+                {
+                    id: 'koa',
+                    label: "Koa",
+                },
+                {
+                    id: 'hapi',
+                    label: "Hapi",
+                },
+                {
+                    id: 'sails',
+                    label: "Sails",
+                },
+                {
+                    id: 'meteor',
+                    label: "Meteor",
+                },
+                {
+                    id: 'nestjs',
+                    label: "NestJS",
+                },
+                // provide java-based backend docs
+                {
+                    id: 'java',
+                    label: "Java",
+                },
+                {
+                    id: 'spring',
+                    label: "Spring",
+                },
+                {
+                    id: 'spring-boot',
+                    label: "Spring Boot",
+                },
+                {
+                    id: 'spring-cloud',
+                    label: "Spring Cloud",
+                },
+                {
+                    id: 'spring-data',
+                    label: "Spring Data",
+                },
+                {
+                    id: 'spring-security',
+                    label: "Spring Security",
+                },
+                {
+                    id: 'spring-web',
+                    label: "Spring Web",
+                },
+                {
+                    id: 'spring-webflux',
+                    label: "Spring WebFlux",
+                },
+                {
+                    id: 'spring-mvc',
+                    label: "Spring MVC",
                 },
             ]
-        }
+        },
+        // provide database docs
+        {
+            id: 'database',
+            label: Dot("Database", "Database"),
+            longLabel: Dot("Database", "Database"),
+            seoTitle: Dot("Database", "Database"),
+            seoKeywords: [
+                "database",
+                "database docs",
+                "database guide",
+                "database tutorials",
+                "database resources",
+                "database tools"
+            ],
+            seoDescription: Dot("Database", "Database"),
+            subTabs: [
+                {
+                    id: 'mysql',
+                    label: "MySQL",
+                },
+                {
+                    id: 'mariadb',
+                    label: "MariaDB",
+                },
+                {
+                    id: 'postgresql',
+                    label: "PostgreSQL",
+                },
+                {
+                    id: 'sqlite',
+                    label: "SQLite",
+                },
+                {
+                    id: 'mongodb',
+                    label: "MongoDB",
+                },
+                {
+                    id: 'couchdb',
+                    label: "CouchDB",
+                },
+                {
+                    id: 'cassandra',
+                    label: "Cassandra",
+                },
+                {
+                    id: 'redis',
+                    label: "Redis",
+                },
+                {
+                    id: 'memcached',
+                    label: "Memcached",
+                },
+                {
+                    id: 'elasticsearch',
+                    label: "Elasticsearch",
+                },
+                {
+                    id: 'solr',
+                    label: "Solr",
+                },
+                {
+                    id: 'neo4j',
+                    label: "Neo4j",
+                },
+                {
+                    id: 'orientdb',
+                    label: "OrientDB",
+                },
+                {
+                    id: 'arangodb',
+                    label: "ArangoDB",
+                },
+                {
+                    id: 'influxdb',
+                    label: "InfluxDB",
+                },
+                {
+                    id: 'timescaledb',
+                    label: "TimescaleDB",
+                },
+                {
+                    id: 'cockroachdb',
+                    label: "CockroachDB",
+                },
+            ]
+        },
+        // provide webmaster docs
+        {
+            id: 'webmaster',
+            label: Dot("Webmaster", "Webmaster"),
+            longLabel: Dot("Webmaster", "Webmaster"),
+            seoTitle: Dot("Webmaster", "Webmaster"),
+            seoKeywords: [
+                "webmaster",
+                "webmaster docs",
+                "webmaster guide",
+                "webmaster tutorials",
+                "webmaster resources",
+                "webmaster tools"
+            ],
+            seoDescription: Dot("Webmaster", "Webmaster"),
+            subTabs: [
+                {
+                    id: 'seo',
+                    label: "SEO",
+                },
+                {
+                    id: 'sem',
+                    label: "SEM",
+                },
+                {
+                    id: 'smm',
+                    label: "SMM",
+                },
+                {
+                    id: 'ppc',
+                    label: "PPC",
+                },
+                {
+                    id: 'cro',
+                    label: "CRO",
+                },
+                {
+                    id: 'ux',
+                    label: "UX",
+                },
+                {
+                    id: 'ui',
+                    label: "UI",
+                },
+                {
+                    id: 'usability',
+                    label: "Usability",
+                },
+                {
+                    id: 'accessibility',
+                    label: "Accessibility",
+                },
+                {
+                    id: 'web-analytics',
+                    label: "Web Analytics",
+                },
+                {
+                    id: 'webmaster-tools',
+                    label: "Webmaster Tools",
+                },
+                {
+                    id: 'webmaster-resources',
+                    label: "Webmaster Resources",
+                },
+            ]
+        },
     ]
 })
