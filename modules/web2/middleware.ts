@@ -1,11 +1,9 @@
-import { deleteCookie, getCookie } from "cookies-next";
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { match } from "@formatjs/intl-localematcher";
-import Negotiator from "negotiator";
 import { I18nItem } from "./app/__CORE__/config/i18n";
 import { fn_Geti18n } from "./app/[lang]/client/src/i18n-pure";
 import info from "./app/[lang]/[category]/info";
+import { isDevEnv } from "./app/__CORE__/share/env";
 
 let dftLocaleStr = process.env.APPLANG;
 let LAFREGION = process.env.LAFREGION; // CN or US
@@ -14,9 +12,11 @@ if (!dftLocaleStr) {
 }
 
 // process.env.BOOT_LAST_MODIFIED ||
-const bootLastModified = new Date(
-  parseInt(info.timestamp) * 1000,
-).toUTCString();
+let bootLastModified = new Date(parseInt(info.timestamp) * 1000).toUTCString();
+
+if (isDevEnv()) {
+  bootLastModified = "";
+}
 
 let _ = {
   every: (a: any, b: any) => {

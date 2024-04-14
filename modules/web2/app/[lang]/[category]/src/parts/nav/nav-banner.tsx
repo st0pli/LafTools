@@ -49,39 +49,12 @@ import { URL_SUBCATEGORY_GO_PATH } from "@/app/__CORE__/meta/url";
 import { fmtURL_ToolSubPage } from "@/app/__CORE__/meta/common";
 import { NavigatorPassProp } from "..";
 import { ifnil } from "@/app/__CORE__/meta/fn";
+import { getIconImgAndBannerTextByCategory } from "@/app/[lang]/client/src/impl/tools/d_subcategory";
 
 export default (props: NavigatorPassProp) => {
-    let crtTitleBanner = ''
-    let iconImg = ''
     let { category } = props.params;
-    if (ifnil(category, 'tools') == 'tools') {
-        iconImg = 'icon-dev.png'
-        crtTitleBanner = (
-            Dot("OyZLZokUQ", "Empower Development with LafTools!")
-        )
-    } else if (category == 'ai') {
-        iconImg = 'icon-ailab.png'
-        crtTitleBanner = (
-            Dot("OP2Ogtd1O", "Experience AI Features with LafTools!")
-        )
-    } else if (category == 'docs') {
-        iconImg = 'icon-docs.png'
-        crtTitleBanner = (
-            Dot("Tj2A9ou2k", "Read Documentations with LafTools!")
-        )
-    } else if (category == 'resources') {
-        iconImg = 'icon-rsce.png'
-        crtTitleBanner = (
-            Dot("sr9eCEJ0b6M", "Get Resources with LafTools!")
-        )
-    } else if (category == 'user') {
-        let subCategory = props.params.subCategory
-        iconImg = 'icon.png'
-        crtTitleBanner = (
-            Dot("sjod7G6WL", "User Centre") + ' - ' + Dot('xqXtuqU5W', 'Sign In')
-        )
-    } else {
-    }
+    let { iconImg, crtTitleBanner } = getIconImgAndBannerTextByCategory(category, props);
+
     return <div className={border_clz + " py-3 p-4 relative bg-slate-50 dark:bg-slate-900"}>
         <div className={row_pad_clz + ' z-20 flex flex-row items-center relative'}>
             <div className="mx-2 mr-3">

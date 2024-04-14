@@ -1,5 +1,5 @@
 
-import { LabelHrefType } from "@/app/[lang]/[category]/src/parts"
+import { LabelHrefType, NavigatorPassProp } from "@/app/[lang]/[category]/src/parts"
 import { getAppDevIcon, getAppKeywords } from "@/app/__CORE__/config/imgconfig"
 import { Dot } from "@/app/__CORE__/utils/TranslationUtils"
 import { fmtURL_Server } from "@/app/__CORE__/utils/routeUtils"
@@ -11,6 +11,7 @@ import { GithubRepoLink } from "@/app/__CORE__/meta/constants"
 import { PortalDefinitionType } from "./d_portal"
 import { CategorySearchProps } from "@/app/[lang]/page"
 import { tw } from "../../types/styles"
+import { ifnil } from "../../pages/WorkBench/FixedLayout/Main/Center/sub/center-view/Transformer/ProcessPanel/hooks"
 
 export type CategoryType = "" | "tools" | "resources" | "docs" | "ai" | "user"
 
@@ -44,6 +45,46 @@ export let getCategoryParentTwClz = (category: CategoryType): string => {
         // do nothing
     }
     return parentClz
+}
+
+export let getIconImgAndBannerTextByCategory = (category: CategoryType, props: NavigatorPassProp): { iconImg: string, crtTitleBanner: string } => {
+    let iconImg = ''
+    let crtTitleBanner = ''
+    if (ifnil(category, 'tools') == 'tools') {
+        iconImg = 'icon-dev.png'
+        crtTitleBanner = (
+            Dot("OyZLZokUQ", "Empower Development with LafTools!")
+        )
+    } else if (category == 'ai') {
+        iconImg = 'icon-ailab.png'
+        crtTitleBanner = (
+            Dot("OP2Ogtd1O", "Experience AI Features with LafTools!")
+        )
+    } else if (category == 'docs') {
+        iconImg = 'icon-docs.png'
+        crtTitleBanner = (
+            Dot("Tj2A9ou2k", "Read Documentations with LafTools!")
+        )
+    } else if (category == 'resources') {
+        iconImg = 'icon-rsce.png'
+        crtTitleBanner = (
+            Dot("sr9eCEJ0b6M", "Get Resources with LafTools!")
+        )
+    } else if (category == 'user') {
+        iconImg = 'icon.png'
+        let name_map = {
+            'sign-in': Dot("sign.in", "Sign In"),
+            'sign-up': Dot("sign.up", "Sign Up"),
+            'reset-password': Dot("forgot.password", "Forgot Password"),
+        }
+        crtTitleBanner = (
+            Dot("sjod7G6WL", "User Centre") + ' - ' + name_map[props.params.subCategory]
+        )
+    }
+    return {
+        iconImg,
+        crtTitleBanner
+    }
 }
 
 export let getToolSubCategory = ((): PortalDefinitionType[] => {
@@ -531,13 +572,134 @@ export let getUserSubCategory = ((): PortalDefinitionType[] => {
 
 
 export let getResourcesSubCategory = ((): PortalDefinitionType[] => {
-    return []
+    return [
+        {
+            id: 'code',
+            label: Dot("code", "Code"),
+            longLabel: Dot("code", "Code"),
+            seoTitle: Dot("code", "Code"),
+            seoKeywords: [
+                "code",
+                "code snippets",
+                "code examples",
+                "code samples",
+                "code templates",
+                "code resources",
+                "code tools"
+            ],
+            seoDescription: Dot("code", "Code"),
+            subTabs: [
+                {
+                    id: 'code-snippets',
+                    label: Dot("code.snippets", "Code Snippets"),
+                },
+                {
+                    id: 'code-examples',
+                    label: Dot("code.examples", "Code Examples"),
+                },
+                {
+                    id: 'code-samples',
+                    label: Dot("code.samples", "Code Samples"),
+                },
+                {
+                    id: 'code-templates',
+                    label: Dot("code.templates", "Code Templates"),
+                },
+                {
+                    id: 'code-resources',
+                    label: Dot("code.resources", "Code Resources"),
+                },
+                {
+                    id: 'code-tools',
+                    label: Dot("code.tools", "Code Tools"),
+                },
+            ]
+        }
+    ]
 })
 
 export let getAISubCategory = ((): PortalDefinitionType[] => {
-    return []
+    return [
+        {
+            id: 'ai-lab',
+            label: Dot("AI Lab", "AI Lab"),
+            longLabel: Dot("AI Lab", "AI Lab"),
+            seoTitle: Dot("AI Lab", "AI Lab"),
+            seoKeywords: [
+                "ai lab",
+                "ai tools",
+                "ai models",
+                "ai experiments",
+                "ai research",
+                "ai development"
+            ],
+            seoDescription: Dot("AI Lab", "AI Lab"),
+            subTabs: [
+                {
+                    id: 'ai-models',
+                    label: Dot("AI Models", "AI Models"),
+                },
+                {
+                    id: 'ai-tools',
+                    label: Dot("AI Tools", "AI Tools"),
+                },
+                {
+                    id: 'ai-experiments',
+                    label: Dot("AI Experiments", "AI Experiments"),
+                },
+                {
+                    id: 'ai-research',
+                    label: Dot("AI Research", "AI Research"),
+                },
+                {
+                    id: 'ai-development',
+                    label: Dot("AI Development", "AI Development"),
+                },
+            ]
+        }
+    ]
 })
 
 export let getDocsSubCategory = ((): PortalDefinitionType[] => {
-    return []
+    return [
+        // provide several examples for the docs
+        {
+            id: 'docs',
+            label: Dot("Documentation", "Documentation"),
+            longLabel: Dot("Documentation", "Documentation"),
+            seoTitle: Dot("Documentation", "Documentation"),
+            seoKeywords: [
+                "documentation",
+                "docs",
+                "api",
+                "guides",
+                "tutorials",
+                "reference",
+                "manuals"
+            ],
+            seoDescription: Dot("Documentation", "Documentation"),
+            subTabs: [
+                {
+                    id: 'api',
+                    label: Dot("API", "API"),
+                },
+                {
+                    id: 'guides',
+                    label: Dot("Guides", "Guides"),
+                },
+                {
+                    id: 'tutorials',
+                    label: Dot("Tutorials", "Tutorials"),
+                },
+                {
+                    id: 'reference',
+                    label: Dot("Reference", "Reference"),
+                },
+                {
+                    id: 'manuals',
+                    label: Dot("Manuals", "Manuals"),
+                },
+            ]
+        }
+    ]
 })

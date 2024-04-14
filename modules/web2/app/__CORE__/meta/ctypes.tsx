@@ -24,11 +24,6 @@ import { CommonTransformerPassProp } from "../../[lang]/client/src/types/workben
 import { AppOptViewMode } from "../../[lang]/client/src/pages/WorkBench/FixedLayout/Main/Center/sub/center-view/Transformer";
 
 
-export type AppInfoClz = {
-    version: string,
-    releaseDate: string,
-    timestamp: string
-}
 
 export type VersionReleaseRequirement = {
     consistentID: string | null, // e.g. if current consistent ID is not matched with one from new version, then we'd better do a full package release
