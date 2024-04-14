@@ -23,13 +23,16 @@ if (!existsSync(logDir)) {
 const logFormat = winston.format.printf(
   ({ timestamp, level, message }) => `${timestamp} ${level}: ${message}`,
 );
+export let isDebugMode = () => {
+  return process.env.DEBUG_MODE == "yes";
+};
 
 /*
  * Log Level
  * error: 0, warn: 1, info: 2, http: 3, verbose: 4, debug: 5, silly: 6
  */
 const logger = winston.createLogger({
-  level: process.env.DEBUG_MODE ? "silly" : "info",
+  level: isDebugMode() ? "silly" : "info",
   format: winston.format.combine(
     winston.format.timestamp({
       format: "YYYY-MM-DD HH:mm:ss",
@@ -37,6 +40,7 @@ const logger = winston.createLogger({
     logFormat,
   ),
   transports: [
+    // console log setting
     new Console({}),
     // debug log setting
     new winstonDaily({

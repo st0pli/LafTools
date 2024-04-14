@@ -25,7 +25,7 @@ import {
 } from "../web2share-copy/server_constants";
 import { DLinkType, IsCurrentServerMode } from "../types";
 import crypto from "crypto";
-import { logger } from "../utils/logger";
+import { isDebugMode, logger } from "../utils/logger";
 import fs from "fs";
 import stream from "stream";
 import { computeHash } from "../utils/hash";
@@ -44,7 +44,7 @@ let bootstrapInternalDir = getAppBootstrapInternalDir();
 let bootStrapImplWeb2Dir = getAppBootstrapImplWeb2Dir();
 let tempDir = getAppBootstrapTempDir();
 
-let debugMode = process.env.DEBUG_MODE == "yes"; // TODO: just mark it as debug for now
+let debugMode = isDebugMode(); // TODO: just mark it as debug for now
 if (debugMode) {
   logger.debug("debug mode is enabled");
 } else {
@@ -60,6 +60,7 @@ export let getMinimalDIrPath = () => {
 let minimalDIRPath = getMinimalDIrPath();
 logger.debug("minimalDIRPath: " + minimalDIRPath);
 let currentPkgInfo = readPkgInfoFromDir(minimalDIRPath);
+
 export let getLatestVersionResponse = async (): Promise<
   SysResponse<ReleaseLatestResponse>
 > => {
@@ -108,6 +109,28 @@ export let quitAndRestart = () => {
   let reloadFile = getBootstrapUpdateReloadFile("web2");
   fs.writeFileSync(reloadFile, "1");
   process.exit(0);
+};
+
+export let cleanOldUnusedFiles = async (reversedVersions: string[]) => {
+  logger.info("cleanOldUnusedFiles: " + reversedVersions.join(","));
+  // clean temp dir
+  let tempDir = getAppBootstrapTempDir();
+  logger.info("will clean temp dir: " + tempDir);
+  if (fs.existsSync(tempDir)) {
+    // delete all files under tempDir
+    shelljs.ls(tempDir).forEach((f) => {
+      logger.info("cleaned temp file: " + f);
+      shelljs.rm("-rf", f);
+    });
+  }
+  let implWeb2Dir = getAppBootstrapImplWeb2Dir();
+  logger.info("will clean implWeb2Dir dir: " + implWeb2Dir);
+  shelljs.ls(implWeb2Dir).forEach((f) => {
+    if (reversedVersions.indexOf(f) === -1) {
+      logger.info("cleaned implWeb2Dir file: " + f);
+      shelljs.rm("-rf", f);
+    }
+  });
 };
 
 export let extractTempFileAndConfirmIt = async (
@@ -247,8 +270,10 @@ export let job_runVersionCheck = async () => {
             let finalFile = await downloadByPkgInfo(latestInfo);
             // STEP-2: extract the file and confirm it
             await extractTempFileAndConfirmIt(finalFile, latestInfo);
-            fs.writeFileSync(f, "1");
-            // everything is ok, nice!
+            // STEP-3: clean old unused files
+            await cleanOldUnusedFiles([newVer, currentPkgInfo.version]);
+            // STEP-4: mark the file as resolved, means everything is ok to proceed with
+            fs.writeFileSync(f, "ts-" + Date.now());
             logger.info("update done, will restart this process now");
             await quitAndRestart();
           }

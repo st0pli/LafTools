@@ -52,7 +52,7 @@ docker run -e LAFREGION=CN -e APPLANG=zh_CN --name mylaftools -v ~/.laftools-doc
 - [Docker Hub - laftools-linux-x64](https://hub.docker.com/r/codegentoolbox/laftools-linux-x64)
 - [Docker Hub - laftools-arm64-x64](https://hub.docker.com/r/codegentoolbox/laftools-arm64-x64)
 
-# 🔋 Official Websites
+# 🔗 Online Websites
 
 Aby szybko korzystać z tych funkcji, wdrożyliśmy stabilną witrynę internetową w USA i regionie CN. Większość narzędzi jest dostępna w naszych witrynach internetowych, z wyjątkiem niektórych narzędzi, które opierają się na określonych możliwościach systemu operacyjnego.
 
