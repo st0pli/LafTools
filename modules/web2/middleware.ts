@@ -11,9 +11,7 @@ if (!dftLocaleStr) {
   dftLocaleStr = "en_US";
 }
 
-// process.env.BOOT_LAST_MODIFIED ||
 let bootLastModified = new Date(parseInt(info.timestamp) * 1000).toUTCString();
-
 if (isDevEnv()) {
   bootLastModified = "";
 }
