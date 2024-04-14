@@ -30,22 +30,22 @@ ${Dot('hOKTq1t-J',"LafTools is a privacy-first, self-hosted, fully open source t
 
 # 🚀 ${Dot('PPI2qy173M','Run it on {0}','Docker')}
 
-**For GLOBAL users:**
+**${Dot('OfXsxq-cF','For GLOBAL users')}:**
 
 ```
-docker run -e LAFREGION=US -e APPLANG=en_US --name mylaftools -d -p 0.0.0.0:39899:39899 codegentoolbox/laftools-linux-x64:latest
+docker run -e LAFREGION=US -e APPLANG=en_US --name mylaftools -v ~/.laftools-docker:/root/.laftools  -d -p 0.0.0.0:39899:39899 codegentoolbox/laftools-linux-x64:latest
 ```
 
-**For CHINESE users(国内用户):**
+**${Dot('9efTlPJVX','For CHINESE users')}(国内用户):**
 
 ```
-docker run -e LAFREGION=CN -e APPLANG=zh_CN --name mylaftools -d -p 0.0.0.0:39899:39899 codegentoolbox/laftools-linux-x64:latest
+docker run -e LAFREGION=CN -e APPLANG=zh_CN --name mylaftools -v ~/.laftools-docker:/root/.laftools -d -p 0.0.0.0:39899:39899 codegentoolbox/laftools-linux-x64:latest
 ```
 
 **NOTE**:
 
 1. ${Dot('t9ql09Wnx','Default port is set to 39899, you can adjust it if needed.')}
-2. ${Dot('kQOiEpza3','LafTools will always be upgraded to latest version automatically to let you can enjoy latest functions and bugfixs.')}
+2. ${Dot('kQOiEpza3','LafTools will always be upgraded to latest version automatically so that you can enjoy latest functions and bugfixs.')}
 
 **Docker Images:**
 

@@ -6,6 +6,7 @@
     "fe-job": "sh ./pipeline/dev-run-scan-and-generate.sh",
     "fe-sync-web2share": "sh ./pipeline/dev-sync-copy-files.sh",
     "fe-release": "sh ./devtools/docs-generator/pipeline/build.sh",
+    "fe-docs-gen": "sh ./devtools/docs-generator/pipeline/build.sh",
     "do-tag": "sh ./pipeline/do-tag.sh",
     "fe-release-full": "npm run fe-scan-all && npm run fe-release-docs",
     "win-clean": "taskkill /F /IM bash.exe",
