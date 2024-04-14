@@ -29,7 +29,7 @@ const logFormat = winston.format.printf(
  * error: 0, warn: 1, info: 2, http: 3, verbose: 4, debug: 5, silly: 6
  */
 const logger = winston.createLogger({
-  level: "silly",
+  level: process.env.DEBUG_MODE ? "silly" : "info",
   format: winston.format.combine(
     winston.format.timestamp({
       format: "YYYY-MM-DD HH:mm:ss",
@@ -38,12 +38,6 @@ const logger = winston.createLogger({
   ),
   transports: [
     new Console({}),
-    // new Console({
-    //   level: "info",
-    // }),
-    // new Console({
-    //   level: "error",
-    // }),
     // debug log setting
     new winstonDaily({
       level: "debug",

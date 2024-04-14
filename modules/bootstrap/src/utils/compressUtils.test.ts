@@ -9,6 +9,19 @@ let distDIR = join(__dirname, "dist");
 import fs from "fs";
 
 test(
+  "test-logger",
+  async () => {
+    logger.info("get info");
+    logger.debug("get debug");
+    logger.warn("get warn");
+    logger.error("get warn");
+  },
+  {
+    timeout: 500000,
+  },
+);
+
+test(
   "test-unexact-targz",
   async () => {
     let inputPath = join(examplesDIR, "testdata.tar.gz");

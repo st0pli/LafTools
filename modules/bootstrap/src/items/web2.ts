@@ -44,7 +44,7 @@ let bootstrapInternalDir = getAppBootstrapInternalDir();
 let bootStrapImplWeb2Dir = getAppBootstrapImplWeb2Dir();
 let tempDir = getAppBootstrapTempDir();
 
-let debugMode = process.env.DEBUG_MODE == "yes"; //  fs.existsSync(debugFile) // TODO: just mark it as debug for now
+let debugMode = process.env.DEBUG_MODE == "yes"; // TODO: just mark it as debug for now
 if (debugMode) {
   logger.debug("debug mode is enabled");
 } else {
