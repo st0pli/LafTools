@@ -166,7 +166,7 @@ export let extractTempFileAndConfirmIt = async (
 };
 
 export let downloadByPkgInfo = async (latestInfo: PkgDownloadInfo) => {
-  logger.debug("downloadByPkgInfo: " + JSON.stringify(latestInfo));
+  logger.info("downloadByPkgInfo: " + JSON.stringify(latestInfo));
   let currentPlatform = currentPkgInfo.platform;
   let l_fileName = latestInfo.fileName;
   let l_pkgURL = latestInfo.pkgURL;
@@ -177,25 +177,25 @@ export let downloadByPkgInfo = async (latestInfo: PkgDownloadInfo) => {
     tempDir,
     Date.now() + "-" + randomSTR + "-" + l_fileName,
   );
-  logger.debug("currentTempFile", currentTempFile);
+  logger.info("currentTempFile", currentTempFile);
   // download l_pkgURL to currentTempFile by using fetch and fs
   let sha256Res = await fetch(sha256SumURL);
   let sha256Text = await sha256Res.text();
-  logger.debug("sha256Text", sha256Text);
+  logger.info("sha256Text", sha256Text);
   // exact sha256 from sha256Text
   let expect_findSHA256Value: string | null = null;
   sha256Text.split("\n").every((line) => {
-    logger.debug("line: ", line);
+    logger.info("line: ", line);
     if (line.trim() == "") {
       return true;
     }
     let [sha256, fileName] = line.split("  ");
     sha256 = sha256.trim();
     fileName = fileName.trim();
-    logger.debug(`read sha256: ${sha256}, fileName: ${fileName}`);
+    logger.info(`read sha256: ${sha256}, fileName: ${fileName}`);
     if (fileName == l_fileName) {
       expect_findSHA256Value = sha256;
-      logger.debug("detected l_fileName: " + l_fileName);
+      logger.info("detected l_fileName: " + l_fileName);
       return false;
     }
     return true;
@@ -203,7 +203,7 @@ export let downloadByPkgInfo = async (latestInfo: PkgDownloadInfo) => {
   if (!expect_findSHA256Value) {
     throw new Error("sha256 not found");
   } else {
-    logger.debug("expect sha256:" + expect_findSHA256Value);
+    logger.info("expect sha256:" + expect_findSHA256Value);
   }
   let fetchRes = await fetch(l_pkgURL);
   logger.info(`fetch URL: ${fetchRes.url}, status: ${fetchRes.status}`);
@@ -214,14 +214,14 @@ export let downloadByPkgInfo = async (latestInfo: PkgDownloadInfo) => {
   } else {
     logger.info("fetch basic info success");
   }
-  logger.debug("reading arrayBuffer...");
+  logger.info("reading arrayBuffer...");
   let buffer = await fetchRes.arrayBuffer();
   writeFileSync(currentTempFile, Buffer.from(buffer));
 
-  logger.debug("OK, downloaded to " + currentTempFile);
+  logger.info("OK, downloaded to " + currentTempFile);
   // do sha256 sum check for currentTempFile
   let actual_sha256Value = await computeHash(currentTempFile);
-  logger.debug(
+  logger.info(
     "computed SHA256, expect: " +
       expect_findSHA256Value +
       " actual: " +
@@ -265,7 +265,7 @@ export let job_runVersionCheck = async () => {
             logger.debug("already updated, ignore this update. file: " + f);
           } else {
             // ignore beta or other version
-            logger.debug("latest version: " + newVer);
+            logger.info("latest version: " + newVer);
             // STEP-1: download the latest version
             let finalFile = await downloadByPkgInfo(latestInfo);
             // STEP-2: extract the file and confirm it
