@@ -31,9 +31,10 @@ import FundrasingPlanBtn from '../cpt/cpt-fundrasing-btn';
 import Sidebar from './main-sidebar';
 import { ToolProp } from '.';
 import { getCardsProps } from './main-part';
-import { fmtURL_ToolSubPage, getToolSubCategory } from '../../../types';
+import { fmtURL_ToolSubPage, } from '../../../types';
 import _ from 'lodash';
 import { URL_SUBCATEGORY_GO_PATH } from '@/app/__CORE__/meta/url';
+import { getToolSubCategory } from '@/app/[lang]/client/src/impl/tools/d_subcategory';
 
 export default (props: ToolProp) => {
     let subCategory = getToolSubCategory()

@@ -2,6 +2,7 @@
   "name": "laftools-go",
   "version": "v2.2.29",
   "scripts": {
+    "add-license": "sh ./pipeline/dev-add-license-to-each-file.sh",
     "fe-handle-CN-pre-release": "sh ./devtools/release/download-and-verify.sh",
     "fe-job": "sh ./pipeline/dev-run-scan-and-generate.sh",
     "fe-sync-web2share": "sh ./pipeline/dev-sync-copy-files.sh",

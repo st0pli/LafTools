@@ -28,11 +28,11 @@ import { NavigatorPassProp } from "..";
 import { fmtURL_Client } from "@/app/__CORE__/utils/cRouteUtils";
 import { URL_SUBCATEGORY_GO_PATH, URL_TOOL_CATEGORY } from "@/app/__CORE__/meta/url";
 import { fmtURL_ToolSubPageClient } from "@/app/__CORE__/meta/client";
-import { ToolSearchDetail } from "@/app/[lang]/page";
+import { CategoryTypeSearchDetail } from "@/app/[lang]/page";
 
 let a = loadDOT("EiVD4")
 
-export default function (props: { toolSearchDetail: ToolSearchDetail }) {
+export default function (props: { toolSearchDetail: CategoryTypeSearchDetail }) {
     a()
     return (
         <Breadcrumbs size={"sm"}>

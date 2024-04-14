@@ -40,7 +40,7 @@ import PossiblePathname from "@/app/__CORE__/components/PossiblePathname";
 import {
     getCategoryList as getCategoryList,
     fn_rightNav,
-    getSubCategoryList,
+
     fn_rightCategoryArr
 
 } from "@/app/[lang]/client/src/impl/tools/d_portal";
@@ -52,10 +52,6 @@ import { ifnil } from "@/app/__CORE__/meta/fn";
 import { notFound } from "next/navigation";
 
 export default (props: NavigatorPassProp) => {
-    // let hostname = getXHostname()
-    // let isLocalname = (hostname: string) => {
-    //     return hostname == "localhost" || hostname == "127.0.0.1" || hostname == '0.0.0.0'
-    // }
     let crtTitleBanner = ''
     let iconImg = ''
     let { category } = props.params;
@@ -78,6 +74,12 @@ export default (props: NavigatorPassProp) => {
         iconImg = 'icon-rsce.png'
         crtTitleBanner = (
             Dot("sr9eCEJ0b6M", "Get Resources with LafTools!")
+        )
+    } else if (category == 'user') {
+        let subCategory = props.params.subCategory
+        iconImg = 'icon.png'
+        crtTitleBanner = (
+            Dot("sjod7G6WL", "User Centre") + ' - ' + Dot('xqXtuqU5W', 'Sign In')
         )
     } else {
         notFound()

@@ -10,9 +10,9 @@ import fs from 'fs'
 import FromBase64 from './impl/conversion/FromBase64'
 import _ from 'lodash'
 import path from 'path'
-import { getSubCategoryList } from './d_portal'
 import TranslationUtils from '../../../../../__CORE__/utils/TranslationUtils'
 import Operation from '../core/Operation'
+import { getToolSubCategory } from './d_subcategory'
 
 test('generate-app-op-detail-list', async () => {
     // FIRST PART
@@ -115,7 +115,7 @@ export type AppOpFnMapTypeKeys = keyof typeof AppOptFnMap;
         }[]
     }
     let tool2PageMapInst: Tool2PageMap = {}
-    let subCategoryList = getSubCategoryList()
+    let subCategoryList = getToolSubCategory()
     _.forEach(subCategoryList, category => {
         _.forEach(category.subTabs, subTab => {
             let toolId = subTab.toolId

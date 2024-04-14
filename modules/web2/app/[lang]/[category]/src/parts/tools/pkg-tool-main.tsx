@@ -32,8 +32,7 @@ import FundrasingPlanBtn from '../cpt/cpt-fundrasing-btn';
 import Sidebar from './main-sidebar';
 import { ToolProp } from '.';
 import ExtraListTool from './extra-list-tool';
-import { notFound } from 'next/navigation';
-import { ToolSearchDetail } from '@/app/[lang]/page';
+import { CategoryTypeSearchDetail } from '@/app/[lang]/page';
 import { Button, Dialog, DialogBody, DialogFooter } from '@blueprintjs/core';
 import DialogToolListView from './dialog-tool-list-view';
 import ClientWrapper from '../../common/clientWrapper';
@@ -43,7 +42,7 @@ export let getCardsProps = (): CardProps => {
     }
 }
 
-export type CrtToolProp = ToolProp & ToolSearchDetail
+export type CrtToolProp = ToolProp & CategoryTypeSearchDetail
 
 export default (props: CrtToolProp) => {
     return <Card {...getCardsProps()} className={light_border_clz_all} >

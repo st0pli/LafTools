@@ -40,11 +40,11 @@ import PossiblePathname from "@/app/__CORE__/components/PossiblePathname";
 import {
     getCategoryList as getCategoryList,
     fn_rightNav,
-    getSubCategoryList,
+
     fn_rightCategoryArr
 
 } from "@/app/[lang]/client/src/impl/tools/d_portal";
-import { CategorySearchProps, ToolSearchDetail, getSearchDetailBySearchProps } from "@/app/[lang]/page";
+import { CategorySearchProps, CategoryTypeSearchDetail, getSearchDetailBySearchProps } from "@/app/[lang]/page";
 import { URL_SUBCATEGORY_GO_PATH } from "@/app/__CORE__/meta/url";
 import { fmtURL_ToolSubPage } from "@/app/__CORE__/meta/common";
 import NavTop from "./nav/nav-top";
@@ -62,7 +62,7 @@ export type NavigatorPassProp = CategorySearchProps & {
 }
 
 export default (props: NavigatorPassProp) => {
-    let toolSearchDetail: ToolSearchDetail = getSearchDetailBySearchProps(props)
+    let toolSearchDetail: CategoryTypeSearchDetail = getSearchDetailBySearchProps(props)
     let { innerContent } = props;
     return (
         <div className={'  bg-slate-50 dark:bg-slate-800 pb-10'}>
@@ -73,10 +73,10 @@ export default (props: NavigatorPassProp) => {
                     </div>
                     <div>
                         <NavCategory {...props} nav={[
-                            {
-                                href: fmtURL_ToolSubPage(['opt?action=favourite']),
-                                label: Dot("be-Favourite-it", "Add to Favourites")
-                            },
+                            // {
+                            //     href: fmtURL_ToolSubPage(['opt?action=favourite']),
+                            //     label: Dot("be-Favourite-it", "Add to Favourites")
+                            // },
                             {
                                 refId: FN_REF_ID_SHARE_THIS_PAGE,
                                 href: fmtURL_ToolSubPage(['opt?action=share-this-page']),

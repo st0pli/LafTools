@@ -23,12 +23,13 @@ import React from "react";
 import { Tabs, Tab, Card, CardBody, CardHeader } from "@nextui-org/react";
 import Link from "next/link";
 import { Dot, getXSearchParams } from "@/app/__CORE__/utils/TranslationUtils";
-import { PortalDefinitionTbabGroup, PortalDefinitionType, getToolSubCategory } from "@/app/[lang]/client/src/impl/tools/d_portal";
+import { PortalDefinitionTbabGroup, PortalDefinitionType, } from "@/app/[lang]/client/src/impl/tools/d_portal";
 import { ToolProp } from "../tools";
 import _ from "lodash";
 import { fmtURL_ToolSubPage } from "@/app/[lang]/[category]/types";
 import { URL_SUBCATEGORY_GO_PATH } from "@/app/__CORE__/meta/url";
 import { CrtToolProp } from "../tools/main-part";
+import { getSubCategoryByProps } from "@/app/[lang]/client/src/impl/tools/d_subcategory";
 
 export default function (props: CrtToolProp) {
     let subCategory = props.params.subCategory
@@ -37,7 +38,7 @@ export default function (props: CrtToolProp) {
     }
 
     let subTabs: PortalDefinitionTbabGroup[] = [];
-    let toolsPortalDefinitions = getToolSubCategory()
+    let toolsPortalDefinitions = getSubCategoryByProps(props)
     toolsPortalDefinitions.forEach(x => {
         if (x.id == subCategory) {
             subTabs = _.take(x.subTabs || [], 7)

@@ -47,7 +47,6 @@ export type CombindSearchProps = PageProps<any, any>
 
 export default async function Home(props: CombindSearchProps) {
     let authInfo = await getAuthInfo()
-    notFound()
     return (
         <main>
             <div>{Dot("Abi2k2cP7", "Sorry, this page is not yet finished so far.")}</div>

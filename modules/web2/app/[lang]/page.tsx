@@ -23,33 +23,35 @@ import { getAppDevIcon, getAppKeywords } from "../__CORE__/config/imgconfig";
 
 import SubCategoryPage from '@/app/[lang]/[category]/page'
 import { satisfies } from "semver";
-import { getCategoryList as getCategoryList, getToolSubCategory, PortalDefinitionTbabGroup } from "./[category]/types";
+import { getCategoryList as getCategoryList, PortalDefinitionTbabGroup } from "./[category]/types";
+import { ifnil } from "../__CORE__/meta/fn";
+import { isDevEnv } from "../__CORE__/share/env";
+import { CategoryType, getSubCategoryByProps } from "./client/src/impl/tools/d_subcategory";
 
 export type CategorySearchProps = PageProps<{
     subCategory: string,
-    category: "" | "tools" | "resources" | "docs" | "ai",
+    category: CategoryType,
     id: string
 }, {}>;
 export default async function Home(props: CategorySearchProps) {
     return <SubCategoryPage {...props} />
 }
 
-export type ToolSearchDetail = {
+export type CategoryTypeSearchDetail = {
     searchToolItem: PortalDefinitionTbabGroup,
     targetSubCategory: PortalDefinitionType,
     topCategoryNavItem: TopMainCategoryNavList | undefined
 }
-export let getSearchDetailBySearchProps = (props: CategorySearchProps): ToolSearchDetail => {
+export let getSearchDetailBySearchProps = (props: CategorySearchProps): CategoryTypeSearchDetail => {
     let topCategoryNavList = getCategoryList()
     let topCategoryNavItem = topCategoryNavList.find(x => x.id == props.params.category)
     if (_.isNil(topCategoryNavItem)) {
-        // notFound()
         topCategoryNavItem = topCategoryNavList[0]
     }
     let subCategory = props.params.subCategory;
-    let toolsPortalDefinitons = getToolSubCategory()
+    let toolsPortalDefinitons = getSubCategoryByProps(props)
     if (_.isEmpty(subCategory)) {
-        if (toolsPortalDefinitons.length == 0) {
+        if (toolsPortalDefinitons.length == 0 && !isDevEnv()) {
             notFound()
         } else {
             subCategory = toolsPortalDefinitons[0].id
@@ -97,24 +99,28 @@ export let generateMetadata = async function (props: CategorySearchProps): Promi
     let result = fn({})
     let title: string[] = [];
 
-    let { searchToolItem, targetSubCategory, topCategoryNavItem } = getSearchDetailBySearchProps(props)
+    if (ifnil(props.params.category, 'tools') == 'tools') {
+        let { searchToolItem, targetSubCategory, topCategoryNavItem } = getSearchDetailBySearchProps(props)
 
-    // title push
-    targetSubCategory && targetSubCategory?.seoTitle && title.push(targetSubCategory?.seoTitle)
-    title.push(Dot("laftoolstitle", "Free Online LafTools"))
-    title.push(searchToolItem.label + " - " + targetSubCategory.label)
-    // keywords
-    result.keywords = (targetSubCategory?.seoKeywords ? [
-        ...(targetSubCategory?.subTabs || []).map(x => x.label || 'N/A'),
-        ...targetSubCategory?.seoKeywords,
-    ] : []) || []
-    result.title = (
-        title.reverse().join(" | ")
-    )
-    if (isCensorShipForWebsiteMode()) {
-        result.title = 'LafTools程序员工具箱'
+        // title push
+        targetSubCategory && targetSubCategory?.seoTitle && title.push(targetSubCategory?.seoTitle)
+        title.push(Dot("laftoolstitle", "Free Online LafTools"))
+        title.push(searchToolItem.label + " - " + targetSubCategory.label)
+        // keywords
+        result.keywords = (targetSubCategory?.seoKeywords ? [
+            ...(targetSubCategory?.subTabs || []).map(x => x.label || 'N/A'),
+            ...targetSubCategory?.seoKeywords,
+        ] : []) || []
+        result.title = (
+            title.reverse().join(" | ")
+        )
+        if (isCensorShipForWebsiteMode()) {
+            result.title = 'LafTools程序员工具箱'
+        }
+        return result;
+    } else {
+        return result;
     }
-    return result;
 }
 
 export let isCensorShipForWebsiteMode = () => {

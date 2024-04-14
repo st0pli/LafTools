@@ -41,7 +41,7 @@ import PossiblePathname from "@/app/__CORE__/components/PossiblePathname";
 import {
     getCategoryList as getCategoryList,
     fn_rightNav,
-    getSubCategoryList,
+
     fn_rightCategoryArr
 
 } from "@/app/[lang]/client/src/impl/tools/d_portal";

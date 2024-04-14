@@ -41,7 +41,7 @@ import PossiblePathname from "@/app/__CORE__/components/PossiblePathname";
 import {
     getCategoryList as getCategoryList,
     fn_rightNav,
-    getSubCategoryList,
+
     fn_rightCategoryArr,
     PortalDefinitionTbabGroup
 
@@ -52,27 +52,15 @@ import { fmtURL_ToolSubPage } from "@/app/__CORE__/meta/common";
 import { NavigatorPassProp } from "..";
 import PreinitNavbind from "../js/preinit-navbind";
 import { ifnil } from "@/app/__CORE__/meta/fn";
+import { getCategoryParentTwClz, getSubCategoryByProps, getToolSubCategory } from "@/app/[lang]/client/src/impl/tools/d_subcategory";
 
 export default (props: NavigatorPassProp) => {
-    let leftCategoryArr = getSubCategoryList()
+    let leftCategoryArr = getSubCategoryByProps(props)
     let rightCategoryArr = fn_rightCategoryArr()
     let subCategory = props.params.subCategory
     let currentSubTabId = props.params.id
-    let parentClz = tw` dark:bg-sky-900 bg-sky-600 `
     let category = props.params.category
-    if (category == 'ai') {
-        parentClz = tw` dark:bg-violet-900 bg-violet-900 `
-    } else if (category == 'docs') {
-        parentClz = tw` dark:bg-teal-900 bg-teal-700 `
-    } else if (category == 'resources') {
-        parentClz = tw` dark:bg-yellow-900 bg-yellow-700 `
-    }
-    if (ifnil(category, '') != '' && category != 'tools') {
-        leftCategoryArr = leftCategoryArr.map((x, d) => {
-            x.label = Dot("xg7ujhS2S", "Test Item {0}", (d + 1))
-            return x;
-        })
-    }
+    let parentClz = getCategoryParentTwClz(category)
     return (
         <div className={border_clz + parentClz}>
             <div className={row_pad_clz + ' flex-justify-between '}>

@@ -193,7 +193,7 @@ export let useLeftTabsList = (): EachTabPanelProp[] => {
       {
         desc: Dot(
           "p8Exxc1s",
-          "There are various tools that leverage AI technologies to perform tasks more efficiently in AI Laboratory."
+          "There are various tools that leverage AI technologies to perform tasks more efficiently in AI Lab."
         ),
         // pathname: URL_WORKBENCH_FILES,
         icon: "lab-test",

@@ -36,11 +36,11 @@ import SmallScreenDetecter from '@/app/[lang]/client/src/SmallScreenDetecter'
 import ClientWrapper, { getAppToolHeight } from '../../common/clientWrapper'
 import { ClientPortalContext } from '@/app/[lang]/client/src/pages/WorkBench/FixedLayout/Main/Center/sub/center-view/Transformer/types'
 import { CardBody } from '@nextui-org/react'
-import { CategorySearchProps, ToolSearchDetail } from '@/app/[lang]/page'
+import { CategorySearchProps, CategoryTypeSearchDetail } from '@/app/[lang]/page'
 import NotYetOkie from '@/app/[lang]/client/src/components/NotYetOkie'
 import exportUtils from '@/app/[lang]/client/src/utils/ExportUtils'
 
-export type ExtensionViewProps = ToolSearchDetail & CategorySearchProps
+export type ExtensionViewProps = CategoryTypeSearchDetail & CategorySearchProps
 
 
 let d = loadDOT("1RH8bum7S")

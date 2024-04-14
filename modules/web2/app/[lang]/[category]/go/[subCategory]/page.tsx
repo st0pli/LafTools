@@ -31,7 +31,7 @@ import { useParams, useSearchParams } from "next/navigation";
 import InnerHome from '../../../../home'
 import { usePathname } from 'next/navigation';
 import React, { } from "react";
-import { PageProps, getToolSubCategory } from '@/app/__CORE__/meta/pages'
+import { PageProps, } from '@/app/__CORE__/meta/pages'
 import getAuthInfo, { AuthInfo } from "@/app/__CORE__/containers/GrailLayoutWithUser/actions/handleAuthInfo";
 import { Dot } from "../../../../__CORE__/utils/TranslationUtils";
 import Link from "next/link";
@@ -45,6 +45,7 @@ import DocsPart from '../../src/parts/docs'
 import ResourcesPart from '../../src/parts/resources'
 import NavigatorPage from '../../src/parts/index'
 import { ifnil } from "@/app/__CORE__/meta/fn";
+import { getToolSubCategory } from "@/app/[lang]/client/src/impl/tools/d_subcategory";
 export type AuthInfoProps = { authInfo: AuthInfo }
 export type CombindSearchProps = PageProps<any, any>
 
@@ -77,6 +78,10 @@ export default async function Home(props: CategorySearchProps) {
     } else if (category == 'ai') {
         whatPartForChildren = (
             <AIPart {...props} />
+        )
+    } else if (category == 'user') {
+        whatPartForChildren = (
+            <div>this is opt</div>
         )
     } else {
         whatPartForChildren = (
