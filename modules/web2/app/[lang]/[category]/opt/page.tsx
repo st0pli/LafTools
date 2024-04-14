@@ -28,7 +28,6 @@ import CenterPart from "@/app/__CORE__/containers/CenterPart";
 import CardPanel from '@/app/__CORE__/components/CardPanel'
 import NodeHorizontalBar from "@/app/__CORE__/containers/TabGroupHorizontalBar";
 import _, { random } from "lodash";
-import { notFound, useParams, useSearchParams } from "next/navigation";
 import InnerHome from '../../../home'
 import { usePathname } from 'next/navigation';
 import React, { } from "react";

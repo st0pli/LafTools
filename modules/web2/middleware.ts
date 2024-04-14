@@ -5,12 +5,19 @@ import { match } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 import { I18nItem } from "./app/__CORE__/config/i18n";
 import { fn_Geti18n } from "./app/[lang]/client/src/i18n-pure";
+import info from "./app/[lang]/[category]/info";
 
 let dftLocaleStr = process.env.APPLANG;
 let LAFREGION = process.env.LAFREGION; // CN or US
 if (!dftLocaleStr) {
   dftLocaleStr = "en_US";
 }
+
+// process.env.BOOT_LAST_MODIFIED ||
+const bootLastModified = new Date(
+  parseInt(info.timestamp) * 1000,
+).toUTCString();
+
 let _ = {
   every: (a: any, b: any) => {
     return a.every(b);
@@ -144,6 +151,10 @@ export function middleware(request: NextRequest) {
   return NextResponse.next({
     request: {
       headers: requestHeaders,
+    },
+    headers: {
+      "Last-Modified": bootLastModified,
+      "x-actual-lm": bootLastModified,
     },
   });
 }

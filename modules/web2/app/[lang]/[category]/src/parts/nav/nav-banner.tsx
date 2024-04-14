@@ -49,7 +49,6 @@ import { URL_SUBCATEGORY_GO_PATH } from "@/app/__CORE__/meta/url";
 import { fmtURL_ToolSubPage } from "@/app/__CORE__/meta/common";
 import { NavigatorPassProp } from "..";
 import { ifnil } from "@/app/__CORE__/meta/fn";
-import { notFound } from "next/navigation";
 
 export default (props: NavigatorPassProp) => {
     let crtTitleBanner = ''
@@ -82,7 +81,6 @@ export default (props: NavigatorPassProp) => {
             Dot("sjod7G6WL", "User Centre") + ' - ' + Dot('xqXtuqU5W', 'Sign In')
         )
     } else {
-        notFound()
     }
     return <div className={border_clz + " py-3 p-4 relative bg-slate-50 dark:bg-slate-900"}>
         <div className={row_pad_clz + ' z-20 flex flex-row items-center relative'}>

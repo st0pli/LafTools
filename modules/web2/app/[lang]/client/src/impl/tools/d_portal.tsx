@@ -29,6 +29,7 @@ import { cache } from "react"
 import appToolInfoObj, { AppToolKeyType } from "./d_meta"
 import COMMON_FN_REF from "./common_ref"
 import { GithubRepoLink } from "@/app/__CORE__/meta/constants"
+import { URL_SUBCATEGORY_GO_PATH } from "@/app/__CORE__/meta/url"
 
 COMMON_FN_REF.Dot = Dot
 
@@ -51,6 +52,7 @@ export type PortalDefinitionType = SEOMetaData & {
     label: string,
     longLabel: string,
     id: string,
+    secondBreadcrumbLabel?: string,
     subTabs?: PortalDefinitionTbabGroup[]
 }
 
@@ -87,11 +89,11 @@ export let fn_rightNav = (): LabelHrefType[] => {
     let rightNav: LabelHrefType[] = [
         {
             label: Dot("str.login", "Login"),
-            href: fmtURL_Server(['user', 'sign-in'])
+            href: fmtURL_Server(['user', URL_SUBCATEGORY_GO_PATH, 'opt', 'sign-in'])
         },
         {
             label: Dot("str.register", "Register"),
-            href: fmtURL_Server(['user', 'sign-up'])
+            href: fmtURL_Server(['user', URL_SUBCATEGORY_GO_PATH, 'opt', 'sign-up'])
         },
         // {
         //     // label: Dot("str.usercentre", "User Centre"),
@@ -115,10 +117,10 @@ export let fn_rightCategoryArr = () => {
         //     label: Dot("str.remarks", "Favorites"),
         //     href: fmtURL_Server(['/']),
         // },
-        {
-            label: Dot("str.mostused", "Frequently-Used"),
-            href: fmtURL_Server(['/']),
-        }
+        // {
+        //     label: Dot("str.mostused", "Frequently-Used"),
+        //     href: fmtURL_Server(['/']),
+        // }
     ]
     return rightCategoryArr
 }

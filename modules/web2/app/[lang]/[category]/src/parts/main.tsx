@@ -52,6 +52,7 @@ import NavSubCategory from './nav/nav-subcategory'
 import NavBanner from "./nav/nav-banner";
 import AlertUtils from "@/app/[lang]/client/src/utils/AlertUtils";
 import { FN_REF_ID_SHARE_THIS_PAGE } from "../fnref";
+import { ifnil } from "@/app/__CORE__/meta/fn";
 export type LabelHrefType = {
     label: string | JSX.Element,
     id?: string,
@@ -62,6 +63,9 @@ export type NavigatorPassProp = CategorySearchProps & {
 }
 
 export default (props: NavigatorPassProp) => {
+    if (ifnil(props.params.category, 'tools') != 'tools') {
+        return ''
+    }
     let toolSearchDetail: CategoryTypeSearchDetail = getSearchDetailBySearchProps(props)
     let { innerContent } = props;
     return (

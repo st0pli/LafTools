@@ -47,6 +47,7 @@ export let getCategoryParentTwClz = (category: CategoryType): string => {
 }
 
 export let getToolSubCategory = ((): PortalDefinitionType[] => {
+    let secondBCLabel = Dot("thAvhgee7", "Universal Tools")
     let toolsPortalDefinitions: PortalDefinitionType[] = [
         {
             seoTitle: Dot("format.code.seo", "Format {0} Code", 'JSON/JS/YAML/CSS/C#/SQL'),
@@ -487,6 +488,7 @@ export let getToolSubCategory = ((): PortalDefinitionType[] => {
             }
             return x;
         })
+        x.secondBreadcrumbLabel = secondBCLabel
     })
     return toolsPortalDefinitions;
 })
@@ -495,7 +497,8 @@ export let getToolSubCategory = ((): PortalDefinitionType[] => {
 export let getUserSubCategory = ((): PortalDefinitionType[] => {
     return [
         {
-            id: 'v2',
+            id: 'opt',
+            // secondBreadcrumbLabel: Dot("jSZmia6Zl", "Control Panel"),
             label: Dot("sign.in", "User Centre"),
             longLabel: Dot("sign.in.long", "User Centre"),
             seoTitle: Dot("sign.in.title", "Sign In to Your Account"),

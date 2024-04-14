@@ -78,7 +78,7 @@ export default (props: NavigatorPassProp) => {
                 <div className="flex flex-row items-center">
                     {
                         rightCategoryArr.map(x => {
-                            return <Link href={x.href + ""} className={" white-anchor-text anchor-text-in-category cursor-pointer "}>{x.label}</Link>
+                            return <Link target='_blank' href={x.href + ""} className={" white-anchor-text anchor-text-in-category cursor-pointer "}>{x.label}</Link>
                         })
                     }
                 </div>
