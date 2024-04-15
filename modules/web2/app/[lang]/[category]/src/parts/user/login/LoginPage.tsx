@@ -7,7 +7,7 @@ import TwTabs from '@/app/__CORE__/components/TwTabs'
 import '@/app/__CORE__/script/preline-init'
 import { Metadata, ResolvingMetadata } from 'next';
 import LoadingWrapper from '@/app/__CORE__/containers/LoadingWrapper';
-import { handleSignInUser } from '../register/action/userAction';
+import { handleSignInUser } from '../../../../../../../../server2/src/routes/auth/userAction';
 import AlertErrorPanel from '@/app/__CORE__/containers/AlertErrorPanel';
 import { loadDOT, useTTT, useTTT2 } from '../register/i18n-types';
 import { Dot } from '@/app/__CORE__/utils/cTranslationUtils';
@@ -100,7 +100,7 @@ export default function LoginPage(props: { passClz: string, type: string }) {
                         </button>
                     </div>
                     <div className=' text-right text-sm space-x-2'>
-                        <span>                        {Dot("newtoelb", "New to {0} Community?", 'LafTools')}</span>
+                        <span>{Dot("newtoelb", "New to {0} Community?", 'LafTools')}</span>
                         <a className='anchor-text text-sm' href={'./sign-up'}>
                             {Dot("9gzkh", "Create New Account", "")}
                         </a>

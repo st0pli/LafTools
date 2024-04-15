@@ -22,14 +22,7 @@ let loadDAO = async (): Promise<DaoRef> => {
     console.log('initializing DAO Ref...')
     lock = true;
     try {
-        let sequelize = newSeq("s2")
-
-        try {
-            await sequelize.authenticate();
-            console.log('Connection has been established successfully.');
-        } catch (error) {
-            console.error('Unable to connect to the database:', error);
-        }
+        let sequelize = g_sequelize
 
         // 2. redis
         const client = await createClient({

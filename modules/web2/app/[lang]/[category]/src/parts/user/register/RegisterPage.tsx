@@ -7,7 +7,7 @@ import TwTabs from '@/app/__CORE__/components/TwTabs'
 import '@/app/__CORE__/script/preline-init'
 import { Metadata, ResolvingMetadata } from 'next';
 import { getWebsiteName } from '@/app/__CORE__/common/config';
-import create from './action/userAction'
+import create from '../../../../../../../../server2/src/routes/auth/userAction'
 import { useFormState } from 'react-dom'
 import LoadingWrapper from '@/app/__CORE__/containers/LoadingWrapper';
 import AlertErrorPanel from '@/app/__CORE__/containers/AlertErrorPanel';

@@ -120,66 +120,6 @@ export class RawGroupHistory extends Model<InferAttributes<RawGroupHistory>, Inf
 
 export type UserRole = "webmaster" | "moderator" | "user"
 
-export class SMSCodeRecord extends Model<InferAttributes<SMSCodeRecord>, InferCreationAttributes<SMSCodeRecord>> {
-    declare id: number;
-    declare userAcctId: string;
-    declare phoneNumber: string;
-    declare code: string;
-    declare dateValue: string;
-    declare createdAt: CreationOptional<Date> | null;
-    declare updatedAt: CreationOptional<Date> | null;
-    declare deleteAt: CreationOptional<Date> | null;
-}
-
-export class InvitationCode extends Model<InferAttributes<InvitationCode>, InferCreationAttributes<InvitationCode>> {
-    declare id: number | null;
-    declare code: string;
-    declare maxUseCount: number;
-    declare useCount: number;
-    declare expiredAt: Date;
-    declare createdAt: CreationOptional<Date> | null;
-    declare updatedAt: CreationOptional<Date> | null;
-    declare deleteAt: CreationOptional<Date> | null;
-}
-
-export class User extends Model<InferAttributes<User>, InferCreationAttributes<User>> {
-    declare id: number | null;
-    declare userAcctId: string; // unique text id, can not be changed
-    declare username?: string; // can be changed at any time, can be duplicate
-    declare uid?: number | null;
-    declare invitationCode: string;
-    declare phoneNumber: string;
-    declare vcode?: string;
-    declare email?: string;
-    declare source?: string;
-    declare password: string;
-    declare role: UserRole;
-    declare avatarPath?: string;
-    declare status: "newly-created" | "normal" | "banned" | "deleted";
-    declare topicCount: number; // the number of topics that's sent by this user up to now
-    declare replyCount: number;
-    declare banReason?: string | null; // the reason why this user is banned
-    declare banUntil?: Date | null;
-    // settings
-    declare cityId?: string; // city id, from fixed static data in node.js
-    declare goal?: string; // goal, from fixed static data in node.js
-
-    // timestamps
-    declare createdAt?: CreationOptional<Date> | null;
-    declare updatedAt?: CreationOptional<Date> | null;
-    declare deleteAt?: CreationOptional<Date> | null;
-}
-
-// model for UserToken
-export class UserToken extends Model<InferAttributes<UserToken>, InferCreationAttributes<UserToken>> {
-    declare id: number;
-    declare userId: number;
-    declare token: string;
-    declare createdAt: CreationOptional<Date> | null;
-    declare updatedAt: CreationOptional<Date> | null;
-    declare deleteAt: CreationOptional<Date> | null;
-}
-
 // model for UserLoginLog
 export class UserLoginLog extends Model<InferAttributes<UserLoginLog>, InferCreationAttributes<UserLoginLog>> {
     declare id?: number;
