@@ -30,37 +30,37 @@
 
 ### Nouvelles fonctionnalités
 
-- Test update JZDhNwhhW
+- Testez un peu de logique JZDhNwhhW
 
 ## Release v2.2.14-beta (2024-04-10)
 
 ### Nouvelles fonctionnalités
 
-- Test update JZDhNwhhW
+- Testez un peu de logique JZDhNwhhW
 
 ## Release v2.2.12-beta (2024-04-10)
 
 ### Nouvelles fonctionnalités
 
-- Test update 8oW_Reebm
+- Testez un peu de logique 8oW_Reebm
 
 ## Release v2.2.11-beta (2024-04-09)
 
 ### Nouvelles fonctionnalités
 
-- Test update mafx_oyrD
+- Testez un peu de logique mafx_oyrD
 
 ## Release v2.2.10-beta (2024-04-09)
 
 ### Nouvelles fonctionnalités
 
-- Test update mafx_oyrD
+- Testez un peu de logique mafx_oyrD
 
 ## Release v2.1.99-beta (2024-04-09)
 
 ### Nouvelles fonctionnalités
 
-- Test some logic
+- Testez un peu de logique
 
 ## Release v2.1.83-beta (2024-04-03)
 

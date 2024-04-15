@@ -30,37 +30,37 @@
 
 ### Fitur baru
 
-- Test update JZDhNwhhW
+- Uji beberapa logika JZDhNwhhW
 
 ## Release v2.2.14-beta (2024-04-10)
 
 ### Fitur baru
 
-- Test update JZDhNwhhW
+- Uji beberapa logika JZDhNwhhW
 
 ## Release v2.2.12-beta (2024-04-10)
 
 ### Fitur baru
 
-- Test update 8oW_Reebm
+- Uji beberapa logika 8oW_Reebm
 
 ## Release v2.2.11-beta (2024-04-09)
 
 ### Fitur baru
 
-- Test update mafx_oyrD
+- Uji beberapa logika mafx_oyrD
 
 ## Release v2.2.10-beta (2024-04-09)
 
 ### Fitur baru
 
-- Test update mafx_oyrD
+- Uji beberapa logika mafx_oyrD
 
 ## Release v2.1.99-beta (2024-04-09)
 
 ### Fitur baru
 
-- Test some logic
+- Uji beberapa logika
 
 ## Release v2.1.83-beta (2024-04-03)
 

@@ -13,11 +13,11 @@
 
 <i>Note: 이 페이지는 LafTools에서 내부적으로 생성됩니다.</i> <br/> [English](/docs/en_US/README.md)  |  [简体中文](/docs/zh_CN/README.md)  |  [繁體中文](/docs/zh_HK/README.md)  |  [Deutsch](/docs/de/README.md)  |  [Español](/docs/es/README.md)  |  [Français](/docs/fr/README.md)  |  [日本語](/docs/ja/README.md)  |  한국어 | [More](/docs/) <br/>
 
-# 🔮 Vision
+# 🔮 비전
 
-LafTools is a privacy-first, self-hosted, fully open source toolbox designed for programmers, you can find plentful toolsets on this website.
+LafTools는 프로그래머를 위해 설계된 개인 정보 보호 우선, 자체 호스팅, 완전 오픈 소스 도구 상자입니다. 이 웹 사이트에서 다양한 도구 세트를 찾을 수 있습니다.
 
-# 💌 Features
+# 💌 특징
 
 - 포스 포에버
 - 경량 런타임
@@ -25,18 +25,18 @@ LafTools is a privacy-first, self-hosted, fully open source toolbox designed for
 - 완전한 GPT 유사 지원
 - 생산적인 UI와 고도로 통합됨
 - 사용 가능한 Docker 이미지 및 Portable Edition
-- Desktop edition support(Planning)
+- 데스크톱 버전 지원(Planning)
 - ...
 
-# 🚀 Run it on Docker
+# 🚀 Docker에서 실행하세요
 
-**For GLOBAL users:**
+**글로벌 사용자의 경우:**
 
 ```
 docker run -e LAFREGION=US -e APPLANG=en_US --name mylaftools -v ~/.laftools-docker:/root/.laftools  -d -p 0.0.0.0:39899:39899 codegentoolbox/laftools-linux-x64:latest
 ```
 
-**For CHINESE users(国内用户):**
+**중국 사용자의 경우(国内用户):**
 
 ```
 docker run -e LAFREGION=CN -e APPLANG=zh_CN --name mylaftools -v ~/.laftools-docker:/root/.laftools -d -p 0.0.0.0:39899:39899 codegentoolbox/laftools-linux-x64:latest
@@ -44,15 +44,15 @@ docker run -e LAFREGION=CN -e APPLANG=zh_CN --name mylaftools -v ~/.laftools-doc
 
 **NOTE**:
 
-1. Default port is set to 39899, you can adjust it if needed.
-2. LafTools will always be upgraded to latest version automatically so that you can enjoy latest functions and bugfixs.
+1. 기본 포트는 39899로 설정되어 있으며 필요한 경우 조정할 수 있습니다.
+2. LafTools는 항상 자동으로 최신 버전으로 업그레이드되므로 최신 기능과 버그 수정을 즐길 수 있습니다.
 
 **Docker Images:**
 
 - [Docker Hub - laftools-linux-x64](https://hub.docker.com/r/codegentoolbox/laftools-linux-x64)
 - [Docker Hub - laftools-arm64-x64](https://hub.docker.com/r/codegentoolbox/laftools-arm64-x64)
 
-# 🔗 Online Websites
+# 🔗 온라인 웹사이트
 
 이러한 기능을 빠르게 사용할 수 있도록 미국과 CN 지역에 안정적인 온라인 웹사이트를 배포했습니다. 특정 OS 기능에 의존하는 일부 도구를 제외하고 대부분의 도구는 온라인 웹사이트에서 사용할 수 있습니다.
 
@@ -64,7 +64,7 @@ docker run -e LAFREGION=CN -e APPLANG=zh_CN --name mylaftools -v ~/.laftools-doc
 ![](https://github.com/work7z/LafTools/blob/dev/devtools/images/portal-1.png?raw=true)
 ![](https://github.com/work7z/LafTools/blob/dev/devtools/images/preview-dark.png?raw=true)
 
-# 📡 About LAF
+# 📡 LAF 소개
 
 - `L` -> Linked
 - `A` -> Asynchronous
@@ -74,7 +74,7 @@ docker run -e LAFREGION=CN -e APPLANG=zh_CN --name mylaftools -v ~/.laftools-doc
 
 안심하십시오. 이 프로젝트는 시간이 지남에 따라 놀랍고 환상적인 방식으로 발전할 것입니다. 이 프로젝트는 와인처럼 시간이 지날수록 더 좋아지듯이 더 많은 시간이 필요합니다.
 
-# 🌠 Contribution
+# 🌠 기부금
 
 ## 1. 시스템 환경 설정
 
@@ -96,7 +96,7 @@ export PATH=$PATH:$LAFTOOLS_ROOT\dev\source\windows-bin
 export LAFTOOLS_ROOT=/users/jerry/projects/laftools-repo
 ```
 
-## 2. Compile and Run
+## 2. 컴파일 및 실행
 
 ```bash
 # 필요한 전역 라이브러리 설치

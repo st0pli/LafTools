@@ -30,37 +30,37 @@
 
 ### 新機能
 
-- Test update JZDhNwhhW
+- ロジックをテストする JZDhNwhhW
 
 ## Release v2.2.14-beta (2024-04-10)
 
 ### 新機能
 
-- Test update JZDhNwhhW
+- ロジックをテストする JZDhNwhhW
 
 ## Release v2.2.12-beta (2024-04-10)
 
 ### 新機能
 
-- Test update 8oW_Reebm
+- ロジックをテストする 8oW_Reebm
 
 ## Release v2.2.11-beta (2024-04-09)
 
 ### 新機能
 
-- Test update mafx_oyrD
+- ロジックをテストする mafx_oyrD
 
 ## Release v2.2.10-beta (2024-04-09)
 
 ### 新機能
 
-- Test update mafx_oyrD
+- ロジックをテストする mafx_oyrD
 
 ## Release v2.1.99-beta (2024-04-09)
 
 ### 新機能
 
-- Test some logic
+- ロジックをテストする
 
 ## Release v2.1.83-beta (2024-04-03)
 

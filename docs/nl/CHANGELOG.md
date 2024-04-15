@@ -30,37 +30,37 @@
 
 ### Nieuwe functies
 
-- Test update JZDhNwhhW
+- Test wat logica JZDhNwhhW
 
 ## Release v2.2.14-beta (2024-04-10)
 
 ### Nieuwe functies
 
-- Test update JZDhNwhhW
+- Test wat logica JZDhNwhhW
 
 ## Release v2.2.12-beta (2024-04-10)
 
 ### Nieuwe functies
 
-- Test update 8oW_Reebm
+- Test wat logica 8oW_Reebm
 
 ## Release v2.2.11-beta (2024-04-09)
 
 ### Nieuwe functies
 
-- Test update mafx_oyrD
+- Test wat logica mafx_oyrD
 
 ## Release v2.2.10-beta (2024-04-09)
 
 ### Nieuwe functies
 
-- Test update mafx_oyrD
+- Test wat logica mafx_oyrD
 
 ## Release v2.1.99-beta (2024-04-09)
 
 ### Nieuwe functies
 
-- Test some logic
+- Test wat logica
 
 ## Release v2.1.83-beta (2024-04-03)
 

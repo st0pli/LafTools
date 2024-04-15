@@ -1,6 +1,6 @@
 <i>Note: Ta strona jest generowana wewnętrznie przez LafTools.</i> <br/> [English](/docs/en_US/FAQ.md)  |  [简体中文](/docs/zh_CN/FAQ.md)  |  [繁體中文](/docs/zh_HK/FAQ.md)  |  [Deutsch](/docs/de/FAQ.md)  |  [Español](/docs/es/FAQ.md)  |  [Français](/docs/fr/FAQ.md)  |  [日本語](/docs/ja/FAQ.md)  |  [한국어](/docs/ko/FAQ.md) | [More](/docs/) <br/>
 
-# 💡 Why LafTools?
+# 💡 Dlaczego LafTools?
 
 Możesz się zastanawiać, dlaczego jesteśmy zdeterminowani opracować ten zestaw narzędzi, skoro w Internecie można korzystać z wielu narzędzi. Rzeczywiście, większość narzędzi, które udostępniliśmy, można łatwo znaleźć w Internecie, takich jak kodek, formater, tłumaczenie, kod QR itp. Jednak korzystanie z tych narzędzi nie jest najwygodniejszym i najskuteczniejszym podejściem.
 

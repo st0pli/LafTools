@@ -1,6 +1,6 @@
 <i>Note: このページは LafTools から内部的に生成されます。</i> <br/> [English](/docs/en_US/FAQ.md)  |  [简体中文](/docs/zh_CN/FAQ.md)  |  [繁體中文](/docs/zh_HK/FAQ.md)  |  [Deutsch](/docs/de/FAQ.md)  |  [Español](/docs/es/FAQ.md)  |  [Français](/docs/fr/FAQ.md)  |  日本語  |  [한국어](/docs/ko/FAQ.md) | [More](/docs/) <br/>
 
-# 💡 Why LafTools?
+# 💡 なぜ LafTools なのか?
 
 インターネット上には多数のツールが使用できるのに、なぜこのツールボックスを開発することにしたのか疑問に思われるかもしれません。 実際、コーデック、フォーマッタ、翻訳、QR コードなど、当社が提供するほとんどのツールはインターネット上で簡単に見つけることができます。しかし、これらのツールを使用することは、最も快適で効率的なアプローチではありません。
 

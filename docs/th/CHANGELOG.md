@@ -30,37 +30,37 @@
 
 ### คุณสมบัติใหม่
 
-- Test update JZDhNwhhW
+- ทดสอบตรรกะบางอย่าง JZDhNwhhW
 
 ## Release v2.2.14-beta (2024-04-10)
 
 ### คุณสมบัติใหม่
 
-- Test update JZDhNwhhW
+- ทดสอบตรรกะบางอย่าง JZDhNwhhW
 
 ## Release v2.2.12-beta (2024-04-10)
 
 ### คุณสมบัติใหม่
 
-- Test update 8oW_Reebm
+- ทดสอบตรรกะบางอย่าง 8oW_Reebm
 
 ## Release v2.2.11-beta (2024-04-09)
 
 ### คุณสมบัติใหม่
 
-- Test update mafx_oyrD
+- ทดสอบตรรกะบางอย่าง mafx_oyrD
 
 ## Release v2.2.10-beta (2024-04-09)
 
 ### คุณสมบัติใหม่
 
-- Test update mafx_oyrD
+- ทดสอบตรรกะบางอย่าง mafx_oyrD
 
 ## Release v2.1.99-beta (2024-04-09)
 
 ### คุณสมบัติใหม่
 
-- Test some logic
+- ทดสอบตรรกะบางอย่าง
 
 ## Release v2.1.83-beta (2024-04-03)
 

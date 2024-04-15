@@ -13,11 +13,11 @@
 
 <i>Note: Halaman ini dihasilkan dari LafTools secara internal.</i> <br/> [English](/docs/en_US/README.md)  |  [简体中文](/docs/zh_CN/README.md)  |  [繁體中文](/docs/zh_HK/README.md)  |  [Deutsch](/docs/de/README.md)  |  [Español](/docs/es/README.md)  |  [Français](/docs/fr/README.md)  |  [日本語](/docs/ja/README.md)  |  [한국어](/docs/ko/README.md) | [More](/docs/) <br/>
 
-# 🔮 Vision
+# 🔮 Penglihatan
 
-LafTools is a privacy-first, self-hosted, fully open source toolbox designed for programmers, you can find plentful toolsets on this website.
+LafTools adalah kotak alat sumber terbuka yang mengutamakan privasi, dihosting sendiri, dan dirancang untuk pemrogram. Anda dapat menemukan banyak rangkaian alat di situs web ini.
 
-# 💌 Features
+# 💌 Fitur
 
 - FOSS Selamanya
 - Waktu Proses Ringan
@@ -25,18 +25,18 @@ LafTools is a privacy-first, self-hosted, fully open source toolbox designed for
 - Dukungan penuh mirip GPT
 - Sangat terintegrasi dengan UI produktif
 - Tersedia Gambar Docker dan Edisi Portabel
-- Desktop edition support(Planning)
+- Dukungan edisi desktop(Planning)
 - ...
 
-# 🚀 Run it on Docker
+# 🚀 Jalankan pada Docker
 
-**For GLOBAL users:**
+**Untuk pengguna GLOBAL:**
 
 ```
 docker run -e LAFREGION=US -e APPLANG=en_US --name mylaftools -v ~/.laftools-docker:/root/.laftools  -d -p 0.0.0.0:39899:39899 codegentoolbox/laftools-linux-x64:latest
 ```
 
-**For CHINESE users(国内用户):**
+**Untuk pengguna CINA(国内用户):**
 
 ```
 docker run -e LAFREGION=CN -e APPLANG=zh_CN --name mylaftools -v ~/.laftools-docker:/root/.laftools -d -p 0.0.0.0:39899:39899 codegentoolbox/laftools-linux-x64:latest
@@ -44,15 +44,15 @@ docker run -e LAFREGION=CN -e APPLANG=zh_CN --name mylaftools -v ~/.laftools-doc
 
 **NOTE**:
 
-1. Default port is set to 39899, you can adjust it if needed.
-2. LafTools will always be upgraded to latest version automatically so that you can enjoy latest functions and bugfixs.
+1. Port default diatur ke 39899, ​​Anda dapat menyesuaikannya jika diperlukan.
+2. LafTools akan selalu diupgrade ke versi terbaru secara otomatis sehingga Anda dapat menikmati fungsi-fungsi terbaru dan perbaikan bug.
 
 **Docker Images:**
 
 - [Docker Hub - laftools-linux-x64](https://hub.docker.com/r/codegentoolbox/laftools-linux-x64)
 - [Docker Hub - laftools-arm64-x64](https://hub.docker.com/r/codegentoolbox/laftools-arm64-x64)
 
-# 🔗 Online Websites
+# 🔗 Situs Web Daring
 
 Untuk menggunakan fungsi-fungsi ini dengan cepat, kami telah menerapkan situs web online yang stabil di wilayah AS dan CN untuk Anda gunakan. Sebagian besar alat tersedia di situs online kami kecuali beberapa alat yang mengandalkan kemampuan OS tertentu.
 
@@ -64,7 +64,7 @@ Untuk menggunakan fungsi-fungsi ini dengan cepat, kami telah menerapkan situs we
 ![](https://github.com/work7z/LafTools/blob/dev/devtools/images/portal-1.png?raw=true)
 ![](https://github.com/work7z/LafTools/blob/dev/devtools/images/preview-dark.png?raw=true)
 
-# 📡 About LAF
+# 📡 Tentang LAF
 
 - `L` -> Linked
 - `A` -> Asynchronous
@@ -74,7 +74,7 @@ Intinya, LafTools adalah rangkaian yang menawarkan serangkaian rangkaian alat ya
 
 Yakinlah, proyek ini akan berkembang dengan cara yang luar biasa dan fantastis seiring berjalannya waktu. Proyek ini membutuhkan lebih banyak waktu, seperti halnya anggur, menjadi lebih baik seiring berjalannya waktu.
 
-# 🌠 Contribution
+# 🌠 Kontribusi
 
 ## 1. Pengaturan Lingkungan Sistem
 
@@ -96,7 +96,7 @@ export PATH=$PATH:$LAFTOOLS_ROOT\dev\source\windows-bin
 export LAFTOOLS_ROOT=/users/jerry/projects/laftools-repo
 ```
 
-## 2. Compile and Run
+## 2. Kompilasi dan Jalankan
 
 ```bash
 # instal perpustakaan global yang diperlukan

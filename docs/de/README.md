@@ -15,9 +15,9 @@
 
 # 🔮 Vision
 
-LafTools is a privacy-first, self-hosted, fully open source toolbox designed for programmers, you can find plentful toolsets on this website.
+LafTools ist eine selbstgehostete, vollständig Open-Source-Toolbox für Programmierer, bei der der Datenschutz an erster Stelle steht. Auf dieser Website finden Sie zahlreiche Toolsets.
 
-# 💌 Features
+# 💌 Merkmale
 
 - FOSS für immer
 - Leichte Laufzeit
@@ -25,18 +25,18 @@ LafTools is a privacy-first, self-hosted, fully open source toolbox designed for
 - Vollständige GPT-ähnliche Unterstützung
 - Hochintegriert mit produktiver Benutzeroberfläche
 - Verfügbare Docker-Images und Portable Edition
-- Desktop edition support(Planning)
+- Unterstützung der Desktop-Edition(Planning)
 - ...
 
-# 🚀 Run it on Docker
+# 🚀 Führen Sie es auf Docker aus
 
-**For GLOBAL users:**
+**Für GLOBALE Benutzer:**
 
 ```
 docker run -e LAFREGION=US -e APPLANG=en_US --name mylaftools -v ~/.laftools-docker:/root/.laftools  -d -p 0.0.0.0:39899:39899 codegentoolbox/laftools-linux-x64:latest
 ```
 
-**For CHINESE users(国内用户):**
+**Für CHINESISCHE Benutzer(国内用户):**
 
 ```
 docker run -e LAFREGION=CN -e APPLANG=zh_CN --name mylaftools -v ~/.laftools-docker:/root/.laftools -d -p 0.0.0.0:39899:39899 codegentoolbox/laftools-linux-x64:latest
@@ -44,15 +44,15 @@ docker run -e LAFREGION=CN -e APPLANG=zh_CN --name mylaftools -v ~/.laftools-doc
 
 **NOTE**:
 
-1. Default port is set to 39899, you can adjust it if needed.
-2. LafTools will always be upgraded to latest version automatically so that you can enjoy latest functions and bugfixs.
+1. Der Standardport ist auf 39899 eingestellt. Sie können ihn bei Bedarf anpassen.
+2. LafTools wird immer automatisch auf die neueste Version aktualisiert, damit Sie in den Genuss der neuesten Funktionen und Fehlerbehebungen kommen.
 
 **Docker Images:**
 
 - [Docker Hub - laftools-linux-x64](https://hub.docker.com/r/codegentoolbox/laftools-linux-x64)
 - [Docker Hub - laftools-arm64-x64](https://hub.docker.com/r/codegentoolbox/laftools-arm64-x64)
 
-# 🔗 Online Websites
+# 🔗 Online-Websites
 
 Um diese Funktionen schnell nutzen zu können, haben wir in den USA und China eine stabile Online-Website für Sie bereitgestellt. Die meisten Tools sind auf unseren Online-Websites verfügbar, mit Ausnahme einiger Tools, die auf bestimmten Betriebssystemfunktionen basieren.
 
@@ -64,7 +64,7 @@ Um diese Funktionen schnell nutzen zu können, haben wir in den USA und China ei
 ![](https://github.com/work7z/LafTools/blob/dev/devtools/images/portal-1.png?raw=true)
 ![](https://github.com/work7z/LafTools/blob/dev/devtools/images/preview-dark.png?raw=true)
 
-# 📡 About LAF
+# 📡 Über LAF
 
 - `L` -> Linked
 - `A` -> Asynchronous
@@ -74,7 +74,7 @@ Im Wesentlichen handelt es sich bei LafTools um eine Suite, die eine Reihe verkn
 
 Seien Sie versichert, dass sich dieses Projekt im Laufe der Zeit auf bemerkenswerte und fantastische Weise weiterentwickeln wird. Dieses Projekt braucht mehr Zeit, genau wie Wein mit der Zeit besser wird.
 
-# 🌠 Contribution
+# 🌠 Beitrag
 
 ## 1. Systemumgebung einrichten
 
@@ -96,7 +96,7 @@ export PATH=$PATH:$LAFTOOLS_ROOT\dev\source\windows-bin
 export LAFTOOLS_ROOT=/users/jerry/projects/laftools-repo
 ```
 
-## 2. Compile and Run
+## 2. Kompilieren und ausführen
 
 ```bash
 # Installieren Sie die erforderliche globale Bibliothek

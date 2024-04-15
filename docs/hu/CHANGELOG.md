@@ -30,37 +30,37 @@
 
 ### Új funkciók
 
-- Test update JZDhNwhhW
+- Tesztelj egy kis logikát JZDhNwhhW
 
 ## Release v2.2.14-beta (2024-04-10)
 
 ### Új funkciók
 
-- Test update JZDhNwhhW
+- Tesztelj egy kis logikát JZDhNwhhW
 
 ## Release v2.2.12-beta (2024-04-10)
 
 ### Új funkciók
 
-- Test update 8oW_Reebm
+- Tesztelj egy kis logikát 8oW_Reebm
 
 ## Release v2.2.11-beta (2024-04-09)
 
 ### Új funkciók
 
-- Test update mafx_oyrD
+- Tesztelj egy kis logikát mafx_oyrD
 
 ## Release v2.2.10-beta (2024-04-09)
 
 ### Új funkciók
 
-- Test update mafx_oyrD
+- Tesztelj egy kis logikát mafx_oyrD
 
 ## Release v2.1.99-beta (2024-04-09)
 
 ### Új funkciók
 
-- Test some logic
+- Tesztelj egy kis logikát
 
 ## Release v2.1.83-beta (2024-04-03)
 

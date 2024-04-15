@@ -15,9 +15,9 @@
 
 # 🔮 Vision
 
-LafTools is a privacy-first, self-hosted, fully open source toolbox designed for programmers, you can find plentful toolsets on this website.
+LafTools er en privatlivsførende, selvhostet, fuldt open source-værktøjskasse designet til programmører, du kan finde masser af værktøjssæt på denne hjemmeside.
 
-# 💌 Features
+# 💌 Funktioner
 
 - FOSS for evigt
 - Letvægts Runtime
@@ -25,18 +25,18 @@ LafTools is a privacy-first, self-hosted, fully open source toolbox designed for
 - Fuld GPT-lignende support
 - Meget integreret med produktiv brugergrænseflade
 - Tilgængelige Docker-billeder og Portable Edition
-- Desktop edition support(Planning)
+- Support til desktop-udgave(Planning)
 - ...
 
-# 🚀 Run it on Docker
+# 🚀 Kør det på Docker
 
-**For GLOBAL users:**
+**For GLOBAL brugere:**
 
 ```
 docker run -e LAFREGION=US -e APPLANG=en_US --name mylaftools -v ~/.laftools-docker:/root/.laftools  -d -p 0.0.0.0:39899:39899 codegentoolbox/laftools-linux-x64:latest
 ```
 
-**For CHINESE users(国内用户):**
+**For KINESISKE brugere(国内用户):**
 
 ```
 docker run -e LAFREGION=CN -e APPLANG=zh_CN --name mylaftools -v ~/.laftools-docker:/root/.laftools -d -p 0.0.0.0:39899:39899 codegentoolbox/laftools-linux-x64:latest
@@ -44,15 +44,15 @@ docker run -e LAFREGION=CN -e APPLANG=zh_CN --name mylaftools -v ~/.laftools-doc
 
 **NOTE**:
 
-1. Default port is set to 39899, you can adjust it if needed.
-2. LafTools will always be upgraded to latest version automatically so that you can enjoy latest functions and bugfixs.
+1. Standardporten er indstillet til 39899, ​​du kan justere den, hvis det er nødvendigt.
+2. LafTools vil altid automatisk blive opgraderet til nyeste version, så du kan nyde de nyeste funktioner og fejlrettelser.
 
 **Docker Images:**
 
 - [Docker Hub - laftools-linux-x64](https://hub.docker.com/r/codegentoolbox/laftools-linux-x64)
 - [Docker Hub - laftools-arm64-x64](https://hub.docker.com/r/codegentoolbox/laftools-arm64-x64)
 
-# 🔗 Online Websites
+# 🔗 Online hjemmesider
 
 For hurtigt at bruge disse funktioner har vi implementeret en stabil online hjemmeside i USA og CN-regionen, som du kan bruge. De fleste værktøjer er tilgængelige på vores online-websteder med undtagelse af nogle værktøjer, der er afhængige af specifikke OS-funktioner.
 
@@ -64,7 +64,7 @@ For hurtigt at bruge disse funktioner har vi implementeret en stabil online hjem
 ![](https://github.com/work7z/LafTools/blob/dev/devtools/images/portal-1.png?raw=true)
 ![](https://github.com/work7z/LafTools/blob/dev/devtools/images/preview-dark.png?raw=true)
 
-# 📡 About LAF
+# 📡 Om LAF
 
 - `L` -> Linked
 - `A` -> Asynchronous
@@ -74,7 +74,7 @@ I det væsentlige er LafTools en suite, der tilbyder en række forbundne, asynkr
 
 Vær sikker på, dette projekt vil udvikle sig på bemærkelsesværdige og fantastiske måder over tid. Dette projekt har brug for mere tid, ligesom vin, bliver bedre med tiden.
 
-# 🌠 Contribution
+# 🌠 Bidrag
 
 ## 1. Opsæt systemmiljø
 
@@ -96,7 +96,7 @@ export PATH=$PATH:$LAFTOOLS_ROOT\dev\source\windows-bin
 export LAFTOOLS_ROOT=/users/jerry/projects/laftools-repo
 ```
 
-## 2. Compile and Run
+## 2. Kompiler og kør
 
 ```bash
 # installere det nødvendige globale bibliotek

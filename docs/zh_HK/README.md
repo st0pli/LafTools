@@ -13,11 +13,11 @@
 
 <i>Note: 該頁面是由LafTools工具箱內部產生的。</i> <br/> [English](/docs/en_US/README.md)  |  [简体中文](/docs/zh_CN/README.md)  |  繁體中文  |  [Deutsch](/docs/de/README.md)  |  [Español](/docs/es/README.md)  |  [Français](/docs/fr/README.md)  |  [日本語](/docs/ja/README.md)  |  [한국어](/docs/ko/README.md) | [More](/docs/) <br/>
 
-# 🔮 Vision
+# 🔮 想像
 
-LafTools is a privacy-first, self-hosted, fully open source toolbox designed for programmers, you can find plentful toolsets on this website.
+LafTools工具箱是一個專為程式設計師設計的隱私第一、自架、完全開源的工具箱，您可以在網站上找到豐富的工具集。
 
-# 💌 Features
+# 💌 特徵
 
 - 永遠的自由軟體
 - 輕量級運轉時
@@ -25,18 +25,18 @@ LafTools is a privacy-first, self-hosted, fully open source toolbox designed for
 - 完全類似 GPT 的支持
 - 與高效的 UI 高度集成
 - 可用的 Docker 映像和便攜式版本
-- Desktop edition support(Planning)
+- 桌面版支持(Planning)
 - ...
 
-# 🚀 Run it on Docker
+# 🚀 在 Docker 上執行
 
-**For GLOBAL users:**
+**對於全球用戶:**
 
 ```
 docker run -e LAFREGION=US -e APPLANG=en_US --name mylaftools -v ~/.laftools-docker:/root/.laftools  -d -p 0.0.0.0:39899:39899 codegentoolbox/laftools-linux-x64:latest
 ```
 
-**For CHINESE users(国内用户):**
+**對於中國用戶(国内用户):**
 
 ```
 docker run -e LAFREGION=CN -e APPLANG=zh_CN --name mylaftools -v ~/.laftools-docker:/root/.laftools -d -p 0.0.0.0:39899:39899 codegentoolbox/laftools-linux-x64:latest
@@ -44,15 +44,15 @@ docker run -e LAFREGION=CN -e APPLANG=zh_CN --name mylaftools -v ~/.laftools-doc
 
 **NOTE**:
 
-1. Default port is set to 39899, you can adjust it if needed.
-2. LafTools will always be upgraded to latest version automatically so that you can enjoy latest functions and bugfixs.
+1. 預設連接埠設定為39899，您可以根據需要進行調整。
+2. LafTools工具箱將始終自動升級到最新版本，以便您可以享受最新的功能和錯誤修復。
 
 **Docker Images:**
 
 - [Docker Hub - laftools-linux-x64](https://hub.docker.com/r/codegentoolbox/laftools-linux-x64)
 - [Docker Hub - laftools-arm64-x64](https://hub.docker.com/r/codegentoolbox/laftools-arm64-x64)
 
-# 🔗 Online Websites
+# 🔗 線上網站
 
 為了快速使用這些功能，我們在美國和中國地區部署了穩定的線上網站供您使用。除了一些依賴特定作業系統功能的工具外，大多數工具都可以在我們的線上網站上找到。
 
@@ -64,7 +64,7 @@ docker run -e LAFREGION=CN -e APPLANG=zh_CN --name mylaftools -v ~/.laftools-doc
 ![](https://github.com/work7z/LafTools/blob/dev/devtools/images/portal-1.png?raw=true)
 ![](https://github.com/work7z/LafTools/blob/dev/devtools/images/preview-dark.png?raw=true)
 
-# 📡 About LAF
+# 📡 關於LAF
 
 - `L` -> Linked
 - `A` -> Asynchronous
@@ -74,7 +74,7 @@ docker run -e LAFREGION=CN -e APPLANG=zh_CN --name mylaftools -v ~/.laftools-doc
 
 請放心，隨著時間的推移，這個計畫將會以非凡而奇妙的方式發展。這個項目需要更多的時間，就像酒一樣，越久越好。
 
-# 🌠 Contribution
+# 🌠 貢獻
 
 ## 1. 設定係統環境
 
@@ -96,7 +96,7 @@ export PATH=$PATH:$LAFTOOLS_ROOT\dev\source\windows-bin
 export LAFTOOLS_ROOT=/users/jerry/projects/laftools-repo
 ```
 
-## 2. Compile and Run
+## 2. 編譯並運行
 
 ```bash
 # 安裝所需的全域庫

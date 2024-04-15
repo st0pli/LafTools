@@ -1,6 +1,6 @@
 <i>Note: Trang này được tạo từ nội bộ LafTools.</i> <br/> [English](/docs/en_US/FAQ.md)  |  [简体中文](/docs/zh_CN/FAQ.md)  |  [繁體中文](/docs/zh_HK/FAQ.md)  |  [Deutsch](/docs/de/FAQ.md)  |  [Español](/docs/es/FAQ.md)  |  [Français](/docs/fr/FAQ.md)  |  [日本語](/docs/ja/FAQ.md)  |  [한국어](/docs/ko/FAQ.md) | [More](/docs/) <br/>
 
-# 💡 Why LafTools?
+# 💡 Tại sao lại là LafTools?
 
 Bạn có thể thắc mắc tại sao chúng tôi quyết tâm phát triển hộp công cụ này vì có rất nhiều công cụ có thể được sử dụng trên Internet. Thật vậy, hầu hết các công cụ chúng tôi cung cấp đều có thể dễ dàng tìm thấy trên Internet, chẳng hạn như codec, bộ định dạng, dịch thuật, Mã QR, v.v… Tuy nhiên, đây không phải là cách tiếp cận thoải mái và hiệu quả nhất để sử dụng những công cụ này.
 

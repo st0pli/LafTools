@@ -1,6 +1,6 @@
 <i>Note: Tato stránka je generována interně z LafTools.</i> <br/> [English](/docs/en_US/FAQ.md)  |  [简体中文](/docs/zh_CN/FAQ.md)  |  [繁體中文](/docs/zh_HK/FAQ.md)  |  [Deutsch](/docs/de/FAQ.md)  |  [Español](/docs/es/FAQ.md)  |  [Français](/docs/fr/FAQ.md)  |  [日本語](/docs/ja/FAQ.md)  |  [한국어](/docs/ko/FAQ.md) | [More](/docs/) <br/>
 
-# 💡 Why LafTools?
+# 💡 Proč LafTools?
 
 Možná se divíte, proč jsme se rozhodli vyvinout tuto sadu nástrojů, protože na internetu lze použít mnoho nástrojů. Většinu nástrojů, které poskytujeme, lze skutečně snadno najít na internetu, jako je kodek, formátovač, překlad, QR kód atd... Není to však nejpohodlnější a nejefektivnější přístup k používání těchto nástrojů.
 

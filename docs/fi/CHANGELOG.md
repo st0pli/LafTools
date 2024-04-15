@@ -30,37 +30,37 @@
 
 ### Uudet ominaisuudet
 
-- Test update JZDhNwhhW
+- Testaa logiikkaa JZDhNwhhW
 
 ## Release v2.2.14-beta (2024-04-10)
 
 ### Uudet ominaisuudet
 
-- Test update JZDhNwhhW
+- Testaa logiikkaa JZDhNwhhW
 
 ## Release v2.2.12-beta (2024-04-10)
 
 ### Uudet ominaisuudet
 
-- Test update 8oW_Reebm
+- Testaa logiikkaa 8oW_Reebm
 
 ## Release v2.2.11-beta (2024-04-09)
 
 ### Uudet ominaisuudet
 
-- Test update mafx_oyrD
+- Testaa logiikkaa mafx_oyrD
 
 ## Release v2.2.10-beta (2024-04-09)
 
 ### Uudet ominaisuudet
 
-- Test update mafx_oyrD
+- Testaa logiikkaa mafx_oyrD
 
 ## Release v2.1.99-beta (2024-04-09)
 
 ### Uudet ominaisuudet
 
-- Test some logic
+- Testaa logiikkaa
 
 ## Release v2.1.83-beta (2024-04-03)
 

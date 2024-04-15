@@ -1,6 +1,6 @@
 <i>Note: 該頁面是由LafTools工具箱內部產生的。</i> <br/> [English](/docs/en_US/FAQ.md)  |  [简体中文](/docs/zh_CN/FAQ.md)  |  繁體中文  |  [Deutsch](/docs/de/FAQ.md)  |  [Español](/docs/es/FAQ.md)  |  [Français](/docs/fr/FAQ.md)  |  [日本語](/docs/ja/FAQ.md)  |  [한국어](/docs/ko/FAQ.md) | [More](/docs/) <br/>
 
-# 💡 Why LafTools?
+# 💡 為什麼選擇 LafTools工具箱？
 
 您可能想知道為什麼我們決心開發這個工具箱，因為網路上有很多工具可以使用。 確實，我們提供的大多數工具都可以在互聯網上輕鬆找到，例如編解碼器、格式化程式、翻譯、二維碼等……但是，使用這些工具並不是最舒適和最有效的方法。
 

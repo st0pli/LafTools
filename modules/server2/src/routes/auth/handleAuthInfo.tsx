@@ -22,7 +22,7 @@ export type AuthInfo = {
     },
     systemInfo: SystemInfoBody
 }
-export let header_ELB3_auth = "elb3-auth"
+export let header_ELB3_auth = "laftools-auth"
 export type fn_getCookie = (name: string) => string
 
 export default async (getCookie: fn_getCookie): Promise<AuthInfo> => {

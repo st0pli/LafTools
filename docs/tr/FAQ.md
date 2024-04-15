@@ -1,6 +1,6 @@
 <i>Note: Bu sayfa dahili olarak LafTools'tan oluşturulmuştur.</i> <br/> [English](/docs/en_US/FAQ.md)  |  [简体中文](/docs/zh_CN/FAQ.md)  |  [繁體中文](/docs/zh_HK/FAQ.md)  |  [Deutsch](/docs/de/FAQ.md)  |  [Español](/docs/es/FAQ.md)  |  [Français](/docs/fr/FAQ.md)  |  [日本語](/docs/ja/FAQ.md)  |  [한국어](/docs/ko/FAQ.md) | [More](/docs/) <br/>
 
-# 💡 Why LafTools?
+# 💡 Neden LafTools?
 
 İnternette kullanılabilecek çok sayıda araç varken neden bu araç kutusunu geliştirmeye kararlı olduğumuzu merak edebilirsiniz. Aslında sunduğumuz codec, formatlayıcı, çeviri, QR Code vb. gibi araçların çoğu internette kolaylıkla bulunabilir. Ancak bu araçları kullanmak en rahat ve verimli yaklaşım değildir.
 

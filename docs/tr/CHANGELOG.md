@@ -30,37 +30,37 @@
 
 ### Yeni özellikler
 
-- Test update JZDhNwhhW
+- Biraz mantık test edin JZDhNwhhW
 
 ## Release v2.2.14-beta (2024-04-10)
 
 ### Yeni özellikler
 
-- Test update JZDhNwhhW
+- Biraz mantık test edin JZDhNwhhW
 
 ## Release v2.2.12-beta (2024-04-10)
 
 ### Yeni özellikler
 
-- Test update 8oW_Reebm
+- Biraz mantık test edin 8oW_Reebm
 
 ## Release v2.2.11-beta (2024-04-09)
 
 ### Yeni özellikler
 
-- Test update mafx_oyrD
+- Biraz mantık test edin mafx_oyrD
 
 ## Release v2.2.10-beta (2024-04-09)
 
 ### Yeni özellikler
 
-- Test update mafx_oyrD
+- Biraz mantık test edin mafx_oyrD
 
 ## Release v2.1.99-beta (2024-04-09)
 
 ### Yeni özellikler
 
-- Test some logic
+- Biraz mantık test edin
 
 ## Release v2.1.83-beta (2024-04-03)
 

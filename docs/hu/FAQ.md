@@ -1,6 +1,6 @@
 <i>Note: Ezt az oldalt a LafTools belsőleg hozta létre.</i> <br/> [English](/docs/en_US/FAQ.md)  |  [简体中文](/docs/zh_CN/FAQ.md)  |  [繁體中文](/docs/zh_HK/FAQ.md)  |  [Deutsch](/docs/de/FAQ.md)  |  [Español](/docs/es/FAQ.md)  |  [Français](/docs/fr/FAQ.md)  |  [日本語](/docs/ja/FAQ.md)  |  [한국어](/docs/ko/FAQ.md) | [More](/docs/) <br/>
 
-# 💡 Why LafTools?
+# 💡 Miért a LafTools?
 
 Felmerülhet benned a kérdés, miért vagyunk eltökéltek ennek az eszköztárnak a fejlesztése mellett, mivel az interneten számos eszköz használható. Valójában a legtöbb általunk biztosított eszköz könnyen megtalálható az interneten, például kodek, formázó, fordítás, QR-kód stb. Ezeknek az eszközöknek azonban nem ez a legkényelmesebb és leghatékonyabb módja.
 

@@ -30,37 +30,37 @@
 
 ### 새로운 기능
 
-- Test update JZDhNwhhW
+- 논리 테스트 JZDhNwhhW
 
 ## Release v2.2.14-beta (2024-04-10)
 
 ### 새로운 기능
 
-- Test update JZDhNwhhW
+- 논리 테스트 JZDhNwhhW
 
 ## Release v2.2.12-beta (2024-04-10)
 
 ### 새로운 기능
 
-- Test update 8oW_Reebm
+- 논리 테스트 8oW_Reebm
 
 ## Release v2.2.11-beta (2024-04-09)
 
 ### 새로운 기능
 
-- Test update mafx_oyrD
+- 논리 테스트 mafx_oyrD
 
 ## Release v2.2.10-beta (2024-04-09)
 
 ### 새로운 기능
 
-- Test update mafx_oyrD
+- 논리 테스트 mafx_oyrD
 
 ## Release v2.1.99-beta (2024-04-09)
 
 ### 새로운 기능
 
-- Test some logic
+- 논리 테스트
 
 ## Release v2.1.83-beta (2024-04-03)
 

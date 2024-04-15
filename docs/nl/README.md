@@ -13,11 +13,11 @@
 
 <i>Note: Deze pagina wordt intern gegenereerd vanuit LafTools.</i> <br/> [English](/docs/en_US/README.md)  |  [简体中文](/docs/zh_CN/README.md)  |  [繁體中文](/docs/zh_HK/README.md)  |  [Deutsch](/docs/de/README.md)  |  [Español](/docs/es/README.md)  |  [Français](/docs/fr/README.md)  |  [日本語](/docs/ja/README.md)  |  [한국어](/docs/ko/README.md) | [More](/docs/) <br/>
 
-# 🔮 Vision
+# 🔮 Visie
 
-LafTools is a privacy-first, self-hosted, fully open source toolbox designed for programmers, you can find plentful toolsets on this website.
+LafTools is een op privacy gerichte, zelfgehoste, volledig open source toolbox ontworpen voor programmeurs. Op deze website vindt u een overvloed aan toolsets.
 
-# 💌 Features
+# 💌 Functies
 
 - FOSS voor altijd
 - Lichtgewicht looptijd
@@ -25,18 +25,18 @@ LafTools is a privacy-first, self-hosted, fully open source toolbox designed for
 - Volledige GPT-achtige ondersteuning
 - Sterk geïntegreerd met productieve gebruikersinterface
 - Beschikbare Docker-images en Portable Edition
-- Desktop edition support(Planning)
+- Ondersteuning voor desktopversies(Planning)
 - ...
 
-# 🚀 Run it on Docker
+# 🚀 Voer het uit op Docker
 
-**For GLOBAL users:**
+**Voor GLOBAL-gebruikers:**
 
 ```
 docker run -e LAFREGION=US -e APPLANG=en_US --name mylaftools -v ~/.laftools-docker:/root/.laftools  -d -p 0.0.0.0:39899:39899 codegentoolbox/laftools-linux-x64:latest
 ```
 
-**For CHINESE users(国内用户):**
+**Voor CHINESE gebruikers(国内用户):**
 
 ```
 docker run -e LAFREGION=CN -e APPLANG=zh_CN --name mylaftools -v ~/.laftools-docker:/root/.laftools -d -p 0.0.0.0:39899:39899 codegentoolbox/laftools-linux-x64:latest
@@ -44,15 +44,15 @@ docker run -e LAFREGION=CN -e APPLANG=zh_CN --name mylaftools -v ~/.laftools-doc
 
 **NOTE**:
 
-1. Default port is set to 39899, you can adjust it if needed.
-2. LafTools will always be upgraded to latest version automatically so that you can enjoy latest functions and bugfixs.
+1. De standaardpoort is ingesteld op 39899. U kunt deze indien nodig aanpassen.
+2. LafTools wordt altijd automatisch geüpgraded naar de nieuwste versie, zodat u kunt genieten van de nieuwste functies en bugfixes.
 
 **Docker Images:**
 
 - [Docker Hub - laftools-linux-x64](https://hub.docker.com/r/codegentoolbox/laftools-linux-x64)
 - [Docker Hub - laftools-arm64-x64](https://hub.docker.com/r/codegentoolbox/laftools-arm64-x64)
 
-# 🔗 Online Websites
+# 🔗 Onlinewebsites
 
 Om deze functies snel te kunnen gebruiken, hebben we een stabiele online website in de VS en de CN-regio geïmplementeerd die u kunt gebruiken. De meeste tools zijn beschikbaar op onze online websites, met uitzondering van enkele tools die afhankelijk zijn van specifieke mogelijkheden van het besturingssysteem.
 
@@ -64,7 +64,7 @@ Om deze functies snel te kunnen gebruiken, hebben we een stabiele online website
 ![](https://github.com/work7z/LafTools/blob/dev/devtools/images/portal-1.png?raw=true)
 ![](https://github.com/work7z/LafTools/blob/dev/devtools/images/preview-dark.png?raw=true)
 
-# 📡 About LAF
+# 📡 Over LAF
 
 - `L` -> Linked
 - `A` -> Asynchronous
@@ -74,7 +74,7 @@ In wezen is LafTools een suite die een reeks gekoppelde, asynchrone en fantastis
 
 Wees gerust, dit project zal in de loop van de tijd op opmerkelijke en fantastische manieren evolueren. Dit project heeft meer tijd nodig, net zoals wijn met de tijd beter wordt.
 
-# 🌠 Contribution
+# 🌠 Bijdrage
 
 ## 1. Systeemomgeving instellen
 
@@ -96,7 +96,7 @@ export PATH=$PATH:$LAFTOOLS_ROOT\dev\source\windows-bin
 export LAFTOOLS_ROOT=/users/jerry/projects/laftools-repo
 ```
 
-## 2. Compile and Run
+## 2. Compileren en uitvoeren
 
 ```bash
 # installeer de vereiste globale bibliotheek

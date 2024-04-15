@@ -13,11 +13,11 @@
 
 <i>Note: Tato stránka je generována interně z LafTools.</i> <br/> [English](/docs/en_US/README.md)  |  [简体中文](/docs/zh_CN/README.md)  |  [繁體中文](/docs/zh_HK/README.md)  |  [Deutsch](/docs/de/README.md)  |  [Español](/docs/es/README.md)  |  [Français](/docs/fr/README.md)  |  [日本語](/docs/ja/README.md)  |  [한국어](/docs/ko/README.md) | [More](/docs/) <br/>
 
-# 🔮 Vision
+# 🔮 Vidění
 
-LafTools is a privacy-first, self-hosted, fully open source toolbox designed for programmers, you can find plentful toolsets on this website.
+LafTools je samozřejmý, plně otevřený zdrojový soubor nástrojů zaměřený na ochranu soukromí, určený pro programátory, na tomto webu můžete najít spoustu sad nástrojů.
 
-# 💌 Features
+# 💌 Funkce
 
 - FOSS navždy
 - Lehký běhový čas
@@ -25,18 +25,18 @@ LafTools is a privacy-first, self-hosted, fully open source toolbox designed for
 - Plná podpora GPT
 - Vysoce integrovaný s produktivním uživatelským rozhraním
 - Dostupné Docker Images a Portable Edition
-- Desktop edition support(Planning)
+- Podpora desktopové edice(Planning)
 - ...
 
-# 🚀 Run it on Docker
+# 🚀 Spusťte jej na Docker
 
-**For GLOBAL users:**
+**Pro GLOBÁLNÍ uživatele:**
 
 ```
 docker run -e LAFREGION=US -e APPLANG=en_US --name mylaftools -v ~/.laftools-docker:/root/.laftools  -d -p 0.0.0.0:39899:39899 codegentoolbox/laftools-linux-x64:latest
 ```
 
-**For CHINESE users(国内用户):**
+**Pro ČÍNSKÉ uživatele(国内用户):**
 
 ```
 docker run -e LAFREGION=CN -e APPLANG=zh_CN --name mylaftools -v ~/.laftools-docker:/root/.laftools -d -p 0.0.0.0:39899:39899 codegentoolbox/laftools-linux-x64:latest
@@ -44,15 +44,15 @@ docker run -e LAFREGION=CN -e APPLANG=zh_CN --name mylaftools -v ~/.laftools-doc
 
 **NOTE**:
 
-1. Default port is set to 39899, you can adjust it if needed.
-2. LafTools will always be upgraded to latest version automatically so that you can enjoy latest functions and bugfixs.
+1. Výchozí port je nastaven na 39899, ​​v případě potřeby jej můžete upravit.
+2. LafTools bude vždy automaticky aktualizován na nejnovější verzi, abyste si mohli užívat nejnovější funkce a opravy chyb.
 
 **Docker Images:**
 
 - [Docker Hub - laftools-linux-x64](https://hub.docker.com/r/codegentoolbox/laftools-linux-x64)
 - [Docker Hub - laftools-arm64-x64](https://hub.docker.com/r/codegentoolbox/laftools-arm64-x64)
 
-# 🔗 Online Websites
+# 🔗 Online webové stránky
 
 Pro rychlé použití těchto funkcí jsme pro vás nasadili stabilní online web v regionu USA a CN. Většina nástrojů je k dispozici na našich online webových stránkách s výjimkou některých nástrojů, které se spoléhají na konkrétní funkce operačního systému.
 
@@ -64,7 +64,7 @@ Pro rychlé použití těchto funkcí jsme pro vás nasadili stabilní online we
 ![](https://github.com/work7z/LafTools/blob/dev/devtools/images/portal-1.png?raw=true)
 ![](https://github.com/work7z/LafTools/blob/dev/devtools/images/preview-dark.png?raw=true)
 
-# 📡 About LAF
+# 📡 O LAF
 
 - `L` -> Linked
 - `A` -> Asynchronous
@@ -74,7 +74,7 @@ LafTools je v podstatě sada, která nabízí řadu propojených, asynchronních
 
 Buďte si jisti, že tento projekt se bude časem vyvíjet pozoruhodnými a fantastickými způsoby. Tento projekt potřebuje více času, stejně jako víno, časem se zlepšuje.
 
-# 🌠 Contribution
+# 🌠 Příspěvek
 
 ## 1. Nastavení prostředí systému
 
@@ -96,7 +96,7 @@ export PATH=$PATH:$LAFTOOLS_ROOT\dev\source\windows-bin
 export LAFTOOLS_ROOT=/users/jerry/projects/laftools-repo
 ```
 
-## 2. Compile and Run
+## 2. Zkompilujte a spusťte
 
 ```bash
 # nainstalovat požadovanou globální knihovnu

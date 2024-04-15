@@ -30,37 +30,37 @@
 
 ### Các tính năng mới
 
-- Test update JZDhNwhhW
+- Kiểm tra một số logic JZDhNwhhW
 
 ## Release v2.2.14-beta (2024-04-10)
 
 ### Các tính năng mới
 
-- Test update JZDhNwhhW
+- Kiểm tra một số logic JZDhNwhhW
 
 ## Release v2.2.12-beta (2024-04-10)
 
 ### Các tính năng mới
 
-- Test update 8oW_Reebm
+- Kiểm tra một số logic 8oW_Reebm
 
 ## Release v2.2.11-beta (2024-04-09)
 
 ### Các tính năng mới
 
-- Test update mafx_oyrD
+- Kiểm tra một số logic mafx_oyrD
 
 ## Release v2.2.10-beta (2024-04-09)
 
 ### Các tính năng mới
 
-- Test update mafx_oyrD
+- Kiểm tra một số logic mafx_oyrD
 
 ## Release v2.1.99-beta (2024-04-09)
 
 ### Các tính năng mới
 
-- Test some logic
+- Kiểm tra một số logic
 
 ## Release v2.1.83-beta (2024-04-03)
 

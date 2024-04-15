@@ -30,37 +30,37 @@
 
 ### Nové vlastnosti
 
-- Test update JZDhNwhhW
+- Vyzkoušejte nějakou logiku JZDhNwhhW
 
 ## Release v2.2.14-beta (2024-04-10)
 
 ### Nové vlastnosti
 
-- Test update JZDhNwhhW
+- Vyzkoušejte nějakou logiku JZDhNwhhW
 
 ## Release v2.2.12-beta (2024-04-10)
 
 ### Nové vlastnosti
 
-- Test update 8oW_Reebm
+- Vyzkoušejte nějakou logiku 8oW_Reebm
 
 ## Release v2.2.11-beta (2024-04-09)
 
 ### Nové vlastnosti
 
-- Test update mafx_oyrD
+- Vyzkoušejte nějakou logiku mafx_oyrD
 
 ## Release v2.2.10-beta (2024-04-09)
 
 ### Nové vlastnosti
 
-- Test update mafx_oyrD
+- Vyzkoušejte nějakou logiku mafx_oyrD
 
 ## Release v2.1.99-beta (2024-04-09)
 
 ### Nové vlastnosti
 
-- Test some logic
+- Vyzkoušejte nějakou logiku
 
 ## Release v2.1.83-beta (2024-04-03)
 

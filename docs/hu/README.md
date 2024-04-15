@@ -13,11 +13,11 @@
 
 <i>Note: Ezt az oldalt a LafTools belsőleg hozta létre.</i> <br/> [English](/docs/en_US/README.md)  |  [简体中文](/docs/zh_CN/README.md)  |  [繁體中文](/docs/zh_HK/README.md)  |  [Deutsch](/docs/de/README.md)  |  [Español](/docs/es/README.md)  |  [Français](/docs/fr/README.md)  |  [日本語](/docs/ja/README.md)  |  [한국어](/docs/ko/README.md) | [More](/docs/) <br/>
 
-# 🔮 Vision
+# 🔮 Látomás
 
-LafTools is a privacy-first, self-hosted, fully open source toolbox designed for programmers, you can find plentful toolsets on this website.
+A LafTools egy adatvédelem előtt álló, saját üzemeltetésű, teljesen nyílt forráskódú eszköztár programozók számára, ezen a weboldalon rengeteg eszközkészletet találhat.
 
-# 💌 Features
+# 💌 Jellemzők
 
 - FOSS Forever
 - Könnyű futásidő
@@ -25,18 +25,18 @@ LafTools is a privacy-first, self-hosted, fully open source toolbox designed for
 - Teljes GPT-szerű támogatás
 - Erősen integrált a produktív felhasználói felülettel
 - Elérhető Docker képek és Portable Edition
-- Desktop edition support(Planning)
+- Asztali kiadás támogatása(Planning)
 - ...
 
-# 🚀 Run it on Docker
+# 🚀 Futtassa a következőn: Docker
 
-**For GLOBAL users:**
+**GLOBÁLIS felhasználóknak:**
 
 ```
 docker run -e LAFREGION=US -e APPLANG=en_US --name mylaftools -v ~/.laftools-docker:/root/.laftools  -d -p 0.0.0.0:39899:39899 codegentoolbox/laftools-linux-x64:latest
 ```
 
-**For CHINESE users(国内用户):**
+**KÍNAI felhasználóknak(国内用户):**
 
 ```
 docker run -e LAFREGION=CN -e APPLANG=zh_CN --name mylaftools -v ~/.laftools-docker:/root/.laftools -d -p 0.0.0.0:39899:39899 codegentoolbox/laftools-linux-x64:latest
@@ -44,15 +44,15 @@ docker run -e LAFREGION=CN -e APPLANG=zh_CN --name mylaftools -v ~/.laftools-doc
 
 **NOTE**:
 
-1. Default port is set to 39899, you can adjust it if needed.
-2. LafTools will always be upgraded to latest version automatically so that you can enjoy latest functions and bugfixs.
+1. Az alapértelmezett port 39899, ​​szükség esetén módosíthatja.
+2. A LafTools mindig automatikusan frissül a legújabb verzióra, így élvezheti a legújabb funkciókat és hibajavításokat.
 
 **Docker Images:**
 
 - [Docker Hub - laftools-linux-x64](https://hub.docker.com/r/codegentoolbox/laftools-linux-x64)
 - [Docker Hub - laftools-arm64-x64](https://hub.docker.com/r/codegentoolbox/laftools-arm64-x64)
 
-# 🔗 Online Websites
+# 🔗 Online Weboldalak
 
 A funkciók gyors használatához stabil online webhelyet állítottunk be az Egyesült Államokban és a CN régióban. A legtöbb eszköz elérhető online webhelyeinken, kivéve néhány olyan eszközt, amelyek az operációs rendszer adott képességeire támaszkodnak.
 
@@ -64,7 +64,7 @@ A funkciók gyors használatához stabil online webhelyet állítottunk be az Eg
 ![](https://github.com/work7z/LafTools/blob/dev/devtools/images/portal-1.png?raw=true)
 ![](https://github.com/work7z/LafTools/blob/dev/devtools/images/preview-dark.png?raw=true)
 
-# 📡 About LAF
+# 📡 Körülbelül LAF
 
 - `L` -> Linked
 - `A` -> Asynchronous
@@ -74,7 +74,7 @@ Lényegében a LafTools egy olyan programcsomag, amely összekapcsolt, aszinkron
 
 Biztos lehet benne, hogy ez a projekt az idő múlásával figyelemre méltó és fantasztikus módon fog fejlődni. Ez a projekt több időt igényel, akárcsak a bor, idővel jobb lesz.
 
-# 🌠 Contribution
+# 🌠 Hozzájárulás
 
 ## 1. Rendszerkörnyezet beállítása
 
@@ -96,7 +96,7 @@ export PATH=$PATH:$LAFTOOLS_ROOT\dev\source\windows-bin
 export LAFTOOLS_ROOT=/users/jerry/projects/laftools-repo
 ```
 
-## 2. Compile and Run
+## 2. Fordítás és futtatás
 
 ```bash
 # telepítse a szükséges globális könyvtárat
