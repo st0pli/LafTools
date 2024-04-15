@@ -47,21 +47,21 @@ export let getQuickAccessList = () => {
             icon: 'translation.png',
             label: Dot("mWljvLU5c", "Translation")
         },
-        {
-            id: 'todo',
-            icon: 'to-do-list.png',
-            label: Dot("QDhYHZeBO", "TODO")
-        },
-        {
-            id: 'stopwatch',
-            icon: 'stopwatch.png',
-            label: Dot("BRrOAMTG7", "Timer")
-        },
-        {
-            id: 'dictionary',
-            icon: 'dictionary.png',
-            label: Dot("8TA2AYbhv", "Dictionary")
-        }
+        // {
+        //     id: 'todo',
+        //     icon: 'to-do-list.png',
+        //     label: Dot("QDhYHZeBO", "TODO")
+        // },
+        // {
+        //     id: 'stopwatch',
+        //     icon: 'stopwatch.png',
+        //     label: Dot("BRrOAMTG7", "Timer")
+        // },
+        // {
+        //     id: 'dictionary',
+        //     icon: 'dictionary.png',
+        //     label: Dot("8TA2AYbhv", "Dictionary")
+        // }
     ]
 }
 

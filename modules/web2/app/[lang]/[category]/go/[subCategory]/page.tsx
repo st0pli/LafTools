@@ -41,6 +41,7 @@ import { getAppDevIcon, getAppKeywords } from "../../../../__CORE__/config/imgco
 import Tools, { CategorySearchProps, generateMetadata as toolMetaDataFn } from '@/app/[lang]/page'
 import ToolPart from '../../src/parts/tools'
 import AIPart from '../../src/parts/ai'
+import UserPart from '../../src/parts/user'
 import DocsPart from '../../src/parts/docs'
 import ResourcesPart from '../../src/parts/resources'
 import NavigatorPage from '../../src/parts/index'
@@ -80,9 +81,7 @@ export default async function Home(props: CategorySearchProps) {
             <AIPart {...props} />
         )
     } else if (category == 'user') {
-        whatPartForChildren = (
-            <div>this is opt</div>
-        )
+        whatPartForChildren = <UserPart {...props} />
     } else {
         whatPartForChildren = (
             <div>sorry, I have no idea for this category {category}</div>

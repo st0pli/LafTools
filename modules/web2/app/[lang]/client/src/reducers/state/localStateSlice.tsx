@@ -24,12 +24,14 @@ import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import _ from "lodash";
 
 type LocalStateState = {
+    ackedOutdatedVersion: string,
     setup_confirm_lang: string,
     setup_user_lang: string,
     tools_favourites: string,
     lastUpdatedAt: string, // if this value is updated, then the local state should be updated by other tab already
 };
 const initialState: LocalStateState = {
+    ackedOutdatedVersion: '',
     setup_confirm_lang: '',
     setup_user_lang: '',
     lastUpdatedAt: '',

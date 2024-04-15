@@ -63,9 +63,6 @@ export type NavigatorPassProp = CategorySearchProps & {
 }
 
 export default (props: NavigatorPassProp) => {
-    if (ifnil(props.params.category, 'tools') != 'tools') {
-        return ''
-    }
     let toolSearchDetail: CategoryTypeSearchDetail = getSearchDetailBySearchProps(props)
     let { innerContent } = props;
     return (
@@ -81,11 +78,11 @@ export default (props: NavigatorPassProp) => {
                             //     href: fmtURL_ToolSubPage(['opt?action=favourite']),
                             //     label: Dot("be-Favourite-it", "Add to Favourites")
                             // },
-                            {
-                                refId: FN_REF_ID_SHARE_THIS_PAGE,
-                                href: fmtURL_ToolSubPage(['opt?action=share-this-page']),
-                                label: Dot("share-this-page", "Share this Page"),
-                            },
+                            // {
+                            //     refId: FN_REF_ID_SHARE_THIS_PAGE,
+                            //     href: fmtURL_ToolSubPage(['opt?action=share-this-page']),
+                            //     label: Dot("share-this-page", "Share this Page"),
+                            // },
                             // {
                             //     href: '',
                             //     label: ,

@@ -73,22 +73,26 @@ export type ParamStateState = {
     r: TabRightType, // right
     tid?: string; // tool tab id
 };
-const initialState: ParamStateState = {
-    fapsz: 'f',
-    hrts: 't',
-    nqop: 'f',
-    tsdmid: 'allops',
-    tsdrsipt: '',
-    tlcfg: {},
-    hdstpt: 'f',
-    hdbtpl: 'f',
-    ltr: 't',
-    hsr: 'f',
-    fs: 'f',
-    l: "tools",
-    b: "terminal",
-    r: "ai"
-};
+let fn_getInitialState = (): ParamStateState => {
+    return {
+        fapsz: 'f',
+        hrts: 't',
+        nqop: 'f',
+        tsdmid: 'allops',
+        tsdrsipt: '',
+        tlcfg: {},
+        hdstpt: 'f',
+        hdbtpl: 'f',
+        ltr: 't',
+        hsr: 't',
+        fs: 'f',
+        l: "tools",
+        b: "terminal",
+        r: "ai"
+    }
+}
+const initialState: ParamStateState = fn_getInitialState()
+const initialState_forCheck: ParamStateState = fn_getInitialState()
 
 let localParamSaveKey = "wrixNBr"
 export type ParamStateStateKeyType = keyof ParamStateState;
@@ -147,6 +151,15 @@ let formatState = (state: ParamStateState) => {
             queryObj[fieldName] = JSON.stringify(v)
         }
     })
+    // TODO: check if we need to remove unnecessary fields
+    // _.forEach(queryObj, (x, d, n) => {
+    //     let fieldName = d;
+    //     let v = x;
+    //     if (v == initialState_forCheck[fieldName]) {
+    //         delete queryObj[fieldName]
+    //         return;
+    //     }
+    // })
     return queryObj
 }
 export let DELAY_TIME = 190;

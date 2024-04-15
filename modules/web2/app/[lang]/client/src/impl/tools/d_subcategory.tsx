@@ -78,7 +78,7 @@ export let getIconImgAndBannerTextByCategory = (category: CategoryType, props: N
             'reset-password': Dot("forgot.password", "Forgot Password"),
         }
         crtTitleBanner = (
-            Dot("sjod7G6WL", "User Centre") + ' - ' + name_map[props.params.subCategory]
+            Dot("sjod7G6WL", "User Centre") + ' - ' + name_map[props.params.id]
         )
     }
     return {
@@ -540,8 +540,8 @@ export let getUserSubCategory = ((): PortalDefinitionType[] => {
         {
             id: 'opt',
             // secondBreadcrumbLabel: Dot("jSZmia6Zl", "Control Panel"),
-            label: Dot("sign.in", "User Centre"),
-            longLabel: Dot("sign.in.long", "User Centre"),
+            label: Dot("SD2VOXLGD", "User Centre"),
+            longLabel: Dot("X-u9FCh1I", "User Centre"),
             seoTitle: Dot("sign.in.title", "Sign In to Your Account"),
             seoKeywords: [
                 "sign in",
