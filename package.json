@@ -5,7 +5,7 @@
     "add-license": "sh ./pipeline/dev-add-license-to-each-file.sh",
     "fe-handle-CN-pre-release": "sh ./devtools/release/download-and-verify.sh",
     "fe-job": "sh ./pipeline/dev-run-scan-and-generate.sh",
-    "fe-sync-web2share": "sh ./pipeline/dev-sync-copy-files.sh",
+    "sync-share": "sh ./pipeline/dev-sync-copy-files.sh",
     "fe-release": "sh ./devtools/docs-generator/pipeline/build.sh",
     "fe-docs-gen": "sh ./devtools/docs-generator/pipeline/build.sh",
     "do-tag": "sh ./pipeline/do-tag.sh",

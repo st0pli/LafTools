@@ -18,8 +18,12 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-/** @type {import('next').NextConfig} */
+let isDev = process.env.NODE_ENV === "development";
+export const API_SERVER_URL = isDev
+  ? "http://127.0.0.1:2016"
+  : "https://api.laftools.cn";
 
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
     serverComponentsExternalPackages: ["sequelize", "sequelize-typescript"],
@@ -27,6 +31,10 @@ const nextConfig = {
   output: "standalone",
   rewrites: async () => {
     return [
+      {
+        source: "/pxy/v3/:path*",
+        destination: `${API_SERVER_URL}/v3/:path*`,
+      },
       // {
       //   source: "/v3/:path*",
       //   destination: `${API_URL}/v3/:path*`,

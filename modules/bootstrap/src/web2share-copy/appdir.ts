@@ -23,7 +23,6 @@ import { getLafToolsDataDir } from "./homedir";
 import { isDevEnv } from "./env";
 import fsutils from "./FileUtils";
 import { join } from "path";
-import { ModuleType } from "../constant";
 
 export let getAppDataInternalDir = (): string => {
   return fsutils.mkdir(path.join(getLafToolsDataDir(), "data"));

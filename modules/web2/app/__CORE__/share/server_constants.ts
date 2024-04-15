@@ -3,6 +3,11 @@ export const HEADER_X_LAF_REGION = "x-laf-region"; // CN or US
 export const HEADER_X_LAF_PLATFORM = "x-laf-platform";
 export const HEADER_X_LAF_VERSION = "x-laf-version";
 
+export type TypeCaptchaResponse = {
+  randomID: string;
+  imgBase64: string;
+};
+
 export type ReleaseStatusResponse = {
   minimalSupportedVersion: string;
 } | null;
