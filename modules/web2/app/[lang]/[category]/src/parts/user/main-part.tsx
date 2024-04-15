@@ -59,8 +59,8 @@ export default (props: CrtToolProp) => {
         )
     }
     return <div className='flex-1  space-y-2 '>
-        <div className={'flex justify-center mx-auto'} style={{
-            minHeight: '100vh',
+        <div className={'flex justify-center mx-auto mb-32'} style={{
+
         }}>
             {finPage}
         </div>

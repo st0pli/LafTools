@@ -43,7 +43,7 @@ export default (props: { placeholder?: string, checkIfHas?: boolean, checkDuplic
 
     return (
         <div className=''>
-            <label htmlFor="hs-leading-icon" className="block text-sm font-medium mb-2 dark:text-white">{Dot("-4d", "User ID")}</label>
+            <label htmlFor="hs-leading-icon" className="block text-sm font-medium mb-2 dark:text-white">{Dot("J0VEign6J", "Username")}</label>
             <div className="relative">
                 <input value={value} onChange={e => {
                     setValue(e.target.value)

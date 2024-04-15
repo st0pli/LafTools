@@ -43,7 +43,6 @@ export default (props: CrtToolProp) => {
     // let searchDetail = getSearchDetailBySearchProps(props)
     return <div className='flex-1  space-y-2 '>
         <div style={{
-            minHeight: '100vh'
         }}>this is resources part</div>
     </div>
 }
