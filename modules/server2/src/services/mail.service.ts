@@ -75,11 +75,6 @@ export async function sendMailTo(
     pass: process.env.MAIL_PASS,
   };
 
-  if (!account.user || !account.pass) {
-    logger.error('no mail account found');
-    return;
-  }
-
   // create reusable transporter object using the default SMTP transport
   let transporter = nodemailer.createTransport({
     host: 'gz-smtp.qcloudmail.com',
@@ -104,6 +99,10 @@ export async function sendMailTo(
     return;
   }
 
+  if (!account.user || !account.pass) {
+    logger.error('no mail account found');
+    return;
+  }
   // send mail with defined transport object
   let info = await transporter.sendMail(mailOptions);
 

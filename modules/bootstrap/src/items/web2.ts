@@ -1,10 +1,6 @@
 import { TypeRunItem } from "../items";
 import path from "path";
-import {
-  API_SERVER_URL,
-  core_sendAPIRequestInBE,
-  getLAFRegion,
-} from "../web2share-copy/api";
+import { core_sendAPIRequestInBE } from "../web2share-copy/api";
 import { isDevEnv, isTestEnv } from "../web2share-copy/env";
 import {
   getAppBootstrapImplDir,
@@ -40,6 +36,7 @@ import { getLafToolsDataDir } from "../web2share-copy/homedir";
 import { join } from "lodash";
 import { getBootstrapUpdateReloadFile } from "../common";
 import { getCurrentBootCheckedVersionFile } from "../fndir/vercheck";
+import { getLAFRegion } from "../web2share-copy/api_constants";
 let bootstrapInternalDir = getAppBootstrapInternalDir();
 let bootStrapImplWeb2Dir = getAppBootstrapImplWeb2Dir();
 let tempDir = getAppBootstrapTempDir();
