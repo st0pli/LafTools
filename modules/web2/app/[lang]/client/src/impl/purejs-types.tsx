@@ -54,7 +54,7 @@ export type EachLang = {
  * 2. Translation Selector
  * 3. Sessions and Related Config
  */
-export type Val_ToolTabIndex = "output" | "tools" | "wiki" | "code" | "faq";
+export type Val_ToolTabIndex = "output" | "tools" | "wiki" | "code" | "faq" | "moreopt";
 export type ToolDefaultOutputType = {
   // key refers to sessionId
   collapseOutput?: boolean;

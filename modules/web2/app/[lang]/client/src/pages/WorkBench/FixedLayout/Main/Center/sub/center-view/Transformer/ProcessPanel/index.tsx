@@ -54,6 +54,7 @@ import EditableOptions from "@/app/[lang]/client/src/components/EditableOptions/
 import { useGeneralListRead } from "./hooks.tsx";
 import ParamStateSlice from "@/app/[lang]/client/src/reducers/state/paramStateSlice.tsx";
 import { FAQItem } from "@/app/[lang]/client/src/impl/tools/faq/types.tsx";
+import WrapperActionListView from "../SideMenu/WrapperActionListView.tsx";
 export type ProcessPanelProps = { disableSeparateOutputMode: boolean, hideSettingPanel: boolean } & CommonTransformerPassProp & TransformerWithRuntime
 export type FaqFnType = {
     fn: () => FAQItem[]
@@ -62,7 +63,10 @@ export default (props: ProcessPanelProps) => {
     let crtRuntimeStatus = props.crtRuntimeStatus
     let shouldVert = useShouldVerticalModeOrNot()
 
-    let toolTabIndex = crtRuntimeStatus.toolTabIndex || 'tools'
+    let toolTabIndex = exportUtils.useSelector(v => {
+        return v.paramState.tltb
+    })
+    // crtRuntimeStatus.toolTabIndex || 'tools'
     if (toolTabIndex == 'output') {
         toolTabIndex = 'tools'
     }
@@ -107,6 +111,8 @@ export default (props: ProcessPanelProps) => {
             hideFAQ={hideFAQ}
             onHideFAQ={onHideFAQ}
             key={sessionId} {...props}></FaqPanel>
+    } else if (toolTabIndex == "moreopt") {
+        finalShowContent_l = <WrapperActionListView {...props} />
     } else if (toolTabIndex == 'code') {
         finalShowContent_l = <CodePanel {...props}></CodePanel>
     }
@@ -122,7 +128,12 @@ export default (props: ProcessPanelProps) => {
                         id="navbar"
                         large={false}
                         onChange={(v) => {
-                            FN_GetDispatch()(RuntimeStatusSlice.actions.setToolTabIndex({ sessionId, tabIndex: v as Val_ToolTabIndex }))
+                            // FN_GetDispatch()(RuntimeStatusSlice.actions.setToolTabIndex({ sessionId, tabIndex: v as Val_ToolTabIndex }))
+                            FN_GetDispatch()(
+                                ParamStateSlice.actions.updateOneOfParamState({
+                                    tltb: v as Val_ToolTabIndex
+                                })
+                            )
                         }}
                         selectedTabId={toolTabIndex}
                     >
@@ -134,10 +145,12 @@ export default (props: ProcessPanelProps) => {
                         {
                             !toolHandler || toolHanlder?.getMetaInfo()?.hideCodePanel ? '' : <Tab id="code" icon="code" title={Dot("JQEVK", "Code")} />
                         }
+                        <Tab id="moreopt" icon="more" title={Dot("rlgb9OKEz", "More")} />
+
                     </Tabs>
                 </Navbar.Group>
             </Navbar>
-            <div style={{ height: `calc(100% - ${CSS_NAV_BP_TAB_HEIGHT}px)`, overflow: 'auto' }} className={pdValue}>
+            <div style={{ height: `calc(100% - ${CSS_NAV_BP_TAB_HEIGHT}px)`, overflow: 'auto' }} className={pdValue + ' scrollbar-hide'}>
                 {finalShowContent_l}
             </div>
         </div>

@@ -32,28 +32,16 @@ export default (props: CommonTransformerPassProp & TransformerWithRuntimeProp) =
             tsdmid: v
         }))
     }
-    let opDetails: OpDetail[] = props.opDetails
-    let filteredOpDetails: OpDetail[] = useMemo(() => {
-        if (_.isEmpty(searchText)) {
-            return opDetails;
-        } else {
-            let lt = searchText.toLowerCase()
-            return _.filter(opDetails, x => {
-                return x.label.toLowerCase().indexOf(lt) > -1
-            })
-        }
-    }, [opDetails, searchText])
-    let toolsChain = []
-    let favourites = []
+
     let innerContent = (
         <div>
             <SegmentedControl
                 // fill
                 options={[
-                    {
-                        label: Dot("alloperations", "Operations"),
-                        value: "allops",
-                    },
+                    // {
+                    //     label: Dot("alloperations", "Operations"),
+                    //     value: "allops",
+                    // },
                     {
                         label: Dot("Rc_TrzJNm", "Run Pipeline"),
                         value: "pipeline",
@@ -67,13 +55,14 @@ export default (props: CommonTransformerPassProp & TransformerWithRuntimeProp) =
             {
                 defaultTab === "pipeline" && <div>
                     <div className='p-2'>
-                        {Dot("9ElKDB5ix", "This part is still under development, will be released soon")}
+                        {Dot("9ElKDB5ix", "This part is still under development, will be released soon")}<br />
+                        {Dot("aFsY0lzSw", "The pipeline is a sequence of operations that will be executed in order. You can add, remove, and reorder operations in the pipeline.")}
                     </div>
                 </div>
             }
-            {
-                defaultTab === "allops" && <ActionListView {...props} opDetails={filteredOpDetails} />
-            }
+            {/* {
+                defaultTab === "allops" && 
+            } */}
         </div>)
     return <div className='w-full h-full flex flex-col'>
         {/* <div className={CSS_BG_COLOR_WHITE + ` w-full font-mono text-xs justify-center flex flex-row items-center ` + light_border_clz_all}

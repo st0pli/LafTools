@@ -59,7 +59,11 @@ export let getSearchDetailBySearchProps = (props: CategorySearchProps): Category
     }
     let targetSubCategory = toolsPortalDefinitons.find(x => x.id == subCategory)
     if (!targetSubCategory) {
-        notFound()
+        if (toolsPortalDefinitons) {
+            targetSubCategory = toolsPortalDefinitons[0]
+        } else {
+            notFound()
+        }
     }
 
     let searchToolId = props.params.id;

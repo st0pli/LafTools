@@ -23,6 +23,7 @@ import { startListening } from "../../listenerMiddleware";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import queryString from "query-string";
 import _ from "lodash";
+import { Val_ToolTabIndex } from "../../types/purejs-types-READ_ONLY";
 
 
 // The slice state is initialized from the URL parameters if it's possible. 
@@ -53,6 +54,7 @@ export type ToolPipeline = {
 }
 export type ToolSideMenuTabIdType = "pipeline" | "favourites" | "allops"
 export type ParamStateState = {
+    tltb: Val_ToolTabIndex,
     fapsz: TrueFalseType, // full window app size or not
     nqop: TrueFalseType, // no quick operation. will process and flag it as false if it's true
     tlcfg: ToolConfigMap, // tool config, recipes...
@@ -75,15 +77,16 @@ export type ParamStateState = {
 };
 let fn_getInitialState = (): ParamStateState => {
     return {
+        tltb: 'tools',
         fapsz: 'f',
         hrts: 't',
         nqop: 'f',
-        tsdmid: 'allops',
+        tsdmid: 'pipeline',
         tsdrsipt: '',
         tlcfg: {},
         hdstpt: 'f',
         hdbtpl: 'f',
-        ltr: 't',
+        ltr: 'f',
         hsr: 't',
         fs: 'f',
         l: "tools",
