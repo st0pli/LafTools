@@ -36,6 +36,6 @@
       "@utils/*": ["utils/*"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.json", ".env"],
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.json", ".env", "vite.config.ts"],
   "exclude": ["node_modules", "src/http", "src/logs"]
 }

@@ -130,11 +130,12 @@ let SHARING_SALT_FIXED = "STCG001"
 export let hashPW = (pw: string) => {
     return getMD5(
         `${SHARING_SALT_FIXED}${pw}${SHARING_SALT_FIXED}`
-    )
+    ).toUpperCase()
 }
 
 
 export let validateEachRuleInArr = async (rules: CheckRules[], formData: any, p: CommonHandlePass): Promise<AsyncCreateResponse<{}> | null> => {
+    let { Dot } = p
     let valid = true;
     let lastMsg = ''
     for (let rule of rules) {

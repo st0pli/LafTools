@@ -57,3 +57,4 @@ jobs:
         run: |
           cd $LAFTOOLS_ROOT/modules/server2
           npm run build
+          npm run test
