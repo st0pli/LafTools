@@ -18,7 +18,8 @@ export type CheckRules = {
     label?: string
 }
 
-export let validateEachRuleInArr = async (rules: CheckRules[], formData: any): Promise<AsyncCreateResponse<{}> | null> => {
+export let validateEachRuleInArr = async (rules: CheckRules[], formData: any, p: CommonHandlePass): Promise<AsyncCreateResponse<{}> | null> => {
+    let { Dot } = p
     let valid = true;
     let lastMsg = ''
     for (let rule of rules) {

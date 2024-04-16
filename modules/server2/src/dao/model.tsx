@@ -194,7 +194,7 @@ export class Audit extends Model<InferAttributes<Audit>, InferCreationAttributes
 
 
 export default async (daoRef: DaoRef) => {
-    let sequelize = daoRef.db
+    let sequelize = daoRef.db_w7z
 
     // options
     // await sequelize.sync({ alter: true, force: false })

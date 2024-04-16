@@ -28,15 +28,17 @@ export let newSeq = (databaseName: string): Sequelize.Sequelize => {
   });
 };
 
-const work7z_sequelize = newSeq('work7z');
+const tmp_work7z_sequelize = newSeq('work7z');
+const tmp_s2_sequelize = newSeq('s2');
 
-work7z_sequelize.authenticate();
+tmp_work7z_sequelize.authenticate();
 
 export const DB = {
-  Users2: UserModelGenerator(work7z_sequelize),
-  TestFN: TestFnModelGenerator(work7z_sequelize),
-  sequelize: work7z_sequelize, // connection instance (RAW queries)
+  Users2: UserModelGenerator(tmp_work7z_sequelize),
+  TestFN: TestFnModelGenerator(tmp_work7z_sequelize),
+  sequelize: tmp_work7z_sequelize, // connection instance (RAW queries)
   Sequelize, // library
 };
 
-export let g_sequelize = work7z_sequelize;
+export let work7z_sequelize = tmp_work7z_sequelize;
+export let s2_sequelize = tmp_s2_sequelize;

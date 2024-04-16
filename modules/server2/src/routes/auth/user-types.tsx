@@ -3,14 +3,14 @@ import { UserModel, UserModel as User } from "@/models/oldjava.model";
 import _ from "lodash";
 import { key_systemInfoGroup } from "./userAction";
 
-export let fn_get_user_avatar = (authInfoProps: AuthInfoProps) => {
-    let avatarPath = authInfoProps.authInfo?.user?.avatarPath
-    let userId = authInfoProps.authInfo.user?.id
-    if (_.isEmpty(avatarPath)) {
-        return '/avatar/dft-1.png'
-    }
-    return avatarPath
-}
+// export let fn_get_user_avatar = (authInfoProps: AuthInfoProps) => {
+//     let avatarPath = authInfoProps.authInfo?.user?.avatarPath
+//     let userId = authInfoProps.authInfo.user?.id
+//     if (_.isEmpty(avatarPath)) {
+//         return '/avatar/dft-1.png'
+//     }
+//     return avatarPath
+// }
 
 export type SystemInfoBody = {
     userCount: number,

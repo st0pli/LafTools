@@ -6,12 +6,13 @@ import { RedisClientType, createClient } from 'redis';
 import model from './model';
 import refMap from './ref';
 import { SystemEnvFlag } from '@/hooks/env';
-import { g_sequelize, newSeq } from '@/database';
+import { work7z_sequelize, newSeq, s2_sequelize } from '@/database';
 import { isDevEnv } from '@/web2share-copy/env';
 
 
 export type DaoRef = {
-    db: Sequelize,
+    db_w7z: Sequelize,
+    db_s2: Sequelize,
     redis: RedisClientType
 }
 
@@ -22,7 +23,8 @@ let loadDAO = async (): Promise<DaoRef> => {
     console.log('initializing DAO Ref...')
     lock = true;
     try {
-        let sequelize = g_sequelize
+        let sequelize_work7z = work7z_sequelize
+        let sequelize_s2 = s2_sequelize
 
         // 2. redis
         const client = await createClient({
@@ -33,7 +35,8 @@ let loadDAO = async (): Promise<DaoRef> => {
 
         let r: DaoRef = {
             redis: client as any,
-            db: sequelize,
+            db_w7z: sequelize_work7z,
+            db_s2: sequelize_s2,
         }
 
         console.log('established connection, setup model...')

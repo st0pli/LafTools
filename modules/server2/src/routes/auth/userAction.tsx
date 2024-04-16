@@ -8,6 +8,8 @@ import handleAuthInfo, { fn_getCookie } from "./handleAuthInfo";
 import { checkIfStrOnlyHasAlphanumeric } from "./utils";
 import { CommonHandlePass } from "../auth.route";
 import { CheckRules, fn_verifyVCode } from "./action-types";
+import { fn_refresh_system_info_from_redis } from "./user-types";
+import _ from "lodash";
 
 export type Elb3AuthBody = {
     userAcctId: string,
@@ -17,7 +19,7 @@ export let key_sessionGroup = 'session-group';
 export let key_systemInfoGroup = 'system-info-group'
 
 export type fn_setCookie = (name: string, value: string,) => void
-export let signInWithUserId = async (userAcctId: string, setCookie: fn_setCookie) => {
+export let signInWithUserId = async (userAcctId: string, rememberMe: boolean): Promise<{ authValue: string }> => {
     let userInfo = await getUserInfoByUserAcctId(userAcctId)
     if (!userInfo) {
         throw new Error('user not found')
@@ -31,12 +33,19 @@ export let signInWithUserId = async (userAcctId: string, setCookie: fn_setCookie
 
     let push: Elb3AuthBody = {
         userAcctId: userInfo.id + '',
-        userRole: 'user',//userInfo.role
+        userRole: 'user', //userInfo.role
     }
     let elb3AuthBody = btoa(JSON.stringify(push))
-    let expiredDate = new Date().getTime() + 1000 * 60 * 60 * 24 * 30 * 12 * 30 // by default, 30 years expired
+    let expiredTime = 1000 * 60 * 60 * 24 * 30 * 12 * 30
+    if (!rememberMe) {
+        // only remember for 1 day
+        expiredTime = 1000 * 60 * 60 * 24 * 1
+    }
+    let expiredDate = new Date().getTime() + expiredTime // by default, 30 years expired
     let signature = getSignatureFromStr(elb3AuthBody)
-    setCookie('elb3-auth', expiredDate + '.' + elb3AuthBody + '.' + (signature),)
+    return {
+        authValue: expiredDate + '.' + elb3AuthBody + '.' + (signature)
+    }
 }
 
 export let getUserInfoByUserAcctId = async (userAcctId: string): Promise<User | null> => {
@@ -125,7 +134,7 @@ export let hashPW = (pw: string) => {
 }
 
 
-export let validateEachRuleInArr = async (rules: CheckRules[], formData: any): Promise<AsyncCreateResponse<{}> | null> => {
+export let validateEachRuleInArr = async (rules: CheckRules[], formData: any, p: CommonHandlePass): Promise<AsyncCreateResponse<{}> | null> => {
     let valid = true;
     let lastMsg = ''
     for (let rule of rules) {
@@ -230,6 +239,8 @@ export async function handleSignInUser(formData: {
     password: string,
     phoneNumber: string,
     type: string,
+    rememberMe: boolean,
+    randomID: string,
     vcode: string
 }, p: CommonHandlePass): Promise<AsyncCreateResponse<{}>> {
     let daoRef = await dao()
@@ -255,7 +266,7 @@ export async function handleSignInUser(formData: {
             name: "vcode",
             label: Dot("TqXddh_K", "Verification Code"),
         },
-        fn_verifyVCode(),
+        fn_verifyVCode(formData.randomID, p),
         {
             type: 'check-fn',
             name: 'userAcctId',
@@ -272,20 +283,21 @@ export async function handleSignInUser(formData: {
                     return Dot("eqwee", "Password is not correct")
                 }
                 // LOGIN SUCCESS
-                await daoRef.db.transaction(async () => {
+                await daoRef.db_w7z.transaction(async () => {
                     if (!user) return;
-                    await signInWithUserId(user.userAcctId)
-                    await UserLoginLog.create({
-                        userId: user.id || -1,
-                        loginIp: '',
-                        loginTime: new Date(),
-                    })
+                    await signInWithUserId(user.id + '', formData.rememberMe)
+                    // TODO: user login log
+                    // await UserLoginLog.create({
+                    //     userId: user.id || -1,
+                    //     loginIp: '',
+                    //     loginTime: new Date(),
+                    // })
                 })
             }
         },
     ].filter(x => x)
 
-    let validObj = await validateEachRuleInArr(rules, formData);
+    let validObj = await validateEachRuleInArr(rules, formData, p);
     if (validObj) {
         return validObj
     }
@@ -299,13 +311,16 @@ export async function handleSignInUser(formData: {
 
 export default async function create(formData: {
     preview: boolean,
-    userAcctId: string,
+    userId: string,
     password: string,
-    phoneNumber: string,
+    email: string,
+    randomID: string,
     invitationCode: string,
+    rememberMe: boolean,
     confirmPassword: string,
     vcode: string
-}): Promise<AsyncCreateResponse<{ newUser?: User }>> {
+}, p: CommonHandlePass): Promise<AsyncCreateResponse<{ newUser?: User }>> {
+    let { Dot } = p
     console.log('formData', formData)
     let daoRef = await dao()
     let rules: CheckRules[] = [
@@ -402,31 +417,31 @@ export default async function create(formData: {
                 }
             }
         },
-        {
-            type: "check-fn",
-            name: "invitationCode",
-            validateFn: async (val) => {
-                if (val.length > 0) {
-                    let item = invitationCodeItem
-                    if (!item) {
-                        return Dot("8s1dX", "The invitation code does not exist in system, please check if there is a case sensitive issue.")
-                    }
-                    if (item.expiredAt < new Date()) {
-                        return Dot("8saIR-LCjyChx", "Invitation code has expired")
-                    }
-                    if (item.useCount > item.maxUseCount) {
-                        return Dot("8saIt5r5nGxwwChx", "Invitation code has been used up")
-                    }
-                    // all good
-                } else {
-                    return Dot("8s1R5nChx", "Invitation code is empty, this community is not open to public but limited to invited users.")
-                }
-            }
-        },
-        formData.preview ? null : fn_verifyVCode()
+        // {
+        //     type: "check-fn",
+        //     name: "invitationCode",
+        //     validateFn: async (val) => {
+        //         if (val.length > 0) {
+        //             let item = invitationCodeItem
+        //             if (!item) {
+        //                 return Dot("8s1dX", "The invitation code does not exist in system, please check if there is a case sensitive issue.")
+        //             }
+        //             if (item.expiredAt < new Date()) {
+        //                 return Dot("8saIR-LCjyChx", "Invitation code has expired")
+        //             }
+        //             if (item.useCount > item.maxUseCount) {
+        //                 return Dot("8saIt5r5nGxwwChx", "Invitation code has been used up")
+        //             }
+        //             // all good
+        //         } else {
+        //             return Dot("8s1R5nChx", "Invitation code is empty, this community is not open to public but limited to invited users.")
+        //         }
+        //     }
+        // },
+        formData.preview ? null : fn_verifyVCode(formData.randomID, p)
     ].filter(x => x)
 
-    let validObj = await validateEachRuleInArr(rules, formData);
+    let validObj = await validateEachRuleInArr(rules, formData, p);
     if (validObj) {
         return validObj
     }
@@ -437,28 +452,22 @@ export default async function create(formData: {
         };
     }
 
-    let newUser = await daoRef.db.transaction(async () => {
+    let newUser = await daoRef.db_w7z.transaction(async () => {
         let newUser = await User.create({
-            userAcctId: formData.userAcctId + '',
-            password: hashPW(formData.password + ''),
-            phoneNumber: formData.phoneNumber + '',
-            invitationCode: formData.invitationCode + '',
-            vcode: formData.vcode + '',
-            role: 'user',
-            status: 'newly-created',
-            topicCount: 0,
-            replyCount: 0,
+            id: parseInt(formData.userId),
+            userPwMd5: hashPW(formData.password + ''),
+            email: formData.email,
         })
 
-        await invitationCodeItem?.update({
-            useCount: invitationCodeItem.useCount - 1
-        })
+        // await invitationCodeItem?.update({
+        //     useCount: invitationCodeItem.useCount - 1
+        // })
 
-        await signInWithUserId(formData.userAcctId + '')
+        await signInWithUserId(formData.userId + '', formData.rememberMe)
 
         await fn_refresh_system_info_from_redis()
 
-        await sendSMSCodeForUser(formData.userAcctId, formData.phoneNumber)
+        // await sendSMSCodeForUser(formData.userId, formData.email)
 
         return newUser
     })
