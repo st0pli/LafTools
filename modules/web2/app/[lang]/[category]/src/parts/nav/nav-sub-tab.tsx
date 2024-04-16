@@ -31,8 +31,7 @@ import { URL_SUBCATEGORY_GO_PATH } from "@/app/__CORE__/meta/url";
 import { CrtToolProp } from "../tools/main-part";
 import { getSubCategoryByProps } from "@/app/[lang]/client/src/impl/tools/d_subcategory";
 import { CSS_BG_COLOR_WHITE } from "@/app/__CORE__/meta/styles";
-
-export default function (props: CrtToolProp) {
+export let getSubTabs = (props: CrtToolProp): PortalDefinitionTbabGroup[] => {
     let subCategory = props.params.subCategory
     let sp = {
         id: props.params.id
@@ -59,10 +58,6 @@ export default function (props: CrtToolProp) {
             currentSubTabId = 'more'
         }
     }
-    // defaults to id
-    if (_.isEmpty(currentSubTabId) && subTabs.length > 0) {
-        currentSubTabId = subTabs[0].id
-    }
 
     subTabs = [
         ...subTabs,
@@ -71,6 +66,19 @@ export default function (props: CrtToolProp) {
             label: Dot("HckK__LH2", 'More')
         }
     ]
+    return subTabs;
+}
+export default function (props: CrtToolProp) {
+    let subCategory = props.params.subCategory
+    let sp = {
+        id: props.params.id
+    }
+    let subTabs = getSubTabs(props)
+    let currentSubTabId = sp["id"]
+    // defaults to id
+    if (_.isEmpty(currentSubTabId) && subTabs.length > 0) {
+        currentSubTabId = subTabs[0].id
+    }
 
     return (
         <div className={"flex w-full  flex-col " + CSS_BG_COLOR_WHITE}>
