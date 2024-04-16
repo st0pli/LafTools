@@ -19,7 +19,7 @@ export let key_sessionGroup = 'session-group';
 export let key_systemInfoGroup = 'system-info-group'
 
 export type fn_setCookie = (name: string, value: string,) => void
-export let signInWithUserId = async (userAcctId: string, rememberMe: boolean): Promise<{ authValue: string }> => {
+export let signInWithUserId = async (userAcctId: string, rememberMe: boolean): Promise<SignInCredentials> => {
     let userInfo = await getUserInfoByUserAcctId(userAcctId)
     if (!userInfo) {
         throw new Error('user not found')
@@ -38,13 +38,14 @@ export let signInWithUserId = async (userAcctId: string, rememberMe: boolean): P
     let elb3AuthBody = btoa(JSON.stringify(push))
     let expiredTime = 1000 * 60 * 60 * 24 * 30 * 12 * 30
     if (!rememberMe) {
-        // only remember for 1 day
-        expiredTime = 1000 * 60 * 60 * 24 * 1
+        // only remember for 2 hours
+        expiredTime = 1000 * 60 * 60 * 2
     }
     let expiredDate = new Date().getTime() + expiredTime // by default, 30 years expired
     let signature = getSignatureFromStr(elb3AuthBody)
     return {
-        authValue: expiredDate + '.' + elb3AuthBody + '.' + (signature)
+        signed: true,
+        signature: expiredDate + '.' + elb3AuthBody + '.' + (signature)
     }
 }
 
@@ -126,6 +127,8 @@ export type ValOrError<T> = {
 
 //     return {}
 // }
+
+
 let SHARING_SALT_FIXED = "STCG001"
 export let hashPW = (pw: string) => {
     return getMD5(
@@ -234,8 +237,11 @@ export type AsyncCreateResponse<T> = {
     error?: string, // error
     data?: T
 }
-
-export async function handleSignInUser(formData: {
+export type SignInCredentials = {
+    signed: boolean,
+    signature: string | null,
+}
+export async function handleSignIn(formData: {
     userAcctId: string,
     password: string,
     phoneNumber: string,
@@ -243,9 +249,13 @@ export async function handleSignInUser(formData: {
     rememberMe: boolean,
     randomID: string,
     vcode: string
-}, p: CommonHandlePass): Promise<AsyncCreateResponse<{}>> {
+}, p: CommonHandlePass): Promise<AsyncCreateResponse<SignInCredentials | {}>> {
     let daoRef = await dao()
     let { Dot, Info, getCookie, setCookie } = p
+    let res: SignInCredentials = {
+        signed: false,
+        signature: null
+    };
     let rules: CheckRules[] = [
         formData.type == 'username' ? {
             type: "non-empty",
@@ -286,7 +296,8 @@ export async function handleSignInUser(formData: {
                 // LOGIN SUCCESS
                 await daoRef.db_w7z.transaction(async () => {
                     if (!user) return;
-                    await signInWithUserId(user.id + '', formData.rememberMe)
+                    let r = await signInWithUserId(user.id + '', formData.rememberMe)
+                    res = r
                     // TODO: user login log
                     // await UserLoginLog.create({
                     //     userId: user.id || -1,
@@ -304,15 +315,14 @@ export async function handleSignInUser(formData: {
     }
 
     return {
-        data: {
-        },
+        data: res,
     }
 }
 
 
-export default async function create(formData: {
+export default async function handleSignUp(formData: {
     preview: boolean,
-    userId: string,
+    userAcctId: string,
     password: string,
     email: string,
     randomID: string,
@@ -455,7 +465,7 @@ export default async function create(formData: {
 
     let newUser = await daoRef.db_w7z.transaction(async () => {
         let newUser = await User.create({
-            id: parseInt(formData.userId),
+            id: parseInt(formData.userAcctId),
             userPwMd5: hashPW(formData.password + ''),
             email: formData.email,
         })
@@ -464,7 +474,7 @@ export default async function create(formData: {
         //     useCount: invitationCodeItem.useCount - 1
         // })
 
-        await signInWithUserId(formData.userId + '', formData.rememberMe)
+        await signInWithUserId(formData.userAcctId + '', formData.rememberMe)
 
         await fn_refresh_system_info_from_redis()
 

@@ -66,6 +66,11 @@ function formatResultWithReplacer(val = '', ...args) {
   return val;
 }
 export type DotType = (id: string, enText: string, ...args: any[]) => string;
+export let DotFnDefault = () => {
+  return (id: string, enText: string, ...args: any[]): string => {
+    return formatResultWithReplacer(enText, ...args);
+  };
+};
 export let DotFn = (req: Request): DotType => {
   let xLafLang = req.headers[HEADER_X_LAF_LANG];
   let currentLang = LANG_EN_US;

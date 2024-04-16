@@ -9,7 +9,7 @@ import { DotFn, DotType } from '@/i18n/TranslationUtils';
 import { InfoFn, RequestInfo } from '@/system/info';
 import { SysResponse, TypeCaptchaResponse } from './_types';
 import { CaptchaService } from '@/services/captcha.service';
-import { handleSignInUser } from './auth/userAction';
+import { handleSignIn } from './auth/userAction';
 
 export let getCookieGetterSetter = (req: Request, res: Response) => {
   let getCookie = (name: string) => {
@@ -51,7 +51,7 @@ export class AuthRoute implements Routes {
     // TODO: using JWT token for authentication
     this.router.post(URL_AUTH_GET_SIGNIN, async (req, res) => {
       let p = getCommonHandlePass(req, res);
-      handleSignInUser(req.body, p);
+      handleSignIn(req.body, p);
     });
     this.router.post(URL_AUTH_GET_SIGNUP, async (req, res) => {
       //
