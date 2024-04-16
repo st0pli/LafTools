@@ -66,7 +66,7 @@ var _hmt = _hmt || [];
           `}
                 </Script>
             </head>
-            <body className={' min-h-screen dark:bg-slate-950 dark:text-slate-300    ' + inter.className}>
+            <body className={' laf-app min-h-screen dark:bg-slate-950 dark:text-slate-300    ' + inter.className}>
                 <ThemeProvider attribute="class" defaultTheme="system" enableSystem >
                     <div className="w-full h-full">
                         {children}

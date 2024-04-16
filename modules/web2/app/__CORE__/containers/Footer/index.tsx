@@ -21,14 +21,14 @@
 
 import { Dot } from "@/app/__CORE__/utils/TranslationUtils";
 import React from "react";
-import { CSS_TEXT_ANCHOR_CSS, border_clz_top } from "@/app/__CORE__/meta/styles";
+import { CSS_BG_DARK_1ST, CSS_TEXT_ANCHOR_CSS, border_clz_top } from "@/app/__CORE__/meta/styles";
 import APPINFOJSON from '@/app/[lang]/[category]/info'
 import LanguageFlowList from "../LanguageFlowList";
 import MottoLine from "../MottoLine";
 import { isCensorShipForWebsiteMode } from "@/app/[lang]/page";
 
 export let FooterContent = () => {
-    return <div className="w-full bg-slate-100 dark:bg-slate-800 ">
+    return <div className={"w-full bg-slate-100  " + CSS_BG_DARK_1ST}>
 
         <div className=' text-center   w-8/12 space-y-3 mx-auto bp5-text-muted  break-words pt-8 flex flex-col pb-6 ' style={{
             minWidth: '50vw'

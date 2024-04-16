@@ -54,15 +54,20 @@ import { getIconImgAndBannerTextByCategory } from "@/app/[lang]/client/src/impl/
 export default (props: NavigatorPassProp) => {
     let { category } = props.params;
     let { iconImg, crtTitleBanner } = getIconImgAndBannerTextByCategory(category, props);
-
-    return <div className={border_clz + " py-3 p-4 relative bg-slate-50 dark:bg-slate-900"}>
-        <div className={row_pad_clz + ' z-20 flex flex-row items-center relative'}>
-            <div className="mx-2 mr-3">
+    return <div className={border_clz + " py-3 px-2 relative "}>
+        <div className={' space-x-2 px-4 items-center z-20 flex flex-row  relative '}>
+            <div className="">
                 <img src={'/static/' + iconImg} width={40} height={40}></img>
             </div>
             <div>
-                <h1 className="text-lg m-0">{crtTitleBanner}</h1>
-                <h2 className="text-xs pl-[2px] text-slate-600 dark:text-slate-300 mt-[-2px] mb-1 items-center m-0 space-x-1 flex flex-row ">
+                <h1 className=" m-0 mt-1" style={{
+                    fontSize: '1rem'
+                }}>{crtTitleBanner}</h1>
+                <div className='text-xs text-slate-600 dark:text-slate-300 mt-[-1px] mb-1'>
+                    {/* <PossiblePathname /> */}
+                    {Dot("forever-foss", "Forever FOSS")}
+                </div>
+                {/* <h2 className="text-xs pl-[2px] text-slate-600 dark:text-slate-300 mt-[-2px] mb-1 items-center m-0 space-x-1 flex flex-row ">
                     <div>
                         <PossiblePathname />
                     </div>
@@ -70,9 +75,9 @@ export default (props: NavigatorPassProp) => {
                     <div className="small-text">{Dot("quality-first", "High Quality First")}</div>
                     <div>•</div>
                     <div className="small-text">{Dot("forever-foss", "Forever FOSS")}</div>
-                </h2>
+                </h2> */}
             </div>
-            <div className=" absolute right-0 bottom-0  ">
+            {/* <div className=" absolute right-0 bottom-0  ">
                 <div className=" text-gray-600 dark:text-gray-400 ">
                     <div className="w-full space-y-[3px]">
                         <ClosableText
@@ -99,7 +104,7 @@ export default (props: NavigatorPassProp) => {
                         </ClosableText>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>
     </div>
 }

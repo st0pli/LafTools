@@ -81,6 +81,7 @@ export let getIconImgAndBannerTextByCategory = (category: CategoryType, props: N
             Dot("sjod7G6WL", "User Centre") + ' - ' + name_map[props.params.id]
         )
     }
+    crtTitleBanner = Dot("DkOlPSZ0t", "LafTools")
     return {
         iconImg,
         crtTitleBanner

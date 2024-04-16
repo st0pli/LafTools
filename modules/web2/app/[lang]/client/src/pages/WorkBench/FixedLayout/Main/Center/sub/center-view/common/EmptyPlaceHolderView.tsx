@@ -54,7 +54,7 @@ export default (props: {
     };
   });
   return (
-    <div className="bg-slate-100 relative p-5 dark:bg-black  w-full p-0 m-0 h-full">
+    <div className="bg-slate-100 relative p-5  w-full p-0 m-0 h-full dark:bg-slate-900">
       <h1 className="m-0 mb-3">{props.emptyTitle}</h1>
       <ul className="list">
         {/* <div>{Dot("FOyHW", "Search Everywhere")}</div> */}

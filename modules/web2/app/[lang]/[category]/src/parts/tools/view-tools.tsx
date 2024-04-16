@@ -29,7 +29,7 @@ import { Provider, useDispatch } from "react-redux";
 import { store } from '@/app/[lang]/client/src/store'
 import '@/app/[lang]/client/src/initapp'
 import { useConstructedKeyAndInit } from '@/app/[lang]/client/src/initapp'
-import { CSS_BG_COLOR_WHITE, VAL_CSS_MENU_TITLE_PANEL, VAL_MENU_LEFT_PANEL_WIDTH, border_clz, light_border_clz_all, tw } from '@/app/__CORE__/meta/styles'
+import { CSS_BG_COLOR_WHITE, CSS_BG_DARK_2ND, VAL_CSS_MENU_TITLE_PANEL, VAL_MENU_LEFT_PANEL_WIDTH, border_clz, light_border_clz_all, tw } from '@/app/__CORE__/meta/styles'
 import { loadDOT } from '@/app/__CORE__/utils/i18n-for-nonclient'
 import { Dot } from '@/app/__CORE__/utils/cTranslationUtils'
 import SmallScreenDetecter from '@/app/[lang]/client/src/SmallScreenDetecter'
@@ -60,17 +60,18 @@ let ToolInnerView = (props: ExtensionViewProps) => {
     } else {
         body = <ToolSingleView needFullPageSupport={needFullPage} extId={toolId} />
     }
-    return <div className='w-full ' style={{
-        height: `${clientContext.appToolHeight}px`
+    return <div className='w-full h-full' style={{
+        // height: `${clientContext.appToolHeight}px`
+
     }} key={constructedKey}>
         {body}
     </div>
 }
 
 export default (props: ExtensionViewProps) => {
-    return <CardBody className='p-0'>
+    return <CardBody className='p-0 w-full h-full'>
         <ClientWrapper children={
-            <div className='w-full h-full p-[5px] min-h-[300px] relative bg-slate-50 dark:bg-gray-900'>
+            <div className={'w-full h-full p-[5px] relative bg-slate-50  ' + CSS_BG_DARK_2ND}>
                 <ToolInnerView {...props} />
             </div>
         } />

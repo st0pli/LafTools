@@ -23,7 +23,7 @@
 import { border_clz } from "@/app/__CORE__/meta/styles"
 import { useState } from "react"
 import regionUtils from "../../utils/regionUtils"
-import TranslationUtils from "../../utils/cTranslationUtils"
+import TranslationUtils, { Dot } from "../../utils/cTranslationUtils"
 
 
 type ReturnType = [string, (value: string) => void]
@@ -44,7 +44,7 @@ export let useLocalStorage = (key: string, initialValue: string): ReturnType => 
 }
 
 export default (props) => {
-    return location.hostname
+    return Dot("bjaEuT-cU", "Hosted on {0}", location.hostname)
     // return regionUtils.getUSHosts()[0]
     // if (regionUtils.isCurrentUserPossibleChinese()) {
     //     return regionUtils.getCNHosts()[0]

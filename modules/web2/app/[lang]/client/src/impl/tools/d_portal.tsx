@@ -28,7 +28,7 @@ import { Metadata } from "next"
 import { cache } from "react"
 import appToolInfoObj, { AppToolKeyType } from "./d_meta"
 import COMMON_FN_REF from "./common_ref"
-import { GithubRepoLink } from "@/app/__CORE__/meta/constants"
+import { GitHubRepoIssueLink, GithubRepoLink } from "@/app/__CORE__/meta/constants"
 import { URL_SUBCATEGORY_GO_PATH } from "@/app/__CORE__/meta/url"
 
 COMMON_FN_REF.Dot = Dot
@@ -110,8 +110,16 @@ export let fn_rightNav = (): LabelHrefType[] => {
 export let fn_rightCategoryArr = () => {
     let rightCategoryArr: LabelHrefType[] = [
         {
-            label: Dot("download-local", "Free Download"),
+            label: Dot("download-local", "Free Hosting"),
             href: GithubRepoLink
+        },
+        {
+            href: fmtURL_Server(['/client']),
+            label: Dot("YpFz_Ens_", "Easter Egg")
+        },
+        {
+            href: GitHubRepoIssueLink,
+            label: Dot("YiyTj3bEz", "Help & Feedback")
         },
         // {
         //     label: Dot("str.remarks", "Favorites"),

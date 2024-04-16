@@ -43,7 +43,7 @@ export default (props: CategorySearchProps) => {
     return <div>
         <div className='flex flex-row space-x-2'>
             <Main {...props} />
-            <Sidebar {...props} />
+            {/* <Sidebar {...props} /> */}
         </div>
     </div>
 }

@@ -27,7 +27,7 @@ import { NavCategory as NavCategory } from "./nav/nav-category";
 import { getAppDevIcon } from "@/app/__CORE__/config/imgconfig";
 import { ClosableText } from "@/app/__CORE__/components/ClosableText";
 import RedirectToOtherBanner from "@/app/__CORE__/components/RedirectToOtherBanner/index";
-import { border_clz, border_clz_top, row_pad_clz } from "@/app/__CORE__/meta/styles";
+import { border_clz, border_clz_top, light_border_clz_all, light_border_clz_all_no_define_border, row_pad_clz } from "@/app/__CORE__/meta/styles";
 import LightDarkButton from "@/app/__CORE__/components/LightDarkButton";
 import GitHubButton from "@/app/__CORE__/components/GitHubButton";
 import SysBreadCrumbs from './cpt/cpt-breadcrumbs'
@@ -51,6 +51,8 @@ import NavTop from "./nav/nav-top";
 import NavSubCategory from './nav/nav-subcategory'
 import NavBanner from "./nav/nav-banner";
 import Main from "./main";
+import Sidebar from "./sidebar";
+
 export type LabelHrefType = {
     refId?: string;
     label: string | JSX.Element,
@@ -63,12 +65,26 @@ export type NavigatorPassProp = CategorySearchProps & {
 
 export default (props: NavigatorPassProp) => {
     let category = props.params.category || 'tools'
+    let leftWidth = 240
     return <div className={'category-' + category}>
-        <NavTop {...props} />
-        <RedirectToOtherBanner></RedirectToOtherBanner>
-        <NavBanner {...props} />
-        <NavSubCategory {...props}></NavSubCategory>
-        <Main {...props} />
-        <Footer />
+        <div className="w-full h-full flex flex-row">
+            <div style={{
+                width: leftWidth
+            }} className={"fixed left-0 top-0   " + ' shadow-md z-50  h-screen'}>
+                <Sidebar {...props} />
+            </div>
+            <div className="flex-1 h-screen " style={{
+                marginLeft: leftWidth
+            }}>
+                <div className="sticky top-0  z-40">
+                    <NavTop {...props} />
+                    <RedirectToOtherBanner></RedirectToOtherBanner>
+                    <NavSubCategory {...props}></NavSubCategory>
+                </div>
+                {/* <NavBanner {...props} /> */}
+                <Main {...props} />
+                <Footer />
+            </div>
+        </div>
     </div>
 }

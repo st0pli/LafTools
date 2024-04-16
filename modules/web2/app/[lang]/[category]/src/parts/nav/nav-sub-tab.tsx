@@ -30,6 +30,7 @@ import { fmtURL_ToolSubPage } from "@/app/[lang]/[category]/types";
 import { URL_SUBCATEGORY_GO_PATH } from "@/app/__CORE__/meta/url";
 import { CrtToolProp } from "../tools/main-part";
 import { getSubCategoryByProps } from "@/app/[lang]/client/src/impl/tools/d_subcategory";
+import { CSS_BG_COLOR_WHITE } from "@/app/__CORE__/meta/styles";
 
 export default function (props: CrtToolProp) {
     let subCategory = props.params.subCategory
@@ -72,7 +73,7 @@ export default function (props: CrtToolProp) {
     ]
 
     return (
-        <div className="flex w-full  flex-col bg-white dark:bg-black ">
+        <div className={"flex w-full  flex-col " + CSS_BG_COLOR_WHITE}>
             <div className="border-b border-gray-200 dark:border-gray-700">
                 <nav className="flex space-x-2 justify-center" aria-label="Tabs" role="tablist">
                     {

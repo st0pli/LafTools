@@ -27,7 +27,7 @@ import { NavCategory as NavCategory } from "./nav/nav-category";
 import { getAppDevIcon } from "@/app/__CORE__/config/imgconfig";
 import { ClosableText } from "@/app/__CORE__/components/ClosableText";
 import RedirectToOtherBanner from "@/app/__CORE__/components/RedirectToOtherBanner/index";
-import { border_clz, border_clz_top, row_pad_clz } from "@/app/__CORE__/meta/styles";
+import { CSS_BG_DARK_1ST, border_clz, border_clz_top, row_pad_clz } from "@/app/__CORE__/meta/styles";
 import LightDarkButton from "@/app/__CORE__/components/LightDarkButton";
 import GitHubButton from "@/app/__CORE__/components/GitHubButton";
 import SysBreadCrumbs from './cpt/cpt-breadcrumbs'
@@ -66,9 +66,9 @@ export default (props: NavigatorPassProp) => {
     let toolSearchDetail: CategoryTypeSearchDetail = getSearchDetailBySearchProps(props)
     let { innerContent } = props;
     return (
-        <div className={'  bg-slate-50 dark:bg-slate-800 pb-10'}>
+        <div className={'  bg-slate-50  pb-10 ' + CSS_BG_DARK_1ST}>
             <div className={row_pad_clz}>
-                <div className="flex flex-row flex-wrap py-2 items-center justify-between">
+                {/* <div className="flex flex-row flex-wrap py-2 items-center justify-between">
                     <div>
                         <SysBreadCrumbs toolSearchDetail={toolSearchDetail} />
                     </div>
@@ -93,7 +93,7 @@ export default (props: NavigatorPassProp) => {
                             }
                         ]}></NavCategory>
                     </div>
-                </div>
+                </div> */}
                 {innerContent}
             </div>
         </div>

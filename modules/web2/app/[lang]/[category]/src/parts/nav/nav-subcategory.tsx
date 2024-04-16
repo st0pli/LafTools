@@ -89,7 +89,7 @@ export default (props: NavigatorPassProp) => {
                         return <div id={`navbindid-${x.id}`} style={{
                             display: 'none'
                         }} className={
-                            'absolute z-50 '
+                            'fixed z-50 '
                         }>
                             <OverlapSubTabsPanelView currentSubTabId={currentSubTabId} subTabs={x.subTabs} subCategoryId={x.id} />
                         </div>

@@ -50,8 +50,8 @@ export default (props: CrtToolProp) => {
         <PkgToolMain {...props} {...searchDetail} />
         <PkgRecentUsedTool {...props} />
         <PkgToolExtra {...props} />
-        <ClientWrapper noFULL>
+        {/* <ClientWrapper noFULL>
             <PkgQuickaccess {...props} />
-        </ClientWrapper>
+        </ClientWrapper> */}
     </div>
 }

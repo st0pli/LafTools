@@ -30,7 +30,7 @@ export let NavCategory = (props: NavigatorPassProp & {
 }) => {
     let { nav } = props
     let leftNav = nav
-    return <div className={' flex flex-row items-center  space-x-4 font-xs '}>
+    return <div className={' flex flex-row items-center  space-x-4 font-sm '}>
         {props.extraLeft}
         {
             leftNav.map(x => {
