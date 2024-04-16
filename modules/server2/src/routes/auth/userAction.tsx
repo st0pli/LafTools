@@ -10,13 +10,12 @@ import { CommonHandlePass } from "../auth.route";
 import { CheckRules, fn_verifyVCode } from "./action-types";
 import { fn_refresh_system_info_from_redis } from "./user-types";
 import _ from "lodash";
+import { key_sessionGroup } from "./constants";
 
 export type Elb3AuthBody = {
     userAcctId: string,
     userRole: UserRole
 }
-export let key_sessionGroup = 'session-group';
-export let key_systemInfoGroup = 'system-info-group'
 
 export type fn_setCookie = (name: string, value: string,) => void
 export let signInWithUserId = async (userAcctId: string, rememberMe: boolean): Promise<SignInCredentials> => {

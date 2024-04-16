@@ -11,41 +11,5 @@ import { randomUUID } from 'crypto';
 import { getLafToolsDataDir } from '@/app/__CORE__/share/homedir';
 
 
-export let getPreCompiledDir = (): string => {
-  // let file = path.join(getLafToolsDataDir(), 'precompiled', isDevEnv() ? 'dev' : 'prod')
-  // return file;
-  // return path.join(LafTools_HOME)
-  return ''
-}
 
-export let getImgBase64 = (random: number): any => {
-  return '';
-  let file = path.join(getPreCompiledDir(), `${random}.png`)
-  let b = readFileSync(file)
-  return b
-}
-
-
-export let getImgBase64Result = (random: number): string => {
-  return '';
-  let file = path.join(getPreCompiledDir(), `${random}.txt`)
-  let b = readFileSync(file, 'utf-8')
-  return b
-}
-export async function GET(req: Request) {
-  const res = new NextResponse();
-  let daoRef = await dao()
-  let random = Math.floor(Math.random() * 10)
-  console.log('route captcha GET', random,)
-  let randomID = 'VC-' + randomUUID().toString()
-  daoRef.redis.setEx(randomID, 60 * 10, random + '') // expire in 10 minutes
-  setCookie('vcode', randomID, { maxAge: 60 * 12, cookies })
-  let response = new Response(getImgBase64(random), {
-    headers: {
-      "content-type": "image/png",
-      "cache-control": "no-cache",
-    }
-  })
-  return response
-}
 

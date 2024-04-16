@@ -7,7 +7,6 @@ import TwTabs from '@/app/__CORE__/components/TwTabs'
 import '@/app/__CORE__/script/preline-init'
 import { Metadata, ResolvingMetadata } from 'next';
 import LoadingWrapper from '@/app/__CORE__/containers/LoadingWrapper';
-import { handleSignInUser } from '../../../../../../../../server2/src/routes/auth/userAction';
 import AlertErrorPanel from '@/app/__CORE__/containers/AlertErrorPanel';
 import { loadDOT, useTTT, useTTT2 } from '../register/i18n-types';
 import { Dot } from '@/app/__CORE__/utils/cTranslationUtils';
@@ -31,28 +30,28 @@ export default function LoginPage(props: { passClz: string, type: string }) {
         setErrMsg([])
         // get form data 
         let formData = new FormData(e.target as HTMLFormElement);
-        try {
-            setWorking(true)
-            let v = await handleSignInUser({
-                userAcctId: formData.get("userAcctId")?.toString() || '',
-                password: formData.get("password")?.toString() || '',
-                phoneNumber: formData.get("phoneNumber")?.toString() || '',
-                vcode: formData.get("vcode")?.toString() || '',
-                type: formData.get("type")?.toString() || '',
-            })
-            if (v.error) {
-                onVCodeFactor(Date.now())
-                setErrMsg([v.error || ''])
-                window.scrollTo(0, 0)
-                return;
-            };
-            location.href = '/'
-        } catch (e: any) {
-            setErrMsg([e.message || ''])
-            window.scrollTo(0, 0)
-        } finally {
-            setWorking(false)
-        }
+        // try {
+        //     setWorking(true)
+        //     let v = await handleSignInUser({
+        //         userAcctId: formData.get("userAcctId")?.toString() || '',
+        //         password: formData.get("password")?.toString() || '',
+        //         phoneNumber: formData.get("phoneNumber")?.toString() || '',
+        //         vcode: formData.get("vcode")?.toString() || '',
+        //         type: formData.get("type")?.toString() || '',
+        //     })
+        //     if (v.error) {
+        //         onVCodeFactor(Date.now())
+        //         setErrMsg([v.error || ''])
+        //         window.scrollTo(0, 0)
+        //         return;
+        //     };
+        //     location.href = '/'
+        // } catch (e: any) {
+        //     setErrMsg([e.message || ''])
+        //     window.scrollTo(0, 0)
+        // } finally {
+        //     setWorking(false)
+        // }
 
     }}>
         <CardPanel className={'p-4 py-8 ' + props.passClz}>

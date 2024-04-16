@@ -1,7 +1,7 @@
 import dao from "@/dao";
-import { UserModel, UserModel as User } from "@/models/oldjava.model";
+import { UserModel, UserModel as User } from "@models/oldjava.model";
 import _ from "lodash";
-import { key_systemInfoGroup } from "./userAction";
+import { key_systemInfoGroup } from "./constants";
 
 // export let fn_get_user_avatar = (authInfoProps: AuthInfoProps) => {
 //     let avatarPath = authInfoProps.authInfo?.user?.avatarPath

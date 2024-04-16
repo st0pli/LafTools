@@ -5,7 +5,6 @@ import { setCookie, getCookie } from 'cookies-next';
 import { cookies } from 'next/headers';
 import _ from "lodash";
 import dao from "@/app/__CORE__/dao";
-import { getImgBase64Result } from "@/app/api/captcha/route";
 
 export type AsyncCreateResponse<T> = {
     message?: string, // normal message
@@ -82,8 +81,8 @@ export let fn_verifyVCode = (): any => {
                 await fn_cleanVCode()
                 return Dot("4sdQWoTgfr", "Verification code is expired, please refresh the page and try again.")
             }
-            let vcodeActualVal = getImgBase64Result(parseInt(vcodeValOrderIdx))
-            console.log('vcode', { vcodeActualVal, val })
+            let vcodeActualVal = ''// getImgBase64Result(parseInt(vcodeValOrderIdx))
+            // console.log('vcode', { vcodeActualVal, val })
             if (_.toLower(vcodeActualVal) !== _.toLower(val)) {
                 await fn_cleanVCode()
                 return Dot("HaU4NMabv", "Verification code is incorrect, please re-input or refresh the image.")

@@ -7,7 +7,6 @@ import TwTabs from '@/app/__CORE__/components/TwTabs'
 import '@/app/__CORE__/script/preline-init'
 import { Metadata, ResolvingMetadata } from 'next';
 import { getWebsiteName } from '@/app/__CORE__/common/config';
-import create from '../../../../../../../../server2/src/routes/auth/userAction'
 import { useFormState } from 'react-dom'
 import LoadingWrapper from '@/app/__CORE__/containers/LoadingWrapper';
 import AlertErrorPanel from '@/app/__CORE__/containers/AlertErrorPanel';
@@ -48,27 +47,27 @@ export default function RegisterPage(props: { passClz: string }) {
             }
             if (true) {
                 for (let preview of [true, false]) {
-                    let v = await create({
-                        preview: preview,
-                        userAcctId: userAcctId,
-                        password: formData.get("password")?.toString() || '',
-                        phoneNumber: formData.get("phoneNumber")?.toString() || '',
-                        confirmPassword: formData.get("confirmPassword")?.toString() || '',
-                        vcode: formData.get("vcode")?.toString() || '',
-                        invitationCode: formData.get("invitationCode")?.toString() || '',
-                    })
-                    if (v.error) {
-                        onVCodeFactor(Date.now())
-                        setErrMsg([v.error || ''])
-                        window.scrollTo(0, 0)
-                        return;
-                    };
-                    if (preview) {
-                        if (!window.confirm(Dot("flId5c", "Are you sure to register with this user ID <{0}>? It cannot be changed once you confirm the user ID.", userAcctId))) {
-                            throw new Error(Dot("IuH4gxwH4", 'User cancelled'))
-                        }
-                        continue;
-                    }
+                    // let v = await create({
+                    //     preview: preview,
+                    //     userAcctId: userAcctId,
+                    //     password: formData.get("password")?.toString() || '',
+                    //     phoneNumber: formData.get("phoneNumber")?.toString() || '',
+                    //     confirmPassword: formData.get("confirmPassword")?.toString() || '',
+                    //     vcode: formData.get("vcode")?.toString() || '',
+                    //     invitationCode: formData.get("invitationCode")?.toString() || '',
+                    // })
+                    // if (v.error) {
+                    //     onVCodeFactor(Date.now())
+                    //     setErrMsg([v.error || ''])
+                    //     window.scrollTo(0, 0)
+                    //     return;
+                    // };
+                    // if (preview) {
+                    //     if (!window.confirm(Dot("flId5c", "Are you sure to register with this user ID <{0}>? It cannot be changed once you confirm the user ID.", userAcctId))) {
+                    //         throw new Error(Dot("IuH4gxwH4", 'User cancelled'))
+                    //     }
+                    //     continue;
+                    // }
                 }
                 location.href = '/activation'
             }

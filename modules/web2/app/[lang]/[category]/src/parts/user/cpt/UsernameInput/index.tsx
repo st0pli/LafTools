@@ -4,7 +4,6 @@ import React, { useCallback, useEffect, useState } from 'react';
 import _ from 'lodash';
 import { loadDOT } from '@/app/__CORE__/utils/i18n-for-nonclient';
 import { Dot } from '@/app/__CORE__/utils/cTranslationUtils';
-import { getUserInfoByUserAcctId } from '../../../../../../../../../server2/src/routes/auth/userAction';
 let a = loadDOT("8O1oTYJ-Z")
 
 export let checkIfStrOnlyHasAlphanumeric = (str: string) => {
@@ -23,16 +22,16 @@ export default (props: { placeholder?: string, checkIfHas?: boolean, checkDuplic
     let fn_find = useCallback(_.throttle(async (v: string) => {
         // TODO: to be completed
         onLoading(true)
-        try {
-            let user = await getUserInfoByUserAcctId(v)
-            if (user) {
-                setHasThatName(true)
-            } else {
-                setHasThatName(false)
-            }
-        } finally {
-            onLoading(false)
-        }
+        // try {
+        //     let user = await getUserInfoByUserAcctId(v)
+        //     if (user) {
+        //         setHasThatName(true)
+        //     } else {
+        //         setHasThatName(false)
+        //     }
+        // } finally {
+        //     onLoading(false)
+        // }
     }), [])
 
     useEffect(() => {
