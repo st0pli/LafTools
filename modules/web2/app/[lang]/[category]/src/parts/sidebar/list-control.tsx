@@ -1,11 +1,11 @@
 'use client'
 import React from "react";
-import { Listbox, ListboxItem, ListboxSection, cn } from "@nextui-org/react";
+import { Listbox, ListboxItem, ListboxSection, } from "@nextui-org/react";
 import { Dot } from "@/app/__CORE__/utils/cTranslationUtils";
 import { loadDOT } from "@/app/__CORE__/utils/i18n-for-nonclient";
 import AlertUtils from "@/app/[lang]/client/src/utils/AlertUtils";
 
-export const DeleteDocumentIcon = (props) => (
+const DeleteDocumentIcon = (props) => (
     <svg
         aria-hidden="true"
         fill="none"
@@ -35,7 +35,7 @@ export const DeleteDocumentIcon = (props) => (
 );
 
 
-export const EditDocumentIcon = (props) => (
+const EditDocumentIcon = (props) => (
     <svg
         aria-hidden="true"
         fill="none"
@@ -59,7 +59,7 @@ export const EditDocumentIcon = (props) => (
 );
 
 
-export const CopyDocumentIcon = (props) => (
+const CopyDocumentIcon = (props) => (
     <svg
         aria-hidden="true"
         fill="none"
@@ -86,12 +86,12 @@ export const CopyDocumentIcon = (props) => (
     </svg>
 );
 
-export const ListboxWrapper = ({ children }) => (
+const ListboxWrapper = ({ children }) => (
     <div className="w-full max-w-[260px] border-small px-1 py-2 rounded-small border-default-200 dark:border-default-100">
         {children}
     </div>
 );
-export const AddNoteIcon = (props) => (
+const AddNoteIcon = (props) => (
     <svg
         aria-hidden="true"
         fill="none"

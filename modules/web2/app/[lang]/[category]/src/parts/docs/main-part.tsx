@@ -19,8 +19,6 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import React from 'react';
-import { Autocomplete, AutocompleteItem, CardProps, Listbox, ListboxItem, Tab, Tabs } from "@nextui-org/react";
-import { Card, Divider, CardHeader, CardBody, CardFooter } from "@nextui-org/react";
 import { border_clz, light_border_clz_all, tw } from '@/app/__CORE__/meta/styles';
 import { Dot } from '@/app/__CORE__/utils/TranslationUtils';
 import SubTabNav from '../nav/nav-sub-tab';
@@ -32,11 +30,7 @@ import Sidebar from './main-sidebar';
 import { ToolProp } from '.';
 import { getSearchDetailBySearchProps } from '@/app/[lang]/page';
 import ClientWrapper from '../../common/clientWrapper';
-export let getCardsProps = (): CardProps => {
-    return {
-        radius: "none", shadow: "none", className: light_border_clz_all
-    }
-}
+
 
 export type CrtToolProp = ToolProp
 export default (props: CrtToolProp) => {
