@@ -45,7 +45,7 @@ export let getCardsProps = (): CardProps => {
 export type CrtToolProp = ToolProp & CategoryTypeSearchDetail
 
 export default (props: CrtToolProp) => {
-    return <Card {...getCardsProps()} className={light_border_clz_all + ' mt-2 rounded shadow-sm '} style={{
+    return <Card {...getCardsProps()} className={light_border_clz_all + ' mt-2 rounded shadow-md '} style={{
         height: 'calc(100vh - 91px)'
     }}>
         <SubTabNav  {...props}></SubTabNav>

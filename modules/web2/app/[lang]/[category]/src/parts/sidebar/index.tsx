@@ -28,23 +28,7 @@ export let NavTabs = (props: NavigatorPassProp) => {
         }
 
         return <div className='p-2 space-y-2'>
-            {/* <ListControl /> */}
-            {/* <div className='font-light'>{Dot("UJfJuqEaq", "Relevant Tools")}</div>
-            <div className='space-y-2'>
-                {
-                    _.map(subTabs, x => {
-                        return <Button href={fmtURL_ToolSubPage([URL_SUBCATEGORY_GO_PATH, subCategory, '' + x.id])} variant='bordered' color={
-                            x.id == currentSubTabId ? 'primary' : 'default'
-                        } fullWidth >{x.label}</Button>
-                    })
-                }
-            </div> */}
-            {/* <div className='font-light'>{Dot("iQFFa3_3S", "Other Tools")}</div> */}
-            {/* <div>
-                <div>快速记笔记</div>
-                <div>AI助手</div>
-                <div>全局搜索</div>
-            </div> */}
+            <ListControl />
         </div>
     } else {
         return ''

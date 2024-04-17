@@ -70,7 +70,7 @@ export let getIconImgAndBannerTextByCategory = (category: CategoryType, props: N
     textColor: string,
     bgSize: string, iconImg: string, crtTitleBanner: string
 } => {
-    let backgroundImage = 'linear-gradient(#0802fd52, #5884f40f), url(/static/bg/p1.png)'
+    let backgroundImage = 'linear-gradient(rgb(7 50 88 / 0%), rgb(13 56 163 / 42%)), url(/static/bg/p1.png)'
     let bgSize = '100%'
     let textColor = '#e2e2ff'
     let iconImg = ''

@@ -1,5 +1,9 @@
+'use client'
 import React from "react";
 import { Listbox, ListboxItem, ListboxSection, cn } from "@nextui-org/react";
+import { Dot } from "@/app/__CORE__/utils/cTranslationUtils";
+import { loadDOT } from "@/app/__CORE__/utils/i18n-for-nonclient";
+import AlertUtils from "@/app/[lang]/client/src/utils/AlertUtils";
 
 export const DeleteDocumentIcon = (props) => (
     <svg
@@ -110,37 +114,98 @@ export const AddNoteIcon = (props) => (
     </svg>
 );
 
+let a = loadDOT("TnXsTQXAO")
 
 export function ListControl() {
+    a()
     const iconClasses = "text-xl text-default-500 pointer-events-none flex-shrink-0";
 
     return (
         <ListboxWrapper>
             <Listbox variant="flat" aria-label="Listbox menu with sections">
-                <ListboxSection title="Actions" showDivider>
-                    <ListboxItem
-                        key="new"
-                        description="Create a new file"
-                        startContent={<AddNoteIcon className={iconClasses} />}
-                    >
-                        New file
-                    </ListboxItem>
+                <ListboxSection title={Dot("kvPWvOdBA", "Quick Access")} >
                     <ListboxItem
                         key="copy"
-                        description="Copy the file link"
-                        startContent={<CopyDocumentIcon className={iconClasses} />}
+                        onClick={() => {
+                            AlertUtils.popNotSupport()
+                        }}
+                        description={Dot("exUqPBFSy", "Ask AI for Help")}
+                        startContent={<AddNoteIcon className={iconClasses} />}
+
                     >
-                        Copy link
+                        {Dot("ZyVoYTlbG", "AI Assistant")}
                     </ListboxItem>
                     <ListboxItem
                         key="edit"
-                        description="Allows you to edit the file"
+                        onClick={() => {
+                            AlertUtils.popNotSupport()
+                        }}
+
+                        description={Dot("kvvDT6dgDw", "Quickly Translate Text")}
+                        startContent={<CopyDocumentIcon className={iconClasses} />}
+                    >
+                        {Dot("dRcMFnjkq", "Translation Tools")}
+                    </ListboxItem>
+                    <ListboxItem
+                        key="new"
+                        onClick={() => {
+                            AlertUtils.popNotSupport()
+                        }}
+
+                        description={Dot("q44MV0L2R", "Create or View Notes")}
                         startContent={<EditDocumentIcon className={iconClasses} />}
                     >
-                        Edit file
+                        {Dot("tlD0n2dGW", "My Notebook")}
+                    </ListboxItem>
+                    <ListboxItem
+                        key="edit"
+                        onClick={() => {
+                            AlertUtils.popNotSupport()
+                        }}
+
+                        description={Dot("FoCAo0kUF", "Create or View TODO")}
+                        startContent={<CopyDocumentIcon className={iconClasses} />}
+                    >
+                        {Dot("KKzalvk0F", "My TODO")}
                     </ListboxItem>
                 </ListboxSection>
-                <ListboxSection title="Danger zone">
+                <ListboxSection title={Dot("dkqwkje3", "App Center")} >
+                    <ListboxItem
+                        key="edit"
+                        onClick={() => {
+                            AlertUtils.popNotSupport()
+                        }}
+
+                        description={Dot("KmuMvKHay", "Manage background jobs")}
+                        startContent={<CopyDocumentIcon className={iconClasses} />}
+                    >
+                        {Dot("aPPe_XueN", "Scheduled Jobs")}
+                    </ListboxItem>
+                    <ListboxItem
+                        key="edit"
+                        onClick={() => {
+                            AlertUtils.popNotSupport()
+                        }}
+
+                        description={Dot("aGpwgHK", "Quickly Sync Your Files")}
+                        startContent={<CopyDocumentIcon className={iconClasses} />}
+                    >
+                        {Dot("aPPe_XueN", "File Sync")}
+                    </ListboxItem>
+                    <ListboxItem
+                        key="edit"
+                        onClick={() => {
+                            AlertUtils.popNotSupport()
+                        }}
+
+                        description={Dot("aGdpdzwgHK", "Manage Your Cloud Account")}
+                        startContent={<CopyDocumentIcon className={iconClasses} />}
+                    >
+                        {Dot("enYRe6q-K", "User Centre")}
+                    </ListboxItem>
+                </ListboxSection>
+                {/* <Calendar aria-label="Date (Uncontrolled)" defaultValue={("2020-02-03")} /> */}
+                {/* <ListboxSection title="Danger zone">
                     <ListboxItem
                         key="delete"
                         className="text-danger"
@@ -150,7 +215,7 @@ export function ListControl() {
                     >
                         Delete file
                     </ListboxItem>
-                </ListboxSection>
+                </ListboxSection> */}
             </Listbox>
         </ListboxWrapper>
     );
