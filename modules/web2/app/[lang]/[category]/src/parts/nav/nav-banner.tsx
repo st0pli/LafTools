@@ -56,11 +56,12 @@ export default (props: NavigatorPassProp) => {
     let {
         backgroundImage,
         textColor,
+        bgSize,
 
         iconImg, crtTitleBanner } = getIconImgAndBannerTextByCategory(category, props);
-    return <div className={border_clz + " py-3 px-2 relative h-[73px] flex items-center  "} style={{
+    return <div className={border_clz + " py-3 px-2 relative h-[74px] flex items-center  "} style={{
         backgroundImage: backgroundImage,
-        backgroundSize: '100%'
+        backgroundSize: bgSize
     }}>
         <div className={' space-x-2 px-4 items-center z-20 flex flex-row  relative '} >
             <div className="">

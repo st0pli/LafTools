@@ -68,9 +68,10 @@ export let getCategoryParentTwClz = (category: CategoryType): string => {
 export let getIconImgAndBannerTextByCategory = (category: CategoryType, props: NavigatorPassProp): {
     backgroundImage: string,
     textColor: string,
-    iconImg: string, crtTitleBanner: string
+    bgSize: string, iconImg: string, crtTitleBanner: string
 } => {
     let backgroundImage = 'linear-gradient(#0802fd52, #5884f40f), url(/static/bg/p1.png)'
+    let bgSize = '100%'
     let textColor = '#e2e2ff'
     let iconImg = ''
     let crtTitleBanner = ''
@@ -80,6 +81,9 @@ export let getIconImgAndBannerTextByCategory = (category: CategoryType, props: N
             Dot("OyZLZokUQ", "Empower Development with LafTools!")
         )
     } else if (category == 'ai') {
+        backgroundImage = 'linear-gradient(rgb(95 0 62 / 32%), rgb(42 0 99 / 26%)), url(/static/bg/p-ai.png)'
+        textColor = 'rgb(238 226 255)'
+
         iconImg = 'icon-ailab.png'
         crtTitleBanner = (
             Dot("OP2Ogtd1O", "Experience AI Features with LafTools!")
@@ -93,6 +97,10 @@ export let getIconImgAndBannerTextByCategory = (category: CategoryType, props: N
             Dot("Tj2A9ou2k", "Read Documentations with LafTools!")
         )
     } else if (category == 'resources') {
+        bgSize = '100% 100%'
+        backgroundImage = 'linear-gradient(rgb(204 10 10 / 32%), rgb(154 96 16 / 40%)), url(/static/bg/p-resource.png)'
+        textColor = 'rgb(255 252 244)'
+
         iconImg = 'icon-rsce.png'
         crtTitleBanner = (
             Dot("sr9eCEJ0b6M", "Get Resources with LafTools!")
@@ -110,6 +118,7 @@ export let getIconImgAndBannerTextByCategory = (category: CategoryType, props: N
     }
     crtTitleBanner = Dot("DkOlPSZ0t", "LafTools")
     return {
+        bgSize,
         iconImg,
         backgroundImage,
         textColor,
