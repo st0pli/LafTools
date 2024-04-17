@@ -79,6 +79,7 @@ import { useSearchQuery } from "../../types/workbench-hook";
 import { logutils } from "../../utils/LogUtils";
 import { useGetCategoryList } from "../../pages/WorkBench/FixedLayout/Main/Center/sub/center-view/Transformer/hooks";
 import { ClientPortalContext } from "../../pages/WorkBench/FixedLayout/Main/Center/sub/center-view/Transformer/types";
+import { FnPureToolDefinition } from "../../types/workbench-types";
 export let TREE_ROOT_ID_PREFIX = "root_"
 let { cloneDeep } = _;
 
@@ -112,7 +113,7 @@ export default (props: PassProp) => {
 
   let hasSearchText = !gutils.empty(searchText);
 
-  let categoryList = useGetCategoryList()
+  let categoryList: FnPureToolDefinition[] = useGetCategoryList()
 
   let sq = useSearchQuery();
 

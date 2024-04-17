@@ -21,7 +21,6 @@
 import { FN_GetDispatch, FN_GetState } from "../nocycle";
 import RuntimeStatusSlice from "../reducers/runtimeStatusSlice";
 import LibProcessEntryPoint, { RecipeConfig } from '@/app/[lang]/client/src/impl/tools/r_process'
-import { ExtensionVM } from "../types/purejs-types-READ_ONLY";
 import { FN_GetActualTextValueByBigTextId, FN_SetTextValueFromOutSideByBigTextId } from "./bigtext_action";
 import gutils from "../utils/GlobalUtils";
 import _ from "lodash";
@@ -34,6 +33,7 @@ import Operation from "../impl/core/Operation";
 import AlertUtils from "../utils/AlertUtils";
 import { Dot } from "../utils/cTranslationUtils";
 import { fn_defaultArgValues_fromConfig } from "../pages/WorkBench/FixedLayout/Main/Center/sub/center-view/Transformer/ProcessPanel/hooks";
+import { ExtensionVM } from "../impl/purejs-types";
 window["moment"] = moment
 
 type PassType = {

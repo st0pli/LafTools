@@ -19,7 +19,6 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import { Intent } from "@blueprintjs/core";
-import { ToolCategory, ExtensionVM } from "./purejs-types-READ_ONLY";
 import { ToolHandler, ToolMetaInfo } from "../impl/tools/r_handler.tsx";
 import Operation from "../impl/core/Operation.tsx";
 import { ParamStateState, TabBottomType, TabLeftType, TabRightType, ToolConfigMap, ToolConfigMapVal, TrueFalseType } from "../reducers/state/paramStateSlice.tsx";
@@ -27,6 +26,7 @@ import { OpDetail } from "../impl/tools/s_tools.tsx";
 import { PopoverItemProps } from "../components/ActionButton/index.tsx";
 import { AppOpDetail } from "../impl/tools/d_meta.tsx";
 import { OpButtonStyleProps } from "../pages/WorkBench/FixedLayout/Main/Center/sub/center-view/Transformer/index.tsx";
+import { ExtensionVM, ToolCategory } from "../impl/purejs-types.tsx";
 
 export * from './constants';
 export type OnProcessFnType = (throttledType?: boolean) => void
