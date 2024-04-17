@@ -49,7 +49,7 @@ import {
 import { CategorySearchProps } from "@/app/[lang]/page";
 import { URL_SUBCATEGORY_GO_PATH } from "@/app/__CORE__/meta/url";
 import { fmtURL_ToolSubPage } from "@/app/__CORE__/meta/common";
-import { NavigatorPassProp } from "..";
+import { LabelHrefType, NavigatorPassProp } from "..";
 import PreinitNavbind from "../js/preinit-navbind";
 import { ifnil } from "@/app/__CORE__/meta/fn";
 import { getCategoryParentTwClz, getSubCategoryByProps, getToolSubCategory } from "@/app/[lang]/client/src/impl/tools/d_subcategory";
@@ -71,13 +71,13 @@ export default (props: NavigatorPassProp) => {
                                 " white-anchor-text anchor-text-in-category cursor-pointer   " + (
                                     x.id == subCategory ? ' active ' : ''
                                 )
-                            }>{x.label}</Link>
+                            }>{x.label}({_.size(x.subTabs)})</Link>
                         })
                     }
                 </div>
                 <div className="flex flex-row items-center">
                     {
-                        rightCategoryArr.map(x => {
+                        rightCategoryArr.map((x: LabelHrefType) => {
                             return <Link target='_blank' href={x.href + ""} className={" white-anchor-text anchor-text-in-category cursor-pointer "}>{x.label}</Link>
                         })
                     }

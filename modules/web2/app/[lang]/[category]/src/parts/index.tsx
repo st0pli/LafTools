@@ -27,7 +27,7 @@ import { NavCategory as NavCategory } from "./nav/nav-category";
 import { getAppDevIcon } from "@/app/__CORE__/config/imgconfig";
 import { ClosableText } from "@/app/__CORE__/components/ClosableText";
 import RedirectToOtherBanner from "@/app/__CORE__/components/RedirectToOtherBanner/index";
-import { border_clz, border_clz_top, light_border_clz_all, light_border_clz_all_no_define_border, row_pad_clz } from "@/app/__CORE__/meta/styles";
+import { CSS_BG_COLOR_WHITE, border_clz, border_clz_top, light_border_clz_all, light_border_clz_all_no_define_border, row_pad_clz } from "@/app/__CORE__/meta/styles";
 import LightDarkButton from "@/app/__CORE__/components/LightDarkButton";
 import GitHubButton from "@/app/__CORE__/components/GitHubButton";
 import SysBreadCrumbs from './cpt/cpt-breadcrumbs'
@@ -52,7 +52,9 @@ import NavSubCategory from './nav/nav-subcategory'
 import NavBanner from "./nav/nav-banner";
 import Main from "./main";
 import Sidebar from "./sidebar";
-
+import './index.scss'
+import ClientCollapseBtn from "./sidebar/client-collapse-btn";
+import ClientWrapper from "../common/clientWrapper";
 export type LabelHrefType = {
     refId?: string;
     label: string | JSX.Element,
@@ -65,16 +67,15 @@ export type NavigatorPassProp = CategorySearchProps & {
 
 export default (props: NavigatorPassProp) => {
     let category = props.params.category || 'tools'
-    let leftWidth = 240
     return <div className={'category-' + category}>
-        <div className="w-full h-full flex flex-row">
+        <div className="w-full h-full flex flex-row  " id={'partswrapper'}>
             <div style={{
-                width: leftWidth
-            }} className={"fixed left-0 top-0   " + ' shadow-md z-50  h-screen'}>
+                // width: leftWidth
+            }} className={"fixed left-part left-0 top-0  transition-all duration-75 " + ' shadow-md z-50  h-screen'}>
                 <Sidebar {...props} />
             </div>
-            <div className="flex-1 h-screen " style={{
-                marginLeft: leftWidth
+            <div className="flex-1 right-part h-screen  duration-300 transition-all" style={{
+                // marginLeft: leftWidth
             }}>
                 <div className="sticky top-0  z-40">
                     <NavTop {...props} />
@@ -85,6 +86,11 @@ export default (props: NavigatorPassProp) => {
                 <Main {...props} />
                 <Footer />
             </div>
+        </div>
+        <div className={"fixed left-0 bottom-0 w-12 h-12 " + CSS_BG_COLOR_WHITE + ' opacity-80 duration-100 transition-all hover:opacity-100 floatbtnview ' + light_border_clz_all}>
+            <ClientWrapper>
+                <ClientCollapseBtn />
+            </ClientWrapper>
         </div>
     </div>
 }

@@ -8,6 +8,9 @@ import { Button } from '@nextui-org/button'
 import _ from 'lodash'
 import { URL_SUBCATEGORY_GO_PATH } from '@/app/__CORE__/meta/url'
 import { fmtURL_ToolSubPage } from '../../../types'
+import { ListControl } from './list-control'
+import ClientWrapper from '../../common/clientWrapper'
+
 export let NavTabs = (props: NavigatorPassProp) => {
     if ((
         props.params.category || 'tools'
@@ -25,7 +28,8 @@ export let NavTabs = (props: NavigatorPassProp) => {
         }
 
         return <div className='p-2 space-y-2'>
-            <div className='font-light'>{Dot("UJfJuqEaq", "Relevant Tools")}</div>
+            {/* <ListControl /> */}
+            {/* <div className='font-light'>{Dot("UJfJuqEaq", "Relevant Tools")}</div>
             <div className='space-y-2'>
                 {
                     _.map(subTabs, x => {
@@ -34,29 +38,30 @@ export let NavTabs = (props: NavigatorPassProp) => {
                         } fullWidth >{x.label}</Button>
                     })
                 }
-            </div>
-            <div className='font-light'>{Dot("iQFFa3_3S", "Other Tools")}</div>
-            <div>
+            </div> */}
+            {/* <div className='font-light'>{Dot("iQFFa3_3S", "Other Tools")}</div> */}
+            {/* <div>
                 <div>快速记笔记</div>
                 <div>AI助手</div>
                 <div>全局搜索</div>
-            </div>
+            </div> */}
         </div>
     } else {
         return ''
     }
 }
 export default (props: NavigatorPassProp) => {
-
     return (
-        <div className={'w-full h-full flex flex-col ' + CSS_BG_COLOR_WHITE}>
-            <div className='flex-1 scrollbar-hide'>
-                <NavBanner {...props} />
-                <NavTabs {...props} />
+        <ClientWrapper>
+            <div className={'w-full h-full flex flex-col ' + CSS_BG_COLOR_WHITE}>
+                <div className='flex-1 scrollbar-hide'>
+                    <NavBanner {...props} />
+                    <NavTabs {...props} />
+                </div>
+                <div className={'h-[40px] flex justify-center items-center ' + light_border_clz_all_no_define_border + ' border-t-[1px]'}>
+                    <ClientCollapseButton></ClientCollapseButton>
+                </div>
             </div>
-            <div className={'h-[40px] flex justify-center items-center ' + light_border_clz_all_no_define_border + ' border-t-[1px]'}>
-                <ClientCollapseButton></ClientCollapseButton>
-            </div>
-        </div>
+        </ClientWrapper>
     )
 }

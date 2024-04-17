@@ -107,16 +107,16 @@ export let fn_rightNav = (): LabelHrefType[] => {
     return rightNav
 }
 
-export let fn_rightCategoryArr = () => {
+export let fn_rightCategoryArr = (): LabelHrefType[] => {
     let rightCategoryArr: LabelHrefType[] = [
         {
             label: Dot("download-local", "Free Hosting"),
             href: GithubRepoLink
         },
-        {
-            href: fmtURL_Server(['/client']),
-            label: Dot("YpFz_Ens_", "Easter Egg")
-        },
+        // {
+        //     href: fmtURL_Server(['/client']),
+        //     label: Dot("YpFz_Ens_", "Easter Egg")
+        // },
         {
             href: GitHubRepoIssueLink,
             label: Dot("YiyTj3bEz", "Help & Feedback")

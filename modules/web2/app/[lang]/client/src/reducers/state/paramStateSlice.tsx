@@ -74,9 +74,11 @@ export type ParamStateState = {
     // right
     r: TabRightType, // right
     tid?: string; // tool tab id
+    shsmu: TrueFalseType; // show side menu or not
 };
 let fn_getInitialState = (): ParamStateState => {
     return {
+        shsmu: 't',
         tltb: 'tools',
         fapsz: 'f',
         hrts: 't',

@@ -26,6 +26,7 @@ import APPINFOJSON from '@/app/[lang]/[category]/info'
 import LanguageFlowList from "../LanguageFlowList";
 import MottoLine from "../MottoLine";
 import { isCensorShipForWebsiteMode } from "@/app/[lang]/page";
+import { fmtURL_Server } from "../../utils/routeUtils";
 
 export let FooterContent = () => {
     return <div className={"w-full bg-slate-100  " + CSS_BG_DARK_1ST}>
@@ -89,6 +90,10 @@ export let FooterContent = () => {
                                 //     </p>
                                 // })
                             }
+                        },
+                        {
+                            label: Dot("TET4xnxBT", "Easter Egg"),
+                            link: fmtURL_Server(['/client']),
                         }
                     ].filter(x => x).map(x => {
                         if (!x) { return '' }

@@ -73,6 +73,7 @@ import { ACTION_callRefreshAll } from "../../reducers/systemSlice";
 import { APPINFOJSON, FN_GetDispatch } from "../../nocycle";
 import exportUtils from "../../utils/ExportUtils";
 import AlertUtils from "../../utils/AlertUtils";
+import { fmtURL_Server } from "@/app/__CORE__/utils/routeUtils";
 
 export let FooterContent = () => {
     return <div className='  w-8/12 space-y-3 mx-auto bp5-text-muted  break-words pt-8 flex flex-col pb-6 ' style={{
@@ -103,32 +104,42 @@ export let FooterContent = () => {
                     },
                     {
                         label: Dot("13pmE", "Support Us"),
-                        link: "javascript:void(0);",
-                        onClick: () => {
-                            AlertUtils.win_alert({
-                                id: "W1z_B",
-                                msg: <p>
-                                    <h1>{Dot("qHoktx", "Thank You!")}</h1>
-                                    <p>
-                                        {Dot("CidOqAZ", "As the creator of LafTools, I am so touched that you are willing to support us. We have good people on our team who work hard to continuously improve LafTools.")}
-                                    </p>
-                                    <p>
-                                        {Dot("6hsnqWe", "Although LafTools is free and open source, maintaining it still requires a significant amount of time and energy. In particular, we need funds to pay for certain cloud APIs. If you appreciate LafTools, please consider supporting us.")}
-                                    </p>
-                                    <p>
-                                        {Dot("5qPOJL", "To support LafTools, consider either giving a star to our repository on GitHub or upgrading to our professional version through a monthly subscription. We would greatly appreciate your help, and we promise that LafTools will become even better with the funds raised.")}</p>
-                                    <p
-                                        className='bp5-text-muted'
-                                    >{'Ryan Laf'}
-                                        <br />
-                                        {Dot("qWemXE4", "Jan, 1st, 2024")}
-                                    </p>
-                                </p>
-                            })
-                        }
+                        link: "https://github.com/work7z/LafTools/"
+                    },
+                    // {
+                    //     label: Dot("13pmE", "Support Us"),
+                    //     link: "javascript:void(0);",
+                    //     onClick: () => {
+                    //         AlertUtils.win_alert({
+                    //             id: "W1z_B",
+                    //             msg: <p>
+                    //                 <h1>{Dot("qHoktx", "Thank You!")}</h1>
+                    //                 <p>
+                    //                     {Dot("CidOqAZ", "As the creator of LafTools, I am so touched that you are willing to support us. We have good people on our team who work hard to continuously improve LafTools.")}
+                    //                 </p>
+                    //                 <p>
+                    //                     {Dot("6hsnqWe", "Although LafTools is free and open source, maintaining it still requires a significant amount of time and energy. In particular, we need funds to pay for certain cloud APIs. If you appreciate LafTools, please consider supporting us.")}
+                    //                 </p>
+                    //                 <p>
+                    //                     {Dot("5qPOJL", "To support LafTools, consider either giving a star to our repository on GitHub or upgrading to our professional version through a monthly subscription. We would greatly appreciate your help, and we promise that LafTools will become even better with the funds raised.")}</p>
+                    //                 <p
+                    //                     className='bp5-text-muted'
+                    //                 >{'Ryan Laf'}
+                    //                     <br />
+                    //                     {Dot("qWemXE4", "Jan, 1st, 2024")}
+                    //                 </p>
+                    //             </p>
+                    //         })
+                    //     }
+                    // },
+                    {
+                        label: Dot("TET4xnxBT", "Easter Egg"),
+                        link: fmtURL_Server(['/client']),
                     }
+                    //  onClick = { x.onClick }
                 ].map(x => {
-                    return <a onClick={x.onClick} href={x.link} className={CSS_TEXT_ANCHOR_CSS} target={x.onClick ? '' : '_blank'}>{x.label}</a>
+                    // x.onClick ? '' : 
+                    return <a href={x.link} className={CSS_TEXT_ANCHOR_CSS} target={'_blank'}>{x.label}</a>
                 })
             }
         </div>

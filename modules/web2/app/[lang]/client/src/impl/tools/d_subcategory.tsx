@@ -8,16 +8,33 @@ import { cache } from "react"
 import appToolInfoObj, { AppToolKeyType } from "./d_meta"
 import COMMON_FN_REF from "./common_ref"
 import { GithubRepoLink } from "@/app/__CORE__/meta/constants"
-import { PortalDefinitionType } from "./d_portal"
+import { PortalDefinitionTbabGroup, PortalDefinitionType } from "./d_portal"
 import { CategorySearchProps } from "@/app/[lang]/page"
 import { tw } from "../../types/styles"
 import { ifnil } from "@/app/__CORE__/meta/fn"
+import _ from "lodash"
 // import { ifnil } from "../../pages/WorkBench/FixedLayout/Main/Center/sub/center-view/Transformer/ProcessPanel/hooks"
 
 export type CategoryType = "" | "tools" | "resources" | "docs" | "ai" | "user"
 
-
 export let getSubCategoryByProps = (props: CategorySearchProps): PortalDefinitionType[] => {
+    let a = __getSubCategoryByProps(props)
+    let allSubTabs: PortalDefinitionTbabGroup[] = []
+    _.forEach(a, x => {
+        allSubTabs = allSubTabs.concat(x.subTabs || [])
+    })
+    return [
+        {
+            id: 'all',
+            label: Dot("IzUedAcWt", "All"),
+            longLabel: Dot("IzUedAcsWt", "All"),
+            seoTitle: Dot("IzUedAcW", "All"),
+            subTabs: allSubTabs
+        },
+        ...a
+    ]
+}
+export let __getSubCategoryByProps = (props: CategorySearchProps): PortalDefinitionType[] => {
     switch (props.params.category) {
         case 'ai':
             return getAISubCategory()
