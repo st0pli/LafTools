@@ -11,6 +11,7 @@ import { CheckRules, fn_verifyVCode } from "./action-types";
 import { fn_refresh_system_info_from_redis } from "./user-types";
 import _ from "lodash";
 import { key_sessionGroup } from "./constants";
+import { hashPW } from "./op";
 
 export type Elb3AuthBody = {
     userAcctId: string,
@@ -127,13 +128,6 @@ export type ValOrError<T> = {
 //     return {}
 // }
 
-
-let SHARING_SALT_FIXED = "STCG001"
-export let hashPW = (pw: string) => {
-    return getMD5(
-        `${SHARING_SALT_FIXED}${pw}${SHARING_SALT_FIXED}`
-    ).toUpperCase()
-}
 
 
 export let validateEachRuleInArr = async (rules: CheckRules[], formData: any, p: CommonHandlePass): Promise<AsyncCreateResponse<{}> | null> => {
