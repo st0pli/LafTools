@@ -23,7 +23,7 @@ import { startListening } from "../../listenerMiddleware";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import queryString from "query-string";
 import _ from "lodash";
-import { Val_ToolTabIndex } from "../../types/purejs-types-READ_ONLY";
+import { Val_ToolTabIndex } from "../../impl/purejs-types";
 
 
 // The slice state is initialized from the URL parameters if it's possible. 
