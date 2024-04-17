@@ -51,7 +51,8 @@ export let __getSubCategoryByProps = (props: CategorySearchProps): PortalDefinit
 }
 
 export let getCategoryParentTwClz = (category: CategoryType): string => {
-    let parentClz = tw` dark:bg-sky-900 bg-sky-600 `
+    // let parentClz = tw` dark:bg-sky-900 bg-sky-600 `
+    let parentClz = tw` dark:bg-blue-700 bg-blue-500 `
     if (category == 'ai') {
         parentClz = tw` dark:bg-violet-900 bg-violet-900 `
     } else if (category == 'docs') {
@@ -64,7 +65,13 @@ export let getCategoryParentTwClz = (category: CategoryType): string => {
     }
     return parentClz
 }
-export let getIconImgAndBannerTextByCategory = (category: CategoryType, props: NavigatorPassProp): { iconImg: string, crtTitleBanner: string } => {
+export let getIconImgAndBannerTextByCategory = (category: CategoryType, props: NavigatorPassProp): {
+    backgroundImage: string,
+    textColor: string,
+    iconImg: string, crtTitleBanner: string
+} => {
+    let backgroundImage = 'linear-gradient(#0802fd52, #5884f40f), url(/static/bg/p1.png)'
+    let textColor = '#e2e2ff'
     let iconImg = ''
     let crtTitleBanner = ''
     if (ifnil(category, 'tools') == 'tools') {
@@ -78,6 +85,9 @@ export let getIconImgAndBannerTextByCategory = (category: CategoryType, props: N
             Dot("OP2Ogtd1O", "Experience AI Features with LafTools!")
         )
     } else if (category == 'docs') {
+        backgroundImage = 'linear-gradient(rgb(0 0 0 / 32%), rgb(43 117 108 / 55%)), url(/static/bg/p-docs.png)'
+        textColor = 'rgb(208 234 231)'
+
         iconImg = 'icon-docs.png'
         crtTitleBanner = (
             Dot("Tj2A9ou2k", "Read Documentations with LafTools!")
@@ -101,6 +111,8 @@ export let getIconImgAndBannerTextByCategory = (category: CategoryType, props: N
     crtTitleBanner = Dot("DkOlPSZ0t", "LafTools")
     return {
         iconImg,
+        backgroundImage,
+        textColor,
         crtTitleBanner
     }
 }

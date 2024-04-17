@@ -53,17 +53,28 @@ import { getIconImgAndBannerTextByCategory } from "@/app/[lang]/client/src/impl/
 
 export default (props: NavigatorPassProp) => {
     let { category } = props.params;
-    let { iconImg, crtTitleBanner } = getIconImgAndBannerTextByCategory(category, props);
-    return <div className={border_clz + " py-3 px-2 relative "}>
-        <div className={' space-x-2 px-4 items-center z-20 flex flex-row  relative '}>
+    let {
+        backgroundImage,
+        textColor,
+
+        iconImg, crtTitleBanner } = getIconImgAndBannerTextByCategory(category, props);
+    return <div className={border_clz + " py-3 px-2 relative h-[73px] flex items-center  "} style={{
+        backgroundImage: backgroundImage,
+        backgroundSize: '100%'
+    }}>
+        <div className={' space-x-2 px-4 items-center z-20 flex flex-row  relative '} >
             <div className="">
-                <img src={'/static/' + iconImg} width={40} height={40}></img>
+                <img src={'/static/' + iconImg} width={40} height={40} className="" style={{
+                    // border: '2px solid #ffffff'
+                }}></img>
             </div>
-            <div>
-                <h1 className=" m-0 mt-1" style={{
-                    fontSize: '1rem'
+            <div className="text-center" style={{
+                color: textColor
+            }}>
+                <h1 className=" m-0 mt-1  font-semibold" style={{
+                    fontSize: '1rem',
                 }}>{crtTitleBanner}</h1>
-                <div className='text-xs text-slate-600 dark:text-slate-300 mt-[-1px] mb-1'>
+                <div className='text-xs   mt-[-1px] mb-1'>
                     {/* <PossiblePathname /> */}
                     {Dot("forever-foss", "Forever FOSS")}
                 </div>

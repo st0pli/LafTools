@@ -28,10 +28,10 @@
 /* anchor style in category */
 .category-tools .anchor-text-in-category:hover,
 .category-tools .anchor-text-in-category.hover {
-  @apply bg-sky-800 dark:bg-sky-700;
+  @apply bg-blue-600 dark:bg-blue-700;
 }
 .category-tools .anchor-text-in-category.active {
-  @apply bg-sky-700 dark:bg-sky-600;
+  @apply bg-blue-600 dark:bg-blue-700;
 }
 
 

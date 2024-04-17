@@ -87,7 +87,7 @@ export default (props: NavigatorPassProp) => {
                 <Footer />
             </div>
         </div>
-        <div className={"fixed left-0 bottom-0 w-12 h-12 " + CSS_BG_COLOR_WHITE + ' opacity-80 duration-100 transition-all hover:opacity-100 floatbtnview ' + light_border_clz_all}>
+        <div className={"fixed left-0 bottom-0 w-[39px] h-[39px] " + CSS_BG_COLOR_WHITE + ' opacity-80 duration-100 transition-all hover:opacity-100 floatbtnview ' + light_border_clz_all}>
             <ClientWrapper>
                 <ClientCollapseBtn />
             </ClientWrapper>
