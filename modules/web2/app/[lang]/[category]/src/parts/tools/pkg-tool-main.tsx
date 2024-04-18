@@ -53,11 +53,5 @@ export default (props: CrtToolProp) => {
         <HocClientWrapperClient children={
             <ToolView {...props} />
         }></HocClientWrapperClient>
-        {
-            // React.createElement(hocClientWrapper(dynamic(() => import("./view-tools"), {
-            //     ssr: false
-            // })))
-            //  <ToolView {...props} />
-        }
     </Card >
 }

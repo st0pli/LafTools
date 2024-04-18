@@ -26,6 +26,7 @@ import TranslationUtils from '@/app/__CORE__/utils/cTranslationUtils'
 import { useEffect } from 'react'
 import SetupPopPanel from '@/app/__CORE__/containers/SetupPopPanel'
 import VersionCheck from '@/app/__CORE__/containers/VersionCheck'
+import { useTheme } from '@/app/__CORE__/components/LightDarkButton/theme'
 
 
 export default () => {

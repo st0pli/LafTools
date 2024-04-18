@@ -20,15 +20,26 @@
 
 "use client"
 import * as React from "react";
-import { ThemeProvider as NextThemesProvider, useTheme } from "next-themes";
+import { ThemeProvider as NextThemesProvider, } from "next-themes";
 import type { ThemeProviderProps } from "next-themes/dist/types";
+import $ from 'jquery';
+import { useTheme } from "./__CORE__/components/LightDarkButton/theme";
+import _ from 'lodash'
+import { hocClientWrapper } from "./[lang]/[category]/src/common/hocClientWrapper";
+_.set(window, '$', $)
 
-let CustomerInner = ({ children, ...props }: ThemeProviderProps) => {
+let CustomerInner = hocClientWrapper(({ children, ...props }: ThemeProviderProps) => {
     const { theme, setTheme } = useTheme()
-    return <div className={"w-full h-full " + (
-        theme == 'dark' ? 'bp5-dark' : 'bp5-light'
+    React.useEffect(() => {
+
+    }, [
+        theme
+    ])
+    return <div className={"customerinner w-full h-full " + (
+        // theme == 'dark' ? 'bp5-dark' : 'bp5-light'
+        ''
     )}>{children}</div>
-}
+})
 
 export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
     let [mounted, setMounted] = React.useState(false)
@@ -36,7 +47,8 @@ export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
         setMounted(true)
     }, [])
     if (!mounted) return ''
-    return <NextThemesProvider enableSystem={false}  {...props}>
-        <CustomerInner>{children}</CustomerInner>
-    </NextThemesProvider>
+    return <CustomerInner>{children}</CustomerInner>
+    // return <NextThemesProvider enableSystem={false}  {...props}>
+    //     <CustomerInner>{children}</CustomerInner>
+    // </NextThemesProvider>
 }

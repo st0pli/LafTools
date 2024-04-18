@@ -122,7 +122,9 @@ import TokenUtils from "../../../../../utils/TokenUtils";
 import { useCloudLoginStatus } from "../../../../../hook/login-hook";
 import { getFormattedLang } from "../../../../../i18n";
 import { fmtURL_Client } from "@/app/__CORE__/utils/cRouteUtils";
-import { useTheme } from "next-themes";
+// import { useTheme } from "next-themes";
+import { useTheme } from "@/app/__CORE__/components/LightDarkButton/theme";
+
 import settingsSlice from "@/app/[lang]/client/src/reducers/settingsSlice";
 
 type PassProp = {

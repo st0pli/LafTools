@@ -82,9 +82,9 @@ import { StreamLanguage } from '@codemirror/language';
 
 
 import { EditorView } from "codemirror"
-import { useTheme } from "next-themes";
 import { IconName } from "@blueprintjs/icons";
 import { CSS_NAV_BP_TAB_HEIGHT, VAL_CSS_TAB_TITLE_PANEL, border_clz_common } from "../../types/styles";
+import { useTheme } from "@/app/__CORE__/components/LightDarkButton/theme";
 // import { langs, langNames, loadLanguage } from '@uiw/codemirror-extensions-langs';
 // console.log('langNames', langs.mysql())
 
@@ -119,7 +119,7 @@ const langMap = {
 export let useForgeObj = () => {
   let { theme } = useTheme()
   let forgeObj = {
-    dark: theme === "dark"
+    dark: theme == "dark"
   }
   return forgeObj
 }
@@ -192,7 +192,8 @@ export default (props: GenCodeMirrorProp) => {
     targetLanguage = 'javascript'
   }
   let langPack = targetLanguage && langMap[targetLanguage] ? (langMap[targetLanguage])() : null
-  return <div className="w-full h-full flex flex-col">
+  console.log('codemirror:' + forgeObj.dark)
+  return <div className="w-full h-full flex flex-col " key={forgeObj.dark ? '5t-F8No32' : 'JB-RC462J  '}>
     <div className={border_clz_common + " border-b-[1px] using-edge-ui-bg flex justify-center items-center text-xs "} style={{
       height: VAL_CSS_TAB_TITLE_PANEL,
     }}>
@@ -205,7 +206,7 @@ export default (props: GenCodeMirrorProp) => {
     </div>
     <div className='flex-1 overflow-auto scrollbar-hide'>
       <CodeMirror
-        key={verObj.ver}
+        key={verObj.ver + ' ' + forgeObj.dark}
         onChange={(val) => {
           onChange(val, true);
         }}

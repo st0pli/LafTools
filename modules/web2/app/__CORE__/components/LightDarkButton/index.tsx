@@ -24,13 +24,16 @@ import { COMMON_CLZ_ANCHOR_TEXT } from "@/app/__CORE__/common/clz"
 import RegularLink from "@/app/__CORE__/components/RegularLink"
 import { MoonIcon, Cog8ToothIcon, SunIcon } from '@heroicons/react/24/solid'
 import { Dot } from "@/app/__CORE__/utils/cTranslationUtils"
-import { useTheme } from "next-themes";
+// import { useTheme } from "next-themes";
+import { useTheme } from "@/app/__CORE__/components/LightDarkButton/theme";
+
 import { useEffect, useState } from "react"
 import { loadDOT } from "../../utils/i18n-for-nonclient"
+import { hocClientWrapper } from "@/app/[lang]/[category]/src/common/hocClientWrapper"
 
 let a = loadDOT("6xOX9cfLT")
 
-export default (props: { labelMode?: boolean }) => {
+export default hocClientWrapper((props: { labelMode?: boolean }) => {
     a()
     const { theme, setTheme } = useTheme();
 
@@ -60,4 +63,4 @@ export default (props: { labelMode?: boolean }) => {
         }} className={' cursor-pointer text-sm ' + (theme == 'dark' ? ' text-yellow-400 ' : ' text-solarized-cyan ')}>
             {props.labelMode ? theme == 'dark' ? Dot("JAbVG", "Light Theme") : Dot("OnP4s", "Dark Theme") : ''}</span>
     </span>
-}
+})

@@ -40,10 +40,10 @@ import { GetUserActualClientLang, getFormattedLang } from "./i18n";
 import AlertUtils from "./utils/AlertUtils";
 import SystemLoadingBar from "./containers/SystemLoadingBar";
 import { fmtURL_Client } from "@/app/__CORE__/utils/cRouteUtils";
-import { useTheme } from "next-themes";
 import SmallScreenDetecter from "./SmallScreenDetecter";
 import SetupPopPanel from "@/app/__CORE__/containers/SetupPopPanel";
 import VersionCheck from "@/app/__CORE__/containers/VersionCheck";
+import { useTheme } from "@/app/__CORE__/components/LightDarkButton/theme";
 
 function App() {
   let forgeObj = exportUtils.useSelector((val) => ({

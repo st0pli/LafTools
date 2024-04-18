@@ -115,7 +115,12 @@ let RouteComponent = () => {
 
   return (
     <div
-      className={" " + (forgeObj.dark ? " bp5-dark dark " : " ")}
+      className={
+
+        // " " + (forgeObj.dark ? " bp5-dark dark " : " ")
+        ''
+
+      }
       key={forgeObj.lang}
     >
       <FixedWorkBench />

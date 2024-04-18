@@ -22,8 +22,10 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { startListening } from "../../listenerMiddleware";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import _ from "lodash";
+import { ThemeType } from "@/app/__CORE__/components/LightDarkButton/theme";
 
 type LocalStateState = {
+    theme: ThemeType,
     ackedOutdatedVersion: string,
     setup_confirm_lang: string,
     setup_user_lang: string,
@@ -31,6 +33,7 @@ type LocalStateState = {
     lastUpdatedAt: string, // if this value is updated, then the local state should be updated by other tab already
 };
 const initialState: LocalStateState = {
+    theme: 'light',
     ackedOutdatedVersion: '',
     setup_confirm_lang: '',
     setup_user_lang: '',

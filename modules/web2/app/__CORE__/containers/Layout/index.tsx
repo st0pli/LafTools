@@ -25,7 +25,6 @@ import { TopNav } from "../TopNav";
 import CenterPart from "../CenterPart";
 import Footer from "../Footer";
 import { ThemeProvider } from "../../../theme-provider";
-import { useTheme } from "next-themes";
 import Script from 'next/script'
 
 
@@ -70,8 +69,8 @@ var _hmt = _hmt || [];
                 <div className="w-full h-full">
                     {children}
                 </div>
-                {/* <ThemeProvider attribute="class" defaultTheme="system" enableSystem >
-                </ThemeProvider> */}
+                <ThemeProvider attribute="class" defaultTheme="system" enableSystem >
+                </ThemeProvider>
             </body>
         </html>
     );
