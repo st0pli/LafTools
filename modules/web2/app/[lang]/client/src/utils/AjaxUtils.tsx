@@ -64,9 +64,9 @@ const AjaxUtils = {
       "X-LOCAL-CLIENT-ID": IDUtils.CLIENT_ID,
       "X-LOCAL-WORKSPACE-ID": getWorkspaceIdFromPath(),
       "X-LOCAL-USER-LANG": TranslationUtils.getCurrentLang(),
-      "X-LOCAL-USER-TOKEN": TokenUtils.getLocalUserToken(),
-      "X-LOCAL-ADMIN-TOKEN": TokenUtils.getSystemInitToken(),
-      "X-LOCAL-USER-ID": TokenUtils.getLocalUserId(),
+      // "X-LOCAL-USER-TOKEN": TokenUtils.getLocalUserToken(),
+      // "X-LOCAL-ADMIN-TOKEN": TokenUtils.getSystemInitToken(),
+      // "X-LOCAL-USER-ID": TokenUtils.getLocalUserId(),
     };
   },
   getCloudAPIHeaders: () => {
