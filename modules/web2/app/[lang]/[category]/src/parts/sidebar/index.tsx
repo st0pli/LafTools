@@ -30,7 +30,7 @@ export let NavTabs = (props: NavigatorPassProp) => {
         }
 
         return <div className='p-2 space-y-2'>
-            {/* <ListControl /> */}
+            <ListControl />
         </div>
     } else {
         return ''

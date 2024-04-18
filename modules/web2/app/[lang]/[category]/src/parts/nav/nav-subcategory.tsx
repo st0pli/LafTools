@@ -83,19 +83,17 @@ export default (props: NavigatorPassProp) => {
                     }
                 </div>
             </div>
-            <div className="">
-                {
-                    leftCategoryArr.map(x => {
-                        return <div id={`navbindid-${x.id}`} style={{
-                            display: 'none'
-                        }} className={
-                            'fixed z-50 '
-                        }>
-                            <OverlapSubTabsPanelView currentSubTabId={currentSubTabId} subTabs={x.subTabs} subCategoryId={x.id} />
-                        </div>
-                    })
-                }
-            </div>
+            {
+                leftCategoryArr.map(x => {
+                    return <div id={`navbindid-${x.id}`} style={{
+                        display: 'none'
+                    }} className={
+                        'fixed z-50 '
+                    }>
+                        <OverlapSubTabsPanelView currentSubTabId={currentSubTabId} subTabs={x.subTabs} subCategoryId={x.id} />
+                    </div>
+                })
+            }
             <PreinitNavbind />
         </div>
 

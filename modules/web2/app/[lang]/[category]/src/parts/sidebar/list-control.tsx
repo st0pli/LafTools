@@ -221,5 +221,5 @@ export let ListControl = hocClientWrapper(() => {
             </Listbox>
         </ListboxWrapper>
     );
-}
+}, true
 )

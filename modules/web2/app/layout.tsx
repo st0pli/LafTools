@@ -59,9 +59,9 @@ export default async function RootLayout(props: {
       <PrelintInit></PrelintInit>
       <ProgressBar></ProgressBar>
       {/* client */}
-      {/* <SetupPopPanel />
+      <SetupPopPanel />
       <VersionCheck />
-      <RegisterSlot /> */}
+      <RegisterSlot />
     </Layout>
   );
 }
