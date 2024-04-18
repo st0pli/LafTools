@@ -25,9 +25,6 @@ let d = loadDOT("IVmxAXWyR")
 export default (props: CrtToolProp) => {
     d()
     // FIXME: if user wants to view a tool, curretnly we can just update its tool settle first, not to show a dialog as it's pretty wrired
-    {/* <ClientWrapper>
-            <DialogToolListView {...props} />
-        </ClientWrapper> */}
     let { isOpen } = exportUtils.useSelector(v => ({
         isOpen: v.memoryState.siteToolDialogOpen == 't'
     }))

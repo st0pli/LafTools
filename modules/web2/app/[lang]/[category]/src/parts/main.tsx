@@ -63,37 +63,10 @@ export type NavigatorPassProp = CategorySearchProps & {
 }
 
 export default (props: NavigatorPassProp) => {
-    let toolSearchDetail: CategoryTypeSearchDetail = getSearchDetailBySearchProps(props)
     let { innerContent } = props;
     return (
         <div className={'  bg-slate-50  pb-10 ' + CSS_BG_DARK_1ST}>
             <div className={row_pad_clz}>
-                {/* <div className="flex flex-row flex-wrap py-2 items-center justify-between">
-                    <div>
-                        <SysBreadCrumbs toolSearchDetail={toolSearchDetail} />
-                    </div>
-                    <div>
-                        <NavCategory {...props} nav={[
-                            // {
-                            //     href: fmtURL_ToolSubPage(['opt?action=favourite']),
-                            //     label: Dot("be-Favourite-it", "Add to Favourites")
-                            // },
-                            // {
-                            //     refId: FN_REF_ID_SHARE_THIS_PAGE,
-                            //     href: fmtURL_ToolSubPage(['opt?action=share-this-page']),
-                            //     label: Dot("share-this-page", "Share this Page"),
-                            // },
-                            // {
-                            //     href: '',
-                            //     label: ,
-                            // },
-                            {
-                                href: GitHubRepoIssueLink,
-                                label: Dot("BJbgR", "Report a Problem")
-                            }
-                        ]}></NavCategory>
-                    </div>
-                </div> */}
                 {innerContent}
             </div>
         </div>

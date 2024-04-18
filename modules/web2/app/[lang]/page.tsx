@@ -17,7 +17,6 @@ import { PageProps, PortalDefinitionType, TopMainCategoryNavList } from '@/app/_
 import getAuthInfo, { AuthInfo } from "@/app/__CORE__/containers/GrailLayoutWithUser/actions/handleAuthInfo";
 import { Dot, getXSubPath, isChineseByXLocal } from "../__CORE__/utils/TranslationUtils";
 import Link from "next/link";
-import { NextUIProvider } from "@nextui-org/react";
 
 import { getAppDevIcon, getAppKeywords } from "../__CORE__/config/imgconfig";
 
@@ -43,7 +42,10 @@ export type CategoryTypeSearchDetail = {
     topCategoryNavItem: TopMainCategoryNavList | undefined
 }
 export let getSearchDetailBySearchProps = (props: CategorySearchProps): CategoryTypeSearchDetail => {
+    let a = []
+    console.log(a.find)
     let topCategoryNavList = getCategoryList()
+    console.log(topCategoryNavList.find)
     let topCategoryNavItem = topCategoryNavList.find(x => x.id == props.params.category)
     if (_.isNil(topCategoryNavItem)) {
         topCategoryNavItem = topCategoryNavList[0]
