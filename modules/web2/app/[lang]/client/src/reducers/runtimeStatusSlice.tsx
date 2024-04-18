@@ -22,7 +22,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { startListening } from "../listenerMiddleware";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import SyncStateUtils from "../utils/SyncStateUtils";
-import { ToolDefaultOutputType, Val_ToolTabIndex } from "../types/purejs-types-EXPORT";
+import { ToolDefaultOutputType, Val_ToolTabIndex } from "../types/purejs-types-READ_ONLY";
 import _ from "lodash";
 import { Dot } from "../utils/cTranslationUtils";
 import { ProcessReturnType } from "../impl/tools/r_process";

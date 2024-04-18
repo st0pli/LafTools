@@ -91,6 +91,12 @@ export let fn_runtype_dynamic_load = (runType: ModuleType) => {
         logger.warn(
           `child process exited with code ${code}, need to check it why it failed.`,
         );
+        logger.info(
+          "restarting the child_process as the duty of daemon process",
+        );
+        setTimeout(() => {
+          fn_runtype_dynamic_load(runType);
+        }, 2000);
       } else {
         logger.info(
           `No reload file found: ${reloadFile}, will end the process.`,
