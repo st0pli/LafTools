@@ -27,11 +27,12 @@ import Link from 'next/link';
 import { fmtURL_Server } from '@/app/__CORE__/utils/routeUtils';
 import FundrasingPlanBtn from '../cpt/cpt-fundrasing-btn';
 import { ToolProp, getCardsProps } from '.';
+import MainSidebar from '../tools/main-sidebar';
 
 
 
 export default (props: ToolProp) => {
-    return ''
+    return <MainSidebar {...props} />
     // let secondaryPanelClzHeader = tw('bg-slate-50 g-card-header dark:bg-slate-700')
 
     // return <div className='w-64  space-y-2'>

@@ -13,8 +13,11 @@ import ClientWrapper from '../../common/clientWrapper'
 
 export let NavTabs = (props: NavigatorPassProp) => {
     if ((
-        props.params.category || 'tools'
-    ) == 'tools') {
+        true
+        // props.params.category || 'tools'
+        // ) == 'tools'
+    )
+    ) {
         let subTabs = getSubTabs(props)
         subTabs = subTabs.slice(0, subTabs.length - 2)
         let sp = {
