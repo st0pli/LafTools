@@ -528,35 +528,39 @@ export let getToolSubCategory = ((): PortalDefinitionType[] => {
                 }
             ]
         },
-        {
-            seoTitle: Dot("generators.seo", "Online Generators - UUID Generator, GUID Generator, Random Generator"),
-            seoKeywords: [
-                "uuid generator",
-                "guid generator",
-                "random generator",
-                "online generators",
-                "free generators",
-                "secure generators"
-            ],
-            seoDescription: Dot("seo.description.generators", "Use our free online generators to generate UUIDs, GUIDs, and random values for your applications."),
-            label: Dot("IEFy5k39X", "Generators"),
-            longLabel: Dot("IEFy5k39X.long", "Generate Code, UUIDs, GUIDs, and Random Values"),
-            id: 'generator',
-            subTabs: [
-                {
-                    id: 'uuid',
-                    label: Dot("qwwqee", "UUID Generator"),
-                },
-                {
-                    id: 'guid',
-                    label: Dot("qeeqw", "GUID Generator"),
-                },
-                {
-                    id: 'random',
-                    label: Dot("eqwwew", "Random Generator"),
-                },
-            ]
-        },
+        // {
+        //     seoTitle: Dot("generators.seo", "Online Generators - UUID Generator, GUID Generator, Random Generator"),
+        //     seoKeywords: [
+        //         "uuid generator",
+        //         "guid generator",
+        //         "random generator",
+        //         "online generators",
+        //         "free generators",
+        //         "secure generators"
+        //     ],
+        //     seoDescription: Dot("seo.description.generators", "Use our free online generators to generate UUIDs, GUIDs, and random values for your applications."),
+        //     label: Dot("IEFy5k39X", "Generators"),
+        //     longLabel: Dot("IEFy5k39X.long", "Generate Code, UUIDs, GUIDs, and Random Values"),
+        //     id: 'generator',
+        //     subTabs: [
+        //         {
+        //             id: 'uuid',
+        //             label: Dot("qwwqee", "UUID Generator"),
+        //         },
+        //         {
+        //             id: 'totp',
+        //             label: Dot("459Imii79", "{0} Generator", "TOTP"),
+        //         },
+        //         // {
+        //         //     id: 'guid',
+        //         //     label: Dot("qeeqw", "GUID Generator"),
+        //         // },
+        //         // {
+        //         //     id: 'random',
+        //         //     label: Dot("eqwwew", "Random Generator"),
+        //         // },
+        //     ]
+        // },
     ]
     toolsPortalDefinitions.forEach(x => {
         x.subTabs = (x.subTabs || []).map(x => {

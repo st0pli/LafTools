@@ -42,8 +42,6 @@ export type CategoryTypeSearchDetail = {
     topCategoryNavItem: TopMainCategoryNavList | undefined
 }
 export let getSearchDetailBySearchProps = (props: CategorySearchProps): CategoryTypeSearchDetail => {
-    let a = []
-    console.log(a.find)
     let topCategoryNavList = getCategoryList()
     console.log(topCategoryNavList.find)
     let topCategoryNavItem = topCategoryNavList.find(x => x.id == props.params.category)

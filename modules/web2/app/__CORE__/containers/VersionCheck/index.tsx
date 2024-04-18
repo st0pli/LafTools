@@ -11,10 +11,11 @@ import { FN_GetState } from "@/app/[lang]/client/src/nocycle"
 import info from "@/app/[lang]/[category]/info"
 import AlertUtils from "@/app/[lang]/client/src/utils/AlertUtils"
 import { loadDOT } from "../../utils/i18n-for-nonclient"
+import { hocClientWrapper } from "@/app/[lang]/[category]/src/common/hocClientWrapper"
 
 let a = loadDOT("c6r8WcoMg")
 
-export default () => {
+export default hocClientWrapper(() => {
     a()
     let fn = useCallback(_.once(async () => {
         try {
@@ -46,4 +47,4 @@ export default () => {
         fn()
     }, [])
     return ''
-}
+})

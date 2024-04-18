@@ -17,7 +17,7 @@
 //
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
+'use client'
 /**
  * @author n1474335 [n1474335@gmail.com]
  * @copyright Crown Copyright 2016

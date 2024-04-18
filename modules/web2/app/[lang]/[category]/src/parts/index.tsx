@@ -54,7 +54,6 @@ import Main from "./main";
 import Sidebar from "./sidebar";
 import './index.scss'
 import ClientCollapseBtn from "./sidebar/client-collapse-btn";
-import ClientWrapper from "../common/clientWrapper";
 export type LabelHrefType = {
     refId?: string;
     label: string | JSX.Element,
@@ -79,7 +78,7 @@ export default (props: NavigatorPassProp) => {
             }}>
                 <div className="sticky top-0  z-40">
                     <NavTop {...props} />
-                    <RedirectToOtherBanner></RedirectToOtherBanner>
+                    <RedirectToOtherBanner optionalText=""></RedirectToOtherBanner>
                     <NavSubCategory {...props}></NavSubCategory>
                 </div>
                 {/* <NavBanner {...props} /> */}
@@ -88,9 +87,7 @@ export default (props: NavigatorPassProp) => {
             </div>
         </div>
         <div className={"fixed left-0 bottom-0 w-[39px] h-[39px] " + CSS_BG_COLOR_WHITE + ' opacity-80 duration-100 transition-all hover:opacity-100 floatbtnview ' + light_border_clz_all}>
-            <ClientWrapper>
-                <ClientCollapseBtn />
-            </ClientWrapper>
+            <ClientCollapseBtn />
         </div>
     </div>
 }

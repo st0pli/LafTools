@@ -25,13 +25,18 @@ import { Breadcrumbs, BreadcrumbItem } from "@nextui-org/react";
 import { Dot } from "@/app/__CORE__/utils/cTranslationUtils";
 import { loadDOT } from "@/app/__CORE__/utils/i18n-for-nonclient";
 import { useInitFunctionOnceOnly } from "@/app/__CORE__/hooks/cache";
+import { hocClientWrapper } from "../../common/hocClientWrapper";
 
 let a = loadDOT("Eitx--UjueC")
 
 let prevEvents = {}
 
-export default () => {
+export default hocClientWrapper(() => {
     useEffect(() => {
+        if (typeof document == 'undefined') {
+            return
+        }
+
         document.querySelectorAll("[data-navid]").forEach(x => {
             let navid = x.getAttribute("data-navid")
             if (!navid) return
@@ -105,4 +110,4 @@ export default () => {
         })
     }, ["d9HrtsmHO"])
     return ''
-}
+})

@@ -1,3 +1,5 @@
+'use client'
+
 // LafTools - The Leading All-In-One ToolBox for Programmers.
 // 
 // Date: Sun, 10 Mar 2024
@@ -18,7 +20,6 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-'use client'
 
 import { ScrollShadow } from "@nextui-org/react";
 import { CSS_BG_COLOR_WHITE, border_clz, light_border_clz_all } from "@/app/__CORE__/meta/styles"
@@ -35,6 +36,7 @@ import exportUtils from "@/app/[lang]/client/src/utils/ExportUtils";
 import { FN_GetDispatch } from "@/app/[lang]/client/src/nocycle";
 import LocalStateSlice from "@/app/[lang]/client/src/reducers/state/localStateSlice";
 import { loadDOT } from "../../utils/i18n-for-nonclient";
+import { hocClientWrapper } from "@/app/[lang]/[category]/src/common/hocClientWrapper";
 type ReturnType = [string, (value: string) => void]
 let user_crt_lang_key = 'NnJxl572v'
 let confrim_close_key = '9c1ASSbTb'
@@ -50,7 +52,10 @@ let goToNextURL = (lang: string) => {
     }
     location.href = nextURL
 }
-export default (props) => {
+
+
+
+export default hocClientWrapper((props) => {
     let Dot = a()
 
     let pathname = location.hostname
@@ -105,4 +110,4 @@ export default (props) => {
             }
         </div>
     </ScrollShadow>
-}
+})

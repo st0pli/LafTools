@@ -48,13 +48,22 @@ function isObject(item) {
 //   return target;
 // }
 export let copy = function (ctn: string, showMsg?: boolean) {
-  var obj = document.getElementById("uniqueiptele") as any;
-  if (obj) {
-    obj.value = ctn;
-    obj.select();
-    document.execCommand("Copy");
-    if (showMsg) {
-      //
+  if (typeof window !== "undefined") {
+    // prevent no document error
+    if (typeof document === "undefined") {
+      return
+    }
+    if (!document) {
+      return;
+    }
+    var obj = document.getElementById("uniqueiptele") as any;
+    if (obj) {
+      obj.value = ctn;
+      obj.select();
+      document.execCommand("Copy");
+      if (showMsg) {
+        //
+      }
     }
   }
 };

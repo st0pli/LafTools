@@ -23,7 +23,6 @@ import { getI18nDynamically } from "./i18n-action"
 import { useEffect, useState } from "react"
 import { getLocalePrefix_Client } from "./cRouteUtils"
 import TranslationUtils, { Dot } from "./cTranslationUtils"
-import { useInitFunctionOnceOnly } from "../hooks/cache"
 
 export type ShareClienti18nKeys = {
     smsCode: string,

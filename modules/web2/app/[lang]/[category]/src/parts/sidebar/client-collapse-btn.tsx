@@ -6,9 +6,10 @@ import exportUtils from "@/app/[lang]/client/src/utils/ExportUtils"
 import { Button } from "@blueprintjs/core"
 import { useEffect } from "react"
 import $ from 'jquery';
+import { hocClientWrapper } from "../../common/hocClientWrapper"
 
 
-export default () => {
+export default hocClientWrapper(() => {
     let showLeftBar = exportUtils.useSelector(v => v.paramState.shsmu == 't')
 
     useEffect(() => {
@@ -27,4 +28,4 @@ export default () => {
             })
         )
     }}></Button>
-}
+})

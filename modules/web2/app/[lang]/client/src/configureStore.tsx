@@ -27,13 +27,10 @@ import {
 } from "@reduxjs/toolkit";
 import { listenerMiddleware } from "./listenerMiddleware";
 import rootObj from "./reducers";
-import thunk from "redux-thunk";
 import apiSlice from "./reducers/apiSlice";
-import nocycle from "./nocycle";
 import _ from "lodash";
 import { logutils } from "./utils/LogUtils";
 import { saveIntoForge2 } from "./reducers/forgeSlice";
-import CacheUtils from "./utils/CacheUtils";
 import SyncStateUtils from "./utils/SyncStateUtils";
 import {
   createStateSyncMiddleware,
@@ -76,11 +73,6 @@ const alwaysHappyMiddleware =
     return originalResult;
   };
 
-// _.forEach(rootObj, (x: any, d, n) => {
-// x["actions"];
-// SyncStateUtils.
-// });
-_.set(window, "rootReducerObj", rootObj);
 
 export default function configureAppStore() {
   const store = configureStore({

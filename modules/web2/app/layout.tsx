@@ -42,7 +42,6 @@ import { Providers } from "./nextui-provider";
 import Link from "next/link";
 import "@blueprintjs/core/lib/css/blueprint.css";
 import "@blueprintjs/icons/lib/css/blueprint-icons.css";
-import ClientWrapper from "./[lang]/[category]/src/common/clientWrapper";
 import SetupPopPanel from "./__CORE__/containers/SetupPopPanel";
 import VersionCheck from "./__CORE__/containers/VersionCheck";
 import { RegisterSlot } from "./[lang]/[category]/src/fnrefmap";
@@ -56,17 +55,13 @@ export default async function RootLayout(props: {
   let { children } = props;
   return (
     <Layout>
-      <Providers>
-        {children}
-      </Providers>
+      {children}
       <PrelintInit></PrelintInit>
       <ProgressBar></ProgressBar>
-
-      <ClientWrapper>
-        <SetupPopPanel />
-        <VersionCheck />
-        <RegisterSlot />
-      </ClientWrapper>
+      {/* client */}
+      {/* <SetupPopPanel />
+      <VersionCheck />
+      <RegisterSlot /> */}
     </Layout>
   );
 }

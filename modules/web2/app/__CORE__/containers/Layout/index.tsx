@@ -67,11 +67,11 @@ var _hmt = _hmt || [];
                 </Script>
             </head>
             <body className={' laf-app min-h-screen dark:bg-slate-950 dark:text-slate-300    ' + inter.className}>
-                <ThemeProvider attribute="class" defaultTheme="system" enableSystem >
-                    <div className="w-full h-full">
-                        {children}
-                    </div>
-                </ThemeProvider>
+                <div className="w-full h-full">
+                    {children}
+                </div>
+                {/* <ThemeProvider attribute="class" defaultTheme="system" enableSystem >
+                </ThemeProvider> */}
             </body>
         </html>
     );

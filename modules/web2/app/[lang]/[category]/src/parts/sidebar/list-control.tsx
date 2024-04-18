@@ -1,9 +1,11 @@
 'use client'
+
 import React from "react";
 import { Listbox, ListboxItem, ListboxSection, } from "@nextui-org/react";
 import { Dot } from "@/app/__CORE__/utils/cTranslationUtils";
 import { loadDOT } from "@/app/__CORE__/utils/i18n-for-nonclient";
 import AlertUtils from "@/app/[lang]/client/src/utils/AlertUtils";
+import { hocClientWrapper } from "../../common/hocClientWrapper";
 
 const DeleteDocumentIcon = (props) => (
     <svg
@@ -116,7 +118,7 @@ const AddNoteIcon = (props) => (
 
 let a = loadDOT("TnXsTQXAO")
 
-export function ListControl() {
+export let ListControl = hocClientWrapper(() => {
     a()
     const iconClasses = "text-xl text-default-500 pointer-events-none flex-shrink-0";
 
@@ -220,3 +222,4 @@ export function ListControl() {
         </ListboxWrapper>
     );
 }
+)

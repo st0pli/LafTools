@@ -124,27 +124,29 @@ export function mergeTwoParamState(initialState: ParamStateState, objState2: any
 }
 
 // firstly, merge the local storage
-try {
-    let localParamSaveValue = localStorage.getItem(localParamSaveKey)
-    if (localParamSaveValue) {
-        let objState2 = JSON.parse(localParamSaveValue)
-        mergeTwoParamState(initialState, objState2)
+if (typeof localStorage != 'undefined') {
+    try {
+        let localParamSaveValue = localStorage.getItem(localParamSaveKey)
+        if (localParamSaveValue) {
+            let objState2 = JSON.parse(localParamSaveValue)
+            mergeTwoParamState(initialState, objState2)
+        }
+    } catch (e) {
+        console.error('error', e)
     }
-} catch (e) {
-    console.error('error', e)
-}
 
-// secondly, merge the query
-try {
-    let paramQ = queryString.parseUrl(location.href).query;
-    if (!paramQ) {
-        paramQ = {}
+    // secondly, merge the query
+    try {
+        let paramQ = queryString.parseUrl(location.href).query;
+        if (!paramQ) {
+            paramQ = {}
+        }
+        console.log('process', location.href)
+        mergeTwoParamState(initialState, paramQ)
+    } catch (e) {
+        // TODO: report this error if it's possible
+        console.error('error', e)
     }
-    console.log('process', location.href)
-    mergeTwoParamState(initialState, paramQ)
-} catch (e) {
-    // TODO: report this error if it's possible
-    console.error('error', e)
 }
 let formatState = (state: ParamStateState) => {
     let queryObj = {

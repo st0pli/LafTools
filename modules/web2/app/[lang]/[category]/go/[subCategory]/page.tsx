@@ -47,6 +47,7 @@ import ResourcesPart from '../../src/parts/resources'
 import NavigatorPage from '../../src/parts/index'
 import { ifnil } from "@/app/__CORE__/meta/fn";
 import { getToolSubCategory } from "@/app/[lang]/client/src/impl/tools/d_subcategory";
+import M from "./test";
 export type AuthInfoProps = { authInfo: AuthInfo }
 export type CombindSearchProps = PageProps<any, any>
 

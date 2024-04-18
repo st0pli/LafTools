@@ -9,7 +9,6 @@ import _ from 'lodash'
 import { URL_SUBCATEGORY_GO_PATH } from '@/app/__CORE__/meta/url'
 import { fmtURL_ToolSubPage } from '../../../types'
 import { ListControl } from './list-control'
-import ClientWrapper from '../../common/clientWrapper'
 
 export let NavTabs = (props: NavigatorPassProp) => {
     if ((
@@ -31,7 +30,7 @@ export let NavTabs = (props: NavigatorPassProp) => {
         }
 
         return <div className='p-2 space-y-2'>
-            <ListControl />
+            {/* <ListControl /> */}
         </div>
     } else {
         return ''
@@ -45,9 +44,7 @@ export default (props: NavigatorPassProp) => {
                 <NavTabs {...props} />
             </div>
             <div className={'h-[40px] flex justify-center items-center ' + light_border_clz_all_no_define_border + ' border-t-[1px]'}>
-                <ClientWrapper>
-                    <ClientCollapseButton></ClientCollapseButton>
-                </ClientWrapper>
+                <ClientCollapseButton></ClientCollapseButton>
             </div>
         </div>
     )

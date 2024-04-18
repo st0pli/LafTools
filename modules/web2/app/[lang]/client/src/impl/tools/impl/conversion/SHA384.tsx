@@ -23,6 +23,7 @@
  * @copyright Crown Copyright 2016
  * @license Apache-2.0
  */
+'use client'
 
 import Operation, { OptDetail } from "../../../core/Operation.tsx";
 import JSSHA3 from "js-sha3";

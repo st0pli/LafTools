@@ -18,9 +18,6 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import { ToolkitStore } from "@reduxjs/toolkit/dist/configureStore";
-import { RootState } from "./store";
-import { LANG_EN_US } from "./types/constants";
 
 interface InnerCycle {
   CachedLanguage: string | null;

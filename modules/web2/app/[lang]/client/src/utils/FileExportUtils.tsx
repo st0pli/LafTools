@@ -2,6 +2,9 @@ import { Dot } from "./cTranslationUtils";
 
 export async function js_export_trigger({ saveValue, filename, }) {
     function convertRes2BlobAndDownload(filename, data) {
+        if (typeof document == 'undefined') {
+            return
+        }
         const blob = new Blob([data], {
             type: "application/octet-stream",
         });

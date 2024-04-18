@@ -246,6 +246,7 @@ export const ACTION_getExample = (): any => {
  * @param scopeID 
  */
 export const loadDOT = async (scopeID: string): Promise<any> => {
+  if (typeof window === 'undefined') return;
   // load lang data dynamically
   FN_GetDispatch()(
     ACTION_getLangData(scopeID)

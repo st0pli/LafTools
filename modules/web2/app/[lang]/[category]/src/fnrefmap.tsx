@@ -8,6 +8,7 @@ import $ from 'jquery'
 import { Dot } from "../../client/src/utils/cTranslationUtils";
 import { FN_GetDispatch, FN_GetState } from "../../client/src/nocycle";
 import ParamStateSlice from "../../client/src/reducers/state/paramStateSlice";
+import { hocClientWrapper } from "./common/hocClientWrapper";
 export const fnrefmap = {
     [FN_REF_ID_SHARE_THIS_PAGE]: () => {
         AlertUtils.copyWithAlertCopied(location.href, Dot("TmvHUnZzQ", "Copied the page URL to clipboard"))
@@ -33,7 +34,7 @@ let initJustOnce = _.once(() => {
         })
     })
 })
-export let RegisterSlot = () => {
+export let RegisterSlot = hocClientWrapper(() => {
     useEffect(initJustOnce, [])
     return ""
-}
+})

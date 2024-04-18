@@ -34,7 +34,6 @@ import AlertUtils from "../utils/AlertUtils";
 import { Dot } from "../utils/cTranslationUtils";
 import { fn_defaultArgValues_fromConfig } from "../pages/WorkBench/FixedLayout/Main/Center/sub/center-view/Transformer/ProcessPanel/hooks";
 import { ExtensionVM } from "../impl/purejs-types";
-window["moment"] = moment
 
 type PassType = {
     sessionId: string,

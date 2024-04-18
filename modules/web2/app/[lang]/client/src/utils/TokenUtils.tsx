@@ -32,37 +32,48 @@ const TokenUtils = {
   },
   // system
   getSystemInitToken() {
-    return localStorage.getItem(SYSTEM_INIT_TOKEN_LOCAL_KEY);
+    // if (typeof localStorage == 'undefined') { return }
+
+    // return localStorage.getItem(SYSTEM_INIT_TOKEN_LOCAL_KEY);
   },
   clearSystemToken() {
-    localStorage.removeItem(SYSTEM_INIT_TOKEN_LOCAL_KEY);
+    // if (typeof localStorage == 'undefined') { return }
+
+    // localStorage.removeItem(SYSTEM_INIT_TOKEN_LOCAL_KEY);
   },
   setSystemInitToken(str: string) {
-    localStorage.setItem(SYSTEM_INIT_TOKEN_LOCAL_KEY, str);
+    // if (typeof localStorage == 'undefined') { return }
+
+    // localStorage.setItem(SYSTEM_INIT_TOKEN_LOCAL_KEY, str);
   },
   // local
   getLocalUserToken() {
-    return localStorage.getItem(USER_TOKEN_LOCAL_KEY);
+    // if (typeof localStorage == 'undefined') { return }
+
+    // return localStorage.getItem(USER_TOKEN_LOCAL_KEY);
   },
   clearLocalUserToken() {
-    localStorage.removeItem(USER_TOKEN_LOCAL_KEY);
+    // if (typeof localStorage == 'undefined') { return }
+    // localStorage.removeItem(USER_TOKEN_LOCAL_KEY);
   },
   setLocalUserToken(str: string) {
-    localStorage.setItem(USER_TOKEN_LOCAL_KEY, str);
-    setTimeout(() => {
-      ALL_NOCYCLE.store?.dispatch(UserSlice.actions.updateTokenStatus());
-    });
+    // if (typeof localStorage == 'undefined') { return }
+
+    // localStorage.setItem(USER_TOKEN_LOCAL_KEY, str);
+    // setTimeout(() => {
+    //   ALL_NOCYCLE.store?.dispatch(UserSlice.actions.updateTokenStatus());
+    // });
   },
   // write similar as above for local user id
   // write for USER_TOKEN_LOCAL_ID
   getLocalUserId() {
-    return localStorage.getItem(USER_TOKEN_LOCAL_ID);
+    // return localStorage.getItem(USER_TOKEN_LOCAL_ID);
   },
   clearLocalUserId() {
-    localStorage.removeItem(USER_TOKEN_LOCAL_ID);
+    // localStorage.removeItem(USER_TOKEN_LOCAL_ID);
   },
   setLocalUserId(str: string) {
-    localStorage.setItem(USER_TOKEN_LOCAL_ID, str);
+    // localStorage.setItem(USER_TOKEN_LOCAL_ID, str);
   },
   // getLocalUserId(): string | undefined {
   //   let st = ALL_NOCYCLE.store?.getState();

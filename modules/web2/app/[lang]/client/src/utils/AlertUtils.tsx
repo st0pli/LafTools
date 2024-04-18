@@ -1,4 +1,5 @@
 'use client'
+
 // LafTools - The Leading All-In-One ToolBox for Programmers.
 //
 // Date: Sat, 30 Sep 2023
@@ -30,10 +31,7 @@ import statusSlice, {
   PrompType,
 } from "../reducers/statusSlice";
 
-let rootInst = Toaster.create({
-  className: " m_all_recipe",
-  position: Position.TOP,
-});
+
 const AlertUtils = {
   // copyWithAlertCopied
   copyWithAlertCopied(ctn?: string, msg?: string) {
@@ -111,6 +109,10 @@ const AlertUtils = {
     });
   },
   popMsg(intent: Intent, config: ToastProps) {
+    let rootInst = Toaster.create({
+      className: " m_all_recipe",
+      position: Position.TOP,
+    });
     config.intent = intent;
     rootInst.show(config);
   },
@@ -153,5 +155,4 @@ const AlertUtils = {
     dis(statusSlice.actions.deleteConfirmList(id));
   },
 };
-_.set(window, "AlertUtils", AlertUtils);
 export default AlertUtils;

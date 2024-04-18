@@ -31,7 +31,6 @@ import FundrasingPlanBtn from '../cpt/cpt-fundrasing-btn';
 import Sidebar from './main-sidebar';
 import { ToolProp } from '.';
 import { getSearchDetailBySearchProps } from '@/app/[lang]/page';
-import ClientWrapper from '../../common/clientWrapper';
 import LoginPage from './login/LoginPage';
 import RegisterPage from './register/RegisterPage';
 export let getCardsProps = (): CardProps => {

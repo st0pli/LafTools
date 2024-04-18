@@ -41,9 +41,7 @@ import { NextUIProvider } from "@nextui-org/react";
 import { getAppDevIcon, getAppKeywords } from "../../__CORE__/config/imgconfig";
 import { CategorySearchProps, generateMetadata as toolMetaDataFn } from "../page";
 import EntryPage from './go/[subCategory]/page'
-import SetupPopPanel from "@/app/__CORE__/containers/SetupPopPanel";
 import VersionCheck from "@/app/__CORE__/containers/VersionCheck";
-import ClientWrapper from "./src/common/clientWrapper";
 import { RegisterSlot } from "./src/fnrefmap";
 export type AuthInfoProps = { authInfo: AuthInfo }
 

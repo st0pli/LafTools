@@ -25,7 +25,7 @@ import { loadDOT } from '@/app/__CORE__/utils/i18n-for-nonclient';
 import { Button, ButtonGroup } from "@nextui-org/react";
 import { border_clz } from '@/app/__CORE__/meta/styles';
 import { Dot } from '@/app/__CORE__/utils/cTranslationUtils';
-import ClientWrapper from '../../common/clientWrapper';
+import { hocClientWrapper } from '../../common/hocClientWrapper';
 
 let d = loadDOT("g2m9MYK-u")
 
@@ -65,7 +65,7 @@ export let getQuickAccessList = () => {
     ]
 }
 
-export let QuickAccess = (props) => {
+export let QuickAccess = hocClientWrapper((props) => {
     let Dot = d()
     let quickAccessList = getQuickAccessList()
     return <div className='space-y-2'>
@@ -96,10 +96,8 @@ export let QuickAccess = (props) => {
         </div>
     </div>
 }
-
+)
 
 export default (props) => {
-    return <ClientWrapper>
-        <QuickAccess {...props} />
-    </ClientWrapper>
+    return <QuickAccess {...props} />
 }

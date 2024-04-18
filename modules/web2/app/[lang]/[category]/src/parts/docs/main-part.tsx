@@ -29,7 +29,6 @@ import FundrasingPlanBtn from '../cpt/cpt-fundrasing-btn';
 import Sidebar from './main-sidebar';
 import { ToolProp } from '.';
 import { getSearchDetailBySearchProps } from '@/app/[lang]/page';
-import ClientWrapper from '../../common/clientWrapper';
 
 
 export type CrtToolProp = ToolProp

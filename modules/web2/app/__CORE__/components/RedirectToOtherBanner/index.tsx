@@ -24,6 +24,7 @@ import { border_clz } from "@/app/__CORE__/meta/styles"
 import { useState } from "react"
 import regionUtils from "../../utils/regionUtils"
 import TranslationUtils from "../../utils/cTranslationUtils"
+import { hocClientWrapper } from "@/app/[lang]/[category]/src/common/hocClientWrapper"
 
 
 type ReturnType = [string, (value: string) => void]
@@ -59,7 +60,7 @@ export let BannerWithText = (props: { link: string, text: string, onClick: any }
     </div>
 }
 
-export default (props) => {
+export default hocClientWrapper((props: { optionalText: string }) => {
 
     let [read, setRead] = useLocalStorage("readendtgFr", "false")
 
@@ -83,4 +84,4 @@ export default (props) => {
     } else {
         return ''
     }
-}
+})

@@ -35,7 +35,8 @@ import ExtraListTool from './extra-list-tool';
 import { CategoryTypeSearchDetail } from '@/app/[lang]/page';
 import { Button, Dialog, DialogBody, DialogFooter } from '@blueprintjs/core';
 import DialogToolListView from './dialog-tool-list-view';
-import ClientWrapper from '../../common/clientWrapper';
+import { HocClientWrapper, hocClientWrapper } from '../../common/hocClientWrapper';
+import dynamic from 'next/dynamic';
 export let getCardsProps = (): CardProps => {
     return {
         radius: "none", shadow: "none", className: light_border_clz_all
@@ -49,6 +50,14 @@ export default (props: CrtToolProp) => {
         height: 'calc(100vh - 91px)'
     }}>
         <SubTabNav  {...props}></SubTabNav>
-        <ToolView {...props} />
+        <HocClientWrapper jsximport={
+            () => import("./view-tools")
+        }></HocClientWrapper>
+        {
+            // React.createElement(hocClientWrapper(dynamic(() => import("./view-tools"), {
+            //     ssr: false
+            // })))
+            //  <ToolView {...props} />
+        }
     </Card >
 }
