@@ -40,3 +40,10 @@ else
     exit 0
 fi
 
+curl 127.0.0.1:9988 | grep "description"
+if [ $? -ne 0 ]; then
+    echo "[E] $(date) Test failed, unable to launch the service"
+    exit 1
+else 
+    echo "[I] $(date) Test passed, service is running"
+fi

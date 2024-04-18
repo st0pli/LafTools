@@ -11,10 +11,10 @@ if (!dftLocaleStr) {
   dftLocaleStr = "en_US";
 }
 
-let bootLastModified = new Date(parseInt(info.timestamp) * 1000).toUTCString();
-if (isDevEnv()) {
-  bootLastModified = "";
-}
+// let bootLastModified = new Date(parseInt(info.timestamp) * 1000).toUTCString();
+// if (isDevEnv()) {
+//   bootLastModified = "";
+// }
 
 let _ = {
   every: (a: any, b: any) => {
@@ -151,8 +151,8 @@ export function middleware(request: NextRequest) {
       headers: requestHeaders,
     },
     headers: {
-      "Last-Modified": bootLastModified,
-      "x-actual-lm": bootLastModified,
+      // "Last-Modified": bootLastModified,
+      // "x-actual-lm": bootLastModified,
     },
   });
 }
