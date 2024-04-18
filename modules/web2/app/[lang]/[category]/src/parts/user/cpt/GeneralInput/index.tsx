@@ -12,7 +12,11 @@ export default (props: { name: string, noKeepValue?: boolean, defaultValue?: str
         if (!props.noKeepValue) {
             return;
         }
-        setValue(!_.isNil(props.defaultValue) ? props.defaultValue : localStorage.getItem(props.name) || '')
+        let v = localStorage.getItem(props.name) || ''
+        if (props.defaultValue) {
+            v = props.defaultValue
+        }
+        setValue(v)
     }, [])
 
     return (
