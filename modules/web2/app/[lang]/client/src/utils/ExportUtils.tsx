@@ -25,6 +25,8 @@ import _ from "lodash";
 import TokenUtils from "./TokenUtils";
 import TranslationUtils from "./cTranslationUtils";
 
+// TODO: need to use this as toast: ``npm install sonner``
+
 const exportUtils = {
   useLoadDotCountCpt: () => {
     return exportUtils.useSelector(v => {

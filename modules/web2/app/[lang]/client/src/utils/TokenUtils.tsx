@@ -74,7 +74,7 @@ const TokenUtils = {
     return ''
   },
   clearLocalUserId() {
-    // localStorage.removeItem(USER_TOKEN_LOCAL_ID);
+    // localStorage.removeItem(USER_TOKEN_LOCAL_ID);w
   },
   setLocalUserId(str: string) {
     // localStorage.setItem(USER_TOKEN_LOCAL_ID, str);

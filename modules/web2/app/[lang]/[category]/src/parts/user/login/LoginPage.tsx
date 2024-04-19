@@ -54,7 +54,7 @@ export default function LoginPage(props: { passClz: string, type: string }) {
         // }
 
     }}>
-        <CardPanel className={'p-4 py-8 ' + props.passClz}>
+        <CardPanel className={'p-4 py-8 mt-20' + props.passClz}>
             <div className='mx-20 '>
                 <div className='text-2xl mb-4 font-bold'>
                     {Dot("oeaSx7ir8", "Welcome back to LafTools")}

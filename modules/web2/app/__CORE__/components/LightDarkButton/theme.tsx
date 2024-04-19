@@ -2,6 +2,7 @@ import { FN_GetDispatch } from "@/app/[lang]/client/src/nocycle";
 import LocalStateSlice from "@/app/[lang]/client/src/reducers/state/localStateSlice";
 import exportUtils from "@/app/[lang]/client/src/utils/ExportUtils";
 import { useEffect, useState } from "react";
+import $ from 'jquery'
 
 export type ThemeType = "light" | "dark";
 const key = 'laftools-theme'
