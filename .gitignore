@@ -1,7 +1,6 @@
 var/log/
 *.zip
 LafTools*
-package-lock.json
 src-dist
 share-copy2
 temp
@@ -121,7 +120,6 @@ development.json
 production.json
 pnpm-lock.yaml
 pnpm-lock.yaml
-package-lock.json
 /vendor
 pre_html_dir
 *.lck
