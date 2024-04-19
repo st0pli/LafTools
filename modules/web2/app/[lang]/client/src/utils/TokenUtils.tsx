@@ -71,6 +71,7 @@ const TokenUtils = {
   // write for USER_TOKEN_LOCAL_ID
   getLocalUserId() {
     // return localStorage.getItem(USER_TOKEN_LOCAL_ID);
+    return ''
   },
   clearLocalUserId() {
     // localStorage.removeItem(USER_TOKEN_LOCAL_ID);
@@ -84,10 +85,11 @@ const TokenUtils = {
   //   let st = ALL_NOCYCLE.store?.getState();
   //   return st?.user?.currentUser?.Id;
   // },
-  // getLocalUserName(): string | undefined {
-  //   let st = ALL_NOCYCLE.store?.getState();
-  //   return st?.user?.currentUser?.Username;
-  // },
+  getLocalUserName(): string | undefined {
+    // let st = ALL_NOCYCLE.store?.getState();
+    // return st?.user?.currentUser?.Username;
+    return ''
+  },
 };
 
 // verify if its token mode

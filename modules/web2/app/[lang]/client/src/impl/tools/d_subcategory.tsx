@@ -561,6 +561,35 @@ export let getToolSubCategory = ((): PortalDefinitionType[] => {
         //         // },
         //     ]
         // },
+        // items for translation
+        {
+            seoTitle: Dot("translators.seo", "Online Translators - Text Translator, Code Translator"),
+            seoKeywords: [
+                "text translator",
+                "code translator",
+                "online translators",
+                "free translators",
+                "secure translators"
+            ],
+            seoDescription: Dot("seo.description.translators", "Use our free online translators to translate text or code for your applications."),
+            label: Dot("IEsd5kdX", "Translation"),
+            longLabel: Dot("IEFy59X.long", "Translate Text, Code, and More"),
+            id: 'translator',
+            subTabs: [
+                {
+                    id: 'text',
+                    label: Dot("R-W-MKjIk", "Text Translator"),
+                },
+                // {
+                //     id: 'code',
+                //     label: Dot("_60CN694v", "{0} Translator", "Code"),
+                // },
+                // {
+                //     id: 'other',
+                //     label: Dot("qeeqw", "Other Translator"),
+                // },
+            ]
+        },
     ]
     toolsPortalDefinitions.forEach(x => {
         x.subTabs = (x.subTabs || []).map(x => {

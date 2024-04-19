@@ -26,7 +26,7 @@ import $ from 'jquery';
 import { useTheme } from "./__CORE__/components/LightDarkButton/theme";
 import _ from 'lodash'
 import { hocClientWrapper } from "./[lang]/[category]/src/common/hocClientWrapper";
-_.set(window, '$', $)
+if (typeof window !== 'undefined') _.set(window, '$', $)
 
 let CustomerInner = hocClientWrapper(({ children, ...props }: ThemeProviderProps) => {
     const { theme, setTheme } = useTheme()

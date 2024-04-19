@@ -73,7 +73,7 @@ export default (props: NavigatorPassProp) => {
             }} className={"fixed left-part left-0 top-0  transition-all duration-75 " + ' shadow-md z-50  h-screen'}>
                 <Sidebar {...props} />
             </div>
-            <div className="flex-1 right-part h-screen  duration-300 transition-all" style={{
+            <div className="flex-1 right-part h-screen   duration-300 transition-all" style={{
                 // marginLeft: leftWidth
             }}>
                 <div className="sticky top-0  z-40">
