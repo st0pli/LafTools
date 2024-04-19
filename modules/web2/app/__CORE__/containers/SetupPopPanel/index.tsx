@@ -103,7 +103,7 @@ export default hocClientWrapper((props) => {
                                 x.Value == crtLang ? "primary" : "default"
                             } onClick={() => {
                                 goToNextURL(x.Value + '')
-                            }} fullWidth>{x.LabelByLang}</Button>
+                            }} size='sm' className="py-2 w-full">{x.LabelByLang}</Button>
                         </div>
                     )
                 })

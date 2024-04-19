@@ -57,8 +57,8 @@ class JSONMinify extends Operation {
         "Minifies JSON code, reduce the bundle size of your JSON code."
       ),
 
-      exampleOutput: '{"data":[{"key1":"value1"},{"key2":"value2"}]}',
-      exampleInput: '{\n  "data": [\n    {\n      "key1": "value1"\n    },\n    {\n      "key2": "value2"\n    }\n  ]\n}'
+      exampleOutput: '{"data":[{"key1":"value1"},{"key2":123}]}',
+      exampleInput: '{\n  "data": [\n    {\n      "key1": "value1"\n    },\n    {\n      "key2": 123\n    }\n  ]\n}'
     }
   }
   /**
