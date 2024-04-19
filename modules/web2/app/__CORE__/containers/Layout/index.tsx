@@ -34,7 +34,7 @@ export default function RootLayout(props: {
 }) {
     let { children } = props;
     return (
-        <html lang={getWebsiteLocale()}>
+        <html lang={getWebsiteLocale()} suppressHydrationWarning>
             <head>
                 <meta name="baidu-site-verification" content="codeva-fgug77ENT9" />
                 {/** in online LafTools only */}
