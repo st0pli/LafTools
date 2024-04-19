@@ -35,6 +35,7 @@ const TokenUtils = {
     // if (typeof localStorage == 'undefined') { return }
 
     // return localStorage.getItem(SYSTEM_INIT_TOKEN_LOCAL_KEY);
+    return ''
   },
   clearSystemToken() {
     // if (typeof localStorage == 'undefined') { return }
@@ -51,6 +52,8 @@ const TokenUtils = {
     // if (typeof localStorage == 'undefined') { return }
 
     // return localStorage.getItem(USER_TOKEN_LOCAL_KEY);
+    return ''
+
   },
   clearLocalUserToken() {
     // if (typeof localStorage == 'undefined') { return }
@@ -74,6 +77,8 @@ const TokenUtils = {
   },
   setLocalUserId(str: string) {
     // localStorage.setItem(USER_TOKEN_LOCAL_ID, str);
+    return ''
+
   },
   // getLocalUserId(): string | undefined {
   //   let st = ALL_NOCYCLE.store?.getState();

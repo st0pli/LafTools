@@ -13,7 +13,7 @@ export let HocClientWrapperClient = (props: { children: any }) => {
     React.useEffect(() => {
         setMounted(true)
     }, [])
-    if (!mounted) return '' //<PageLoadingEffect />
+    if (!mounted) return <PageLoadingEffect />
     return props.children
 }
 
