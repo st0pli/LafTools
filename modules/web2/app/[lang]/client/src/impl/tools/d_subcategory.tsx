@@ -97,7 +97,7 @@ export let getIconImgAndBannerTextByCategory = (category: CategoryType, props: N
             Dot("Tj2A9ou2k", "Read Documentations with LafTools!")
         )
     } else if (category == 'resources') {
-        bgSize = '100% 100%'
+        // bgSize = '100% 100%'
         backgroundImage = 'linear-gradient(rgb(204 10 10 / 32%), rgb(154 96 16 / 40%)), url(/static/bg/p-resource.png)'
         textColor = 'rgb(255 252 244)'
 

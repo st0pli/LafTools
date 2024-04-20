@@ -35,7 +35,11 @@ export default function RootLayout(props: {
 }) {
     let { children } = props;
     return (
-        <html lang={getWebsiteLocale()} suppressHydrationWarning  >
+        <html lang={getWebsiteLocale()} suppressHydrationWarning className="" style={{
+            // background: 'gray',
+            // width: '100',
+            // height: '100vh'
+        }} >
             <head>
                 <meta name="color-scheme" content="dark" />
                 <meta name="baidu-site-verification" content="codeva-fgug77ENT9" />

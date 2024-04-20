@@ -77,7 +77,7 @@ export default (props: NavigatorPassProp) => {
                 }}>{crtTitleBanner}</h1>
                 <div className='text-xs   mt-[-1px] mb-1'>
                     {/* <PossiblePathname /> */}
-                    {Dot("forever-foss", "Forever FOSS")}
+                    {Dot("forever-foss", "NextGEN Swissgear")}
                 </div>
                 {/* <h2 className="text-xs pl-[2px] text-slate-600 dark:text-slate-300 mt-[-2px] mb-1 items-center m-0 space-x-1 flex flex-row ">
                     <div>
