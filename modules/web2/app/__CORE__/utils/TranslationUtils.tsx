@@ -41,6 +41,12 @@ let newLangMap2 = (): LangMap => {
 };
 export const newLangMap = newLangMap2;
 let crtNewLangMap = newLangMap();
+const key_global_lang_cached = "N91OLG8g"
+let global_lang_cached_map = {}
+if (global[key_global_lang_cached]) {
+  global_lang_cached_map = global[key_global_lang_cached]
+}
+global[key_global_lang_cached] = global_lang_cached_map
 
 export const LANG_INIT_BEFORE_MAP: { [key: string]: boolean } = {};
 
@@ -124,11 +130,12 @@ const TranslationUtils = {
     let language = TranslationUtils.disableLanguageCheck ? "en_US" : getCurrentLang()
 
     if (language != 'en_US') {
-      let pmap = require("../../../public/static/lang/" + language + ".json")
-      let pmap2 = require("../../../public/static/lang2client/" + language + ".json")
-      TranslationUtils.LangMap[language] = {
-        ...pmap,
-        ...pmap2,
+      if (global_lang_cached_map[language]) {
+        TranslationUtils.LangMap[language] = global_lang_cached_map[language]
+      } else {
+        let pmap = require("../../../public/static/lang/" + language + ".json")
+        let pmap2 = require("../../../public/static/lang2client/" + language + ".json")
+        TranslationUtils.LangMap[language] = global_lang_cached_map[language] = { ...pmap, ...pmap2 }
       }
     }
     if (language == LANG_EN_US) {

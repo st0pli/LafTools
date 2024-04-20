@@ -205,15 +205,14 @@ let TextTransformerControl = (props: CommonTransformerPassProp & { loadingStatic
                 // get file from user input
                 UserFSUtils.selectFile("*", false, (files) => {
                     let file = files[0]
-                    alert('got file: ' + file)
-                    // let reader = new FileReader()
-                    // reader.onload = function (e) {
-                    //     let content = e.target?.result as string
-                    //     FN_GetDispatch()(
-                    //         FN_SetTextValueFromOutSideByBigTextId(inputBigTextId, content),
-                    //     );
-                    // }
-                    // reader.readAsText(file)
+                    let reader = new FileReader()
+                    reader.onload = function (e) {
+                        let content = e.target?.result as string
+                        FN_GetDispatch()(
+                            FN_SetTextValueFromOutSideByBigTextId(inputBigTextId, content),
+                        );
+                    }
+                    reader.readAsText(file)
                 });
             }
         },
