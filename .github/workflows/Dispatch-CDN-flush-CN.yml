@@ -47,5 +47,6 @@ jobs:
         id: runbuildscript
         run: |
           cd ./devtools/release
+          npm i -S -D --force
           node ./refresh-cdn-cache.js
           node ./push-url-cache.js
