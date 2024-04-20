@@ -36,5 +36,6 @@ client.PushUrlsCache(params).then(
   },
   (err) => {
     console.error("error", err);
+    process.exit(-1);
   },
 );
