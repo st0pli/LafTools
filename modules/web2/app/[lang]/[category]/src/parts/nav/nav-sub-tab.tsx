@@ -90,7 +90,8 @@ export default function (props: CrtToolProp) {
                             let isMore = x.id == 'more'
                             if (isMore) {
                                 extraProps = {
-                                    'data-navid': props.params.subCategory
+                                    'data-navid': props.params.subCategory,
+                                    'data-viewpos': 'right'
                                 }
                             }
                             let Ele = isMore ? Link : Link
@@ -101,7 +102,7 @@ export default function (props: CrtToolProp) {
                             } id="card-type-tab-item-2" data-hs-tab="#card-type-tab-2" aria-controls="card-type-tab-2" role="tab">
                                 {x.label}
                             </button>
-                            return isMore ? <span  {...extraProps} key={x.id} className="inline-block">
+                            return isMore ? <span {...extraProps} key={x.id} className="inline-block">
                                 {children}
                             </span> : <Ele  {...extraProps} key={x.id} href={isMore ? 'javascript:void(0);' : fmtURL_ToolSubPage([URL_SUBCATEGORY_GO_PATH, subCategory, '' + x.id])}>
                                 {children}
@@ -111,6 +112,6 @@ export default function (props: CrtToolProp) {
                 </nav>
             </div>
 
-        </div>
+        </div >
     );
 }

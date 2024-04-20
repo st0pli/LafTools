@@ -39,6 +39,7 @@ export default hocClientWrapper(() => {
 
         document.querySelectorAll("[data-navid]").forEach(x => {
             let navid = x.getAttribute("data-navid")
+            let viewpos = x.getAttribute("data-viewpos")
             if (!navid) return
             let overlap = document.getElementById("navbindid-" + navid)
             if (!overlap) {
@@ -55,7 +56,15 @@ export default hocClientWrapper(() => {
                     if (!overlap) return
                     overlap.style.top = (rect.y + rect.height + 3) + "px"
                     overlap.style.display = "block"
-                    overlap.style.left = rect.x + "px"
+                    //  ? '0' : 
+                    overlap.style.left = (
+                        viewpos == 'right' ? (
+                            rect.x - overlap.offsetWidth + rect.width
+                            //  + (
+                            //     0 
+                            // )
+                        ) : rect.x
+                    ) + "px"
                     window[isXHoving] = '1'
                     setTimeout(() => {
                         if (!overlap) return
