@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      LAFTOOLS_ROOT: /home/runner/work/LafTools/LafTools-tag
+      LAFTOOLS_ROOT: /home/runner/work/LafTools/LafTools
       TAG_MODE: true
       TXCOSID: ${{ secrets.TXCOSID }}
       TXCOSKEY: ${{ secrets.TXCOSKEY }}
@@ -46,7 +46,6 @@ jobs:
       - name: Run build script
         id: runbuildscript
         run: |
-          cd ./devtools/release
-          npm i -S -D --force
-          node ./refresh-cdn-cache.js
-          node ./push-url-cache.js
+          cd /home/runner/work/LafTools/LafTools/devtools/release
+          chmod +x ./refresh-all.sh
+          ./refresh-all.sh "${{secrets.TXCOSID}}" "${{secrets.TXCOSKEY}}"
