@@ -21,6 +21,41 @@ const clientConfig = {
 
 // 实例化要请求产品的client对象,clientProfile是可选的
 const client = new CdnClient(clientConfig);
+let allStaticFiles = [];
+var fs = require("fs");
+var path = require("path");
+let staticFolder = path.join(
+  __dirname,
+  "..",
+  "..",
+  "modules",
+  "web2",
+  "public",
+  "static",
+);
+
+// find all static files recursively
+function findStaticFiles(dir) {
+  let files = fs.readdirSync(dir);
+  files.forEach((file) => {
+    let fullPath = path.join(dir, file);
+    let isDir = fs.statSync(fullPath).isDirectory();
+    if (isDir && !fullPath.includes("node_modules")) {
+      findStaticFiles(fullPath);
+    }
+
+    if (!isDir && !fullPath.includes("extra")) {
+      allStaticFiles.push(
+        "http://laftools.cn/static" +
+          fullPath.replace(staticFolder, "").replace(/\\/g, "/"),
+      );
+    }
+  });
+}
+
+findStaticFiles(staticFolder);
+console.log(allStaticFiles);
+
 const params = {
   Urls: [
     "http://laftools.cn/",
@@ -28,7 +63,8 @@ const params = {
     "http://laftools.cn/cn/resource",
     "http://laftools.cn/cn/tools",
     "http://laftools.cn/cn/ai",
-  ],
+    ...allStaticFiles,
+  ].slice(0, 490),
 };
 client.PushUrlsCache(params).then(
   (data) => {
