@@ -59,7 +59,7 @@ export default (props: { placeholder?: string, checkIfHas?: boolean, checkDuplic
                 <div>
                     {props.checkDuplicate ? Dot("dqwq2", "User id is consisted of alphanumeric characters and should be unique.") : ''}
                 </div>
-                <div>
+                {/* <div>
                     {
                         props.checkIfHas && loading ? 'checking...' : props.checkIfHas && value != '' ? hasThatName ? <div className='text-green-500'>[{Dot("Ri2H3dkqwk", "Welcome back to the community")}]</div> : <div className='text-red-500'>[{Dot("qw3DtugPB", "Sorry, no such a user in system.")}]</div> : ''
                     }
@@ -68,8 +68,7 @@ export default (props: { placeholder?: string, checkIfHas?: boolean, checkDuplic
                     {
                         props.checkDuplicate && loading ? 'checking...' : props.checkDuplicate && value != '' ? !onlyAlphValue ? <div className='text-red-500'>{Dot("-mwFO_9", "Contain invalid characters. We only accept alphanumeric characters!")}</div> : !hasThatName ? <div className='text-green-500'>[{Dot("YZdRNcuy", "Congratulations! It is not yet used.")}]</div> : <div className='text-red-500'>[{Dot("RI3DtugPB", "Sorry, it is used already.")}]</div> : ''
                     }
-
-                </div>
+                </div> */}
             </div>
         </div>
     )

@@ -30,29 +30,29 @@ export default function LoginPage(props: { passClz: string, type: string }) {
         setErrMsg([])
         // get form data 
         let formData = new FormData(e.target as HTMLFormElement);
-        // try {
-        //     setWorking(true)
-        //     let v = await handleSignInUser({
-        //         userAcctId: formData.get("userAcctId")?.toString() || '',
-        //         password: formData.get("password")?.toString() || '',
-        //         phoneNumber: formData.get("phoneNumber")?.toString() || '',
-        //         vcode: formData.get("vcode")?.toString() || '',
-        //         type: formData.get("type")?.toString() || '',
-        //     })
-        //     if (v.error) {
-        //         onVCodeFactor(Date.now())
-        //         setErrMsg([v.error || ''])
-        //         window.scrollTo(0, 0)
-        //         return;
-        //     };
-        //     location.href = '/'
-        // } catch (e: any) {
-        //     setErrMsg([e.message || ''])
-        //     window.scrollTo(0, 0)
-        // } finally {
-        //     setWorking(false)
-        // }
-
+        try {
+            setWorking(true)
+            // let v = await handleSignInUser({
+            //     userAcctId: formData.get("userAcctId")?.toString() || '',
+            //     password: formData.get("password")?.toString() || '',
+            //     phoneNumber: formData.get("phoneNumber")?.toString() || '',
+            //     vcode: formData.get("vcode")?.toString() || '',
+            //     type: formData.get("type")?.toString() || '',
+            // })
+            // if (v.error) {
+            //     onVCodeFactor(Date.now())
+            // setErrMsg([v.error || ''])
+            setErrMsg(['this is an error'])
+            //     window.scrollTo(0, 0)
+            //     return;
+            // };
+            // location.href = '/'
+        } catch (e: any) {
+            setErrMsg([e.message || ''])
+            window.scrollTo(0, 0)
+        } finally {
+            setWorking(false)
+        }
     }}>
         <CardPanel className={'p-4 py-8 mt-12' + props.passClz}>
             <div className='mx-20 '>
@@ -87,7 +87,7 @@ export default function LoginPage(props: { passClz: string, type: string }) {
                     }
                     <PasswordInput name='password'></PasswordInput>
                     <div className=' text-right'>
-                        <a className='anchor-text text-sm' href="/reset-password">
+                        <a className='anchor-text text-sm' href="./reset-password">
                             {Dot("dKfY3I", "Forgot password?")}
                         </a>
                     </div>

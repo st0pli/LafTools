@@ -36,6 +36,7 @@ export default function RootLayout(props: {
     let { children } = props;
     return (
         <html lang={getWebsiteLocale()} suppressHydrationWarning className="" style={{
+            display: 'none'
             // background: 'gray',
             // width: '100',
             // height: '100vh'
@@ -73,9 +74,14 @@ var _hmt = _hmt || [];
                 <Script strategy="beforeInteractive" dangerouslySetInnerHTML={{
                     __html: `
                         var theme = localStorage.getItem("${KEY_LAFTOOLS_THEME}")
+                        var htmlEle=document.getElementsByTagName("html")[0]
                         if (theme == 'dark') {
-            document.getElementsByTagName("html")[0].className='bp5-dark dark'
-        }`
+            htmlEle.className='bp5-dark dark'
+        }
+        htmlEle.style.display='block'
+        
+        `
+
                 }}>
 
                 </Script>
