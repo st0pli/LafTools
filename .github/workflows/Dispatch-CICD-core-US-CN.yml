@@ -13,6 +13,8 @@ jobs:
     env:
       LAFTOOLS_ROOT: /home/runner/work/LafTools/LafTools-tag
       TAG_MODE: true
+      TXCOSID: ${{ secrets.TXCOSID }}
+      TXCOSKEY: ${{ secrets.TXCOSKEY }}
 
     steps:
       - name: Checkout code
@@ -141,8 +143,6 @@ jobs:
       - name: flush cache CDN
         id: flushcacheCDN
         run: |
-          sleep 20
           cd /home/runner/work/LafTools/LafTools/devtools/release
-          npm i -S -D --force
-          node ./refresh-cdn-cache.js
-          node ./push-url-cache.js
+          chmod +x ./refresh-cdn.sh
+          ./refresh-cdn.sh "${{secrets.TXCOSID}}" "${{secrets.TXCOSKEY}}"

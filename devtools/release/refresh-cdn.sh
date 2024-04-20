@@ -9,6 +9,8 @@ if [ -z "$TXCOSKEY" ]; then
   echo "TXCOSKEY is required"
   exit 1
 fi
+echo "TXCOSID: $TXCOSID xxxxxxxxx"
+echo "TXCOSKEY: $TXCOSKEY xxxxxxxxx"
 npm i -S -D --force
 node ./refresh-cdn-cache.js
 node ./push-url-cache.js
