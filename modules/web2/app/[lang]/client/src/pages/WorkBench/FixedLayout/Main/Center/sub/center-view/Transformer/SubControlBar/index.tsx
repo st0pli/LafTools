@@ -163,9 +163,9 @@ let TextTransformerControl = (props: CommonTransformerPassProp & { loadingStatic
 
     ];
     if (props.loadingStatic) {
-        leftActions.forEach(x => {
-            x.loading = true;
-        })
+        // leftActions.forEach(x => {
+        //     x.loading = true;
+        // })
     }
     let sessionId = props.sessionId;
     let [openSearchPanel, setOpenSearchPanel] = useState(false);

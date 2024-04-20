@@ -74,6 +74,7 @@ export const CLZ_ROOT_DARK = `bp5-dark`;
 export const CLZ_ROOT_LIGHT = `bp5-light bp5-bg-light`;
 export const CLZ_SECOND_TEXT = "bp5-text-muted";
 export const CLZ_SMALL_TEXT = "bp5-text-small";
+export const KEY_LAFTOOLS_THEME = 'laftools-theme'
 
 export type PayloadListData<T> = { payload: { list: T[] } };
 export type PayloadValueData<T> = { payload: { value: T } };

@@ -159,6 +159,7 @@ export type EachTabPanelProp = {
   label: string;
   desc: string;
   icon?: string;
+  released?: boolean;
   pathname?: string;
   panel?: (prop: any) => JSX.Element;
   // FIXME: above type should be PropGenTabsPanel

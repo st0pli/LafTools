@@ -35,6 +35,7 @@ import { appTool2PageMap } from "@/app/[lang]/client/src/impl/tools/g_optlist";
 import { fmtURL_ToolSubPageClient } from "@/app/__CORE__/meta/client";
 import { URL_SUBCATEGORY_GO_PATH } from "@/app/__CORE__/meta/url";
 import { ActionListViewButton } from "../SideMenu/ActionListView";
+import UserFSUtils from "@/app/[lang]/client/src/utils/UserFSUtils";
 export let useHideBottomAndSettingHook = () => {
     return exportUtils.useSelector((x) => {
         let hideSetting = x.paramState.hdstpt == 't'
@@ -155,22 +156,22 @@ let TextTransformerControl = (props: CommonTransformerPassProp & { loadingStatic
     let operaList = toolHandler?.getOperations() || []
     let crtDefaultOperaId = props.crtDefaultOperaId
     let leftActions: ActionButtonProps[] = [
-        {
-            icon: hideSideBar == 'f' ? 'menu-closed' : 'menu-open',
-            className: '',
-            intent: "none",
-            minimal: true,
-            title: hideSideBar == 'f' ?
-                Dot("5_EPRncIx", "Hide Left Navigator") : Dot("qm6Fy9AB2", "Show Left Navigator"),
-            onClick: () => {
-                let newVal: TrueFalseType = hideSideBar == "t" ? "f" : "t";
-                FN_GetDispatch()(
-                    ParamStateSlice.actions.updateOneOfParamState({
-                        hsr: newVal
-                    })
-                );
-            }
-        },
+        // {
+        //     icon: hideSideBar == 'f' ? 'menu-closed' : 'menu-open',
+        //     className: '',
+        //     intent: "none",
+        //     minimal: true,
+        //     title: hideSideBar == 'f' ?
+        //         Dot("5_EPRncIx", "Hide Left Navigator") : Dot("qm6Fy9AB2", "Show Left Navigator"),
+        //     onClick: () => {
+        //         let newVal: TrueFalseType = hideSideBar == "t" ? "f" : "t";
+        //         FN_GetDispatch()(
+        //             ParamStateSlice.actions.updateOneOfParamState({
+        //                 hsr: newVal
+        //             })
+        //         );
+        //     }
+        // },
     ];
     let leftActions_2: ActionButtonProps[] = [
         {
@@ -201,7 +202,19 @@ let TextTransformerControl = (props: CommonTransformerPassProp & { loadingStatic
             intent: "none",
             title: Dot("NNfdo", "Load Data from File as input"),
             onClick: () => {
-                AlertUtils.popNotSupport()
+                // get file from user input
+                UserFSUtils.selectFile("*", false, (files) => {
+                    let file = files[0]
+                    alert('got file: ' + file)
+                    // let reader = new FileReader()
+                    // reader.onload = function (e) {
+                    //     let content = e.target?.result as string
+                    //     FN_GetDispatch()(
+                    //         FN_SetTextValueFromOutSideByBigTextId(inputBigTextId, content),
+                    //     );
+                    // }
+                    // reader.readAsText(file)
+                });
             }
         },
         {
@@ -258,12 +271,12 @@ let TextTransformerControl = (props: CommonTransformerPassProp & { loadingStatic
         ] : []) satisfies ActionButtonProps[]
     ]
     if (props.loadingStatic) {
-        leftActions.forEach(x => {
-            x.loading = true;
-        })
-        leftActions_2.forEach(x => {
-            x.loading = true;
-        })
+        // leftActions.forEach(x => {
+        //     x.loading = true;
+        // })
+        // leftActions_2.forEach(x => {
+        //     x.loading = true;
+        // })
     }
     let sessionId = props.sessionId;
     let [openSearchPanel, setOpenSearchPanel] = useState(false);

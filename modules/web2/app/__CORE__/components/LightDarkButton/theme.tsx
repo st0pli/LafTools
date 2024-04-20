@@ -3,9 +3,10 @@ import LocalStateSlice from "@/app/[lang]/client/src/reducers/state/localStateSl
 import exportUtils from "@/app/[lang]/client/src/utils/ExportUtils";
 import { useEffect, useState } from "react";
 import $ from 'jquery'
+import { KEY_LAFTOOLS_THEME } from "../../meta/constants";
 
 export type ThemeType = "light" | "dark";
-const key = 'laftools-theme'
+const key = KEY_LAFTOOLS_THEME
 
 export let useTheme = (): {
     theme: ThemeType,

@@ -26,6 +26,7 @@ import CenterPart from "../CenterPart";
 import Footer from "../Footer";
 import { ThemeProvider } from "../../../theme-provider";
 import Script from 'next/script'
+import { KEY_LAFTOOLS_THEME } from "../../meta/constants";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -34,8 +35,9 @@ export default function RootLayout(props: {
 }) {
     let { children } = props;
     return (
-        <html lang={getWebsiteLocale()} suppressHydrationWarning>
+        <html lang={getWebsiteLocale()} suppressHydrationWarning  >
             <head>
+                <meta name="color-scheme" content="dark" />
                 <meta name="baidu-site-verification" content="codeva-fgug77ENT9" />
                 {/** in online LafTools only */}
                 {/* <script dangerouslySetInnerHTML={{
@@ -55,7 +57,7 @@ var _hmt = _hmt || [];
                     async
                     src="https://www.googletagmanager.com/gtag/js?id=G-C3NXGY8E7J"
                 />
-                <Script id="google-analytics">
+                <Script id="google-analytics" >
                     {`
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -64,8 +66,18 @@ var _hmt = _hmt || [];
   gtag('config', 'G-C3NXGY8E7J');
           `}
                 </Script>
+                <Script strategy="beforeInteractive" dangerouslySetInnerHTML={{
+                    __html: `
+                        var theme = localStorage.getItem("${KEY_LAFTOOLS_THEME}")
+                        if (theme == 'dark') {
+            document.getElementsByTagName("html")[0].className='bp5-dark dark'
+        }`
+                }}>
+
+                </Script>
             </head>
             <body className={' laf-app min-h-screen dark:bg-slate-950 dark:text-slate-300    ' + inter.className}>
+                {/* <div className="fixed top-0 left-0 w-full h-full bg-gray-500 z-[100]" id='blink'></div> */}
                 <div className="w-full h-full">
                     {children}
                 </div>

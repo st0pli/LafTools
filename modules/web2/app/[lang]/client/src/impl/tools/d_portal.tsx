@@ -57,11 +57,14 @@ export type PortalDefinitionType = SEOMetaData & {
 
 
 
-export type TopMainCategoryNavList = SEOMetaData & LabelHrefType
+export type TopMainCategoryNavList = SEOMetaData & LabelHrefType & {
+    ready?: boolean
+}
 export let getCategoryList = ((): TopMainCategoryNavList[] => {
     let leftNav: TopMainCategoryNavList[] = [
         {
             label: Dot("G2dvTUljF", "Tools"),
+            ready: true,
             id: 'tools'
         },
         {
@@ -80,7 +83,12 @@ export let getCategoryList = ((): TopMainCategoryNavList[] => {
             label: Dot("bWQunyU10", "AI Lab"),
             id: ('ai')
         },
-    ]
+    ].map(x => {
+        if (!x.ready) {
+            x.label = x.label + "*"
+        }
+        return x;
+    })
 
     return leftNav
 })

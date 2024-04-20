@@ -143,6 +143,7 @@ export let useLeftTabsList = (): EachTabPanelProp[] => {
         ),
         icon: "briefcase",
         id: ID_TOOLS,
+        released: true,
         // pathname: SUB_URL_WORKBENCH_TOOLS_CATEGORY,
         label: Dot("RNBze0", "Tools"),
         panel: InnerToolPanel,
