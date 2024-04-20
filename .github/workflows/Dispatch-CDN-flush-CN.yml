@@ -47,5 +47,5 @@ jobs:
         id: runbuildscript
         run: |
           cd /home/runner/work/LafTools/LafTools/devtools/release
-          chmod +x ./refresh-all.sh
-          ./refresh-all.sh "${{secrets.TXCOSID}}" "${{secrets.TXCOSKEY}}"
+          chmod +x ./refresh-cdn.sh
+          ./refresh-cdn.sh "${{secrets.TXCOSID}}" "${{secrets.TXCOSKEY}}"
