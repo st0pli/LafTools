@@ -23,6 +23,7 @@ import { getI18nDynamically } from "./i18n-action"
 import { useEffect, useState } from "react"
 import { getLocalePrefix_Client } from "./cRouteUtils"
 import TranslationUtils, { Dot } from "./cTranslationUtils"
+import info from "@/app/[lang]/[category]/info"
 
 export type ShareClienti18nKeys = {
     smsCode: string,
@@ -43,7 +44,7 @@ export let useTTT2 = function (ltID: string, enableLang2ClientMode?: boolean): (
             return;
         }
         fetch(`/static/${enableLang2ClientMode ? 'lang2client' : 'lang'
-            }/extra/${ltID}/${crtLabelI18n}.json?t=${Date.now()}`).then((v) => v.json()).then((v) => {
+            }/extra/${ltID}/${crtLabelI18n}.json?t=${info.version}-${info.timestamp}`).then((v) => v.json()).then((v) => {
                 // window['ok2'] = v;
                 if (!TranslationUtils.LangMap[crtLabelI18n]) {
                     TranslationUtils.LangMap[crtLabelI18n] = {}

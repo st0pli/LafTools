@@ -56,6 +56,7 @@ import { Intent } from "@blueprintjs/core";
 import SyncStateUtils from "../utils/SyncStateUtils";
 import { GetUserActualClientLang } from "../i18n";
 import { sleep } from "../utils/SyncUtils";
+import info from "@/app/[lang]/[category]/info";
 
 export type MessagePackItem = {
   Title: string;
@@ -278,7 +279,9 @@ export const ACTION_getLangData = (scopeIdIfHave?: string): any => {
         // do nothing
       } else {
         let e = await AjaxUtils.DoStaticRequest({
-          url: "/lang2client" + (scopeIdIfHave ? `/extra/${scopeIdIfHave}/` : "/") + currentLanguage + ".json?t=" + Date.now(),
+          url: "/lang2client" + (scopeIdIfHave ? `/extra/${scopeIdIfHave}/` : "/") + currentLanguage + ".json?t=" + (
+            `${info.version}-${info.timestamp}`
+          ),
         });
         logutils.debug("e.data", e.data);
         localStorage.setItem("lang-" + currentLanguage, JSON.stringify(e.data))

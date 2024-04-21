@@ -3,6 +3,7 @@ import { getI18nDynamically } from "./i18n-action"
 import { useEffect, useState } from "react"
 import { getLocalePrefix_Client } from "@/app/__CORE__/utils/cRouteUtils"
 import TranslationUtils, { Dot } from "@/app/__CORE__/utils/cTranslationUtils"
+import info from "@/app/[lang]/[category]/info"
 
 export type ShareClienti18nKeys = {
     smsCode: string,
@@ -18,7 +19,7 @@ export let useTTT2 = function (ltID: string): (id: string, enText: string, ...ar
     // let [mapData, onMapData] = useState({})
     let [ctn, onCtn] = useState(0)
     useEffect(() => {
-        fetch(`/static/lang/extra/${ltID}/${crtLabelI18n}.json?t=${Date.now()}`).then((v) => v.json()).then((v) => {
+        fetch(`/static/lang/extra/${ltID}/${crtLabelI18n}.json?t=${info.version}-${info.timestamp}`).then((v) => v.json()).then((v) => {
             // window['ok2'] = v;
             if (!TranslationUtils.LangMap[crtLabelI18n]) {
                 TranslationUtils.LangMap[crtLabelI18n] = {}
