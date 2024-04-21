@@ -3,8 +3,7 @@
 # version will be retrieved from the file package.json
 set -e
 if [ "$TAG_MODE" = "true" ]; then
-    export LAFTOOLS_ROOT=/home/runner/work/LafTools/LafTools-tag
-    cp -a /home/runner/work/LafTools/LafTools /home/runner/work/LafTools/LafTools-tag
+    cp -a /home/runner/work/LafTools/LafTools $LAFTOOLS_ROOT
 fi
 
 chmod +x $LAFTOOLS_ROOT/pipeline/tools/get-web2-version.sh
@@ -325,8 +324,8 @@ import { AppInfoClz } from \"@/app/__CORE__/meta/ptypes\"
             fi
             if [ $platformName == "linux-x64" ]; then
                 echo "[I] building other tag"
-                docker build -t codegentoolbox/laftools-$platformName:devops -f ./Dockerfile .
-                docker save codegentoolbox/laftools-$platformName:devops > $LAFTOOLS_ROOT/dkout.tmp 
+                docker build -t codegentoolbox/laftools-$platformName:$crtVersion -f ./Dockerfile .
+                docker save codegentoolbox/laftools-$platformName:$crtVersion > $LAFTOOLS_ROOT/dkout.tmp 
                 zip -r $LAFTOOLS_ROOT/pipeline-server.zip $LAFTOOLS_ROOT/pipeline/server
                 gzip $LAFTOOLS_ROOT/dkout.tmp
                 echo "[I] docker output file: $LAFTOOLS_ROOT/dkout.tmp.gz, size is $(du -sh $LAFTOOLS_ROOT/dkout.tmp.gz | awk '{print $1}')"

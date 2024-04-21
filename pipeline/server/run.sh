@@ -27,12 +27,14 @@ runtimeDir=/home/$(whoami)/runtime
 if [ ! -d "$runtimeDir" ]; then
   mkdir -p $runtimeDir
 fi
-if [ ! -d "$runtimeDir/pre-release" ]; then
-  mkdir -p $runtimeDir/pre-release
-fi
+targetPreReleaseDIR=$runtimeDir/pre-release
 targetReleaseDIR=$runtimeDir/release
 if [ $containerName = "laft-pre-inst" ]; then
-  targetReleaseDIR=$runtimeDir/release-p
+  targetPreReleaseDIR=$runtimeDir/pre-release-test
+  targetReleaseDIR=$runtimeDir/release-test
+fi
+if [ ! -d "$targetPreReleaseDIR" ]; then
+  mkdir -p $targetPreReleaseDIR
 fi
 if [ ! -d "$targetReleaseDIR" ]; then
   mkdir -p $targetReleaseDIR
@@ -49,19 +51,20 @@ if [ -z "$targetPkg" ]; then
     exit 1
 fi
 
-cp $targetPkg $runtimeDir/pre-release
+cp $targetPkg $targetPreReleaseDIR
 if [ "" != "$targetReleaseDIR" ]; then
   rm -rf $targetReleaseDIR/*
 fi
-mv $runtimeDir/pre-release/* $targetReleaseDIR
+mv $targetPreReleaseDIR/* $targetReleaseDIR
 
 cd $targetReleaseDIR
 mv $targetPkg m.tmp.gz
 gunzip ./m.tmp.gz
 docker load -i ./m.tmp
 docker ps -a | grep $containerName | awk '{print $1}' | xargs -I {} docker stop {}
-docker ps -a | grep $containerName | awk '{print $1}' | xargs -I {} docker rm {}
-docker run -e ONLINEMODE=true -e LAFREGION=$LAFREGION -e APPLANG=$defaultLocale --name $containerName -d -p 0.0.0.0:$portMapTo:39899 codegentoolbox/laftools-linux-x64:devops 
-timeout 10 docker logs -f $containerName
+docker ps -a | grep $containerName | awk '{print $1}' | xargs -I {} docker kill {}
+actualCrtName=$containerName-$crtVersion
+docker run -e ONLINEMODE=true -e LAFREGION=$LAFREGION -e APPLANG=$defaultLocale --name $actualCrtName -d -p 0.0.0.0:$portMapTo:39899 codegentoolbox/laftools-linux-x64:$version 
+timeout 10 docker logs -f $actualCrtName
 
 exit 0

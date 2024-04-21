@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      LAFTOOLS_ROOT: /home/runner/work/LafTools/LafTools
+      LAFTOOLS_ROOT: /home/runner/work/LafTools/LafTools-push-meta
       TAG_MODE: true
 
     steps:
