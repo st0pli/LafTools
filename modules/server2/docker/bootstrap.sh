@@ -1,4 +1,4 @@
 #!/bin/bash
 cd /opt/app
 echo "running server2"
-npm run start
+pm2 start 'npm run start' --name runs2
