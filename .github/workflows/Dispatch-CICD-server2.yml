@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      LAFTOOLS_ROOT: /home/runner/work/LafTools/LafTools-s2
+      LAFTOOLS_ROOT: /home/runner/work/LafTools/LafTools
       TAG_MODE: true
 
     steps:
