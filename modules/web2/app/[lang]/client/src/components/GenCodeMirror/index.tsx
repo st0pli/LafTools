@@ -176,6 +176,7 @@ export default (props: GenCodeMirrorProp) => {
     }
   }, [verObj.ver])
   let value: string = props.directValue || bt.bigText;
+  let isEmpty = !(value && value != '')
   let setValue = (val: string) => {
 
     FN_GetDispatch()(FN_SetTextValueFromInsideByBigTextId___DONOTUSEIT__EXTERNALLY(bigTextId, val));
@@ -185,6 +186,7 @@ export default (props: GenCodeMirrorProp) => {
     setValue(val);
     propRef.current.fn_onTextChange && propRef.current.fn_onTextChange(val)
   }, []);
+  let [clicked, setClicked] = useState(false)
   let targetLanguage = props.language
   if (!targetLanguage || (
     targetLanguage != 'text' && !langMap[targetLanguage]
@@ -193,7 +195,13 @@ export default (props: GenCodeMirrorProp) => {
   }
   let langPack = targetLanguage && langMap[targetLanguage] ? (langMap[targetLanguage])() : null
   console.log('codemirror:' + forgeObj.dark)
-  return <div className="w-full h-full flex flex-col " key={forgeObj.dark ? '5t-F8No32' : 'JB-RC462J  '}>
+  return <div onBlur={() => {
+    setClicked(false)
+  }} onFocus={() => {
+    setClicked(true)
+  }} className="w-full h-full flex flex-col " key={forgeObj.dark ? '5t-F8No32' : 'JB-RC462J  '} style={{
+
+  }}>
     <div className={border_clz_common + " border-b-[1px] using-edge-ui-bg flex justify-center items-center text-xs "} style={{
       height: VAL_CSS_TAB_TITLE_PANEL,
     }}>
@@ -204,8 +212,15 @@ export default (props: GenCodeMirrorProp) => {
         </span>
       </span>
     </div>
-    <div className='flex-1 overflow-auto scrollbar-hide'>
+    <div className={
+      'flex-1  scrollbar-hide  ' + (
+        !clicked ? ' editor-noscroll ' : '  overflow-auto '
+      )
+    } style={{
+      height: `calc(100% - ${VAL_CSS_TAB_TITLE_PANEL}px)`,
+    }}>
       <CodeMirror
+
         key={verObj.ver + ' ' + forgeObj.dark}
         onChange={(val) => {
           onChange(val, true);
