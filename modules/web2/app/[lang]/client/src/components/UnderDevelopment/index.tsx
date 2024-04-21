@@ -61,12 +61,13 @@ import React, { useEffect, useState } from "react";
 import _ from "lodash";
 import { Dot } from "../../utils/cTranslationUtils";
 import { loadDOT } from "@/app/__CORE__/utils/i18n-for-nonclient";
+import { hocClientWrapper } from "@/app/[lang]/[category]/src/common/hocClientWrapper";
 
 let a = loadDOT("pv92PGN1H")
 
 interface BlinkProp {
 }
-export default (props: BlinkProp): any => {
+export default hocClientWrapper((props: BlinkProp): any => {
   a()
   return (
     <div className="pure-g min-h-screen">
@@ -78,4 +79,5 @@ export default (props: BlinkProp): any => {
       </div>
     </div>
   );
-};
+}
+)

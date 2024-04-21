@@ -24,6 +24,7 @@ import _ from "lodash";
 import Qs from 'query-string'
 import { LANG_EN_US, LangDefinition } from "../meta/constants";
 import { LocaleType, all_locales as all_locales, zhCNLocale } from '@/middleware';
+import { isDevEnv } from '../share/env';
 
 let VER_FORGE_FORM = '0.0.1'
 export const KEY_LANG_PACK_ZH_CN = "KEY_LANG_PACK_ZH_CN" + VER_FORGE_FORM;
@@ -130,7 +131,7 @@ const TranslationUtils = {
     let language = TranslationUtils.disableLanguageCheck ? "en_US" : getCurrentLang()
 
     if (language != 'en_US') {
-      if (global_lang_cached_map[language]) {
+      if (global_lang_cached_map[language] && !isDevEnv()) {
         TranslationUtils.LangMap[language] = global_lang_cached_map[language]
       } else {
         let pmap = require("../../../public/static/lang/" + language + ".json")
