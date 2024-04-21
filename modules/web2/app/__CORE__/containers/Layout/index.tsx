@@ -27,6 +27,7 @@ import Footer from "../Footer";
 import { ThemeProvider } from "../../../theme-provider";
 import Script from 'next/script'
 import { KEY_LAFTOOLS_THEME } from "../../meta/constants";
+import { Suspense } from "react";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -34,18 +35,20 @@ export default function RootLayout(props: {
     children,
 }) {
     let { children } = props;
+    // suppressHydrationWarning
     return (
-        <html lang={getWebsiteLocale()} suppressHydrationWarning className="" style={{
-            display: 'none'
-            // background: 'gray',
-            // width: '100',
-            // height: '100vh'
-        }} >
-            <head>
-                <meta name="color-scheme" content="dark" />
-                <meta name="baidu-site-verification" content="codeva-fgug77ENT9" />
-                {/** in online LafTools only */}
-                {/* <script dangerouslySetInnerHTML={{
+        <Suspense>
+            <html lang={getWebsiteLocale()} suppressHydrationWarning={true} className="" style={{
+                display: 'none'
+                // background: 'gray',
+                // width: '100',
+                // height: '100vh'
+            }} >
+                <head>
+                    <meta name="color-scheme" content="dark" />
+                    <meta name="baidu-site-verification" content="codeva-fgug77ENT9" />
+                    {/** in online LafTools only */}
+                    {/* <script dangerouslySetInnerHTML={{
                     __html: `
         
 var _hmt = _hmt || [];
@@ -58,21 +61,21 @@ var _hmt = _hmt || [];
 
 `
                 }}></script> */}
-                <Script
-                    async
-                    src="https://www.googletagmanager.com/gtag/js?id=G-C3NXGY8E7J"
-                />
-                <Script id="google-analytics" >
-                    {`
+                    <Script
+                        async
+                        src="https://www.googletagmanager.com/gtag/js?id=G-C3NXGY8E7J"
+                    />
+                    <Script id="google-analytics" >
+                        {`
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'G-C3NXGY8E7J');
           `}
-                </Script>
-                <Script strategy="beforeInteractive" dangerouslySetInnerHTML={{
-                    __html: `
+                    </Script>
+                    <Script strategy="beforeInteractive" dangerouslySetInnerHTML={{
+                        __html: `
                         var theme = localStorage.getItem("${KEY_LAFTOOLS_THEME}")
                         var htmlEle=document.getElementsByTagName("html")[0]
                         if (theme == 'dark') {
@@ -82,18 +85,18 @@ var _hmt = _hmt || [];
         
         `
 
-                }}>
+                    }}>
 
-                </Script>
-            </head>
-            <body className={' laf-app min-h-screen dark:bg-slate-950 dark:text-slate-300    ' + inter.className}>
-                {/* <div className="fixed top-0 left-0 w-full h-full bg-gray-500 z-[100]" id='blink'></div> */}
-                <div className="w-full h-full">
-                    {children}
-                </div>
-                <ThemeProvider attribute="class" defaultTheme="system" enableSystem >
-                </ThemeProvider>
-            </body>
-        </html>
+                    </Script>
+                </head>
+                <body className={' laf-app min-h-screen dark:bg-slate-950 dark:text-slate-300    ' + inter.className}>
+                    {/* <div className="fixed top-0 left-0 w-full h-full bg-gray-500 z-[100]" id='blink'></div> */}
+                    <div className="w-full h-full">
+                        {children}
+                    </div>
+                    <ThemeProvider attribute="class" defaultTheme="system" enableSystem >
+                    </ThemeProvider>
+                </body>
+            </html></Suspense>
     );
 }
