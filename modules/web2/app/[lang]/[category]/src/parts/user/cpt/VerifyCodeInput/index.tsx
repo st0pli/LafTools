@@ -2,7 +2,7 @@
 
 import React, { useCallback, useEffect, useState } from 'react';
 import _ from 'lodash';
-import { loadDOT } from '@/app/__CORE__/utils/i18n-for-nonclient';
+import { loadDOT } from '@/app/__CORE__/utils/i18n-for-load';
 import { Dot, getCurrentLang } from '@/app/__CORE__/utils/cTranslationUtils';
 import os from 'os'
 import path from 'path';

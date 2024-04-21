@@ -1,6 +1,6 @@
 
 import { Dot } from '@/app/[lang]/client/src/utils/cTranslationUtils';
-import { loadDOT } from '@/app/__CORE__/utils/i18n-for-nonclient';
+import { loadDOT } from '@/app/__CORE__/utils/i18n-for-load';
 import React, { useEffect } from 'react';
 let a = loadDOT("BndmTuDXy")
 export default (props: { disabled?: boolean, name: string, defaultValue?: string, onChange?: (e: string) => any }) => {

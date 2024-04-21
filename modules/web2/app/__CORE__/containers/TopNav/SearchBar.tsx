@@ -20,7 +20,7 @@
 
 'use client'
 
-import { loadDOT } from "@/app/__CORE__/utils/i18n-for-nonclient"
+import { loadDOT } from "@/app/__CORE__/utils/i18n-for-load"
 import { useState } from "react"
 import { Dot } from "../../utils/cTranslationUtils"
 

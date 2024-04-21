@@ -21,7 +21,7 @@
 
 'use client'
 
-import { loadDOT } from "@/app/__CORE__/utils/i18n-for-nonclient"
+import { loadDOT } from "@/app/__CORE__/utils/i18n-for-load"
 import { Button, ButtonGroup } from "@nextui-org/react";
 
 

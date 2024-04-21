@@ -35,7 +35,7 @@ import { getFormattedLang } from "@/app/[lang]/client/src/i18n";
 import exportUtils from "@/app/[lang]/client/src/utils/ExportUtils";
 import { FN_GetDispatch } from "@/app/[lang]/client/src/nocycle";
 import LocalStateSlice from "@/app/[lang]/client/src/reducers/state/localStateSlice";
-import { loadDOT } from "../../utils/i18n-for-nonclient";
+import { loadDOT } from "../../utils/i18n-for-load";
 import { hocClientWrapper } from "@/app/[lang]/[category]/src/common/hocClientWrapper";
 type ReturnType = [string, (value: string) => void]
 let user_crt_lang_key = 'NnJxl572v'

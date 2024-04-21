@@ -20,12 +20,12 @@
 
 'use client'
 
-import { loadDOT } from "@/app/__CORE__/utils/i18n-for-nonclient"
+import { loadDOT } from "@/app/__CORE__/utils/i18n-for-load"
 import { useEffect } from "react"
 import AlertUtils from "./utils/AlertUtils"
 
 
-let a = loadDOT("yK170zDc1")
+let a = loadDOT("yK170zDc1", true)
 
 export default () => {
     let Dot = a()

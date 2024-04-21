@@ -60,10 +60,10 @@ import {
 import React, { useEffect, useState } from "react";
 import _ from "lodash";
 import { Dot } from "../../utils/cTranslationUtils";
-import { loadDOT } from "@/app/__CORE__/utils/i18n-for-nonclient";
+import { loadDOT } from "@/app/__CORE__/utils/i18n-for-load";
 import { hocClientWrapper } from "@/app/[lang]/[category]/src/common/hocClientWrapper";
 
-let a = loadDOT("pv92PGN1H")
+let a = loadDOT("pv92PGN1H", true)
 
 interface BlinkProp {
 }

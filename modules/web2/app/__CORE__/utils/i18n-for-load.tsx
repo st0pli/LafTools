@@ -29,11 +29,11 @@ export type ShareClienti18nKeys = {
     other: string,
 }
 
-export let loadDOT = (str: string): () => ReturnType<typeof useTTT2> => {
-    return () => useTTT2(str);
+export let loadDOT = (str: string, enableLang2ClientMode?: boolean): () => ReturnType<typeof useTTT2> => {
+    return () => useTTT2(str, enableLang2ClientMode);
 }
 
-export let useTTT2 = function (ltID: string): (id: string, enText: string, ...args: any[]) => string {
+export let useTTT2 = function (ltID: string, enableLang2ClientMode?: boolean): (id: string, enText: string, ...args: any[]) => string {
     let crtLabelI18n = getLocalePrefix_Client().langIni18n
     // let [mapData, onMapData] = useState({})
     let [ctn, onCtn] = useState(0)
@@ -42,18 +42,19 @@ export let useTTT2 = function (ltID: string): (id: string, enText: string, ...ar
             onCtn(ctn + 1)
             return;
         }
-        fetch(`/static/lang/extra/${ltID}/${crtLabelI18n}.json?t=${Date.now()}`).then((v) => v.json()).then((v) => {
-            // window['ok2'] = v;
-            if (!TranslationUtils.LangMap[crtLabelI18n]) {
-                TranslationUtils.LangMap[crtLabelI18n] = {}
-            }
-            TranslationUtils.LangMap[crtLabelI18n] = {
-                ...TranslationUtils.LangMap[crtLabelI18n],
-                ...v
-            }
-            TranslationUtils.currentUpdateCount++
-            onCtn(ctn + 1)
-        })
+        fetch(`/static/${enableLang2ClientMode ? 'lang2client' : 'lang'
+            }/extra/${ltID}/${crtLabelI18n}.json?t=${Date.now()}`).then((v) => v.json()).then((v) => {
+                // window['ok2'] = v;
+                if (!TranslationUtils.LangMap[crtLabelI18n]) {
+                    TranslationUtils.LangMap[crtLabelI18n] = {}
+                }
+                TranslationUtils.LangMap[crtLabelI18n] = {
+                    ...TranslationUtils.LangMap[crtLabelI18n],
+                    ...v
+                }
+                TranslationUtils.currentUpdateCount++
+                onCtn(ctn + 1)
+            })
     }, [ltID, crtLabelI18n])
     return Dot
     // return (id: string, text: string, args: string[]) => {

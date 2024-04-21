@@ -28,7 +28,7 @@ import { Dot } from "@/app/__CORE__/utils/cTranslationUtils"
 import { useTheme } from "@/app/__CORE__/components/LightDarkButton/theme";
 
 import { useEffect, useState } from "react"
-import { loadDOT } from "../../utils/i18n-for-nonclient"
+import { loadDOT } from "../../utils/i18n-for-load"
 import { hocClientWrapper } from "@/app/[lang]/[category]/src/common/hocClientWrapper"
 
 let a = loadDOT("6xOX9cfLT")

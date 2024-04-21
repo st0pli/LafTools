@@ -2,7 +2,7 @@
 
 import React, { useCallback, useEffect, useState } from 'react';
 import _ from 'lodash';
-import { loadDOT } from '@/app/__CORE__/utils/i18n-for-nonclient';
+import { loadDOT } from '@/app/__CORE__/utils/i18n-for-load';
 import { Dot } from '@/app/__CORE__/utils/cTranslationUtils';
 let a = loadDOT("8O1oTYJ-Z")
 

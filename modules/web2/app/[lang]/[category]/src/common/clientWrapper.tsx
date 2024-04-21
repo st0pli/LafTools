@@ -25,7 +25,7 @@ import React, { useEffect, useState } from 'react'
 import { Provider, } from "react-redux";
 import { store } from '@/app/[lang]/client/src/store'
 import '@/app/[lang]/client/src/initapp'
-import { loadDOT } from '@/app/__CORE__/utils/i18n-for-nonclient'
+import { loadDOT } from '@/app/__CORE__/utils/i18n-for-load'
 import SmallScreenDetecter from '@/app/[lang]/client/src/SmallScreenDetecter'
 import { ClientPortalContext } from '@/app/[lang]/client/src/pages/WorkBench/FixedLayout/Main/Center/sub/center-view/Transformer/types';
 import { createPortal } from "react-dom"

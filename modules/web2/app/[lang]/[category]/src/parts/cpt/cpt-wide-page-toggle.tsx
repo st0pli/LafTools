@@ -2,7 +2,7 @@
 
 import { nav_text_clz } from "../nav/constants"
 import { isWidePage, setWidePage } from "../../widepage"
-import { loadDOT } from "@/app/__CORE__/utils/i18n-for-nonclient"
+import { loadDOT } from "@/app/__CORE__/utils/i18n-for-load"
 import { useEffect } from "react"
 import { Dot } from "@/app/__CORE__/utils/cTranslationUtils"
 

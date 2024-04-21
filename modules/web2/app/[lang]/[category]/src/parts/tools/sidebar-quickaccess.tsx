@@ -21,7 +21,7 @@
 'use client'
 import React, { cache } from 'react';
 import _ from 'lodash';
-import { loadDOT } from '@/app/__CORE__/utils/i18n-for-nonclient';
+import { loadDOT } from '@/app/__CORE__/utils/i18n-for-load';
 import { Button, ButtonGroup } from "@nextui-org/react";
 import { border_clz } from '@/app/__CORE__/meta/styles';
 import { Dot } from '@/app/__CORE__/utils/cTranslationUtils';

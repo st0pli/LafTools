@@ -30,7 +30,7 @@ import ExtraListTool from './extra-list-tool';
 import { Dot } from '@/app/__CORE__/utils/cTranslationUtils';
 import _ from 'lodash';
 import gutils from '@/app/[lang]/client/src/utils/GlobalUtils';
-import { loadDOT } from '@/app/__CORE__/utils/i18n-for-nonclient';
+import { loadDOT } from '@/app/__CORE__/utils/i18n-for-load';
 import { getQuickAccessList } from './sidebar-quickaccess';
 import ContentQuickaccess from './content-quickaccess';
 import MultipleTextTranslator from '@/app/[lang]/client/src/pages/WorkBench/FixedLayout/Main/Center/nav/bottom/Translator/MultipleTextTranslator';
