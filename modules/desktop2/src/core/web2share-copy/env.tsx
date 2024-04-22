@@ -51,6 +51,7 @@ export let getLafELB3Root = (): string => {
 
 
 export let getPreCompiledDir = (): string => {
-    let file = path.join(getLafELB3Root(), 'precompiled', isDevEnv() ? 'dev' : 'prod')
-    return file;
+    return ''
+    // let file = path.join(getLafELB3Root(), 'precompiled', isDevEnv() ? 'dev' : 'prod')
+    // return file;
 }
