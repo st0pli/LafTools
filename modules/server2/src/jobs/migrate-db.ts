@@ -17,8 +17,11 @@ export default async () => {
           let giftCardCode = 'CODEGEN-' + Math.random().toString(36).substring(2, 19).toUpperCase() + '-' + HELP_DATE.replace(/-/g, '');
           await S2GiftCard.create({
             giftCardCode: giftCardCode,
+            usedByWho: -1,
             sourceType: 'INITIAL_GIFT_CARD',
             totalDays: 365 * 100,
+            remarks:
+              '感谢您曾在本工具箱起步时帮助我们，我们为您提供了一张永久会员礼品卡，您可以在LafTools工具箱中使用该卡享受永久会员权益，或者转赠给您的亲朋好友。',
           });
           await S2UserHasGiftCardList.create({
             userId: USER_ID,

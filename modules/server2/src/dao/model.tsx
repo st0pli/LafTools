@@ -75,7 +75,7 @@ export class S2UserHasGiftCardList extends Model<InferAttributes<S2UserHasGiftCa
 }
 
 
-export let UPDATE_TIME_VERSION = '3'
+export let UPDATE_TIME_VERSION = '4'
 
 export default async (daoRef: DaoRef) => {
 
