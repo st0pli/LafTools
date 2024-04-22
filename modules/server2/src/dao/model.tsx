@@ -66,14 +66,16 @@ export class S2GiftCard extends Model<InferAttributes<S2GiftCard>, InferCreation
 export class S2UserHasGiftCardList extends Model<InferAttributes<S2UserHasGiftCardList>, InferCreationAttributes<S2UserHasGiftCardList>> {
     declare id?: number;
     declare userId: number;
-    declare giftCardId: number;
+    declare giftCardCode: string;
+    declare thanksToFundrasingDate: string;
+    declare thanksReasonType: "PURCHASE" | "SEED_USER";
     declare createdAt: CreationOptional<Date> | null;
     declare updatedAt: CreationOptional<Date> | null;
     declare deleteAt: CreationOptional<Date> | null;
 }
 
 
-export let UPDATE_TIME_VERSION = '2'
+export let UPDATE_TIME_VERSION = '3'
 
 export default async (daoRef: DaoRef) => {
 
@@ -250,7 +252,10 @@ export default async (daoRef: DaoRef) => {
         },
         giftCardCode: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            validate: {
+                max: 50
+            }
         },
         giftCardType: {
             type: DataTypes.STRING,
@@ -302,8 +307,16 @@ export default async (daoRef: DaoRef) => {
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        giftCardId: {
-            type: DataTypes.INTEGER,
+        thanksToFundrasingDate: {
+            type: DataTypes.DATE,
+            allowNull: false
+        },
+        thanksReasonType: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        giftCardCode: {
+            type: DataTypes.STRING,
             allowNull: false
         },
         createdAt: {

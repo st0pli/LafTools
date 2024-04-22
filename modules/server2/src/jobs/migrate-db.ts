@@ -1,7 +1,8 @@
 import dao from '@/dao';
-import { S2User, S2UserPurchaseItem } from '@/dao/model';
+import { S2GiftCard, S2User, S2UserHasGiftCardList, S2UserPurchaseItem } from '@/dao/model';
 import { logger } from '@/utils/logger';
 import _ from 'lodash';
+import moment from 'moment';
 
 export let sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -9,6 +10,25 @@ export default async () => {
   try {
     logger.info('Migrating database...');
     let daoRef = await dao();
+
+    let sendGiftCard = async (USER_ID: number, giftCardsCount: number, thanksReasonType: 'PURCHASE' | 'SEED_USER', HELP_DATE: string) => {
+      await daoRef.db_s2.transaction(async () => {
+        for (let i = 0; i < giftCardsCount; i++) {
+          let giftCardCode = 'CODEGEN-' + Math.random().toString(36).substring(2, 19).toUpperCase() + '-' + HELP_DATE.replace(/-/g, '');
+          await S2GiftCard.create({
+            giftCardCode: giftCardCode,
+            sourceType: 'INITIAL_GIFT_CARD',
+            totalDays: 365 * 100,
+          });
+          await S2UserHasGiftCardList.create({
+            userId: USER_ID,
+            giftCardCode: giftCardCode,
+            thanksToFundrasingDate: HELP_DATE,
+            thanksReasonType: thanksReasonType,
+          });
+        }
+      });
+    };
     // handling users
     let [allUsers] = await daoRef.db_work7z.query('select * from user');
     for (let eachUser of allUsers) {
@@ -34,20 +54,50 @@ export default async () => {
         logger.debug('User already exists: ' + USER_NAME);
       }
     }
-    // handling orders
-    let [allOrders] = await daoRef.db_work7z.query('select  ID,USER_ID, PAY_DETAIL from USER_ORDER_LIST uol where 1=1 and IS_PAID =1');
+    // assigning premium membership
+    let [allOrders] = await daoRef.db_work7z.query(`
+select a.* from (
+	select USER_ID,sum(MONEY_CNY*PURCHASE_YEAR) as SUMCNY,min(create_time) HELP_DATE from USER_ORDER_LIST uol where 1=1 and IS_PAID =1 group by USER_ID
+) a order by SUMCNY desc
+    `);
     for (let eachOrder of allOrders) {
-      let pCtn = await S2UserPurchaseItem.count({
+      eachOrder['HELP_DATE'] = moment(eachOrder['HELP_DATE']).format('YYYY-MM-DD');
+      let pCtn = await S2UserHasGiftCardList.count({
         where: {
-          orderCode: eachOrder['ID'],
+          thanksReasonType: 'PURCHASE',
+          thanksToFundrasingDate: eachOrder['HELP_DATE'],
           userId: eachOrder['USER_ID'],
         },
       });
+      // 10
       if (pCtn > 0) {
-        logger.debug('Order already exists: ' + eachOrder['ID']);
+        logger.debug('already patched the gift card list for user: ' + eachOrder['USER_ID']);
         continue;
       } else {
-        //
+        let { USER_ID, SUMCNY, HELP_DATE } = eachOrder as any;
+        let giftCardsCount = Math.floor(SUMCNY / 6) + 1;
+        await sendGiftCard(USER_ID, giftCardsCount, 'PURCHASE', HELP_DATE);
+      }
+    }
+    // assigning premium membership according to the current table
+    let [allMemberships] = await daoRef.db_work7z.query(`select * from user_premium_rights upr where REASON != 'USER_PAYMENT'`);
+    for (let eachMembership of allMemberships) {
+      let { USER_ID, CREATE_TIME } = eachMembership as any;
+      let HELP_DATE = moment(CREATE_TIME).format('YYYY-MM-DD');
+      let pCtn = await S2UserHasGiftCardList.count({
+        where: {
+          thanksReasonType: 'SEED_USER',
+          thanksToFundrasingDate: HELP_DATE,
+          userId: USER_ID,
+        },
+      });
+      // 10
+      if (pCtn > 0) {
+        logger.debug('already patched the gift card list for premium: ' + USER_ID);
+        continue;
+      } else {
+        let giftCardsCount = 1;
+        await sendGiftCard(USER_ID, giftCardsCount, 'SEED_USER', HELP_DATE);
       }
     }
   } catch (e) {
