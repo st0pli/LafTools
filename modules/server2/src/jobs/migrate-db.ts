@@ -16,6 +16,7 @@ export default async () => {
         for (let i = 0; i < giftCardsCount; i++) {
           let giftCardCode = 'CODEGEN-' + Math.random().toString(36).substring(2, 19).toUpperCase() + '-' + HELP_DATE.replace(/-/g, '');
           await S2GiftCard.create({
+            giftCardType: 'THANKS_FOR_FUNDRAISING',
             giftCardCode: giftCardCode,
             usedByWho: -1,
             sourceType: 'INITIAL_GIFT_CARD',
