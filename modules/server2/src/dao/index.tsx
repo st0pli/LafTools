@@ -11,7 +11,7 @@ import { isDevEnv } from '@/web2share-copy/env';
 
 
 export type DaoRef = {
-    db_w7z: Sequelize,
+    db_work7z: Sequelize,
     db_s2: Sequelize,
     redis: RedisClientType
 }
@@ -35,7 +35,7 @@ let loadDAO = async (): Promise<DaoRef> => {
 
         let r: DaoRef = {
             redis: client as any,
-            db_w7z: sequelize_work7z,
+            db_work7z: sequelize_work7z,
             db_s2: sequelize_s2,
         }
 

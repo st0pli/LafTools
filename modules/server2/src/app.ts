@@ -15,7 +15,6 @@ import { Routes } from '@interfaces/routes.interface';
 import { ErrorMiddleware } from '@middlewares/error.middleware';
 import migrateDB from './jobs/migrate-db';
 import { logger, stream } from '@utils/logger';
-migrateDB();
 const launchTime = new Date();
 export class App {
   public app: express.Application;
@@ -32,6 +31,8 @@ export class App {
     this.initializeRoutes(routes);
     this.initializeSwagger();
     this.initializeErrorHandling();
+
+    migrateDB();
   }
 
   public listen() {

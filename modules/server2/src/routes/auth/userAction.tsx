@@ -287,7 +287,7 @@ export async function handleSignIn(formData: {
                     return Dot("eqwee", "Password is not correct")
                 }
                 // LOGIN SUCCESS
-                await daoRef.db_w7z.transaction(async () => {
+                await daoRef.db_work7z.transaction(async () => {
                     if (!user) return;
                     let r = await signInWithUserId(user.id + '', formData.rememberMe)
                     res = r
@@ -456,7 +456,7 @@ export default async function handleSignUp(formData: {
         };
     }
 
-    let newUser = await daoRef.db_w7z.transaction(async () => {
+    let newUser = await daoRef.db_work7z.transaction(async () => {
         let newUser = await User.create({
             id: parseInt(formData.userAcctId),
             userPwMd5: hashPW(formData.password + ''),

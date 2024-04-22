@@ -3,200 +3,347 @@ import {
 } from 'sequelize';
 import { DaoRef } from './index'
 import { isDevEnv } from '../hooks/env';
-
-
-// chat group, chat group members, chat group history
+import _ from 'lodash';
 
 
 
-// model for chat group
-export class ChatGroup extends Model<InferAttributes<ChatGroup>, InferCreationAttributes<ChatGroup>> {
+// provide user model, including user id, name, email, phoneNumber, password, createdAt, updatedAt, deleteAt
+export class S2User extends Model<InferAttributes<S2User>, InferCreationAttributes<S2User>> {
     declare id?: number;
     declare name: string;
-    declare totalMsgCount: number;
-    declare firstMessageAt?: Date;
-    declare lastMessageAt?: Date;
+    declare email: string;
+    declare phoneNumber: string;
+    declare password: string; // md5 + salt
     declare createdAt: CreationOptional<Date> | null;
     declare updatedAt: CreationOptional<Date> | null;
     declare deleteAt: CreationOptional<Date> | null;
 }
 
-// model for chat group members 
-export class ChatGroupUser extends Model<InferAttributes<ChatGroupUser>, InferCreationAttributes<ChatGroupUser>> {
+export class S2UserPurchaseItem extends Model<InferAttributes<S2UserPurchaseItem>, InferCreationAttributes<S2UserPurchaseItem>> {
     declare id?: number;
-    declare wxUserId?: string;
-    declare wxUserAlias: string;
-    declare wxNickName: string;
-    declare msgCount: number;
-    declare firstMessageAt?: Date;
-    declare lastMessageAt?: Date;
-    declare createdAt: CreationOptional<Date> | null;
-    declare updatedAt: CreationOptional<Date> | null;
-    declare deleteAt: CreationOptional<Date> | null;
-}
-
-export class ChatGroupAliasMap extends Model<InferAttributes<ChatGroupAliasMap>, InferCreationAttributes<ChatGroupAliasMap>> {
-    declare id?: number;
-    declare groupUserId: number;
-    declare groupAlias: string;
-    declare createdAt: CreationOptional<Date> | null;
-    declare updatedAt: CreationOptional<Date> | null;
-    declare deleteAt: CreationOptional<Date> | null;
-}
-
-// model for chat group history
-export class ChatGroupHistory extends Model<InferAttributes<ChatGroupHistory>, InferCreationAttributes<ChatGroupHistory>> {
-    declare id?: number;
-    declare groupId: number;
-    declare groupUserId: number;
-    declare type: string; // 10000 or other types
-    declare content: string;
-    declare sentTime: Date;
-    declare createdAt: CreationOptional<Date> | null;
-    declare updatedAt: CreationOptional<Date> | null;
-    declare deleteAt: CreationOptional<Date> | null;
-}
-
-export class RawWXContact extends Model<InferAttributes<RawWXContact>, InferCreationAttributes<RawWXContact>> {
-    declare id: number;
-    declare groupKey: string;
-
-    declare UserName: string;
-    declare Alias: string;
-    declare EncryptUserName: string;
-    declare DelFlag: number;
-    declare Type: number;
-    declare VerifyFlag: number;
-    declare Reserved1: number;
-    declare Reserved2: number;
-    declare Reserved3: string;
-    declare Reserved4: string;
-    declare Remark: string;
-    declare NickName: string;
-    declare LabelIDList: string;
-    declare DomainList: string;
-    declare ChatRoomType: number;
-    declare PYInitial: string;
-    declare QuanPin: string;
-    declare RemarkPYInitial: string;
-    declare RemarkQuanPin: string;
-    declare BigHeadImgUrl: string;
-
-}
-
-export class RawFTSChatroom extends Model<InferAttributes<RawFTSChatroom>, InferCreationAttributes<RawFTSChatroom>> {
-    declare docid: number;
-    declare groupKey: string;
-    declare c0groupRemark: string;
-    declare c1nickname: string;
-    declare c2alias: string;
-}
-
-export class RawGroupHistory extends Model<InferAttributes<RawGroupHistory>, InferCreationAttributes<RawGroupHistory>> {
-    // localId,TalkerId,Type,SubType,IsSender,CreateTime,Status,StrContent,StrTime,Remark,NickName,Sender
-    declare id: number;
-    declare groupKey: string;
-    declare groupName: string;
-    declare localId: string;
-    declare talkerId: string;
+    declare userId: number;
     declare type: string;
-    declare subType: string;
-    declare isSender: string;
-    declare createTime: string;
-    declare status: string;
-    declare strContent: string;
-    declare strTime: string;
-    declare remark: string;
-    declare nickName: string;
-    declare sender: string;
+    declare purchaseDays: number;
+    declare purchaseDevices: number;
+    declare purchaseCNY: number;
+    declare purchaseUSD: number;
+    declare purchaseDate: Date;
+    declare userRemark: string;
+    declare systemRemark: string;
+    declare orderCode: string;
     declare createdAt: CreationOptional<Date> | null;
     declare updatedAt: CreationOptional<Date> | null;
     declare deleteAt: CreationOptional<Date> | null;
 }
 
-
-
-// system forum
-
-export type UserRole = "webmaster" | "moderator" | "user"
-
-// model for UserLoginLog
-export class UserLoginLog extends Model<InferAttributes<UserLoginLog>, InferCreationAttributes<UserLoginLog>> {
+export class S2UserMembership extends Model<InferAttributes<S2UserMembership>, InferCreationAttributes<S2UserMembership>> {
     declare id?: number;
     declare userId: number;
-    declare loginIp: string;
-    declare loginTime: Date;
+    declare lifelong: number; // 1->lifelong, 0->not lifelong
+    declare totalDays: number;
+    declare whenToStart: Date;
+    declare whenToExpire: Date;
+    declare systemRemark: string;
+    declare sourceType: string;
+    declare createdAt: CreationOptional<Date> | null;
+    declare updatedAt: CreationOptional<Date> | null;
+    declare deleteAt: CreationOptional<Date> | null;
 }
 
-// model for block amongst users
-export class Block extends Model<InferAttributes<Block>, InferCreationAttributes<Block>> {
-    declare id: number;
+export class S2GiftCard extends Model<InferAttributes<S2GiftCard>, InferCreationAttributes<S2GiftCard>> {
+    declare id?: number;
+    declare giftCardCode: string;
+    declare giftCardType: string;
+    declare totalDays: number;
+    declare remarks: string;
+    declare usedByWho: number; // userId
+    declare sourceType: string;
+    declare createdAt: CreationOptional<Date> | null;
+    declare updatedAt: CreationOptional<Date> | null;
+    declare deleteAt: CreationOptional<Date> | null;
+}
+
+export class S2UserHasGiftCardList extends Model<InferAttributes<S2UserHasGiftCardList>, InferCreationAttributes<S2UserHasGiftCardList>> {
+    declare id?: number;
     declare userId: number;
-    declare blockUserId: number;
+    declare giftCardId: number;
     declare createdAt: CreationOptional<Date> | null;
     declare updatedAt: CreationOptional<Date> | null;
     declare deleteAt: CreationOptional<Date> | null;
 }
 
-// model for topic, containing title, userid, nodeid
-export class Topic extends Model<InferAttributes<Topic>, InferCreationAttributes<Topic>> {
-    declare id: number;
-    declare title: string; // varchar(120)
-    declare userId: string;
-    declare nodeId: string; // varchar(15)
-    declare viewCount: number;
-    declare favouriteCount: number;
-    declare commentCount: number;
-    declare lastCommenter: number;
-    declare createdAt: CreationOptional<Date> | null;
-    declare updatedAt: CreationOptional<Date> | null;
-    declare deleteAt: CreationOptional<Date> | null;
-}
 
-// model for topic content, including topicId, type, content(varchar(200))
-export class TopicContent extends Model<InferAttributes<TopicContent>, InferCreationAttributes<TopicContent>> {
-    declare id: number;
-    declare topicId: number;
-    declare publishType: "main" | "append";
-    declare renderType: "markdown" | "lexical";
-    declare content: string; // varchar(20000)
-    declare editTimes: number;
-    declare createdAt: CreationOptional<Date> | null;
-    declare updatedAt: CreationOptional<Date> | null;
-    declare deleteAt: CreationOptional<Date> | null;
-}
-
-// model for topic comments, including topicId, userId, content
-export class TopicComment extends Model<InferAttributes<TopicComment>, InferCreationAttributes<TopicComment>> {
-    declare id: number;
-    declare topicId: number;
-    declare userId: number;
-    declare content: string; // varchar(20000)
-    declare editTimes: number;
-    declare agreeCount: number; // agree with this comment, visible
-    declare disagreeCount: number; // disagree with this comment, invisible
-    declare createdAt: CreationOptional<Date> | null;
-    declare updatedAt: CreationOptional<Date> | null;
-    declare deleteAt: CreationOptional<Date> | null;
-}
-
-// model for audit table, can contains history of topic content and topic comment model
-export type AuditType = "editTopicContent" | "editTopicComment" | "changeUserName"
-export class Audit extends Model<InferAttributes<Audit>, InferCreationAttributes<Audit>> {
-    declare id: number;
-    declare userId: number;
-    declare type: AuditType;
-    declare content: string; // varchar(20000)
-    declare createdAt: CreationOptional<Date> | null;
-    declare updatedAt: CreationOptional<Date> | null;
-    declare deleteAt: CreationOptional<Date> | null;
-}
-
+export let UPDATE_TIME_VERSION = '2'
 
 export default async (daoRef: DaoRef) => {
-    let sequelize = daoRef.db_w7z
 
-    // options
-    // await sequelize.sync({ alter: true, force: false })
+    // define model for s2
+    let db_s2 = daoRef.db_s2
+
+    await S2User.init({
+        id: {
+            type: DataTypes.INTEGER,
+            autoIncrement: true,
+            primaryKey: true
+        },
+        name: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        email: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        phoneNumber: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        password: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        createdAt: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        updatedAt: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        deleteAt: {
+            type: DataTypes.DATE,
+            allowNull: true
+        }
+    }, {
+        sequelize: db_s2,
+        modelName: 's2_user',
+        timestamps: true,
+        paranoid: true,
+        underscored: true
+    })
+
+    await S2UserPurchaseItem.init({
+        id: {
+            type: DataTypes.INTEGER,
+            autoIncrement: true,
+            primaryKey: true
+        },
+        userId: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        type: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        purchaseDays: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        purchaseDevices: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        purchaseCNY: {
+            type: DataTypes.FLOAT,
+            allowNull: false
+        },
+        purchaseUSD: {
+            type: DataTypes.FLOAT,
+            allowNull: false
+        },
+        purchaseDate: {
+            type: DataTypes.DATE,
+            allowNull: false
+        },
+        userRemark: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        systemRemark: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        orderCode: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        createdAt: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        updatedAt: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        deleteAt: {
+            type: DataTypes.DATE,
+            allowNull: true
+        }
+    }, {
+        sequelize: db_s2,
+        modelName: 's2_user_purchase_item',
+        timestamps: true,
+        paranoid: true,
+        underscored: true
+    })
+
+    await S2UserMembership.init({
+        id: {
+            type: DataTypes.INTEGER,
+            autoIncrement: true,
+            primaryKey: true
+        },
+        userId: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        lifelong: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        totalDays: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        whenToStart: {
+            type: DataTypes.DATE,
+            allowNull: false
+        },
+        whenToExpire: {
+            type: DataTypes.DATE,
+            allowNull: false
+        },
+        systemRemark: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        sourceType: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        createdAt: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        updatedAt: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        deleteAt: {
+            type: DataTypes.DATE,
+            allowNull: true
+        }
+    }, {
+        sequelize: db_s2,
+        modelName: 's2_user_membership',
+        timestamps: true,
+        paranoid: true,
+        underscored: true
+    })
+
+    await S2GiftCard.init({
+        id: {
+            type: DataTypes.INTEGER,
+            autoIncrement: true,
+            primaryKey: true
+        },
+        giftCardCode: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        giftCardType: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        totalDays: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        remarks: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        usedByWho: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        sourceType: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        createdAt: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        updatedAt: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        deleteAt: {
+            type: DataTypes.DATE,
+            allowNull: true
+        }
+    }, {
+        sequelize: db_s2,
+        modelName: 's2_gift_card',
+        timestamps: true,
+        paranoid: true,
+        underscored: true
+    })
+
+    await S2UserHasGiftCardList.init({
+        id: {
+            type: DataTypes.INTEGER,
+            autoIncrement: true,
+            primaryKey: true
+        },
+        userId: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        giftCardId: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        createdAt: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        updatedAt: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
+        deleteAt: {
+            type: DataTypes.DATE,
+            allowNull: true
+        }
+    }, {
+        sequelize: db_s2,
+        modelName: 's2_user_has_gift_card_list',
+        timestamps: true,
+        paranoid: true,
+        underscored: true
+    })
+
+
+    // version check
+    let S2_KEY_SAVE_VALUE = 's2_version'
+    let [_s2_version_rows] = await daoRef.db_work7z.query(`select * from g_system_config gsc where KEYNAME='${S2_KEY_SAVE_VALUE}' `)
+    let s2_version_rows = _s2_version_rows as any
+    let default_version = '0'
+    let s2_version = default_version;
+    if (_.isEmpty(s2_version_rows)) {
+        await daoRef.db_work7z.query(`insert into g_system_config (KEYNAME, KEYVALUE) values ('${S2_KEY_SAVE_VALUE}', '${default_version}')`)
+        s2_version = default_version
+    } else {
+        s2_version = s2_version_rows[0].KEYVALUE as any
+    }
+
+    if (s2_version < UPDATE_TIME_VERSION) {
+        await daoRef.db_s2.sync({ alter: true, force: false })
+        // update it
+        await daoRef.db_work7z.query(`update g_system_config set KEYVALUE='${UPDATE_TIME_VERSION}' where KEYNAME='${S2_KEY_SAVE_VALUE}'`)
+    }
 
 }
