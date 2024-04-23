@@ -5,6 +5,7 @@ import AIUtils from "./utils/ai-utils";
 import path from 'path';
 import shelljs from 'shelljs';
 import fs from 'fs'
+import _ from 'lodash';
 let postProcessFolder = path.join(__dirname, 'post-process');
 shelljs.mkdir('-p', postProcessFolder);
 
@@ -18,14 +19,17 @@ test('run-conversions-ai-fetch-case', async () => {
     logger.info("sourceMJSFolder: " + sourceMJSFolder)
     let allMJSFiles = shelljs.ls(sourceMJSFolder);
     for (let file of allMJSFiles) {
-        let targetFile = path.join(currentFolder, "response__" + file)
+        let targetFile = path.join(currentFolder, "response__" + file.replace(".mjs", ".json"))
         // if targetFile exist and non-empty, then continue
         if (fs.existsSync(targetFile) && fs.statSync(targetFile).size > 0) {
             logger.info("file exists: " + targetFile)
             continue;
         }
-        let content = shelljs.cat(file);
+        let content = shelljs.cat(path.join(sourceMJSFolder, file));
         let fileContent = content.toString();
+        if (_.isEmpty(fileContent)) {
+            throw new Error("file content is empty: " + file)
+        }
         logger.info("file: " + file)
 
         let requireText = `将代码转换为TS代码，要求如下：
@@ -83,6 +87,8 @@ test('run-conversions-ai-fetch-case', async () => {
 ${fileContent}
 `;
         try {
+            logger.info('asking zhipu for ' + requireText)
+            logger.info("file: " + file)
             let r = await AIUtils.askZhipu([
                 {
                     role: "user",
