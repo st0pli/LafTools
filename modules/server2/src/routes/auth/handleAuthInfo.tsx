@@ -1,12 +1,11 @@
 'use server'
 
-import { UserRole } from "@/dao/model";
-import { UserModel } from "@/models/oldjava.model";
 import _ from "lodash";
 import { fn_add_user_into_active, fn_get_system_info_from_redis } from "./user-types";
 import { getSignatureFromStr } from "./auth";
 import { Elb3AuthBody, getUserInfoByUserAcctId } from "./userAction";
 import { logger } from "@/utils/logger";
+import { S2User } from "@/dao/model";
 
 export type SystemInfoBody = {
     userCount: number,
@@ -15,10 +14,10 @@ export type SystemInfoBody = {
 }
 
 export type AuthInfo = {
-    user: UserModel | null,
+    user: S2User | null,
     signedIn: boolean,
     furtherUserDetail?: {
-        userRole: UserRole,
+        userRole: any,
     },
     systemInfo: SystemInfoBody
 }

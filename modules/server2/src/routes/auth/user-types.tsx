@@ -1,7 +1,7 @@
 import dao from "@/dao";
-import { UserModel, UserModel as User } from "@models/oldjava.model";
 import _ from "lodash";
 import { key_systemInfoGroup } from "./constants";
+import { S2User } from "@/dao/model";
 
 // export let fn_get_user_avatar = (authInfoProps: AuthInfoProps) => {
 //     let avatarPath = authInfoProps.authInfo?.user?.avatarPath
@@ -20,7 +20,7 @@ export type SystemInfoBody = {
 let launchBefore = false;
 export let fn_refresh_system_info_from_redis = async () => {
     let daoRef = await dao()
-    let userCtn = await UserModel.count()
+    let userCtn = await S2User.count()
     await daoRef.redis.hSet(key_systemInfoGroup, 'userCount', userCtn)
 }
 export let fn_get_system_info_from_redis = async (): Promise<SystemInfoBody> => {
