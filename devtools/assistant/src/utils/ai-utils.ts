@@ -14,9 +14,14 @@ export type AIResponse = {
   request_id: string;
 };
 let AIUtils = {
-  say: async function (input: string): Promise<AIResponse | null> {
+  say: async function (
+    input: {
+      role: "system" | "user" | "assistant";
+      content: string;
+    }[],
+  ): Promise<AIResponse | null> {
     let token = process.env.TYKEY;
-    let option = "qwen-turbo";
+    let option = "qwen-max-longcontext";
     if (!token) {
       logger.error("AIUtils.say: token not found");
       return null;
@@ -35,13 +40,14 @@ let AIUtils = {
       data: JSON.stringify({
         model: option,
         input: {
-          messages: [
-            // { role: "system", content: chatMgs.getSystemMsg() },
-            // { role: "user", content: chatMgs.getUserMsg("hello") },
-            // { role: "assistant", content: "你好" },
-            // { role: "user", content: origin },
-            { role: "user", content: input },
-          ],
+          messages: input,
+          // [
+          //   // { role: "system", content: chatMgs.getSystemMsg() },
+          //   // { role: "user", content: chatMgs.getUserMsg("hello") },
+          //   // { role: "assistant", content: "你好" },
+          //   // { role: "user", content: origin },
+          //   { role: "user", content: input },
+          // ],
         },
         parameters: {},
       }),

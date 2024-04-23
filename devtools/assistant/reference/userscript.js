@@ -1249,7 +1249,7 @@ function microsoft(origin) {
     refreshToken(jwtToken)
       .then((jwtString) => {
         // 文档：https://learn.microsoft.com/zh-cn/azure/ai-services/translator/language-support
-        GM_xmlhttpRequest({
+        ({
           method: POST,
           url:
             "https://api-edge.cognitive.microsofttranslator.com/translate?from=" +

@@ -87,25 +87,13 @@ if [[ ${ext} == "${file_type}" ]]; then
 echo "doing the file process: $file"
 
 cat <<EOF >"${file}.agpl"
-// LafTools - The Leading All-In-One ToolBox for Programmers.
+// LafTools
 // 
 // Date: $t_date
 // Author: $(git log --follow --pretty="format:%an <%ae>" -- "$file" | sort | uniq | sed  's/jerry549@icloud.com/work7z@outlook.com/g' | sed 's/CodeGen ToolBox/LafTools Team/g' | sed -i ':a;N;$!ba;s/\n/ /g' filename)  
 // Description: 
+// License: AGPLv3
 // Copyright (C) $(date +%Y) - Present, https://laftools.dev and https://codegen.cc
-//
-// This program is free software: you can redistribute it and/or modify
-// it under the terms of the GNU Affero General Public License as
-// published by the Free Software Foundation, either version 3 of the
-// License, or (at your option) any later version.
-//
-// This program is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU Affero General Public License for more details.
-//
-// You should have received a copy of the GNU Affero General Public License
-// along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 EOF
 cat "$file" >> "${file}.agpl"

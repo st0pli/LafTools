@@ -1,5 +1,4 @@
-// LafTools - The Leading All-In-One ToolBox for Programmers.
-//
+
 // Date: Sun, 12 Nov 2023
 // Author: LafTools Team <work7z@outlook.com>
 // Description:
