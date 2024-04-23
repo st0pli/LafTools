@@ -133,16 +133,11 @@ export async function handleSignIn(formData: {
         signature: null
     };
     let rules: CheckRules[] = [
-        formData.type == 'username' ? {
+        {
             type: "non-empty",
             name: "userAcctId",
-            label: Dot("oHQNQ4mRw", "User ID"),
-        } :
-            {
-                type: 'non-empty',
-                name: 'phoneNumber',
-                label: Dot("Te3h_wK", "Telephone Number"),
-            },
+            label: Dot("wTBJ2pxX7", "Username or Email"),
+        },
         {
             type: "non-empty",
             name: "password",

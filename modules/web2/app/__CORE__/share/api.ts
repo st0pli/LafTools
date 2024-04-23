@@ -10,7 +10,7 @@ import {
 export let core_sendAPIRequestInBE = async (
   info: APITypeInfo,
   url: string,
-  request: Partial<Request>,
+  request: Partial<RequestInit>,
 ): Promise<Response> => {
   if (!url.startsWith("/")) {
     url = "/" + url;
@@ -25,6 +25,7 @@ export let core_sendAPIRequestInBE = async (
       [HEADER_X_LAF_VERSION]: info.version,
     },
     ...request,
+    body: JSON.stringify({}),
   });
   return res;
 };

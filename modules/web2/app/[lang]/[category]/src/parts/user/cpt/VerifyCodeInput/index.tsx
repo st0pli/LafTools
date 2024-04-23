@@ -60,6 +60,9 @@ export default (props: { codeImgBase64?: string, vcodeFactor: number }) => {
                 <div className='text-right'>
                 </div>
             </div>
+            <div className='hidden'>
+                <input name='randomID' value={randomID} />
+            </div>
             {
                 errMsg ? <div>
                     <Callout intent='danger'>{errMsg}<br />

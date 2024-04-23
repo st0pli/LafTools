@@ -45,10 +45,17 @@ export default function LoginPage(props: { passClz: string, type: string }) {
                     message: Dot("UV_6mHKy7", "We are working on this, moments please")
                 })
                 setWorking(true)
+                let userAcctId = formData.get("userAcctId")?.toString() || ''
                 let rText = await webaction_sendAPIRequestInBE(
                     {
                         lang: getCurrentLang(),
                         isPOST: true,
+                        body: {
+                            userAcctId: userAcctId,
+                            password: formData.get("password")?.toString() || '',
+                            randomID: formData.get("randomID")?.toString() || '',
+                            vcode: formData.get("vcode")?.toString() || '',
+                        }
                     },
                     URL_AUTH_GET_SIGNIN,
                 )
@@ -85,20 +92,6 @@ export default function LoginPage(props: { passClz: string, type: string }) {
                     </div>
 
                     <div className='space-y-2 mt-4 max-w-md'>
-                        {/* <div className='mb-2'>
-                        <TwTabs paramName='type' activeId={type} tabs={
-                            [
-                                {
-                                    label: Dot("kO7kX", "Username"),
-                                    value: 'username'
-                                },
-                                {
-                                    label: Dot("nVqME", "Phone Number"),
-                                    value: 'phoneNumber'
-                                },
-                            ]
-                        }></TwTabs>
-                    </div> */}
                         <div className='hidden'>
                             <input name="type" value={type} ></input>
                         </div>
