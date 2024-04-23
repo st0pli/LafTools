@@ -7,7 +7,7 @@ import { ValidationMiddleware } from '@middlewares/validation.middleware';
 import { URL_AUTH_GET_CAPTCHA, URL_AUTH_GET_SIGNIN, URL_AUTH_GET_SIGNOUT, URL_AUTH_GET_SIGNUP } from '@/web2share-copy/server_urls';
 import { DotFn, DotType } from '@/i18n/TranslationUtils';
 import { InfoFn, RequestInfo } from '@/system/info';
-import { SysResponse, TypeCaptchaResponse } from './_types';
+import { AsyncCreateResponse, SignInCredentials, SysResponse, TypeCaptchaResponse } from './_types';
 import { CaptchaService } from '@/services/captcha.service';
 import { handleSignIn } from './auth/userAction';
 
@@ -51,13 +51,22 @@ export class AuthRoute implements Routes {
     // TODO: using JWT token for authentication
     this.router.post(URL_AUTH_GET_SIGNIN, async (req, res) => {
       let p = getCommonHandlePass(req, res);
-      handleSignIn(req.body, p);
+      let signInResult = await handleSignIn(req.body, p);
+      res.send({
+        content: signInResult,
+      } satisfies SysResponse<AsyncCreateResponse<SignInCredentials | {}>>);
     });
     this.router.post(URL_AUTH_GET_SIGNUP, async (req, res) => {
       //
+      res.send({
+        content: 'not yet implemented',
+      } satisfies SysResponse<any>);
     });
     this.router.post(URL_AUTH_GET_SIGNOUT, async (req, res) => {
-      //
+      // can be done in front-end app
+      res.send({
+        content: 'not yet implemented',
+      } satisfies SysResponse<any>);
     });
     this.router.get(URL_AUTH_GET_CAPTCHA, async (req, res) => {
       let p = await this.captcha.generate();

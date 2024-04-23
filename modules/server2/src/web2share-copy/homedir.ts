@@ -4,11 +4,11 @@
 // License: AGPLv3
 // Copyright (C) 2024 - Present, https://laftools.dev and https://codegen.cc
 
-import fs from 'fs';
-import path from 'path';
-import os from 'os';
-import fsutils from './FileUtils';
-import { isDevEnv, isTestEnv } from './env';
+import fs from "fs";
+import path from "path";
+import os from "os";
+import fsutils from "./FileUtils";
+import { isDevEnv, isTestEnv } from "./env";
 
 let userHome = os.homedir();
 
@@ -17,6 +17,9 @@ export let getUserHomeDir: () => string = () => {
 };
 
 export let getLafToolsDataDir = (): string => {
-  let n = path.join(userHome, isTestEnv() ? '.test-laftools' : isDevEnv() ? '.dev-laftools' : '.laftools');
+  let n = path.join(
+    userHome,
+    isTestEnv() ? ".test-laftools" : isDevEnv() ? ".dev-laftools" : ".laftools",
+  );
   return fsutils.mkdir(n);
 };

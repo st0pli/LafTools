@@ -1,21 +1,21 @@
 'use server'
 
 import dao from "@/dao";
-import { UserRole } from "@/dao/model"
 import { getMD5, getSignatureFromStr } from "./auth";
 import { UserModel as User } from '@/models/oldjava.model'
 import handleAuthInfo, { fn_getCookie } from "./handleAuthInfo";
 import { checkIfStrOnlyHasAlphanumeric } from "./utils";
 import { CommonHandlePass } from "../auth.route";
-import { CheckRules, fn_verifyVCode } from "./action-types";
+import { AsyncCreateResponse, CheckRules, fn_verifyVCode } from "./action-types";
 import { fn_refresh_system_info_from_redis } from "./user-types";
 import _ from "lodash";
 import { key_sessionGroup } from "./constants";
 import { hashPW } from "./op";
+import { SignInCredentials } from "../_types";
 
 export type Elb3AuthBody = {
     userAcctId: string,
-    userRole: UserRole
+    userRole: any
 }
 
 export type fn_setCookie = (name: string, value: string,) => void
@@ -73,61 +73,6 @@ export type ValOrError<T> = {
     value?: T
 }
 
-// export let verifySMSCode = async (formData: {
-//     phoneNumber: string, msgCode: string, type: "activate-account" | "reset-password"
-// }): Promise<ValOrError<{}>> => {
-//     let authInfo = await handleAuthInfo()
-//     if (!authInfo.signedIn) {
-//         throw new Error('not signed in')
-//     }
-//     let userAcctId = authInfo.user?.userAcctId
-//     if (!userAcctId) {
-//         throw new Error('user acct id not found')
-//     }
-//     let daoRef = await dao()
-//     let item = await SMSCodeRecord.findOne({
-//         where: {
-//             userAcctId: userAcctId,
-//             code: formData.msgCode
-//         }
-//     })
-//     let key = 'smstried' + userAcctId
-//     let sms_code_tried_times = await daoRef.redis.get(key)
-//     if (sms_code_tried_times == null || sms_code_tried_times == '') {
-//         sms_code_tried_times = '1'
-//     }
-//     await daoRef.redis.setEx(key, 60 * 60 * 24, (parseInt(sms_code_tried_times) + 1) + '')
-//     let max = 200
-//     if (!item) {
-//         return {
-//             error: Dot("RYlJHHwg3", "SMS code is not correct. ") + `[${sms_code_tried_times}/${max}]`
-//         }
-//     }
-//     if (parseInt(sms_code_tried_times) > max) {
-//         return {
-//             error: Dot("D_9sNBiZj", "You tried too many times, please try again later.")
-//         }
-//     }
-//     await daoRef.db.transaction(async () => {
-//         if (item) {
-//             switch (formData.type) {
-//                 case 'activate-account':
-//                     if (authInfo.user) {
-//                         await authInfo.user.update({
-//                             status: 'normal'
-//                         })
-//                     }
-//                     break;
-//                 default:
-//                     throw new Error('unknown logic')
-//             }
-//             await item.destroy()
-//         }
-//     })
-
-//     return {}
-// }
-
 
 
 export let validateEachRuleInArr = async (rules: CheckRules[], formData: any, p: CommonHandlePass): Promise<AsyncCreateResponse<{}> | null> => {
@@ -171,69 +116,7 @@ export let validateEachRuleInArr = async (rules: CheckRules[], formData: any, p:
     }
 }
 
-// export let sendSMSCodeWithVerificationCode = async (formData: {
-//     phoneNumber: string, vcode: string,
-// }, getCookie: fn_getCookie): Promise<ValOrError<{}>> => {
-//     await dao()
-//     let authInfo = await handleAuthInfo(getCookie)
-//     if (!authInfo.signedIn) {
-//         throw new Error('not signed in')
-//     }
-//     let userAcctId = authInfo.user?.id
-//     if (!userAcctId) {
-//         throw new Error('user acct id not found')
-//     }
-//     console.log('sms code auth info', authInfo)
-//     let { phoneNumber } = formData
-//     let r = await validateEachRuleInArr([fn_verifyVCode()], formData)
-//     if (r?.error) {
-//         return {
-//             error: r.error
-//         }
-//     }
-//     let r2 = await sendSMSCodeForUser(userAcctId, phoneNumber)
-//     return r2;
-// }
 
-// export let sendSMSCodeForUser = async (userAcctId: string, phoneNumber: string): Promise<ValOrError<{}>> => {
-//     phoneNumber = _.trim(phoneNumber)
-//     let daoRef = await dao()
-//     let sms_code = _.random(100000, 999999) + ''
-//     let momentDate = moment().format("YYYY-MM-DD");
-//     let ctn = await SMSCodeRecord.count({
-//         where: {
-//             userAcctId: userAcctId,
-//             phoneNumber: phoneNumber,
-//             dateValue: momentDate
-//         }
-//     })
-//     if (ctn > 8) {
-//         return {
-//             error: Dot("-dxG-aEe4w", "The maximum number of SMS verification codes sent today has been reached.")
-//         }
-//     }
-//     await SMSCodeRecord.create({
-//         id: 0,
-//         userAcctId: userAcctId,
-//         phoneNumber: phoneNumber,
-//         code: sms_code,
-//         dateValue: momentDate
-//     })
-//     // TODO: send sms code
-//     return {}
-// }
-
-
-
-export type AsyncCreateResponse<T> = {
-    message?: string, // normal message
-    error?: string, // error
-    data?: T
-}
-export type SignInCredentials = {
-    signed: boolean,
-    signature: string | null,
-}
 export async function handleSignIn(formData: {
     userAcctId: string,
     password: string,

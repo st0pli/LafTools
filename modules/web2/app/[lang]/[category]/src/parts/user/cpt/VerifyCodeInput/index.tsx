@@ -7,7 +7,7 @@ import { Dot, getCurrentLang } from '@/app/__CORE__/utils/cTranslationUtils';
 import os from 'os'
 import path from 'path';
 import { readFileSync } from 'fs';
-import { sendAPIRequestInBE } from '@/app/[lang]/client/src/api/ApiUtils';
+import { webaction_sendAPIRequestInBE } from '@/app/[lang]/client/src/api/ApiUtils';
 import { URL_AUTH_GET_CAPTCHA } from '@/app/__CORE__/share/server_urls';
 import { SysResponse, TypeCaptchaResponse } from '@/app/__CORE__/share/server_constants';
 import { Button, Callout } from '@blueprintjs/core';
@@ -25,7 +25,7 @@ export default (props: { codeImgBase64?: string, vcodeFactor: number }) => {
         try {
             onErrMsg("")
             onLoading(true)
-            let r = await sendAPIRequestInBE({
+            let r = await webaction_sendAPIRequestInBE({
                 lang: getCurrentLang()
             }, URL_AUTH_GET_CAPTCHA)
             let rJSON = JSON.parse(r) as SysResponse<TypeCaptchaResponse>

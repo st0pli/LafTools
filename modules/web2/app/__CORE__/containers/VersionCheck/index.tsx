@@ -1,6 +1,6 @@
 'use client'
 
-import { sendAPIRequestInBE, } from "@/app/[lang]/client/src/api/ApiUtils"
+import { webaction_sendAPIRequestInBE, } from "@/app/[lang]/client/src/api/ApiUtils"
 import _ from "lodash"
 import { useCallback, useEffect } from "react"
 import { Dot, getCurrentLang } from "../../utils/cTranslationUtils"
@@ -23,7 +23,7 @@ export default hocClientWrapper(() => {
             if (serverMode) {
                 return
             };
-            let r: string = await sendAPIRequestInBE({
+            let r: string = await webaction_sendAPIRequestInBE({
                 lang: getCurrentLang()
             }, URL_RELEASE_GET_STATUS)
             let rJSON = JSON.parse(r) as SysResponse<ReleaseStatusResponse>

@@ -3,6 +3,15 @@ export const HEADER_X_LAF_REGION = "x-laf-region"; // CN or US
 export const HEADER_X_LAF_PLATFORM = "x-laf-platform";
 export const HEADER_X_LAF_VERSION = "x-laf-version";
 
+export type AsyncCreateResponse<T> = {
+  message?: string; // normal message
+  error?: string; // error
+  data?: T;
+};
+export type SignInCredentials = {
+  signed: boolean;
+  signature: string | null;
+};
 export type TypeCaptchaResponse = {
   randomID: string;
   imgBase64: string;

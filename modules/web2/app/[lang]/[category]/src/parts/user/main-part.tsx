@@ -30,7 +30,7 @@ export type CrtToolProp = ToolProp
 export default (props: CrtToolProp) => {
     let pid = props.params.id
     let finPage: JSX.Element | null = null;
-    let passClz = ' rounded-sm shadow-sm mt-2 w-[600px]  ' + light_border_clz_all
+    let passClz = tw(' rounded-sm shadow-sm mt-2 max-w-[600px] w-[600px]  ') + light_border_clz_all
     if (pid == 'sign-in') {
         finPage = (
             <LoginPage type="username" passClz={passClz} />

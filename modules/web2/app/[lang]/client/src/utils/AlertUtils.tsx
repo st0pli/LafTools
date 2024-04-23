@@ -9,7 +9,7 @@
 
 import _ from "lodash";
 import { Dot } from "./cTranslationUtils";
-import { Position, Toaster, ToastProps, Intent } from "@blueprintjs/core";
+import { Position, Toaster, ToastProps, Intent, OverlayToaster } from "@blueprintjs/core";
 import ALL_NOCYCLE, { FN_GetDispatch, copy, getErrMsg } from "../nocycle";
 import systemSlice, { MessagePackItem } from "../reducers/systemSlice";
 import statusSlice, {
@@ -95,8 +95,8 @@ const AlertUtils = {
       message: Dot("ff02c", "Cancelled"),
     });
   },
-  popMsg(intent: Intent, config: ToastProps) {
-    let rootInst = Toaster.create({
+  popMsg: async function (intent: Intent, config: ToastProps) {
+    const rootInst: Toaster = await OverlayToaster.createAsync({
       className: " m_all_recipe",
       position: Position.TOP,
     });

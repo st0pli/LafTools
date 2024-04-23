@@ -4,7 +4,7 @@
 // License: AGPLv3
 // Copyright (C) 2024 - Present, https://laftools.dev and https://codegen.cc
 
-import fs from 'fs';
+import fs from "fs";
 
 let FileUtils = {
   fileExists: (file: string) => {
