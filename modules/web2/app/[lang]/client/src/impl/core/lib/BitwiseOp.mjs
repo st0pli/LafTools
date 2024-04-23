@@ -1,5 +1,3 @@
-// LafTools
-//
 // Date: Sun, 14 Jan 2024
 // Second Author: Ryan Laf
 // Description:
@@ -24,7 +22,8 @@
  * @param {string} scheme
  * @returns {byteArray}
  */
-export function bitOp(input, key, func, nullPreserving, scheme) {
+export function bitOp(input, key, func) {
+  let nullPreserving, scheme;
   if (!key || !key.length) key = [0];
   const result = [];
   let x = null,

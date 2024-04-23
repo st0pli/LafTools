@@ -1,5 +1,3 @@
-// LafTools
-//
 // Date: Mon, 15 Jan 2024
 // Author: Ryan Laf <work7z@outlook.com>
 // Description:

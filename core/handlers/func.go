@@ -1,5 +1,3 @@
-// LafTools
-//
 // Date: Thu, 21 Dec 2023
 // Author: LafTools Team - FX <work7z@outlook.com>
 // LafTools Team - Ubuntu <work7z@outlook.com>

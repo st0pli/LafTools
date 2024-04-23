@@ -1,7 +1,6 @@
-
 // Date: Sun, 14 Jan 2024
 // Second Author: Ryan Laf
-// Description: This code defines a TypeScript class `AND` that extends the `Operation` class. The `AND` class represents an operation to perform a bitwise AND operation on an input byte array with a specified key. It provides functionality for running the operation, highlighting relevant parts of the input/output, and handles user arguments. The class is designed to be used within a larger programming toolbox application.
+// Description: The AND class is a bitwise AND operation implementation that can be used to perform AND operation on byte arrays with a given key.
 // License: AGPLv3
 // Copyright (C) 2024 - Present, https://laftools.dev and https://codegen.cc
 
@@ -11,34 +10,24 @@ import Utils from "../../../core/Utils.mjs";
 import { bitOp, and, BITWISE_OP_DELIMS } from "../../../core/lib/BitwiseOp.mjs";
 
 /**
- * @author n1474335 [n1474335@gmail.com]
- * @copyright Crown Copyright 2016
- * @license Apache-2.0
- */
-
-/**
- * AND operation
- */
+* AND operation
+*/
 class AND extends Operation {
   /**
-   * AND constructor
-   */
+  * AND constructor
+  */
   constructor() {
     super();
 
-    this.name = "AND";
+    this.name = Dot("and.name", "AND");
     this.module = "Default";
-    this.description = Dot(
-      "and.desc",
-      "AND the input with the given key.<br>e.g. <code>{0}</code>",
-      "fe023da5"
-    );
-    this.infoURL = Dot("and.infoURL", "https://wikipedia.org/wiki/Bitwise_operation#AND");
+    this.description = Dot("and.desc", "AND the input with the given key. e.g. fe023da5");
+    this.infoURL = "https://wikipedia.org/wiki/Bitwise_operation#AND";
     this.inputType = "byteArray";
     this.outputType = "byteArray";
     this.args = [
       {
-        name: Dot("and.arg.name", "Key"),
+        name: Dot("and.arg.key", "Key"),
         type: "toggleString",
         value: "",
         toggleValues: BITWISE_OP_DELIMS,
@@ -47,74 +36,70 @@ class AND extends Operation {
   }
 
   /**
-   * @param {byteArray} input
-   * @param {Object[]} args
-   * @returns {byteArray}
-   */
-  run(input, args) {
+  * Get operation details
+  */
+  public getOptDetail(): OptDetail {
+    return {
+      relatedID: 'nothing',
+      config: {
+        "module": "Default",
+        "description": this.description,
+        "infoURL": this.infoURL,
+        "inputType": this.inputType,
+        "outputType": this.outputType,
+        "flowControl": false,
+        "manualBake": false,
+        "args": this.args,
+      },
+      infoURL: this.infoURL,
+      nousenouseID: 'and',
+      optName: Dot("and.textiDjMIo", "Generate {0} Hash", "AND"),
+      optDescription: Dot(
+        "and.desc.rxsHq",
+        "This operation performs a bitwise {0} on data.",
+        "AND"
+      ),
+      // exampleInput and exampleOutput are placeholders, actual values should be provided
+      exampleInput: "",
+      exampleOutput: ""
+    };
+  }
+
+  /**
+  * @param {Uint8Array} input
+  * @param {Object[]} args
+  * @returns {Uint8Array}
+  */
+  run(input: Uint8Array, args: any[]): Uint8Array {
     const key = Utils.convertToByteArray(args[0].string || "", args[0].option);
 
     return bitOp(input, key, and);
   }
 
   /**
-   * Highlight AND
-   *
-   * @param {Object[]} pos
-   * @param {number} pos[].start
-   * @param {number} pos[].end
-   * @param {Object[]} args
-   * @returns {Object[]} pos
-   */
-  highlight(pos, args) {
+  * Highlight AND
+  *
+  * @param {Object[]} pos
+  * @param {number} pos[].start
+  * @param {number} pos[].end
+  * @param {Object[]} args
+  * @returns {Object[]} pos
+  */
+  highlight(pos: { start: number; end: number }[], args: any[]): { start: number; end: number }[] {
     return pos;
   }
 
   /**
-   * Highlight AND in reverse
-   *
-   * @param {Object[]} pos
-   * @param {number} pos[].start
-   * @param {number} pos[].end
-   * @param {Object[]} args
-   * @returns {Object[]} pos
-   */
-  highlightReverse(pos, args) {
+  * Highlight AND in reverse
+  *
+  * @param {Object[]} pos
+  * @param {number} pos[].start
+  * @param {number} pos[].end
+  * @param {Object[]} args
+  * @returns {Object[]} pos
+  */
+  highlightReverse(pos: { start: number; end: number }[], args: any[]): { start: number; end: number }[] {
     return pos;
-  }
-
-  /**
-   * Get detailed information about the AND operation.
-   */
-  getOptDetail(): OptDetail {
-    return {
-      relatedID: 'bitwise-and',
-      config: {
-        module: "Bitwise Operations",
-        description: Dot(
-          "and.config.desc",
-          "Performs a bitwise AND operation between the input data and the provided key. The result is a new byte array representing the bitwise conjunction of the two inputs. This operation can be useful for masking or extracting specific bits from the input data.",
-          ""
-        ),
-        infoURL: this.infoURL,
-        inputType: this.inputType,
-        outputType: this.outputType,
-        flowControl: false,
-        manualBake: false,
-        args: this.args.map((arg) => ({
-          name: arg.name,
-          type: arg.type,
-          defaultValue: arg.value,
-          toggleValues: arg.toggleValues,
-        })),
-      },
-      infoURL: this.infoURL,
-      nousenouseID: 'bitwise-and',
-      optName: Dot("and.optName", "Bitwise AND Operation"),
-      optDescription: this.description,
-      exampleInput: TEXT_INPUT_EXAMPLE_BYTE_ARRAY,
-      exampleOutput: "Example output byte array",
-    };
   }
 }
 

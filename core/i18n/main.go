@@ -1,5 +1,3 @@
-// LafTools
-//
 // Date: Wed, 20 Sep 2023
 // Author: LafTools Team <work7z@outlook.com>
 // Description:

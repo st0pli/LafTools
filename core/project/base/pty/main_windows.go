@@ -1,8 +1,6 @@
 //go:build windows
 // +build windows
 
-// LafTools
-//
 // Date: Wed, 27 Dec 2023
 // Author: LafTools Team - Ubuntu <work7z@outlook.com>
 // Description:

@@ -1,5 +1,3 @@
-// LafTools
-//
 // Date: Sat, 6 Jan 2024
 // Author: LafTools Team - FX <work7z@outlook.com>
 // Description:

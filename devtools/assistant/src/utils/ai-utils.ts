@@ -1,3 +1,4 @@
+import { response } from "express";
 import { logger } from "./logger";
 import axios from "axios";
 
@@ -14,7 +15,48 @@ export type AIResponse = {
   request_id: string;
 };
 let AIUtils = {
-  say: async function (
+  askZhipu: async function (
+    input: {
+      role: "system" | "user" | "assistant";
+      content: string;
+    }[],
+  ): Promise<{
+    result: string;
+    response: any;
+  } | null> {
+    let token = process.env.ZPKEY;
+    let model = "glm-4";
+    if (!token) {
+      logger.error("AIUtils.say: token not found");
+      return null;
+    }
+
+    logger.info("AIUtils zhipu is in process");
+
+    // 发起请求
+    let resp = await axios({
+      method: "POST",
+      url: "https://open.bigmodel.cn/api/paas/v4/chat/completions",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + token,
+      },
+      data: JSON.stringify({
+        model: model,
+        temperature: 0.3,
+        messages: input,
+      }),
+    });
+    let rdata = resp.data;
+    let responseText = rdata.choices[0].message.content;
+    logger.info("rdata: " + JSON.stringify(rdata));
+    logger.info("response text:" + responseText);
+    return {
+      result: responseText,
+      response: rdata,
+    };
+  },
+  askQwen: async function (
     input: {
       role: "system" | "user" | "assistant";
       content: string;

@@ -1,5 +1,3 @@
-// LafTools
-//
 // Date: Sun, 14 Jan 2024
 // Second Author: Ryan Laf
 // Description:

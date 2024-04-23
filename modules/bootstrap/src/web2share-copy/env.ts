@@ -1,5 +1,3 @@
-// LafTools
-//
 // Date: Thu, 22 Feb 2024
 // Author:
 // Description:
