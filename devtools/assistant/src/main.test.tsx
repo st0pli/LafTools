@@ -10,29 +10,29 @@ let postProcessFolder = path.join(__dirname, 'post-process');
 shelljs.mkdir('-p', postProcessFolder);
 
 test('run-conversions-ai-fetch-case', async () => {
-    let currentFolder = path.join(postProcessFolder, "op-run-mjs-to-ts")
-    shelljs.mkdir('-p', currentFolder)
-    let sourceMJSFolder = path.join(
-        process.env.LAFTOOLS_ROOT as string,
-        ...'modules/web2/app/[lang]/client/src/impl/core/operations'.split("/")
-    );
-    logger.info("sourceMJSFolder: " + sourceMJSFolder)
-    let allMJSFiles = shelljs.ls(sourceMJSFolder);
-    for (let file of allMJSFiles) {
-        let targetFile = path.join(currentFolder, "response__" + file.replace(".mjs", ".json"))
-        // if targetFile exist and non-empty, then continue
-        if (fs.existsSync(targetFile) && fs.statSync(targetFile).size > 0) {
-            logger.info("file exists: " + targetFile)
-            continue;
-        }
-        let content = shelljs.cat(path.join(sourceMJSFolder, file));
-        let fileContent = content.toString();
-        if (_.isEmpty(fileContent)) {
-            throw new Error("file content is empty: " + file)
-        }
-        logger.info("file: " + file)
+  let currentFolder = path.join(postProcessFolder, "op-run-mjs-to-ts")
+  shelljs.mkdir('-p', currentFolder)
+  let sourceMJSFolder = path.join(
+    process.env.LAFTOOLS_ROOT as string,
+    ...'modules/web2/app/[lang]/client/src/impl/core/operations'.split("/")
+  );
+  logger.info("sourceMJSFolder: " + sourceMJSFolder)
+  let allMJSFiles = shelljs.ls(sourceMJSFolder);
+  for (let file of allMJSFiles) {
+    let targetFile = path.join(currentFolder, "response__" + file.replace(".mjs", ".json"))
+    // if targetFile exist and non-empty, then continue
+    if (fs.existsSync(targetFile) && fs.statSync(targetFile).size > 0) {
+      logger.info("file exists: " + targetFile)
+      continue;
+    }
+    let content = shelljs.cat(path.join(sourceMJSFolder, file));
+    let fileContent = content.toString();
+    if (_.isEmpty(fileContent)) {
+      throw new Error("file content is empty: " + file)
+    }
+    logger.info("file: " + file)
 
-        let requireText = `将代码转换为TS代码，要求如下：
+    let requireText = `将代码转换为TS代码，要求如下：
       
 1. 要求给该Operation类添加一个方法，具体实现参照【示例1】自动推导，不能照抄，要按照当前Operation自动替换，并提供exampleInput和exampleOutput（假如你的exampleOutput无法提供具体值，请用<>把它包起来
 2. 用英文概述本代码的功能和用途，并且填写到顶部注释"// Description:" 那一行里
@@ -41,6 +41,7 @@ test('run-conversions-ai-fetch-case', async () => {
 
 )，用Dot函数包裹起来，具体参照【示例2】
 4. 源代码的所有import语句，不能有变动或者省略，输出之前记得再三检查
+5. 不允许对某些代码进行省略，特别是不要出现类似【run method implementation remains unchanged】的情况
 
 
 【示例1】
@@ -86,27 +87,27 @@ test('run-conversions-ai-fetch-case', async () => {
 【具体代码】
 ${fileContent}
 `;
-        try {
-            logger.info('asking zhipu for ' + requireText)
-            logger.info("file: " + file)
-            let r = await AIUtils.askZhipu([
-                {
-                    role: "user",
-                    content: requireText,
-                },
-            ]);
-            if (r && r.result) {
-                logger.info("AI " + file + " replied: " + r.result);
-                fs.writeFileSync(targetFile, JSON.stringify(r, null, 2));
-            } else {
-                throw new Error("AI " + file + " replied null")
-            }
-            await new Promise((resolve) => setTimeout(resolve, 1000));
-        } catch (e) {
-            logger.error(e);
-        }
+    try {
+      logger.info('asking zhipu for ' + requireText)
+      logger.info("file: " + file)
+      let r = await AIUtils.askZhipu([
+        {
+          role: "user",
+          content: requireText,
+        },
+      ]);
+      if (r && r.result) {
+        logger.info("AI " + file + " replied: " + r.result);
+        fs.writeFileSync(targetFile, JSON.stringify(r, null, 2));
+      } else {
+        throw new Error("AI " + file + " replied null")
+      }
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+    } catch (e) {
+      logger.error(e);
     }
-    return;
+  }
+  return;
 }, {
-    timeout: -1
+  timeout: -1
 })
