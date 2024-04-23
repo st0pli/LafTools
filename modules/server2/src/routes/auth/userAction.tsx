@@ -2,7 +2,6 @@
 
 import dao from "@/dao";
 import { getMD5, getSignatureFromStr } from "./auth";
-import { UserModel as User } from '@/models/oldjava.model'
 import handleAuthInfo, { fn_getCookie } from "./handleAuthInfo";
 import { checkIfStrOnlyHasAlphanumeric } from "./utils";
 import { CommonHandlePass } from "../auth.route";
@@ -12,6 +11,7 @@ import _ from "lodash";
 import { key_sessionGroup } from "./constants";
 import { hashPW } from "./op";
 import { SignInCredentials } from "../_types";
+import { S2User, S2User as User } from "@/dao/model";
 
 export type Elb3AuthBody = {
     userAcctId: string,
@@ -51,7 +51,7 @@ export let signInWithUserId = async (userAcctId: string, rememberMe: boolean): P
 
 export let getUserInfoByUserAcctId = async (userAcctId: string): Promise<User | null> => {
     await dao()
-    let user = await User.findOne({
+    let user = await S2User.findOne({
         where: {
             id: userAcctId
         }
@@ -161,7 +161,7 @@ export async function handleSignIn(formData: {
                 if (!user) {
                     return Dot("dsdfqw", "User does not exist")
                 }
-                if (user.newUserPassword != hashPW(formData.password)) {
+                if (user.password != hashPW(formData.password)) {
                     return Dot("eqwee", "Password is not correct")
                 }
                 // LOGIN SUCCESS
@@ -337,13 +337,12 @@ export default async function handleSignUp(formData: {
     let newUser = await daoRef.db_work7z.transaction(async () => {
         let newUser = await User.create({
             id: parseInt(formData.userAcctId),
-            userPwMd5: hashPW(formData.password + ''),
+            name: formData.userAcctId,
+            phoneNumber: '',
+            password: hashPW(formData.password + ''),
             email: formData.email,
         })
 
-        // await invitationCodeItem?.update({
-        //     useCount: invitationCodeItem.useCount - 1
-        // })
 
         await signInWithUserId(formData.userAcctId + '', formData.rememberMe)
 

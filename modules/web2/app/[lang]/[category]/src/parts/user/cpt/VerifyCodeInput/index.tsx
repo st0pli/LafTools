@@ -40,7 +40,7 @@ export default (props: { codeImgBase64?: string, vcodeFactor: number }) => {
     }
     useEffect(() => {
         (update_base64)()
-    }, [])
+    }, [props.vcodeFactor])
 
     return (
         <div className="min-w-[350px]">
@@ -51,7 +51,9 @@ export default (props: { codeImgBase64?: string, vcodeFactor: number }) => {
             </div>
             <div className='mt-2'>
                 {
-                    loading ? 'Loading...' : (
+                    loading ? <div className='w-full min-h-20'>
+                        {'Loading...'}
+                    </div> : (
                         <img id='vcode' data-randomid={randomID} className='hover:cursor-pointer min-h-20 min-w-[1/5] bg-slate-300' src={"data:image/png;base64," + base64} onClick={() => {
                             update_base64()
                         }}  ></img>

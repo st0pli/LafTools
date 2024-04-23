@@ -19,13 +19,13 @@ export let core_sendAPIRequestInBE = async (
   console.log("core_sendAPIRequestInBE: ", finURL);
   let res = await fetch(finURL, {
     headers: {
+      "Content-Type": "application/json",
       [HEADER_X_LAF_REGION]: info.region,
       [HEADER_X_LAF_LANG]: info.lang,
       [HEADER_X_LAF_PLATFORM]: info.platform,
       [HEADER_X_LAF_VERSION]: info.version,
     },
     ...request,
-    body: JSON.stringify({}),
   });
   return res;
 };
