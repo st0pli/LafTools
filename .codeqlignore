@@ -2,6 +2,8 @@
 
 # ignore prettier
 
+add-ons
+add-ons/**
 modules/node/src/lib/prettier/**
 modules/node/src/lib/prettier/\*
 modules/web/src/lib/core
