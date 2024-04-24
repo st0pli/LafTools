@@ -24,7 +24,7 @@ export default function RootLayout(props: {
     let { children } = props;
     // suppressHydrationWarning
     return (
-        <html lang={getWebsiteLocale()} suppressHydrationWarning={true} className="" style={{
+        <html lang={getWebsiteLocale()} suppressHydrationWarning={false} className="" style={{
             display: 'none'
             // background: 'gray',
             // width: '100',

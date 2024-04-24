@@ -180,6 +180,25 @@ ${fileContent}
   timeout: -1
 })
 
+
+
+
+
+test('run-conversions-ai-fetch-tojson', async () => {
+  let currentFolder = path.join(postProcessFolder, "op-run-mjs-to-readme-zh")
+  let sourceMJSFolder = path.join(postProcessFolder, "op-run-mjs-to-json-zh");
+  shelljs.mkdir('-p', currentFolder)
+  logger.info("sourceMJSFolder: " + sourceMJSFolder)
+  let allMJSFiles = shelljs.ls(sourceMJSFolder);
+  for (let file of allMJSFiles) {
+  }
+  return;
+}, {
+  timeout: -1
+})
+
+
+
 // let text = `...根据上述文本...`;
 
 // // 正则表达式定位最后一个JSON字符串

@@ -32,6 +32,7 @@ import "@blueprintjs/icons/lib/css/blueprint-icons.css";
 import SetupPopPanel from "./__CORE__/containers/SetupPopPanel";
 import VersionCheck from "./__CORE__/containers/VersionCheck";
 import { RegisterSlot } from "./[lang]/[category]/src/fnrefmap";
+import { Suspense } from "react";
 
 
 // import dbconn from '.@/app/__CORE__/app/db/index'
@@ -41,15 +42,17 @@ export default async function RootLayout(props: {
 }) {
   let { children } = props;
   return (
-    <Layout>
-      {children}
-      <PrelintInit></PrelintInit>
-      <ProgressBar></ProgressBar>
-      {/* client */}
-      <SetupPopPanel />
-      <VersionCheck />
-      <RegisterSlot />
-    </Layout>
+    <Suspense>
+      <Layout>
+        {children}
+        <PrelintInit></PrelintInit>
+        <ProgressBar></ProgressBar>
+        {/* client */}
+        <SetupPopPanel />
+        <VersionCheck />
+        <RegisterSlot />
+      </Layout>
+    </Suspense>
   );
 }
 
