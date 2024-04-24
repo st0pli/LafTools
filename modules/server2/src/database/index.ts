@@ -32,7 +32,5 @@ const tmp_s2_sequelize = newSeq('s2');
 
 tmp_work7z_sequelize.authenticate();
 
-export const DB = {};
-
 export let work7z_sequelize = tmp_work7z_sequelize;
 export let s2_sequelize = tmp_s2_sequelize;
