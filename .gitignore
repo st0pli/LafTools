@@ -1,4 +1,5 @@
 var/log/
+tmp
 *.zip
 LafTools*
 src-dist
