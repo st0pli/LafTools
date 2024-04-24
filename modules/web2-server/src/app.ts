@@ -12,18 +12,19 @@ import { NODE_ENV, PORT, LOG_FORMAT, ORIGIN, CREDENTIALS } from '@config';
 import moment from 'moment';
 import { Routes } from '@interfaces/routes.interface';
 import { ErrorMiddleware } from '@middlewares/error.middleware';
-import migrateDB from './jobs/migrate-db';
+import migrateDB from './jobs/background-job';
 import { logger, stream } from '@utils/logger';
 const launchTime = new Date();
 export class App {
   public app: express.Application;
   public env: string;
   public port: string | number;
+  public host: string = process.env.HOSTNAME || '0.0.0.0';
 
   constructor(routes: Routes[]) {
     this.app = express();
     this.env = NODE_ENV || 'development';
-    this.port = 2016;
+    this.port = process.env.PORT;
 
     this.connectToDatabase();
     this.initializeMiddlewares();
@@ -38,6 +39,7 @@ export class App {
     this.app.listen(this.port, () => {
       logger.info(`=================================`);
       logger.info(`======= ENV: ${this.env} =======`);
+      logger.info(`======= HOST: ${this.host} =======`);
       logger.info(`🚀 App listening on the port ${this.port}`);
       logger.info(`=================================`);
     });
