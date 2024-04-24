@@ -35,17 +35,11 @@ const logger = winston.createLogger({
     logFormat,
   ),
   transports: [
-    new Console({
-      level: 'debug',
-    }),
-    new Console({
-      level: 'error',
-    }),
     // debug log setting
     new winstonDaily({
       level: 'debug',
       datePattern: 'YYYY-MM-DD',
-      dirname: logDir + '/debug', // log file /logs/debug/*.log in save
+      dirname: path.join(logDir, 'debug'), // log file /logs/debug/*.log in save
       filename: `%DATE%.log`,
       maxFiles: 30, // 30 Days saved
       json: false,
@@ -55,10 +49,30 @@ const logger = winston.createLogger({
     new winstonDaily({
       level: 'error',
       datePattern: 'YYYY-MM-DD',
-      dirname: logDir + '/error', // log file /logs/error/*.log in save
+      dirname: path.join(logDir, 'error'), // log file /logs/error/*.log in save
       filename: `%DATE%.log`,
       maxFiles: 30, // 30 Days saved
       handleExceptions: true,
+      json: false,
+      zippedArchive: true,
+    }),
+    // warn log setting
+    new winstonDaily({
+      level: 'warn',
+      datePattern: 'YYYY-MM-DD',
+      dirname: path.join(logDir, 'warn'), // log file /logs/warn/*.log in save
+      filename: `%DATE%.log`,
+      maxFiles: 30, // 30 Days saved
+      json: false,
+      zippedArchive: true,
+    }),
+    // info log setting
+    new winstonDaily({
+      level: 'info',
+      datePattern: 'YYYY-MM-DD',
+      dirname: path.join(logDir, 'info'), // log file /logs/info/*.log in save
+      filename: `%DATE%.log`,
+      maxFiles: 30, // 30 Days saved
       json: false,
       zippedArchive: true,
     }),
@@ -67,6 +81,7 @@ const logger = winston.createLogger({
 
 logger.add(
   new winston.transports.Console({
+    level: 'debug',
     format: winston.format.combine(winston.format.splat(), winston.format.colorize()),
   }),
 );
