@@ -1,14 +1,18 @@
 import { existsSync, mkdirSync } from 'fs';
-import { join } from 'path';
+import path, { join } from 'path';
 import winston from 'winston';
 import winstonDaily from 'winston-daily-rotate-file';
 import { LOG_DIR as tmp } from '@config';
 import { Console } from 'winston/lib/winston/transports';
-let LOG_DIR = tmp;
+import { getLafToolsDataDir } from '@/web2share-copy/homedir';
+import { getAppLogInternalDir } from '@/web2share-copy/appdir';
+let LOG_DIR = path.join(getAppLogInternalDir(), 'web2-server');
 
-if (!LOG_DIR) {
-  LOG_DIR = join(__dirname, 'logs');
+// if not exist
+if (!existsSync(LOG_DIR)) {
+  mkdirSync(LOG_DIR);
 }
+
 // logs dir
 const logDir: string = LOG_DIR;
 
