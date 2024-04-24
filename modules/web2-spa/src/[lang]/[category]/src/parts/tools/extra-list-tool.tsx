@@ -5,7 +5,7 @@
 // License: AGPLv3
 // Copyright (C) 2024 - Present, https://laftools.dev and https://codegen.cc
 
-import React, { cache } from 'react';
+import React, { } from 'react';
 import { Autocomplete, AutocompleteItem, CardProps, Listbox, ListboxItem, Tab, Tabs } from "@nextui-org/react";
 import { Card, Divider, CardHeader, CardBody, CardFooter } from "@nextui-org/react";
 import { CSS_TW_GRAY_TEXT, border_clz, light_border_clz_all, tw } from '@/__CORE__/meta/styles';

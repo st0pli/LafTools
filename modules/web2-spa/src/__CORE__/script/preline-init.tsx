@@ -10,6 +10,10 @@
 export let usePathname = () => {
   return location.pathname
 }
+export let useParams = () => {
+  return queryString.parse(location.search)
+}
+import queryString from "query-string";
 import { useEffect, useState } from "react";
 
 // import { IStaticMethods } from "preline/preline";

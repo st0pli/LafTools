@@ -23,7 +23,6 @@ import { CategoryTypeSearchDetail } from '@/[lang]/page';
 import { Button, Dialog, DialogBody, DialogFooter } from '@blueprintjs/core';
 import DialogToolListView from './dialog-tool-list-view';
 import { HocClientWrapperClient, hocClientWrapper } from '../../common/hocClientWrapper';
-import dynamic from 'next/dynamic';
 export let getCardsProps = (): CardProps => {
     return {
         radius: "none", shadow: "none", className: light_border_clz_all

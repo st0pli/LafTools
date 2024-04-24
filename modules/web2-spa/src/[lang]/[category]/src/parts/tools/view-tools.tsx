@@ -11,7 +11,6 @@
 import Link from '@/__CORE__/components/Link'
 import React, { useContext } from 'react'
 import { pushClient } from '@/__CORE__/utils/clientUtils'
-import { useRouter } from 'next/navigation'
 import ToolSingleView from '@/[lang]/client/src/pages/WorkBench/FixedLayout/Main/Center/sub/center-view/tools/ToolSingleView'
 import { Provider, useDispatch } from "react-redux";
 import { store } from '@/[lang]/client/src/store'
@@ -38,8 +37,11 @@ let ToolInnerView = hocClientWrapper((props: ExtensionViewProps) => {
     d()
     let constructedKey = useConstructedKeyAndInit()
     let clientContext = useContext(ClientPortalContext)
-    let toolId = props.searchToolItem.toolId
     let body: JSX.Element = <div>not implemented yet</div>
+    if (!props.searchToolItem) {
+        return body
+    }
+    let toolId = props.searchToolItem.toolId
     let needFullPage = clientContext.portalMode && false; // TODO: for now, we just only use fixed height to support drafting border
     if (!toolId) {
         body = <div className='w-full min-h-[500px]'>

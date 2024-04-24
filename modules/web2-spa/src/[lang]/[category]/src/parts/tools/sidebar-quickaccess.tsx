@@ -6,7 +6,7 @@
 // License: AGPLv3
 // Copyright (C) 2024 - Present, https://laftools.dev and https://codegen.cc
 'use client'
-import React, { cache } from 'react';
+import React, { } from 'react';
 import _ from 'lodash';
 import { loadDOT } from '@/__CORE__/utils/i18n-for-load';
 import { Button, ButtonGroup } from "@nextui-org/react";

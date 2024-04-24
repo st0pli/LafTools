@@ -32,6 +32,9 @@ export let getCardsProps = (): CardProps => {
 export type CrtToolProp = ToolProp
 export default (props: CrtToolProp) => {
     let searchDetail = getSearchDetailBySearchProps(props)
+    if (!searchDetail) {
+        return <div>no available data</div>
+    }
     return <div className='flex-1  space-y-2 '>
         <PkgToolMain {...props} {...searchDetail} />
         <PkgRecentUsedTool {...props} />

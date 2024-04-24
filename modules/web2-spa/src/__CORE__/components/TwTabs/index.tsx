@@ -9,7 +9,8 @@
 
 import React from 'react'
 import _ from 'lodash'
-import { useParams, usePathname } from 'next/navigation'
+import { useParams, usePathname } from '@/__CORE__/script/preline-init'
+
 
 export default (props: {
     tabs: { label: string, value: string }[],

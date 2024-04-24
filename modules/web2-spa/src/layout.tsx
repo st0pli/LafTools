@@ -53,7 +53,7 @@ export default async function RootLayout(props: {
 export type Metadata = {
   title: string;
   description: string;
-  keywords: string[];
+  keywords?: string[];
   icons: string[];
 }
 

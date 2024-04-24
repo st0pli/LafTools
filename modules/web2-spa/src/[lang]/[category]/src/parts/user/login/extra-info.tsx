@@ -6,7 +6,7 @@ import React from 'react'
 // import { PageProps } from '@/__CORE__/types/pages';
 // import { Dot } from '@/__CORE__/utils/TranslationUtils';
 // import '@/__CORE__/script/preline-init'
-// import { Metadata, ResolvingMetadata } from 'next';
+// 
 // import LoginPage, { LoginPageProps } from './LoginPage'
 // import { getWebsiteName } from '@/__CORE__/common/config';
 

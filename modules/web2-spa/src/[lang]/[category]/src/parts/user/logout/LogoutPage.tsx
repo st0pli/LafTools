@@ -5,12 +5,12 @@ import GrailLayoutWithUser from '@/__CORE__/containers/GrailLayoutWithUser'
 import { AuthInfoProps, } from '@/[lang]/page'
 import CardPanel from '@/__CORE__/components/CardPanel';
 import '@/__CORE__/script/preline-init'
-import { Metadata, ResolvingMetadata } from 'next';
+
 import { getWebsiteName } from '@/__CORE__/common/config';
 import LanguagePicker from '@/__CORE__/containers/LanguagePicker';
 import LoadingWrapper from '@/__CORE__/containers/LoadingWrapper';
-import { cookies } from 'next/headers';
-import { getCookies } from 'cookies-next';
+
+
 import _ from 'lodash';
 import { loadDOT, useTTT2 } from '../register/i18n-types';
 import { Dot } from '@/__CORE__/utils/cTranslationUtils';

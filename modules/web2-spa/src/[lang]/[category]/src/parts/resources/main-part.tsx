@@ -22,7 +22,6 @@ import UnderDevelopment from '@/[lang]/client/src/components/UnderDevelopment';
 
 export type CrtToolProp = ToolProp
 export default (props: CrtToolProp) => {
-    // let searchDetail = getSearchDetailBySearchProps(props)
     return <div className='flex-1  space-y-2 '>
         <div style={{
         }}>

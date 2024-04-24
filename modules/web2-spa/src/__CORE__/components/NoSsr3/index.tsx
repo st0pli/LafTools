@@ -8,6 +8,6 @@ const NoSsr = props => (
 //     ssr: false
 // })
 
-export default () => {
-    return <NoSsr />
+export default (props: { children: any }) => {
+    return props.children
 }

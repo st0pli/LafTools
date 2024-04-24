@@ -5,7 +5,7 @@ import GrailLayoutWithUser from '@/__CORE__/containers/GrailLayoutWithUser'
 import CardPanel from '@/__CORE__/components/CardPanel';
 import TwTabs from '@/__CORE__/components/TwTabs'
 import '@/__CORE__/script/preline-init'
-import { Metadata, ResolvingMetadata } from 'next';
+
 import LoadingWrapper from '@/__CORE__/containers/LoadingWrapper';
 import AlertErrorPanel from '@/__CORE__/containers/AlertErrorPanel';
 import { loadDOT, useTTT, useTTT2 } from '../register/i18n-types';

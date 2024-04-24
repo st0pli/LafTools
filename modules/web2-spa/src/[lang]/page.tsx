@@ -111,7 +111,14 @@ export let generateMetadata = async function (props: CategorySearchProps): Promi
     let title: string[] = [];
 
     if (ifnil(props.params.category, 'tools') == 'tools') {
-        let { searchToolItem, targetSubCategory, topCategoryNavItem } = getSearchDetailBySearchProps(props)
+        let item = getSearchDetailBySearchProps(props)
+        if (!item) {
+            return result
+        }
+        let { searchToolItem, targetSubCategory, topCategoryNavItem } = item;
+        if (!searchToolItem || !targetSubCategory || !topCategoryNavItem) {
+            return result
+        }
 
         // title push
         targetSubCategory && targetSubCategory?.seoTitle && title.push(targetSubCategory?.seoTitle)

@@ -68,6 +68,14 @@ export let isChineseByXLocal = (): boolean => {
   let xlocale = getXLocaleStrInRSC()
   return xlocale.langIni18n == 'zh_CN'
 }
+export let headers = () => {
+  return {
+    get(key: string): string | null {
+      // TODO: handle this headers
+      return "";
+    }
+  }
+}
 
 export let getXHostname = (): string => {
   const headersList = headers();

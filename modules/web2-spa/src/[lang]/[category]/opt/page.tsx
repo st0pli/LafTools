@@ -26,6 +26,7 @@ import Link from "@/__CORE__/components/Link";
 
 import { getAppDevIcon, getAppKeywords } from "../../../__CORE__/config/imgconfig";
 import Tools, { generateMetadata as toolMetaDataFn } from '@/[lang]/page'
+import { Metadata } from "@/layout";
 
 
 export type AuthInfoProps = { authInfo: AuthInfo }
