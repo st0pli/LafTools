@@ -4,6 +4,8 @@
 
 add-ons
 add-ons/**
+add-ons/**/*
+add-ons/it-tools/\*\*/\*/_.vue
 modules/node/src/lib/prettier/**
 modules/node/src/lib/prettier/\*
 modules/web/src/lib/core
