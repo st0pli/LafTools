@@ -10,7 +10,7 @@ import React from 'react';
 // import { Card, Button, CardHeader, CardBody, CardFooter } from "@nextui-org/react";
 import { border_clz, light_border_clz_all, tw } from '@/__CORE__/meta/styles';
 import { Dot, getHStr } from '@/__CORE__/utils/TranslationUtils';
-import Link from 'next/link';
+import Link from '@/__CORE__/components/Link';
 import { fmtURL_Server } from '@/__CORE__/utils/routeUtils';
 import FundrasingPlanBtn from '../cpt/cpt-fundrasing-btn';
 import { ToolProp, getCardsProps } from '.';

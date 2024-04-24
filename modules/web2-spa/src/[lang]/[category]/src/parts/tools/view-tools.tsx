@@ -8,7 +8,7 @@
 // Copyright (C) 2024 - Present, https://laftools.dev and https://codegen.cc
 
 
-import Link from 'next/link'
+import Link from '@/__CORE__/components/Link'
 import React, { useContext } from 'react'
 import { pushClient } from '@/__CORE__/utils/clientUtils'
 import { useRouter } from 'next/navigation'

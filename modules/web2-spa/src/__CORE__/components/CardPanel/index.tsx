@@ -5,11 +5,11 @@
 // License: AGPLv3
 // Copyright (C) 2024 - Present, https://laftools.dev and https://codegen.cc
 
-import Image from "next/image";
+
 import React from 'react'
-import type { Metadata, ResolvingMetadata } from "next";
-import Head from 'next/head'
-import { Props } from "next/script";
+
+
+
 
 type PassProps = { className?: string, children?: any, style?: any }
 

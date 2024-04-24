@@ -5,12 +5,7 @@
 // License: AGPLv3
 // Copyright (C) 2024 - Present, https://laftools.dev and https://codegen.cc
 
-import { Inter } from "next/font/google";
 import "./globals.css";
-import Image from "next/image";
-import type { Metadata, ResolvingMetadata } from "next";
-import Head from 'next/head'
-import { Props } from "next/script";
 import { getWebDesc, getWebsiteName } from "./__CORE__/common/config";
 import { TopNav } from "./__CORE__/containers/TopNav";
 import CenterPart from "./__CORE__/containers/CenterPart";
@@ -24,9 +19,8 @@ import PrelintInit from './__CORE__/script/preline-init'
 import { getWebsiteLocale } from "./__CORE__/utils/TranslationUtils";
 import ProgressBar from "./progressBar";
 import { getAppDevIcon } from "./__CORE__/config/imgconfig";
-import { NextUIProvider } from "@nextui-org/react";
 import { Providers } from "./nextui-provider";
-import Link from "next/link";
+import Link from "@/__CORE__/components/Link";
 import "@blueprintjs/core/lib/css/blueprint.css";
 import "@blueprintjs/icons/lib/css/blueprint-icons.css";
 import SetupPopPanel from "./__CORE__/containers/SetupPopPanel";
@@ -56,9 +50,16 @@ export default async function RootLayout(props: {
   );
 }
 
+export type Metadata = {
+  title: string;
+  description: string;
+  keywords: string[];
+  icons: string[];
+}
+
 export async function generateMetadata(
-  { }: Props,
-  parent: ResolvingMetadata
+  { }: any,
+  parent: any
 ): Promise<Metadata> {
   return {
     title: getWebsiteName(),

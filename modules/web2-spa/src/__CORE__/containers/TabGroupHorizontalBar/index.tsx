@@ -7,7 +7,6 @@
 
 import { getPureWebsiteName } from "@/__CORE__/common/config"
 import { Dot } from "@/__CORE__/utils/TranslationUtils"
-import { useRouter } from "next/navigation";
 import React from 'react'
 
 

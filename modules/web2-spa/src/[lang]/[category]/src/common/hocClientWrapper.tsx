@@ -1,11 +1,9 @@
 'use client'
 
-import dynamic from "next/dynamic"
 import React from "react"
 import ClientWrapper from "./clientWrapper"
 
 import PageLoadingEffect from "@/__CORE__/containers/PageLoadingEffect";
-import { CircularProgress } from "@nextui-org/react";
 import Blink from "@/[lang]/client/src/components/Blink";
 
 export let HocClientWrapperClient = (props: { children: any }) => {

@@ -6,18 +6,18 @@
 // Copyright (C) 2024 - Present, https://laftools.dev and https://codegen.cc
 
 
-import { Inter } from "next/font/google";
 import TranslationUtils, { getWebsiteLocale as getWebsiteLocale } from "../../utils/TranslationUtils";
 import { TopNav } from "../TopNav";
 import CenterPart from "../CenterPart";
 import Footer from "../Footer";
 import { ThemeProvider } from "../../../theme-provider";
-import Script from 'next/script'
 import { KEY_LAFTOOLS_THEME } from "../../meta/constants";
 import { Suspense } from "react";
 
+export let Script = (props) => {
+    return <span>register me please</span>
+}
 
-const inter = Inter({ subsets: ["latin"] });
 export default function RootLayout(props: {
     children,
 }) {
@@ -60,13 +60,11 @@ export default function RootLayout(props: {
 
                 </Script>
             </head>
-            <body className={' laf-app min-h-screen dark:bg-slate-950 dark:text-slate-300    ' + inter.className}>
+            <body className={' laf-app min-h-screen dark:bg-slate-950 dark:text-slate-300    '}>
                 {/* <div className="fixed top-0 left-0 w-full h-full bg-gray-500 z-[100]" id='blink'></div> */}
                 <div className="w-full h-full">
                     {children}
                 </div>
-                <ThemeProvider attribute="class" defaultTheme="system" enableSystem >
-                </ThemeProvider>
             </body>
         </html>
     );

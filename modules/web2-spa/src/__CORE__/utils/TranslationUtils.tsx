@@ -6,7 +6,6 @@
 // License: AGPLv3
 
 // SKIP_DOT
-import { cookies, headers } from 'next/headers';
 import _ from "lodash";
 import Qs from 'query-string'
 import { LANG_EN_US, LangDefinition } from "../meta/constants";
@@ -57,10 +56,12 @@ function formatResultWithReplacer(val = "", ...args) {
 
 
 export let getXLocaleStrInRSC = (): LocaleType => {
-  const headersList = headers();
-  const val = headersList.get('x-locale') || "";
-  let item = all_locales.find(x => x.langInHttp == val)
-  return item || zhCNLocale
+  // const headersList = headers();
+  // const val = headersList.get('x-locale') || "";
+  // let item = all_locales.find(x => x.langInHttp == val)
+  // return item || zhCNLocale
+  // TODO: handle this
+  return zhCNLocale
 }
 
 export let isChineseByXLocal = (): boolean => {

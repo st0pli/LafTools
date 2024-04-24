@@ -7,19 +7,17 @@
 
 'use server'
 
-import { setCookie, getCookie, getCookies, deleteCookie } from 'cookies-next';
-import { cookies, headers } from 'next/headers';
 import _ from "lodash";
 import { randomUUID } from "crypto";
-import { redirect, usePathname } from "next/navigation";
 // import { SystemInfoBody, fn_add_user_into_active, fn_get_system_info_from_redis } from "@/[lang]/register/user-types";
 import { LocaleType } from "@/middleware";
 import { LocalUser } from "@/__CORE__/dao/model";
 
 let getPathnameInRSC = () => {
-    const headersList = headers();
-    const header_url = headersList.get('x-url') || "";
-    return header_url
+    // const headersList = headers();
+    // const header_url = headersList.get('x-url') || "";
+    // return header_url
+    return location.pathname
 }
 
 export let redirectToLoginPage = () => {

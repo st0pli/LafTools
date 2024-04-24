@@ -8,7 +8,7 @@
 'use client'
 
 import _ from 'lodash';
-import { AppProgressBar as ProgressBar } from 'next-nprogress-bar';
+// import { AppProgressBar as ProgressBar } from 'next-nprogress-bar';
 import React from 'react';
 
 
@@ -32,10 +32,6 @@ let colorList = [
     "#5C255C"
 ]
 
-// 1. import `NextUIProvider` component
-// import { NextUIProvider } from "@nextui-org/react";
-
-
 export default (props) => {
     let randomColor = _.get(colorList, _.random(0, _.size(colorList) - 1));
 
@@ -46,12 +42,11 @@ export default (props) => {
     if (!show) return <></>
 
     return <>
-        <ProgressBar
+        {/* <ProgressBar
             height="4px"
             color={randomColor}
             options={{ showSpinner: true }}
 
-        // shallowRouting
-        />
+        /> */}
     </>
 }

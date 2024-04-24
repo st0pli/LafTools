@@ -8,7 +8,7 @@
 
 import React from "react";
 import { Tabs, Tab, Card, CardBody, CardHeader } from "@nextui-org/react";
-import Link from "next/link";
+import Link from "@/__CORE__/components/Link";
 import { Dot, getXSearchParams } from "@/__CORE__/utils/TranslationUtils";
 import { PortalDefinitionTbabGroup, PortalDefinitionType, } from "@/[lang]/client/src/impl/tools/d_portal";
 import { ToolProp } from "../tools";

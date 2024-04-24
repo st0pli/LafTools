@@ -106,7 +106,6 @@ import { useParams } from "react-router-dom";
 import { EachTabPanelProp, PageQueryType } from "./workbench-types";
 import { fmtURL_Client } from "@/__CORE__/utils/cRouteUtils";
 import settingsSlice from "../reducers/settingsSlice";
-import { useSearchParams } from "next/navigation";
 import { ParamStateState, TabLeftType } from "../reducers/state/paramStateSlice";
 
 export let NoAvailableDataPanel = () => {

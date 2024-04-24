@@ -11,7 +11,6 @@ import { COMMON_CLZ_ANCHOR_TEXT } from "@/__CORE__/common/clz"
 import RegularLink from "@/__CORE__/components/RegularLink"
 import { MoonIcon, Cog8ToothIcon, SunIcon } from '@heroicons/react/24/solid'
 import { Dot } from "@/__CORE__/utils/cTranslationUtils"
-// import { useTheme } from "next-themes";
 import { useTheme } from "@/__CORE__/components/LightDarkButton/theme";
 
 import { useEffect, useState } from "react"

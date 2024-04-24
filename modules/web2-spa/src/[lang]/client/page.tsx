@@ -11,10 +11,8 @@ import React, { } from "react";
 import getAuthInfo, { AuthInfo } from "@/__CORE__/containers/GrailLayoutWithUser/actions/handleAuthInfo";
 import { PageProps } from '@/__CORE__/meta/pages'
 // import Entry from "./client";
-import { Metadata } from "next/types";
 import { getAppDevIcon, getAppKeywords } from "@/__CORE__/config/imgconfig";
 // import {  } from "./src/utils/TranslationUtils";
-import dynamic from "next/dynamic";
 import { fmtURL_Server } from "@/__CORE__/utils/routeUtils";
 import { Dot, getXLocaleStrInRSC } from "@/__CORE__/utils/TranslationUtils";
 import { isDevEnv } from "@/__CORE__/share/env";
@@ -22,7 +20,9 @@ import PassClientValue from './pass'
 import PageLoadingEffect from "@/__CORE__/containers/PageLoadingEffect";
 import { CategorySearchProps } from "../page";
 import SetupPopPanel from "@/__CORE__/containers/SetupPopPanel";
-const EntryWrapper = dynamic(() => import('./client'), { ssr: false, loading: () => <PageLoadingEffect /> })
+import { Metadata } from "@/layout";
+// const EntryWrapper = dynamic(() => import('./client'), { ssr: false, loading: () => <PageLoadingEffect /> })
+const EntryWrapper = () => <div>will do </div>
 
 let cachedLangMap: { [key: string]: string } = {}
 let getCachedValueIfNot = (key: string, fn: () => string) => {

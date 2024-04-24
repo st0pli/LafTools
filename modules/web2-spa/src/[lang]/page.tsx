@@ -1,22 +1,21 @@
-import Image from "next/image";
-import type { Metadata, ResolvingMetadata } from "next";
-import Head from 'next/head'
-import { Props } from "next/script";
+
+
+
+
 import { getWebsiteName } from "@/__CORE__/common/config";
 import { TopNav } from "@/__CORE__/containers/TopNav";
 import CenterPart from "@/__CORE__/containers/CenterPart";
 import CardPanel from '@/__CORE__/components/CardPanel'
 import NodeHorizontalBar from "@/__CORE__/containers/TabGroupHorizontalBar";
 import _, { random } from "lodash";
-import { notFound, useParams, useSearchParams } from "next/navigation";
 import InnerHome from '../home'
-import { usePathname } from 'next/navigation';
+
 import '../job'
 import React, { } from "react";
 import { PageProps, PortalDefinitionType, TopMainCategoryNavList } from '@/__CORE__/meta/pages'
 import getAuthInfo, { AuthInfo } from "@/__CORE__/containers/GrailLayoutWithUser/actions/handleAuthInfo";
 import { Dot, getXSubPath, isChineseByXLocal } from "../__CORE__/utils/TranslationUtils";
-import Link from "next/link";
+import Link from "@/__CORE__/components/Link";
 
 import { getAppDevIcon, getAppKeywords } from "../__CORE__/config/imgconfig";
 
@@ -26,22 +25,28 @@ import { getCategoryList as getCategoryList, PortalDefinitionTbabGroup } from ".
 import { ifnil } from "../__CORE__/meta/fn";
 import { isDevEnv } from "../__CORE__/share/env";
 import { CategoryType, getSubCategoryByProps } from "./client/src/impl/tools/d_subcategory";
+import { Metadata } from "@/layout";
 
 export type CategorySearchProps = PageProps<{
     subCategory: string,
     category: CategoryType,
     id: string
 }, {}>;
-export default async function Home(props: CategorySearchProps) {
+export default function Home(props: CategorySearchProps) {
     return <SubCategoryPage {...props} />
 }
 
+export let notFound = () => {
+    console.error('not found')
+    // TODO: not found
+    throw new Error('not found')
+}
 export type CategoryTypeSearchDetail = {
-    searchToolItem: PortalDefinitionTbabGroup,
-    targetSubCategory: PortalDefinitionType,
+    searchToolItem: PortalDefinitionTbabGroup | undefined,
+    targetSubCategory: PortalDefinitionType | undefined,
     topCategoryNavItem: TopMainCategoryNavList | undefined
 }
-export let getSearchDetailBySearchProps = (props: CategorySearchProps): CategoryTypeSearchDetail => {
+export let getSearchDetailBySearchProps = (props: CategorySearchProps): CategoryTypeSearchDetail | null => {
     let topCategoryNavList = getCategoryList()
     let topCategoryNavItem = topCategoryNavList.find(x => x.id == props.params.category)
     if (_.isNil(topCategoryNavItem)) {
@@ -69,14 +74,15 @@ export let getSearchDetailBySearchProps = (props: CategorySearchProps): Category
     if (!searchToolId) {
         if (!targetSubCategory) {
             notFound()
-        }
-        if (!targetSubCategory.subTabs || targetSubCategory.subTabs?.length == 0) {
-            notFound()
         } else {
-            searchToolId = targetSubCategory.subTabs![0].id
+            if (!targetSubCategory.subTabs || targetSubCategory.subTabs?.length == 0) {
+                notFound()
+            } else {
+                searchToolId = targetSubCategory.subTabs![0].id
+            }
         }
     }
-    let searchToolItem = (targetSubCategory.subTabs || []).find(x => x.id == searchToolId)
+    let searchToolItem = targetSubCategory && (targetSubCategory.subTabs || []).find(x => x.id == searchToolId)
     if (!searchToolItem) {
         notFound()
     }
@@ -86,6 +92,8 @@ export let getSearchDetailBySearchProps = (props: CategorySearchProps): Category
         topCategoryNavItem,
     }
 }
+
+
 
 export let generateMetadata = async function (props: CategorySearchProps): Promise<Metadata> {
     // fn

@@ -1,5 +1,3 @@
-import { NextResponse } from "next/server";
-import type { NextRequest } from "next/server";
 import { I18nItem } from "@/__CORE__/config/i18n";
 import { fn_Geti18n } from "@/[lang]/client/src/i18n-pure";
 import info from "@/[lang]/[category]/info";
@@ -10,6 +8,9 @@ let LAFREGION = process.env.LAFREGION; // CN or US
 if (!dftLocaleStr) {
   dftLocaleStr = "en_US";
 }
+
+export type NextRequest = any;
+export type NextResponse = any;
 
 // let bootLastModified = new Date(parseInt(info.timestamp) * 1000).toUTCString();
 // if (isDevEnv()) {
@@ -130,15 +131,15 @@ export function middleware(request: NextRequest) {
 
   requestHeaders.set("x-url", request.nextUrl.pathname);
 
-  return NextResponse.next({
-    request: {
-      headers: requestHeaders,
-    },
-    headers: {
-      // "Last-Modified": bootLastModified,
-      // "x-actual-lm": bootLastModified,
-    },
-  });
+  // return NextResponse.next({
+  //   request: {
+  //     headers: requestHeaders,
+  //   },
+  //   headers: {
+  //     // "Last-Modified": bootLastModified,
+  //     // "x-actual-lm": bootLastModified,
+  //   },
+  // });
 }
 
 export const config = {

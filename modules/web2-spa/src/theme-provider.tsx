@@ -7,13 +7,15 @@
 
 "use client"
 import * as React from "react";
-import { ThemeProvider as NextThemesProvider, } from "next-themes";
-import type { ThemeProviderProps } from "next-themes/dist/types";
 import $ from 'jquery';
 import { useTheme } from "./__CORE__/components/LightDarkButton/theme";
 import _ from 'lodash'
 import { hocClientWrapper } from "./[lang]/[category]/src/common/hocClientWrapper";
 if (typeof window !== 'undefined') _.set(window, '$', $)
+
+export type ThemeProviderProps = {
+    children: React.ReactNode
+}
 
 let CustomerInner = hocClientWrapper(({ children, ...props }: ThemeProviderProps) => {
     const { theme, setTheme } = useTheme()

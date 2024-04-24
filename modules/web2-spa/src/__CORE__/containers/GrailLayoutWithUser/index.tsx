@@ -6,20 +6,18 @@
 // Copyright (C) 2024 - Present, https://laftools.dev and https://codegen.cc
 
 'use server'
-import Image from "next/image";
-import type { Metadata, ResolvingMetadata } from "next";
-import Head from 'next/head'
-import { Props } from "next/script";
+
+
+
+
 import { getWebsiteName } from "../../common/config";
 import { TopNav } from "../TopNav";
 import CenterPart from "../CenterPart";
 import CardPanel from '../../components/CardPanel'
 import NodeHorizontalBar from "../TabGroupHorizontalBar";
 import _, { random } from "lodash";
-import { redirect, useParams, useSearchParams } from "next/navigation";
-import { usePathname } from 'next/navigation';
+
 import React, { } from "react";
-import { getCookie } from "cookies-next";
 import getAuthInfo, { AuthInfo } from "./actions/handleAuthInfo";
 import Footer from "../Footer";
 // import { fn_getCardPanelForTelephoneFAQ } from "@/[lang]/register/page";

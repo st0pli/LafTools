@@ -10,7 +10,7 @@ import { Autocomplete, AutocompleteItem, CardProps, Listbox, ListboxItem, Tab, T
 import { Card, Divider, CardHeader, CardBody, CardFooter } from "@nextui-org/react";
 import { border_clz, light_border_clz_all, tw } from '@/__CORE__/meta/styles';
 import { Dot } from '@/__CORE__/utils/TranslationUtils';
-import Link from 'next/link';
+import Link from '@/__CORE__/components/Link';
 import { fmtURL_Server } from '@/__CORE__/utils/routeUtils';
 import { useConstructedKeyAndInit } from '@/[lang]/client/src/initapp';
 import FundrasingPlanBtn from '../cpt/cpt-fundrasing-btn';

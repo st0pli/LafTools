@@ -5,10 +5,10 @@
 // License: AGPLv3
 // Copyright (C) 2024 - Present, https://laftools.dev and https://codegen.cc
 
-import Image from "next/image";
-import type { Metadata, ResolvingMetadata } from "next";
-import Head from 'next/head'
-import { Props } from "next/script";
+
+
+
+
 import { getWebsiteName } from "@/__CORE__/common/config";
 import { TopNav } from "@/__CORE__/containers/TopNav";
 import CenterPart from "@/__CORE__/containers/CenterPart";
@@ -16,13 +16,13 @@ import CardPanel from '@/__CORE__/components/CardPanel'
 import NodeHorizontalBar from "@/__CORE__/containers/TabGroupHorizontalBar";
 import _, { random } from "lodash";
 import InnerHome from '../../../home'
-import { usePathname } from 'next/navigation';
+
 import React, { } from "react";
 import { PageProps } from '@/__CORE__/meta/pages'
 import getAuthInfo, { AuthInfo } from "@/__CORE__/containers/GrailLayoutWithUser/actions/handleAuthInfo";
 import { Dot } from "../../../__CORE__/utils/TranslationUtils";
-import Link from "next/link";
-import { NextUIProvider } from "@nextui-org/react";
+import Link from "@/__CORE__/components/Link";
+
 
 import { getAppDevIcon, getAppKeywords } from "../../../__CORE__/config/imgconfig";
 import Tools, { generateMetadata as toolMetaDataFn } from '@/[lang]/page'

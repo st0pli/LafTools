@@ -7,7 +7,9 @@
 
 "use client";
 
-import { usePathname } from "next/navigation";
+export let usePathname = () => {
+  return location.pathname
+}
 import { useEffect, useState } from "react";
 
 // import { IStaticMethods } from "preline/preline";

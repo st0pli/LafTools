@@ -10,7 +10,6 @@ import { Dot, } from "@/__CORE__/utils/TranslationUtils"
 // import { Tooltip as ReactTooltip } from "react-tooltip";
 // import 'react-tooltip/dist/react-tooltip.css'
 import NoSsr from "@/__CORE__/components/NoSsr";
-import dynamic from 'next/dynamic'
 import HomeLink from "../../components/HomeLink";
 import SearchBar from "./SearchBar";
 import { useIsLoggedIn } from "../../hooks/user";

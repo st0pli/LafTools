@@ -5,7 +5,7 @@
 // License: AGPLv3
 // Copyright (C) 2024 - Present, https://laftools.dev and https://codegen.cc
 
-import Link from "next/link"
+import Link from "@/__CORE__/components/Link"
 import { LabelHrefType, NavigatorPassProp } from ".."
 import { fmtURL_Server } from "@/__CORE__/utils/routeUtils"
 import { nav_text_clz } from './constants'

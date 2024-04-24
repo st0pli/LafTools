@@ -9,7 +9,7 @@
 import _ from "lodash";
 import React, { } from "react";
 import { Dot, getXHostname } from "@/__CORE__/utils/TranslationUtils";
-import Link from "next/link";
+import Link from "@/__CORE__/components/Link";
 import { NavCategory as NavCategory } from "./nav/nav-category";
 import { getAppDevIcon } from "@/__CORE__/config/imgconfig";
 import { ClosableText } from "@/__CORE__/components/ClosableText";

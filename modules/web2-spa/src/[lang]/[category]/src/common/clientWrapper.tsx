@@ -16,7 +16,6 @@ import { loadDOT } from '@/__CORE__/utils/i18n-for-load'
 import SmallScreenDetecter from '@/[lang]/client/src/SmallScreenDetecter'
 import { ClientPortalContext } from '@/[lang]/client/src/pages/WorkBench/FixedLayout/Main/Center/sub/center-view/Transformer/types';
 import { createPortal } from "react-dom"
-import dynamic from "next/dynamic";
 import { type ReactPortal } from "react"
 let d = loadDOT("1RH8bdqw")
 export let getAppToolHeight = () => {

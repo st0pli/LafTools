@@ -7,9 +7,6 @@
 
 import _ from 'lodash';
 import Page, { generateMetadata } from './[lang]/page'
-import getAuthInfo, { AuthInfo } from "@/__CORE__/containers/GrailLayoutWithUser/actions/handleAuthInfo";
-// import "purecss/build/pure.css";
-// import "purecss/build/grids-responsive-min.css";
 
 
 export default Page
