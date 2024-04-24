@@ -6,7 +6,6 @@ import CardPanel from '@/__CORE__/components/CardPanel';
 import TwTabs from '@/__CORE__/components/TwTabs'
 import '@/__CORE__/script/preline-init'
 import { getWebsiteName } from '@/__CORE__/common/config';
-import { useFormState } from 'react-dom'
 import LoadingWrapper from '@/__CORE__/containers/LoadingWrapper';
 import AlertErrorPanel from '@/__CORE__/containers/AlertErrorPanel';
 import { loadDOT, useTTT2 } from './i18n-types';

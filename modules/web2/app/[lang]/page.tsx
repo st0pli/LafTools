@@ -39,7 +39,7 @@ export default async function Home(props: CategorySearchProps) {
 export type CategoryTypeSearchDetail = {
     searchToolItem: PortalDefinitionTbabGroup,
     targetSubCategory: PortalDefinitionType,
-    topCategoryNavItem: TopMainCategoryNavList | any
+    topCategoryNavItem: TopMainCategoryNavList | undefined
 }
 export let getSearchDetailBySearchProps = (props: CategorySearchProps): CategoryTypeSearchDetail => {
     let topCategoryNavList = getCategoryList()

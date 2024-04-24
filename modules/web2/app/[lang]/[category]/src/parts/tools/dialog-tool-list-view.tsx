@@ -28,23 +28,24 @@ export default (props: CrtToolProp) => {
     let { isOpen } = exportUtils.useSelector(v => ({
         isOpen: v.memoryState.siteToolDialogOpen == 't'
     }))
-    return <Dialog isOpen={isOpen} title={Dot("iAxHFt_gr", "Quick View")} icon="info-sign">
-        <DialogBody>
-            <p>
-                <ToolView
-                    {...props}
-                    searchToolItem={{
-                        id: props.searchToolItem.id,
-                        label: 'new item',
-                        toolId: 'edc_base32'
-                    }}
-                />
-            </p>
-        </DialogBody>
-        <DialogFooter actions={<Button intent="primary" text="Close" onClick={() => {
-            //
-        }} />} />
-    </Dialog>
+    return ''
+    // return <Dialog isOpen={isOpen} title={Dot("iAxHFt_gr", "Quick View")} icon="info-sign">
+    //     <DialogBody>
+    //         <p>
+    //             <ToolView
+    //                 {...props}
+    //                 searchToolItem={{
+    //                     id: props.searchToolItem.id,
+    //                     label: 'new item',
+    //                     toolId: 'edc_base32'
+    //                 }}
+    //             />
+    //         </p>
+    //     </DialogBody>
+    //     <DialogFooter actions={<Button intent="primary" text="Close" onClick={() => {
+    //         //
+    //     }} />} />
+    // </Dialog>
 }
 
 
