@@ -10,6 +10,7 @@ const builtinsPlugin = {
   ...builtins({ crypto: true }),
   name: "rollup-plugin-node-builtins",
 };
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), builtinsPlugin, dynamicImport(/* options */)],

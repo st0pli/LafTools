@@ -11,7 +11,7 @@ import Qs from 'query-string'
 import { LANG_EN_US, LangDefinition } from "../meta/constants";
 import { LocaleType, all_locales as all_locales, zhCNLocale } from '@/middleware';
 import { isDevEnv } from '../share-spa/env4vite';
-import { sysLocale } from "./cTranslationUtils";
+import TranslationUtils, { sysLocale } from "./cTranslationUtils";
 
 let VER_FORGE_FORM = '0.0.1'
 export const KEY_LANG_PACK_ZH_CN = "KEY_LANG_PACK_ZH_CN" + VER_FORGE_FORM;
@@ -93,45 +93,45 @@ export let getCurrentLang = () => {
   return xlocale.langIni18n
 }
 
-const TranslationUtils = {
-  ForcbilyLanguage: "",
-  IsChinese() {
-    return (
-      getCurrentLang() == "zh_CN"
-    );
-  },
-  LangMap: crtNewLangMap,
-  RealtimeObj: {},
-  disableLanguageCheck: false,
-  Dot(id: string, enText: string, ...args: any[]): string {
-    let language = TranslationUtils.disableLanguageCheck ? "en_US" : getCurrentLang()
+// const TranslationUtils = {
+//   ForcbilyLanguage: "",
+//   IsChinese() {
+//     return (
+//       getCurrentLang() == "zh_CN"
+//     );
+//   },
+//   LangMap: crtNewLangMap,
+//   RealtimeObj: {},
+//   disableLanguageCheck: false,
+//   Dot(id: string, enText: string, ...args: any[]): string {
+//     let language = TranslationUtils.disableLanguageCheck ? "en_US" : getCurrentLang()
 
-    if (language != 'en_US') {
-      if (global_lang_cached_map[language] && !isDevEnv()) {
-        TranslationUtils.LangMap[language] = global_lang_cached_map[language]
-      } else {
-        // let pmap = require("../../../public/static/lang/" + language + ".json")
-        // let pmap2 = require("../../../public/static/lang2client/" + language + ".json")
-        // TranslationUtils.LangMap[language] = global_lang_cached_map[language] = { ...pmap, ...pmap2 }
-      }
-    }
-    if (language == LANG_EN_US) {
-      // do nothing
-    } else {
-      let langmap = TranslationUtils.LangMap;
-      let o = langmap[language] as LangDefinition;
-      if (_.isNil(o)) {
-        return enText;
-      }
-      let preText = o[id];
-      if (!_.isNil(preText)) {
-        enText = preText;
-      }
-    }
-    let finResult = formatResultWithReplacer(enText, ...args);
-    return finResult;
-  },
-};
+//     if (language != 'en_US') {
+//       if (global_lang_cached_map[language] && !isDevEnv()) {
+//         TranslationUtils.LangMap[language] = global_lang_cached_map[language]
+//       } else {
+//         // let pmap = require("../../../public/static/lang/" + language + ".json")
+//         // let pmap2 = require("../../../public/static/lang2client/" + language + ".json")
+//         // TranslationUtils.LangMap[language] = global_lang_cached_map[language] = { ...pmap, ...pmap2 }
+//       }
+//     }
+//     if (language == LANG_EN_US) {
+//       // do nothing
+//     } else {
+//       let langmap = TranslationUtils.LangMap;
+//       let o = langmap[language] as LangDefinition;
+//       if (_.isNil(o)) {
+//         return enText;
+//       }
+//       let preText = o[id];
+//       if (!_.isNil(preText)) {
+//         enText = preText;
+//       }
+//     }
+//     let finResult = formatResultWithReplacer(enText, ...args);
+//     return finResult;
+//   },
+// };
 
 export default TranslationUtils;
 export const Dot = TranslationUtils.Dot;
