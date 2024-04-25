@@ -6,7 +6,7 @@ import _, { random } from "lodash";
 
 import React, { } from "react";
 import { PageProps, PortalDefinitionType, TopMainCategoryNavList } from '@/__CORE__/meta/pages'
-import { Dot, getXSubPath, isChineseByXLocal } from "../__CORE__/utils/TranslationUtils";
+import { Dot, isChineseByXLocal } from "../__CORE__/utils/TranslationUtils";
 import Link from "@/__CORE__/components/Link";
 
 import { getAppDevIcon, getAppKeywords } from "../__CORE__/config/imgconfig";

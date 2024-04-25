@@ -48,13 +48,12 @@ import {
 import React, { useEffect, useState } from "react";
 import _ from "lodash";
 import { CSS_TEXT_ANCHOR_CSS } from "@/__CORE__/meta/styles";
-import { Dot, getXSubPath } from "../../utils/TranslationUtils";
+import { Dot, } from "../../utils/TranslationUtils";
 import { fn_Geti18n } from "@/[lang]/client/src/i18n-pure";
 
 interface PassProp { }
 export default (props: PassProp): any => {
   let i18n = fn_Geti18n(Dot)
-  let splitArr = getXSubPath().split("/").filter(x => x) // // location.pathname.split("/")
   return <div>
     <div className='bp5-text-muted space-x-2 '>
       {i18n?.map(x => {

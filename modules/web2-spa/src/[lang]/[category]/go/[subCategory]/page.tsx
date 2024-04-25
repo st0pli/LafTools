@@ -33,7 +33,8 @@ import { ifnil } from "@/__CORE__/meta/fn";
 import { getToolSubCategory } from "@/[lang]/client/src/impl/tools/d_subcategory";
 export type AuthInfoProps = { authInfo: AuthInfo }
 export type CombindSearchProps = PageProps<any, any>
-
+import "@blueprintjs/core/lib/css/blueprint.css";
+import "@blueprintjs/icons/lib/css/blueprint-icons.css";
 
 export default function Home(props: CategorySearchProps) {
     let { subCategory, category } = props.params

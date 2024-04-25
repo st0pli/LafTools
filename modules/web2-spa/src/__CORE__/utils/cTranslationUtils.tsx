@@ -23,7 +23,6 @@ if (typeof window !== "undefined") {
   sysLocale = all_locales.find(x => x.langInHttp == sysLang) || sysLocale
 }
 
-
 interface LangMap {
   zh_CN: LangDefinition;
   zh_HK: LangDefinition;

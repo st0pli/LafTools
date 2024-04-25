@@ -1,11 +1,12 @@
 # .codeqlignore
 
-# ignore prettier
-
-add-ons
-add-ons/**
-add-ons/**/*
-add-ons/it-tools/\*\*/\*/_.vue
+addons
+addons/**
+addons/**/*
+*.vue
+addons/it-tools/\*\*/\*/_.vue
+addons/it-tools/src/App.vue
+addons/it-tools/src/*.vue
 modules/node/src/lib/prettier/**
 modules/node/src/lib/prettier/\*
 modules/web/src/lib/core

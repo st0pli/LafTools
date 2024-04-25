@@ -11,6 +11,7 @@ import Qs from 'query-string'
 import { LANG_EN_US, LangDefinition } from "../meta/constants";
 import { LocaleType, all_locales as all_locales, zhCNLocale } from '@/middleware';
 import { isDevEnv } from '../share-spa/env4vite';
+import { sysLocale } from "./cTranslationUtils";
 
 let VER_FORGE_FORM = '0.0.1'
 export const KEY_LANG_PACK_ZH_CN = "KEY_LANG_PACK_ZH_CN" + VER_FORGE_FORM;
@@ -57,12 +58,7 @@ function formatResultWithReplacer(val = "", ...args) {
 
 
 export let getXLocaleStrInRSC = (): LocaleType => {
-  // const headersList = headers();
-  // const val = headersList.get('x-locale') || "";
-  // let item = all_locales.find(x => x.langInHttp == val)
-  // return item || zhCNLocale
-  // TODO: handle this
-  return zhCNLocale
+  return sysLocale
 }
 
 export let isChineseByXLocal = (): boolean => {
@@ -79,31 +75,14 @@ export let headers = () => {
 }
 
 export let getXHostname = (): string => {
-  const headersList = headers();
-  const val = headersList.get('x-hostname') || "";
-  return val;
+  return location.hostname;
 }
 export let getHStr = (): string => {
-  const headersList = headers();
-  const val = headersList.get('x-hstr') || "";
-  return val;
+  return ''
 }
 export let getXSearchParams = (): { [key: string]: any } => {
-  const headersList = headers();
-  const val = headersList.get('x-search') || "";
-  return Qs.parse(val);
+  return Qs.parse(location.search);
 }
-export let getXNonCNUsers = (): boolean => {
-  const headersList = headers();
-  const val = headersList.get('x-noncn') || "";
-  return val == 'true';
-}
-export let getXSubPath = (): string => {
-  const headersList = headers();
-  const val = headersList.get('x-path') || "";
-  return val;
-}
-
 
 export let getWebsiteLocale = () => {
   let xlocale = getXLocaleStrInRSC()
