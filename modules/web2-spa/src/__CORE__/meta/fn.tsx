@@ -1,1 +1,1 @@
-export let ifnil = (x: any, y: any) => x == null || x == undefined ? y : x
+export let ifnil = (x: any, y: any) => x == null || x == undefined || x == '' ? y : x

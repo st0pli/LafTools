@@ -15,7 +15,7 @@ export type APITypeInfo = {
   region: string;
 };
 export let getLAFRegion = (currentLang: string) => {
-  const LAFREGION = undefined; // TODO: handle LAFREGION process.env.LAFREGION
+  const LAFREGION = import.meta.env.LAFREGION; // TODO: handle LAFREGION process.env.LAFREGION
   let region = currentLang == "zh_CN" ? "CN" : "US";
   if (LAFREGION) {
     // if the region is set in the env, use it

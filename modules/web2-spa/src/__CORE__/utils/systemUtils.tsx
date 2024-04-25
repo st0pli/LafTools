@@ -2,7 +2,7 @@
 
 export let IsCurrentServerMode = () => {
     // TODO: should check this one
-    return false;
+    return import.meta.env.ONLINEMODE == "true";
 }
 
 export let IsCurrentServerModeWithPromise = async () => {

@@ -70,6 +70,7 @@ export default function (props: CrtToolProp) {
     return (
         <div className={"flex w-full  flex-col " + CSS_BG_COLOR_WHITE}>
             <div className="border-b border-gray-200 dark:border-gray-700">
+
                 <nav className="flex space-x-2 justify-center" aria-label="Tabs" role="tablist">
                     {
                         subTabs.map(x => {
@@ -85,7 +86,6 @@ export default function (props: CrtToolProp) {
                             let children = <button type="button" className={
                                 ((currentSubTabId) == x.id ? "active " : ' ') +
                                 'hs-tab-active:font-semibold hs-tab-active:border-blue-600 hs-tab-active:text-blue-600 py-4 px-1 inline-flex items-center gap-x-2 border-b-2 border-transparent text-sm whitespace-nowrap text-gray-500 hover:text-blue-600 focus:outline-none focus:text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:text-gray-400 dark:hover:text-blue-500 '
-                                // " hs-tab-active:bg-white hs-tab-active:border-b-transparent hs-tab-active:text-blue-600 dark:hs-tab-active:bg-gray-800 dark:hs-tab-active:border-b-gray-800 dark:hs-tab-active:text-white -mb-px py-3 px-4 inline-flex items-center gap-x-2 bg-gray-50 text-sm font-medium text-center border text-gray-500 rounded-t-lg hover:text-gray-700 disabled:opacity-50 disabled:pointer-events-none dark:bg-gray-700 dark:border-gray-700 dark:text-gray-400 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                             } id="card-type-tab-item-2" data-hs-tab="#card-type-tab-2" aria-controls="card-type-tab-2" role="tab">
                                 {x.label}
                             </button>
