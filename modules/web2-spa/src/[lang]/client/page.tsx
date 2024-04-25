@@ -22,7 +22,7 @@ import { CategorySearchProps } from "../page";
 import SetupPopPanel from "@/__CORE__/containers/SetupPopPanel";
 import { Metadata } from "@/layout";
 // const EntryWrapper = dynamic(() => import('./client'), { ssr: false, loading: () => <PageLoadingEffect /> })
-const EntryWrapper = () => <div>will do </div>
+const EntryWrapper = () => <div>deprecated</div>
 
 let cachedLangMap: { [key: string]: string } = {}
 let getCachedValueIfNot = (key: string, fn: () => string) => {

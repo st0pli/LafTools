@@ -78,10 +78,10 @@ export let FooterContent = () => {
                                 // })
                             }
                         },
-                        {
-                            label: Dot("TET4xnxBT", "Easter Egg"),
-                            link: fmtURL_Server(['/client']),
-                        }
+                        // {
+                        //     label: Dot("TET4xnxBT", "Easter Egg"),
+                        //     link: fmtURL_Server(['/client']),
+                        // }
                     ].filter(x => x).map(x => {
                         if (!x) { return '' }
                         return <a href={x.link} className={CSS_TEXT_ANCHOR_CSS} target={x.onClick ? '' : '_blank'}>{x.label}</a>

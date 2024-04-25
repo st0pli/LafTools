@@ -252,12 +252,12 @@ let TextTransformerControl = (props: CommonTransformerPassProp & { loadingStatic
                 }
             },
         },
-        ...(hideRelatedToolsBar == 't' ? [
+        ...([
             {
-                icon: 'folder-close',
+                icon: hideRelatedToolsBar == 't' ? 'folder-close' : 'folder-open',
                 intent: "none",
                 minimal: true,
-                title: Dot("hZo9cqwX", "Show Other Alternatives"),
+                title: hideRelatedToolsBar != 't' ? Dot("XRU5eWbkd", "Hide Other Operations") : Dot("onjVw7xsj", "Show Other Operations"),
                 onClick: () => {
                     let newVal: TrueFalseType = hideRelatedToolsBar == "t" ? "f" : "t";
                     FN_GetDispatch()(
@@ -267,7 +267,7 @@ let TextTransformerControl = (props: CommonTransformerPassProp & { loadingStatic
                     );
                 }
             }
-        ] : []) satisfies ActionButtonProps[]
+        ]) satisfies ActionButtonProps[]
     ]
     if (props.loadingStatic) {
         // leftActions.forEach(x => {

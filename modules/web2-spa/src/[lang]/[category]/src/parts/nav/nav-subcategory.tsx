@@ -40,8 +40,10 @@ import { LabelHrefType, NavigatorPassProp } from "..";
 import PreinitNavbind from "../js/preinit-navbind";
 import { ifnil } from "@/__CORE__/meta/fn";
 import { getCategoryParentTwClz, getSubCategoryByProps, getToolSubCategory } from "@/[lang]/client/src/impl/tools/d_subcategory";
+import { useListenMainDot } from "@/__CORE__/utils/i18n-for-dynamic-loadDOT";
 
 export default (props: NavigatorPassProp) => {
+    useListenMainDot()
     let leftCategoryArr = getSubCategoryByProps(props)
     let rightCategoryArr = fn_rightCategoryArr()
     let subCategory = props.params.subCategory

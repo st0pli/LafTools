@@ -120,10 +120,10 @@ export let FooterContent = () => {
                     //         })
                     //     }
                     // },
-                    {
-                        label: Dot("TET4xnxBT", "Easter Egg"),
-                        link: fmtURL_Server(['/client']),
-                    }
+                    // {
+                    //     label: Dot("TET4xnxBT", "Easter Egg"),
+                    //     link: fmtURL_Server(['/client']),
+                    // }
                     //  onClick = { x.onClick }
                 ].map(x => {
                     // x.onClick ? '' : 

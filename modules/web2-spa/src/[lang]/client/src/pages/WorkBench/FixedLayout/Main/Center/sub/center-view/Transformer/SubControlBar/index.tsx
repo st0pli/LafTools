@@ -144,22 +144,22 @@ let TextTransformerControl = (props: CommonTransformerPassProp & { loadingStatic
     let operaList = toolHandler?.getOperations() || []
     let crtDefaultOperaId = props.crtDefaultOperaId
     let leftActions: ActionButtonProps[] = [
-        {
-            icon: hideRelatedToolsBar == 't' ? 'folder-close' : 'folder-open',
-            className: '',
-            intent: "none",
-            minimal: true,
-            title: hideRelatedToolsBar == 'f' ?
-                Dot("l_mqgrQPlq", "Hide Other Operations") : Dot("hZo9cdqwX", "Show Other Operations"),
-            onClick: () => {
-                let newVal: TrueFalseType = hideRelatedToolsBar == "t" ? "f" : "t";
-                FN_GetDispatch()(
-                    ParamStateSlice.actions.updateOneOfParamState({
-                        hrts: newVal
-                    })
-                );
-            }
-        },
+        // {
+        //     icon: hideRelatedToolsBar == 't' ? 'folder-close' : 'folder-open',
+        //     className: '',
+        //     intent: "none",
+        //     minimal: true,
+        //     title: hideRelatedToolsBar == 'f' ?
+        //         Dot("l_mqgrQPlq", "Hide Other Operations") : Dot("hZo9cdqwX", "Show Other Operations"),
+        //     onClick: () => {
+        //         let newVal: TrueFalseType = hideRelatedToolsBar == "t" ? "f" : "t";
+        //         FN_GetDispatch()(
+        //             ParamStateSlice.actions.updateOneOfParamState({
+        //                 hrts: newVal
+        //             })
+        //         );
+        //     }
+        // },
 
     ];
     if (props.loadingStatic) {

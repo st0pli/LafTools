@@ -272,7 +272,6 @@ export const ACTION_getLangData = (scopeIdIfHave?: string): any => {
       if (LANG_INIT_BEFORE_MAP && !_.isEmpty(LANG_INIT_BEFORE_MAP[initKey]) && !IsDevMode()) {
         // do nothing
       } else {
-        await sleep(2000)
         const waitArr: Promise<any>[] = []
         waitArr.push((async () => {
           let e = await AjaxUtils.DoStaticRequest({
@@ -371,7 +370,6 @@ export const ACTION_initAllDataAtOnce = (): any => {
         })
       );
       await ACTION_getLatestSystemResources()(dispatch);
-      // await sleep(30000);
       dispatch(systemSlice.actions.markProgressValue(90.98))
       dispatch(
         systemSlice.actions.UpdateProcessText({
