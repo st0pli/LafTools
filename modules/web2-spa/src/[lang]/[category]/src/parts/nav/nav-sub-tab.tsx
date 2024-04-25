@@ -18,7 +18,10 @@ import { URL_SUBCATEGORY_GO_PATH } from "@/__CORE__/meta/url";
 import { CrtToolProp } from "../tools/main-part";
 import { getSubCategoryByProps } from "@/[lang]/client/src/impl/tools/d_subcategory";
 import { CSS_BG_COLOR_WHITE } from "@/__CORE__/meta/styles";
+import { useListenMainDot } from "@/__CORE__/utils/i18n-for-dynamic-loadDOT";
 export let getSubTabs = (props: CrtToolProp): PortalDefinitionTbabGroup[] => {
+    useListenMainDot()
+
     let subCategory = props.params.subCategory
     let sp = {
         id: props.params.id
@@ -56,6 +59,7 @@ export let getSubTabs = (props: CrtToolProp): PortalDefinitionTbabGroup[] => {
     return subTabs;
 }
 export default function (props: CrtToolProp) {
+    useListenMainDot()
     let subCategory = props.params.subCategory
     let sp = {
         id: props.params.id

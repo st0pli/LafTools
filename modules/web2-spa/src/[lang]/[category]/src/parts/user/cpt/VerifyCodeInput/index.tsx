@@ -2,7 +2,7 @@
 
 import React, { useCallback, useEffect, useState } from 'react';
 import _ from 'lodash';
-import { loadDOT } from '@/__CORE__/utils/i18n-for-load';
+import { loadDOT } from '@/__CORE__/utils/i18n-for-dynamic-loadDOT';
 import { Dot, getCurrentLang } from '@/__CORE__/utils/cTranslationUtils';
 import { webaction_sendAPIRequestInBE } from '@/[lang]/client/src/api/ApiUtils';
 import { URL_AUTH_GET_CAPTCHA } from '@/__CORE__/share-spa/server_urls';

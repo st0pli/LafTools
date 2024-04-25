@@ -10,7 +10,7 @@
 import React, { useEffect } from "react";
 import { Breadcrumbs, BreadcrumbItem } from "@nextui-org/react";
 import { Dot } from "@/__CORE__/utils/cTranslationUtils";
-import { loadDOT } from "@/__CORE__/utils/i18n-for-load";
+import { loadDOT } from "@/__CORE__/utils/i18n-for-dynamic-loadDOT";
 import { useInitFunctionOnceOnly } from "@/__CORE__/hooks/cache";
 import { hocClientWrapper } from "../../common/hocClientWrapper";
 

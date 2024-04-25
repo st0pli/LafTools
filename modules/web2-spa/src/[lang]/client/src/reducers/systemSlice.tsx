@@ -69,6 +69,7 @@ export type PageDataInitedMap = {
 };
 
 interface SystemState {
+  TotalLanguageUpdate: number;
   LoadingForPageData?: boolean;
   PageDataInitedMap: PageDataInitedMap;
   LoadSystemData: boolean;
@@ -93,6 +94,7 @@ let newSysInitStatus = (): InitStatus => {
 let LangRefreshCount = 0;
 
 const initialState: SystemState = {
+  TotalLanguageUpdate: 0,
   RefreshID: 0,
   LoadDotCount: 0,
   checkLoginStatusCount: 0,
@@ -195,7 +197,12 @@ const systemSlice = createSlice({
         localStorage.setItem(action.payload.lang, JSON.stringify(nextValue));
       }
 
+      if (!action.payload.scopeId) {
+        state.TotalLanguageUpdate++
+      }
+
       LANG_INIT_BEFORE_MAP[action.payload.initKey] = true;
+
     },
   },
 });
@@ -265,21 +272,49 @@ export const ACTION_getLangData = (scopeIdIfHave?: string): any => {
       if (LANG_INIT_BEFORE_MAP && !_.isEmpty(LANG_INIT_BEFORE_MAP[initKey]) && !IsDevMode()) {
         // do nothing
       } else {
-        let e = await AjaxUtils.DoStaticRequest({
-          url: "/lang2client" + (scopeIdIfHave ? `/extra/${scopeIdIfHave}/` : "/") + currentLanguage + ".json?t=" + (
-            `${info.version}-${info.timestamp}`
-          ),
-        });
-        logutils.debug("e.data", e.data);
-        localStorage.setItem("lang-" + currentLanguage, JSON.stringify(e.data))
-        dispatch(
-          systemSlice.actions.updateLanguageValue({
-            scopeId: scopeIdIfHave,
-            initKey: initKey,
-            lang: currentLanguage,
-            value: e.data,
-          })
-        );
+        await sleep(2000)
+        const waitArr: Promise<any>[] = []
+        waitArr.push((async () => {
+          let e = await AjaxUtils.DoStaticRequest({
+            url: "/lang2client" + (scopeIdIfHave ? `/extra/${scopeIdIfHave}/` : "/") + currentLanguage + ".json?t=" + (
+              `${info.version}-${info.timestamp}`
+            ),
+          });
+          logutils.debug("e.data", e.data);
+          // localStorage.setItem("lang-" + currentLanguage, JSON.stringify(e.data))
+          dispatch(
+            systemSlice.actions.updateLanguageValue({
+              scopeId: scopeIdIfHave,
+              initKey: initKey,
+              lang: currentLanguage,
+              value: e.data,
+            })
+          );
+        })())
+        if (!scopeIdIfHave) {
+          // getting lang package
+          waitArr.push((async () => {
+            let e = await AjaxUtils.DoStaticRequest({
+              url: "/lang/" + currentLanguage + ".json?t=" + (
+                `${info.version}-${info.timestamp}`
+              ),
+            });
+            logutils.debug("e.data", e.data);
+            // localStorage.setItem("lang-" + currentLanguage, JSON.stringify(e.data))
+            dispatch(
+              systemSlice.actions.updateLanguageValue({
+                scopeId: scopeIdIfHave,
+                initKey: initKey,
+                lang: currentLanguage,
+                value: e.data,
+              })
+            );
+          })())
+        }
+        for (let each of waitArr) {
+          await each
+        }
+
       }
     }
     dispatch(systemSlice.actions.markLangStatus({ isOK: true }));

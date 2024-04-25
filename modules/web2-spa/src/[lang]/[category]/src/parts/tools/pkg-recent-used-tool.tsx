@@ -16,7 +16,7 @@ import ExtraListTool from './extra-list-tool';
 import { Dot } from '@/__CORE__/utils/cTranslationUtils';
 import _ from 'lodash';
 import gutils from '@/[lang]/client/src/utils/GlobalUtils';
-import { loadDOT } from '@/__CORE__/utils/i18n-for-load';
+import { loadDOT } from '@/__CORE__/utils/i18n-for-dynamic-loadDOT';
 export let getCardsProps = (): CardProps => {
     return {
         radius: "none", shadow: "none", className: light_border_clz_all

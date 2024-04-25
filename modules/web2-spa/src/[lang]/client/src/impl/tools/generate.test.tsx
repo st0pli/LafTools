@@ -107,7 +107,7 @@ export type AppOpFnMapTypeKeys = keyof typeof AppOptFnMap;
     // SECOND PART
     // SECOND PART
     // SECOND PART
-    TranslationUtils.disableLanguageCheck = true;
+    // TranslationUtils.disableLanguageCheck = true;
     type Tool2PageMap = {
         [key: string]: {
             pagePath: string[]

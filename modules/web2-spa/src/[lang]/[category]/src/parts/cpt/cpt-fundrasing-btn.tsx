@@ -8,7 +8,7 @@
 
 'use client'
 
-import { loadDOT } from "@/__CORE__/utils/i18n-for-load"
+import { loadDOT } from "@/__CORE__/utils/i18n-for-dynamic-loadDOT"
 import { Button, ButtonGroup } from "@nextui-org/react";
 
 

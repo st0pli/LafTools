@@ -7,7 +7,7 @@
 
 'use client'
 
-import { loadDOT } from "@/__CORE__/utils/i18n-for-load"
+import { loadDOT } from "@/__CORE__/utils/i18n-for-dynamic-loadDOT"
 import { useEffect } from "react"
 import AlertUtils from "./utils/AlertUtils"
 

@@ -47,7 +47,7 @@ import {
 import React, { useEffect, useState } from "react";
 import _ from "lodash";
 import { Dot } from "../../utils/cTranslationUtils";
-import { loadDOT } from "@/__CORE__/utils/i18n-for-load";
+import { loadDOT } from "@/__CORE__/utils/i18n-for-dynamic-loadDOT";
 import { hocClientWrapper } from "@/[lang]/[category]/src/common/hocClientWrapper";
 
 let a = loadDOT("pv92PGN1H", true)

@@ -13,10 +13,12 @@ import { TrueFalseType } from './paramStateSlice'
 
 
 export type MemoryStateState = {
+    mainDOTUpdateCtn: number,
     siteToolDialogOpen: TrueFalseType,
     siteToolOptRenderMap: { [key: string]: number } // when config is changed, this will be updated
 };
 const initialState: MemoryStateState = {
+    mainDOTUpdateCtn: 0,
     // siteToolDialogOpen: 'false'
     siteToolDialogOpen: 'f',
     siteToolOptRenderMap: {}

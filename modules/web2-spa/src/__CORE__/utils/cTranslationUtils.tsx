@@ -11,6 +11,7 @@ import _ from "lodash";
 import { LANG_EN_US, LangDefinition } from "../meta/constants";
 import { all_locales, zhCNLocale } from '@/middleware';
 import { fmtURL_Client } from './cRouteUtils';
+import { isDevEnv } from "../share-spa/env4vite";
 
 let VER_FORGE_FORM = '0.0.1'
 export const KEY_LANG_PACK_ZH_CN = "KEY_LANG_PACK_ZH_CN" + VER_FORGE_FORM;
@@ -42,20 +43,13 @@ let newLangMap2 = (): LangMap => {
     }
   }
   let langJSONStr = localStorage.getItem("lang-" + locale)
-  if (langJSONStr) {
+  if (langJSONStr && !isDevEnv()) {
     return {
       zh_CN: {},
       zh_HK: {},
       [locale]: JSON.parse(langJSONStr),
     } as any
   }
-  // if (window['__LANG2CLIENT__']) {
-  //   let preLangMap = JSON.parse(window['__LANG2CLIENT__'])
-  //   let f = {
-  //     [getCurrentLang()]: preLangMap
-  //   }
-  //   return f as any
-  // }
   return {
     zh_CN: {},
     zh_HK: {},

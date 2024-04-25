@@ -12,7 +12,7 @@ import React, { useEffect, useState } from 'react'
 import { Provider, } from "react-redux";
 import { store } from '@/[lang]/client/src/store'
 import '@/[lang]/client/src/initapp'
-import { loadDOT } from '@/__CORE__/utils/i18n-for-load'
+import { loadDOT } from '@/__CORE__/utils/i18n-for-dynamic-loadDOT'
 import SmallScreenDetecter from '@/[lang]/client/src/SmallScreenDetecter'
 import { ClientPortalContext } from '@/[lang]/client/src/pages/WorkBench/FixedLayout/Main/Center/sub/center-view/Transformer/types';
 import { createPortal } from "react-dom"
@@ -37,9 +37,7 @@ function Portal(props: PortalProps): ReactPortal | null {
 
 
 let ClientWrapper = (props: { children: any, noFULL?: boolean }) => {
-    d()
     const [isMounted, setIsMounted] = useState(false)
-
     useEffect(() => {
         setIsMounted(true)
     }, [])

@@ -53,7 +53,7 @@ export default (props: NavigatorPassProp) => {
     let { innerContent } = props;
     return (
         <div className={'  bg-slate-50  pb-10 ' + CSS_BG_DARK_1ST}>
-            <div className={row_pad_clz}>
+            <div className={` app-minmax-size mx-[7px] `}>
                 {innerContent}
             </div>
         </div>

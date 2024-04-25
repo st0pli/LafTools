@@ -8,7 +8,7 @@
 'use client'
 import React, { } from 'react';
 import _ from 'lodash';
-import { loadDOT } from '@/__CORE__/utils/i18n-for-load';
+import { loadDOT } from '@/__CORE__/utils/i18n-for-dynamic-loadDOT';
 import { Button, ButtonGroup } from "@nextui-org/react";
 import { border_clz } from '@/__CORE__/meta/styles';
 import { Dot } from '@/__CORE__/utils/cTranslationUtils';

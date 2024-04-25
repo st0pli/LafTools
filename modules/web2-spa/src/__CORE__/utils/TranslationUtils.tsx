@@ -30,31 +30,31 @@ let newLangMap2 = (): LangMap => {
 export const newLangMap = newLangMap2;
 let crtNewLangMap = newLangMap();
 let global = window
-const key_global_lang_cached = "N91OLG8g"
-let global_lang_cached_map = {}
-if (global[key_global_lang_cached]) {
-  global_lang_cached_map = global[key_global_lang_cached]
-}
-global[key_global_lang_cached] = global_lang_cached_map
+// const key_global_lang_cached = "N91OLG8g"
+// let global_lang_cached_map = {}
+// if (global[key_global_lang_cached]) {
+//   global_lang_cached_map = global[key_global_lang_cached]
+// }
+// global[key_global_lang_cached] = global_lang_cached_map
 
 export const LANG_INIT_BEFORE_MAP: { [key: string]: boolean } = {};
 
-function formatResultWithReplacer(val = "", ...args) {
-  if (_.isNil(args)) {
-    args = [];
-  }
-  for (let index in args) {
-    let tval = args[index];
-    while (true) {
-      let p = "{" + index + "}";
-      val = (val + "").replace(p, tval);
-      if (val.indexOf(p) == -1) {
-        break;
-      }
-    }
-  }
-  return val;
-}
+// function formatResultWithReplacer(val = "", ...args) {
+//   if (_.isNil(args)) {
+//     args = [];
+//   }
+//   for (let index in args) {
+//     let tval = args[index];
+//     while (true) {
+//       let p = "{" + index + "}";
+//       val = (val + "").replace(p, tval);
+//       if (val.indexOf(p) == -1) {
+//         break;
+//       }
+//     }
+//   }
+//   return val;
+// }
 
 
 export let getXLocaleStrInRSC = (): LocaleType => {

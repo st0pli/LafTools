@@ -10,7 +10,7 @@ import { ReleaseStatusResponse, SysResponse } from "../../share-spa/server_const
 import { FN_GetState } from "@/[lang]/client/src/nocycle"
 import info from "@/[lang]/[category]/info"
 import AlertUtils from "@/[lang]/client/src/utils/AlertUtils"
-import { loadDOT } from "../../utils/i18n-for-load"
+import { loadDOT } from "../../utils/i18n-for-dynamic-loadDOT"
 import { hocClientWrapper } from "@/[lang]/[category]/src/common/hocClientWrapper"
 
 let a = loadDOT("c6r8WcoMg")

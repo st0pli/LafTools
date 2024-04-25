@@ -36,8 +36,10 @@ import { CategorySearchProps } from "@/[lang]/page";
 import { URL_SUBCATEGORY_GO_PATH } from "@/__CORE__/meta/url";
 import { fmtURL_ToolSubPage } from "@/__CORE__/meta/common";
 import { NavigatorPassProp } from "..";
+import { useListenMainDot } from "@/__CORE__/utils/i18n-for-dynamic-loadDOT";
 
 export default (props: NavigatorPassProp) => {
+    useListenMainDot()
     let rightNav = fn_rightNav()
     let categoryList = getCategoryList()
 

@@ -17,7 +17,7 @@ import ExtraListTool from './extra-list-tool';
 import { CategoryTypeSearchDetail } from '@/[lang]/page';
 import { Button, Dialog, DialogBody, DialogFooter } from '@blueprintjs/core';
 import exportUtils from '@/[lang]/client/src/utils/ExportUtils';
-import { loadDOT } from '@/__CORE__/utils/i18n-for-load';
+import { loadDOT } from '@/__CORE__/utils/i18n-for-dynamic-loadDOT';
 import { CrtToolProp } from './pkg-tool-main';
 
 let d = loadDOT("IVmxAXWyR")

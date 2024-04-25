@@ -33,6 +33,7 @@ import Main from "./main";
 import Sidebar from "./sidebar";
 import './index.scss'
 import ClientCollapseBtn from "./sidebar/client-collapse-btn";
+import exportUtils from "@/[lang]/client/src/utils/ExportUtils";
 export type LabelHrefType = {
     refId?: string;
     label: string | JSX.Element,
@@ -45,7 +46,8 @@ export type NavigatorPassProp = CategorySearchProps & {
 
 export default (props: NavigatorPassProp) => {
     let category = props.params.category || 'tools'
-    return <div className={'category-' + category}>
+    let languageUpdateCtn = exportUtils.useSelector(v => v.memoryState.mainDOTUpdateCtn)
+    return <div className={'category-' + category} key={'k-' + languageUpdateCtn} >
         <div className="w-full h-full flex flex-row  " id={'partswrapper'}>
             <div style={{
                 // width: leftWidth

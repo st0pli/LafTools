@@ -9,12 +9,14 @@ import Link from "@/__CORE__/components/Link"
 import { LabelHrefType, NavigatorPassProp } from ".."
 import { fmtURL_Server } from "@/__CORE__/utils/routeUtils"
 import { nav_text_clz } from './constants'
+import { useListenMainDot } from "@/__CORE__/utils/i18n-for-dynamic-loadDOT"
 export let NavCategory = (props: NavigatorPassProp & {
     activeId?: string,
     nav: LabelHrefType[],
     extraLeft?: any
     extraRight?: any
 }) => {
+    useListenMainDot()
     let { nav } = props
     let leftNav = nav
     return <div className={' flex flex-row items-center  space-x-4 font-sm '}>

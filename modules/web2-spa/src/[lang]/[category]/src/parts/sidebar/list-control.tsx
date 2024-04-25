@@ -3,7 +3,7 @@
 import React from "react";
 import { Listbox, ListboxItem, ListboxSection, } from "@nextui-org/react";
 import { Dot } from "@/__CORE__/utils/cTranslationUtils";
-import { loadDOT } from "@/__CORE__/utils/i18n-for-load";
+import { loadDOT } from "@/__CORE__/utils/i18n-for-dynamic-loadDOT";
 import AlertUtils from "@/[lang]/client/src/utils/AlertUtils";
 import { hocClientWrapper } from "../../common/hocClientWrapper";
 

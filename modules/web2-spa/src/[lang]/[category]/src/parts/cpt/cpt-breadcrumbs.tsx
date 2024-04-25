@@ -10,7 +10,7 @@
 import React from "react";
 import { Breadcrumbs, BreadcrumbItem } from "@nextui-org/react";
 import { Dot } from "@/__CORE__/utils/cTranslationUtils";
-import { loadDOT } from "@/__CORE__/utils/i18n-for-load";
+import { loadDOT } from "@/__CORE__/utils/i18n-for-dynamic-loadDOT";
 import { NavigatorPassProp } from "..";
 import { fmtURL_Client } from "@/__CORE__/utils/cRouteUtils";
 import { URL_SUBCATEGORY_GO_PATH, URL_TOOL_CATEGORY } from "@/__CORE__/meta/url";

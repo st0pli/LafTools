@@ -22,9 +22,12 @@ import { fmtURL_ToolSubPage, } from '../../../types';
 import _ from 'lodash';
 import { URL_SUBCATEGORY_GO_PATH } from '@/__CORE__/meta/url';
 import { getToolSubCategory } from '@/[lang]/client/src/impl/tools/d_subcategory';
+import { useListenMainDot } from '@/__CORE__/utils/i18n-for-dynamic-loadDOT';
 
 export default (props: ToolProp) => {
     let subCategory = getToolSubCategory()
+    useListenMainDot()
+
     return <div className='flex-1  space-y-2'>
         {
             subCategory.map(x => {

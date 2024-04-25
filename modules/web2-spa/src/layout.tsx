@@ -29,22 +29,19 @@ import { Suspense } from "react";
 
 // import dbconn from '.@/__CORE__/app/db/index'
 
-export default async function RootLayout(props: {
+export default function RootLayoutWrapper(props: {
   children,
 }) {
   let { children } = props;
   return (
-    <Suspense>
-      <Layout>
-        {children}
-        <PrelintInit></PrelintInit>
-        <ProgressBar></ProgressBar>
-        {/* client */}
-        <SetupPopPanel />
-        <VersionCheck />
-        <RegisterSlot />
-      </Layout>
-    </Suspense>
+    <Layout>
+      {children}
+      <PrelintInit></PrelintInit>
+      <ProgressBar></ProgressBar>
+      <SetupPopPanel />
+      <VersionCheck />
+      <RegisterSlot />
+    </Layout>
   );
 }
 

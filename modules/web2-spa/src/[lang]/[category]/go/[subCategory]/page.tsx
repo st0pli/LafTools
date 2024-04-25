@@ -35,8 +35,11 @@ export type AuthInfoProps = { authInfo: AuthInfo }
 export type CombindSearchProps = PageProps<any, any>
 import "@blueprintjs/core/lib/css/blueprint.css";
 import "@blueprintjs/icons/lib/css/blueprint-icons.css";
+import { hocClientWrapper } from "../../src/common/hocClientWrapper";
+import RootLayout from "@/layout";
+import RootLayoutWrapper from "@/layout";
 
-export default function Home(props: CategorySearchProps) {
+export default hocClientWrapper(function (props: CategorySearchProps) {
     let { subCategory, category } = props.params
     if (_.isEmpty(subCategory)) {
         subCategory = getToolSubCategory()[0].id
@@ -73,11 +76,11 @@ export default function Home(props: CategorySearchProps) {
         )
     }
     return (
-        <main>
+        <RootLayoutWrapper>
             <NavigatorPage {...props} innerContent={whatPartForChildren}></NavigatorPage>
-        </main>
+        </RootLayoutWrapper>
     )
-}
+})
 
 
 export { generateMetadata } from '@/[lang]/page'

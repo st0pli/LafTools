@@ -11,6 +11,7 @@ import { CategorySearchProps } from "@/[lang]/page"
 import { tw } from "../../types/styles"
 import { ifnil } from "@/__CORE__/meta/fn"
 import _ from "lodash"
+import { useListenMainDot } from "@/__CORE__/utils/i18n-for-dynamic-loadDOT"
 // import { ifnil } from "../../pages/WorkBench/FixedLayout/Main/Center/sub/center-view/Transformer/ProcessPanel/hooks"
 
 export type CategoryType = "" | "tools" | "resources" | "docs" | "ai" | "user"

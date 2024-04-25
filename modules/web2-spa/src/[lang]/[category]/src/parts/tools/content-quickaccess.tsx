@@ -17,7 +17,7 @@ import ExtraListTool from './extra-list-tool';
 import { Dot } from '@/__CORE__/utils/cTranslationUtils';
 import _ from 'lodash';
 import gutils from '@/[lang]/client/src/utils/GlobalUtils';
-import { loadDOT } from '@/__CORE__/utils/i18n-for-load';
+import { loadDOT } from '@/__CORE__/utils/i18n-for-dynamic-loadDOT';
 import { getQuickAccessList } from './sidebar-quickaccess';
 import ContentQuickaccess from './content-quickaccess';
 import MultipleTextTranslator from '@/[lang]/client/src/pages/WorkBench/FixedLayout/Main/Center/nav/bottom/Translator/MultipleTextTranslator';

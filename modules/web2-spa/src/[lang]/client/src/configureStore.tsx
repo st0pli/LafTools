@@ -83,6 +83,6 @@ export default function configureAppStore() {
 
 
   initMessageListener(store);
-
+  _.set(window, 'gstore', store)
   return store;
 }

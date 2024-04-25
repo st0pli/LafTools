@@ -37,8 +37,10 @@ import { fmtURL_ToolSubPage } from "@/__CORE__/meta/common";
 import { NavigatorPassProp } from "..";
 import { ifnil } from "@/__CORE__/meta/fn";
 import { getIconImgAndBannerTextByCategory } from "@/[lang]/client/src/impl/tools/d_subcategory";
+import { useListenMainDot } from "@/__CORE__/utils/i18n-for-dynamic-loadDOT";
 
 export default (props: NavigatorPassProp) => {
+    useListenMainDot()
     let { category } = props.params;
     let {
         backgroundImage,
