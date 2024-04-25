@@ -17,8 +17,8 @@ import _, { random } from "lodash";
 
 import InnerHome from '../../../../home'
 
-import React, { } from "react";
-import { PageProps, } from '@/__CORE__/meta/pages'
+import React, { useEffect } from "react";
+import { LafPathIDParams, PageProps, } from '@/__CORE__/meta/pages'
 import getAuthInfo, { AuthInfo } from "@/__CORE__/containers/GrailLayoutWithUser/actions/handleAuthInfo";
 
 
@@ -38,15 +38,32 @@ import "@blueprintjs/icons/lib/css/blueprint-icons.css";
 import { hocClientWrapper } from "../../src/common/hocClientWrapper";
 import RootLayout from "@/layout";
 import RootLayoutWrapper from "@/layout";
+import { Route, BrowserRouter as Router, Switch, useHistory, useLocation, useParams } from "react-router-dom";
 
-export default hocClientWrapper(function (props: CategorySearchProps) {
-    let { subCategory, category } = props.params
+const SystemPage = (props) => {
+    let h = useHistory()
+    let [routeCtnForUpdated, setRouteCtnForUpdated] = React.useState<number>(Date.now())
+    useEffect(() => {
+        h.listen((l) => {
+            setRouteCtnForUpdated(Date.now())
+        });
+    }, [h])
+    let p: LafPathIDParams = useParams()
+    let currentRoute: CategorySearchProps = {
+        params: {
+            subCategory: p.subCategory || "",
+            category: (p.category || "tools") as any,
+            id: p.id || ""
+        },
+        searchParams: {}
+    }
+    let { subCategory, category } = currentRoute.params
     if (_.isEmpty(subCategory)) {
         subCategory = getToolSubCategory()[0].id
-        props = {
-            ...props,
+        currentRoute = {
+            ...currentRoute,
             params: {
-                ...props.params,
+                ...currentRoute.params,
                 subCategory
             }
         }
@@ -54,30 +71,71 @@ export default hocClientWrapper(function (props: CategorySearchProps) {
     let whatPartForChildren = <span>it is undefined so far</span>
     if (ifnil(category, '') == '' || category == 'tools') {
         whatPartForChildren = (
-            <ToolPart {...props} />
+            <ToolPart key={JSON.stringify(currentRoute)}  {...currentRoute} />
         )
     } else if (category == 'docs') {
         whatPartForChildren = (
-            <DocsPart {...props} />
+            <DocsPart {...currentRoute} />
         )
     } else if (category == 'resources') {
         whatPartForChildren = (
-            <ResourcesPart {...props} />
+            <ResourcesPart {...currentRoute} />
         )
     } else if (category == 'ai') {
         whatPartForChildren = (
-            <AIPart {...props} />
+            <AIPart {...currentRoute} />
         )
     } else if (category == 'user') {
-        whatPartForChildren = <UserPart {...props} />
+        whatPartForChildren = <UserPart {...currentRoute} />
     } else {
         whatPartForChildren = (
             <div>sorry, I have no idea for this category {category}</div>
         )
     }
+    return <NavigatorPage {...currentRoute} innerContent={whatPartForChildren}></NavigatorPage>
+}
+
+export default hocClientWrapper(function (props: CategorySearchProps) {
+
     return (
         <RootLayoutWrapper>
-            <NavigatorPage {...props} innerContent={whatPartForChildren}></NavigatorPage>
+            <Router basename="/">
+                <Switch>
+                    <Route
+                        path={"/"}
+                        exact
+                        component={SystemPage}
+                    ></Route>
+                    <Route
+                        path={"/:locale"}
+                        exact
+                        component={SystemPage}
+                    ></Route>
+                    <Route
+                        path={"/:locale/:category"}
+                        exact
+                        component={SystemPage}
+                    ></Route>
+                    <Route
+                        path={"/:locale/:category/go/:subCategory"}
+                        exact
+                        component={SystemPage}
+                    ></Route>
+                    <Route
+                        path={"/:locale/:category/go/:subCategory/:id"}
+                        exact
+                        component={SystemPage}
+                    ></Route>
+                    { /* 404 */}
+                    <Route
+                        component={() => {
+                            let p = useParams()
+                            let lo = useLocation()
+                            return <div>404 Not Found - {lo.pathname} - {JSON.stringify(p)} - {lo.search}</div>
+                        }}
+                    ></Route>
+                </Switch>
+            </Router>
         </RootLayoutWrapper>
     )
 })

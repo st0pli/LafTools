@@ -10,6 +10,12 @@ import { fmtURL_Server } from "../utils/routeUtils";
 import { URL_TOOL_CATEGORY } from "./url";
 
 
+export type LafPathIDParams = {
+    locale: string,
+    category?: string,
+    subCategory?: string,
+    id?: string
+}
 
 export * from "@/[lang]/client/src/impl/tools/d_portal";
 

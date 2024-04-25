@@ -94,36 +94,34 @@ function App() {
   }, []);
 
 
-  let basename = fmtURL_Client(["/client/"])
-
+  // let basename = fmtURL_Client(["/client/"])
+  // basename = { basename }
   return (
     <HotkeysProvider>
-      <Router basename={basename} >
-        <HotkeysTarget2 hotkeys={hotkeys}>
-          {({ handleKeyDown, handleKeyUp }) => {
-            return (
-              <div
-                // draggable
-                // onDrop={(e) => {
-                //   e.preventDefault();
-                // }}
-                // onDragOver={(e) => {
-                //   e.preventDefault();
-                // }}
-                onKeyDown={handleKeyDown}
-                onKeyUp={handleKeyUp}
-                style={{ width: "100%", height: "100%" }}
-              >
-                <SmallScreenDetecter />
-                <RouteComponent></RouteComponent>
-                <SystemAlertOrPrompt></SystemAlertOrPrompt>
-              </div>
-            );
-          }}
-        </HotkeysTarget2>
-        <SetupPopPanel />
-        <VersionCheck />
-      </Router>
+      <HotkeysTarget2 hotkeys={hotkeys}>
+        {({ handleKeyDown, handleKeyUp }) => {
+          return (
+            <div
+              // draggable
+              // onDrop={(e) => {
+              //   e.preventDefault();
+              // }}
+              // onDragOver={(e) => {
+              //   e.preventDefault();
+              // }}
+              onKeyDown={handleKeyDown}
+              onKeyUp={handleKeyUp}
+              style={{ width: "100%", height: "100%" }}
+            >
+              <SmallScreenDetecter />
+              <RouteComponent></RouteComponent>
+              <SystemAlertOrPrompt></SystemAlertOrPrompt>
+            </div>
+          );
+        }}
+      </HotkeysTarget2>
+      <SetupPopPanel />
+      <VersionCheck />
     </HotkeysProvider >
 
   );

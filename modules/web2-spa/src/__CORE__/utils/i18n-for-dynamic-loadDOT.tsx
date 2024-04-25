@@ -25,7 +25,6 @@ export let loadDOT = (str: string, enableLang2ClientMode?: boolean): () => Retur
 let sentRequestList = {}
 
 export let useListenMainDot = () => {
-    // exportUtils.useSelector(v => v.memoryState.mainDOTUpdateCtn + v.system.TotalLanguageUpdate)
 }
 
 export let useTTT2 = function (ltID: string, enableLang2ClientMode?: boolean): (id: string, enText: string, ...args: any[]) => string {
