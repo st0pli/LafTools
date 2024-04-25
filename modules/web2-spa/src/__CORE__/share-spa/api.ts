@@ -1,5 +1,4 @@
 import { APITypeInfo, API_SERVER_URL } from "./api_constants";
-import { isDevEnv, isTestEnv } from "./env";
 import {
   HEADER_X_LAF_LANG,
   HEADER_X_LAF_PLATFORM,

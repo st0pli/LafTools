@@ -8,16 +8,8 @@
 
 import _ from "lodash";
 import React, { } from "react";
-import { Dot, getXHostname } from "@/__CORE__/utils/TranslationUtils";
-import Link from "@/__CORE__/components/Link";
-import { NavCategory as NavCategory } from "./nav/nav-category";
-import { getAppDevIcon } from "@/__CORE__/config/imgconfig";
-import { ClosableText } from "@/__CORE__/components/ClosableText";
 import RedirectToOtherBanner from "@/__CORE__/components/RedirectToOtherBanner/index";
 import { CSS_BG_COLOR_WHITE, border_clz, border_clz_top, light_border_clz_all, light_border_clz_all_no_define_border, row_pad_clz } from "@/__CORE__/meta/styles";
-import LightDarkButton from "@/__CORE__/components/LightDarkButton";
-import GitHubButton from "@/__CORE__/components/GitHubButton";
-import SysBreadCrumbs from './cpt/cpt-breadcrumbs'
 // import {
 
 // } from '../../../../../../types'

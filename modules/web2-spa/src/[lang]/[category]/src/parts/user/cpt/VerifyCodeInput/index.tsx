@@ -4,12 +4,9 @@ import React, { useCallback, useEffect, useState } from 'react';
 import _ from 'lodash';
 import { loadDOT } from '@/__CORE__/utils/i18n-for-load';
 import { Dot, getCurrentLang } from '@/__CORE__/utils/cTranslationUtils';
-import os from 'os'
-import path from 'path';
-import { readFileSync } from 'fs';
 import { webaction_sendAPIRequestInBE } from '@/[lang]/client/src/api/ApiUtils';
-import { URL_AUTH_GET_CAPTCHA } from '@/__CORE__/share/server_urls';
-import { SysResponse, TypeCaptchaResponse } from '@/__CORE__/share/server_constants';
+import { URL_AUTH_GET_CAPTCHA } from '@/__CORE__/share-spa/server_urls';
+import { SysResponse, TypeCaptchaResponse } from '@/__CORE__/share-spa/server_constants';
 import { Button, Callout } from '@blueprintjs/core';
 
 let a = loadDOT("lAz69eiBk")

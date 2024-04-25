@@ -1,7 +1,6 @@
 
 import { expect, test } from 'vitest'
 import { render, screen } from '@testing-library/react'
-import { DataTypes, Model } from 'sequelize'
 import ToBase64 from './impl/conversion/ToBase64'
 import { OpDetail } from './s_tools'
 import appToolInfoObj, { AppInfoType } from './d_meta'

@@ -4,11 +4,10 @@
 // License: AGPLv3
 // Copyright (C) 2024 - Present, https://laftools.dev and https://codegen.cc
 
-import path from "path";
 export type SystemEnvFlag = "development" | "production" | "test";
 
 let envObj: { env: SystemEnvFlag } = {
-  env: process.env.NODE_ENV as any,
+  env: import.meta.env.NODE_ENV as any,
 };
 
 export let markEnvAsDevForcibly = () => {
@@ -32,14 +31,5 @@ export let isProductionEnv = () => {
 };
 
 export let getLafELB3Root = (): string => {
-  return process.env["ELB3_ROOT"] || "unknowndir";
-};
-
-export let getPreCompiledDir = (): string => {
-  let file = path.join(
-    getLafELB3Root(),
-    "precompiled",
-    isDevEnv() ? "dev" : "prod",
-  );
-  return file;
+  return "";
 };

@@ -10,7 +10,7 @@ import _ from "lodash";
 import Qs from 'query-string'
 import { LANG_EN_US, LangDefinition } from "../meta/constants";
 import { LocaleType, all_locales as all_locales, zhCNLocale } from '@/middleware';
-import { isDevEnv } from '../share/env';
+import { isDevEnv } from '../share-spa/env4vite';
 
 let VER_FORGE_FORM = '0.0.1'
 export const KEY_LANG_PACK_ZH_CN = "KEY_LANG_PACK_ZH_CN" + VER_FORGE_FORM;
@@ -28,6 +28,7 @@ let newLangMap2 = (): LangMap => {
 };
 export const newLangMap = newLangMap2;
 let crtNewLangMap = newLangMap();
+let global = window
 const key_global_lang_cached = "N91OLG8g"
 let global_lang_cached_map = {}
 if (global[key_global_lang_cached]) {
@@ -130,9 +131,9 @@ const TranslationUtils = {
       if (global_lang_cached_map[language] && !isDevEnv()) {
         TranslationUtils.LangMap[language] = global_lang_cached_map[language]
       } else {
-        let pmap = require("../../../public/static/lang/" + language + ".json")
-        let pmap2 = require("../../../public/static/lang2client/" + language + ".json")
-        TranslationUtils.LangMap[language] = global_lang_cached_map[language] = { ...pmap, ...pmap2 }
+        // let pmap = require("../../../public/static/lang/" + language + ".json")
+        // let pmap2 = require("../../../public/static/lang2client/" + language + ".json")
+        // TranslationUtils.LangMap[language] = global_lang_cached_map[language] = { ...pmap, ...pmap2 }
       }
     }
     if (language == LANG_EN_US) {

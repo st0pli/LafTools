@@ -5,8 +5,8 @@
 // License: AGPLv3
 // Copyright (C) 2024 - Present, https://laftools.dev and https://codegen.cc
 
-import { getAppDataTestKVDir } from "../share/appdir"
-import { isDevEnv } from "../share/env"
+import { getAppDataTestKVDir } from "../share-spa/appdir"
+import { isDevEnv } from "../share-spa/env"
 import fs from 'fs'
 import path from 'path'
 let globalKV: { [key: string]: string } = {}

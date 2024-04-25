@@ -2,28 +2,19 @@
 
 
 
-import { getWebsiteName } from "@/__CORE__/common/config";
-import { TopNav } from "@/__CORE__/containers/TopNav";
-import CenterPart from "@/__CORE__/containers/CenterPart";
-import CardPanel from '@/__CORE__/components/CardPanel'
-import NodeHorizontalBar from "@/__CORE__/containers/TabGroupHorizontalBar";
 import _, { random } from "lodash";
-import InnerHome from '../home'
 
-import '../job'
 import React, { } from "react";
 import { PageProps, PortalDefinitionType, TopMainCategoryNavList } from '@/__CORE__/meta/pages'
-import getAuthInfo, { AuthInfo } from "@/__CORE__/containers/GrailLayoutWithUser/actions/handleAuthInfo";
 import { Dot, getXSubPath, isChineseByXLocal } from "../__CORE__/utils/TranslationUtils";
 import Link from "@/__CORE__/components/Link";
 
 import { getAppDevIcon, getAppKeywords } from "../__CORE__/config/imgconfig";
 
 import SubCategoryPage from '@/[lang]/[category]/page'
-import { satisfies } from "semver";
 import { getCategoryList as getCategoryList, PortalDefinitionTbabGroup } from "./[category]/types";
 import { ifnil } from "../__CORE__/meta/fn";
-import { isDevEnv } from "../__CORE__/share/env";
+import { isDevEnv } from "../__CORE__/share-spa/env";
 import { CategoryType, getSubCategoryByProps } from "./client/src/impl/tools/d_subcategory";
 import { Metadata } from "@/layout";
 

@@ -8,7 +8,6 @@
 
 import { expect, test } from 'vitest'
 import { render, screen } from '@testing-library/react'
-import { DataTypes, Model } from 'sequelize'
 import Chef from './Chef.mjs'
 import ToBase64 from '../tools/impl/conversion/ToBase64'
 // test 1+1 = 2

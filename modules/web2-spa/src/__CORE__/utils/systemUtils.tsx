@@ -1,7 +1,8 @@
 'use server'
 
 export let IsCurrentServerMode = () => {
-    return process.env.ONLINEMODE == 'true'
+    // TODO: should check this one
+    return false;
 }
 
 export let IsCurrentServerModeWithPromise = async () => {

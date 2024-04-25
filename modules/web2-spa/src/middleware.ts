@@ -1,10 +1,8 @@
 import { I18nItem } from "@/__CORE__/config/i18n";
 import { fn_Geti18n } from "@/[lang]/client/src/i18n-pure";
-import info from "@/[lang]/[category]/info";
-import { isDevEnv } from "@/__CORE__/share/env";
 
-let dftLocaleStr = process.env.APPLANG;
-let LAFREGION = process.env.LAFREGION; // CN or US
+let dftLocaleStr = "en_US"; // process.env.APPLANG
+let LAFREGION = "CN"; // process.env.LAFREGION // CN or US
 if (!dftLocaleStr) {
   dftLocaleStr = "en_US";
 }

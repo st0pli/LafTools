@@ -8,7 +8,6 @@
 
 import { expect, test, test as describe } from 'vitest'
 import { render, screen } from '@testing-library/react'
-import { DataTypes, Model } from 'sequelize'
 import VerCompareUtils from './VerCompareUtils';
 
 test('removeAlphaOrBeta should remove alpha or beta from version', () => {

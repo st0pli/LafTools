@@ -5,13 +5,9 @@
 // License: AGPLv3
 // Copyright (C) 2024 - Present, https://laftools.dev and https://codegen.cc
 
-'use server'
 
 import _ from "lodash";
-import { randomUUID } from "crypto";
 // import { SystemInfoBody, fn_add_user_into_active, fn_get_system_info_from_redis } from "@/[lang]/register/user-types";
-import { LocaleType } from "@/middleware";
-import { LocalUser } from "@/__CORE__/dao/model";
 
 let getPathnameInRSC = () => {
     // const headersList = headers();
@@ -27,7 +23,7 @@ export let redirectToLoginPage = () => {
 }
 
 export type AuthInfo = {
-    user: LocalUser | null,
+    user: any,
     signedIn: boolean,
     // systemInfo: SystemInfoBody
 }

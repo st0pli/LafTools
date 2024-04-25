@@ -11,7 +11,6 @@ import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import { EachTab } from "../components/GenHorizontalTab";
 import _ from "lodash";
 import SyncStateUtils from "../utils/SyncStateUtils";
-import { stat } from "fs";
 import { ExtensionInfo, ExtensionVM } from "../types/purejs-types-READ_ONLY";
 
 // workspace slice, will be used to store and display the selected workspace.

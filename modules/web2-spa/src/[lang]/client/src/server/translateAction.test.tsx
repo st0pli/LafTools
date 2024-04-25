@@ -9,7 +9,6 @@
 
 import { expect, test } from 'vitest'
 import { render, screen } from '@testing-library/react'
-import { DataTypes, Model } from 'sequelize'
 import { translateText } from './translateAction';
 import { fn_Geti18n } from '../i18n-pure';
 

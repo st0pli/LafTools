@@ -5,7 +5,7 @@
 // License: AGPLv3
 // Copyright (C) 2024 - Present, https://laftools.dev and https://codegen.cc
 
-import { isDevEnv, isTestEnv } from "../share/env"
+import { isDevEnv, isTestEnv } from "../share-spa/env"
 import { Dot } from "../utils/TranslationUtils"
 
 export let formatStaticResource = (path: string): string => {

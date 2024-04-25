@@ -15,7 +15,7 @@ import { getAppDevIcon, getAppKeywords } from "@/__CORE__/config/imgconfig";
 // import {  } from "./src/utils/TranslationUtils";
 import { fmtURL_Server } from "@/__CORE__/utils/routeUtils";
 import { Dot, getXLocaleStrInRSC } from "@/__CORE__/utils/TranslationUtils";
-import { isDevEnv } from "@/__CORE__/share/env";
+import { isDevEnv } from "@/__CORE__/share-spa/env";
 import PassClientValue from './pass'
 import PageLoadingEffect from "@/__CORE__/containers/PageLoadingEffect";
 import { CategorySearchProps } from "../page";

@@ -13,6 +13,7 @@ function App() {
         category: '',
         id: ''
       }} searchParams={{}} />
+      <div>i am ok 2</div>
     </>
   )
 }

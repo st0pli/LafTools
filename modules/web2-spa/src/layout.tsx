@@ -13,10 +13,8 @@ import CardPanel from './__CORE__/components/CardPanel'
 import NodeHorizontalBar from "./__CORE__/containers/TabGroupHorizontalBar";
 import Footer from "./__CORE__/containers/Footer";
 import Layout from './__CORE__/containers/Layout'
-import { Sequelize, DataTypes } from 'sequelize';
 import fs from 'fs'
 import PrelintInit from './__CORE__/script/preline-init'
-import { getWebsiteLocale } from "./__CORE__/utils/TranslationUtils";
 import ProgressBar from "./progressBar";
 import { getAppDevIcon } from "./__CORE__/config/imgconfig";
 import { Providers } from "./nextui-provider";

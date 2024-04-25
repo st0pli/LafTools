@@ -20,10 +20,8 @@ import InnerHome from '../../../../home'
 import React, { } from "react";
 import { PageProps, } from '@/__CORE__/meta/pages'
 import getAuthInfo, { AuthInfo } from "@/__CORE__/containers/GrailLayoutWithUser/actions/handleAuthInfo";
-import { Dot } from "../../../../__CORE__/utils/TranslationUtils";
 
 
-import { getAppDevIcon, getAppKeywords } from "../../../../__CORE__/config/imgconfig";
 import Tools, { CategorySearchProps, generateMetadata as toolMetaDataFn } from '@/[lang]/page'
 import ToolPart from '../../src/parts/tools'
 import AIPart from '../../src/parts/ai'
@@ -33,7 +31,6 @@ import ResourcesPart from '../../src/parts/resources'
 import NavigatorPage from '../../src/parts/index'
 import { ifnil } from "@/__CORE__/meta/fn";
 import { getToolSubCategory } from "@/[lang]/client/src/impl/tools/d_subcategory";
-import M from "./test";
 export type AuthInfoProps = { authInfo: AuthInfo }
 export type CombindSearchProps = PageProps<any, any>
 
