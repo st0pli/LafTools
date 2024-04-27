@@ -39,6 +39,7 @@ import { hocClientWrapper } from "../../src/common/hocClientWrapper";
 import RootLayout from "@/layout";
 import RootLayoutWrapper from "@/layout";
 import { Route, BrowserRouter as Router, Switch, useHistory, useLocation, useParams } from "react-router-dom";
+import exportUtils from "@/[lang]/client/src/utils/ExportUtils";
 
 const SystemPage = (props) => {
     let h = useHistory()
@@ -71,7 +72,7 @@ const SystemPage = (props) => {
     let whatPartForChildren = <span>it is undefined so far</span>
     if (ifnil(category, '') == '' || category == 'tools') {
         whatPartForChildren = (
-            <ToolPart key={JSON.stringify(currentRoute)}  {...currentRoute} />
+            <ToolPart  {...currentRoute} />
         )
     } else if (category == 'docs') {
         whatPartForChildren = (
@@ -96,7 +97,6 @@ const SystemPage = (props) => {
 }
 
 export default hocClientWrapper(function (props: CategorySearchProps) {
-
     return (
         <RootLayoutWrapper>
             <Router basename="/">

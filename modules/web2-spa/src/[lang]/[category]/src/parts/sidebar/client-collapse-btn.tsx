@@ -9,7 +9,7 @@ import $ from 'jquery';
 import { hocClientWrapper } from "../../common/hocClientWrapper"
 
 
-export default hocClientWrapper(() => {
+export default (() => {
     let showLeftBar = exportUtils.useSelector(v => v.paramState.shsmu == 't')
 
     useEffect(() => {

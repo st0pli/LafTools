@@ -36,8 +36,6 @@ export default (props: CrtToolProp) => {
         height: 'calc(100vh - 91px)'
     }}>
         <SubTabNav  {...props}></SubTabNav>
-        <HocClientWrapperClient children={
-            <ToolView {...props} />
-        }></HocClientWrapperClient>
+        <ToolView {...props} />
     </Card >
 }

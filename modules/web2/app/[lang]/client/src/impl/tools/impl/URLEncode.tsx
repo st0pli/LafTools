@@ -7,7 +7,7 @@ export default class URLENocderHandler extends ToolHandler {
         return {
             hideCodePanel: true,
             exampleType: "css-short",
-            description: Dot("gN5idqhIY8e", "Encodes problematic characters into percent-encoding, a format supported by URIs/URLs.")
+            description: Dot("gN5ihdIY8e", "Encodes problematic characters into percent-encoding, a format supported by URIs/URLs.")
         }
     }
 

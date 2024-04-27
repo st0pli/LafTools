@@ -16,6 +16,7 @@ export let HocClientWrapperClient = (props: { children: any }) => {
 }
 
 export function hocClientWrapper<T extends React.ComponentType<any>>(Cpt: T, needLoading?: boolean): T {
+
     return (
         (props) => {
             let [mounted, setMounted] = React.useState(false)

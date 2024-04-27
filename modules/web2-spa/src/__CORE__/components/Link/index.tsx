@@ -8,6 +8,6 @@ export default (props: {
     target?: string,
     children?: any
 }) => {
-    // return <Link to={props.href + ""} {...props} >{props.children}</Link>
-    return <a {...props}>{props.children}</a>
+    return <Link to={props.href + ""} {...props} >{props.children}</Link>
+    // return <a {...props}>{props.children}</a>
 }
