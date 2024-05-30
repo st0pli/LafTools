@@ -11,12 +11,6 @@
 <br><br>
 </p>
 
-<h3>
-  QQ群：106038310<br/>
-  本仓库代码已移至 https://github.com/work7z/MDGJX ，欢迎继续关注进展！ <br/>
-  This repo has been moved to here https://github.com/work7z/MDGJX, welcome to star this new repo.
-  
-</h3>
 
 <i>Note: This page is generated from LafTools internally.</i> <br/> English | [简体中文](/docs/zh_CN/README.md) | [繁體中文](/docs/zh_HK/README.md) | [Deutsch](/docs/de/README.md) | [Español](/docs/es/README.md) | [Français](/docs/fr/README.md) | [日本語](/docs/ja/README.md) | [한국어](/docs/ko/README.md) | [More](/docs/) <br/>
 
